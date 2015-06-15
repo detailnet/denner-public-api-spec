@@ -1,0 +1,49 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "RESTful API for the Denner Portal 2.0",
+    "version": "0.1.0",
+    "title": "Denner Portal 2.0",
+    "contact": {
+      "name": "Denner Portal 2.0 API Support",
+      "email": "support+denner-api@detailnet.ch"
+    }
+  },
+  "host": "denner-portal.detailnet.ch",
+  "basePath": "/api",
+  "schemes": ["https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/online-filters": {
+      "get": {
+        "description": "List all online filters (Angebotsfilter)"
+      }
+    },
+    "/online-categories": {
+      "get": {
+        "description": "List all online categories (Werbemittel)"
+      }
+    },
+    "/online-categories/(categoryId)/articles": {
+      "get": {
+        "description": "List all articles of the online category"
+      }
+    },
+    "/article-categories": {
+      "get": {
+        "description": "List all article categories (Internet-Sortimente)"
+      }
+    },
+    "/article-groups": {
+      "get": {
+        "description": "List all article groups (Warengruppen)"
+      }
+    },
+    "/stores": {
+      "get": {
+        "description": "List all stores (Filialen)"
+      }
+    }
+  }
+}
