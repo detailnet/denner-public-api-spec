@@ -18,6 +18,9 @@ paths:
   /online-filters:
     get:
       description: 'List all online filters ("Angebotsfilter")'
+      parameters:
+        - $ref: PageParam
+        - $ref: PageSizeParam
       responses:
         200:
           description: Successful listing
@@ -38,6 +41,19 @@ paths:
 #  /stores:
 #    get:
 #      description: 'List all stores ("Filialen")'
+parameters:
+  PageParam:
+    name: page
+    description: The page number
+    in: query
+    type: integer
+    format: int32
+  PageSizeParam:
+    name: page_size
+    description: The page size
+    in: query
+    type: integer
+    format: int32
 definitions:
   OnlineFilterText:
     type: object
