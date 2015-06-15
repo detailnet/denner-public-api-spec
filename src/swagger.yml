@@ -25,7 +25,7 @@ paths:
         200:
           description: Successful listing
           schema:
-            $ref: OnlineFilters
+            $ref: OnlineFiltersResponse
 #  /online-categories:
 #    get:
 #      description: 'List all online categories ("Werbemittel")'
@@ -55,6 +55,23 @@ parameters:
     type: integer
     format: int32
 definitions:
+  OnlineFiltersResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      online_filters:
+        $ref: OnlineFilters
   OnlineFilterText:
     type: object
     properties:
@@ -72,7 +89,6 @@ definitions:
         additionalProperties:
           $ref: OnlineFilterText
   OnlineFilters:
-    type: object
-    properties:
-      online_filters:
-        $ref: OnlineFilter
+    type: array
+    items:
+      $ref: OnlineFilter
