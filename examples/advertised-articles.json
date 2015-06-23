@@ -11,7 +11,7 @@
                     "saving": "9.- sparen",
                     "base": "10 cl",
                     "info": "Konkurrenzvergleich",
-                    "validity": "Angebot gültig von..."
+                    "validity": "Angebot gültig von 23.06.2015 bis 29.06.2015"
                 },
                 "fr": {
                     "title": "Mandorla Primitivo di Puglia IGT",
@@ -54,9 +54,13 @@
                 "size": 10,
                 "unit": "cl"
             },
-            "visibility": {
+            "validity": {
                 "from": "2015-06-23",
-                "to": "2015-06-30"
+                "to": "2015-06-29"
+            },
+            "visibility": {
+                "from": "2015-06-19",
+                "to": "2015-06-29"
             },
             "promoted": true,
             "leading": true,
