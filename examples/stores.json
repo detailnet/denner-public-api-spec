@@ -83,6 +83,11 @@
                             "locale": "it",
                             "value": "Humidor"
                         }
+                    ],
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
+                        }
                     ]
                 },
                 {
@@ -99,6 +104,11 @@
                         {
                             "locale": "it",
                             "value": "Frutta e verdura"
+                        }
+                    ],
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
                         }
                     ]
                 },
@@ -117,6 +127,11 @@
                             "locale": "it",
                             "value": "Frutta e verdura in vendita sfusa"
                         }
+                    ],
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
+                        }
                     ]
                 },
                 {
@@ -133,6 +148,11 @@
                         {
                             "locale": "it",
                             "value": "Punto cottura"
+                        }
+                    ],
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
                         }
                     ]
                 }
@@ -353,6 +373,11 @@
                             "locale": "it",
                             "value": "Humidor"
                         }
+                    ],
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
+                        }
                     ]
                 },
                 {
@@ -369,6 +394,11 @@
                         {
                             "locale": "it",
                             "value": "Frutta e verdura"
+                        }
+                    ],
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
                         }
                     ]
                 },
@@ -387,6 +417,11 @@
                             "locale": "it",
                             "value": "Frutta e verdura in vendita sfusa"
                         }
+                    ],
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
+                        }
                     ]
                 },
                 {
@@ -403,6 +438,11 @@
                         {
                             "locale": "it",
                             "value": "Punto cottura"
+                        }
+                    ],
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
                         }
                     ]
                 }
