@@ -4,32 +4,90 @@
             "id": "48fcba99-b506-4395-ac1a-373e2af478b1",
             "number": "050273",
             "name": "Mandorla Primitivo IGT Puglia",
-            "texts": {
-                "de": {
-                    "title": "Mandorla Primitivo di Puglia IGT",
-                    "description": "2013, Apulien, Italien, 6 x 75 cl",
-                    "saving": "9.- sparen",
-                    "base": "10 cl",
-                    "info": "Konkurrenzvergleich",
-                    "validity": "Angebot gültig von 23.06.2015 bis 29.06.2015"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Mandorla Primitivo di Puglia IGT"
                 },
-                "fr": {
-                    "title": "Mandorla Primitivo di Puglia IGT",
-                    "description": "2013, les Pouilles, Italie, 6 x 75 cl",
-                    "saving": "9.- ...",
-                    "base": "10 cl",
-                    "info": "",
-                    "validity": ""
+                {
+                    "locale": "fr",
+                    "value": "Mandorla Primitivo di Puglia IGT"
                 },
-                "it": {
-                    "title": "Mandorla Primitivo di Puglia IGT",
-                    "description": "2013, Puglia, Italia, 6 x 75 cl",
-                    "saving": "9.- ...",
-                    "base": "10 cl",
-                    "info": "",
-                    "validity": ""
+                {
+                    "locale": "it",
+                    "value": "Mandorla Primitivo di Puglia IGT"
                 }
-            },
+            ],
+            "description": [
+                {
+                    "locale": "de",
+                    "value": "2013, Apulien, Italien, 6 x 75 cl"
+                },
+                {
+                    "locale": "fr",
+                    "value": "2013, les Pouilles, Italie, 6 x 75 cl"
+                },
+                {
+                    "locale": "it",
+                    "value": "2013, Puglia, Italia, 6 x 75 cl"
+                }
+            ],
+            "saving": [
+                {
+                    "locale": "de",
+                    "value": "9.- sparen"
+                },
+                {
+                    "locale": "fr",
+                    "value": "9.- éparmié"
+                },
+                {
+                    "locale": "it",
+                    "value": "9.- risparmiati"
+                }
+            ],
+            "base": [
+                {
+                    "locale": "de",
+                    "value": "10 cl"
+                },
+                {
+                    "locale": "fr",
+                    "value": "10 cl"
+                },
+                {
+                    "locale": "it",
+                    "value": "10 cl"
+                }
+            ],
+            "info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "validity": [
+                {
+                    "locale": "de",
+                    "value": "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                },
+                {
+                    "locale": "fr",
+                    "value": "..."
+                },
+                {
+                    "locale": "it",
+                    "value": "..."
+                }
+            ],
             "prices": {
                 "sales": 9.9,
                 "instead": 11.4,
@@ -71,133 +129,212 @@
             "online_group": {
                 "id": "671988cc-ca5f-484e-8db8-23a65ea0044a",
                 "code": 4003,
-                "texts": {
-                    "de": {
-                        "title": "Wein"
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Wein"
                     },
-                    "fr": {
-                        "title": "Vins"
+                    {
+                        "locale": "fr",
+                        "value": "Vins"
                     },
-                    "it": {
-                        "title": "Vini"
+                    {
+                        "locale": "it",
+                        "value": "Vini"
                     }
-                },
+                ],
                 "parent": {
                     "id": "5b79391b-b436-45f9-b3e4-93ec3ae1fae2",
                     "code": 4001,
-                    "texts": {
-                        "de": {
-                            "title": "Tafelgetränke und Mineralwasser"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Tafelgetränke und Mineralwasser"
                         },
-                        "fr": {
-                            "title": "Boissons table et eau minérale"
+                        {
+                            "locale": "fr",
+                            "value": "Boissons table et eau minérale"
                         },
-                        "it": {
-                            "title": "Bevande da tavola e acque minerali"
+                        {
+                            "locale": "it",
+                            "value": "Bevande da tavola e acque minerali"
                         }
-                    }
+                    ]
                 }
             },
             "article_group": {
                 "id": "b3c6797a-777a-4103-aba8-d82089ba2980",
                 "code": "60-?",
-                "texts": {
-                    "de": {
-                        "title": "Rotwein"
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Rotwein"
                     },
-                    "fr": {
-                        "title": ""
+                    {
+                        "locale": "fr",
+                        "value": "Vin rouge"
                     },
-                    "it": {
-                        "title": ""
+                    {
+                        "locale": "it",
+                        "value": "Vino rosso"
                     }
-                },
+                ],
                 "parent": {
                     "id": "380d422a-5b8f-42c5-872c-c4ddf4bb5611",
                     "code": "60",
-                    "texts": {
-                        "de": {
-                            "title": "Wein"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Wein"
                         },
-                        "fr": {
-                            "title": "Vins"
+                        {
+                            "locale": "fr",
+                            "value": "Vins"
                         },
-                        "it": {
-                            "title": "Vini"
+                        {
+                            "locale": "it",
+                            "value": "Vini"
                         }
-                    }
+                    ]
                 }
             },
             "wine": {
                 "country": {
                     "id": "IT",
-                    "texts": {
-                        "de": {
-                            "title": "Italien"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Italien"
                         },
-                        "fr": {
-                            "title": "L'Italie"
+                        {
+                            "locale": "fr",
+                            "value": "Italie"
                         },
-                        "it": {
-                            "title": "Italia"
+                        {
+                            "locale": "it",
+                            "value": "Italia"
                         }
-                    }
+                    ]
                 },
                 "region": {
                     "id": "b19c42bf-ed78-46ff-ad6f-fc688a059e6a",
-                    "texts": {
-                        "de": {
-                            "title": "Apulien"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Apulien"
                         },
-                        "fr": {
-                            "title": "Les Pouilles"
+                        {
+                            "locale": "fr",
+                            "value": "Les Pouilles"
                         },
-                        "it": {
-                            "title": "Puglia"
+                        {
+                            "locale": "it",
+                            "value": "Puglia"
                         }
-                    }
+                    ]
                 },
                 "type": {
                     "id": "5395aec7-e36d-4b7f-99f6-a8a7f60fa412",
-                    "texts": {
-                        "de": {
-                            "title": "Rotwein"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Rotwein"
                         },
-                        "fr": {
-                            "title": "Vin rouge"
+                        {
+                            "locale": "fr",
+                            "value": "Vin rouge"
                         },
-                        "it": {
-                            "title": "Vino rosso"
+                        {
+                            "locale": "it",
+                            "value": "Vino rosso"
                         }
-                    }
+                    ]
                 },
                 "year": 2013,
-                "texts": {
-                    "de": {
-                        "fits_with": "Pasta, Fleisch mit würzigen Saucen",
-                        "varietal": "Primitivo",
-                        "character": "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen.",
-                        "temperature": "16-18 °C",
-                        "awards": "",
-                        "storage": "3 Jahre"
+                "fits_with": [
+                    {
+                        "locale": "de",
+                        "value": "Pasta, Fleisch mit würzigen Saucen"
                     },
-                    "fr": {
-                        "fits_with": "Pâtes, viande aux sauces relevées",
-                        "varietal": "Primitivo",
-                        "character": "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse.",
-                        "temperature": "16-18 °C",
-                        "awards": "",
-                        "storage": "3 ans"
+                    {
+                        "locale": "fr",
+                        "value": "Pâtes, viande aux sauces relevées"
                     },
-                    "it": {
-                        "fits_with": "Pasta, carni accompagnate da salse aromatiche",
-                        "varietal": "Primitivo",
-                        "character": "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato.",
-                        "temperature": "16-18 °C",
-                        "awards": "",
-                        "storage": "3 anni"
+                    {
+                        "locale": "it",
+                        "value": "Pasta, carni accompagnate da salse aromatiche"
                     }
-                },
+                ],
+                "varietal": [
+                    {
+                        "locale": "de",
+                        "value": "Primitivo"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "Primitivo"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "Primitivo"
+                    }
+                ],
+                "character": [
+                    {
+                        "locale": "de",
+                        "value": "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                    },
+                    {
+                        "locale": "it",
+                        "value": "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                    }
+                ],
+                "temperature": [
+                    {
+                        "locale": "de",
+                        "value": "16-18 °C"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "16-18 °C"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "16-18 °C"
+                    }
+                ],
+                "awards": [
+                    {
+                        "locale": "de",
+                        "value": ""
+                    },
+                    {
+                        "locale": "fr",
+                        "value": ""
+                    },
+                    {
+                        "locale": "it",
+                        "value": ""
+                    }
+                ],
+                "storage": [
+                    {
+                        "locale": "de",
+                        "value": "3 Jahre"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "3 ans"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "3 anni"
+                    }
+                ],
                 "rating": {
                     "value": 4.45,
                     "total": 11,
@@ -206,17 +343,20 @@
                 "stock": {
                     "value": -15,
                     "code": 2,
-                    "texts": {
-                        "de": {
-                            "message": "Derzeit nicht bestellbar"
+                    "message": [
+                        {
+                            "locale": "de",
+                            "value": "Derzeit nicht bestellbar"
                         },
-                        "fr": {
-                            "message": "Actuellement pas disponible"
+                        {
+                            "locale": "fr",
+                            "value": "Actuellement pas disponible"
                         },
-                        "it": {
-                            "message": "Attualmente non disponibile"
+                        {
+                            "locale": "it",
+                            "value": "Attualmente non disponibile"
                         }
-                    }
+                    ]
                 },
                 "shop_url": null
             }
