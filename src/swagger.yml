@@ -141,7 +141,10 @@ definitions:
         type: string
         description: Street number
       zip_code:
-        type: string
+        type: integer
+        format: int32
+        minimum: 1000
+        maximum: 9699
         description: Zip code
       city:
         type: string
@@ -286,6 +289,8 @@ definitions:
       weekday:
         type: integer
         format: int32
+        minimum: 0
+        maximum: 6
         description: Day of week; 0 = Sunday
       opens_at:
         type: string

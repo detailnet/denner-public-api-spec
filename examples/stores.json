@@ -6,7 +6,7 @@
             "name": "Einkaufszentrum Letzipark",
             "address": "Baslerstrasse",
             "number": "50",
-            "zip_code": "8066",
+            "zip_code": 8066,
             "canton_code": "ZH",
             "city": "Zürich",
             "country_code": "CH",
@@ -32,6 +32,10 @@
                 "name": "Denner"
             },
             "opening_times": [
+            ],
+            "special_opening_times": [
+            ],
+            "calendar_opening_times": [
             ],
             "services": [
                 {
@@ -97,7 +101,7 @@
             "navision_id": "302",
             "address": "Werdstrasse",
             "number": "36",
-            "zip_code": "8004",
+            "zip_code": 8004,
             "canton_code": "ZH",
             "city": "Zürich",
             "country_code": "CH",
@@ -165,6 +169,102 @@
                     "closes_at": "20:00:00"
                 }
             ],
+            "special_opening_times": [
+                {
+                    "weekday": 7,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "opens_at": "10:00:00",
+                    "closes_at": "16:00:00",
+                    "is_closed_whole_day": false
+                }
+            ],
+            "calendar_opening_times": [
+                {
+                    "day": "2015-06-22",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-23",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-24",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-25",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-26",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-27",
+                    "opens_at": "08:00:00",
+                    "closes_at": "12:00:00"
+                },
+                {
+                    "day": "2015-06-27",
+                    "opens_at": "14:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-28",
+                    "opens_at": "10:00:00",
+                    "closes_at": "16:00:00"
+                },
+                {
+                    "day": "2015-06-29",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-30",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-01",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-03",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-04",
+                    "opens_at": "08:00:00",
+                    "closes_at": "12:00:00"
+                },
+                {
+                    "day": "2015-07-04",
+                    "opens_at": "14:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-06",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-07",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                }
+            ],
             "services": [
                 {
                     "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
@@ -229,7 +329,7 @@
             "navision_id": "303",
             "address": "Apollostrasse",
             "number": "2",
-            "zip_code": "8032",
+            "zip_code": 8032,
             "canton_code": "ZH",
             "city": "Zürich",
             "country_code": "CH",
@@ -295,6 +395,80 @@
                     }
                 ]
             },
+            "special_opening_times": [
+                {
+                    "weekday": 5,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "is_closed_whole_day": true
+                },
+                {
+                    "weekday": 6,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "is_closed_whole_day": true
+                }
+            ],
+            "calendar_opening_times": [
+                {
+                    "day": "2015-06-22",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-23",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-24",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-25",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-29",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-30",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-01",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-03",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-04",
+                    "opens_at": "08:00:00",
+                    "closes_at": "18:00:00"
+                },
+                {
+                    "day": "2015-07-06",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-07",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                }
+            ],
             "services": [
                 {
                     "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
