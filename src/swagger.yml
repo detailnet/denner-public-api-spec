@@ -392,7 +392,7 @@ definitions:
         format: int32
       articles:
         $ref: '#/definitions/AdvertisedArticles'
-  Articles:
+  AdvertisedArticles:
     type: array
     items:
       $ref: '#/definitions/AdvertisedArticle'
