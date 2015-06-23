@@ -3,30 +3,30 @@
         {
             "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
             "code": 1,
-            "labels": {
+            "texts": {
                 "de": {
-                    "name": "Denner"
+                    "title": "Denner"
                 },
                 "fr": {
-                    "name": "Denner"
+                    "title": "Denner"
                 },
                 "it": {
-                    "name": "Denner"
+                    "title": "Denner"
                 }
             }
         },
         {
             "id": "18549f95-6471-4e21-968f-8a0bf2e0f79b",
             "code": 2,
-            "labels": {
+            "texts": {
                 "de": {
-                    "name": "Denner Satellit und Denner Express"
+                    "title": "Denner Satellit und Denner Express"
                 },
                 "fr": {
-                    "name": "Satellite Denner et Denner Express"
+                    "title": "Satellite Denner et Denner Express"
                 },
                 "it": {
-                    "name": "Satelliti Denner e Denner Express"
+                    "title": "Satelliti Denner e Denner Express"
                 }
             }
         }

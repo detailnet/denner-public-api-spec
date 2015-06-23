@@ -3,7 +3,7 @@
         {
             "id": "3734ef1f-4c1a-428c-af24-7d85af7c5041",
             "name": "Aktionen der Folgewoche",
-            "labels": {
+            "texts": {
                 "de": {
                     "title": "Aktionen der Folgewoche"
                 },
@@ -19,7 +19,7 @@
         {
             "id": "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c",
             "name": "Aktionen aktuelle Woche",
-            "labels": {
+            "texts": {
                 "de": {
                     "title": "Aktionen aktuelle Woche"
                 },

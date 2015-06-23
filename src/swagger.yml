@@ -257,22 +257,22 @@ definitions:
         type: string
         pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
         description: Unique identifier
-      labels:
-        $ref: '#/definitions/ServiceLabels'
+      texts:
+        $ref: '#/definitions/ServiceTexts'
     description: Angebot
-  ServiceLabels:
+  ServiceTexts:
     type: object
     properties:
       de:
-        $ref: '#/definitions/ServiceLabel'
+        $ref: '#/definitions/ServiceText'
       fr:
-        $ref: '#/definitions/ServiceLabel'
+        $ref: '#/definitions/ServiceText'
       it:
-        $ref: '#/definitions/ServiceLabel'
-  ServiceLabel:
+        $ref: '#/definitions/ServiceText'
+  ServiceText:
     type: object
     properties:
-      name:
+      title:
         type: string
         description: Localized name of service
   OpeningTime:
@@ -333,21 +333,21 @@ definitions:
         type: string
         pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
         description: Unique identifier
-      labels:
-        $ref: '#/definitions/ChannelLabels'
-  ChannelLabels:
+      texts:
+        $ref: '#/definitions/ChannelTexts'
+  ChannelTexts:
     type: object
     properties:
       de:
-        $ref: '#/definitions/ChannelLabel'
+        $ref: '#/definitions/ChannelText'
       fr:
-        $ref: '#/definitions/ChannelLabel'
+        $ref: '#/definitions/ChannelText'
       it:
-        $ref: '#/definitions/ChannelLabel'
-  ChannelLabel:
+        $ref: '#/definitions/ChannelText'
+  ChannelText:
     type: object
     properties:
-      name:
+      title:
         type: string
         description: Localized name of channel
   Country:
@@ -357,22 +357,22 @@ definitions:
         type: string
         pattern: '/^[A-Z]{2}$/'
         description: Country code definition from ISO 3166
-      labels:
-        $ref: '#/definitions/CountryLabels'
+      texts:
+        $ref: '#/definitions/CountryTexts'
     description: Country
-  CountryLabels:
+  CountryTexts:
     type: object
     properties:
       de:
-        $ref: '#/definitions/CountryLabel'
+        $ref: '#/definitions/CountryText'
       fr:
-        $ref: '#/definitions/CountryLabel'
+        $ref: '#/definitions/CountryText'
       it:
-        $ref: '#/definitions/CountryLabel'
-  CountryLabel:
+        $ref: '#/definitions/CountryText'
+  CountryText:
     type: object
     properties:
-      name:
+      title:
         type: string
         description: Localized name of country
   OnlinePublicationArticlesResponse:

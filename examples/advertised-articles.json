@@ -71,29 +71,29 @@
             "online_group": {
                 "id": "671988cc-ca5f-484e-8db8-23a65ea0044a",
                 "code": 4003,
-                "labels": {
+                "texts": {
                     "de": {
-                        "name": "Wein"
+                        "title": "Wein"
                     },
                     "fr": {
-                        "name": "Vins"
+                        "title": "Vins"
                     },
                     "it": {
-                        "name": "Vini"
+                        "title": "Vini"
                     }
                 },
                 "parent": {
                     "id": "5b79391b-b436-45f9-b3e4-93ec3ae1fae2",
                     "code": 4001,
-                    "labels": {
+                    "texts": {
                         "de": {
-                            "name": "Tafelgetränke und Mineralwasser"
+                            "title": "Tafelgetränke und Mineralwasser"
                         },
                         "fr": {
-                            "name": "Boissons table et eau minérale"
+                            "title": "Boissons table et eau minérale"
                         },
                         "it": {
-                            "name": "Bevande da tavola e acque minerali"
+                            "title": "Bevande da tavola e acque minerali"
                         }
                     }
                 }
@@ -101,29 +101,29 @@
             "article_group": {
                 "id": "b3c6797a-777a-4103-aba8-d82089ba2980",
                 "code": "60-?",
-                "labels": {
+                "texts": {
                     "de": {
-                        "name": "Rotwein"
+                        "title": "Rotwein"
                     },
                     "fr": {
-                        "name": ""
+                        "title": ""
                     },
                     "it": {
-                        "name": ""
+                        "title": ""
                     }
                 },
                 "parent": {
                     "id": "380d422a-5b8f-42c5-872c-c4ddf4bb5611",
                     "code": "60",
-                    "labels": {
+                    "texts": {
                         "de": {
-                            "name": "Wein"
+                            "title": "Wein"
                         },
                         "fr": {
-                            "name": "Vins"
+                            "title": "Vins"
                         },
                         "it": {
-                            "name": "Vini"
+                            "title": "Vini"
                         }
                     }
                 }
@@ -131,43 +131,43 @@
             "wine": {
                 "country": {
                     "id": "IT",
-                    "labels": {
+                    "texts": {
                         "de": {
-                            "name": "Italien"
+                            "title": "Italien"
                         },
                         "fr": {
-                            "name": "L'Italie"
+                            "title": "L'Italie"
                         },
                         "it": {
-                            "name": "Italia"
+                            "title": "Italia"
                         }
                     }
                 },
                 "region": {
                     "id": "b19c42bf-ed78-46ff-ad6f-fc688a059e6a",
-                    "labels": {
+                    "texts": {
                         "de": {
-                            "name": "Apulien"
+                            "title": "Apulien"
                         },
                         "fr": {
-                            "name": "Les Pouilles"
+                            "title": "Les Pouilles"
                         },
                         "it": {
-                            "name": "Puglia"
+                            "title": "Puglia"
                         }
                     }
                 },
                 "type": {
                     "id": "5395aec7-e36d-4b7f-99f6-a8a7f60fa412",
-                    "labels": {
+                    "texts": {
                         "de": {
-                            "name": "Rotwein"
+                            "title": "Rotwein"
                         },
                         "fr": {
-                            "name": "Vin rouge"
+                            "title": "Vin rouge"
                         },
                         "it": {
-                            "name": "Vino rosso"
+                            "title": "Vino rosso"
                         }
                     }
                 },
@@ -206,7 +206,7 @@
                 "stock": {
                     "value": -15,
                     "code": 2,
-                    "labels": {
+                    "texts": {
                         "de": {
                             "message": "Derzeit nicht bestellbar"
                         },
