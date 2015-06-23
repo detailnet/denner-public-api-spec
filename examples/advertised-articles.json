@@ -33,17 +33,19 @@
             "prices": {
                 "sales": 9.9,
                 "instead": 11.4,
-                "base": 1.32
-            },
-            "prices_by_quantity": {
-                "1": {
-                    "sales": 9.9,
-                    "instead": 11.4
-                },
-                "6": {
-                    "sales": 59.4,
-                    "instead": 68.4
-                }
+                "base": 1.32,
+                "by_quantity": [
+                    {
+                        "quantity": 1,
+                        "sales": 9.9,
+                        "instead": 11.4
+                    },
+                    {
+                        "quantity": 6,
+                        "sales": 59.4,
+                        "instead": 68.4
+                    }
+                ]
             },
             "amount": 6,
             "content": {
