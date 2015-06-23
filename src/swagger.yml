@@ -130,8 +130,9 @@ definitions:
         type: string
         pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
         description: Unique identifier
-      navision_id:
-        type: string
+      code:
+        type: integer
+        format: int32
         description: Navision store code
       name:
         type: string
@@ -151,9 +152,8 @@ definitions:
       city:
         type: string
         description: City
-      country_code:
-        type: string
-        description: Country code
+      country:
+        $ref: '#/definitions/Country'
       canton_code:
         type: string
         description: Canton (state) code
@@ -335,3 +335,28 @@ definitions:
       name:
         type: string
         description: Localized name of channel
+  Country:
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '/^[A-Z]{2}$/'
+        description: Country code definition from ISO 3166
+      labels:
+        $ref: '#/definitions/CountryLabels'
+    description: Country
+  CountryLabels:
+    type: object
+    properties:
+      de:
+        $ref: '#/definitions/CountryLabel'
+      fr:
+        $ref: '#/definitions/CountryLabel'
+      it:
+        $ref: '#/definitions/CountryLabel'
+  CountryLabel:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Localized name of country

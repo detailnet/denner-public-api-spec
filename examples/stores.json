@@ -2,14 +2,27 @@
     "stores": [
         {
             "id": "2c67df3bc-0e62-41cf-8976-f0195b974a10",
-            "navision_id": "300",
+            "code": "300",
             "name": "Einkaufszentrum Letzipark",
             "address": "Baslerstrasse",
             "number": "50",
             "zip_code": 8066,
             "canton_code": "ZH",
             "city": "Zürich",
-            "country_code": "CH",
+            "country": {
+                "id": "CH",
+                "labels": {
+                    "de": {
+                        "name": "Schweiz"
+                    },
+                    "fr": {
+                        "name": "Suisse"
+                    },
+                    "it": {
+                        "name": "Svizzera"
+                    }
+                }
+            },
             "phone": "044 400 20 88",
             "hotline": "0848 99 66 33",
             "payment_types": [
@@ -108,13 +121,26 @@
         },
         {
             "id": "bcb8a388-8998-4d08-85a6-4864199704ee",
-            "navision_id": "302",
+            "code": "302",
             "address": "Werdstrasse",
             "number": "36",
             "zip_code": 8004,
             "canton_code": "ZH",
             "city": "Zürich",
-            "country_code": "CH",
+            "country": {
+                "id": "CH",
+                "labels": {
+                    "de": {
+                        "name": "Schweiz"
+                    },
+                    "fr": {
+                        "name": "Suisse"
+                    },
+                    "it": {
+                        "name": "Svizzera"
+                    }
+                }
+            },
             "phone": "044 240 22 83",
             "hotline": "0848 99 66 33",
             "payment_types": [
@@ -345,13 +371,26 @@
         },
         {
             "id": "0fb61969-43de-4177-9fbb-e070d71623a2",
-            "navision_id": "303",
+            "code": 303,
             "address": "Apollostrasse",
             "number": "2",
             "zip_code": 8032,
             "canton_code": "ZH",
             "city": "Zürich",
-            "country_code": "CH",
+            "country": {
+                "id": "CH",
+                "labels": {
+                    "de": {
+                        "name": "Schweiz"
+                    },
+                    "fr": {
+                        "name": "Suisse"
+                    },
+                    "it": {
+                        "name": "Svizzera"
+                    }
+                }
+            },
             "phone": "044 381 24 92",
             "hotline": "0848 99 66 33",
             "payment_types": [
@@ -512,7 +551,7 @@
                     }
                 },
                 {
-                    "id": "2",
+                    "id": "85aa57ad-2bf3-48e5-a1a0-813889cbae26",
                     "labels": {
                         "de": {
                             "name": "Bordeaux Grands Crus"
