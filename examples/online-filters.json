@@ -3,33 +3,39 @@
         {
             "id": "3734ef1f-4c1a-428c-af24-7d85af7c5041",
             "name": "Aktionen der Folgewoche",
-            "texts": {
-                "de": {
-                    "title": "Aktionen der Folgewoche"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Aktionen der Folgewoche"
                 },
-                "fr": {
-                    "title": "Hits de la semaine suivante"
+                {
+                    "locale": "fr",
+                    "value": "Hits de la semaine suivante"
                 },
-                "it": {
-                    "title": "Promozioni della settimana seguente"
+                {
+                    "locale": "it",
+                    "value": "Promozioni della settimana seguente"
                 }
-            },
+            ],
             "sort_index": 0
         },
         {
             "id": "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c",
             "name": "Aktionen aktuelle Woche",
-            "texts": {
-                "de": {
-                    "title": "Aktionen aktuelle Woche"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Aktionen aktuelle Woche"
                 },
-                "fr": {
-                    "title": "Hits de la semaine en cours"
+                {
+                    "locale": "fr",
+                    "value": "Hits de la semaine en cours"
                 },
-                "it": {
-                    "title": "Promozioni della settimana corrente"
+                {
+                    "locale": "it",
+                    "value": "Promozioni della settimana corrente"
                 }
-            },
+            ],
             "sort_index": 1
         }
     ]
