@@ -229,26 +229,7 @@ definitions:
           $ref: '#/definitions/Service'
         description: Services provided
       channel:
-        type: object
-        properties:
-          id:
-            type: string
-            description: Unique identifier
-          labels:
-            type: object
-            properties:
-              de:
-                name:
-                  type: string
-                  description: Localized channel name
-              fr:
-                name:
-                  type: string
-                  description: Localized channel name
-              it:
-                name:
-                  type: string
-                  description: Localized channel name
+        $ref: '#/definitions/Channel'
   PaymentType:
     type: string
     description: Payment type
@@ -327,3 +308,26 @@ definitions:
         type: string
         description: 'Closing time; Format HH:MM:SS'
         pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+  Channel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique identifier
+      labels:
+        $ref: '#/definitions/ChannelLabels'
+  ChannelLabels:
+    type: object
+    properties:
+      de:
+        $ref: '#/definitions/ChannelLabel'
+      fr:
+        $ref: '#/definitions/ChannelLabel'
+      it:
+        $ref: '#/definitions/ChannelLabel'
+  ChannelLabel:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Localized name of channel
