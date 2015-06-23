@@ -548,7 +548,12 @@
                         "it": {
                             "name": "Humidor"
                         }
-                    }
+                    },
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
+                        }
+                    ]
                 },
                 {
                     "id": "85aa57ad-2bf3-48e5-a1a0-813889cbae26",
@@ -562,7 +567,17 @@
                         "it": {
                             "name": "Bordeaux Grands Crus"
                         }
-                    }
+                    },
+                    "appearances": [
+                        {
+                            "from": "2015-06-01",
+                            "to": "2015-06-30"
+                        },
+                        {
+                            "from": "2016-06-01",
+                            "to": "2016-06-30"
+                        }
+                    ]
                 },
                 {
                     "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
@@ -576,7 +591,12 @@
                         "it": {
                             "name": "Frutta e verdura"
                         }
-                    }
+                    },
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
+                        }
+                    ]
                 },
                 {
                     "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
@@ -590,7 +610,12 @@
                         "it": {
                             "name": "Frutta e verdura in vendita sfusa"
                         }
-                    }
+                    },
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
+                        }
+                    ]
                 },
                 {
                     "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
@@ -604,7 +629,12 @@
                         "it": {
                             "name": "Punto cottura"
                         }
-                    }
+                    },
+                    "appearances": [
+                        {
+                            "from": "2013-01-01"
+                        }
+                    ]
                 }
             ]
         }

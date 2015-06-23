@@ -58,12 +58,15 @@
                 "from": "2015-06-23",
                 "to": "2015-06-29"
             },
-            "visibility": {
+            "global_appearance": {
                 "from": "2015-06-19",
                 "to": "2015-06-29"
             },
+            "featured_appearance": {
+                "from": "2015-06-23",
+                "to": "2015-06-29"
+            },
             "promoted": true,
-            "leading": true,
             "compared": true,
             "online_group": {
                 "id": "671988cc-ca5f-484e-8db8-23a65ea0044a",

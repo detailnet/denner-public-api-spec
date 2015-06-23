@@ -24,29 +24,33 @@
                 "from": "2015-06-23",
                 "to": "2015-06-29"
             },
-            "filter_visibility": [
+            "filters": [
                 {
-                    "from": "2015-06-19",
-                    "to": "2015-06-22",
-                    "filter": {
-                        "id": "3734ef1f-4c1a-428c-af24-7d85af7c5041",
-                        "name": "Aktionen der Folgewoche"
-                    }
+                    "id": "3734ef1f-4c1a-428c-af24-7d85af7c5041",
+                    "name": "Aktionen der Folgewoche",
+                    "appearances": [
+                        {
+                            "from": "2015-06-19",
+                            "to": "2015-06-22"
+                        }
+                    ]
                 },
                 {
-                    "from": "2015-06-23",
-                    "to": "2015-06-29",
-                    "filter": {
-                        "id": "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c",
-                        "name": "Aktionen aktuelle Woche"
-                    }
+                    "id": "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c",
+                    "name": "Aktionen aktuelle Woche",
+                    "appearances": [
+                        {
+                            "from": "2015-06-23",
+                            "to": "2015-06-29"
+                        }
+                    ]
                 }
             ],
-            "global_visibility": {
+            "global_appearance": {
                 "from": "2015-06-19",
                 "to": "2015-06-29"
             },
-            "leading_visibility": {
+            "featured_appearance": {
                 "from": "2015-06-23",
                 "to": "2015-06-29"
             },
