@@ -29,7 +29,17 @@
             "parking_count": 0,
             "channel": {
                 "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
-                "name": "Denner"
+                "labels": {
+                    "de": {
+                        "name": "Denner"
+                    },
+                    "fr": {
+                        "name": "Denner"
+                    },
+                    "it": {
+                        "name": "Denner"
+                    }
+                }
             },
             "opening_times": [
             ],
@@ -123,7 +133,17 @@
             "parking_count": 0,
             "channel": {
                 "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
-                "name": "Denner"
+                "labels": {
+                    "de": {
+                        "name": "Denner"
+                    },
+                    "fr": {
+                        "name": "Denner"
+                    },
+                    "it": {
+                        "name": "Denner"
+                    }
+                }
             },
             "opening_times": [
                 {
@@ -171,8 +191,7 @@
             ],
             "special_opening_times": [
                 {
-                    "weekday": 7,
-                    "valid_from": "2015-01-15T00:45:02",
+                    "day": "2015-06-28",
                     "opens_at": "10:00:00",
                     "closes_at": "16:00:00",
                     "is_closed_whole_day": false
@@ -353,7 +372,17 @@
             "parking_count": 0,
             "channel": {
                 "id": "18549f95-6471-4e21-968f-8a0bf2e0f79b",
-                "name": "Denner Satellit und Denner Express"
+                "labels": {
+                    "de": {
+                        "name": "Denner Satellit und Denner Express"
+                    },
+                    "fr": {
+                        "name": "Satellite Denner et Denner Express"
+                    },
+                    "it": {
+                        "name": "Satellite Denner und Denner Express"
+                    }
+                }
             },
             "opening_times": {
                 "opening_time": [
@@ -397,13 +426,11 @@
             },
             "special_opening_times": [
                 {
-                    "weekday": 5,
-                    "valid_from": "2015-01-15T00:45:02",
+                    "day": "2015-06-26",
                     "is_closed_whole_day": true
                 },
                 {
-                    "weekday": 6,
-                    "valid_from": "2015-01-15T00:45:02",
+                    "day": "2015-06-27",
                     "is_closed_whole_day": true
                 }
             ],
