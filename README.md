@@ -1,5 +1,39 @@
 # Denner Portal 2.0 API Spec
 
+## Terms and translations
+Consider the following terms:
+
+| DE          | EN          |
+|-------------|-------------|
+| Filiale     | Store       |
+| Artikel     | Article     |
+| Werbemittel | Publication |
+| Aktion      | Promotion   |
+| bewerben    | advertise   |
+
+## Data and resources
+The Denner Portal provides mostly advertising related data.
+
+### Stores
+
+* `/stores` (Filialen)
+* `/store-channels` (Filialkanäle)
+* `/store-services` (Filialangebote)
+
+### Articles/Promotions
+
+* `/article-groups` (Warengruppen)
+* `/articles` (Artikel)
+* `/advertised-articles` (beworbene Artikel)
+* `/promotions-types` (Aktionstypen)
+
+### Online-Publications
+
+* `/online-publications` (Werbemittel)
+* `/online-filters` (Angebotsfilter)
+* `/online-groups` (Internet-Sortimente)
+
+
 ## Building
 
 ### Protobox
