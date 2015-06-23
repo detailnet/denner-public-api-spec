@@ -1,0 +1,612 @@
+{
+    "stores": [
+        {
+            "id": "2c67df3bc-0e62-41cf-8976-f0195b974a10",
+            "code": "300",
+            "name": "Einkaufszentrum Letzipark",
+            "address": "Baslerstrasse",
+            "number": "50",
+            "zip_code": 8066,
+            "canton_code": "ZH",
+            "city": "Zürich",
+            "country": {
+                "id": "CH",
+                "labels": {
+                    "de": {
+                        "name": "Schweiz"
+                    },
+                    "fr": {
+                        "name": "Suisse"
+                    },
+                    "it": {
+                        "name": "Svizzera"
+                    }
+                }
+            },
+            "phone": "044 400 20 88",
+            "hotline": "0848 99 66 33",
+            "payment_types": [
+                "cash",
+                "euro",
+                "maestro",
+                "post"
+            ],
+            "credit_card": false,
+            "opened_on": "1998-08-01",
+            "closed_on": "2015-06-21",
+            "latitude": 47.386352500,
+            "longitude": 8.498772600,
+            "language": "de",
+            "email": "info@denner.ch",
+            "homepage": "http://www.denner.ch",
+            "parking_count": 0,
+            "channel": {
+                "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
+                "labels": {
+                    "de": {
+                        "name": "Denner"
+                    },
+                    "fr": {
+                        "name": "Denner"
+                    },
+                    "it": {
+                        "name": "Denner"
+                    }
+                }
+            },
+            "opening_times": [
+            ],
+            "special_opening_times": [
+            ],
+            "calendar_opening_times": [
+            ],
+            "services": [
+                {
+                    "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
+                    "labels": {
+                        "de": {
+                            "name": "Humidor"
+                        },
+                        "fr": {
+                            "name": "Humidor"
+                        },
+                        "it": {
+                            "name": "Humidor"
+                        }
+                    }
+                },
+                {
+                    "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
+                    "labels": {
+                        "de": {
+                            "name": "Früchte und Gemüse"
+                        },
+                        "fr": {
+                            "name": "Fruits et Légumes"
+                        },
+                        "it": {
+                            "name": "Frutta e verdura"
+                        }
+                    }
+                },
+                {
+                    "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
+                    "labels": {
+                        "de": {
+                            "name": "Früchte und Gemüse im Offenverkauf"
+                        },
+                        "fr": {
+                            "name": "Fruits et légumes en vrac"
+                        },
+                        "it": {
+                            "name": "Frutta e verdura in vendita sfusa"
+                        }
+                    }
+                },
+                {
+                    "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
+                    "labels": {
+                        "de": {
+                            "name": "Backstation"
+                        },
+                        "fr": {
+                            "name": "Four à pain"
+                        },
+                        "it": {
+                            "name": "Punto cottura"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "bcb8a388-8998-4d08-85a6-4864199704ee",
+            "code": "302",
+            "address": "Werdstrasse",
+            "number": "36",
+            "zip_code": 8004,
+            "canton_code": "ZH",
+            "city": "Zürich",
+            "country": {
+                "id": "CH",
+                "labels": {
+                    "de": {
+                        "name": "Schweiz"
+                    },
+                    "fr": {
+                        "name": "Suisse"
+                    },
+                    "it": {
+                        "name": "Svizzera"
+                    }
+                }
+            },
+            "phone": "044 240 22 83",
+            "hotline": "0848 99 66 33",
+            "payment_types": [
+                "cash",
+                "euro",
+                "maestro",
+                "post"
+            ],
+            "credit_card": true,
+            "opened_on": "1998-08-01",
+            "latitude": 47.372844700,
+            "longitude": 8.529515300,
+            "language": "de",
+            "email": "info@denner.ch",
+            "homepage": "http://www.denner.ch",
+            "parking_count": 0,
+            "channel": {
+                "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
+                "labels": {
+                    "de": {
+                        "name": "Denner"
+                    },
+                    "fr": {
+                        "name": "Denner"
+                    },
+                    "it": {
+                        "name": "Denner"
+                    }
+                }
+            },
+            "opening_times": [
+                {
+                    "weekday": 1,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 2,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 3,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 4,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 5,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 6,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "12:00:00"
+                },
+                {
+                    "weekday": 6,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "opens_at": "14:00:00",
+                    "closes_at": "20:00:00"
+                }
+            ],
+            "special_opening_times": [
+                {
+                    "day": "2015-06-28",
+                    "opens_at": "10:00:00",
+                    "closes_at": "16:00:00",
+                    "is_closed_whole_day": false
+                }
+            ],
+            "calendar_opening_times": [
+                {
+                    "day": "2015-06-22",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-23",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-24",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-25",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-26",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-27",
+                    "opens_at": "08:00:00",
+                    "closes_at": "12:00:00"
+                },
+                {
+                    "day": "2015-06-27",
+                    "opens_at": "14:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-28",
+                    "opens_at": "10:00:00",
+                    "closes_at": "16:00:00"
+                },
+                {
+                    "day": "2015-06-29",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-30",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-01",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-03",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-04",
+                    "opens_at": "08:00:00",
+                    "closes_at": "12:00:00"
+                },
+                {
+                    "day": "2015-07-04",
+                    "opens_at": "14:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-06",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-07",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                }
+            ],
+            "services": [
+                {
+                    "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
+                    "labels": {
+                        "de": {
+                            "name": "Humidor"
+                        },
+                        "fr": {
+                            "name": "Humidor"
+                        },
+                        "it": {
+                            "name": "Humidor"
+                        }
+                    }
+                },
+                {
+                    "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
+                    "labels": {
+                        "de": {
+                            "name": "Früchte und Gemüse"
+                        },
+                        "fr": {
+                            "name": "Fruits et Légumes"
+                        },
+                        "it": {
+                            "name": "Frutta e verdura"
+                        }
+                    }
+                },
+                {
+                    "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
+                    "labels": {
+                        "de": {
+                            "name": "Früchte und Gemüse im Offenverkauf"
+                        },
+                        "fr": {
+                            "name": "Fruits et légumes en vrac"
+                        },
+                        "it": {
+                            "name": "Frutta e verdura in vendita sfusa"
+                        }
+                    }
+                },
+                {
+                    "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
+                    "labels": {
+                        "de": {
+                            "name": "Backstation"
+                        },
+                        "fr": {
+                            "name": "Four à pain"
+                        },
+                        "it": {
+                            "name": "Punto cottura"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "0fb61969-43de-4177-9fbb-e070d71623a2",
+            "code": 303,
+            "address": "Apollostrasse",
+            "number": "2",
+            "zip_code": 8032,
+            "canton_code": "ZH",
+            "city": "Zürich",
+            "country": {
+                "id": "CH",
+                "labels": {
+                    "de": {
+                        "name": "Schweiz"
+                    },
+                    "fr": {
+                        "name": "Suisse"
+                    },
+                    "it": {
+                        "name": "Svizzera"
+                    }
+                }
+            },
+            "phone": "044 381 24 92",
+            "hotline": "0848 99 66 33",
+            "payment_types": [
+                "cash",
+                "euro",
+                "maestro",
+                "post"
+            ],
+            "credit_card": false,
+            "opened_on": "1998-08-01",
+            "renovation_from": "2015-08-05",
+            "renovation_to": "2015-08-15",
+            "latitude": 47.364482900,
+            "longitude": 8.555584000,
+            "language": "de",
+            "email": "info@denner.ch",
+            "homepage": "http://www.denner.ch",
+            "parking_count": 0,
+            "channel": {
+                "id": "18549f95-6471-4e21-968f-8a0bf2e0f79b",
+                "labels": {
+                    "de": {
+                        "name": "Denner Satellit und Denner Express"
+                    },
+                    "fr": {
+                        "name": "Satellite Denner et Denner Express"
+                    },
+                    "it": {
+                        "name": "Satellite Denner und Denner Express"
+                    }
+                }
+            },
+            "opening_times": {
+                "opening_time": [
+                    {
+                        "weekday": 1,
+                        "valid_from": "2014-04-01T00:45:01",
+                        "opens_at": "08:00:00",
+                        "closes_at": "20:00:00"
+                    },
+                    {
+                        "weekday": 2,
+                        "valid_from": "2014-04-01T00:45:01",
+                        "opens_at": "08:00:00",
+                        "closes_at": "20:00:00"
+                    },
+                    {
+                        "weekday": 3,
+                        "valid_from": "2014-04-01T00:45:01",
+                        "opens_at": "08:00:00",
+                        "closes_at": "20:00:00"
+                    },
+                    {
+                        "weekday": 4,
+                        "valid_from": "2014-04-01T00:45:01",
+                        "opens_at": "08:00:00",
+                        "closes_at": "20:00:00"
+                    },
+                    {
+                        "weekday": 5,
+                        "valid_from": "2015-01-02T00:45:34",
+                        "opens_at": "08:00:00",
+                        "closes_at": "20:00:00"
+                    },
+                    {
+                        "weekday": 6,
+                        "valid_from": "2014-04-01T00:45:01",
+                        "opens_at": "08:00:00",
+                        "closes_at": "18:00:00"
+                    }
+                ]
+            },
+            "special_opening_times": [
+                {
+                    "day": "2015-06-26",
+                    "is_closed_whole_day": true
+                },
+                {
+                    "day": "2015-06-27",
+                    "is_closed_whole_day": true
+                }
+            ],
+            "calendar_opening_times": [
+                {
+                    "day": "2015-06-22",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-23",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-24",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-25",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-29",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-06-30",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-01",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-02",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-03",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-04",
+                    "opens_at": "08:00:00",
+                    "closes_at": "18:00:00"
+                },
+                {
+                    "day": "2015-07-06",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "day": "2015-07-07",
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                }
+            ],
+            "services": [
+                {
+                    "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
+                    "labels": {
+                        "de": {
+                            "name": "Humidor"
+                        },
+                        "fr": {
+                            "name": "Humidor"
+                        },
+                        "it": {
+                            "name": "Humidor"
+                        }
+                    }
+                },
+                {
+                    "id": "85aa57ad-2bf3-48e5-a1a0-813889cbae26",
+                    "labels": {
+                        "de": {
+                            "name": "Bordeaux Grands Crus"
+                        },
+                        "fr": {
+                            "name": "Bordeaux Grands Crus"
+                        },
+                        "it": {
+                            "name": "Bordeaux Grands Crus"
+                        }
+                    }
+                },
+                {
+                    "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
+                    "labels": {
+                        "de": {
+                            "name": "Früchte und Gemüse"
+                        },
+                        "fr": {
+                            "name": "Fruits et Légumes"
+                        },
+                        "it": {
+                            "name": "Frutta e verdura"
+                        }
+                    }
+                },
+                {
+                    "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
+                    "labels": {
+                        "de": {
+                            "name": "Früchte und Gemüse im Offenverkauf"
+                        },
+                        "fr": {
+                            "name": "Fruits et légumes en vrac"
+                        },
+                        "it": {
+                            "name": "Frutta e verdura in vendita sfusa"
+                        }
+                    }
+                },
+                {
+                    "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
+                    "labels": {
+                        "de": {
+                            "name": "Backstation"
+                        },
+                        "fr": {
+                            "name": "Four à pain"
+                        },
+                        "it": {
+                            "name": "Punto cottura"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

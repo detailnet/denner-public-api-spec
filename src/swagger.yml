@@ -19,13 +19,13 @@ paths:
     get:
       description: 'List all online filters ("Angebotsfilter")'
       parameters:
-        - $ref: PageParam
-        - $ref: PageSizeParam
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
       responses:
         200:
           description: Successful listing
           schema:
-            $ref: OnlineFiltersResponse
+            $ref: '#/definitions/OnlineFiltersResponse'
 #  /online-categories:
 #    get:
 #      description: 'List all online categories ("Werbemittel")'
@@ -38,9 +38,18 @@ paths:
 #  /article-groups:
 #    get:
 #      description: 'List all article groups ("Warengruppen")'
-#  /stores:
-#    get:
-#      description: 'List all stores ("Filialen")'
+  /stores:
+    get:
+      description: 'List all stores ("Filialen")'
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/StoresResponse'
+
 parameters:
   PageParam:
     name: page
@@ -71,7 +80,7 @@ definitions:
         type: integer
         format: int32
       online_filters:
-        $ref: OnlineFilters
+        $ref: '#/definitions/OnlineFilters'
   OnlineFilterText:
     type: object
     properties:
@@ -83,12 +92,271 @@ definitions:
     properties:
       id:
         type: string
+        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
         description: Unique identifier
       texts:
         type: object
         additionalProperties:
-          $ref: OnlineFilterText
+          $ref: '#/definitions/OnlineFilterText'
   OnlineFilters:
     type: array
     items:
-      $ref: OnlineFilter
+      $ref: '#/definitions/OnlineFilter'
+  StoresResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      stores:
+        $ref: '#/definitions/Stores'
+  Stores:
+    type: array
+    items:
+      $ref: '#/definitions/Store'
+  Store:
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+        description: Unique identifier
+      code:
+        type: integer
+        format: int32
+        description: Navision store code
+      name:
+        type: string
+        description: Name
+      address:
+        type: string
+        description: Street
+      number:
+        type: string
+        description: Street number
+      zip_code:
+        type: integer
+        format: int32
+        minimum: 1000
+        maximum: 9699
+        description: Zip code
+      city:
+        type: string
+        description: City
+      country:
+        $ref: '#/definitions/Country'
+      canton_code:
+        type: string
+        description: Canton (state) code
+      phone:
+        type: string
+        description: Phone number
+      hotline:
+        type: string
+        description: Hotline number
+      payment_types:
+        type: array
+        description: Payment types
+        items:
+          $ref: '#/definitions/PaymentType'
+      credit_card:
+        type: boolean
+        description: Credit card can be used for payments?
+      opened_on:
+        type: string
+        format: date
+        description: Opened on
+      closed_on:
+        type: string
+        format: date
+        description: Closed on
+      renovation_from:
+        type: string
+        format: date
+        description: Renovation from
+      renovation_to:
+        type: string
+        format: date
+        description: Renovation to
+      latitude:
+        type: number
+        format: float
+        description: Geographic latitude
+      longitude:
+        type: number
+        format: float
+        description: Geographic longitude
+      language:
+        type: string
+        description: Language
+        pattern: '/^(de|fr|it)$/'
+      email:
+        type: string
+        description: E-mail address
+      homepage:
+        type: string
+        description: Website
+      parking_count:
+        type: integer
+        format: int32
+        minimum: 0
+        description: Reserved parking places for customers
+      opening_times:
+        type: array
+        description: Default opening times
+        items:
+          $ref: '#/definitions/OpeningTime'
+      special_opening_times:
+        type: array
+        items:
+          $ref: '#/definitions/SpecialOpeningTime'
+        description: Special opening times
+      calendar_opening_times:
+        type: array
+        items:
+          $ref: '#/definitions/CalendarOpeningTime'
+        description: Calendar opening times
+      services:
+        type: array
+        items:
+          $ref: '#/definitions/Service'
+        description: Services provided
+      channel:
+        $ref: '#/definitions/Channel'
+  PaymentType:
+    type: string
+    description: Payment type
+  Service:
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+        description: Unique identifier
+      labels:
+        $ref: '#/definitions/ServiceLabels'
+    description: Angebot
+  ServiceLabels:
+    type: object
+    properties:
+      de:
+        $ref: '#/definitions/ServiceLabel'
+      fr:
+        $ref: '#/definitions/ServiceLabel'
+      it:
+        $ref: '#/definitions/ServiceLabel'
+  ServiceLabel:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Localized name of service
+  OpeningTime:
+    type: object
+    properties:
+      weekday:
+        type: integer
+        format: int32
+        description: Day of week; 0 = Sunday
+      opens_at:
+        type: string
+        description: 'Opening time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+      closes_at:
+        type: string
+        description: 'Closing time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+      valid_from:
+        type: string
+        format: date-time
+        description: 'Valid from; Format date-time of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+  SpecialOpeningTime:
+    type: object
+    properties:
+      day:
+         type: string
+         format: date
+         description: 'Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+      opens_at:
+        type: string
+        description: 'Opening time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+      closes_at:
+        type: string
+        description: 'Closing time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+      is_closed_whole_day:
+        type: boolean
+  CalendarOpeningTime:
+    type: object
+    properties:
+      day:
+        type: string
+        format: date
+        description: 'Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+      opens_at:
+        type: string
+        description: 'Opening time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+      closes_at:
+        type: string
+        description: 'Closing time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+  Channel:
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+        description: Unique identifier
+      labels:
+        $ref: '#/definitions/ChannelLabels'
+  ChannelLabels:
+    type: object
+    properties:
+      de:
+        $ref: '#/definitions/ChannelLabel'
+      fr:
+        $ref: '#/definitions/ChannelLabel'
+      it:
+        $ref: '#/definitions/ChannelLabel'
+  ChannelLabel:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Localized name of channel
+  Country:
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '/^[A-Z]{2}$/'
+        description: Country code definition from ISO 3166
+      labels:
+        $ref: '#/definitions/CountryLabels'
+    description: Country
+  CountryLabels:
+    type: object
+    properties:
+      de:
+        $ref: '#/definitions/CountryLabel'
+      fr:
+        $ref: '#/definitions/CountryLabel'
+      it:
+        $ref: '#/definitions/CountryLabel'
+  CountryLabel:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Localized name of country
