@@ -24,7 +24,25 @@
                 "from": "2015-06-23",
                 "to": "2015-06-29"
             },
-            "visibility": {
+            "filter_visibility": [
+                {
+                    "from": "2015-06-19",
+                    "to": "2015-06-22",
+                    "filter": {
+                        "id": "3734ef1f-4c1a-428c-af24-7d85af7c5041",
+                        "name": "Aktionen der Folgewoche"
+                    }
+                },
+                {
+                    "from": "2015-06-23",
+                    "to": "2015-06-29",
+                    "filter": {
+                        "id": "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c",
+                        "name": "Aktionen aktuelle Woche"
+                    }
+                }
+            ],
+            "global_visibility": {
                 "from": "2015-06-19",
                 "to": "2015-06-29"
             },
