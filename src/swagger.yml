@@ -26,25 +26,24 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/OnlineFiltersResponse'
-#  /online-categories:
+#  /online-publications:
 #    get:
-#      description: 'List all online categories ("Werbemittel")'
-  /online-categories/{category_id}/articles:
+#      description: 'List all online publications ("Online-Werbemittel")'
+  /online-publications/{publication_id}/articles:
     get:
-      description: 'List all articles of the online category'
+      description: 'List all (advertised) articles of the online publication ("beworbene Artikel im Online-Werbemittel")'
       parameters:
-        - $ref: '#/parameters/CategoryIdPathParam'
+        - $ref: '#/parameters/PublicationIdPathParam'
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
       responses:
         200:
           description: Successful listing
           schema:
-            $ref: '#/definitions/OnlineCategoriesArticlesResponse'
-
-#  /article-categories:
+            $ref: '#/definitions/OnlinePublicationArticlesResponse'
+#  /online-groups:
 #    get:
-#      description: 'List all article categories ("Internet-Sortimente")'
+#      description: 'List all online groups ("Internet-Sortimente")'
 #  /article-groups:
 #    get:
 #      description: 'List all article groups ("Warengruppen")'
@@ -73,9 +72,9 @@ parameters:
     in: query
     type: integer
     format: int32
-  CategoryIdPathParam:
-    name: category_id
-    description: The unique identifier of a category
+  PublicationIdPathParam:
+    name: publication_id
+    description: The unique identifier of an online publication
     in: path
     type: string
     pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
@@ -102,7 +101,7 @@ definitions:
     properties:
       title:
         type: string
-        description: 'Title of the filter (as displayed below "Angebotsfilter")'
+        description: 'Title of the filter (as displayed below "Angebotsfilter" on denner.ch)'
   OnlineFilter:
     type: object
     properties:
@@ -376,7 +375,7 @@ definitions:
       name:
         type: string
         description: Localized name of country
-  OnlineCategoriesArticlesResponse:
+  OnlinePublicationArticlesResponse:
     type: object
     properties:
       page_count:
@@ -392,12 +391,12 @@ definitions:
         type: integer
         format: int32
       articles:
-        $ref: '#/definitions/Articles'
+        $ref: '#/definitions/AdvertisedArticles'
   Articles:
     type: array
     items:
-      $ref: '#/definitions/Article'
-  Article:
+      $ref: '#/definitions/AdvertisedArticle'
+  AdvertisedArticle:
     type: object
     properties:
       id:
