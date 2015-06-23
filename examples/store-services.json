@@ -1,0 +1,74 @@
+{
+    "store_services": [
+        {
+            "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
+            "labels": {
+                "de": {
+                    "name": "Humidor"
+                },
+                "fr": {
+                    "name": "Humidor"
+                },
+                "it": {
+                    "name": "Humidor"
+                }
+            }
+        },
+        {
+            "id": "85aa57ad-2bf3-48e5-a1a0-813889cbae26",
+            "labels": {
+                "de": {
+                    "name": "Bordeaux Grands Crus"
+                },
+                "fr": {
+                    "name": "Bordeaux Grands Crus"
+                },
+                "it": {
+                    "name": "Bordeaux Grands Crus"
+                }
+            }
+        },
+        {
+            "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
+            "labels": {
+                "de": {
+                    "name": "Früchte und Gemüse"
+                },
+                "fr": {
+                    "name": "Fruits et Légumes"
+                },
+                "it": {
+                    "name": "Frutta e verdura"
+                }
+            }
+        },
+        {
+            "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
+            "labels": {
+                "de": {
+                    "name": "Früchte und Gemüse im Offenverkauf"
+                },
+                "fr": {
+                    "name": "Fruits et légumes en vrac"
+                },
+                "it": {
+                    "name": "Frutta e verdura in vendita sfusa"
+                }
+            }
+        },
+        {
+            "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
+            "labels": {
+                "de": {
+                    "name": "Backstation"
+                },
+                "fr": {
+                    "name": "Four à pain"
+                },
+                "it": {
+                    "name": "Punto cottura"
+                }
+            }
+        }
+    ]
+}
