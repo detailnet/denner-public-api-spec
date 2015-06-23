@@ -2,7 +2,7 @@
     "stores": [
         {
             "id": "2c67df3bc-0e62-41cf-8976-f0195b974a10",
-            "code": "300",
+            "code": 300,
             "name": "Einkaufszentrum Letzipark",
             "address": "Baslerstrasse",
             "number": "50",
@@ -121,7 +121,7 @@
         },
         {
             "id": "bcb8a388-8998-4d08-85a6-4864199704ee",
-            "code": "302",
+            "code": 302,
             "address": "Werdstrasse",
             "number": "36",
             "zip_code": 8004,
