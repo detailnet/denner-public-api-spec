@@ -19,13 +19,13 @@ paths:
     get:
       description: 'List all online filters ("Angebotsfilter")'
       parameters:
-        - $ref: "#/parameters/PageParam"
-        - $ref: "#/parameters/PageSizeParam"
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
       responses:
         200:
           description: Successful listing
           schema:
-            $ref: "#/definitions/OnlineFiltersResponse"
+            $ref: '#/definitions/OnlineFiltersResponse'
 #  /online-categories:
 #    get:
 #      description: 'List all online categories ("Werbemittel")'
@@ -42,13 +42,13 @@ paths:
     get:
       description: 'List all stores ("Filialen")'
       parameters:
-        - $ref: "#/parameters/PageParam"
-        - $ref: "#/parameters/PageSizeParam"
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
       responses:
         200:
           description: Successful listing
           schema:
-            $ref: "#/definitions/StoresResponse"
+            $ref: '#/definitions/StoresResponse'
 
 parameters:
   PageParam:
@@ -80,7 +80,7 @@ definitions:
         type: integer
         format: int32
       online_filters:
-        $ref: "#/definitions/OnlineFilters"
+        $ref: '#/definitions/OnlineFilters'
   OnlineFilterText:
     type: object
     properties:
@@ -96,11 +96,11 @@ definitions:
       texts:
         type: object
         additionalProperties:
-          $ref: "#/definitions/OnlineFilterText"
+          $ref: '#/definitions/OnlineFilterText'
   OnlineFilters:
     type: array
     items:
-      $ref: "#/definitions/OnlineFilter"
+      $ref: '#/definitions/OnlineFilter'
   StoresResponse:
     type: object
     properties:
@@ -117,120 +117,126 @@ definitions:
         type: integer
         format: int32
       stores:
-        $ref: "#/definitions/Stores"
+        $ref: '#/definitions/Stores'
   Stores:
     type: array
     items:
-      $ref: "#/definitions/Store"
+      $ref: '#/definitions/Store'
   Store:
     type: object
     properties:
       id:
         type: string
         description: Unique identifier
+      navision_id:
+        type: string
+        description: Navision store code
       name:
         type: string
         description: Name
       address:
         type: string
-        description: Adresse
+        description: Street
       number:
         type: string
-        description: Nummer
+        description: Street number
       zip_code:
         type: string
-        description: PLZ
+        description: Zip code
       city:
         type: string
-        description: Stadt
+        description: City
       country_code:
         type: string
-        description: Ländercode
+        description: Country code
       canton_code:
         type: string
-        description: Kantonscode
+        description: Canton (state) code
       phone:
         type: string
-        description: Telefon
+        description: Phone number
       hotline:
         type: string
-        description: Hotline
+        description: Hotline number
       payment_types:
         type: array
+        description: Payment types
         items:
-          $ref: "#/definitions/PaymentType"
-        description: Bezahlmethoden
-      has_credit_card:
+          $ref: '#/definitions/PaymentType'
+      credit_card:
         type: boolean
-        description: Kreditkarte
+        description: Credit card can be used for payments?
       opened_on:
         type: string
         format: date
-        description: Eröffnung
+        description: Opened on
       closed_on:
         type: string
         format: date
-        description: Schliessung
+        description: Closed on
       renovation_from:
         type: string
         format: date
-        description: Umbau von
+        description: Renovation from
       renovation_to:
         type: string
         format: date
-        description: Umbau bis
+        description: Renovation to
       latitude:
         type: number
         format: float
-        description: Längengrad
+        description: Geographic latitude
       longitude:
         type: number
         format: float
-        description: Breitengrad
+        description: Geographic longitude
       language:
         type: string
-        pattern: "/^(de|fr|it)$/"
-        description: Sprache
-        # Could use type enum
+        description: Language
+        pattern: '/^(de|fr|it)$/'
       email:
         type: string
-#        pattern: "/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i"
-        description: E-Mail-Adresse
+        description: E-mail address
       homepage:
         type: string
-        description: Webseite
+        description: Website
       parking_count:
         type: integer
         format: int32
         minimum: 0
-        description: Anzahl Parkplätze
+        description: Reserved parking places for customers
       opening_times:
         type: array
+        description: Default opening times
         items:
-          $ref: "#/definitions/OpeningTime"
-        description: Standardöffnungszeiten
+          $ref: '#/definitions/OpeningTime'
       special_opening_times:
         type: array
         items:
-          $ref: "#/definitions/SpecialOpeningTime"
-        description: Sonderöffnungszeiten
+          $ref: '#/definitions/SpecialOpeningTime'
+        description: Special opening times
       calendar_opening_times:
         type: array
         items:
-          $ref: "#/definitions/CalendarOpeningTime"
-        description: Kalendarische Öffnungszeiten
+          $ref: '#/definitions/CalendarOpeningTime'
+        description: Calendar opening times
       services:
         type: array
         items:
-          $ref: "#/definitions/Service"
-        description: Angebote
-      channel_name:
-        type: string
-        description: Kanal
+          $ref: '#/definitions/Service'
+        description: Services provided
+      channel:
+        type: object
+        properties:
+          id:
+            type: string
+            description: Unique identifier
+          name:
+            type: string
+            description: Channel name
   PaymentType:
     type: string
-    pattern: "/^(cash|euro|maestro|post)$/"
-    description: Bezahlmethode
+    description: Payment type
   Service:
     type: object
     properties:
@@ -238,65 +244,61 @@ definitions:
         type: string
         description: Unique identifier
       labels:
-        $ref: "#/definitions/ServiceLabels"
+        $ref: '#/definitions/ServiceLabels'
     description: Angebot
   ServiceLabels:
     type: object
     properties:
       de:
-        $ref: "#/definitions/ServiceLabel"
+        $ref: '#/definitions/ServiceLabel'
       fr:
-        $ref: "#/definitions/ServiceLabel"
+        $ref: '#/definitions/ServiceLabel'
       it:
-        $ref: "#/definitions/ServiceLabel"
+        $ref: '#/definitions/ServiceLabel'
   ServiceLabel:
     type: object
     properties:
       name:
         type: string
-        description: Lokalisiertes name des Service
+        description: Localized name of service
   OpeningTime:
     type: object
     properties:
       weekday:
         type: integer
         format: int32
-        minLength: 0
-        maxLength: 6
         description: Day of week; 0 = Sunday
       opens_at:
         type: string
-        pattern: "/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/"
-        description: Öffnungszeit; Format HH:MM:SS
+        description: 'Opening time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
       closes_at:
         type: string
-        pattern: "/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/"
-        description: Scliessungszeit; Format HH:MM:SS
+        description: 'Closing time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
       valid_from:
         type: string
         format: date-time
-        description: Gültig ab; Format date-time von RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)
+        description: 'Valid from; Format date-time of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
   SpecialOpeningTime:
     type: object
     properties:
       weekday:
         type: integer
         format: int32
-        minLength: 0
-        maxLength: 6
         description: Day of week; 0 = Sunday
       opens_at:
         type: string
-        pattern: "/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/"
-        description: Öffnungszeit; Format HH:MM:SS
+        description: 'Opening time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
       closes_at:
         type: string
-        pattern: "/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/"
-        description: Scliessungszeit; Format HH:MM:SS
+        description: 'Closing time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
       valid_from:
         type: string
         format: date-time
-        description: Gültig ab; Format date-time von RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)
+        description: 'Valid from; Format date-time of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
       is_closed_whole_day:
         type: boolean
   CalendarOpeningTime:
@@ -305,12 +307,12 @@ definitions:
       day:
         type: string
         format: date
-        description: Datum; Format full-date von RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)
+        description: 'Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
       opens_at:
         type: string
-        pattern: "/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/"
-        description: Öffnungszeit; Format HH:MM:SS
+        description: 'Opening time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
       closes_at:
         type: string
-        pattern: "/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/"
-        description: Scliessungszeit; Format HH:MM:SS
+        description: 'Closing time; Format HH:MM:SS'
+        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'

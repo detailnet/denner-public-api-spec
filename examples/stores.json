@@ -2,6 +2,7 @@
     "stores": [
         {
             "id": "2c67df3bc-0e62-41cf-8976-f0195b974a10",
+            "navision_id": "300",
             "name": "Einkaufszentrum Letzipark",
             "address": "Baslerstrasse",
             "number": "50",
@@ -17,54 +18,20 @@
                 "maestro",
                 "post"
             ],
-            "has_credit_card": false,
+            "credit_card": false,
             "opened_on": "1998-08-01",
-            "closed_on": "2099-12-31",
-            "latitude": "47.386352500",
-            "longitude": "8.498772600",
+            "closed_on": "2015-06-21",
+            "latitude": 47.386352500,
+            "longitude": 8.498772600,
             "language": "de",
             "email": "info@denner.ch",
             "homepage": "http://www.denner.ch",
             "parking_count": 0,
-            "channel_Id": "1",
-            "channel_name": "Denner",
+            "channel": {
+                "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
+                "name": "Denner"
+            },
             "opening_times": [
-                {
-                    "weekday": 1,
-                    "valid_from": "2015-01-23T00:45:01",
-                    "opens_at": "09:00:00",
-                    "closes_at": "20:00:00"
-                },
-                {
-                    "weekday": 2,
-                    "valid_from": "2015-01-23T00:45:01",
-                    "opens_at": "09:00:00",
-                    "closes_at": "20:00:00"
-                },
-                {
-                    "weekday": 3,
-                    "valid_from": "2015-01-23T00:45:01",
-                    "opens_at": "09:00:00",
-                    "closes_at": "20:00:00"
-                },
-                {
-                    "weekday": 4,
-                    "valid_from": "2015-01-23T00:45:01",
-                    "opens_at": "09:00:00",
-                    "closes_at": "20:00:00"
-                },
-                {
-                    "weekday": 5,
-                    "valid_from": "2015-01-23T00:45:01",
-                    "opens_at": "09:00:00",
-                    "closes_at": "20:00:00"
-                },
-                {
-                    "weekday": 6,
-                    "valid_from": "2015-01-23T00:45:01",
-                    "opens_at": "09:00:00",
-                    "closes_at": "20:00:00"
-                }
             ],
             "services": [
                 {
@@ -127,6 +94,7 @@
         },
         {
             "id": "bcb8a388-8998-4d08-85a6-4864199704ee",
+            "navision_id": "302",
             "address": "Werdstrasse",
             "number": "36",
             "zip_code": "8004",
@@ -141,16 +109,18 @@
                 "maestro",
                 "post"
             ],
-            "has_credit_card": true,
+            "credit_card": true,
             "opened_on": "1998-08-01",
-            "closed_on": "2099-12-31",
-            "latitude": "47.372844700",
-            "longitude": "8.529515300",
+            "latitude": 47.372844700,
+            "longitude": 8.529515300,
             "language": "de",
             "email": "info@denner.ch",
             "homepage": "http://www.denner.ch",
             "parking_count": 0,
-            "channel_name": "Denner",
+            "channel": {
+                "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
+                "name": "Denner"
+            },
             "opening_times": [
                 {
                     "weekday": 1,
@@ -186,6 +156,12 @@
                     "weekday": 6,
                     "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
+                    "closes_at": "12:00:00"
+                },
+                {
+                    "weekday": 6,
+                    "valid_from": "2015-01-15T00:45:02",
+                    "opens_at": "14:00:00",
                     "closes_at": "20:00:00"
                 }
             ],
@@ -250,6 +226,7 @@
         },
         {
             "id": "0fb61969-43de-4177-9fbb-e070d71623a2",
+            "navision_id": "303",
             "address": "Apollostrasse",
             "number": "2",
             "zip_code": "8032",
@@ -264,16 +241,20 @@
                 "maestro",
                 "post"
             ],
-            "has_credit_card": false,
+            "credit_card": false,
             "opened_on": "1998-08-01",
-            "closed_on": "2099-12-31",
-            "latitude": "47.364482900",
-            "longitude": "8.555584000",
+            "renovation_from": "2015-08-05",
+            "renovation_to": "2015-08-15",
+            "latitude": 47.364482900,
+            "longitude": 8.555584000,
             "language": "de",
             "email": "info@denner.ch",
             "homepage": "http://www.denner.ch",
             "parking_count": 0,
-            "channel_name": "Denner",
+            "channel": {
+                "id": "18549f95-6471-4e21-968f-8a0bf2e0f79b",
+                "name": "Denner Satellit und Denner Express"
+            },
             "opening_times": {
                 "opening_time": [
                     {
