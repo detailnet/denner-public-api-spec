@@ -29,9 +29,19 @@ paths:
 #  /online-categories:
 #    get:
 #      description: 'List all online categories ("Werbemittel")'
-#  /online-categories/(categoryId)/articles:
-#    get:
-#      description: 'List all articles of the online category'
+  /online-categories/{category_id}/articles:
+    get:
+      description: 'List all articles of the online category'
+      parameters:
+        - $ref: '#/parameters/CategoryIdPathParam'
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlineCategoriesArticlesResponse'
+
 #  /article-categories:
 #    get:
 #      description: 'List all article categories ("Internet-Sortimente")'
@@ -63,6 +73,12 @@ parameters:
     in: query
     type: integer
     format: int32
+  CategoryIdPathParam:
+    name: category_id
+    description: The unique identifier of a category
+    in: path
+    type: string
+    pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
 definitions:
   OnlineFiltersResponse:
     type: object
@@ -360,3 +376,110 @@ definitions:
       name:
         type: string
         description: Localized name of country
+  OnlineCategoriesArticlesResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      articles:
+        $ref: '#/definitions/Articles'
+  Articles:
+    type: array
+    items:
+      $ref: '#/definitions/Article'
+  Article:
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+        description: Unique identifier
+      code:
+        type: string
+        pattern: '/^\d{6}$/'
+        description: Navision article code
+      name:
+        type: string
+        description: Article name
+      texts:
+        $ref: '#/definitions/ArticleTexts'
+      prices:
+        $ref: '#/definitions/Prices'
+      prices_by_quantity:
+        $ref: '#/definitions/QuantityPrices'
+  ArticleTexts:
+    type: object
+    properties:
+      de:
+        $ref: '#/definitions/ArticleText'
+      fr:
+        $ref: '#/definitions/ArticleText'
+      it:
+        $ref: '#/definitions/ArticleText'
+  ArticleText:
+    type: object
+    properties:
+      title:
+        type: string
+        description: Localized article title
+      description:
+        type: string
+        description: Localized article description
+      saving:
+        type: string
+        description: Localized article saving text
+      base:
+        type: string
+        description: Localized article base content text
+      info:
+        type: string
+        description: Localized article info text
+      validity:
+        type: string
+        description: Localized article validity text
+  Prices:
+    type: object
+    properties:
+      sales:
+        type: number
+        format: float
+        minimum: 0
+        description: Sales price
+      instead:
+        type: number
+        format: float
+        minimum: 0
+        description: Instead price
+      base:
+        type: number
+        format: float
+        minimum: 0
+        description: Price for base amount
+  QuantityPrices:
+    type: object
+    properties:
+      '{amount}':
+        $ref: '#/definitions/QuantityPrice'
+  QuantityPrice:
+    type: object
+    properties:
+      sales:
+        type: number
+        format: float
+        minimum: 0
+        description: Sales price
+      instead:
+        type: number
+        format: float
+        minimum: 0
+        description: Instead price
