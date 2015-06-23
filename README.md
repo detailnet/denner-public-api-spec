@@ -18,7 +18,7 @@ The Denner Portal provides mostly advertising related data.
 
 * `/stores` (Filialen, [example](examples/stores.json))
 * `/store-channels` (Filialkanäle)
-* `/store-services` (Filialangebote)
+* `/store-services` (Filialangebote, [example](examples/store-services.json))
 
 ### Articles/Promotions
 
