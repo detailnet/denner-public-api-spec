@@ -220,43 +220,36 @@
             "opening_times": [
                 {
                     "weekday": 1,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 2,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 3,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 4,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 5,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 6,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "12:00:00"
                 },
                 {
                     "weekday": 6,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "14:00:00",
                     "closes_at": "20:00:00"
                 }
@@ -266,7 +259,21 @@
                     "day": "2015-06-28",
                     "opens_at": "10:00:00",
                     "closes_at": "16:00:00",
-                    "is_closed_whole_day": false
+                    "reason": [
+                        {
+                            "locale": "de",
+                            "value": "Sonntagsverkauf"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "tbd"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "tbd"
+                        }
+                    ],
+                    "closed": false
                 }
             ],
             "calendar_opening_times": [
@@ -509,54 +516,74 @@
                     }
                 ]
             },
-            "opening_times": {
-                "opening_time": [
-                    {
-                        "weekday": 1,
-                        "valid_from": "2014-04-01T00:45:01",
-                        "opens_at": "08:00:00",
-                        "closes_at": "20:00:00"
-                    },
-                    {
-                        "weekday": 2,
-                        "valid_from": "2014-04-01T00:45:01",
-                        "opens_at": "08:00:00",
-                        "closes_at": "20:00:00"
-                    },
-                    {
-                        "weekday": 3,
-                        "valid_from": "2014-04-01T00:45:01",
-                        "opens_at": "08:00:00",
-                        "closes_at": "20:00:00"
-                    },
-                    {
-                        "weekday": 4,
-                        "valid_from": "2014-04-01T00:45:01",
-                        "opens_at": "08:00:00",
-                        "closes_at": "20:00:00"
-                    },
-                    {
-                        "weekday": 5,
-                        "valid_from": "2015-01-02T00:45:34",
-                        "opens_at": "08:00:00",
-                        "closes_at": "20:00:00"
-                    },
-                    {
-                        "weekday": 6,
-                        "valid_from": "2014-04-01T00:45:01",
-                        "opens_at": "08:00:00",
-                        "closes_at": "18:00:00"
-                    }
-                ]
-            },
+            "opening_times": [
+                {
+                    "weekday": 1,
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 2,
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 3,
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 4,
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 5,
+                    "opens_at": "08:00:00",
+                    "closes_at": "20:00:00"
+                },
+                {
+                    "weekday": 6,
+                    "opens_at": "08:00:00",
+                    "closes_at": "18:00:00"
+                }
+            ],
             "special_opening_times": [
                 {
                     "day": "2015-06-26",
-                    "is_closed_whole_day": true
+                    "reason": [
+                        {
+                            "locale": "de",
+                            "value": "Umbau"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "tbd"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "tbd"
+                        }
+                    ],
+                    "closed": true
                 },
                 {
                     "day": "2015-06-27",
-                    "is_closed_whole_day": true
+                    "reason": [
+                        {
+                            "locale": "de",
+                            "value": "Umbau"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "tbd"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "tbd"
+                        }
+                    ],
+                    "closed": true
                 }
             ],
             "calendar_opening_times": [
