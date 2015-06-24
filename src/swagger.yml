@@ -79,6 +79,8 @@ parameters:
     type: string
     pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
 definitions:
+
+  ### Responses
   OnlineFiltersResponse:
     type: object
     properties:
@@ -96,27 +98,11 @@ definitions:
         format: int32
       online_filters:
         $ref: '#/definitions/OnlineFilters'
-  OnlineFilterText:
-    type: object
-    properties:
-      title:
-        type: string
-        description: 'Title of the filter (as displayed below "Angebotsfilter" on denner.ch)'
-  OnlineFilter:
-    type: object
-    properties:
-      id:
-        type: string
-        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
-        description: Unique identifier
-      texts:
-        type: object
-        additionalProperties:
-          $ref: '#/definitions/OnlineFilterText'
   OnlineFilters:
     type: array
     items:
       $ref: '#/definitions/OnlineFilter'
+
   StoresResponse:
     type: object
     properties:
@@ -138,13 +124,79 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/Store'
-  Store:
+
+  ### Common models
+  UUIDv4:
+    type: string
+    pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+    description: Unique identifier
+
+  Language:
+    type: string
+    pattern: '/^(de|fr|it)$/'
+    description: Language
+
+  TranslatedField:              # Can't be used if a specific description is needed
+    type: array
+    items:
+      $ref: '#/definitions/Translation'
+  Translation:
+    type: object
+    properties:
+      locale:
+        $ref: '#/definitions/Language'
+      value:
+        type: string
+        description: Translated text value
+
+  Country:
     type: object
     properties:
       id:
         type: string
-        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
-        description: Unique identifier
+        pattern: '/^[A-Z]{2}$/'
+        description: Country code definition from ISO 3166
+      title:
+        $ref: '#/definitions/TranslatedField'
+    description: Country
+
+  Date:
+    type: string
+    format: date
+    description: 'Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+  Time:
+    type: string
+    pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+    description: 'Time; Format HH:MM:SS'
+  DayOfWeek:
+    type: integer
+    format: int32
+    minimum: 0   # According to swagger definition should use minLength for integer type, but does not works correctly
+    maximum: 6   # According to swagger definition should use maxLength for integer type, but does not works correctly
+    description: Day of week; 0 = Sunday
+
+  ### Main models
+
+  ## OnlineFilter models
+  OnlineFilter:
+      type: object
+      properties:
+        id:
+          $ref: '#/definitions/UUIDv4'
+        name:
+          type: string
+        title:
+          type: array
+          items:
+            $ref: '#/definitions/Translation'
+          description: Title of the filter (as displayed below "Angebotsfilter" on denner.ch)
+
+  ## Store models
+  Store:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
       code:
         type: integer
         format: int32
@@ -167,16 +219,18 @@ definitions:
       city:
         type: string
         description: City
-      country:
-        $ref: '#/definitions/Country'
       canton_code:
         type: string
         description: Canton (state) code
+      country:
+        $ref: '#/definitions/Country'
       phone:
         type: string
+#        pattern: @todo Fixed pattern?
         description: Phone number
       hotline:
         type: string
+#        pattern: @todo Fixed pattern?
         description: Hotline number
       payment_types:
         type: array
@@ -202,29 +256,31 @@ definitions:
         type: string
         format: date
         description: Renovation to
-      latitude:
-        type: number
-        format: float
-        description: Geographic latitude
       longitude:
         type: number
         format: float
         description: Geographic longitude
+      latitude:
+        type: number
+        format: float
+        description: Geographic latitude
       language:
-        type: string
-        description: Language
-        pattern: '/^(de|fr|it)$/'
+        $ref: '#/definitions/Language'
       email:
         type: string
+#        pattern: @todo Fixed pattern?
         description: E-mail address
       homepage:
         type: string
+#        pattern: @todo Fixed pattern?
         description: Website
       parking_count:
         type: integer
         format: int32
         minimum: 0
         description: Reserved parking places for customers
+      channel:
+        $ref: '#/definitions/Channel'
       opening_times:
         type: array
         description: Default opening times
@@ -243,138 +299,90 @@ definitions:
       services:
         type: array
         items:
-          $ref: '#/definitions/Service'
+          $ref: '#/definitions/StoreService' # StoreService diffears from Service
         description: Services provided
-      channel:
-        $ref: '#/definitions/Channel'
   PaymentType:
     type: string
+    pattern: '/^(cash|euro|maestro|post")$/' # @todo Needed?
     description: Payment type
-  Service:
+
+  StoreService:
     type: object
     properties:
       id:
-        type: string
-        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
-        description: Unique identifier
-      texts:
-        $ref: '#/definitions/ServiceTexts'
-    description: Angebot
-  ServiceTexts:
-    type: object
-    properties:
-      de:
-        $ref: '#/definitions/ServiceText'
-      fr:
-        $ref: '#/definitions/ServiceText'
-      it:
-        $ref: '#/definitions/ServiceText'
-  ServiceText:
-    type: object
-    properties:
+        $ref: '#/definitions/UUIDv4'
       title:
+        $ref: '#/definitions/TranslatedField'
+      appearances:
+        type: array
+        items:
+          $ref: '#/definitions/Appearance'
+  Appearance:
+    type: object
+    properties:
+      from:
         type: string
-        description: Localized name of service
+        format: date
+      to:
+        type: string
+        format: date
   OpeningTime:
     type: object
     properties:
       weekday:
-        type: integer
-        format: int32
-        description: Day of week; 0 = Sunday
+        $ref: '#/definitions/DayOfWeek'
       opens_at:
-        type: string
-        description: 'Opening time; Format HH:MM:SS'
-        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+        $ref: '#/definitions/Time'
       closes_at:
-        type: string
-        description: 'Closing time; Format HH:MM:SS'
-        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
-      valid_from:
-        type: string
-        format: date-time
-        description: 'Valid from; Format date-time of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+        $ref: '#/definitions/Time'
   SpecialOpeningTime:
     type: object
     properties:
       day:
-         type: string
-         format: date
-         description: 'Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+        $ref: '#/definitions/Date'
       opens_at:
-        type: string
-        description: 'Opening time; Format HH:MM:SS'
-        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+        $ref: '#/definitions/Time'
       closes_at:
-        type: string
-        description: 'Closing time; Format HH:MM:SS'
-        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
-      is_closed_whole_day:
+        $ref: '#/definitions/Time'
+      reason:
+        $ref: '#/definitions/TranslatedField'
+      closed:
         type: boolean
+        description: Is closed whole day?
   CalendarOpeningTime:
     type: object
     properties:
       day:
-        type: string
-        format: date
-        description: 'Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+        $ref: '#/definitions/Date'
       opens_at:
-        type: string
-        description: 'Opening time; Format HH:MM:SS'
-        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+        $ref: '#/definitions/Time'
       closes_at:
-        type: string
-        description: 'Closing time; Format HH:MM:SS'
-        pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+        $ref: '#/definitions/Time'
+
+  ## Channel model
   Channel:
     type: object
     properties:
       id:
-        type: string
-        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
-        description: Unique identifier
-      texts:
-        $ref: '#/definitions/ChannelTexts'
-  ChannelTexts:
-    type: object
-    properties:
-      de:
-        $ref: '#/definitions/ChannelText'
-      fr:
-        $ref: '#/definitions/ChannelText'
-      it:
-        $ref: '#/definitions/ChannelText'
-  ChannelText:
-    type: object
-    properties:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        format: int32
+        description: Navision channel code
       title:
-        type: string
-        description: Localized name of channel
-  Country:
+        $ref: '#/definitions/TranslatedField'
+
+  ## Service model
+  Service:
     type: object
     properties:
       id:
-        type: string
-        pattern: '/^[A-Z]{2}$/'
-        description: Country code definition from ISO 3166
-      texts:
-        $ref: '#/definitions/CountryTexts'
-    description: Country
-  CountryTexts:
-    type: object
-    properties:
-      de:
-        $ref: '#/definitions/CountryText'
-      fr:
-        $ref: '#/definitions/CountryText'
-      it:
-        $ref: '#/definitions/CountryText'
-  CountryText:
-    type: object
-    properties:
+        $ref: '#/definitions/UUIDv4'
       title:
-        type: string
-        description: Localized name of country
+        $ref: '#/definitions/TranslatedField'
+
+
+  ## Other models to refactor
   OnlinePublicationArticlesResponse:
     type: object
     properties:
