@@ -5,34 +5,40 @@
             "code": 1001,
             "sort_index": 0,
             "disabled": false,
-            "texts": {
-                "de": {
-                    "title": "Frischprodukte"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Frischprodukte"
                 },
-                "fr": {
-                    "title": "Produits frais"
+                {
+                    "locale": "fr",
+                    "value": "Produits frais"
                 },
-                "it": {
-                    "title": "Prodotti freschi"
+                {
+                    "locale": "it",
+                    "value": "Prodotti freschi"
                 }
-            },
+            ],
             "children": [
                 {
                     "id": "58afec5c-ece9-4b66-bc55-00d6dc1b65b8",
                     "code": 1001,
                     "sort_index": 0,
                     "disabled": false,
-                    "texts": {
-                        "de": {
-                            "title": "Milchprodukte"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Milchprodukte"
                         },
-                        "fr": {
-                            "title": "Produits laitiers"
+                        {
+                            "locale": "fr",
+                            "value": "Produits laitiers"
                         },
-                        "it": {
-                            "title": "Latticini"
+                        {
+                            "locale": "it",
+                            "value": "Latticini"
                         }
-                    },
+                    ],
                     "children": []
                 },
                 {
@@ -40,17 +46,20 @@
                     "code": 1002,
                     "sort_index": 1,
                     "disabled": true,
-                    "texts": {
-                        "de": {
-                            "title": "Eier"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Eier"
                         },
-                        "fr": {
-                            "title": "Oeufs"
+                        {
+                            "locale": "fr",
+                            "value": "Oeufs"
                         },
-                        "it": {
-                            "title": "Uova"
+                        {
+                            "locale": "it",
+                            "value": "Uova"
                         }
-                    },
+                    ],
                     "children": []
                 }
             ]

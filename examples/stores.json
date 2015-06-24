@@ -11,17 +11,20 @@
             "city": "Zürich",
             "country": {
                 "id": "CH",
-                "texts": {
-                    "de": {
-                        "title": "Schweiz"
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Schweiz"
                     },
-                    "fr": {
-                        "title": "Suisse"
+                    {
+                        "locale": "fr",
+                        "value": "Suisse"
                     },
-                    "it": {
-                        "title": "Svizzera"
+                    {
+                        "locale": "it",
+                        "value": "Svizzera"
                     }
-                }
+                ]
             },
             "phone": "044 400 20 88",
             "hotline": "0848 99 66 33",
@@ -42,17 +45,21 @@
             "parking_count": 0,
             "channel": {
                 "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
-                "texts": {
-                    "de": {
-                        "title": "Denner"
+                "code": 1,
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Denner"
                     },
-                    "fr": {
-                        "title": "Denner"
+                    {
+                        "locale": "fr",
+                        "value": "Denner"
                     },
-                    "it": {
-                        "title": "Denner"
+                    {
+                        "locale": "it",
+                        "value": "Denner"
                     }
-                }
+                ]
             },
             "opening_times": [
             ],
@@ -63,17 +70,20 @@
             "services": [
                 {
                     "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
-                    "texts": {
-                        "de": {
-                            "title": "Humidor"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Humidor"
                         },
-                        "fr": {
-                            "title": "Humidor"
+                        {
+                            "locale": "fr",
+                            "value": "Humidor"
                         },
-                        "it": {
-                            "title": "Humidor"
+                        {
+                            "locale": "it",
+                            "value": "Humidor"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -82,17 +92,20 @@
                 },
                 {
                     "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
-                    "texts": {
-                        "de": {
-                            "title": "Früchte und Gemüse"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Früchte und Gemüse"
                         },
-                        "fr": {
-                            "title": "Fruits et Légumes"
+                        {
+                            "locale": "fr",
+                            "value": "Fruits et Légumes"
                         },
-                        "it": {
-                            "title": "Frutta e verdura"
+                        {
+                            "locale": "it",
+                            "value": "Frutta e verdura"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -101,17 +114,20 @@
                 },
                 {
                     "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
-                    "texts": {
-                        "de": {
-                            "title": "Früchte und Gemüse im Offenverkauf"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Früchte und Gemüse im Offenverkauf"
                         },
-                        "fr": {
-                            "title": "Fruits et légumes en vrac"
+                        {
+                            "locale": "fr",
+                            "value": "Fruits et légumes en vrac"
                         },
-                        "it": {
-                            "title": "Frutta e verdura in vendita sfusa"
+                        {
+                            "locale": "it",
+                            "value": "Frutta e verdura in vendita sfusa"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -120,17 +136,20 @@
                 },
                 {
                     "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
-                    "texts": {
-                        "de": {
-                            "title": "Backstation"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Backstation"
                         },
-                        "fr": {
-                            "title": "Four à pain"
+                        {
+                            "locale": "fr",
+                            "value": "Four à pain"
                         },
-                        "it": {
-                            "title": "Punto cottura"
+                        {
+                            "locale": "it",
+                            "value": "Punto cottura"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -149,17 +168,20 @@
             "city": "Zürich",
             "country": {
                 "id": "CH",
-                "texts": {
-                    "de": {
-                        "title": "Schweiz"
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Schweiz"
                     },
-                    "fr": {
-                        "title": "Suisse"
+                    {
+                        "locale": "fr",
+                        "value": "Suisse"
                     },
-                    "it": {
-                        "title": "Svizzera"
+                    {
+                        "locale": "it",
+                        "value": "Svizzera"
                     }
-                }
+                ]
             },
             "phone": "044 240 22 83",
             "hotline": "0848 99 66 33",
@@ -179,17 +201,21 @@
             "parking_count": 0,
             "channel": {
                 "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
-                "texts": {
-                    "de": {
-                        "title": "Denner"
+                "code": 1,
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Denner"
                     },
-                    "fr": {
-                        "title": "Denner"
+                    {
+                        "locale": "fr",
+                        "value": "Denner"
                     },
-                    "it": {
-                        "title": "Denner"
+                    {
+                        "locale": "it",
+                        "value": "Denner"
                     }
-                }
+                ]
             },
             "opening_times": [
                 {
@@ -340,17 +366,21 @@
             "services": [
                 {
                     "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
-                    "texts": {
-                        "de": {
-                            "title": "Humidor"
+                    "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Humidor"
                         },
-                        "fr": {
-                            "title": "Humidor"
+                        {
+                            "locale": "fr",
+                            "value": "Humidor"
                         },
-                        "it": {
-                            "title": "Humidor"
+                        {
+                            "locale": "it",
+                            "value": "Humidor"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -359,17 +389,20 @@
                 },
                 {
                     "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
-                    "texts": {
-                        "de": {
-                            "title": "Früchte und Gemüse"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Früchte und Gemüse"
                         },
-                        "fr": {
-                            "title": "Fruits et Légumes"
+                        {
+                            "locale": "fr",
+                            "value": "Fruits et Légumes"
                         },
-                        "it": {
-                            "title": "Frutta e verdura"
+                        {
+                            "locale": "it",
+                            "value": "Frutta e verdura"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -378,17 +411,20 @@
                 },
                 {
                     "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
-                    "texts": {
-                        "de": {
-                            "title": "Früchte und Gemüse im Offenverkauf"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Früchte und Gemüse im Offenverkauf"
                         },
-                        "fr": {
-                            "title": "Fruits et légumes en vrac"
+                        {
+                            "locale": "fr",
+                            "value": "Fruits et légumes en vrac"
                         },
-                        "it": {
-                            "title": "Frutta e verdura in vendita sfusa"
+                        {
+                            "locale": "it",
+                            "value": "Frutta e verdura in vendita sfusa"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -397,17 +433,20 @@
                 },
                 {
                     "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
-                    "texts": {
-                        "de": {
-                            "title": "Backstation"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Backstation"
                         },
-                        "fr": {
-                            "title": "Four à pain"
+                        {
+                            "locale": "fr",
+                            "value": "Four à pain"
                         },
-                        "it": {
-                            "title": "Punto cottura"
+                        {
+                            "locale": "it",
+                            "value": "Punto cottura"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -426,17 +465,20 @@
             "city": "Zürich",
             "country": {
                 "id": "CH",
-                "texts": {
-                    "de": {
-                        "title": "Schweiz"
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Schweiz"
                     },
-                    "fr": {
-                        "title": "Suisse"
+                    {
+                        "locale": "fr",
+                        "value": "Suisse"
                     },
-                    "it": {
-                        "title": "Svizzera"
+                    {
+                        "locale": "it",
+                        "value": "Svizzera"
                     }
-                }
+                ]
             },
             "phone": "044 381 24 92",
             "hotline": "0848 99 66 33",
@@ -458,17 +500,21 @@
             "parking_count": 0,
             "channel": {
                 "id": "18549f95-6471-4e21-968f-8a0bf2e0f79b",
-                "texts": {
-                    "de": {
-                        "title": "Denner Satellit und Denner Express"
+                "code": 2,
+                "title": [
+                    {
+                        "locale": "de",
+                        "value": "Denner Satellit und Denner Express"
                     },
-                    "fr": {
-                        "title": "Satellite Denner et Denner Express"
+                    {
+                        "locale": "fr",
+                        "value": "Satellite Denner et Denner Express"
                     },
-                    "it": {
-                        "title": "Satellite Denner und Denner Express"
+                    {
+                        "locale": "it",
+                        "value": "Satelliti Denner e Denner Express"
                     }
-                }
+                ]
             },
             "opening_times": [
                 {
@@ -605,17 +651,20 @@
             "services": [
                 {
                     "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
-                    "texts": {
-                        "de": {
-                            "title": "Humidor"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Humidor"
                         },
-                        "fr": {
-                            "title": "Humidor"
+                        {
+                            "locale": "fr",
+                            "value": "Humidor"
                         },
-                        "it": {
-                            "title": "Humidor"
+                        {
+                            "locale": "it",
+                            "value": "Humidor"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -624,17 +673,20 @@
                 },
                 {
                     "id": "85aa57ad-2bf3-48e5-a1a0-813889cbae26",
-                    "texts": {
-                        "de": {
-                            "title": "Bordeaux Grands Crus"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Bordeaux Grands Crus"
                         },
-                        "fr": {
-                            "title": "Bordeaux Grands Crus"
+                        {
+                            "locale": "fr",
+                            "value": "Bordeaux Grands Crus"
                         },
-                        "it": {
-                            "title": "Bordeaux Grands Crus"
+                        {
+                            "locale": "it",
+                            "value": "Bordeaux Grands Crus"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2015-06-01",
@@ -648,17 +700,20 @@
                 },
                 {
                     "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
-                    "texts": {
-                        "de": {
-                            "title": "Früchte und Gemüse"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Früchte und Gemüse"
                         },
-                        "fr": {
-                            "title": "Fruits et Légumes"
+                        {
+                            "locale": "fr",
+                            "value": "Fruits et Légumes"
                         },
-                        "it": {
-                            "title": "Frutta e verdura"
+                        {
+                            "locale": "it",
+                            "value": "Frutta e verdura"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -667,17 +722,21 @@
                 },
                 {
                     "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
-                    "texts": {
-                        "de": {
-                            "title": "Früchte und Gemüse im Offenverkauf"
+                    "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Früchte und Gemüse im Offenverkauf"
                         },
-                        "fr": {
-                            "title": "Fruits et légumes en vrac"
+                        {
+                            "locale": "fr",
+                            "value": "Fruits et légumes en vrac"
                         },
-                        "it": {
-                            "title": "Frutta e verdura in vendita sfusa"
+                        {
+                            "locale": "it",
+                            "value": "Frutta e verdura in vendita sfusa"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"
@@ -686,17 +745,20 @@
                 },
                 {
                     "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
-                    "texts": {
-                        "de": {
-                            "title": "Backstation"
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Backstation"
                         },
-                        "fr": {
-                            "title": "Four à pain"
+                        {
+                            "locale": "fr",
+                            "value": "Four à pain"
                         },
-                        "it": {
-                            "title": "Punto cottura"
+                        {
+                            "locale": "it",
+                            "value": "Punto cottura"
                         }
-                    },
+                    ],
                     "appearances": [
                         {
                             "from": "2013-01-01"

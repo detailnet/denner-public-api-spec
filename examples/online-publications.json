@@ -5,26 +5,51 @@
             "name": "Wochenaktionen KW 26/2015",
             "year": 2015,
             "week": 26,
-            "texts": {
-                "de": {
-                    "title": "Wochenaktionen",
-                    "list_title": "Weitere Wochenaktionen",
-                    "validity": "23.06.2015 bis 29.06.2015, solange Vorrat"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Wochenaktionen"
                 },
-                "fr": {
-                    "title": "Hits de la semaine",
-                    "list_title": "Autre hits de la semaine",
-                    "validity": "tbd"
+                {
+                    "locale": "fr",
+                    "value": "Hits de la semaine"
                 },
-                "it": {
-                    "title": "Promozioni della settimana",
-                    "list_title": "Altre promozioni della settimana",
-                    "validity": "tbd"
+                {
+                    "locale": "it",
+                    "value": "Promozioni della settimana"
                 }
-            },
+            ],
+            "list_title": [
+                {
+                    "locale": "de",
+                    "value": "Weitere Wochenaktionen"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Autre hits de la semaine"
+                },
+                {
+                    "locale": "it",
+                    "value": "Altre promozioni della settimana"
+                }
+            ],
             "validity": {
                 "from": "2015-06-23",
-                "to": "2015-06-29"
+                "to": "2015-06-29",
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "23.06.2015 bis 29.06.2015, solange Vorrat"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "tbd"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "tbd"
+                    }
+                ]
             },
             "filters": [
                 {
