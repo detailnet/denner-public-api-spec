@@ -3,6 +3,8 @@
         {
             "id": "2c8616be-07c8-4fba-83a2-ee780449ff32",
             "name": "Wochenaktionen KW 26/2015",
+            "year": 2015,
+            "week": 26,
             "texts": {
                 "de": {
                     "title": "Wochenaktionen",
