@@ -2,73 +2,88 @@
     "store_services": [
         {
             "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
-            "texts": {
-                "de": {
-                    "title": "Humidor"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Humidor"
                 },
-                "fr": {
-                    "title": "Humidor"
+                {
+                    "locale": "fr",
+                    "value": "Humidor"
                 },
-                "it": {
-                    "title": "Humidor"
+                {
+                    "locale": "it",
+                    "value": "Humidor"
                 }
-            }
+            ]
         },
         {
             "id": "85aa57ad-2bf3-48e5-a1a0-813889cbae26",
-            "texts": {
-                "de": {
-                    "title": "Bordeaux Grands Crus"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Bordeaux Grands Crus"
                 },
-                "fr": {
-                    "title": "Bordeaux Grands Crus"
+                {
+                    "locale": "fr",
+                    "value": "Bordeaux Grands Crus"
                 },
-                "it": {
-                    "title": "Bordeaux Grands Crus"
+                {
+                    "locale": "it",
+                    "value": "Bordeaux Grands Crus"
                 }
-            }
+            ]
         },
         {
             "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
-            "texts": {
-                "de": {
-                    "title": "Früchte und Gemüse"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Früchte und Gemüse"
                 },
-                "fr": {
-                    "title": "Fruits et Légumes"
+                {
+                    "locale": "fr",
+                    "value": "Fruits et Légumes"
                 },
-                "it": {
-                    "title": "Frutta e verdura"
+                {
+                    "locale": "it",
+                    "value": "Frutta e verdura"
                 }
-            }
+            ]
         },
         {
             "id": "47191064-ad2e-482a-a5cf-2aa32d0b8116",
-            "texts": {
-                "de": {
-                    "title": "Früchte und Gemüse im Offenverkauf"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Früchte und Gemüse im Offenverkauf"
                 },
-                "fr": {
-                    "title": "Fruits et légumes en vrac"
+                {
+                    "locale": "fr",
+                    "value": "Fruits et légumes en vrac"
                 },
-                "it": {
-                    "title": "Frutta e verdura in vendita sfusa"
+                {
+                    "locale": "it",
+                    "value": "Frutta e verdura in vendita sfusa"
                 }
-            }
+            ]
         },
         {
             "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
-            "texts": {
-                "de": {
-                    "title": "Backstation"
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Backstation"
                 },
-                "fr": {
-                    "title": "Four à pain"
+                {
+                    "locale": "fr",
+                    "value": "Four à pain"
                 },
-                "it": {
-                    "title": "Punto cottura"
+                {
+                    "locale": "it",
+                    "value": "Punto cottura"
                 }
-            }
+            ]
         }
     ]
 }
