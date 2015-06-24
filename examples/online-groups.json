@@ -3,48 +3,63 @@
         {
             "id": "7627150d-36bd-4867-89b2-091800a03d24",
             "code": 1001,
-            "texts": {
-                "de": {
-                    "title": "Frischprodukte"
+            "sort_index": 0,
+            "disabled": false,
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Frischprodukte"
                 },
-                "fr": {
-                    "title": "Produits frais"
+                {
+                    "locale": "fr",
+                    "value": "Produits frais"
                 },
-                "it": {
-                    "title": "Prodotti freschi"
+                {
+                    "locale": "it",
+                    "value": "Prodotti freschi"
                 }
-            },
+            ],
             "children": [
                 {
                     "id": "58afec5c-ece9-4b66-bc55-00d6dc1b65b8",
                     "code": 1001,
-                    "texts": {
-                        "de": {
-                            "title": "Milchprodukte"
+                    "sort_index": 0,
+                    "disabled": false,
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Milchprodukte"
                         },
-                        "fr": {
-                            "title": "Produits laitiers"
+                        {
+                            "locale": "fr",
+                            "value": "Produits laitiers"
                         },
-                        "it": {
-                            "title": "Latticini"
+                        {
+                            "locale": "it",
+                            "value": "Latticini"
                         }
-                    },
+                    ],
                     "children": []
                 },
                 {
                     "id": "e5216167-9da5-41d6-b7b3-96362b60de89",
                     "code": 1002,
-                    "texts": {
-                        "de": {
-                            "title": "Eier"
+                    "sort_index": 1,
+                    "disabled": true,
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Eier"
                         },
-                        "fr": {
-                            "title": "Oeufs"
+                        {
+                            "locale": "fr",
+                            "value": "Oeufs"
                         },
-                        "it": {
-                            "title": "Uova"
+                        {
+                            "locale": "it",
+                            "value": "Uova"
                         }
-                    },
+                    ],
                     "children": []
                 }
             ]
