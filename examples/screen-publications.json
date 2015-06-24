@@ -19,23 +19,23 @@
                     "value": "Promozioni della settimana"
                 }
             ],
-            "subtitle": [
-                {
-                    "locale": "de",
-                    "value": "23.06.2015 bis 29.06.2015, solange Vorrat"
-                },
-                {
-                    "locale": "fr",
-                    "value": "tbd"
-                },
-                {
-                    "locale": "it",
-                    "value": "tbd"
-                }
-            ],
             "validity": {
                 "from": "2015-06-23",
-                "to": "2015-06-29"
+                "to": "2015-06-29",
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "23.06.2015 bis 29.06.2015, solange Vorrat"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "tbd"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "tbd"
+                    }
+                ]
             },
             "articles": [
                 {
@@ -122,39 +122,39 @@
                     },
                     "base": {
                         "size": 10,
-                        "unit": "cl"
+                        "unit": "cl",
+                        "text": [
+                            {
+                                "locale": "de",
+                                "value": "10 cl"
+                            },
+                            {
+                                "locale": "fr",
+                                "value": "10 cl"
+                            },
+                            {
+                                "locale": "it",
+                                "value": "10 cl"
+                            }
+                        ]
                     },
-                    "base_text": [
-                        {
-                            "locale": "de",
-                            "value": "10 cl"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": "10 cl"
-                        },
-                        {
-                            "locale": "it",
-                            "value": "10 cl"
-                        }
-                    ],
-                    "validity_text": [
-                        {
-                            "locale": "de",
-                            "value": "Angebot gültig von 23.06.2015 bis 29.06.2015"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": ""
-                        },
-                        {
-                            "locale": "it",
-                            "value": ""
-                        }
-                    ],
                     "validity": {
                         "from": "2015-06-23",
-                        "to": "2015-06-29"
+                        "to": "2015-06-29",
+                        "text": [
+                            {
+                                "locale": "de",
+                                "value": "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                            },
+                            {
+                                "locale": "fr",
+                                "value": "..."
+                            },
+                            {
+                                "locale": "it",
+                                "value": "..."
+                            }
+                        ]
                     },
                     "compared": true,
                     "online_group": {
@@ -203,11 +203,11 @@
                             },
                             {
                                 "locale": "fr",
-                                "value": ""
+                                "value": "Vin rouge"
                             },
                             {
                                 "locale": "it",
-                                "value": ""
+                                "value": "Vino rosso"
                             }
                         ],
                         "parent": {
@@ -239,7 +239,7 @@
                                 },
                                 {
                                     "locale": "fr",
-                                    "value": "L'Italie"
+                                    "value": "Italie"
                                 },
                                 {
                                     "locale": "it",
