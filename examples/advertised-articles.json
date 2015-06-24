@@ -32,62 +32,6 @@
                     "value": "2013, Puglia, Italia, 6 x 75 cl"
                 }
             ],
-            "saving": [
-                {
-                    "locale": "de",
-                    "value": "9.- sparen"
-                },
-                {
-                    "locale": "fr",
-                    "value": "9.- éparmié"
-                },
-                {
-                    "locale": "it",
-                    "value": "9.- risparmiati"
-                }
-            ],
-            "base": [
-                {
-                    "locale": "de",
-                    "value": "10 cl"
-                },
-                {
-                    "locale": "fr",
-                    "value": "10 cl"
-                },
-                {
-                    "locale": "it",
-                    "value": "10 cl"
-                }
-            ],
-            "info": [
-                {
-                    "locale": "de",
-                    "value": "Konkurrenzvergleich"
-                },
-                {
-                    "locale": "fr",
-                    "value": "Comparaison concurrentielle"
-                },
-                {
-                    "locale": "it",
-                    "value": "Confronto con la concorrenza"
-                }
-            ],
-            "validity": [
-                {
-                    "locale": "de",
-                    "value": "Angebot gültig von 23.06.2015 bis 29.06.2015"
-                },
-                {
-                    "locale": "fr",
-                    "value": "..."
-                },
-                {
-                    "locale": "it",
-                    "value": "..."
-                }
-            ],
             "prices": {
                 "sales": 59.4,
                 "instead": 68.4,
@@ -105,6 +49,34 @@
                     }
                 ]
             },
+            "price_info": [
+                {
+                    "locale": "de",
+                    "value": "Konkurrenzvergleich"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Comparaison concurrentielle"
+                },
+                {
+                    "locale": "it",
+                    "value": "Confronto con la concorrenza"
+                }
+            ],
+            "saving": [
+                {
+                    "locale": "de",
+                    "value": "9.- sparen"
+                },
+                {
+                    "locale": "fr",
+                    "value": "9.- éparmié"
+                },
+                {
+                    "locale": "it",
+                    "value": "9.- risparmiati"
+                }
+            ],
             "quantity": 6,
             "content": {
                 "size": 75,
@@ -112,11 +84,39 @@
             },
             "base": {
                 "size": 10,
-                "unit": "cl"
+                "unit": "cl",
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "10 cl"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "10 cl"
+                    },
+                    {
+                        "locale": "it",
+                        "value": "10 cl"
+                    }
+                ]
             },
             "validity": {
                 "from": "2015-06-23",
-                "to": "2015-06-29"
+                "to": "2015-06-29",
+                "text": [
+                    {
+                        "locale": "de",
+                        "value": "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                    },
+                    {
+                        "locale": "fr",
+                        "value": "..."
+                    },
+                    {
+                        "locale": "it",
+                        "value": "..."
+                    }
+                ]
             },
             "global_appearance": {
                 "from": "2015-06-19",
