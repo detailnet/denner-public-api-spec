@@ -3,6 +3,8 @@
         {
             "id": "7627150d-36bd-4867-89b2-091800a03d24",
             "code": 1001,
+            "sort_index": 0,
+            "disabled": false,
             "texts": {
                 "de": {
                     "title": "Frischprodukte"
@@ -18,6 +20,8 @@
                 {
                     "id": "58afec5c-ece9-4b66-bc55-00d6dc1b65b8",
                     "code": 1001,
+                    "sort_index": 0,
+                    "disabled": false,
                     "texts": {
                         "de": {
                             "title": "Milchprodukte"
@@ -34,6 +38,8 @@
                 {
                     "id": "e5216167-9da5-41d6-b7b3-96362b60de89",
                     "code": 1002,
+                    "sort_index": 1,
+                    "disabled": true,
                     "texts": {
                         "de": {
                             "title": "Eier"
