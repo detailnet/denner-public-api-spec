@@ -1,0 +1,45 @@
+{
+    "screen_publications": [
+        {
+            "id": "f410c33f-844f-43ca-ab2c-4dccf6905f7e",
+            "name": "Wochenaktionen KW 26/2015 für Werbescreens",
+            "year": 2015,
+            "week": 26,
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Wochenaktionen"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Hits de la semaine"
+                },
+                {
+                    "locale": "it",
+                    "value": "Promozioni della settimana"
+                }
+            ],
+            "subtitle": [
+                {
+                    "locale": "de",
+                    "value": "23.06.2015 bis 29.06.2015, solange Vorrat"
+                },
+                {
+                    "locale": "fr",
+                    "value": "tbd"
+                },
+                {
+                    "locale": "it",
+                    "value": "tbd"
+                }
+            ],
+            "validity": {
+                "from": "2015-06-23",
+                "to": "2015-06-29"
+            },
+            "articles": [
+                // See advertised-articles.json
+            ]
+        }
+    ]
+}
