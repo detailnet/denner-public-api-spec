@@ -194,43 +194,36 @@
             "opening_times": [
                 {
                     "weekday": 1,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 2,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 3,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 4,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 5,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
                 {
                     "weekday": 6,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "08:00:00",
                     "closes_at": "12:00:00"
                 },
                 {
                     "weekday": 6,
-                    "valid_from": "2015-01-15T00:45:02",
                     "opens_at": "14:00:00",
                     "closes_at": "20:00:00"
                 }
@@ -467,37 +460,31 @@
                 "opening_time": [
                     {
                         "weekday": 1,
-                        "valid_from": "2014-04-01T00:45:01",
                         "opens_at": "08:00:00",
                         "closes_at": "20:00:00"
                     },
                     {
                         "weekday": 2,
-                        "valid_from": "2014-04-01T00:45:01",
                         "opens_at": "08:00:00",
                         "closes_at": "20:00:00"
                     },
                     {
                         "weekday": 3,
-                        "valid_from": "2014-04-01T00:45:01",
                         "opens_at": "08:00:00",
                         "closes_at": "20:00:00"
                     },
                     {
                         "weekday": 4,
-                        "valid_from": "2014-04-01T00:45:01",
                         "opens_at": "08:00:00",
                         "closes_at": "20:00:00"
                     },
                     {
                         "weekday": 5,
-                        "valid_from": "2015-01-02T00:45:34",
                         "opens_at": "08:00:00",
                         "closes_at": "20:00:00"
                     },
                     {
                         "weekday": 6,
-                        "valid_from": "2014-04-01T00:45:01",
                         "opens_at": "08:00:00",
                         "closes_at": "18:00:00"
                     }
