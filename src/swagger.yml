@@ -85,7 +85,7 @@ paths:
         200:
           description: Successful listing
           schema:
-            $ref: '#/definitions/DummyResponse'
+            $ref: '#/definitions/ArticleGroupsResponse'
 
   ### Online Advertising
   /online-publications:
@@ -441,6 +441,21 @@ definitions:
       title:
         $ref: '#/definitions/Translations'
 
+  ### Article group
+  ArticleGroup:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: string
+        pattern: '/^\d{2}(-\d{2,3})?$/'
+        description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
+      title:
+        $ref: '#/definitions/Translations'
+      parent:
+        $ref: '#/definitions/ArticleGroup'
+
   ### Advertised article
   AdvertisedArticle:
     type: object
@@ -540,6 +555,11 @@ definitions:
     items:
       $ref: '#/definitions/Store'
 
+  ArticleGroups:
+    type: array
+    items:
+      $ref: '#/definitions/ArticleGroup'
+
   OnlineFilters:
     type: array
     items:
@@ -568,6 +588,24 @@ definitions:
         format: int32
       stores:
         $ref: '#/definitions/Stores'
+
+  ArticleGroupsResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      article_groups:
+        $ref: '#/definitions/ArticleGroups'
 
   OnlineFiltersResponse:
     type: object
