@@ -37,7 +37,7 @@ The Denner Portal provides mostly advertising related data.
 ## Building
 
 ### Protobox
-To create a `swagger.json` file we're using [swagger-codegen](https://github.com/swagger-api/swagger-codegen).
+To build the specification we're using [swagger-codegen](https://github.com/swagger-api/swagger-codegen).
 
 Run the following commands in [Protobox](https://bitbucket.org/detailnet/protobox) to install it (and it's dependencies):
 
@@ -47,6 +47,7 @@ Run the following commands in [Protobox](https://bitbucket.org/detailnet/protobo
         cd swagger-codegen
         mvn package
 
+#### JSON
 Once installed, `swagger.json` can be generated as follows:
 
         java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
@@ -55,3 +56,13 @@ Once installed, `swagger.json` can be generated as follows:
             -o ../denner-portal-api-spec/build/swagger
         
 The file will be located at `build/swagger/swagger.json`.
+
+#### HTML
+You can also generate a static HTML page:
+
+        java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
+            -i ../denner-portal-api-spec/src/swagger.yml \
+            -l html \
+            -o ../denner-portal-api-spec/build/html
+            
+The file will be located at `build/html/index.html`.
