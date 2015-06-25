@@ -958,7 +958,7 @@ definitions:
         description: The number of items on all pages
         type: integer
         format: int32
-      articles:
+      online_publications:
         $ref: '#/definitions/OnlinePublications'
 
   OnlinePublicationArticlesResponse:
