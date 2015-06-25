@@ -67,7 +67,7 @@ paths:
         200:
           description: Successful listing
           schema:
-            $ref: '#/definitions/DummyResponse'
+            $ref: '#/definitions/StoreServicesResponse'
 
   ### Articles/Promotions
   /article-groups:
@@ -398,23 +398,13 @@ definitions:
       services:
         type: array
         items:
-          $ref: '#/definitions/StoreService'
+          $ref: '#/definitions/AssignedStoreService'
         description: Services provided by the store
 
   PaymentType:
     type: string
     pattern: '/^(cash|euro|maestro|post")$/' # @todo Needed?
     description: Payment type
-
-  StoreService:
-    type: object
-    properties:
-      id:
-        $ref: '#/definitions/UUIDv4'
-      title:
-        $ref: '#/definitions/Translations'
-      appearances:
-        $ref: '#/definitions/Appearances'
 
   OpeningTime:
     type: object
@@ -465,13 +455,23 @@ definitions:
         $ref: '#/definitions/Translations'
 
   ### Store Service
-  Service:
+  StoreServiceService:
     type: object
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
       title:
         $ref: '#/definitions/Translations'
+
+  AssignedStoreService:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      title:
+        $ref: '#/definitions/Translations'
+      appearances:
+        $ref: '#/definitions/Appearances'
 
   ### Article group
   ArticleGroup:
@@ -705,7 +705,10 @@ definitions:
       validity:
         $ref: '#/definitions/Validity'
       filters:
-        $ref: '#/definitions/OnlinePublicationFilters'
+        type: array
+        items:
+          $ref: '#/definitions/AssignedOnlineFilter'
+        description: Online filter with appearances (and no localised title)
       global_appearance:
         $ref: '#/definitions/Appearance'
       featured_appearance:
@@ -716,22 +719,6 @@ definitions:
         $ref: '#/definitions/SortIndex'
       articles:
         $ref: '#/definitions/AdvertisedArticles'
-
-  OnlinePublicationFilters:
-    type: array
-    items:
-      $ref: '#/definitions/OnlinePublicationFilter'
-    description: Online filter with appearances (and no localised title)
-
-  OnlinePublicationFilter:
-    type: object
-    properties:
-      id:
-        $ref: '#/definitions/UUIDv4'
-      name:
-        type: string
-      appearances:
-        $ref: '#/definitions/Appearances'
 
   PromotionType:
     type: object
@@ -756,6 +743,16 @@ definitions:
         $ref: '#/definitions/Translations'
       sort_index:
         $ref: '#/definitions/SortIndex'
+
+  AssignedOnlineFilter:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      name:
+        type: string
+      appearances:
+        $ref: '#/definitions/Appearances'
 
   ### Online group
   OnlineGroup:
@@ -801,6 +798,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/StoreChannel'
+
+  StoreServices:
+    type: array
+    items:
+      $ref: '#/definitions/StoreService'
 
   ArticleGroups:
     type: array
@@ -861,8 +863,26 @@ definitions:
         description: The number of items on all pages
         type: integer
         format: int32
-      stores:
+      store_channels:
         $ref: '#/definitions/StoreChannels'
+
+  StoreServicesResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      store_services:
+        $ref: '#/definitions/StoreServices'
 
   ArticleGroupsResponse:
     type: object
@@ -953,10 +973,3 @@ definitions:
         format: int32
       articles:
         $ref: '#/definitions/AdvertisedArticles'
-
-  DummyResponse:
-    type: object
-    properties:
-      foo:
-        description: bar
-        type: string
