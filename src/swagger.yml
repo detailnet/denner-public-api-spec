@@ -104,7 +104,7 @@ paths:
         200:
           description: Successful listing
           schema:
-            $ref: '#/definitions/DummyResponse'
+            $ref: '#/definitions/OnlinePublicationsResponse'
 
   /online-publications/{publication_id}/articles:
     get:
@@ -239,6 +239,13 @@ definitions:
     format: int32
     minimum: 1800
     description: Year
+
+  Week:
+    type: integer
+    format: int32
+    minimum: 1
+    maximum: 53
+    description: Week number (ISO 8601, week date system)
 
   Price:
     type: number
@@ -407,9 +414,7 @@ definitions:
       title:
         $ref: '#/definitions/Translations'
       appearances:
-        type: array
-        items:
-          $ref: '#/definitions/Appearance'
+        $ref: '#/definitions/Appearances'
 
   OpeningTime:
     type: object
@@ -681,6 +686,64 @@ definitions:
       message:
         $ref: '#/definitions/Translations'
 
+  ### Online publication
+  OnlinePublication:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      name:
+        type: string
+      year:
+        $ref: '#/definitions/Year'
+      week:
+        $ref: '#/definitions/Week'
+      title:
+        $ref: '#/definitions/Translations'
+      title:
+        $ref: '#/definitions/Translations'
+      validity:
+        $ref: '#/definitions/Validity'
+      filters:
+        $ref: '#/definitions/OnlinePublicationFilters'
+      global_appearance:
+        $ref: '#/definitions/Appearance'
+      featured_appearance:
+        $ref: '#/definitions/Appearance'
+      promotion_type:
+        $ref: '#/definitions/PromotionType'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      articles:
+        $ref: '#/definitions/AdvertisedArticles'
+
+  OnlinePublicationFilters:
+    type: array
+    items:
+      $ref: '#/definitions/OnlinePublicationFilter'
+    description: Online filter with appearances (and no localised title)
+
+  OnlinePublicationFilter:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      name:
+        type: string
+      appearances:
+        $ref: '#/definitions/Appearances'
+
+  PromotionType:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: string
+        description: Navision promotion type code
+      name:
+        type: string
+
   ### Online filter
   OnlineFilter:
     type: object
@@ -724,6 +787,11 @@ definitions:
         $ref: '#/definitions/AddignedOnlineGroup'
 
   ### Collections
+  Appearances:
+    type: array
+    items:
+      $ref: '#/definitions/Appearance'
+
   Stores:
     type: array
     items:
@@ -738,6 +806,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/AdvertisedArticle'
+
+  OnlinePublications:
+    type: array
+    items:
+      $ref: '#/definitions/OnlinePublication'
 
   OnlineFilters:
     type: array
@@ -821,6 +894,24 @@ definitions:
         format: int32
       online_groups:
         $ref: '#/definitions/OnlineGroups'
+
+  OnlinePublicationsResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      articles:
+        $ref: '#/definitions/OnlinePublications'
 
   OnlinePublicationArticlesResponse:
     type: object
