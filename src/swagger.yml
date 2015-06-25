@@ -159,6 +159,25 @@ paths:
           schema:
             $ref: '#/definitions/OnlineFiltersResponse'
 
+  ### Screen Advertising
+  /online-publications:
+    get:
+      summary: List all screen publications
+      description: >
+        Use this operation to get a list of all publications targeted at advetising screens (Screen-Werbemittel).
+      tags:
+        - Screen Advertising – Screen-Bewerbung
+      operationId: listScreenPublications
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/DummyResponse'
+
+
 parameters:
   PageParam:
     name: page

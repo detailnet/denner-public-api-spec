@@ -33,7 +33,7 @@ The Denner Portal provides mostly advertising related data.
 * `/online-filters` (Angebotsfilter, [example](examples/online-filters.json))
 * `/online-groups` (Internet-Sortimente, [example](examples/online-groups.json))
 
-### Screen-Publications
+### Screen Advertising
 * `/screen-publications` (Screen-Werbemittel, [example](examples/screen-publications.json))
 
 
