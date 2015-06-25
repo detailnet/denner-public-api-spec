@@ -764,6 +764,11 @@ definitions:
         type: integer
         format: int32
         description: Navision online group code
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      disabled:
+        type: boolean
+        description: Is disabled?
       title:
         $ref: '#/definitions/Translations'
       children:
