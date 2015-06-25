@@ -276,6 +276,13 @@ definitions:
   Url:
     type: string
 #    pattern: @todo Fixed pattern?
+    description: Web url address
+
+  SortIndex:
+    type: integer
+    format: int32
+    minimum: 0
+    description: Index for sorting
 
   ### Store
   Store:
@@ -684,6 +691,8 @@ definitions:
         type: string
       title:
         $ref: '#/definitions/Translations'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
 
   ### Online group
   OnlineGroup:
