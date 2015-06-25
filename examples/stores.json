@@ -7,8 +7,8 @@
             "address": "Baslerstrasse",
             "number": "50",
             "zip_code": 8066,
-            "canton_code": "ZH",
             "city": "Zürich",
+            "canton_code": "ZH",
             "country": {
                 "id": "CH",
                 "title": [
