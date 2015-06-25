@@ -1,10 +1,10 @@
-swagger: '2.0'
+swagger: 2.0
 info:
-  description: RESTful API for the Denner Portal 2.0
+  description: RESTful API for the Denner Portal
   version: 0.1.0
   title: Denner Portal 2.0
   contact:
-    name: Denner Portal 2.0 API Support
+    name: DETAIL NET
     email: support+denner-api@detailnet.ch
 host: denner-portal.detailnet.ch
 basePath: /api
@@ -18,7 +18,12 @@ paths:
   ### Stores
   /stores:
     get:
-      description: 'List all stores ("Filialen")'
+      summary: List all stores
+      description: >
+        Use this operation to get a list of all stores (Filialen).
+      tags:
+        - Stores – Filialdaten
+      operationId: listStores
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -28,19 +33,87 @@ paths:
           schema:
             $ref: '#/definitions/StoresResponse'
 
+  /store-channels:
+    get:
+      summary: List all store channels
+      description: >
+        Use this operation to get a list of all store channels
+        (Filialkanäle; e.g. "Denner" or "Denner Satellit").
+      tags:
+        - Stores – Filialdaten
+      operationId: listStoreChannels
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/DummyResponse'
+
+  /store-services:
+    get:
+      summary: List all store services
+      description: >
+        Use this operation to get a list of all store services
+        (Filialangebote; e.g. "Humidor" or "Backstation").
+      tags:
+        - Stores – Filialdaten
+      operationId: listStoreServices
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/DummyResponse'
+
   ### Articles/Promotions
-#  /article-groups:
-#    get:
-#      description: 'List all article groups ("Warengruppen")'
+  /article-groups:
+    get:
+      summary: List all article groups
+      description: >
+        Use this operation to get a list of all article groups (Warengruppen).
+      tags:
+        - Articles and Promotions – Artikel und Aktionen
+      operationId: listArticleGroups
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/DummyResponse'
 
   ### Online Publications
-#  /online-publications:
-#    get:
-#      description: 'List all online publications ("Online-Werbemittel")'
+  /online-publications:
+    get:
+      summary: List all online publications
+      description: >
+        Use this operation to get a list of all online publications (Online-Werbemittel).
+      tags:
+        - Online Advertising – Online-Bewerbung
+      operationId: listOnlinePublications
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/DummyResponse'
 
   /online-publications/{publication_id}/articles:
     get:
-      description: 'List all (advertised) articles of the online publication ("beworbene Artikel im Online-Werbemittel")'
+      summary: List all (advertised) articles of a single online publication
+      description: >
+        Use this operation to get a list of all (advertised) articles of the online publication
+        (beworbene Artikel im Online-Werbemittel).
+      tags:
+        - Online Advertising – Online-Bewerbung
+      operationId: listOnlinePublicationArticles
       parameters:
         - $ref: '#/parameters/PublicationIdPathParam'
         - $ref: '#/parameters/PageParam'
@@ -53,7 +126,13 @@ paths:
 
   /online-filters:
     get:
-      description: 'List all online filters ("Angebotsfilter")'
+      summary: List all online filters
+      description: >
+        Use this operation to get a list of all online filters
+        (Angebotsfilter; e.g. "Aktionen aktuelle Woche" or "Aktionen der Folgewoche").
+      tags:
+        - Online Advertising – Online-Bewerbung
+      operationId: listOnlineFilters
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -63,9 +142,22 @@ paths:
           schema:
             $ref: '#/definitions/OnlineFiltersResponse'
 
-#  /online-groups:
-#    get:
-#      description: 'List all online groups ("Internet-Sortimente")'
+  /online-filters:
+    get:
+      summary: List all online groups
+      description: >
+        Use this operation to get a list of all online groups (Internet-Sortimente).
+      tags:
+        - Online Advertising – Online-Bewerbung
+      operationId: listOnlineGroups
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlineFiltersResponse'
 
 parameters:
   PageParam:
@@ -490,3 +582,10 @@ definitions:
         format: float
         minimum: 0
         description: Instead price
+
+  DummyResponse:
+    type: object
+    properties:
+      foo:
+        description: bar
+        type: string
