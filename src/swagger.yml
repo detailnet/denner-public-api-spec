@@ -143,7 +143,7 @@ paths:
           schema:
             $ref: '#/definitions/OnlineFiltersResponse'
 
-  /online-filters:
+  /online-groups:
     get:
       summary: List all online groups
       description: >
@@ -158,7 +158,7 @@ paths:
         200:
           description: Successful listing
           schema:
-            $ref: '#/definitions/OnlineFiltersResponse'
+            $ref: '#/definitions/OnlineGroupsResponse'
 
 parameters:
   PageParam:
@@ -686,18 +686,19 @@ definitions:
         $ref: '#/definitions/Translations'
 
   ### Online group
-#  OnlineGroup:
-#    type: object
-#    properties:
-#      id:
-#        $ref: '#/definitions/UUIDv4'
-#      code:
-#        type: integer
-#        format: int32
-#        description: Navision online group code
-#      title:
-#        $ref: '#/definitions/Translations'
-#      children:
+  OnlineGroup:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        format: int32
+        description: Navision online group code
+      title:
+        $ref: '#/definitions/Translations'
+      children:
+        $ref: '#/definitions/OnlineGroups'
 
   AddignedOnlineGroup:
     type: object
@@ -724,15 +725,20 @@ definitions:
     items:
       $ref: '#/definitions/ArticleGroup'
 
+  AdvertisedArticles:
+    type: array
+    items:
+      $ref: '#/definitions/AdvertisedArticle'
+
   OnlineFilters:
     type: array
     items:
       $ref: '#/definitions/OnlineFilter'
 
-  AdvertisedArticles:
-      type: array
-      items:
-        $ref: '#/definitions/AdvertisedArticle'
+  OnlineGroups:
+    type: array
+    items:
+      $ref: '#/definitions/OnlineGroup'
 
   ### Responses
   StoresResponse:
@@ -788,6 +794,24 @@ definitions:
         format: int32
       online_filters:
         $ref: '#/definitions/OnlineFilters'
+
+  OnlineGroupsResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      online_groups:
+        $ref: '#/definitions/OnlineGroups'
 
   OnlinePublicationArticlesResponse:
     type: object
