@@ -455,7 +455,7 @@ definitions:
         $ref: '#/definitions/Translations'
 
   ### Store Service
-  StoreServiceService:
+  StoreService:
     type: object
     properties:
       id:
