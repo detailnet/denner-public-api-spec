@@ -87,12 +87,13 @@ paths:
           schema:
             $ref: '#/definitions/DummyResponse'
 
-  ### Online Publications
+  ### Online Advertising
   /online-publications:
     get:
       summary: List all online publications
       description: >
-        Use this operation to get a list of all online publications (Online-Werbemittel).
+        Use this operation to get a list of all publications targeted at online channels,
+        e.g. denner.ch or the Mobile App (Online-Werbemittel).
       tags:
         - Online Advertising – Online-Bewerbung
       operationId: listOnlinePublications
