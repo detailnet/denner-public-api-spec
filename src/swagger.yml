@@ -49,7 +49,7 @@ paths:
         200:
           description: Successful listing
           schema:
-            $ref: '#/definitions/DummyResponse'
+            $ref: '#/definitions/StoreChannelsResponse'
 
   /store-services:
     get:
@@ -797,6 +797,11 @@ definitions:
     items:
       $ref: '#/definitions/Store'
 
+  StoreChannels:
+    type: array
+    items:
+      $ref: '#/definitions/StoreChannel'
+
   ArticleGroups:
     type: array
     items:
@@ -840,6 +845,24 @@ definitions:
         format: int32
       stores:
         $ref: '#/definitions/Stores'
+
+  StoreChannelsResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      stores:
+        $ref: '#/definitions/StoreChannels'
 
   ArticleGroupsResponse:
     type: object
