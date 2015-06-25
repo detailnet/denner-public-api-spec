@@ -15,9 +15,10 @@ consumes:
 produces:
   - application/json
 paths:
-  /online-filters:
+  ### Stores
+  /stores:
     get:
-      description: 'List all online filters ("Angebotsfilter")'
+      description: 'List all stores ("Filialen")'
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -25,10 +26,18 @@ paths:
         200:
           description: Successful listing
           schema:
-            $ref: '#/definitions/OnlineFiltersResponse'
+            $ref: '#/definitions/StoresResponse'
+
+  ### Articles/Promotions
+#  /article-groups:
+#    get:
+#      description: 'List all article groups ("Warengruppen")'
+
+  ### Online Publications
 #  /online-publications:
 #    get:
 #      description: 'List all online publications ("Online-Werbemittel")'
+
   /online-publications/{publication_id}/articles:
     get:
       description: 'List all (advertised) articles of the online publication ("beworbene Artikel im Online-Werbemittel")'
@@ -41,15 +50,10 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/OnlinePublicationArticlesResponse'
-#  /online-groups:
-#    get:
-#      description: 'List all online groups ("Internet-Sortimente")'
-#  /article-groups:
-#    get:
-#      description: 'List all article groups ("Warengruppen")'
-  /stores:
+
+  /online-filters:
     get:
-      description: 'List all stores ("Filialen")'
+      description: 'List all online filters ("Angebotsfilter")'
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -57,7 +61,11 @@ paths:
         200:
           description: Successful listing
           schema:
-            $ref: '#/definitions/StoresResponse'
+            $ref: '#/definitions/OnlineFiltersResponse'
+
+#  /online-groups:
+#    get:
+#      description: 'List all online groups ("Internet-Sortimente")'
 
 parameters:
   PageParam:

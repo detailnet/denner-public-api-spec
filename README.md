@@ -27,7 +27,7 @@ The Denner Portal provides mostly advertising related data.
 * `/advertised-articles` (beworbene Artikel, [example](examples/advertised-articles.json))
 * `/promotions-types` (Aktionstypen)
 
-### Online-Publications
+### Online Publications
 
 * `/online-publications` (Werbemittel, [example](examples/online-publications.json))
 * `/online-filters` (Angebotsfilter, [example](examples/online-filters.json))
