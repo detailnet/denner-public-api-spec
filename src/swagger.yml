@@ -285,6 +285,11 @@ definitions:
 #    pattern: @todo Fixed pattern?
     description: Web url address
 
+  Phone:
+    type: string
+#    pattern: @todo Fixed pattern?
+    description: Formatted phone number
+
   SortIndex:
     type: integer
     format: int32
@@ -325,13 +330,9 @@ definitions:
       country:
         $ref: '#/definitions/Country'
       phone:
-        type: string
-#        pattern: @todo Fixed pattern?
-        description: Phone number
+        $ref: '#/definitions/Phone'
       hotline:
-        type: string
-#        pattern: @todo Fixed pattern?
-        description: Hotline number
+        $ref: '#/definitions/Phone'
       payment_types:
         type: array
         description: Payment types
@@ -700,7 +701,7 @@ definitions:
         $ref: '#/definitions/Week'
       title:
         $ref: '#/definitions/Translations'
-      title:
+      list_title:
         $ref: '#/definitions/Translations'
       validity:
         $ref: '#/definitions/Validity'
