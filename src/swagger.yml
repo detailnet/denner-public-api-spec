@@ -234,6 +234,35 @@ definitions:
     maximum: 6 # According to swagger definition should use maxLength for integer type, but does not works correctly
     description: Day of week; 0 = Sunday
 
+  Year:
+    type: integer
+    format: int32
+    minimum: 1800
+    description: Year
+
+  Price:
+    type: number
+    format: float
+    minimum: 0
+    description: Price in CHF
+
+  Quantity:
+    type: integer
+    format: int32
+    minimum: 0
+    description: Quantity
+
+  ContentSize:
+    type: number
+    format: float
+    minimum: 0
+    description: Content size
+
+  ContentUnit:
+    # @todo Define an pattern or standard reference (e.g. ISO 80000-3)?
+    type: string
+    description: Content unit
+
   Appearance:
     type: object
     properties:
@@ -244,16 +273,9 @@ definitions:
         type: string
         format: date
 
-  ### OnlineFilter
-  OnlineFilter:
-    type: object
-    properties:
-      id:
-        $ref: '#/definitions/UUIDv4'
-      name:
-        type: string
-      title:
-        $ref: '#/definitions/Translations'
+  Url:
+    type: string
+#    pattern: @todo Fixed pattern?
 
   ### Store
   Store:
@@ -336,9 +358,7 @@ definitions:
 #        pattern: @todo Fixed pattern?
         description: E-mail address
       homepage:
-        type: string
-#        pattern: @todo Fixed pattern?
-        description: Website
+        $ref: '#/definitions/Url'
       parking_count:
         type: integer
         format: int32
@@ -453,101 +473,245 @@ definitions:
         description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
       title:
         $ref: '#/definitions/Translations'
+      children:
+        $ref: '#/definitions/ArticleGroups'
+
+  AssignedArticleGroup:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: string
+        pattern: '/^\d{2}(-\d{2,3})?$/'
+        description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
+      title:
+        $ref: '#/definitions/Translations'
       parent:
-        $ref: '#/definitions/ArticleGroup'
+        $ref: '#/definitions/AssignedArticleGroup'
 
   ### Advertised article
   AdvertisedArticle:
     type: object
     properties:
       id:
-        type: string
-        pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
-        description: Unique identifier
-      code:
+        $ref: '#/definitions/UUIDv4'
+      number:
         type: string
         pattern: '/^\d{6}$/'
         description: Navision article code
       name:
         type: string
         description: Article name
-      texts:
-        $ref: '#/definitions/ArticleTexts'
-      prices:
-        $ref: '#/definitions/Prices'
-      prices_by_quantity:
-        $ref: '#/definitions/QuantityPrices'
-
-  ArticleTexts:
-    type: object
-    properties:
-      de:
-        $ref: '#/definitions/ArticleText'
-      fr:
-        $ref: '#/definitions/ArticleText'
-      it:
-        $ref: '#/definitions/ArticleText'
-
-  ArticleText:
-    type: object
-    properties:
       title:
-        type: string
-        description: Localized article title
+        $ref: '#/definitions/Translations'
       description:
-        type: string
-        description: Localized article description
+        $ref: '#/definitions/Translations'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      price_info:
+        $ref: '#/definitions/Translations'
       saving:
-        type: string
-        description: Localized article saving text
+        $ref: '#/definitions/Translations'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      content:
+        $ref: '#/definitions/Content'
       base:
-        type: string
-        description: Localized article base content text
-      info:
-        type: string
-        description: Localized article info text
+        $ref: '#/definitions/BaseContent'
       validity:
-        type: string
-        description: Localized article validity text
+        $ref: '#/definitions/Validity'
+      global_appearance:
+        $ref: '#/definitions/Appearance'
+      featured_appearance:
+        $ref: '#/definitions/Appearance'
+      promoted:
+        type: boolean
+        description: Is a promoted article?
+      compared:
+        type: boolean
+        description: Is a compared article?
+      online_group:
+        $ref: '#/definitions/AddignedOnlineGroup'
+      article_group:
+        $ref: '#/definitions/AssignedArticleGroup'
+      wine:
+        $ref: '#/definitions/ArticleWine'
 
-  Prices:
+  ArticlePrices:
     type: object
     properties:
       sales:
-        type: number
-        format: float
-        minimum: 0
-        description: Sales price
+        $ref: '#/definitions/Price'
       instead:
-        type: number
-        format: float
-        minimum: 0
-        description: Instead price
+        $ref: '#/definitions/Price'
       base:
-        type: number
-        format: float
-        minimum: 0
-        description: Price for base amount
+        $ref: '#/definitions/Price'
+      by_quantity:
+        $ref: '#/definitions/QuantityPrices'
 
   QuantityPrices:
-    type: object
-    properties:
-      '{amount}':
-        $ref: '#/definitions/QuantityPrice'
+    type: array
+    items:
+      $ref: '#/definitions/QuantityPrice'
 
   QuantityPrice:
     type: object
     properties:
+      quantity:
+        $ref: '#/definitions/Quantity'
       sales:
-        type: number
-        format: float
-        minimum: 0
-        description: Sales price
+        $ref: '#/definitions/Price'
       instead:
+        $ref: '#/definitions/Price'
+
+  Content:
+    type: object
+    properties:
+      size:
+        $ref: '#/definitions/ContentSize'
+      unit:
+        $ref: '#/definitions/ContentUnit'
+
+  BaseContent:
+    type: object
+    properties:
+      size:
+        $ref: '#/definitions/ContentSize'
+      unit:
+        $ref: '#/definitions/ContentUnit'
+      text:
+        $ref: '#/definitions/Translations'
+
+  Validity:
+    type: object
+    properties:
+      from:
+        $ref: '#/definitions/Date'
+      to:
+        $ref: '#/definitions/Date'
+      text:
+        $ref: '#/definitions/Translations'
+
+  ArticleWine:
+    type: object
+    properties:
+      country:
+        $ref: '#/definitions/Country'
+      region:
+        $ref: '#/definitions/Region'
+      type:
+        $ref: '#/definitions/WineType'
+      year:
+        $ref: '#/definitions/Year'
+      fits_with:
+        $ref: '#/definitions/Translations'
+      varietal:
+        $ref: '#/definitions/Translations'
+      character:
+        $ref: '#/definitions/Translations'
+      temperature:
+        $ref: '#/definitions/Translations'
+      awards:
+        $ref: '#/definitions/Translations'
+      storage:
+        $ref: '#/definitions/Translations'
+      rating:
+        $ref: '#/definitions/Rating'
+      stock:
+        $ref: '#/definitions/Stock'
+      shop_url:
+        $ref: '#/definitions/Url'
+
+  Region:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      title:
+        $ref: '#/definitions/Translations'
+
+  WineType:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      title:
+        $ref: '#/definitions/Translations'
+
+  Rating:
+    type: object
+    properties:
+      value:
         type: number
         format: float
         minimum: 0
-        description: Instead price
+        maximum: 5
+        description: Rating value
+      total:
+        type: integer
+        format: int32
+        minimum: 0
+        description: Ratng count
+      valid:
+        type: boolean
+        description: Is a valid rating?
+
+  Stock:
+    type: object
+    properties:
+      value:
+        type: integer
+        format: int32
+        description: Navision stock count, might be negative
+      code:
+        type: integer
+        format: int32
+        minimum: 0
+        description: Navision stock code
+      message:
+        $ref: '#/definitions/Translations'
+
+  ### Online filter
+  OnlineFilter:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      name:
+        type: string
+      title:
+        $ref: '#/definitions/Translations'
+
+  ### Online group
+#  OnlineGroup:
+#    type: object
+#    properties:
+#      id:
+#        $ref: '#/definitions/UUIDv4'
+#      code:
+#        type: integer
+#        format: int32
+#        description: Navision online group code
+#      title:
+#        $ref: '#/definitions/Translations'
+#      children:
+
+  AddignedOnlineGroup:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        format: int32
+        description: Navision online group code
+      title:
+        $ref: '#/definitions/Translations'
+      parent:
+        $ref: '#/definitions/AddignedOnlineGroup'
 
   ### Collections
   Stores:
