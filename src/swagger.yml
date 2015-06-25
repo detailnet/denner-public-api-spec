@@ -1,4 +1,4 @@
-swagger: 2.0
+swagger: '2.0'
 info:
   description: RESTful API for the Denner Portal
   version: 0.1.0
@@ -14,6 +14,17 @@ consumes:
   - application/json
 produces:
   - application/json
+securityDefinitions:
+  appKey:
+    type: apiKey
+    description: Application identifier
+    name: App-ID
+    in: header
+  appId:
+    type: apiKey
+    description: Application key
+    name: App-Key
+    in: header
 paths:
   ### Stores
   /stores:
@@ -24,6 +35,9 @@ paths:
       tags:
         - Stores – Filialdaten
       operationId: listStores
+      security:
+        - appKey: []
+        - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -42,6 +56,9 @@ paths:
       tags:
         - Stores – Filialdaten
       operationId: listStoreChannels
+      security:
+        - appKey: []
+        - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -60,6 +77,9 @@ paths:
       tags:
         - Stores – Filialdaten
       operationId: listStoreServices
+      security:
+        - appKey: []
+        - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -78,6 +98,9 @@ paths:
       tags:
         - Articles and Promotions – Artikel und Aktionen
       operationId: listArticleGroups
+      security:
+        - appKey: []
+        - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -97,6 +120,9 @@ paths:
       tags:
         - Online Advertising – Online-Bewerbung
       operationId: listOnlinePublications
+      security:
+        - appKey: []
+        - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -115,6 +141,9 @@ paths:
       tags:
         - Online Advertising – Online-Bewerbung
       operationId: listOnlinePublicationArticles
+      security:
+        - appKey: []
+        - appId: []
       parameters:
         - $ref: '#/parameters/PublicationIdPathParam'
         - $ref: '#/parameters/PageParam'
@@ -134,6 +163,9 @@ paths:
       tags:
         - Online Advertising – Online-Bewerbung
       operationId: listOnlineFilters
+      security:
+        - appKey: []
+        - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
@@ -151,6 +183,9 @@ paths:
       tags:
         - Online Advertising – Online-Bewerbung
       operationId: listOnlineGroups
+      security:
+        - appKey: []
+        - appId: []
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
