@@ -78,73 +78,29 @@ parameters:
     in: path
     type: string
     pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+
 definitions:
-
-  ### Responses
-  OnlineFiltersResponse:
-    type: object
-    properties:
-      page_count:
-        description: The number of pages
-        type: integer
-        format: int32
-      page_size:
-        description: The page size
-        type: integer
-        format: int32
-      total_items:
-        description: The number of items on all pages
-        type: integer
-        format: int32
-      online_filters:
-        $ref: '#/definitions/OnlineFilters'
-  OnlineFilters:
-    type: array
-    items:
-      $ref: '#/definitions/OnlineFilter'
-
-  StoresResponse:
-    type: object
-    properties:
-      page_count:
-        description: The number of pages
-        type: integer
-        format: int32
-      page_size:
-        description: The page size
-        type: integer
-        format: int32
-      total_items:
-        description: The number of items on all pages
-        type: integer
-        format: int32
-      stores:
-        $ref: '#/definitions/Stores'
-  Stores:
-    type: array
-    items:
-      $ref: '#/definitions/Store'
-
-  ### Common models
+  ### Common
   UUIDv4:
     type: string
     pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
     description: Unique identifier
 
-  Language:
+  Locale:
     type: string
     pattern: '/^(de|fr|it)$/'
-    description: Language
+    description: Locale
 
-  TranslatedField:              # Can't be used if a specific description is needed
+  Translations:
     type: array
     items:
       $ref: '#/definitions/Translation'
+
   Translation:
     type: object
     properties:
       locale:
-        $ref: '#/definitions/Language'
+        $ref: '#/definitions/Locale'
       value:
         type: string
         description: Translated text value
@@ -157,41 +113,48 @@ definitions:
         pattern: '/^[A-Z]{2}$/'
         description: Country code definition from ISO 3166
       title:
-        $ref: '#/definitions/TranslatedField'
+        $ref: '#/definitions/Translations'
     description: Country
 
   Date:
     type: string
     format: date
     description: 'Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+
   Time:
     type: string
     pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
     description: 'Time; Format HH:MM:SS'
+
   DayOfWeek:
     type: integer
     format: int32
-    minimum: 0   # According to swagger definition should use minLength for integer type, but does not works correctly
-    maximum: 6   # According to swagger definition should use maxLength for integer type, but does not works correctly
+    minimum: 0 # According to swagger definition should use minLength for integer type, but does not works correctly
+    maximum: 6 # According to swagger definition should use maxLength for integer type, but does not works correctly
     description: Day of week; 0 = Sunday
 
-  ### Main models
+  Appearance:
+    type: object
+    properties:
+      from:
+        type: string
+        format: date
+      to:
+        type: string
+        format: date
 
-  ## OnlineFilter models
+  ### OnlineFilter
   OnlineFilter:
-      type: object
-      properties:
-        id:
-          $ref: '#/definitions/UUIDv4'
-        name:
-          type: string
-        title:
-          type: array
-          items:
-            $ref: '#/definitions/Translation'
-          description: Title of the filter (as displayed below "Angebotsfilter" on denner.ch)
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      name:
+        type: string
+      title:
+        $ref: '#/definitions/Translations'
 
-  ## Store models
+  ### Store
   Store:
     type: object
     properties:
@@ -265,7 +228,8 @@ definitions:
         format: float
         description: Geographic latitude
       language:
-        $ref: '#/definitions/Language'
+        type: string
+        description: Language spoken in the store
       email:
         type: string
 #        pattern: @todo Fixed pattern?
@@ -280,7 +244,7 @@ definitions:
         minimum: 0
         description: Reserved parking places for customers
       channel:
-        $ref: '#/definitions/Channel'
+        $ref: '#/definitions/StoreChannel'
       opening_times:
         type: array
         description: Default opening times
@@ -299,8 +263,9 @@ definitions:
       services:
         type: array
         items:
-          $ref: '#/definitions/StoreService' # StoreService diffears from Service
-        description: Services provided
+          $ref: '#/definitions/StoreService'
+        description: Services provided by the store
+
   PaymentType:
     type: string
     pattern: '/^(cash|euro|maestro|post")$/' # @todo Needed?
@@ -312,20 +277,12 @@ definitions:
       id:
         $ref: '#/definitions/UUIDv4'
       title:
-        $ref: '#/definitions/TranslatedField'
+        $ref: '#/definitions/Translations'
       appearances:
         type: array
         items:
           $ref: '#/definitions/Appearance'
-  Appearance:
-    type: object
-    properties:
-      from:
-        type: string
-        format: date
-      to:
-        type: string
-        format: date
+
   OpeningTime:
     type: object
     properties:
@@ -335,6 +292,7 @@ definitions:
         $ref: '#/definitions/Time'
       closes_at:
         $ref: '#/definitions/Time'
+
   SpecialOpeningTime:
     type: object
     properties:
@@ -345,10 +303,11 @@ definitions:
       closes_at:
         $ref: '#/definitions/Time'
       reason:
-        $ref: '#/definitions/TranslatedField'
+        $ref: '#/definitions/Translations'
       closed:
         type: boolean
-        description: Is closed whole day?
+        description: Is the store closed on this day?
+
   CalendarOpeningTime:
     type: object
     properties:
@@ -359,8 +318,8 @@ definitions:
       closes_at:
         $ref: '#/definitions/Time'
 
-  ## Channel model
-  Channel:
+  ### Store Channel
+  StoreChannel:
     type: object
     properties:
       id:
@@ -370,40 +329,18 @@ definitions:
         format: int32
         description: Navision channel code
       title:
-        $ref: '#/definitions/TranslatedField'
+        $ref: '#/definitions/Translations'
 
-  ## Service model
+  ### Store Service
   Service:
     type: object
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
       title:
-        $ref: '#/definitions/TranslatedField'
+        $ref: '#/definitions/Translations'
 
-
-  ## Other models to refactor
-  OnlinePublicationArticlesResponse:
-    type: object
-    properties:
-      page_count:
-        description: The number of pages
-        type: integer
-        format: int32
-      page_size:
-        description: The page size
-        type: integer
-        format: int32
-      total_items:
-        description: The number of items on all pages
-        type: integer
-        format: int32
-      articles:
-        $ref: '#/definitions/AdvertisedArticles'
-  AdvertisedArticles:
-    type: array
-    items:
-      $ref: '#/definitions/AdvertisedArticle'
+  ### Advertised article
   AdvertisedArticle:
     type: object
     properties:
@@ -424,6 +361,7 @@ definitions:
         $ref: '#/definitions/Prices'
       prices_by_quantity:
         $ref: '#/definitions/QuantityPrices'
+
   ArticleTexts:
     type: object
     properties:
@@ -433,6 +371,7 @@ definitions:
         $ref: '#/definitions/ArticleText'
       it:
         $ref: '#/definitions/ArticleText'
+
   ArticleText:
     type: object
     properties:
@@ -454,6 +393,7 @@ definitions:
       validity:
         type: string
         description: Localized article validity text
+
   Prices:
     type: object
     properties:
@@ -472,11 +412,13 @@ definitions:
         format: float
         minimum: 0
         description: Price for base amount
+
   QuantityPrices:
     type: object
     properties:
       '{amount}':
         $ref: '#/definitions/QuantityPrice'
+
   QuantityPrice:
     type: object
     properties:
@@ -490,3 +432,74 @@ definitions:
         format: float
         minimum: 0
         description: Instead price
+
+  ### Collections
+  Stores:
+    type: array
+    items:
+      $ref: '#/definitions/Store'
+
+  OnlineFilters:
+    type: array
+    items:
+      $ref: '#/definitions/OnlineFilter'
+
+  AdvertisedArticles:
+      type: array
+      items:
+        $ref: '#/definitions/AdvertisedArticle'
+
+  ### Responses
+  StoresResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      stores:
+        $ref: '#/definitions/Stores'
+
+  OnlineFiltersResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      online_filters:
+        $ref: '#/definitions/OnlineFilters'
+
+  OnlinePublicationArticlesResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      articles:
+        $ref: '#/definitions/AdvertisedArticles'
