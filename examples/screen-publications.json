@@ -94,11 +94,11 @@
                         },
                         {
                             "locale": "fr",
-                            "value": ""
+                            "value": "Comparaison concurrentielle"
                         },
                         {
                             "locale": "it",
-                            "value": ""
+                            "value": "Confronto con la concorrenza"
                         }
                     ],
                     "saving": [
@@ -108,14 +108,14 @@
                         },
                         {
                             "locale": "fr",
-                            "value": "9.- ..."
+                            "value": "9.- éparmié"
                         },
                         {
                             "locale": "it",
-                            "value": "9.- ..."
+                            "value": "9.- risparmiati"
                         }
                     ],
-                    "amount": 6,
+                    "quantity": 6,
                     "content": {
                         "size": 75,
                         "unit": "cl"
