@@ -132,6 +132,26 @@ paths:
           schema:
             $ref: '#/definitions/OnlinePublicationsResponse'
 
+    /online-publications/{publication_id}:
+      get:
+        summary: List all online publications
+        description: >
+          Use this operation to get one publication targeted at online channels with related articles,
+          e.g. denner.ch or the Mobile App (Online-Werbemittel).
+        tags:
+          - Online Advertising – Online-Bewerbung
+        operationId: listOnlinePublications
+        security:
+          - appKey: []
+          - appId: []
+        parameters:
+          - $ref: '#/parameters/PublicationIdPathParam'
+        responses:
+          200:
+            description: Successful object
+            schema:
+              $ref: '#/definitions/OnlinePublicationResponse'
+
   /online-publications/{publication_id}/articles:
     get:
       summary: List all (advertised) articles of a single online publication
@@ -753,8 +773,14 @@ definitions:
         $ref: '#/definitions/PromotionType'
       sort_index:
         $ref: '#/definitions/SortIndex'
-      articles:
-        $ref: '#/definitions/AdvertisedArticles'
+
+  OnlinePublicationWithArticles:
+    allOf:
+      - $ref: '#/definitions/OnlinePublication'
+      - properties:
+         articles:
+           $ref: '#/definitions/AdvertisedArticles'
+
 
   PromotionType:
     type: object
@@ -996,6 +1022,24 @@ definitions:
         format: int32
       online_publications:
         $ref: '#/definitions/OnlinePublications'
+
+  OnlinePublicationResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      online_publication:
+        $ref: '#/definitions/OnlinePublicationWithArticles'
 
   OnlinePublicationArticlesResponse:
     type: object
