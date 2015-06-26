@@ -437,6 +437,55 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/ArticleGroupsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 5
+              total_items: 5
+              article_groups:
+                -
+                  id: "42680ccc-a000-4848-9495-af6b02ea231c"
+                  code: "01"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Molkereiprodukte & Eier"
+                    -
+                      locale: "fr"
+                      value: "tbd"
+                    -
+                      locale: "it"
+                      value: "tbd"
+                  children:
+                    -
+                      id: "bd377284-0758-46a6-b1af-b3219f7d9fcf"
+                      code: "01-10"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Butter"
+                        -
+                          locale: "fr"
+                          value: ""
+                        -
+                          locale: "it"
+                          value: ""
+                      children: []
+                    -
+                      id: "71ee4a8b-92b5-4f5a-820d-353a9fce9b04"
+                      code: "01-15"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Milch"
+                        -
+                          locale: "fr"
+                          value: ""
+                        -
+                          locale: "it"
+                          value: ""
+                      children: []
 
   ### Online Advertising
   /online-publications:
@@ -501,6 +550,41 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/OnlineFiltersResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 5
+              total_items: 5
+              online_filters:
+                -
+                  id: "3734ef1f-4c1a-428c-af24-7d85af7c5041"
+                  name: "Aktionen der Folgewoche"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Aktionen der Folgewoche"
+                    -
+                      locale: "fr"
+                      value: "Hits de la semaine suivante"
+                    -
+                      locale: "it"
+                      value: "Promozioni della settimana seguente"
+                  sort_index: 0
+                -
+                  id: "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c"
+                  name: "Aktionen aktuelle Woche"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Aktionen aktuelle Woche"
+                    -
+                      locale: "fr"
+                      value: "Hits de la semaine en cours"
+                    -
+                      locale: "it"
+                      value: "Promozioni della settimana corrente"
+                  sort_index: 1
 
   /online-groups:
     get:
@@ -521,6 +605,61 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/OnlineGroupsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 5
+              total_items: 5
+              online_groups:
+                -
+                  id: "7627150d-36bd-4867-89b2-091800a03d24"
+                  code: 1001
+                  sort_index: 0
+                  disabled: false
+                  title:
+                    -
+                      locale: "de"
+                      value: "Frischprodukte"
+                    -
+                      locale: "fr"
+                      value: "Produits frais"
+                    -
+                      locale: "it"
+                      value: "Prodotti freschi"
+                  children:
+                    -
+                      id: "58afec5c-ece9-4b66-bc55-00d6dc1b65b8"
+                      code: 1001
+                      sort_index: 0
+                      disabled: false
+                      title:
+                        -
+                          locale: "de"
+                          value: "Milchprodukte"
+                        -
+                          locale: "fr"
+                          value: "Produits laitiers"
+                        -
+                          locale: "it"
+                          value: "Latticini"
+                      children: []
+                    -
+                      id: "e5216167-9da5-41d6-b7b3-96362b60de89"
+                      code: 1002
+                      sort_index: 1
+                      disabled: true
+                      title:
+                        -
+                          locale: "de"
+                          value: "Eier"
+                        -
+                          locale: "fr"
+                          value: "Oeufs"
+                        -
+                          locale: "it"
+                          value: "Uova"
+                      children: []
 
 parameters:
   PageParam:

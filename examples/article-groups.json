@@ -1,0 +1,62 @@
+{
+    "article_groups": [
+        {
+            "id": "42680ccc-a000-4848-9495-af6b02ea231c",
+            "code": "01",
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Molkereiprodukte & Eier"
+                },
+                {
+                    "locale": "fr",
+                    "value": "tbd"
+                },
+                {
+                    "locale": "it",
+                    "value": "tbd"
+                }
+            ],
+            "children": [
+                {
+                    "id": "bd377284-0758-46a6-b1af-b3219f7d9fcf",
+                    "code": "01-10",
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Butter"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": ""
+                        },
+                        {
+                            "locale": "it",
+                            "value": ""
+                        }
+                    ],
+                    "children": []
+                },
+                {
+                    "id": "71ee4a8b-92b5-4f5a-820d-353a9fce9b04",
+                    "code": "01-15",
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Milch"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": ""
+                        },
+                        {
+                            "locale": "it",
+                            "value": ""
+                        }
+                    ],
+                    "children": []
+                }
+            ]
+        }
+    ]
+}
