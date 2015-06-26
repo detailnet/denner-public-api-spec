@@ -491,6 +491,323 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/OnlinePublicationsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 1
+              total_items: 1
+              online_publications:
+                -
+                  id: "2c8616be-07c8-4fba-83a2-ee780449ff32"
+                  name: "Wochenaktionen KW 26/2015"
+                  year: 2015
+                  week: 26
+                  title:
+                    -
+                      locale: "de"
+                      value: "Wochenaktionen"
+                    -
+                      locale: "fr"
+                      value: "Hits de la semaine"
+                    -
+                      locale: "it"
+                      value: "Promozioni della settimana"
+                  list_title:
+                    -
+                      locale: "de"
+                      value: "Weitere Wochenaktionen"
+                    -
+                      locale: "fr"
+                      value: "Autre hits de la semaine"
+                    -
+                      locale: "it"
+                      value: "Altre promozioni della settimana"
+                  validity:
+                    from: "2015-06-23"
+                    to: "2015-06-29"
+                    text:
+                      -
+                        locale: "de"
+                        value: "23.06.2015 bis 29.06.2015, solange Vorrat"
+                      -
+                        locale: "fr"
+                        value: "tbd"
+                      -
+                        locale: "it"
+                        value: "tbd"
+                  filters:
+                    -
+                      id: "3734ef1f-4c1a-428c-af24-7d85af7c5041"
+                      name: "Aktionen der Folgewoche"
+                      appearances:
+                        -
+                          from: "2015-06-19"
+                          to: "2015-06-22"
+                    -
+                      id: "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c"
+                      name: "Aktionen aktuelle Woche"
+                      appearances:
+                        -
+                          from: "2015-06-23"
+                          to: "2015-06-29"
+                  global_appearance:
+                    from: "2015-06-19"
+                    to: "2015-06-29"
+                  featured_appearance:
+                    from: "2015-06-23"
+                    to: "2015-06-29"
+                  promotion_type:
+                    id: "16fe4454-8a99-49bc-9099-d3b48805c67e"
+                    code: "FLUGBLATT"
+                    name: "Wochenaktionen"
+                  sort_index: 0
+                  articles:
+                    -
+                      id: "48fcba99-b506-4395-ac1a-373e2af478b1"
+                      number: "050273"
+                      name: "Mandorla Primitivo IGT Puglia"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Mandorla Primitivo di Puglia IGT"
+                        -
+                          locale: "fr"
+                          value: "Mandorla Primitivo di Puglia IGT"
+                        -
+                          locale: "it"
+                          value: "Mandorla Primitivo di Puglia IGT"
+                      description:
+                        -
+                          locale: "de"
+                          value: "2013, Apulien, Italien, 6 x 75 cl"
+                        -
+                          locale: "fr"
+                          value: "2013, les Pouilles, Italie, 6 x 75 cl"
+                        -
+                          locale: "it"
+                          value: "2013, Puglia, Italia, 6 x 75 cl"
+                      prices:
+                        sales: 59.4
+                        instead: 68.4
+                        base: 1.32
+                        by_quantity:
+                          -
+                            quantity: 1
+                            sales: 9.9
+                            instead: 11.4
+                          -
+                            quantity: 6
+                            sales: 59.4
+                            instead: 68.4
+                      price_info:
+                        -
+                          locale: "de"
+                          value: "Konkurrenzvergleich"
+                        -
+                          locale: "fr"
+                          value: "Comparaison concurrentielle"
+                        -
+                          locale: "it"
+                          value: "Confronto con la concorrenza"
+                      saving:
+                        -
+                          locale: "de"
+                          value: "9.- sparen"
+                        -
+                          locale: "fr"
+                          value: "9.- éparmié"
+                        -
+                          locale: "it"
+                          value: "9.- risparmiati"
+                      quantity: 6
+                      content:
+                        size: 75
+                        unit: "cl"
+                      base:
+                        size: 10
+                        unit: "cl"
+                        text:
+                          -
+                            locale: "de"
+                            value: "10 cl"
+                          -
+                            locale: "fr"
+                            value: "10 cl"
+                          -
+                            locale: "it"
+                            value: "10 cl"
+                      validity:
+                        from: "2015-06-23"
+                        to: "2015-06-29"
+                        text:
+                          -
+                            locale: "de"
+                            value: "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                          -
+                            locale: "fr"
+                            value: "..."
+                          -
+                            locale: "it"
+                            value: "..."
+                      global_appearance:
+                        from: "2015-06-19"
+                        to: "2015-06-29"
+                      featured_appearance:
+                        from: "2015-06-23"
+                        to: "2015-06-29"
+                      promoted: true
+                      compared: true
+                      online_group:
+                        id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
+                        code: 4003
+                        title:
+                          -
+                            locale: "de"
+                            value: "Wein"
+                          -
+                            locale: "fr"
+                            value: "Vins"
+                          -
+                            locale: "it"
+                            value: "Vini"
+                        parent:
+                          id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
+                          code: 4001
+                          title:
+                            -
+                              locale: "de"
+                              value: "Tafelgetränke und Mineralwasser"
+                            -
+                              locale: "fr"
+                              value: "Boissons table et eau minérale"
+                            -
+                              locale: "it"
+                              value: "Bevande da tavola e acque minerali"
+                      article_group:
+                        id: "b3c6797a-777a-4103-aba8-d82089ba2980"
+                        code: "60-56"
+                        name: "Italien Rot 70 cl"
+                        parent:
+                          id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
+                          code: "60"
+                          name: "Weine"
+                      wine:
+                        country:
+                          id: "IT"
+                          title:
+                            -
+                              locale: "de"
+                              value: "Italien"
+                            -
+                              locale: "fr"
+                              value: "Italie"
+                            -
+                              locale: "it"
+                              value: "Italia"
+                        region:
+                          id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
+                          title:
+                            -
+                              locale: "de"
+                              value: "Apulien"
+                            -
+                              locale: "fr"
+                              value: "Les Pouilles"
+                            -
+                              locale: "it"
+                              value: "Puglia"
+                        type:
+                          id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                          title:
+                            -
+                              locale: "de"
+                              value: "Rotwein"
+                            -
+                              locale: "fr"
+                              value: "Vin rouge"
+                            -
+                              locale: "it"
+                              value: "Vino rosso"
+                        year: 2013
+                        fits_with:
+                          -
+                            locale: "de"
+                            value: "Pasta, Fleisch mit würzigen Saucen"
+                          -
+                            locale: "fr"
+                            value: "Pâtes, viande aux sauces relevées"
+                          -
+                            locale: "it"
+                            value: "Pasta, carni accompagnate da salse aromatiche"
+                        varietal:
+                          -
+                            locale: "de"
+                            value: "Primitivo"
+                          -
+                            locale: "fr"
+                            value: "Primitivo"
+                          -
+                            locale: "it"
+                            value: "Primitivo"
+                        character:
+                          -
+                            locale: "de"
+                            value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                          -
+                            locale: "fr"
+                            value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                          -
+                            locale: "it"
+                            value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                        temperature:
+                          -
+                            locale: "de"
+                            value: "16-18 °C"
+                          -
+                            locale: "fr"
+                            value: "16-18 °C"
+                          -
+                            locale: "it"
+                            value: "16-18 °C"
+                        awards:
+                          -
+                            locale: "de"
+                            value: ""
+                          -
+                            locale: "fr"
+                            value: ""
+                          -
+                            locale: "it"
+                            value: ""
+                        storage:
+                          -
+                            locale: "de"
+                            value: "3 Jahre"
+                          -
+                            locale: "fr"
+                            value: "3 ans"
+                          -
+                            locale: "it"
+                            value: "3 anni"
+                        rating:
+                          value: 4.45
+                          total: 11
+                          valid: true
+                        stock:
+                          value: -15
+                          code: 2
+                          message:
+                            -
+                              locale: "de"
+                              value: "Derzeit nicht bestellbar"
+                            -
+                              locale: "fr"
+                              value: "Actuellement pas disponible"
+                            -
+                              locale: "it"
+                              value: "Attualmente non disponibile"
+                        shop_url: null
 
   /online-publications/{publication_id}:
     get:
@@ -512,6 +829,317 @@ paths:
           description: Successful object
           schema:
             $ref: '#/definitions/OnlinePublicationWithArticles'
+          examples:
+            application/json:
+              id: "2c8616be-07c8-4fba-83a2-ee780449ff32"
+              name: "Wochenaktionen KW 26/2015"
+              year: 2015
+              week: 26
+              title:
+                -
+                  locale: "de"
+                  value: "Wochenaktionen"
+                -
+                  locale: "fr"
+                  value: "Hits de la semaine"
+                -
+                  locale: "it"
+                  value: "Promozioni della settimana"
+              list_title:
+                -
+                  locale: "de"
+                  value: "Weitere Wochenaktionen"
+                -
+                  locale: "fr"
+                  value: "Autre hits de la semaine"
+                -
+                  locale: "it"
+                  value: "Altre promozioni della settimana"
+              validity:
+                from: "2015-06-23"
+                to: "2015-06-29"
+                text:
+                  -
+                    locale: "de"
+                    value: "23.06.2015 bis 29.06.2015, solange Vorrat"
+                  -
+                    locale: "fr"
+                    value: "tbd"
+                  -
+                    locale: "it"
+                    value: "tbd"
+              filters:
+                -
+                  id: "3734ef1f-4c1a-428c-af24-7d85af7c5041"
+                  name: "Aktionen der Folgewoche"
+                  appearances:
+                    -
+                      from: "2015-06-19"
+                      to: "2015-06-22"
+                -
+                  id: "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c"
+                  name: "Aktionen aktuelle Woche"
+                  appearances:
+                    -
+                      from: "2015-06-23"
+                      to: "2015-06-29"
+              global_appearance:
+                from: "2015-06-19"
+                to: "2015-06-29"
+              featured_appearance:
+                from: "2015-06-23"
+                to: "2015-06-29"
+              promotion_type:
+                id: "16fe4454-8a99-49bc-9099-d3b48805c67e"
+                code: "FLUGBLATT"
+                name: "Wochenaktionen"
+              sort_index: 0
+              articles:
+                -
+                  id: "48fcba99-b506-4395-ac1a-373e2af478b1"
+                  number: "050273"
+                  name: "Mandorla Primitivo IGT Puglia"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                    -
+                      locale: "fr"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                    -
+                      locale: "it"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                  description:
+                    -
+                      locale: "de"
+                      value: "2013, Apulien, Italien, 6 x 75 cl"
+                    -
+                      locale: "fr"
+                      value: "2013, les Pouilles, Italie, 6 x 75 cl"
+                    -
+                      locale: "it"
+                      value: "2013, Puglia, Italia, 6 x 75 cl"
+                  prices:
+                    sales: 59.4
+                    instead: 68.4
+                    base: 1.32
+                    by_quantity:
+                      -
+                        quantity: 1
+                        sales: 9.9
+                        instead: 11.4
+                      -
+                        quantity: 6
+                        sales: 59.4
+                        instead: 68.4
+                  price_info:
+                    -
+                      locale: "de"
+                      value: "Konkurrenzvergleich"
+                    -
+                      locale: "fr"
+                      value: "Comparaison concurrentielle"
+                    -
+                      locale: "it"
+                      value: "Confronto con la concorrenza"
+                  saving:
+                    -
+                      locale: "de"
+                      value: "9.- sparen"
+                    -
+                      locale: "fr"
+                      value: "9.- éparmié"
+                    -
+                      locale: "it"
+                      value: "9.- risparmiati"
+                  quantity: 6
+                  content:
+                    size: 75
+                    unit: "cl"
+                  base:
+                    size: 10
+                    unit: "cl"
+                    text:
+                      -
+                        locale: "de"
+                        value: "10 cl"
+                      -
+                        locale: "fr"
+                        value: "10 cl"
+                      -
+                        locale: "it"
+                        value: "10 cl"
+                  validity:
+                    from: "2015-06-23"
+                    to: "2015-06-29"
+                    text:
+                      -
+                        locale: "de"
+                        value: "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                      -
+                        locale: "fr"
+                        value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                  global_appearance:
+                    from: "2015-06-19"
+                    to: "2015-06-29"
+                  featured_appearance:
+                    from: "2015-06-23"
+                    to: "2015-06-29"
+                  promoted: true
+                  compared: true
+                  online_group:
+                    id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
+                    code: 4003
+                    title:
+                      -
+                        locale: "de"
+                        value: "Wein"
+                      -
+                        locale: "fr"
+                        value: "Vins"
+                      -
+                        locale: "it"
+                        value: "Vini"
+                    parent:
+                      id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
+                      code: 4001
+                      title:
+                        -
+                          locale: "de"
+                          value: "Tafelgetränke und Mineralwasser"
+                        -
+                          locale: "fr"
+                          value: "Boissons table et eau minérale"
+                        -
+                          locale: "it"
+                          value: "Bevande da tavola e acque minerali"
+                  article_group:
+                    id: "b3c6797a-777a-4103-aba8-d82089ba2980"
+                    code: "60-56"
+                    name: "Italien Rot 70 cl"
+                    parent:
+                      id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
+                      code: "60"
+                      name: "Weine"
+                  wine:
+                    country:
+                      id: "IT"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Italien"
+                        -
+                          locale: "fr"
+                          value: "Italie"
+                        -
+                          locale: "it"
+                          value: "Italia"
+                    region:
+                      id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Apulien"
+                        -
+                          locale: "fr"
+                          value: "Les Pouilles"
+                        -
+                          locale: "it"
+                          value: "Puglia"
+                    type:
+                      id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Rotwein"
+                        -
+                          locale: "fr"
+                          value: "Vin rouge"
+                        -
+                          locale: "it"
+                          value: "Vino rosso"
+                    year: 2013
+                    fits_with:
+                      -
+                        locale: "de"
+                        value: "Pasta, Fleisch mit würzigen Saucen"
+                      -
+                        locale: "fr"
+                        value: "Pâtes, viande aux sauces relevées"
+                      -
+                        locale: "it"
+                        value: "Pasta, carni accompagnate da salse aromatiche"
+                    varietal:
+                      -
+                        locale: "de"
+                        value: "Primitivo"
+                      -
+                        locale: "fr"
+                        value: "Primitivo"
+                      -
+                        locale: "it"
+                        value: "Primitivo"
+                    character:
+                      -
+                        locale: "de"
+                        value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                      -
+                        locale: "fr"
+                        value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                      -
+                        locale: "it"
+                        value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                    temperature:
+                      -
+                        locale: "de"
+                        value: "16-18 °C"
+                      -
+                        locale: "fr"
+                        value: "16-18 °C"
+                      -
+                        locale: "it"
+                        value: "16-18 °C"
+                    awards:
+                      -
+                        locale: "de"
+                        value: ""
+                      -
+                        locale: "fr"
+                        value: ""
+                      -
+                        locale: "it"
+                        value: ""
+                    storage:
+                      -
+                        locale: "de"
+                        value: "3 Jahre"
+                      -
+                        locale: "fr"
+                        value: "3 ans"
+                      -
+                        locale: "it"
+                        value: "3 anni"
+                    rating:
+                      value: 4.45
+                      total: 11
+                      valid: true
+                    stock:
+                      value: -15
+                      code: 2
+                      message:
+                        -
+                          locale: "de"
+                          value: "Derzeit nicht bestellbar"
+                        -
+                          locale: "fr"
+                          value: "Actuellement pas disponible"
+                        -
+                          locale: "it"
+                          value: "Attualmente non disponibile"
+                    shop_url: null
 
   /online-filters:
     get:
@@ -661,6 +1289,280 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/ScreenPublicationsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 1
+              total_items: 1
+              screen_publications:
+                -
+                  id: "f410c33f-844f-43ca-ab2c-4dccf6905f7e"
+                  name: "Wochenaktionen KW 26/2015 für Werbescreens"
+                  year: 2015
+                  week: 26
+                  title:
+                    -
+                      locale: "de"
+                      value: "Wochenaktionen"
+                    -
+                      locale: "fr"
+                      value: "Hits de la semaine"
+                    -
+                      locale: "it"
+                      value: "Promozioni della settimana"
+                  validity:
+                    from: "2015-06-23"
+                    to: "2015-06-29"
+                    text:
+                      -
+                        locale: "de"
+                        value: "23.06.2015 bis 29.06.2015, solange Vorrat"
+                      -
+                        locale: "fr"
+                        value: "tbd"
+                      -
+                        locale: "it"
+                        value: "tbd"
+                  articles:
+                    -
+                      id: "48fcba99-b506-4395-ac1a-373e2af478b1"
+                      number: "050273"
+                      name: "Mandorla Primitivo IGT Puglia"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Mandorla Primitivo di Puglia IGT"
+                        -
+                          locale: "fr"
+                          value: "Mandorla Primitivo di Puglia IGT"
+                        -
+                          locale: "it"
+                          value: "Mandorla Primitivo di Puglia IGT"
+                      description:
+                        -
+                          locale: "de"
+                          value: "2013, Apulien, Italien, 6 x 75 cl"
+                        -
+                          locale: "fr"
+                          value: "2013, les Pouilles, Italie, 6 x 75 cl"
+                        -
+                          locale: "it"
+                          value: "2013, Puglia, Italia, 6 x 75 cl"
+                      prices:
+                        sales: 59.4
+                        instead: 68.4
+                        base: 1.32
+                        by_quantity:
+                          -
+                            quantity: 1
+                            sales: 9.9
+                            instead: 11.4
+                          -
+                            quantity: 6
+                            sales: 59.4
+                            instead: 68.4
+                      price_info:
+                        -
+                          locale: "de"
+                          value: "Konkurrenzvergleich"
+                        -
+                          locale: "fr"
+                          value: "Comparaison concurrentielle"
+                        -
+                          locale: "it"
+                          value: "Confronto con la concorrenza"
+                      saving:
+                        -
+                          locale: "de"
+                          value: "9.- sparen"
+                        -
+                          locale: "fr"
+                          value: "9.- éparmié"
+                        -
+                          locale: "it"
+                          value: "9.- risparmiati"
+                      quantity: 6
+                      content:
+                        size: 75
+                        unit: "cl"
+                      base:
+                        size: 10
+                        unit: "cl"
+                        text:
+                          -
+                            locale: "de"
+                            value: "10 cl"
+                          -
+                            locale: "fr"
+                            value: "10 cl"
+                          -
+                            locale: "it"
+                            value: "10 cl"
+                      validity:
+                        from: "2015-06-23"
+                        to: "2015-06-29"
+                        text:
+                          -
+                            locale: "de"
+                            value: "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                          -
+                            locale: "fr"
+                            value: "..."
+                          -
+                            locale: "it"
+                            value: "..."
+                      compared: true
+                      online_group:
+                        id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
+                        code: 4003
+                        title:
+                          -
+                            locale: "de"
+                            value: "Wein"
+                          -
+                            locale: "fr"
+                            value: "Vins"
+                          -
+                            locale: "it"
+                            value: "Vini"
+                        parent:
+                          id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
+                          code: 4001
+                          title:
+                            -
+                              locale: "de"
+                              value: "Tafelgetränke und Mineralwasser"
+                            -
+                              locale: "fr"
+                              value: "Boissons table et eau minérale"
+                            -
+                              locale: "it"
+                              value: "Bevande da tavola e acque minerali"
+                      article_group:
+                        id: "b3c6797a-777a-4103-aba8-d82089ba2980"
+                        code: "60-56"
+                        name: "Italien Rot 70 cl"
+                        parent:
+                          id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
+                          code: "60"
+                          name: "Weine"
+                      wine:
+                        country:
+                          id: "IT"
+                          title:
+                            -
+                              locale: "de"
+                              value: "Italien"
+                            -
+                              locale: "fr"
+                              value: "Italie"
+                            -
+                              locale: "it"
+                              value: "Italia"
+                        region:
+                          id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
+                          title:
+                            -
+                              locale: "de"
+                              value: "Apulien"
+                            -
+                              locale: "fr"
+                              value: "Les Pouilles"
+                            -
+                              locale: "it"
+                              value: "Puglia"
+                        type:
+                          id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                          title:
+                            -
+                              locale: "de"
+                              value: "Rotwein"
+                            -
+                              locale: "fr"
+                              value: "Vin rouge"
+                            -
+                              locale: "it"
+                              value: "Vino rosso"
+                        year: 2013
+                        fits_with:
+                          -
+                            locale: "de"
+                            value: "Pasta, Fleisch mit würzigen Saucen"
+                          -
+                            locale: "fr"
+                            value: "Pâtes, viande aux sauces relevées"
+                          -
+                            locale: "it"
+                            value: "Pasta, carni accompagnate da salse aromatiche"
+                        varietal:
+                          -
+                            locale: "de"
+                            value: "Primitivo"
+                          -
+                            locale: "fr"
+                            value: "Primitivo"
+                          -
+                            locale: "it"
+                            value: "Primitivo"
+                        character:
+                          -
+                            locale: "de"
+                            value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                          -
+                            locale: "fr"
+                            value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                          -
+                            locale: "it"
+                            value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                        temperature:
+                          -
+                            locale: "de"
+                            value: "16-18 °C"
+                          -
+                            locale: "fr"
+                            value: "16-18 °C"
+                          -
+                            locale: "it"
+                            value: "16-18 °C"
+                        awards:
+                          -
+                            locale: "de"
+                            value: ""
+                          -
+                            locale: "fr"
+                            value: ""
+                          -
+                            locale: "it"
+                            value: ""
+                        storage:
+                          -
+                            locale: "de"
+                            value: "3 Jahre"
+                          -
+                            locale: "fr"
+                            value: "3 ans"
+                          -
+                            locale: "it"
+                            value: "3 anni"
+                        rating:
+                          value: 4.45
+                          total: 11
+                          valid: true
+                        stock:
+                          value: -15
+                          code: 2
+                          message:
+                            -
+                              locale: "de"
+                              value: "Derzeit nicht bestellbar"
+                            -
+                              locale: "fr"
+                              value: "Actuellement pas disponible"
+                            -
+                              locale: "it"
+                              value: "Attualmente non disponibile"
+                        shop_url: null
 
   /screen-publications/{publication_id}:
     get:
@@ -681,6 +1583,275 @@ paths:
           description: Successful object
           schema:
             $ref: '#/definitions/ScreenPublicationWithArticles'
+          examples:
+            application/json:
+
+              id: "f410c33f-844f-43ca-ab2c-4dccf6905f7e"
+              name: "Wochenaktionen KW 26/2015 für Werbescreens"
+              year: 2015
+              week: 26
+              title:
+                -
+                  locale: "de"
+                  value: "Wochenaktionen"
+                -
+                  locale: "fr"
+                  value: "Hits de la semaine"
+                -
+                  locale: "it"
+                  value: "Promozioni della settimana"
+              validity:
+                from: "2015-06-23"
+                to: "2015-06-29"
+                text:
+                  -
+                    locale: "de"
+                    value: "23.06.2015 bis 29.06.2015, solange Vorrat"
+                  -
+                    locale: "fr"
+                    value: "tbd"
+                  -
+                    locale: "it"
+                    value: "tbd"
+              articles:
+                -
+                  id: "48fcba99-b506-4395-ac1a-373e2af478b1"
+                  number: "050273"
+                  name: "Mandorla Primitivo IGT Puglia"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                    -
+                      locale: "fr"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                    -
+                      locale: "it"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                  description:
+                    -
+                      locale: "de"
+                      value: "2013, Apulien, Italien, 6 x 75 cl"
+                    -
+                      locale: "fr"
+                      value: "2013, les Pouilles, Italie, 6 x 75 cl"
+                    -
+                      locale: "it"
+                      value: "2013, Puglia, Italia, 6 x 75 cl"
+                  prices:
+                    sales: 59.4
+                    instead: 68.4
+                    base: 1.32
+                    by_quantity:
+                      -
+                        quantity: 1
+                        sales: 9.9
+                        instead: 11.4
+                      -
+                        quantity: 6
+                        sales: 59.4
+                        instead: 68.4
+                  price_info:
+                    -
+                      locale: "de"
+                      value: "Konkurrenzvergleich"
+                    -
+                      locale: "fr"
+                      value: "Comparaison concurrentielle"
+                    -
+                      locale: "it"
+                      value: "Confronto con la concorrenza"
+                  saving:
+                    -
+                      locale: "de"
+                      value: "9.- sparen"
+                    -
+                      locale: "fr"
+                      value: "9.- éparmié"
+                    -
+                      locale: "it"
+                      value: "9.- risparmiati"
+                  quantity: 6
+                  content:
+                    size: 75
+                    unit: "cl"
+                  base:
+                    size: 10
+                    unit: "cl"
+                    text:
+                      -
+                        locale: "de"
+                        value: "10 cl"
+                      -
+                        locale: "fr"
+                        value: "10 cl"
+                      -
+                        locale: "it"
+                        value: "10 cl"
+                  validity:
+                    from: "2015-06-23"
+                    to: "2015-06-29"
+                    text:
+                      -
+                        locale: "de"
+                        value: "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                      -
+                        locale: "fr"
+                        value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                  compared: true
+                  online_group:
+                    id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
+                    code: 4003
+                    title:
+                      -
+                        locale: "de"
+                        value: "Wein"
+                      -
+                        locale: "fr"
+                        value: "Vins"
+                      -
+                        locale: "it"
+                        value: "Vini"
+                    parent:
+                      id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
+                      code: 4001
+                      title:
+                        -
+                          locale: "de"
+                          value: "Tafelgetränke und Mineralwasser"
+                        -
+                          locale: "fr"
+                          value: "Boissons table et eau minérale"
+                        -
+                          locale: "it"
+                          value: "Bevande da tavola e acque minerali"
+                  article_group:
+                    id: "b3c6797a-777a-4103-aba8-d82089ba2980"
+                    code: "60-56"
+                    name: "Italien Rot 70 cl"
+                    parent:
+                      id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
+                      code: "60"
+                      name: "Weine"
+                  wine:
+                    country:
+                      id: "IT"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Italien"
+                        -
+                          locale: "fr"
+                          value: "Italie"
+                        -
+                          locale: "it"
+                          value: "Italia"
+                    region:
+                      id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Apulien"
+                        -
+                          locale: "fr"
+                          value: "Les Pouilles"
+                        -
+                          locale: "it"
+                          value: "Puglia"
+                    type:
+                      id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Rotwein"
+                        -
+                          locale: "fr"
+                          value: "Vin rouge"
+                        -
+                          locale: "it"
+                          value: "Vino rosso"
+                    year: 2013
+                    fits_with:
+                      -
+                        locale: "de"
+                        value: "Pasta, Fleisch mit würzigen Saucen"
+                      -
+                        locale: "fr"
+                        value: "Pâtes, viande aux sauces relevées"
+                      -
+                        locale: "it"
+                        value: "Pasta, carni accompagnate da salse aromatiche"
+                    varietal:
+                      -
+                        locale: "de"
+                        value: "Primitivo"
+                      -
+                        locale: "fr"
+                        value: "Primitivo"
+                      -
+                        locale: "it"
+                        value: "Primitivo"
+                    character:
+                      -
+                        locale: "de"
+                        value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                      -
+                        locale: "fr"
+                        value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                      -
+                        locale: "it"
+                        value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                    temperature:
+                      -
+                        locale: "de"
+                        value: "16-18 °C"
+                      -
+                        locale: "fr"
+                        value: "16-18 °C"
+                      -
+                        locale: "it"
+                        value: "16-18 °C"
+                    awards:
+                      -
+                        locale: "de"
+                        value: ""
+                      -
+                        locale: "fr"
+                        value: ""
+                      -
+                        locale: "it"
+                        value: ""
+                    storage:
+                      -
+                        locale: "de"
+                        value: "3 Jahre"
+                      -
+                        locale: "fr"
+                        value: "3 ans"
+                      -
+                        locale: "it"
+                        value: "3 anni"
+                    rating:
+                      value: 4.45
+                      total: 11
+                      valid: true
+                    stock:
+                      value: -15
+                      code: 2
+                      message:
+                        -
+                          locale: "de"
+                          value: "Derzeit nicht bestellbar"
+                        -
+                          locale: "fr"
+                          value: "Actuellement pas disponible"
+                        -
+                          locale: "it"
+                          value: "Attualmente non disponibile"
+                    shop_url: null
 
 parameters:
   PageParam:
