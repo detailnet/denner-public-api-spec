@@ -134,13 +134,14 @@ paths:
 
   /online-publications/{publication_id}:
     get:
-      summary: List online publication with advertised articles
+      summary: Get single online publication (includes all advertised articles)
       description: >
-        Use this operation to get one publication targeted at online channels with related articles,
+        Use this operation to get a single publication targeted at online channels,
         e.g. denner.ch or the Mobile App (Online-Werbemittel).
+        The response will include the articles assigned to this publication.
       tags:
         - Online Advertising – Online-Bewerbung
-      operationId: listOnlinePublication
+      operationId: getOnlinePublication
       security:
         - appKey: []
         - appId: []
