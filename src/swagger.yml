@@ -140,7 +140,7 @@ paths:
         e.g. denner.ch or the Mobile App (Online-Werbemittel).
       tags:
         - Online Advertising – Online-Bewerbung
-      operationId: listOnlinePublications
+      operationId: listOnlinePublication
       security:
         - appKey: []
         - appId: []
