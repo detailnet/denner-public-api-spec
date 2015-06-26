@@ -132,25 +132,25 @@ paths:
           schema:
             $ref: '#/definitions/OnlinePublicationsResponse'
 
-    /online-publications/{publication_id}:
-      get:
-        summary: List all online publications
-        description: >
-          Use this operation to get one publication targeted at online channels with related articles,
-          e.g. denner.ch or the Mobile App (Online-Werbemittel).
-        tags:
-          - Online Advertising – Online-Bewerbung
-        operationId: listOnlinePublications
-        security:
-          - appKey: []
-          - appId: []
-        parameters:
-          - $ref: '#/parameters/PublicationIdPathParam'
-        responses:
-          200:
-            description: Successful object
-            schema:
-              $ref: '#/definitions/OnlinePublicationWithArticles'
+  /online-publications/{publication_id}:
+    get:
+      summary: List online publication with advertised articles
+      description: >
+        Use this operation to get one publication targeted at online channels with related articles,
+        e.g. denner.ch or the Mobile App (Online-Werbemittel).
+      tags:
+        - Online Advertising – Online-Bewerbung
+      operationId: listOnlinePublications
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/PublicationIdPathParam'
+      responses:
+        200:
+          description: Successful object
+          schema:
+            $ref: '#/definitions/OnlinePublicationWithArticles'
 
   /online-filters:
     get:
@@ -758,7 +758,6 @@ definitions:
       - properties:
          articles:
            $ref: '#/definitions/AdvertisedArticles'
-
 
   PromotionType:
     type: object
