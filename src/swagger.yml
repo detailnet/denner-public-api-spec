@@ -194,6 +194,45 @@ paths:
           schema:
             $ref: '#/definitions/OnlineGroupsResponse'
 
+  ### Screen Advertising
+  /screen-publications:
+    get:
+      summary: List all screen publications
+      description: >
+        Use this operation to get a list of all publications targeted at advetising screens (Screen-Werbemittel).
+      tags:
+        - Screen Advertising – Screen-Bewerbung
+      operationId: listScreenPublications
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/ScreenPublicationsResponse'
+
+  /screen-publications/{publication_id}:
+    get:
+      summary: Get single screen publication (includes all advertised articles)
+      description: >
+        Use this operation to get a single publication targeted at screen channels,
+        e.g. denner.ch or the Mobile App (Screen-Werbemittel).
+        The response will include the articles assigned to this publication.
+      tags:
+        - Screen Advertising – Screen-Bewerbung
+      operationId: getScreenPublication
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/PublicationIdPathParam'
+      responses:
+        200:
+          description: Successful object
+          schema:
+            $ref: '#/definitions/ScreenPublicationWithArticles'
+
 parameters:
   PageParam:
     name: page
@@ -538,7 +577,7 @@ definitions:
         $ref: '#/definitions/AssignedArticleGroup'
 
   ### Advertised article
-  AdvertisedArticle:
+  OnlineAdvertisedArticle:
     type: object
     properties:
       id:
@@ -577,6 +616,48 @@ definitions:
       promoted:
         type: boolean
         description: Is a promoted article?
+      compared:
+        type: boolean
+        description: Is a compared article?
+      online_group:
+        $ref: '#/definitions/AddignedOnlineGroup'
+      article_group:
+        $ref: '#/definitions/AssignedArticleGroup'
+      wine:
+        $ref: '#/definitions/ArticleWine'
+
+  ScreenAdvertisedArticle:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      number:
+        type: string
+        pattern: '/^\d{6}$/'
+        description: Navision article code
+      name:
+        type: string
+        description: Article name
+      title:
+        $ref: '#/definitions/Translations'
+      description:
+        $ref: '#/definitions/Translations'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      price_info:
+        $ref: '#/definitions/Translations'
+      saving:
+        $ref: '#/definitions/Translations'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      content:
+        $ref: '#/definitions/Content'
+      base:
+        $ref: '#/definitions/BaseContent'
+      validity:
+        $ref: '#/definitions/Validity'
       compared:
         type: boolean
         description: Is a compared article?
@@ -758,7 +839,7 @@ definitions:
       - $ref: '#/definitions/OnlinePublication'
       - properties:
          articles:
-           $ref: '#/definitions/AdvertisedArticles'
+           $ref: '#/definitions/OnlineAdvertisedArticles'
 
   PromotionType:
     type: object
@@ -828,6 +909,30 @@ definitions:
       parent:
         $ref: '#/definitions/AddignedOnlineGroup'
 
+  ### Screen publication
+  ScreenPublication:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      name:
+        type: string
+      year:
+        $ref: '#/definitions/Year'
+      week:
+        $ref: '#/definitions/Week'
+      title:
+        $ref: '#/definitions/Translations'
+      validity:
+        $ref: '#/definitions/Validity'
+
+  ScreenPublicationWithArticles:
+    allOf:
+      - $ref: '#/definitions/ScreenPublication'
+      - properties:
+         articles:
+           $ref: '#/definitions/ScreenAdvertisedArticles'
+
   ### Collections
   Appearances:
     type: array
@@ -854,10 +959,15 @@ definitions:
     items:
       $ref: '#/definitions/ArticleGroup'
 
-  AdvertisedArticles:
+  OnlineAdvertisedArticles:
     type: array
     items:
-      $ref: '#/definitions/AdvertisedArticle'
+      $ref: '#/definitions/OnlineAdvertisedArticle'
+
+  ScreenAdvertisedArticles:
+    type: array
+    items:
+      $ref: '#/definitions/ScreenAdvertisedArticle'
 
   OnlinePublications:
     type: array
@@ -873,6 +983,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/OnlineGroup'
+
+  ScreenPublications:
+    type: array
+    items:
+      $ref: '#/definitions/ScreenPublication'
 
   ### Responses
   StoresResponse:
@@ -1000,3 +1115,21 @@ definitions:
         format: int32
       online_publications:
         $ref: '#/definitions/OnlinePublications'
+
+  ScreenPublicationsResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      screen_publications:
+        $ref: '#/definitions/ScreenPublications'
