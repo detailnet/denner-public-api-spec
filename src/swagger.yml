@@ -46,6 +46,234 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/StoresResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 1
+              total_items: 1
+              stores:
+                -
+                  id: "bcb8a388-8998-4d08-85a6-4864199704ee"
+                  code: 302
+                  address: "Werdstrasse"
+                  number: "36"
+                  zip_code: 8004
+                  canton_code: "ZH"
+                  city: "Zürich"
+                  country:
+                    id: "CH"
+                    title:
+                      -
+                        locale: "de"
+                        value: "Schweiz"
+                      -
+                        locale: "fr"
+                        value: "Suisse"
+                      -
+                        locale: "it"
+                        value: "Svizzera"
+                  phone: "044 240 22 83"
+                  hotline: "0848 99 66 33"
+                  payment_types:
+                    - "cash"
+                    - "euro"
+                    - "maestro"
+                    - "post"
+                  credit_card: true
+                  opened_on: "1998-08-01"
+                  latitude: 47.3728447
+                  longitude: 8.5295153
+                  language: "de"
+                  email: "info@denner.ch"
+                  homepage: "http://www.denner.ch"
+                  parking_count: 0
+                  channel:
+                    id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
+                    code: 1
+                    title:
+                      -
+                        locale: "de"
+                        value: "Denner"
+                      -
+                        locale: "fr"
+                        value: "Denner"
+                      -
+                        locale: "it"
+                        value: "Denner"
+                  opening_times:
+                    -
+                      weekday: 1
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      weekday: 2
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      weekday: 3
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      weekday: 4
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      weekday: 5
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      weekday: 6
+                      opens_at: "08:00:00"
+                      closes_at: "12:00:00"
+                    -
+                      weekday: 6
+                      opens_at: "14:00:00"
+                      closes_at: "20:00:00"
+                  special_opening_times:
+                    -
+                      day: "2015-06-26"
+                      reason:
+                        -
+                          locale: "de"
+                          value: "Umbau"
+                        -
+                          locale: "fr"
+                          value: "tbd"
+                        -
+                          locale: "it"
+                          value: "tbd"
+                      closed: true
+                    -
+                      day: "2015-06-28"
+                      opens_at: "10:00:00"
+                      closes_at: "16:00:00"
+                      reason:
+                        -
+                          locale: "de"
+                          value: "Sonntagsverkauf"
+                        -
+                          locale: "fr"
+                          value: "tbd"
+                        -
+                          locale: "it"
+                          value: "tbd"
+                      closed: false
+                  calendar_opening_times:
+                    -
+                      day: "2015-06-22"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-06-23"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-06-24"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-06-25"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-06-27"
+                      opens_at: "08:00:00"
+                      closes_at: "12:00:00"
+                    -
+                      day: "2015-06-27"
+                      opens_at: "14:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-06-28"
+                      opens_at: "10:00:00"
+                      closes_at: "16:00:00"
+                    -
+                      day: "2015-06-29"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-06-30"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-07-01"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-07-02"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-07-03"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-07-04"
+                      opens_at: "08:00:00"
+                      closes_at: "12:00:00"
+                    -
+                      day: "2015-07-04"
+                      opens_at: "14:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-07-06"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                    -
+                      day: "2015-07-07"
+                      opens_at: "08:00:00"
+                      closes_at: "20:00:00"
+                  services:
+                    -
+                      id: "acb911fb-b7e3-480f-ab91-1109e750892a"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Humidor"
+                        -
+                          locale: "fr"
+                          value: "Humidor"
+                        -
+                          locale: "it"
+                          value: "Humidor"
+                      appearances:
+                        -
+                          from: "2015-06-01"
+                          to: "2015-06-30"
+                        -
+                          from: "2016-06-01"
+                          to: "2016-06-30"
+                    -
+                      id: "d7b4925e-79f8-415f-9436-0adb4a9cc4de"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Früchte und Gemüse"
+                        -
+                          locale: "fr"
+                          value: "Fruits et Légumes"
+                        -
+                          locale: "it"
+                          value: "Frutta e verdura"
+                      appearances:
+                        -
+                          from: "2013-01-01"
+                    -
+                      id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Backstation"
+                        -
+                          locale: "fr"
+                          value: "Four à pain"
+                        -
+                          locale: "it"
+                          value: "Punto cottura"
+                      appearances:
+                        -
+                          from: "2013-01-01"
 
   /store-channels:
     get:
@@ -67,6 +295,39 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/StoreChannelsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 2
+              total_items: 2
+              store_channels:
+                  -
+                    id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
+                    code: 1
+                    title:
+                      -
+                        locale: "de"
+                        value: "Denner"
+                      -
+                        locale: "fr"
+                        value: "Denner"
+                      -
+                        locale: "it"
+                        value: "Denner"
+                  -
+                    id: "18549f95-6471-4e21-968f-8a0bf2e0f79b"
+                    code: 2
+                    title:
+                      -
+                        locale: "de"
+                        value: "Denner Satellit und Denner Express"
+                      -
+                        locale: "fr"
+                        value: "Satellite Denner et Denner Express"
+                      -
+                        locale: "it"
+                        value: "Satelliti Denner e Denner Express"
 
   /store-services:
     get:
@@ -88,6 +349,73 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/StoreServicesResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 5
+              total_items: 5
+              store_services:
+                -
+                  id: "acb911fb-b7e3-480f-ab91-1109e750892a"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Humidor"
+                    -
+                      locale: "fr"
+                      value: "Humidor"
+                    -
+                      locale: "it"
+                      value: "Humidor"
+                -
+                  id: "85aa57ad-2bf3-48e5-a1a0-813889cbae26"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Bordeaux Grands Crus"
+                    -
+                      locale: "fr"
+                      value: "Bordeaux Grands Crus"
+                    -
+                      locale: "it"
+                      value: "Bordeaux Grands Crus"
+                -
+                  id: "d7b4925e-79f8-415f-9436-0adb4a9cc4de"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Früchte und Gemüse"
+                    -
+                      locale: "fr"
+                      value: "Fruits et Légumes"
+                    -
+                      locale: "it"
+                      value: "Frutta e verdura"
+                -
+                  id: "47191064-ad2e-482a-a5cf-2aa32d0b8116"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Früchte und Gemüse im Offenverkauf"
+                    -
+                      locale: "fr"
+                      value: "Fruits et légumes en vrac"
+                    -
+                      locale: "it"
+                      value: "Frutta e verdura in vendita sfusa"
+                -
+                  id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Backstation"
+                    -
+                      locale: "fr"
+                      value: "Four à pain"
+                    -
+                      locale: "it"
+                      value: "Punto cottura"
 
   ### Articles/Promotions
   /article-groups:
@@ -109,6 +437,38 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/ArticleGroupsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 2
+              total_items: 2
+              article_groups:
+                -
+                  id: "42680ccc-a000-4848-9495-af6b02ea231c"
+                  code: "01"
+                  name: "Molkereiprodukte & Eier"
+                  children:
+                    -
+                      id: "bd377284-0758-46a6-b1af-b3219f7d9fcf"
+                      code: "01-10"
+                      name: "Butter"
+                      children: []
+                    -
+                      id: "71ee4a8b-92b5-4f5a-820d-353a9fce9b04"
+                      code: "01-15"
+                      name: "Milch"
+                      children: []
+                -
+                  id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
+                  code: "60"
+                  name: "Weine"
+                  children:
+                    -
+                      id: "b3c6797a-777a-4103-aba8-d82089ba2980"
+                      code: "60-56"
+                      name: "Italien Rot 70 cl"
+                      children: []
 
   ### Online Advertising
   /online-publications:
@@ -173,6 +533,41 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/OnlineFiltersResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 2
+              total_items: 2
+              online_filters:
+                -
+                  id: "3734ef1f-4c1a-428c-af24-7d85af7c5041"
+                  name: "Aktionen der Folgewoche"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Aktionen der Folgewoche"
+                    -
+                      locale: "fr"
+                      value: "Hits de la semaine suivante"
+                    -
+                      locale: "it"
+                      value: "Promozioni della settimana seguente"
+                  sort_index: 0
+                -
+                  id: "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c"
+                  name: "Aktionen aktuelle Woche"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Aktionen aktuelle Woche"
+                    -
+                      locale: "fr"
+                      value: "Hits de la semaine en cours"
+                    -
+                      locale: "it"
+                      value: "Promozioni della settimana corrente"
+                  sort_index: 1
 
   /online-groups:
     get:
@@ -193,6 +588,61 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/OnlineGroupsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 1
+              total_items: 1
+              online_groups:
+                -
+                  id: "7627150d-36bd-4867-89b2-091800a03d24"
+                  code: 1001
+                  sort_index: 0
+                  disabled: false
+                  title:
+                    -
+                      locale: "de"
+                      value: "Frischprodukte"
+                    -
+                      locale: "fr"
+                      value: "Produits frais"
+                    -
+                      locale: "it"
+                      value: "Prodotti freschi"
+                  children:
+                    -
+                      id: "58afec5c-ece9-4b66-bc55-00d6dc1b65b8"
+                      code: 1001
+                      sort_index: 0
+                      disabled: false
+                      title:
+                        -
+                          locale: "de"
+                          value: "Milchprodukte"
+                        -
+                          locale: "fr"
+                          value: "Produits laitiers"
+                        -
+                          locale: "it"
+                          value: "Latticini"
+                      children: []
+                    -
+                      id: "e5216167-9da5-41d6-b7b3-96362b60de89"
+                      code: 1002
+                      sort_index: 1
+                      disabled: true
+                      title:
+                        -
+                          locale: "de"
+                          value: "Eier"
+                        -
+                          locale: "fr"
+                          value: "Oeufs"
+                        -
+                          locale: "it"
+                          value: "Uova"
+                      children: []
 
   ### Screen Advertising
   /screen-publications:
@@ -556,8 +1006,9 @@ definitions:
         type: string
         pattern: '/^\d{2}(-\d{2,3})?$/'
         description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
-      title:
-        $ref: '#/definitions/Translations'
+      name:
+        type: string
+        description: Article group name
       children:
         $ref: '#/definitions/ArticleGroups'
 
@@ -570,8 +1021,9 @@ definitions:
         type: string
         pattern: '/^\d{2}(-\d{2,3})?$/'
         description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
-      title:
-        $ref: '#/definitions/Translations'
+      name:
+        type: string
+        description: Article group name
       parent:
         $ref: '#/definitions/AssignedArticleGroup'
 
