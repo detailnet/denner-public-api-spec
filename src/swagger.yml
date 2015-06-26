@@ -1026,18 +1026,6 @@ definitions:
   OnlinePublicationResponse:
     type: object
     properties:
-      page_count:
-        description: The number of pages
-        type: integer
-        format: int32
-      page_size:
-        description: The page size
-        type: integer
-        format: int32
-      total_items:
-        description: The number of items on all pages
-        type: integer
-        format: int32
       online_publication:
         $ref: '#/definitions/OnlinePublicationWithArticles'
 
