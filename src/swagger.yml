@@ -67,6 +67,38 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/StoreChannelsResponse'
+          examples:
+            application/json:
+              page_count: 1
+              page_size: 2
+              total_items: 2
+              store_channels:
+                  -
+                    id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
+                    code: 1
+                    title:
+                      -
+                        locale: "de"
+                        value: "Denner"
+                      -
+                        locale: "fr"
+                        value: "Denner"
+                      -
+                        locale: "it"
+                        value: "Denner"
+                  -
+                    id: "18549f95-6471-4e21-968f-8a0bf2e0f79b"
+                    code: 2
+                    title:
+                      -
+                        locale: "de"
+                        value: "Denner Satellit und Denner Express"
+                      -
+                        locale: "fr"
+                        value: "Satellite Denner et Denner Express"
+                      -
+                        locale: "it"
+                        value: "Satelliti Denner e Denner Express"
 
   /store-services:
     get:
