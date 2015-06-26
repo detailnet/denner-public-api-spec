@@ -441,8 +441,8 @@ paths:
             application/json:
 
               page_count: 1
-              page_size: 5
-              total_items: 5
+              page_size: 1
+              total_items: 1
               article_groups:
                 -
                   id: "42680ccc-a000-4848-9495-af6b02ea231c"
@@ -554,8 +554,8 @@ paths:
             application/json:
 
               page_count: 1
-              page_size: 5
-              total_items: 5
+              page_size: 2
+              total_items: 2
               online_filters:
                 -
                   id: "3734ef1f-4c1a-428c-af24-7d85af7c5041"
@@ -609,8 +609,8 @@ paths:
             application/json:
 
               page_count: 1
-              page_size: 5
-              total_items: 5
+              page_size: 1
+              total_items: 1
               online_groups:
                 -
                   id: "7627150d-36bd-4867-89b2-091800a03d24"
