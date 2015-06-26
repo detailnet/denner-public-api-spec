@@ -3,57 +3,31 @@
         {
             "id": "42680ccc-a000-4848-9495-af6b02ea231c",
             "code": "01",
-            "title": [
-                {
-                    "locale": "de",
-                    "value": "Molkereiprodukte & Eier"
-                },
-                {
-                    "locale": "fr",
-                    "value": "tbd"
-                },
-                {
-                    "locale": "it",
-                    "value": "tbd"
-                }
-            ],
+            "name": "Molkereiprodukte & Eier",
             "children": [
                 {
                     "id": "bd377284-0758-46a6-b1af-b3219f7d9fcf",
                     "code": "01-10",
-                    "title": [
-                        {
-                            "locale": "de",
-                            "value": "Butter"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": ""
-                        },
-                        {
-                            "locale": "it",
-                            "value": ""
-                        }
-                    ],
+                    "name": "Butter",
                     "children": []
                 },
                 {
                     "id": "71ee4a8b-92b5-4f5a-820d-353a9fce9b04",
                     "code": "01-15",
-                    "title": [
-                        {
-                            "locale": "de",
-                            "value": "Milch"
-                        },
-                        {
-                            "locale": "fr",
-                            "value": ""
-                        },
-                        {
-                            "locale": "it",
-                            "value": ""
-                        }
-                    ],
+                    "name": "Milch",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "id": "380d422a-5b8f-42c5-872c-c4ddf4bb5611",
+            "code": "60",
+            "name": "Weine",
+            "children": [
+                {
+                    "id": "b3c6797a-777a-4103-aba8-d82089ba2980",
+                    "code": "60-56",
+                    "name": "Italien Rot 70 cl",
                     "children": []
                 }
             ]
