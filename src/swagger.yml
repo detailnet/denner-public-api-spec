@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   description: RESTful API for the Denner Portal
-  version: 0.1.0
+  version: 0.2.0
   title: Denner Portal 2.0
   contact:
     name: DETAIL NET
@@ -132,27 +132,26 @@ paths:
           schema:
             $ref: '#/definitions/OnlinePublicationsResponse'
 
-  /online-publications/{publication_id}/articles:
+  /online-publications/{publication_id}:
     get:
-      summary: List all (advertised) articles of a single online publication
+      summary: Get single online publication (includes all advertised articles)
       description: >
-        Use this operation to get a list of all (advertised) articles of the online publication
-        (beworbene Artikel im Online-Werbemittel).
+        Use this operation to get a single publication targeted at online channels,
+        e.g. denner.ch or the Mobile App (Online-Werbemittel).
+        The response will include the articles assigned to this publication.
       tags:
         - Online Advertising – Online-Bewerbung
-      operationId: listOnlinePublicationArticles
+      operationId: getOnlinePublication
       security:
         - appKey: []
         - appId: []
       parameters:
         - $ref: '#/parameters/PublicationIdPathParam'
-        - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
       responses:
         200:
-          description: Successful listing
+          description: Successful object
           schema:
-            $ref: '#/definitions/OnlinePublicationArticlesResponse'
+            $ref: '#/definitions/OnlinePublicationWithArticles'
 
   /online-filters:
     get:
@@ -753,8 +752,13 @@ definitions:
         $ref: '#/definitions/PromotionType'
       sort_index:
         $ref: '#/definitions/SortIndex'
-      articles:
-        $ref: '#/definitions/AdvertisedArticles'
+
+  OnlinePublicationWithArticles:
+    allOf:
+      - $ref: '#/definitions/OnlinePublication'
+      - properties:
+         articles:
+           $ref: '#/definitions/AdvertisedArticles'
 
   PromotionType:
     type: object
@@ -996,21 +1000,3 @@ definitions:
         format: int32
       online_publications:
         $ref: '#/definitions/OnlinePublications'
-
-  OnlinePublicationArticlesResponse:
-    type: object
-    properties:
-      page_count:
-        description: The number of pages
-        type: integer
-        format: int32
-      page_size:
-        description: The page size
-        type: integer
-        format: int32
-      total_items:
-        description: The number of items on all pages
-        type: integer
-        format: int32
-      articles:
-        $ref: '#/definitions/AdvertisedArticles'
