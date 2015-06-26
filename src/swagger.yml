@@ -199,7 +199,7 @@ paths:
     get:
       summary: List all screen publications
       description: >
-        Use this operation to get a list of all publications targeted at advetising screens (Screen-Werbemittel).
+        Use this operation to get a list of all publications targeted at advertising screens (Screen-Werbemittel).
       tags:
         - Screen Advertising – Screen-Bewerbung
       operationId: listScreenPublications
@@ -216,8 +216,7 @@ paths:
     get:
       summary: Get single screen publication (includes all advertised articles)
       description: >
-        Use this operation to get a single publication targeted at screen channels,
-        e.g. denner.ch or the Mobile App (Screen-Werbemittel).
+        Use this operation to get a single publication targeted at advertising screens (Screen-Werbemittel).
         The response will include the articles assigned to this publication.
       tags:
         - Screen Advertising – Screen-Bewerbung
