@@ -1638,16 +1638,23 @@ paths:
 parameters:
   PageParam:
     name: page
-    description: The page number
+    description: >
+      The page number.
+      Default: 1
     in: query
     type: integer
     format: int32
+    minimum: 0
+    default: 1
   PageSizeParam:
     name: page_size
-    description: The page size
+    description: >
+      The page size.
+      Default: -1 (no limit)
     in: query
     type: integer
     format: int32
+    default: -1
   PublicationIdPathParam:
     name: publication_id
     description: The unique identifier of an online publication
