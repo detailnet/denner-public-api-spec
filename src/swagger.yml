@@ -470,6 +470,246 @@ paths:
                       name: "Italien Rot 70 cl"
                       children: []
 
+  /articles:
+    get:
+      summary: List all articles
+      description: |
+        Use this operation to get a list of all articles.
+
+        To get only shop wines set 'filter' param to '[{"property":"is_in_shop","operator":"eq","type":"boolean","value":true}]'
+      tags:
+        - Articles and Promotions – Artikel und Aktionen
+      operationId: listArticles
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/FilterParam'
+#        - $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/ArticlesResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 1
+              total_items: 1
+              articls:
+              -
+                id: "11c0ac30-28c3-4163-8d1c-f7622366a6f0"
+                number: "051273"
+                name: "Mandorla Primitivo IGT Puglia"
+                title:
+                  -
+                    locale: "de"
+                    value: "Mandorla Primitivo di Puglia IGT"
+                  -
+                    locale: "fr"
+                    value: "Mandorla Primitivo di Puglia IGT"
+                  -
+                    locale: "it"
+                    value: "Mandorla Primitivo di Puglia IGT"
+                description:
+                  -
+                    locale: "de"
+                    value: "2013, Apulien, Italien, 6 x 75 cl"
+                  -
+                    locale: "fr"
+                    value: "2013, les Pouilles, Italie, 6 x 75 cl"
+                  -
+                    locale: "it"
+                    value: "2013, Puglia, Italia, 6 x 75 cl"
+                prices:
+                  sales: 59.4
+                  instead: 68.4
+                  base: 1.32
+                  by_quantity:
+                    -
+                      quantity: 1
+                      sales: 9.9
+                      instead: 11.4
+                    -
+                      quantity: 6
+                      sales: 59.4
+                      instead: 68.4
+                content:
+                  size: 75
+                  unit: "cl"
+                base:
+                  size: 10
+                  unit: "cl"
+                  text:
+                    -
+                      locale: "de"
+                      value: "10 cl"
+                    -
+                      locale: "fr"
+                      value: "10 cl"
+                    -
+                      locale: "it"
+                      value: "10 cl"
+                online_group:
+                  id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
+                  code: 4003
+                  allow_featuring: true
+                  allow_promotion: true
+                  allow_background: true
+                  title:
+                    -
+                      locale: "de"
+                      value: "Wein"
+                    -
+                      locale: "fr"
+                      value: "Vins"
+                    -
+                      locale: "it"
+                      value: "Vini"
+                  parent:
+                    id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
+                    code: 4001
+                    allow_featuring: true
+                    allow_promotion: true
+                    allow_background: true
+                    title:
+                      -
+                        locale: "de"
+                        value: "TafelgetrÃ¤nke und Mineralwasser"
+                      -
+                        locale: "fr"
+                        value: "Boissons table et eau minÃ©rale"
+                      -
+                        locale: "it"
+                        value: "Bevande da tavola e acque minerali"
+                article_group:
+                  id: "b3c6797a-777a-4103-aba8-d82089ba2980"
+                  code: "60-56"
+                  name: "Italien Rot 70 cl"
+                  parent:
+                    id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
+                    code: "60"
+                    name: "Weine"
+                wine:
+                  country:
+                    id: "IT"
+                    title:
+                      -
+                        locale: "de"
+                        value: "Italien"
+                      -
+                        locale: "fr"
+                        value: "Italie"
+                      -
+                        locale: "it"
+                        value: "Italia"
+                  region:
+                    id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
+                    title:
+                      -
+                        locale: "de"
+                        value: "Apulien"
+                      -
+                        locale: "fr"
+                        value: "Les Pouilles"
+                      -
+                        locale: "it"
+                        value: "Puglia"
+                  type:
+                    id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                    title:
+                      -
+                        locale: "de"
+                        value: "Rotwein"
+                      -
+                        locale: "fr"
+                        value: "Vin rouge"
+                      -
+                        locale: "it"
+                        value: "Vino rosso"
+                  year: 2013
+                  fits_with:
+                    -
+                      locale: "de"
+                      value: "Pasta, Fleisch mit wÃ¼rzigen Saucen"
+                    -
+                      locale: "fr"
+                      value: "PÃ¢tes, viande aux sauces relevÃ©es"
+                    -
+                      locale: "it"
+                      value: "Pasta, carni accompagnate da salse aromatiche"
+                  varietal:
+                    -
+                      locale: "de"
+                      value: "Primitivo"
+                    -
+                      locale: "fr"
+                      value: "Primitivo"
+                    -
+                      locale: "it"
+                      value: "Primitivo"
+                  character:
+                    -
+                      locale: "de"
+                      value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                    -
+                      locale: "fr"
+                      value: "Robe rubis foncÃ©. Nez de baies rouges, de cerises matures et de mÃ»res. Bouche moelleuse."
+                    -
+                      locale: "it"
+                      value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                  temperature:
+                    -
+                      locale: "de"
+                      value: "16-18 Â°C"
+                    -
+                      locale: "fr"
+                      value: "16-18 Â°C"
+                    -
+                      locale: "it"
+                      value: "16-18 Â°C"
+                  awards:
+                    -
+                      locale: "de"
+                      value: ""
+                    -
+                      locale: "fr"
+                      value: ""
+                    -
+                      locale: "it"
+                      value: ""
+                  storage:
+                    -
+                      locale: "de"
+                      value: "3 Jahre"
+                    -
+                      locale: "fr"
+                      value: "3 ans"
+                    -
+                      locale: "it"
+                      value: "3 anni"
+                  rating:
+                    value: 4.45
+                    total: 11
+                    valid: true
+                  stock:
+                    value: -15
+                    code: 2
+                    message:
+                      -
+                        locale: "de"
+                        value: "Derzeit nicht bestellbar"
+                      -
+                        locale: "fr"
+                        value: "Actuellement pas disponible"
+                      -
+                        locale: "it"
+                        value: "Attualmente non disponibile"
+                  shop_url: "http://denner-wineshop.ch/skuredirect/051273/"
+
   ### Online Advertising
   /online-publications:
     get:
@@ -1414,6 +1654,22 @@ parameters:
     in: path
     type: string
     pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+  FilterParam:
+    name: filter
+    in: query
+    type: string
+    description: |
+      Filters: JSON array of Filter object, urlencoded.
+
+      Filter object:
+      - property: Property to filter on.
+      - operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).
+      - type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).
+      - value: Value. Must be of the defined type.
+
+      examples:
+      - [{"property":"id","operator":"in","type":"array","value":["7627150d-36bd-4867-89b2-091800a03d24","58afec5c-ece9-4b66-bc55-00d6dc1b65b8"]}]
+      - [{"property":"is_in_shop","operator":"eq","type":"boolean","value":true}]
 
 definitions:
   ### Common
@@ -1514,6 +1770,16 @@ definitions:
       to:
         type: string
         format: date
+
+  Validity:
+    type: object
+    properties:
+      from:
+        $ref: '#/definitions/Date'
+      to:
+        $ref: '#/definitions/Date'
+      text:
+        $ref: '#/definitions/Translations'
 
   Url:
     type: string
@@ -1740,8 +2006,8 @@ definitions:
       parent:
         $ref: '#/definitions/AssignedArticleGroup'
 
-  ### Advertised article
-  OnlineAdvertisedArticle:
+  ### Article
+  Article:
     type: object
     properties:
       id:
@@ -1759,81 +2025,12 @@ definitions:
         $ref: '#/definitions/Translations'
       prices:
         $ref: '#/definitions/ArticlePrices'
-      prices:
-        $ref: '#/definitions/ArticlePrices'
       price_info:
         $ref: '#/definitions/Translations'
-      dot:
-        $ref: '#/definitions/Translations'
-      panel:
-        $ref: '#/definitions/Translations'
-      quantity:
-        $ref: '#/definitions/Quantity'
       content:
         $ref: '#/definitions/Content'
       base:
         $ref: '#/definitions/BaseContent'
-      validity:
-        $ref: '#/definitions/Validity'
-      sort_index:
-        $ref: '#/definitions/SortIndex'
-      featured_sort_index:
-        $ref: '#/definitions/SortIndex'
-      featured:
-        type: boolean
-        description: Is it a featured article (should be displayed on the front/main/home page)?
-      promoted:
-        type: boolean
-        description: Is it a promoted article (should be displayed with full information)?
-      compared:
-        type: boolean
-        description: Is the article's price compared to an offer from an other company?
-      online_group:
-        $ref: '#/definitions/AssignedOnlineGroup'
-      article_group:
-        $ref: '#/definitions/AssignedArticleGroup'
-      wine:
-        $ref: '#/definitions/ArticleWine'
-
-  ScreenAdvertisedArticle:
-    type: object
-    properties:
-      id:
-        $ref: '#/definitions/UUIDv4'
-      number:
-        type: string
-        pattern: '/^\d{6}$/'
-        description: Navision article code
-      name:
-        type: string
-        description: Article name
-      title:
-        $ref: '#/definitions/Translations'
-      description:
-        $ref: '#/definitions/Translations'
-      prices:
-        $ref: '#/definitions/ArticlePrices'
-      prices:
-        $ref: '#/definitions/ArticlePrices'
-      price_info:
-        $ref: '#/definitions/Translations'
-      dot:
-        $ref: '#/definitions/Translations'
-      panel:
-        $ref: '#/definitions/Translations'
-      quantity:
-        $ref: '#/definitions/Quantity'
-      content:
-        $ref: '#/definitions/Content'
-      base:
-        $ref: '#/definitions/BaseContent'
-      validity:
-        $ref: '#/definitions/Validity'
-      sort_index:
-        $ref: '#/definitions/SortIndex'
-      compared:
-        type: boolean
-        description: Is the article's price compared to an offer from an other company?
       online_group:
         $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
@@ -1883,16 +2080,6 @@ definitions:
         $ref: '#/definitions/ContentSize'
       unit:
         $ref: '#/definitions/ContentUnit'
-      text:
-        $ref: '#/definitions/Translations'
-
-  Validity:
-    type: object
-    properties:
-      from:
-        $ref: '#/definitions/Date'
-      to:
-        $ref: '#/definitions/Date'
       text:
         $ref: '#/definitions/Translations'
 
@@ -1974,6 +2161,103 @@ definitions:
         description: Navision stock code
       message:
         $ref: '#/definitions/Translations'
+
+  ### Advertised article
+  OnlineAdvertisedArticle:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      number:
+        type: string
+        pattern: '/^\d{6}$/'
+        description: Navision article code
+      name:
+        type: string
+        description: Article name
+      title:
+        $ref: '#/definitions/Translations'
+      description:
+        $ref: '#/definitions/Translations'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      price_info:
+        $ref: '#/definitions/Translations'
+      dot:
+        $ref: '#/definitions/Translations'
+      panel:
+        $ref: '#/definitions/Translations'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      content:
+        $ref: '#/definitions/Content'
+      base:
+        $ref: '#/definitions/BaseContent'
+      validity:
+        $ref: '#/definitions/Validity'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      featured_sort_index:
+        $ref: '#/definitions/SortIndex'
+      featured:
+        type: boolean
+        description: Is it a featured article (should be displayed on the front/main/home page)?
+      promoted:
+        type: boolean
+        description: Is it a promoted article (should be displayed with full information)?
+      compared:
+        type: boolean
+        description: Is the article's price compared to an offer from an other company?
+      online_group:
+        $ref: '#/definitions/AssignedOnlineGroup'
+      article_group:
+        $ref: '#/definitions/AssignedArticleGroup'
+      wine:
+        $ref: '#/definitions/ArticleWine'
+
+  ScreenAdvertisedArticle:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      number:
+        type: string
+        pattern: '/^\d{6}$/'
+        description: Navision article code
+      name:
+        type: string
+        description: Article name
+      title:
+        $ref: '#/definitions/Translations'
+      description:
+        $ref: '#/definitions/Translations'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      price_info:
+        $ref: '#/definitions/Translations'
+      dot:
+        $ref: '#/definitions/Translations'
+      panel:
+        $ref: '#/definitions/Translations'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      content:
+        $ref: '#/definitions/Content'
+      base:
+        $ref: '#/definitions/BaseContent'
+      validity:
+        $ref: '#/definitions/Validity'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      compared:
+        type: boolean
+        description: Is the article's price compared to an offer from an other company?
+      online_group:
+        $ref: '#/definitions/AssignedOnlineGroup'
+      article_group:
+        $ref: '#/definitions/AssignedArticleGroup'
+      wine:
+        $ref: '#/definitions/ArticleWine'
 
   ### Online publication
   OnlinePublication:
@@ -2146,6 +2430,11 @@ definitions:
     items:
       $ref: '#/definitions/ArticleGroup'
 
+  Articles:
+    type: array
+    items:
+      $ref: '#/definitions/Article'
+
   OnlineAdvertisedArticles:
     type: array
     items:
@@ -2248,6 +2537,24 @@ definitions:
         format: int32
       article_groups:
         $ref: '#/definitions/ArticleGroups'
+
+  ArticlesResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      articles:
+        $ref: '#/definitions/Articles'
 
   OnlineFiltersResponse:
     type: object
