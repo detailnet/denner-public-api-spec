@@ -684,7 +684,17 @@ paths:
                     -
                       locale: "it"
                       value: "Confronto con la concorrenza"
-                  saving:
+                  dot:
+                    -
+                      locale: "de"
+                      value: "1/2 Preis"
+                    -
+                      locale: "fr"
+                      value: "1/2 prix"
+                    -
+                      locale: "it"
+                      value: "1/2 prezzo"
+                  panel:
                     -
                       locale: "de"
                       value: "9.- sparen"
@@ -1161,7 +1171,17 @@ paths:
                     -
                       locale: "it"
                       value: "Confronto con la concorrenza"
-                  saving:
+                  dot:
+                    -
+                      locale: "de"
+                      value: "1/2 Preis"
+                    -
+                      locale: "fr"
+                      value: "1/2 prix"
+                    -
+                      locale: "it"
+                      value: "1/2 prezzo"
+                  panel:
                     -
                       locale: "de"
                       value: "9.- sparen"
@@ -1722,7 +1742,9 @@ definitions:
         $ref: '#/definitions/ArticlePrices'
       price_info:
         $ref: '#/definitions/Translations'
-      saving:
+      dot:
+        $ref: '#/definitions/Translations'
+      panel:
         $ref: '#/definitions/Translations'
       quantity:
         $ref: '#/definitions/Quantity'
@@ -1774,7 +1796,9 @@ definitions:
         $ref: '#/definitions/ArticlePrices'
       price_info:
         $ref: '#/definitions/Translations'
-      saving:
+      dot:
+        $ref: '#/definitions/Translations'
+      panel:
         $ref: '#/definitions/Translations'
       quantity:
         $ref: '#/definitions/Quantity'
