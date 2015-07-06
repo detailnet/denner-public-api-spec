@@ -476,7 +476,7 @@ paths:
       description: |
         Use this operation to get a list of all articles.
 
-        To get only shop wines set 'filter' param to '[{"property":"is_in_shop","operator":"eq","type":"boolean","value":true}]'
+        To get only shop wines set 'filter' param to '[{"property":"in_shop","operator":"eq","type":"boolean","value":true}]'
       tags:
         - Articles and Promotions – Artikel und Aktionen
       operationId: listArticles
@@ -1667,9 +1667,9 @@ parameters:
       - type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).
       - value: Value. Must be of the defined type.
 
-      examples:
+      Examples:
       - [{"property":"id","operator":"in","type":"array","value":["7627150d-36bd-4867-89b2-091800a03d24","58afec5c-ece9-4b66-bc55-00d6dc1b65b8"]}]
-      - [{"property":"is_in_shop","operator":"eq","type":"boolean","value":true}]
+      - [{"property":"in_shop","operator":"eq","type":"boolean","value":true}]
 
 definitions:
   ### Common
