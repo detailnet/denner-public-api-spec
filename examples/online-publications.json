@@ -73,14 +73,6 @@
                     ]
                 }
             ],
-            "global_appearance": {
-                "from": "2015-06-19",
-                "to": "2015-06-29"
-            },
-            "featured_appearance": {
-                "from": "2015-06-23",
-                "to": "2015-06-29"
-            },
             "promotion_type": {
                 "id": "16fe4454-8a99-49bc-9099-d3b48805c67e",
                 "code": "FLUGBLATT",
@@ -90,7 +82,7 @@
             "articles": [
                 {
                     "id": "48fcba99-b506-4395-ac1a-373e2af478b1",
-                    "number": "050273",
+                    "number": "051273",
                     "name": "Mandorla Primitivo IGT Puglia",
                     "title": [
                         {
@@ -151,7 +143,21 @@
                             "value": "Confronto con la concorrenza"
                         }
                     ],
-                    "saving": [
+                    "dot": [
+                        {
+                            "locale": "de",
+                            "value": "1/2 Preis"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "1/2 prix"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "1/2 prezzo"
+                        }
+                    ],
+                    "panel": [
                         {
                             "locale": "de",
                             "value": "9.- sparen"
@@ -206,19 +212,17 @@
                             }
                         ]
                     },
-                    "global_appearance": {
-                        "from": "2015-06-19",
-                        "to": "2015-06-29"
-                    },
-                    "featured_appearance": {
-                        "from": "2015-06-23",
-                        "to": "2015-06-29"
-                    },
+                    "sort_index": 0,
+                    "featured_sort_index": 10,
+                    "featured": true,
                     "promoted": true,
                     "compared": true,
                     "online_group": {
                         "id": "671988cc-ca5f-484e-8db8-23a65ea0044a",
                         "code": 4003,
+                        "allow_featuring": true,
+                        "allow_promotion": true,
+                        "allow_background": true,
                         "title": [
                             {
                                 "locale": "de",
@@ -236,6 +240,9 @@
                         "parent": {
                             "id": "5b79391b-b436-45f9-b3e4-93ec3ae1fae2",
                             "code": 4001,
+                            "allow_featuring": true,
+                            "allow_promotion": true,
+                            "allow_background": true,
                             "title": [
                                 {
                                     "locale": "de",

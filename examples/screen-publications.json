@@ -40,7 +40,7 @@
             "articles": [
                 {
                     "id": "48fcba99-b506-4395-ac1a-373e2af478b1",
-                    "number": "050273",
+                    "number": "051273",
                     "name": "Mandorla Primitivo IGT Puglia",
                     "title": [
                         {
@@ -101,7 +101,21 @@
                             "value": "Confronto con la concorrenza"
                         }
                     ],
-                    "saving": [
+                    "dot": [
+                        {
+                            "locale": "de",
+                            "value": "1/2 Preis"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "1/2 prix"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "1/2 prezzo"
+                        }
+                    ],
+                    "panel": [
                         {
                             "locale": "de",
                             "value": "9.- sparen"
@@ -156,10 +170,14 @@
                             }
                         ]
                     },
+                    "sort_index": 0,
                     "compared": true,
                     "online_group": {
                         "id": "671988cc-ca5f-484e-8db8-23a65ea0044a",
                         "code": 4003,
+                        "allow_featuring": true,
+                        "allow_promotion": true,
+                        "allow_background": true,
                         "title": [
                             {
                                 "locale": "de",
@@ -177,6 +195,9 @@
                         "parent": {
                             "id": "5b79391b-b436-45f9-b3e4-93ec3ae1fae2",
                             "code": 4001,
+                            "allow_featuring": true,
+                            "allow_promotion": true,
+                            "allow_background": true,
                             "title": [
                                 {
                                     "locale": "de",
