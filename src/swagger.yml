@@ -1746,7 +1746,7 @@ definitions:
         type: boolean
         description: Is the article's price compared to an offer from an other company?
       online_group:
-        $ref: '#/definitions/AddignedOnlineGroup'
+        $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
         $ref: '#/definitions/AssignedArticleGroup'
       wine:
@@ -1790,7 +1790,7 @@ definitions:
         type: boolean
         description: Is the article's price compared to an offer from an other company?
       online_group:
-        $ref: '#/definitions/AddignedOnlineGroup'
+        $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
         $ref: '#/definitions/AssignedArticleGroup'
       wine:
@@ -2019,7 +2019,7 @@ definitions:
       children:
         $ref: '#/definitions/OnlineGroups'
 
-  AddignedOnlineGroup:
+  AssignedOnlineGroup:
     type: object
     properties:
       id:
@@ -2031,7 +2031,7 @@ definitions:
       title:
         $ref: '#/definitions/Translations'
       parent:
-        $ref: '#/definitions/AddignedOnlineGroup'
+        $ref: '#/definitions/AssignedOnlineGroup'
 
   ### Screen publication
   ScreenPublication:
