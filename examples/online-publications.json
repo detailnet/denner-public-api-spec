@@ -73,14 +73,6 @@
                     ]
                 }
             ],
-            "global_appearance": {
-                "from": "2015-06-19",
-                "to": "2015-06-29"
-            },
-            "featured_appearance": {
-                "from": "2015-06-23",
-                "to": "2015-06-29"
-            },
             "promotion_type": {
                 "id": "16fe4454-8a99-49bc-9099-d3b48805c67e",
                 "code": "FLUGBLATT",
@@ -206,14 +198,7 @@
                             }
                         ]
                     },
-                    "global_appearance": {
-                        "from": "2015-06-19",
-                        "to": "2015-06-29"
-                    },
-                    "featured_appearance": {
-                        "from": "2015-06-23",
-                        "to": "2015-06-29"
-                    },
+                    "featured": true,
                     "promoted": true,
                     "compared": true,
                     "online_group": {

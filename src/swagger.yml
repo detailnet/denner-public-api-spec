@@ -551,12 +551,6 @@ paths:
                         -
                           from: "2015-06-23"
                           to: "2015-06-29"
-                  global_appearance:
-                    from: "2015-06-19"
-                    to: "2015-06-29"
-                  featured_appearance:
-                    from: "2015-06-23"
-                    to: "2015-06-29"
                   promotion_type:
                     id: "16fe4454-8a99-49bc-9099-d3b48805c67e"
                     code: "FLUGBLATT"
@@ -637,12 +631,6 @@ paths:
                     -
                       from: "2015-06-23"
                       to: "2015-06-29"
-              global_appearance:
-                from: "2015-06-19"
-                to: "2015-06-29"
-              featured_appearance:
-                from: "2015-06-23"
-                to: "2015-06-29"
               promotion_type:
                 id: "16fe4454-8a99-49bc-9099-d3b48805c67e"
                 code: "FLUGBLATT"
@@ -736,12 +724,7 @@ paths:
                       -
                         locale: "it"
                         value: "..."
-                  global_appearance:
-                    from: "2015-06-19"
-                    to: "2015-06-29"
-                  featured_appearance:
-                    from: "2015-06-23"
-                    to: "2015-06-29"
+                  featured: true
                   promoted: true
                   compared: true
                   online_group:
@@ -1746,16 +1729,15 @@ definitions:
         $ref: '#/definitions/BaseContent'
       validity:
         $ref: '#/definitions/Validity'
-      global_appearance:
-        $ref: '#/definitions/Appearance'
-      featured_appearance:
-        $ref: '#/definitions/Appearance'
+      featured:
+        type: boolean
+        description: Is it a featured article (should be displayed on the front/main/home page)?
       promoted:
         type: boolean
-        description: Is a promoted article?
+        description: Is it a promoted article (should be displayed with full information)?
       compared:
         type: boolean
-        description: Is a compared article?
+        description: Is the article's price compared to an offer from an other company?
       online_group:
         $ref: '#/definitions/AddignedOnlineGroup'
       article_group:
@@ -1962,10 +1944,6 @@ definitions:
         items:
           $ref: '#/definitions/AssignedOnlineFilter'
         description: Online filter with appearances (and no localised title)
-      global_appearance:
-        $ref: '#/definitions/Appearance'
-      featured_appearance:
-        $ref: '#/definitions/Appearance'
       promotion_type:
         $ref: '#/definitions/PromotionType'
       sort_index:
