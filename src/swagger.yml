@@ -742,6 +742,9 @@ paths:
                   online_group:
                     id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
                     code: 4003
+                    allow_featuring: true
+                    allow_promotion: true
+                    allow_background: true
                     title:
                       -
                         locale: "de"
@@ -755,6 +758,9 @@ paths:
                     parent:
                       id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
                       code: 4001
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
                       title:
                         -
                           locale: "de"
@@ -977,6 +983,9 @@ paths:
                   code: 1001
                   sort_index: 0
                   disabled: false
+                  allow_featuring: true
+                  allow_promotion: true
+                  allow_background: true
                   title:
                     -
                       locale: "de"
@@ -993,6 +1002,9 @@ paths:
                       code: 1001
                       sort_index: 0
                       disabled: false
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
                       title:
                         -
                           locale: "de"
@@ -1009,6 +1021,9 @@ paths:
                       code: 1002
                       sort_index: 1
                       disabled: true
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
                       title:
                         -
                           locale: "de"
@@ -1226,6 +1241,9 @@ paths:
                   online_group:
                     id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
                     code: 4003
+                    allow_featuring: true
+                    allow_promotion: true
+                    allow_background: true
                     title:
                       -
                         locale: "de"
@@ -1239,6 +1257,9 @@ paths:
                     parent:
                       id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
                       code: 4001
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
                       title:
                         -
                           locale: "de"
@@ -2037,7 +2058,16 @@ definitions:
         $ref: '#/definitions/SortIndex'
       disabled:
         type: boolean
-        description: Is disabled?
+        description: Is the group disabled?
+      allow_featuring:
+        type: boolean
+        description: Does the group allow the assigned articles to be featured (i.e. displayed on front/main/home page)?
+      allow_promotion:
+        type: boolean
+        description: Does the group allow the assigned articles to be promoted (i.e. displayed on a promotional page)?
+      allow_background:
+        type: boolean
+        description: Does the group allow the assigned articles to be displayed with a background (i.e. displayed on a page with a deceptive/trivializing background)?
       title:
         $ref: '#/definitions/Translations'
       children:
@@ -2052,6 +2082,15 @@ definitions:
         type: integer
         format: int32
         description: Navision online group code
+      allow_featuring:
+        type: boolean
+        description: Does the group allow the assigned articles to be featured (i.e. displayed on front/main/home page)?
+      allow_promotion:
+        type: boolean
+        description: Does the group allow the assigned articles to be promoted (i.e. displayed on a promotional page)?
+      allow_background:
+        type: boolean
+        description: Does the group allow the assigned articles to be displayed with a background (i.e. displayed on a page with a deceptive/trivializing background)?
       title:
         $ref: '#/definitions/Translations'
       parent:

@@ -5,6 +5,9 @@
             "code": 1001,
             "sort_index": 0,
             "disabled": false,
+            "allow_featuring": true,
+            "allow_promotion": true,
+            "allow_background": true,
             "title": [
                 {
                     "locale": "de",
@@ -25,6 +28,9 @@
                     "code": 1001,
                     "sort_index": 0,
                     "disabled": false,
+                    "allow_featuring": true,
+                    "allow_promotion": true,
+                    "allow_background": true,
                     "title": [
                         {
                             "locale": "de",
@@ -46,6 +52,9 @@
                     "code": 1002,
                     "sort_index": 1,
                     "disabled": true,
+                    "allow_featuring": true,
+                    "allow_promotion": true,
+                    "allow_background": true,
                     "title": [
                         {
                             "locale": "de",
