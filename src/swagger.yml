@@ -724,6 +724,8 @@ paths:
                       -
                         locale: "it"
                         value: "..."
+                  sort_index: 0
+                  featured_sort_index: 10
                   featured: true
                   promoted: true
                   compared: true
@@ -1199,6 +1201,7 @@ paths:
                       -
                         locale: "it"
                         value: "..."
+                  sort_index: 0
                   compared: true
                   online_group:
                     id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
@@ -1729,6 +1732,10 @@ definitions:
         $ref: '#/definitions/BaseContent'
       validity:
         $ref: '#/definitions/Validity'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      featured_sort_index:
+        $ref: '#/definitions/SortIndex'
       featured:
         type: boolean
         description: Is it a featured article (should be displayed on the front/main/home page)?
@@ -1777,9 +1784,11 @@ definitions:
         $ref: '#/definitions/BaseContent'
       validity:
         $ref: '#/definitions/Validity'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
       compared:
         type: boolean
-        description: Is a compared article?
+        description: Is the article's price compared to an offer from an other company?
       online_group:
         $ref: '#/definitions/AddignedOnlineGroup'
       article_group:
