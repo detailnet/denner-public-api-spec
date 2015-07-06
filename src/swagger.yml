@@ -1639,7 +1639,7 @@ parameters:
   PageParam:
     name: page
     description: >
-      The page number
+      The page number.
       Default: 1
     in: query
     type: integer
@@ -1649,7 +1649,7 @@ parameters:
   PageSizeParam:
     name: page_size
     description: >
-      The page size
+      The page size.
       Default: -1 (no limit)
     in: query
     type: integer
