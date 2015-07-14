@@ -605,6 +605,8 @@ paths:
                     id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
                     code: "60"
                     name: "Weine"
+                packshot:
+                  image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
                 wine:
                   country:
                     id: "IT"
@@ -940,12 +942,15 @@ paths:
                     -
                       locale: "de"
                       value: "1/2 Preis"
+                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png"
                     -
                       locale: "fr"
                       value: "1/2 prix"
+                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png"
                     -
                       locale: "it"
                       value: "1/2 prezzo"
+                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png"
                   panel:
                     -
                       locale: "de"
@@ -1031,6 +1036,8 @@ paths:
                       id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
                       code: "60"
                       name: "Weine"
+                  packshot:
+                    image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
                   wine:
                     country:
                       id: "IT"
@@ -1442,12 +1449,15 @@ paths:
                     -
                       locale: "de"
                       value: "1/2 Preis"
+                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png"
                     -
                       locale: "fr"
                       value: "1/2 prix"
+                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png"
                     -
                       locale: "it"
                       value: "1/2 prezzo"
+                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png"
                   panel:
                     -
                       locale: "de"
@@ -1530,6 +1540,8 @@ paths:
                       id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
                       code: "60"
                       name: "Weine"
+                  packshot:
+                    image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
                   wine:
                     country:
                       id: "IT"
@@ -1803,7 +1815,7 @@ definitions:
   Url:
     type: string
 #    pattern: @todo Fixed pattern?
-    description: Web url address
+    description: Web URL address
 
   Phone:
     type: string
@@ -2181,8 +2193,25 @@ definitions:
       message:
         $ref: '#/definitions/Translations'
 
-  ### Advertised article
-  OnlineAdvertisedArticle:
+  ### Publicated article (both online and screen)
+  Dots:
+    type: array
+    items:
+      $ref: '#/definitions/Dot'
+
+  Dot:
+    type: object
+    properties:
+      locale:
+        $ref: '#/definitions/Locale'
+      value:
+        type: string
+        description: Translated text value
+      image_url:
+        $ref: '#/definitions/Url'
+
+  ### Online publicated article
+  OnlineArticle:
     type: object
     properties:
       id:
@@ -2203,7 +2232,7 @@ definitions:
       price_info:
         $ref: '#/definitions/Translations'
       dot:
-        $ref: '#/definitions/Translations'
+        $ref: '#/definitions/Dots'
       panel:
         $ref: '#/definitions/Translations'
       quantity:
@@ -2234,7 +2263,7 @@ definitions:
       wine:
         $ref: '#/definitions/ArticleWine'
 
-  ScreenAdvertisedArticle:
+  ScreenArticle:
     type: object
     properties:
       id:
@@ -2255,7 +2284,7 @@ definitions:
       price_info:
         $ref: '#/definitions/Translations'
       dot:
-        $ref: '#/definitions/Translations'
+        $ref: '#/definitions/Dots'
       panel:
         $ref: '#/definitions/Translations'
       quantity:
@@ -2311,7 +2340,7 @@ definitions:
       - $ref: '#/definitions/OnlinePublication'
       - properties:
          articles:
-           $ref: '#/definitions/OnlineAdvertisedArticles'
+           $ref: '#/definitions/OnlineArticles'
 
   PromotionType:
     type: object
@@ -2421,7 +2450,7 @@ definitions:
       - $ref: '#/definitions/ScreenPublication'
       - properties:
          articles:
-           $ref: '#/definitions/ScreenAdvertisedArticles'
+           $ref: '#/definitions/ScreenArticles'
 
   ### Collections
   Appearances:
@@ -2454,15 +2483,15 @@ definitions:
     items:
       $ref: '#/definitions/Article'
 
-  OnlineAdvertisedArticles:
+  OnlineArticles:
     type: array
     items:
-      $ref: '#/definitions/OnlineAdvertisedArticle'
+      $ref: '#/definitions/OnlineArticle'
 
-  ScreenAdvertisedArticles:
+  ScreenArticles:
     type: array
     items:
-      $ref: '#/definitions/ScreenAdvertisedArticle'
+      $ref: '#/definitions/ScreenArticle'
 
   OnlinePublications:
     type: array

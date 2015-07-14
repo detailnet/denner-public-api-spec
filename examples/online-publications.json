@@ -146,15 +146,18 @@
                     "dot": [
                         {
                             "locale": "de",
-                            "value": "1/2 Preis"
+                            "value": "1/2 Preis\nWeinheit!",
+                            "image_url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png"
                         },
                         {
                             "locale": "fr",
-                            "value": "1/2 prix"
+                            "value": "1/2 prix\nLe top du vin!",
+                            "image_url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png"
                         },
                         {
                             "locale": "it",
-                            "value": "1/2 prezzo"
+                            "value": "1/2 prezzo\nSuperofferta vino!",
+                            "image_url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png"
                         }
                     ],
                     "panel": [
@@ -268,6 +271,9 @@
                             "code": "60",
                             "name": "Weine"
                         }
+                    },
+                    "packshot": {
+                        "image_url": "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
                     },
                     "wine": {
                         "country": {
