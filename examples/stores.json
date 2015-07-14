@@ -59,6 +59,10 @@
                     }
                 ]
             },
+            "renovation": {
+                "from": "2015-06-25",
+                "to": "2015-06-26"
+            },
             "opening_times": [
                 {
                     "weekday": 1,
@@ -97,6 +101,24 @@
                 }
             ],
             "special_opening_times": [
+                {
+                    "day": "2015-06-25",
+                    "reason": [
+                        {
+                            "locale": "de",
+                            "value": "Umbau"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "tbd"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "tbd"
+                        }
+                    ],
+                    "closed": true
+                },
                 {
                     "day": "2015-06-26",
                     "reason": [
@@ -149,11 +171,6 @@
                 },
                 {
                     "day": "2015-06-24",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
-                },
-                {
-                    "day": "2015-06-25",
                     "opens_at": "08:00:00",
                     "closes_at": "20:00:00"
                 },
