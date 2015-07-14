@@ -511,7 +511,7 @@ paths:
               page_count: 1
               page_size: 1
               total_items: 1
-              articls:
+              articles:
               -
                 id: "11c0ac30-28c3-4163-8d1c-f7622366a6f0"
                 number: "051273"
