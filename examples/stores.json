@@ -34,7 +34,10 @@
                 "post"
             ],
             "credit_card": true,
-            "opened_on": "1998-08-01",
+            "open_from": "1998-08-01",
+            "open_to": null,
+            "renovation_from": "2015-06-25",
+            "renovation_to": "2015-06-26",
             "latitude": 47.372844700,
             "longitude": 8.529515300,
             "language": "de",
@@ -58,10 +61,6 @@
                         "value": "Denner"
                     }
                 ]
-            },
-            "renovation": {
-                "from": "2015-06-25",
-                "to": "2015-06-26"
             },
             "opening_times": [
                 {

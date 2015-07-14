@@ -81,7 +81,10 @@ paths:
                     - "maestro"
                     - "post"
                   credit_card: true
-                  opened_on: "1998-08-01"
+                  open_from: "1998-08-01"
+                  open_to: null,
+                  renovation_from: "2015-06-25"
+                  renovation_to: "2015-06-26"
                   latitude: 47.3728447
                   longitude: 8.5295153
                   language: "de"
@@ -101,9 +104,6 @@ paths:
                       -
                         locale: "it"
                         value: "Denner"
-                  renovation:
-                    from: "2015-06-25"
-                    to: "2015-06-26"
                   opening_times:
                     -
                       weekday: 1
@@ -1861,22 +1861,22 @@ definitions:
       credit_card:
         type: boolean
         description: Credit card can be used for payments?
-      opened_on:
+      open_from:
         type: string
         format: date
-        description: Opened on
-      closed_on:
+        description: Opening on
+      open_to:
         type: string
         format: date
-        description: Closed on
+        description: Closing on
       renovation_from:
         type: string
         format: date
-        description: Renovation from
+        description: Renovation starting on
       renovation_to:
         type: string
         format: date
-        description: Renovation to
+        description: Renovation ending on
       longitude:
         type: number
         format: float
