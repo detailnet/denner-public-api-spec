@@ -1,12 +1,12 @@
 {
-	"id": "d4846cea-0303-3b41-3cc2-37a931557fd6",
-	"name": "lw-inside production",
+	"id": "a5dca1f4-c03d-4e14-8d71-5297e05403a9",
+	"name": "denner production",
 	"values": [
 		{
-			"key": "url_base",
-			"value": "https://lw-inside.detailnet.ch",
+			"key": "assets_url_base",
+			"value": "https://denner-assets.detailnet.ch",
 			"type": "text",
-			"name": "url_base",
+			"name": "assets_url_base",
 			"enabled": true
 		},
 		{
@@ -17,17 +17,17 @@
 			"enabled": true
 		},
 		{
-			"key": "header_application_id",
-			"value": "{{lw_inside_production_application_id}}",
+			"key": "assets_header_application_id",
+			"value": "{{denner_assets_production_application_id}}",
 			"type": "text",
-			"name": "header_application_id",
+			"name": "assets_header_application_id",
 			"enabled": true
 		},
 		{
-			"key": "header_application_key",
-			"value": "{{lw_inside_production_application_key}}",
+			"key": "assets_header_application_key",
+			"value": "{{denner_assets_production_application_key}}",
 			"type": "text",
-			"name": "header_application_key",
+			"name": "assets_header_application_key",
 			"enabled": true
 		}
 	],

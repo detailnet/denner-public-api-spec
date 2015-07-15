@@ -1,12 +1,12 @@
 {
-	"id": "a6a8d067-e41b-9eef-e373-59231d9dbffc",
-	"name": "lw-inside development [hal]",
+	"id": "71991df0-353b-49b7-9d2d-bab8cc3036aa",
+	"name": "denner development [hal]",
 	"values": [
 		{
-			"key": "url_base",
-			"value": "http://lw-inside.public.web01.detailnet.me",
+			"key": "assets_url_base",
+			"value": "http://denner-assets.public.web01.detailnet.me",
 			"type": "text",
-			"name": "url_base",
+			"name": "assets_url_base",
 			"enabled": true
 		},
 		{
