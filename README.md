@@ -1,5 +1,5 @@
 # lw-inside-postman
-[Postman Collection](https://www.getpostman.com/) for Denner 2.0 Portals.
+[Postman Collection](https://www.getpostman.com/) for Denner 2.0 portals.
 
 ## How to use it
 Following guide applies for:
