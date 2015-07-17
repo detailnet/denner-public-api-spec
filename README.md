@@ -1,5 +1,5 @@
-# lw-inside-postman
-[Postman Collection](https://www.getpostman.com/) for Denner 2.0 portals.
+# denner-postman
+[Postman Collection](https://www.getpostman.com/) for Denner 2.0 Portal and Web Services.
 
 ## How to use it
 Following guide applies for:
@@ -62,7 +62,7 @@ Set up global variables:
 - Click on "Globals" button
 - Add the variables
 
-> API credentials for Denner 2.0 Portals are stored at [3scale](https://detailnet-admin.3scale.net)
+> API credentials for Denner 2.0 Portal and Web Services are stored at [3scale](https://detailnet-admin.3scale.net)
 
 ### Save tool changes back to project/repository
 
@@ -71,5 +71,5 @@ Set up global variables:
 - Overwrite your local repository `{projects_dir}/denner-postman/collections/default.json` file.
 - Review changes with your preferred editor
   - Replace tabs with 4 whitespaces
-  - Reset owner ro original
-  - Commit only modified/added routes trough Git.
+  - Reset owner to original
+  - Commit only modified/added routes through Git.
