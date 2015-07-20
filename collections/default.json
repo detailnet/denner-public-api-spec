@@ -529,7 +529,7 @@
             "collectionId": "54531871-7dc1-d5a7-9a5a-29736be1ec15",
             "data": [],
             "dataMode": "raw",
-            "name": "api/asset-collections/{asset_collection_id}",
+            "name": "/api/asset-collections/{asset_collection_id}",
             "description": "Edit an asset collection",
             "descriptionFormat": "html",
             "time": 1436948237256,
