@@ -958,6 +958,16 @@ paths:
                     -
                       locale: "it"
                       value: "Confronto con la concorrenza"
+                  unit_price_info:
+                    -
+                      locale: "de"
+                      value: "Einzelflasche: 9.90 statt 11.40"
+                    -
+                      locale: "fr"
+                      value: "9.90 la bouteille au lieu de 11.40"
+                    -
+                      locale: "it"
+                      value: "9.90 a bottiglia invece di 11.40"
                   dot:
                     -
                       locale: "de"
@@ -1496,6 +1506,16 @@ paths:
                     -
                       locale: "it"
                       value: "Confronto con la concorrenza"
+                  unit_price_info:
+                    -
+                      locale: "de"
+                      value: "Einzelflasche: 9.90 statt 11.40"
+                    -
+                      locale: "fr"
+                      value: "9.90 la bouteille au lieu de 11.40"
+                    -
+                      locale: "it"
+                      value: "9.90 a bottiglia invece di 11.40"
                   dot:
                     -
                       locale: "de"
@@ -2325,6 +2345,8 @@ definitions:
         $ref: '#/definitions/ArticlePrices'
       price_info:
         $ref: '#/definitions/Translations'
+      unit_price_info:
+        $ref: '#/definitions/Translations'
       dot:
         $ref: '#/definitions/Dots'
       panel:
@@ -2384,6 +2406,8 @@ definitions:
       prices:
         $ref: '#/definitions/ArticlePrices'
       price_info:
+        $ref: '#/definitions/Translations'
+      unit_price_info:
         $ref: '#/definitions/Translations'
       dot:
         $ref: '#/definitions/Dots'
