@@ -71,6 +71,7 @@
                     }
                 ]
             },
+            "cooling": 0,
             "online_group": {
                 "id": "671988cc-ca5f-484e-8db8-23a65ea0044a",
                 "code": 4003,
