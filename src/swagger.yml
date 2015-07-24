@@ -2132,8 +2132,6 @@ definitions:
         $ref: '#/definitions/Translations'
       prices:
         $ref: '#/definitions/ArticlePrices'
-      price_info:
-        $ref: '#/definitions/Translations'
       content:
         $ref: '#/definitions/Content'
       base:
