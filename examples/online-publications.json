@@ -33,6 +33,20 @@
                     "value": "Altre promozioni della settimana"
                 }
             ],
+            "show_details_text": [
+                {
+                    "locale": "de",
+                    "value": "Alle Wochenaktionen zeigen"
+                },
+                {
+                    "locale": "fr",
+                    "value": "..."
+                },
+                {
+                    "locale": "it",
+                    "value": "..."
+                }
+            ],
             "validity": {
                 "from": "2015-06-23",
                 "to": "2015-06-29",

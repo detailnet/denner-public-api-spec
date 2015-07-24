@@ -777,6 +777,16 @@ paths:
                     -
                       locale: "it"
                       value: "Altre promozioni della settimana"
+                  show_details_text:
+                    -
+                      locale: "de"
+                      value: "Alle Wochenaktionen zeigen"
+                    -
+                      locale: "fr"
+                      value: "..."
+                    -
+                      locale: "it"
+                      value: "..."
                   validity:
                     from: "2015-06-23"
                     to: "2015-06-29"
@@ -857,6 +867,16 @@ paths:
                 -
                   locale: "it"
                   value: "Altre promozioni della settimana"
+              show_details_text:
+                -
+                  locale: "de"
+                  value: "Alle Wochenaktionen zeigen"
+                -
+                  locale: "fr"
+                  value: "..."
+                -
+                  locale: "it"
+                  value: "..."
               validity:
                 from: "2015-06-23"
                 to: "2015-06-29"
@@ -2412,6 +2432,8 @@ definitions:
       title:
         $ref: '#/definitions/Translations'
       list_title:
+        $ref: '#/definitions/Translations'
+      show_details_text:
         $ref: '#/definitions/Translations'
       validity:
         $ref: '#/definitions/Validity'
