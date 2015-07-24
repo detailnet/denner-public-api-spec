@@ -981,13 +981,44 @@ paths:
                   validity:
                     from: "2015-06-23"
                     to: "2015-06-29"
-                    text:
+                    short_text:
+                      -
+                        locale: "de"
+                        value: "Gültig von 23.06.–29.06."
+                      -
+                        locale: "fr"
+                        value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                    long_text:
                       -
                         locale: "de"
                         value: "Angebot gültig von 23.06.2015 bis 29.06.2015"
                       -
                         locale: "fr"
                         value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                  availability_limitations:
+                    region:
+                      -
+                        locale: "de"
+                        value: "Nur in der deutschen und französischen Schweiz erhältlich"
+                      -
+                        locale: "fr"
+                        value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                    store:
+                      -
+                        locale: "de"
+                        value: "Nur in Filialen mit Frischprodukten erhältlich"
+                      -
+                        locale: "fr"
+                        value: "Disponible(s) uniquement dans les succursales aves des produits frais"
                       -
                         locale: "it"
                         value: "..."
@@ -1488,13 +1519,44 @@ paths:
                   validity:
                     from: "2015-06-23"
                     to: "2015-06-29"
-                    text:
+                    short_text:
+                      -
+                        locale: "de"
+                        value: "Gültig von 23.06.–29.06."
+                      -
+                        locale: "fr"
+                        value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                    long_text:
                       -
                         locale: "de"
                         value: "Angebot gültig von 23.06.2015 bis 29.06.2015"
                       -
                         locale: "fr"
                         value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                  availability_limitations:
+                    region:
+                      -
+                        locale: "de"
+                        value: "Nur in der deutschen und französischen Schweiz erhältlich"
+                      -
+                        locale: "fr"
+                        value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                    store:
+                      -
+                        locale: "de"
+                        value: "Nur in Filialen mit Frischprodukten erhältlich"
+                      -
+                        locale: "fr"
+                        value: "Disponible(s) uniquement dans les succursales aves des produits frais"
                       -
                         locale: "it"
                         value: "..."
@@ -1804,6 +1866,7 @@ definitions:
 
   Validity:
     type: object
+    description: Generic validity based on dates (from/to) and a corresponding text
     properties:
       from:
         $ref: '#/definitions/Date'
@@ -1811,6 +1874,19 @@ definitions:
         $ref: '#/definitions/Date'
       text:
         $ref: '#/definitions/Translations'
+
+  ArticleValidity:
+      type: object
+      description: Article validity based on dates (from/to) and corresponding texts (short and long version)
+      properties:
+        from:
+          $ref: '#/definitions/Date'
+        to:
+          $ref: '#/definitions/Date'
+        short_text:
+          $ref: '#/definitions/Translations'
+        long_text:
+          $ref: '#/definitions/Translations'
 
   Url:
     type: string
@@ -2242,7 +2318,15 @@ definitions:
       base:
         $ref: '#/definitions/BaseContent'
       validity:
-        $ref: '#/definitions/Validity'
+        $ref: '#/definitions/ArticleValidity'
+      availability_limitations:
+        type: object
+        description: Texts for information about limited availability
+        properties:
+          region:
+            $ref: '#/definitions/Translations'
+          store:
+            $ref: '#/definitions/Translations'
       sort_index:
         $ref: '#/definitions/SortIndex'
       featured_sort_index:
@@ -2294,7 +2378,15 @@ definitions:
       base:
         $ref: '#/definitions/BaseContent'
       validity:
-        $ref: '#/definitions/Validity'
+        $ref: '#/definitions/ArticleValidity'
+      availability_limitations:
+        type: object
+        description: Texts for information about limited availability
+        properties:
+          region:
+            $ref: '#/definitions/Translations'
+          store:
+            $ref: '#/definitions/Translations'
       sort_index:
         $ref: '#/definitions/SortIndex'
       compared:
