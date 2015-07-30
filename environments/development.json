@@ -15,9 +15,23 @@
 			"type": "text",
 			"name": "header_accept",
 			"enabled": true
+		},
+		{
+			"key": "articles_url_base",
+			"value": "http://denner-articles.public.web01.detailnet.me",
+			"type": "text",
+			"name": "articles_url_base",
+			"enabled": true
+		},
+		{
+			"key": "digital_url_base",
+			"value": "http://denner-digital.public.web01.detailnet.me",
+			"type": "text",
+			"name": "digital_url_base",
+			"enabled": true
 		}
 	],
-	"timestamp": 1432886653683,
+	"timestamp": 1438256902235,
 	"synced": false,
 	"syncedFilename": ""
 }

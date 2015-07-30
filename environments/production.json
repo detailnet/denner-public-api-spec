@@ -29,9 +29,23 @@
 			"type": "text",
 			"name": "assets_header_application_key",
 			"enabled": true
+		},
+		{
+			"key": "articles_url_base",
+			"value": "https://denner-articles.detailnet.ch",
+			"type": "text",
+			"name": "articles_url_base",
+			"enabled": true
+		},
+		{
+			"key": "digital_url_base",
+			"value": "https://denner-digital.detailnet.ch",
+			"type": "text",
+			"name": "digital_url_base",
+			"enabled": true
 		}
 	],
-	"timestamp": 1432899388955,
+	"timestamp": 1438256916320,
 	"synced": false,
 	"syncedFilename": ""
 }
