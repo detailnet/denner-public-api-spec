@@ -336,12 +336,10 @@
                         }
                     },
                     "article_group": {
-                        "id": "b3c6797a-777a-4103-aba8-d82089ba2980",
-                        "code": "60-56",
+                        "id": "60-56",
                         "name": "Italien Rot 70 cl",
                         "parent": {
-                            "id": "380d422a-5b8f-42c5-872c-c4ddf4bb5611",
-                            "code": "60",
+                            "id": "60",
                             "name": "Weine"
                         }
                     },
