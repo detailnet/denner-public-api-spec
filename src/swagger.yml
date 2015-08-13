@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   description: RESTful API for the Denner Portal
-  version: 0.6.0
+  version: 0.7.0
   title: Denner Portal 2.0
   contact:
     name: DETAIL NET
@@ -457,28 +457,23 @@ paths:
               total_items: 2
               article_groups:
                 -
-                  id: "42680ccc-a000-4848-9495-af6b02ea231c"
-                  code: "01"
+                  id: "01"
                   name: "Molkereiprodukte & Eier"
                   children:
                     -
-                      id: "bd377284-0758-46a6-b1af-b3219f7d9fcf"
-                      code: "01-10"
+                      id: "01-10"
                       name: "Butter"
                       children: []
                     -
-                      id: "71ee4a8b-92b5-4f5a-820d-353a9fce9b04"
-                      code: "01-15"
+                      id: "01-15"
                       name: "Milch"
                       children: []
                 -
-                  id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
-                  code: "60"
+                  id: "60"
                   name: "Weine"
                   children:
                     -
-                      id: "b3c6797a-777a-4103-aba8-d82089ba2980"
-                      code: "60-56"
+                      id: "60-56"
                       name: "Italien Rot 70 cl"
                       children: []
 
@@ -599,12 +594,10 @@ paths:
                         locale: "it"
                         value: "Bevande da tavola e acque minerali"
                 article_group:
-                  id: "b3c6797a-777a-4103-aba8-d82089ba2980"
-                  code: "60-56"
+                  id: "60-56"
                   name: "Italien Rot 70 cl"
                   parent:
-                    id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
-                    code: "60"
+                    id: "60"
                     name: "Weine"
                 packshot:
                   image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
@@ -1092,12 +1085,10 @@ paths:
                           locale: "it"
                           value: "Bevande da tavola e acque minerali"
                   article_group:
-                    id: "b3c6797a-777a-4103-aba8-d82089ba2980"
-                    code: "60-56"
+                    id: "60-56"
                     name: "Italien Rot 70 cl"
                     parent:
-                      id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
-                      code: "60"
+                      id: "60"
                       name: "Weine"
                   packshot:
                     image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
@@ -1638,12 +1629,10 @@ paths:
                           locale: "it"
                           value: "Bevande da tavola e acque minerali"
                   article_group:
-                    id: "b3c6797a-777a-4103-aba8-d82089ba2980"
-                    code: "60-56"
+                    id: "60-56"
                     name: "Italien Rot 70 cl"
                     parent:
-                      id: "380d422a-5b8f-42c5-872c-c4ddf4bb5611"
-                      code: "60"
+                      id: "60"
                       name: "Weine"
                   packshot:
                     image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
@@ -2136,8 +2125,6 @@ definitions:
     type: object
     properties:
       id:
-        $ref: '#/definitions/UUIDv4'
-      code:
         type: string
         pattern: '/^\d{2}(-\d{2,3})?$/'
         description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
@@ -2151,8 +2138,6 @@ definitions:
     type: object
     properties:
       id:
-        $ref: '#/definitions/UUIDv4'
-      code:
         type: string
         pattern: '/^\d{2}(-\d{2,3})?$/'
         description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
