@@ -524,7 +524,7 @@
         {
             "id": "91b246bf-c827-be38-4320-cc15817d09db",
             "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
-            "url": "{{articles_url_base}}/api/articles-groups?page_size=-1",
+            "url": "{{articles_url_base}}/api/article-groups?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
             "method": "GET",
