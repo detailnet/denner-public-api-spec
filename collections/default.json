@@ -70,7 +70,7 @@
         },
         {
             "id": "ac1b86d2-8995-011d-8e50-06ae99eb66d0",
-            "name": "denner-digital",
+            "name": "denner-advertising",
             "description": "Digital Advertising Service",
             "write": true,
             "order": [
@@ -177,7 +177,7 @@
         {
             "id": "37b85d59-8192-b26a-c931-0a232464fdc2",
             "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
-            "url": "{{digital_url_base}}/api/online-publications?page_size=-1",
+            "url": "{{advertising_url_base}}/api/online-publications?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
             "method": "GET",
@@ -298,7 +298,7 @@
         {
             "id": "5b637c66-70f8-7cc9-b372-695051be309d",
             "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
-            "url": "{{digital_url_base}}/api/online-publications/44444444-aaaa-4444-aaaa-444444444444",
+            "url": "{{advertising_url_base}}/api/online-publications/44444444-aaaa-4444-aaaa-444444444444",
             "pathVariables": {},
             "preRequestScript": "",
             "method": "GET",
@@ -420,7 +420,7 @@
         {
             "id": "7572da34-1aa7-59ca-d821-fce16a23729c",
             "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
-            "url": "{{digital_url_base}}/api/screen-publications?page_size=-1",
+            "url": "{{advertising_url_base}}/api/screen-publications?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
             "method": "GET",
@@ -585,7 +585,7 @@
         {
             "id": "b22d05e2-8421-cdcc-5a01-2b0cdfeb84d1",
             "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
-            "url": "{{digital_url_base}}/api/screen-publication/44444444-aaaa-4444-aaaa-444444444444",
+            "url": "{{advertising_url_base}}/api/screen-publication/44444444-aaaa-4444-aaaa-444444444444",
             "pathVariables": {},
             "preRequestScript": "",
             "method": "GET",
@@ -645,7 +645,7 @@
         {
             "id": "c9aa3aff-4b0d-ddd1-8a73-2c70de3791db",
             "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
-            "url": "{{digital_url_base}}/api/online-filters?page_size=-1",
+            "url": "{{advertising_url_base}}/api/online-filters?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
             "method": "GET",

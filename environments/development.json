@@ -24,10 +24,10 @@
 			"enabled": true
 		},
 		{
-			"key": "digital_url_base",
-			"value": "http://denner-digital.public.web01.detailnet.me",
+			"key": "advertising_url_base",
+			"value": "http://denner-advertising.public.web01.detailnet.me",
 			"type": "text",
-			"name": "digital_url_base",
+			"name": "advertising_url_base",
 			"enabled": true
 		}
 	],
