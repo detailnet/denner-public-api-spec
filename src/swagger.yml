@@ -634,7 +634,7 @@ paths:
                         locale: "it"
                         value: "Puglia"
                   type:
-                    id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                    id: 2
                     title:
                       -
                         locale: "de"
@@ -1127,7 +1127,7 @@ paths:
                           locale: "it"
                           value: "Puglia"
                     type:
-                      id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                      id: 2
                       title:
                         -
                           locale: "de"
@@ -1673,7 +1673,7 @@ paths:
                           locale: "it"
                           value: "Puglia"
                     type:
-                      id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                      id: 2
                       title:
                         -
                           locale: "de"
@@ -2281,7 +2281,10 @@ definitions:
     type: object
     properties:
       id:
-        $ref: '#/definitions/UUIDv4'
+        type: integer
+        format: int32
+        minimum: 0
+        description: Navision wine type code
       title:
         $ref: '#/definitions/Translations'
 
