@@ -38,10 +38,10 @@
 			"enabled": true
 		},
 		{
-			"key": "digital_url_base",
-			"value": "https://denner-digital.detailnet.ch",
+			"key": "advertising_url_base",
+			"value": "https://denner-advertising.detailnet.ch",
 			"type": "text",
-			"name": "digital_url_base",
+			"name": "advertising_url_base",
 			"enabled": true
 		}
 	],
