@@ -1,8 +1,7 @@
 {
     "articles": [
         {
-            "id": "11c0ac30-28c3-4163-8d1c-f7622366a6f0",
-            "number": "051273",
+            "id": "051273",
             "name": "Mandorla Primitivo IGT Puglia",
             "title": [
                 {
@@ -115,10 +114,12 @@
                 }
             },
             "article_group": {
-                "id": "60-56",
+                "id": "0c309757-5432-4652-8201-ec35f31c5260",
+                "code": "60-56",
                 "name": "Italien Rot 70 cl",
                 "parent": {
-                    "id": "60",
+                    "id": "3f3df00f-6a7e-49a9-8eca-a36727ca4977",
+                    "code": "60",
                     "name": "Weine"
                 }
             },
@@ -161,7 +162,7 @@
                     ]
                 },
                 "type": {
-                    "id": "5395aec7-e36d-4b7f-99f6-a8a7f60fa412",
+                    "id": 2,
                     "title": [
                         {
                             "locale": "de",

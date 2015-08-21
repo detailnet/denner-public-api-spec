@@ -457,23 +457,28 @@ paths:
               total_items: 2
               article_groups:
                 -
-                  id: "01"
+                  id: "7e00e926-53d0-41a8-985a-e1a514b0a642"
+                  code: "01"
                   name: "Molkereiprodukte & Eier"
                   children:
                     -
-                      id: "01-10"
+                      id: "2ee0bc65-7d8a-4633-bc33-51929d21dc62"
+                      code: "01-10"
                       name: "Butter"
                       children: []
                     -
-                      id: "01-15"
+                      id: "01b53b41-e35a-4abe-91a5-63e74468375d"
+                      code: "01-15"
                       name: "Milch"
                       children: []
                 -
-                  id: "60"
+                  id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
+                  code: "60"
                   name: "Weine"
                   children:
                     -
-                      id: "60-56"
+                      id: "0c309757-5432-4652-8201-ec35f31c5260"
+                      code: "60-56"
                       name: "Italien Rot 70 cl"
                       children: []
 
@@ -508,8 +513,7 @@ paths:
               total_items: 1
               articles:
               -
-                id: "11c0ac30-28c3-4163-8d1c-f7622366a6f0"
-                number: "051273"
+                id: "051273"
                 name: "Mandorla Primitivo IGT Puglia"
                 title:
                   -
@@ -594,10 +598,12 @@ paths:
                         locale: "it"
                         value: "Bevande da tavola e acque minerali"
                 article_group:
-                  id: "60-56"
+                  id: "0c309757-5432-4652-8201-ec35f31c5260"
+                  code: "60-56"
                   name: "Italien Rot 70 cl"
                   parent:
-                    id: "60"
+                    id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
+                    code: "60"
                     name: "Weine"
                 packshot:
                   image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
@@ -627,7 +633,7 @@ paths:
                         locale: "it"
                         value: "Puglia"
                   type:
-                    id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                    id: 2
                     title:
                       -
                         locale: "de"
@@ -906,8 +912,7 @@ paths:
               sort_index: 0
               articles:
                 -
-                  id: "48fcba99-b506-4395-ac1a-373e2af478b1"
-                  number: "051273"
+                  id: "051273"
                   name: "Mandorla Primitivo IGT Puglia"
                   title:
                     -
@@ -1085,10 +1090,12 @@ paths:
                           locale: "it"
                           value: "Bevande da tavola e acque minerali"
                   article_group:
-                    id: "60-56"
+                    id: "0c309757-5432-4652-8201-ec35f31c5260"
+                    code: "60-56"
                     name: "Italien Rot 70 cl"
                     parent:
-                      id: "60"
+                      id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
+                      code: "60"
                       name: "Weine"
                   packshot:
                     image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
@@ -1118,7 +1125,7 @@ paths:
                           locale: "it"
                           value: "Puglia"
                     type:
-                      id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                      id: 2
                       title:
                         -
                           locale: "de"
@@ -1453,8 +1460,7 @@ paths:
                     value: "tbd"
               articles:
                 -
-                  id: "48fcba99-b506-4395-ac1a-373e2af478b1"
-                  number: "051273"
+                  id: "051273"
                   name: "Mandorla Primitivo IGT Puglia"
                   title:
                     -
@@ -1629,10 +1635,12 @@ paths:
                           locale: "it"
                           value: "Bevande da tavola e acque minerali"
                   article_group:
-                    id: "60-56"
+                    id: "0c309757-5432-4652-8201-ec35f31c5260"
+                    code: "60-56"
                     name: "Italien Rot 70 cl"
                     parent:
-                      id: "60"
+                      id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
+                      code: "60"
                       name: "Weine"
                   packshot:
                     image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
@@ -1662,7 +1670,7 @@ paths:
                           locale: "it"
                           value: "Puglia"
                     type:
-                      id: "5395aec7-e36d-4b7f-99f6-a8a7f60fa412"
+                      id: 2
                       title:
                         -
                           locale: "de"
@@ -2125,6 +2133,8 @@ definitions:
     type: object
     properties:
       id:
+        $ref: '#/definitions/UUIDv4'
+      code:
         type: string
         pattern: '/^\d{2}(-\d{2,3})?$/'
         description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
@@ -2138,6 +2148,8 @@ definitions:
     type: object
     properties:
       id:
+        $ref: '#/definitions/UUIDv4'
+      code:
         type: string
         pattern: '/^\d{2}(-\d{2,3})?$/'
         description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
@@ -2152,8 +2164,6 @@ definitions:
     type: object
     properties:
       id:
-        $ref: '#/definitions/UUIDv4'
-      number:
         type: string
         pattern: '/^\d{6}$/'
         description: Navision article code
@@ -2266,7 +2276,10 @@ definitions:
     type: object
     properties:
       id:
-        $ref: '#/definitions/UUIDv4'
+        type: integer
+        format: int32
+        minimum: 0
+        description: Navision wine type code
       title:
         $ref: '#/definitions/Translations'
 
@@ -2325,8 +2338,6 @@ definitions:
     type: object
     properties:
       id:
-        $ref: '#/definitions/UUIDv4'
-      number:
         type: string
         pattern: '/^\d{6}$/'
         description: Navision article code
@@ -2389,8 +2400,6 @@ definitions:
     type: object
     properties:
       id:
-        $ref: '#/definitions/UUIDv4'
-      number:
         type: string
         pattern: '/^\d{6}$/'
         description: Navision article code
