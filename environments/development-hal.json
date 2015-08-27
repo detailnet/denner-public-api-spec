@@ -29,6 +29,13 @@
 			"type": "text",
 			"name": "advertising_url_base",
 			"enabled": true
+		},
+		{
+			"key": "stores_url_base",
+			"value": "http://denner-stores.public.web01.detailnet.me",
+			"type": "text",
+			"name": "stores_url_base",
+			"enabled": true
 		}
 	],
 	"timestamp": 1438256902235,

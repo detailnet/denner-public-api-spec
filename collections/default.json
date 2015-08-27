@@ -5,6 +5,26 @@
     "order": [],
     "folders": [
         {
+            "id": "ac1b86d2-8995-011d-8e50-06ae99eb66d0",
+            "name": "denner-advertising",
+            "description": "Advertising Service",
+            "write": true,
+            "order": [
+                "37b85d59-8192-b26a-c931-0a232464fdc2",
+                "5b637c66-70f8-7cc9-b372-695051be309d",
+                "7572da34-1aa7-59ca-d821-fce16a23729c",
+                "b22d05e2-8421-cdcc-5a01-2b0cdfeb84d1",
+                "c9aa3aff-4b0d-ddd1-8a73-2c70de3791db",
+                "e2c2b734-2eba-2253-7e85-c497e5b007b5"
+            ],
+            "collection": "95b49982-ab0b-aaf5-a254-e7203c68a446",
+            "owner": "37929",
+            "collection_name": "denner",
+            "collection_owner": "37929",
+            "collection_id": "95b49982-ab0b-aaf5-a254-e7203c68a446",
+            "collectionId": "95b49982-ab0b-aaf5-a254-e7203c68a446"
+        },
+        {
             "id": "11f8ae6a-f27d-8fb1-66c4-e7c030c51268",
             "name": "denner-articles",
             "description": "Articles Service",
@@ -69,16 +89,11 @@
             "collectionId": "95b49982-ab0b-aaf5-a254-e7203c68a446"
         },
         {
-            "id": "ac1b86d2-8995-011d-8e50-06ae99eb66d0",
-            "name": "denner-advertising",
-            "description": "Digital Advertising Service",
+            "id": "1ce942ff-1144-4c5f-b1ca-d4f76c3823be",
+            "name": "denner-stores",
+            "description": "Stores Service",
             "write": true,
             "order": [
-                "37b85d59-8192-b26a-c931-0a232464fdc2",
-                "5b637c66-70f8-7cc9-b372-695051be309d",
-                "7572da34-1aa7-59ca-d821-fce16a23729c",
-                "b22d05e2-8421-cdcc-5a01-2b0cdfeb84d1",
-                "c9aa3aff-4b0d-ddd1-8a73-2c70de3791db"
             ],
             "collection": "95b49982-ab0b-aaf5-a254-e7203c68a446",
             "owner": "37929",
@@ -843,6 +858,25 @@
             "folder": "58962785-7185-3005-1f61-0ee4c69a7644",
             "collectionId": "95b49982-ab0b-aaf5-a254-e7203c68a446",
             "rawModeData": "{\n    \"name\":\"New collection name\",\n    \"assets\":[25, \"44444444-aaaa-4444-aaaa-444444444444\"]\n}"
+        },
+        {
+            "folder": "ac1b86d2-8995-011d-8e50-06ae99eb66d0",
+            "id": "e2c2b734-2eba-2253-7e85-c497e5b007b5",
+            "name": "/api/online-filters",
+            "dataMode": "raw",
+            "data": [],
+            "descriptionFormat": "html",
+            "description": "Create a new online filter (Angebotsfilter)",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\nContent-Type: application/json\n",
+            "method": "POST",
+            "pathVariables": {},
+            "url": "{{advertising_url_base}}/api/online-filters",
+            "preRequestScript": "",
+            "tests": "",
+            "currentHelper": "normal",
+            "helperAttributes": "{}",
+            "collectionId": "95b49982-ab0b-aaf5-a254-e7203c68a446",
+            "rawModeData": "{\n  \"name\": \"Osterwochen\",\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Osterwochen DE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Osterwochen FR\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Osterwochen IT\"\n    }\n  ]\n}"
         }
     ]
 }
