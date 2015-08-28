@@ -1891,7 +1891,8 @@ definitions:
 
   ContentUnit:
     # @todo Define an pattern or standard reference (e.g. ISO 80000-3)?
-    type: string
+    type: integer
+    format: int32
     description: Content unit code from navision
 
   Cooling:
