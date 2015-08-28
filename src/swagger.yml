@@ -550,10 +550,10 @@ paths:
                       instead: 68.4
                 content:
                   size: 75
-                  unit: "cl"
+                  unit: 170
                 base:
                   size: 10
-                  unit: "cl"
+                  unit: 170
                   text:
                     -
                       locale: "de"
@@ -993,10 +993,10 @@ paths:
                   quantity: 6
                   content:
                     size: 75
-                    unit: "cl"
+                    unit: 170
                   base:
                     size: 10
-                    unit: "cl"
+                    unit: 170
                     text:
                       -
                         locale: "de"
@@ -1541,10 +1541,10 @@ paths:
                   quantity: 6
                   content:
                     size: 75
-                    unit: "cl"
+                    unit: 170
                   base:
                     size: 10
-                    unit: "cl"
+                    unit: 170
                     text:
                       -
                         locale: "de"
@@ -1891,8 +1891,9 @@ definitions:
 
   ContentUnit:
     # @todo Define an pattern or standard reference (e.g. ISO 80000-3)?
-    type: string
-    description: Content unit
+    type: integer
+    format: int32
+    description: Content unit code from navision
 
   Cooling:
     type: number
