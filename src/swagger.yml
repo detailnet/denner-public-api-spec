@@ -724,6 +724,61 @@ paths:
                         value: "Attualmente non disponibile"
                   shop_url: "http://denner-wineshop.ch/skuredirect/051273/"
 
+  /promotion-types:
+    get:
+      summary: List all promotion types
+      description: >
+        Use this operation to get a list of all promotion types (Aktionstypen).
+      tags:
+        - Articles and Promotions – Artikel und Aktionen
+      operationId: listPromotionTypes
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/PromotionTypesResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 7
+              total_items: 7
+              promotion_types:
+                -
+                  id: "bc46653b-53a8-4eaf-b6c5-5780605a3147"
+                  code: "F UND G"
+                  name: "Früchte und Gemüse"
+                -
+                  id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+                  code: "FLUGBLATT",
+                  name: "Dennerwoche"
+                -
+                  id: "e4103942-cc11-45e7-a87e-99b8aba8cc2a",
+                  code: "KASSENPL.",
+                  name: "Kassenplatz"
+                -
+                  id: "0dd46184-3c01-4ba0-8fa6-baf6e3abcd50",
+                  code: "PARFUM",
+                  name: "Parfum"
+                -
+                  id: "c41c907d-8f84-4bf4-91f0-dbae19afdd2d",
+                  code: "REGIOWERB",
+                  name: "Regionalwerbung"
+                -
+                  id: "92d092c5-c023-49bb-b7f2-b90afde0e637",
+                  code: "SAISON",
+                  name: "Saison"
+                -
+                  id: "37f205e5-0661-424f-bcd9-a68ce93016cb",
+                  code: "WOCHENEND",
+                  name: "Wochenend-Knaller"
+
   ### Online Advertising
   /online-publications:
     get:
@@ -816,9 +871,9 @@ paths:
                           from: "2015-06-23"
                           to: "2015-06-29"
                   promotion_type:
-                    id: "16fe4454-8a99-49bc-9099-d3b48805c67e"
-                    code: "FLUGBLATT"
-                    name: "Wochenaktionen"
+                    id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+                    code: "FLUGBLATT",
+                    name: "Dennerwoche"
                   sort_index: 0
 
   /online-publications/{publication_id}:
@@ -906,9 +961,9 @@ paths:
                       from: "2015-06-23"
                       to: "2015-06-29"
               promotion_type:
-                id: "16fe4454-8a99-49bc-9099-d3b48805c67e"
-                code: "FLUGBLATT"
-                name: "Wochenaktionen"
+                id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+                code: "FLUGBLATT",
+                name: "Dennerwoche"
               sort_index: 0
               articles:
                 -
@@ -2629,6 +2684,11 @@ definitions:
     items:
       $ref: '#/definitions/Article'
 
+  PromotionTypes:
+    type: array
+    items:
+      $ref: '#/definitions/PromotionType'
+
   OnlineArticles:
     type: array
     items:
@@ -2749,6 +2809,24 @@ definitions:
         format: int32
       articles:
         $ref: '#/definitions/Articles'
+
+  PromotionTypesResponse:
+      type: object
+      properties:
+        page_count:
+          description: The number of pages
+          type: integer
+          format: int32
+        page_size:
+          description: The page size
+          type: integer
+          format: int32
+        total_items:
+          description: The number of items on all pages
+          type: integer
+          format: int32
+        promotion_types:
+          $ref: '#/definitions/PromotionTypes'
 
   OnlineFiltersResponse:
     type: object
