@@ -113,7 +113,7 @@
     "requests": [
         {
             "id": "0c52e94a-7d2f-e460-83b0-f474e6120afc",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{articles_header_application_id}}\nApp-Key: {{articles_header_application_key}}\n",
             "url": "{{articles_url_base}}/api/articles?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
@@ -194,7 +194,7 @@
         },
         {
             "id": "37b85d59-8192-b26a-c931-0a232464fdc2",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{advertising_header_application_id}}\nApp-Key: {{advertising_header_application_key}}\n",
             "url": "{{advertising_url_base}}/api/online-publications?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
@@ -315,7 +315,7 @@
         },
         {
             "id": "5b637c66-70f8-7cc9-b372-695051be309d",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{advertising_header_application_id}}\nApp-Key: {{advertising_header_application_key}}\n",
             "url": "{{advertising_url_base}}/api/online-publications/44444444-aaaa-4444-aaaa-444444444444",
             "pathVariables": {},
             "preRequestScript": "",
@@ -416,7 +416,7 @@
         },
         {
             "id": "73ad423d-4409-c417-9e99-31b0a5421c07",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{articles_header_application_id}}\nApp-Key: {{articles_header_application_key}}\n",
             "url": "{{articles_url_base}}/api/advertised-articles/44444444-aaaa-4444-aaaa-444444444444",
             "pathVariables": {},
             "preRequestScript": "",
@@ -437,7 +437,7 @@
         },
         {
             "id": "7572da34-1aa7-59ca-d821-fce16a23729c",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{advertising_header_application_id}}\nApp-Key: {{advertising_header_application_key}}\n",
             "url": "{{advertising_url_base}}/api/screen-publications?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
@@ -458,7 +458,7 @@
         },
         {
             "id": "78d0e029-a8da-6757-5fd6-ce6294791ac5",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{articles_header_application_id}}\nApp-Key: {{articles_header_application_key}}\n",
             "url": "{{articles_url_base}}/api/languages?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
@@ -479,7 +479,7 @@
         },
         {
             "id": "7f63f4ef-bbbd-9c98-0cf6-00c94fefb2e9",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{articles_header_application_id}}\nApp-Key: {{articles_header_application_key}}\n",
             "url": "{{articles_url_base}}/api/promotion-types?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
@@ -500,7 +500,7 @@
         },
         {
             "id": "81157487-1f85-0935-7b72-3984f0ae0e96",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{articles_header_application_id}}\nApp-Key: {{articles_header_application_key}}\n",
             "url": "{{articles_url_base}}/api/advertised-articles?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
@@ -541,7 +541,7 @@
         },
         {
             "id": "91b246bf-c827-be38-4320-cc15817d09db",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{articles_header_application_id}}\nApp-Key: {{articles_header_application_key}}\n",
             "url": "{{articles_url_base}}/api/article-groups?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
@@ -602,7 +602,7 @@
         },
         {
             "id": "b22d05e2-8421-cdcc-5a01-2b0cdfeb84d1",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{advertising_header_application_id}}\nApp-Key: {{advertising_header_application_key}}\n",
             "url": "{{advertising_url_base}}/api/screen-publication/44444444-aaaa-4444-aaaa-444444444444",
             "pathVariables": {},
             "preRequestScript": "",
@@ -643,7 +643,7 @@
         },
         {
             "id": "bec8d495-4a82-ca58-164f-679d7999323f",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{articles_header_application_id}}\nApp-Key: {{articles_header_application_key}}\n",
             "url": "{{articles_url_base}}/api/articles/050364",
             "preRequestScript": "",
             "pathVariables": {},
@@ -662,7 +662,7 @@
         },
         {
             "id": "c9aa3aff-4b0d-ddd1-8a73-2c70de3791db",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{advertising_header_application_id}}\nApp-Key: {{advertising_header_application_key}}\n",
             "url": "{{advertising_url_base}}/api/online-filters?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
@@ -708,7 +708,7 @@
             "data": [],
             "descriptionFormat": "html",
             "description": "DWS-FileConversion notification",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{credential_application_id}}\nApp-Key: {{credential_application_key}}\nContent-Type: application/json\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\nContent-Type: application/json\n",
             "method": "POST",
             "pathVariables": {},
             "url": "{{assets_url_base}}/dws-fileconversion/receive-completed-job",
@@ -743,7 +743,7 @@
         },
         {
             "id": "e996a1cf-6135-6f4a-288a-45ea11b3a026",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{articles_header_application_id}}\nApp-Key: {{articles_header_application_key}}\n",
             "url": "{{articles_url_base}}/api/online-groups?page_size=-1",
             "pathVariables": {},
             "preRequestScript": "",
@@ -870,7 +870,7 @@
             "data": [],
             "descriptionFormat": "html",
             "description": "Create a new online filter (Angebotsfilter)",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\nContent-Type: application/json\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{advertising_header_application_id}}\nApp-Key: {{advertising_header_application_key}}\nContent-Type: application/json\n",
             "method": "POST",
             "pathVariables": {},
             "url": "{{advertising_url_base}}/api/online-filters",
@@ -883,7 +883,7 @@
         },
         {
             "id": "b4e30ce5-5a2a-3d98-201e-11d636cacbb4",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{stores_header_application_id}}\nApp-Key: {{stores_header_application_key}}\n",
             "url": "{{stores_url_base}}/api/store-services",
             "pathVariables": {},
             "preRequestScript": "",
@@ -904,7 +904,7 @@
         },
         {
             "id": "b9854466-7ade-9235-7293-9563620f658b",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{stores_header_application_id}}\nApp-Key: {{stores_header_application_key}}\n",
             "url": "{{stores_url_base}}/api/store-channels",
             "pathVariables": {},
             "preRequestScript": "",
@@ -925,7 +925,7 @@
         },
         {
             "id": "d2d08fc9-f85d-4d84-ab0c-dc7b8de8a658",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{assets_header_application_id}}\nApp-Key: {{assets_header_application_key}}\n",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{stores_header_application_id}}\nApp-Key: {{stores_header_application_key}}\n",
             "url": "{{stores_url_base}}/api/stores",
             "pathVariables": {},
             "preRequestScript": "",

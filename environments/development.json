@@ -3,17 +3,17 @@
 	"name": "denner development",
 	"values": [
 		{
-			"key": "assets_url_base",
-			"value": "http://denner-assets.public.web01.detailnet.me",
-			"type": "text",
-			"name": "assets_url_base",
-			"enabled": true
-		},
-		{
 			"key": "header_accept",
 			"value": "application/json",
 			"type": "text",
 			"name": "header_accept",
+			"enabled": true
+		},
+		{
+			"key": "assets_url_base",
+			"value": "http://denner-assets.public.web01.detailnet.me",
+			"type": "text",
+			"name": "assets_url_base",
 			"enabled": true
 		},
 		{
