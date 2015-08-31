@@ -88,9 +88,9 @@
                 }
             ],
             "promotion_type": {
-                "id": "16fe4454-8a99-49bc-9099-d3b48805c67e",
+                "id": "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
                 "code": "FLUGBLATT",
-                "name": "Wochenaktionen"
+                "name": "Dennerwoche"
             },
             "sort_index": 0,
             "articles": [
