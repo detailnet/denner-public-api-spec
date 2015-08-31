@@ -3,17 +3,38 @@
 	"name": "denner production",
 	"values": [
 		{
-			"key": "assets_url_base",
-			"value": "https://denner-assets.detailnet.ch",
-			"type": "text",
-			"name": "assets_url_base",
-			"enabled": true
-		},
-		{
 			"key": "header_accept",
 			"value": "application/json",
 			"type": "text",
 			"name": "header_accept",
+			"enabled": true
+		},
+		{
+			"key": "articles_url_base",
+			"value": "https://denner-articles.detailnet.ch",
+			"type": "text",
+			"name": "articles_url_base",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_application_id",
+			"value": "{{denner_articles_production_application_id}}",
+			"type": "text",
+			"name": "articles_header_application_id",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_application_key",
+			"value": "{{denner_articles_production_application_key}}",
+			"type": "text",
+			"name": "articles_header_application_key",
+			"enabled": true
+		},
+		{
+			"key": "assets_url_base",
+			"value": "https://denner-assets.detailnet.ch",
+			"type": "text",
+			"name": "assets_url_base",
 			"enabled": true
 		},
 		{
@@ -31,13 +52,6 @@
 			"enabled": true
 		},
 		{
-			"key": "articles_url_base",
-			"value": "https://denner-articles.detailnet.ch",
-			"type": "text",
-			"name": "articles_url_base",
-			"enabled": true
-		},
-		{
 			"key": "advertising_url_base",
 			"value": "https://denner-advertising.detailnet.ch",
 			"type": "text",
@@ -45,10 +59,38 @@
 			"enabled": true
 		},
 		{
+			"key": "advertising_header_application_id",
+			"value": "{{denner_advertising_production_application_id}}",
+			"type": "text",
+			"name": "advertising_header_application_id",
+			"enabled": true
+		},
+		{
+			"key": "advertising_header_application_key",
+			"value": "{{denner_advertising_production_application_key}}",
+			"type": "text",
+			"name": "advertising_header_application_key",
+			"enabled": true
+		},
+		{
 			"key": "stores_url_base",
-			"value": "http://denner-stores.detailnet.ch",
+			"value": "https://denner-stores.detailnet.ch",
 			"type": "text",
 			"name": "stores_url_base",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_application_id",
+			"value": "{{denner_stores_production_application_id}}",
+			"type": "text",
+			"name": "stores_header_application_id",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_application_key",
+			"value": "{{denner_stores_production_application_key}}",
+			"type": "text",
+			"name": "stores_header_application_key",
 			"enabled": true
 		}
 	],
