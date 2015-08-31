@@ -1,0 +1,19 @@
+{
+    "promotion_types": [
+        {
+            "id": "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+            "code": "FLUGBLATT",
+            "name": "Wochenaktionen"
+        },
+        {
+            "id": "0dd46184-3c01-4ba0-8fa6-baf6e3abcd50",
+            "code": "PARFUM",
+            "name": "Parfum"
+        },
+        {
+            "id": "92d092c5-c023-49bb-b7f2-b90afde0e637",
+            "code": "SAISON",
+            "name": "Saison"
+        }
+    ]
+}
