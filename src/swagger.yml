@@ -97,32 +97,32 @@ paths:
                   opening_times:
                     -
                       weekday: 1
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 2
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 3
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 4
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 5
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 6
-                      opens_at: "08:00:00"
-                      closes_at: "12:00:00"
+                      open_from: "08:00:00"
+                      open_to: "12:00:00"
                     -
                       weekday: 6
-                      opens_at: "14:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "14:00:00"
+                      open_to: "20:00:00"
                   special_opening_times:
                     -
                       day: "2015-06-25"
@@ -152,8 +152,8 @@ paths:
                       closed: true
                     -
                       day: "2015-06-28"
-                      opens_at: "10:00:00"
-                      closes_at: "16:00:00"
+                      open_from: "10:00:00"
+                      open_to: "16:00:00"
                       reason:
                         -
                           locale: "de"
@@ -168,64 +168,64 @@ paths:
                   calendar_opening_times:
                     -
                       day: "2015-06-22"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-23"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-24"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-27"
-                      opens_at: "08:00:00"
-                      closes_at: "12:00:00"
+                      open_from: "08:00:00"
+                      open_to: "12:00:00"
                     -
                       day: "2015-06-27"
-                      opens_at: "14:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "14:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-28"
-                      opens_at: "10:00:00"
-                      closes_at: "16:00:00"
+                      open_from: "10:00:00"
+                      open_to: "16:00:00"
                     -
                       day: "2015-06-29"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-30"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-01"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-02"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-03"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-04"
-                      opens_at: "08:00:00"
-                      closes_at: "12:00:00"
+                      open_from: "08:00:00"
+                      open_to: "12:00:00"
                     -
                       day: "2015-07-04"
-                      opens_at: "14:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "14:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-06"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-07"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                   services:
                     -
                       id: "acb911fb-b7e3-480f-ab91-1109e750892a"
@@ -2132,9 +2132,9 @@ definitions:
     properties:
       weekday:
         $ref: '#/definitions/DayOfWeek'
-      opens_at:
+      open_from:
         $ref: '#/definitions/Time'
-      closes_at:
+      open_to:
         $ref: '#/definitions/Time'
 
   SpecialOpeningTime:
@@ -2142,9 +2142,9 @@ definitions:
     properties:
       day:
         $ref: '#/definitions/Date'
-      opens_at:
+      open_from:
         $ref: '#/definitions/Time'
-      closes_at:
+      open_to:
         $ref: '#/definitions/Time'
       reason:
         $ref: '#/definitions/Translations'
@@ -2157,9 +2157,9 @@ definitions:
     properties:
       day:
         $ref: '#/definitions/Date'
-      opens_at:
+      open_from:
         $ref: '#/definitions/Time'
-      closes_at:
+      open_to:
         $ref: '#/definitions/Time'
 
   ### Store Channel
