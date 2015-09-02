@@ -8,23 +8,7 @@
             "zip_code": 8004,
             "canton_code": "ZH",
             "city": "Zürich",
-            "country": {
-                "id": "CH",
-                "title": [
-                    {
-                        "locale": "de",
-                        "value": "Schweiz"
-                    },
-                    {
-                        "locale": "fr",
-                        "value": "Suisse"
-                    },
-                    {
-                        "locale": "it",
-                        "value": "Svizzera"
-                    }
-                ]
-            },
+            "country_code": "CH",
             "phone": "044 240 22 83",
             "hotline": "0848 99 66 33",
             "payment_types": [
@@ -38,8 +22,8 @@
             "open_to": null,
             "renovation_from": "2015-06-25",
             "renovation_to": "2015-06-26",
-            "latitude": 47.372844700,
-            "longitude": 8.529515300,
+            "latitude": 47.3728447,
+            "longitude": 8.5295153,
             "language": "de",
             "email": "info@denner.ch",
             "homepage": "http://www.denner.ch",
@@ -47,6 +31,7 @@
             "channel": {
                 "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
                 "code": 1,
+                "name": "Denner",
                 "title": [
                     {
                         "locale": "de",
@@ -65,38 +50,38 @@
             "opening_times": [
                 {
                     "weekday": 1,
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "weekday": 2,
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "weekday": 3,
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "weekday": 4,
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "weekday": 5,
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "weekday": 6,
-                    "opens_at": "08:00:00",
-                    "closes_at": "12:00:00"
+                    "open_from": "08:00",
+                    "open_to": "12:00"
                 },
                 {
                     "weekday": 6,
-                    "opens_at": "14:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "14:00",
+                    "open_to": "20:00"
                 }
             ],
             "special_opening_times": [
@@ -138,8 +123,8 @@
                 },
                 {
                     "day": "2015-06-28",
-                    "opens_at": "10:00:00",
-                    "closes_at": "16:00:00",
+                    "open_from": "10:00",
+                    "open_to": "16:00",
                     "reason": [
                         {
                             "locale": "de",
@@ -160,83 +145,85 @@
             "calendar_opening_times": [
                 {
                     "day": "2015-06-22",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-06-23",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-06-24",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-06-27",
-                    "opens_at": "08:00:00",
-                    "closes_at": "12:00:00"
+                    "open_from": "08:00",
+                    "open_to": "12:00"
                 },
                 {
                     "day": "2015-06-27",
-                    "opens_at": "14:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "14:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-06-28",
-                    "opens_at": "10:00:00",
-                    "closes_at": "16:00:00"
+                    "open_from": "10:00",
+                    "open_to": "16:00"
                 },
                 {
                     "day": "2015-06-29",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-06-30",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-07-01",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-07-02",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-07-03",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-07-04",
-                    "opens_at": "08:00:00",
-                    "closes_at": "12:00:00"
+                    "open_from": "08:00",
+                    "open_to": "12:00"
                 },
                 {
                     "day": "2015-07-04",
-                    "opens_at": "14:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "14:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-07-06",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 },
                 {
                     "day": "2015-07-07",
-                    "opens_at": "08:00:00",
-                    "closes_at": "20:00:00"
+                    "open_from": "08:00",
+                    "open_to": "20:00"
                 }
             ],
             "services": [
                 {
                     "id": "acb911fb-b7e3-480f-ab91-1109e750892a",
+                    "code" : 1,
+                    "name" : "Humidor",
                     "title": [
                         {
                             "locale": "de",
@@ -264,6 +251,8 @@
                 },
                 {
                     "id": "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
+                    "code" : 3,
+                    "name" : "Früchte und Gemüse",
                     "title": [
                         {
                             "locale": "de",
@@ -286,6 +275,8 @@
                 },
                 {
                     "id": "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
+                    "code" : 5,
+                    "name" : "Backstation",
                     "title": [
                         {
                             "locale": "de",
