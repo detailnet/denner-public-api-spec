@@ -544,8 +544,8 @@ paths:
                     locale: "it"
                     value: "2013, Puglia, Italia, 6 x 75 cl"
                 prices:
-                  sales: 59.4
-                  instead: 68.4
+                  sales: 9.9
+                  instead: 11.4
                   base: 1.32
                   by_quantity:
                     -
