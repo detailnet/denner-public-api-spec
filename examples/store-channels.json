@@ -3,6 +3,7 @@
         {
             "id": "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
             "code": 1,
+            "name": "Denner",
             "title": [
                 {
                     "locale": "de",
@@ -21,6 +22,7 @@
         {
             "id": "18549f95-6471-4e21-968f-8a0bf2e0f79b",
             "code": 2,
+            "name": "Denner Satellit und Denner Express",
             "title": [
                 {
                     "locale": "de",

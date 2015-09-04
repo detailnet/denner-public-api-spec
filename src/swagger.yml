@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   description: RESTful API for the Denner Portal
-  version: 0.7.0
+  version: 0.8.0
   title: Denner Portal 2.0
   contact:
     name: DETAIL NET
@@ -61,18 +61,7 @@ paths:
                   zip_code: 8004
                   canton_code: "ZH"
                   city: "Zürich"
-                  country:
-                    id: "CH"
-                    title:
-                      -
-                        locale: "de"
-                        value: "Schweiz"
-                      -
-                        locale: "fr"
-                        value: "Suisse"
-                      -
-                        locale: "it"
-                        value: "Svizzera"
+                  country: "CH"
                   phone: "044 240 22 83"
                   hotline: "0848 99 66 33"
                   payment_types:
@@ -94,6 +83,7 @@ paths:
                   channel:
                     id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
                     code: 1
+                    name: "Denner"
                     title:
                       -
                         locale: "de"
@@ -107,32 +97,32 @@ paths:
                   opening_times:
                     -
                       weekday: 1
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 2
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 3
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 4
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 5
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       weekday: 6
-                      opens_at: "08:00:00"
-                      closes_at: "12:00:00"
+                      open_from: "08:00:00"
+                      open_to: "12:00:00"
                     -
                       weekday: 6
-                      opens_at: "14:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "14:00:00"
+                      open_to: "20:00:00"
                   special_opening_times:
                     -
                       day: "2015-06-25"
@@ -162,8 +152,8 @@ paths:
                       closed: true
                     -
                       day: "2015-06-28"
-                      opens_at: "10:00:00"
-                      closes_at: "16:00:00"
+                      open_from: "10:00:00"
+                      open_to: "16:00:00"
                       reason:
                         -
                           locale: "de"
@@ -178,67 +168,69 @@ paths:
                   calendar_opening_times:
                     -
                       day: "2015-06-22"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-23"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-24"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-27"
-                      opens_at: "08:00:00"
-                      closes_at: "12:00:00"
+                      open_from: "08:00:00"
+                      open_to: "12:00:00"
                     -
                       day: "2015-06-27"
-                      opens_at: "14:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "14:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-28"
-                      opens_at: "10:00:00"
-                      closes_at: "16:00:00"
+                      open_from: "10:00:00"
+                      open_to: "16:00:00"
                     -
                       day: "2015-06-29"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-06-30"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-01"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-02"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-03"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-04"
-                      opens_at: "08:00:00"
-                      closes_at: "12:00:00"
+                      open_from: "08:00:00"
+                      open_to: "12:00:00"
                     -
                       day: "2015-07-04"
-                      opens_at: "14:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "14:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-06"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                     -
                       day: "2015-07-07"
-                      opens_at: "08:00:00"
-                      closes_at: "20:00:00"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
                   services:
                     -
                       id: "acb911fb-b7e3-480f-ab91-1109e750892a"
+                      code: 1
+                      name: "Humidor"
                       title:
                         -
                           locale: "de"
@@ -258,6 +250,8 @@ paths:
                           to: "2016-06-30"
                     -
                       id: "d7b4925e-79f8-415f-9436-0adb4a9cc4de"
+                      code: 3
+                      name: "Früchte und Gemüse"
                       title:
                         -
                           locale: "de"
@@ -273,6 +267,8 @@ paths:
                           from: "2013-01-01"
                     -
                       id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
+                      code: 5
+                      name: "Backstation"
                       title:
                         -
                           locale: "de"
@@ -317,6 +313,7 @@ paths:
                   -
                     id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
                     code: 1
+                    name: "Denner"
                     title:
                       -
                         locale: "de"
@@ -330,6 +327,7 @@ paths:
                   -
                     id: "18549f95-6471-4e21-968f-8a0bf2e0f79b"
                     code: 2
+                    name: "Denner Satellit und Denner Express"
                     title:
                       -
                         locale: "de"
@@ -370,6 +368,8 @@ paths:
               store_services:
                 -
                   id: "acb911fb-b7e3-480f-ab91-1109e750892a"
+                  code: 1
+                  name: ""
                   title:
                     -
                       locale: "de"
@@ -382,6 +382,8 @@ paths:
                       value: "Humidor"
                 -
                   id: "85aa57ad-2bf3-48e5-a1a0-813889cbae26"
+                  code: 2
+                  name: "Bordeaux Grands Crus"
                   title:
                     -
                       locale: "de"
@@ -394,6 +396,8 @@ paths:
                       value: "Bordeaux Grands Crus"
                 -
                   id: "d7b4925e-79f8-415f-9436-0adb4a9cc4de"
+                  code: 3
+                  name: "Früchte und Gemüse"
                   title:
                     -
                       locale: "de"
@@ -406,6 +410,8 @@ paths:
                       value: "Frutta e verdura"
                 -
                   id: "47191064-ad2e-482a-a5cf-2aa32d0b8116"
+                  code: 4
+                  name: "Früchte und Gemüse im Offenverkauf"
                   title:
                     -
                       locale: "de"
@@ -418,6 +424,8 @@ paths:
                       value: "Frutta e verdura in vendita sfusa"
                 -
                   id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
+                  code: 5
+                  name: "Backstation"
                   title:
                     -
                       locale: "de"
@@ -536,8 +544,8 @@ paths:
                     locale: "it"
                     value: "2013, Puglia, Italia, 6 x 75 cl"
                 prices:
-                  sales: 59.4
-                  instead: 68.4
+                  sales: 9.9
+                  instead: 11.4
                   base: 1.32
                   by_quantity:
                     -
@@ -757,28 +765,28 @@ paths:
                   code: "F UND G"
                   name: "Früchte und Gemüse"
                 -
-                  id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
-                  code: "FLUGBLATT",
+                  id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5"
+                  code: "FLUGBLATT"
                   name: "Dennerwoche"
                 -
-                  id: "e4103942-cc11-45e7-a87e-99b8aba8cc2a",
-                  code: "KASSENPL.",
+                  id: "e4103942-cc11-45e7-a87e-99b8aba8cc2a"
+                  code: "KASSENPL."
                   name: "Kassenplatz"
                 -
-                  id: "0dd46184-3c01-4ba0-8fa6-baf6e3abcd50",
-                  code: "PARFUM",
+                  id: "0dd46184-3c01-4ba0-8fa6-baf6e3abcd50"
+                  code: "PARFUM"
                   name: "Parfum"
                 -
-                  id: "c41c907d-8f84-4bf4-91f0-dbae19afdd2d",
-                  code: "REGIOWERB",
+                  id: "c41c907d-8f84-4bf4-91f0-dbae19afdd2d"
+                  code: "REGIOWERB"
                   name: "Regionalwerbung"
                 -
-                  id: "92d092c5-c023-49bb-b7f2-b90afde0e637",
-                  code: "SAISON",
+                  id: "92d092c5-c023-49bb-b7f2-b90afde0e637"
+                  code: "SAISON"
                   name: "Saison"
                 -
-                  id: "37f205e5-0661-424f-bcd9-a68ce93016cb",
-                  code: "WOCHENEND",
+                  id: "37f205e5-0661-424f-bcd9-a68ce93016cb"
+                  code: "WOCHENEND"
                   name: "Wochenend-Knaller"
 
   ### Online Advertising
@@ -873,8 +881,8 @@ paths:
                           from: "2015-06-23"
                           to: "2015-06-29"
                   promotion_type:
-                    id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
-                    code: "FLUGBLATT",
+                    id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5"
+                    code: "FLUGBLATT"
                     name: "Dennerwoche"
                   sort_index: 0
 
@@ -963,8 +971,8 @@ paths:
                       from: "2015-06-23"
                       to: "2015-06-29"
               promotion_type:
-                id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
-                code: "FLUGBLATT",
+                id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5"
+                code: "FLUGBLATT"
                 name: "Dennerwoche"
               sort_index: 0
               articles:
@@ -2041,7 +2049,9 @@ definitions:
         type: string
         description: Canton (state) code
       country:
-        $ref: '#/definitions/Country'
+        type: string
+        pattern: '/^[A-Z]{2}$/'
+        description: Country code definition from ISO 3166
       phone:
         $ref: '#/definitions/Phone'
       hotline:
@@ -2125,9 +2135,9 @@ definitions:
     properties:
       weekday:
         $ref: '#/definitions/DayOfWeek'
-      opens_at:
+      open_from:
         $ref: '#/definitions/Time'
-      closes_at:
+      open_to:
         $ref: '#/definitions/Time'
 
   SpecialOpeningTime:
@@ -2135,9 +2145,9 @@ definitions:
     properties:
       day:
         $ref: '#/definitions/Date'
-      opens_at:
+      open_from:
         $ref: '#/definitions/Time'
-      closes_at:
+      open_to:
         $ref: '#/definitions/Time'
       reason:
         $ref: '#/definitions/Translations'
@@ -2150,9 +2160,9 @@ definitions:
     properties:
       day:
         $ref: '#/definitions/Date'
-      opens_at:
+      open_from:
         $ref: '#/definitions/Time'
-      closes_at:
+      open_to:
         $ref: '#/definitions/Time'
 
   ### Store Channel
@@ -2165,6 +2175,9 @@ definitions:
         type: integer
         format: int32
         description: Navision channel code
+      name:
+        type: string
+        description: Channel name
       title:
         $ref: '#/definitions/Translations'
 
@@ -2174,6 +2187,12 @@ definitions:
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        description: Navision service code
+      name:
+        type: string
+        description: Service name
       title:
         $ref: '#/definitions/Translations'
 
@@ -2182,6 +2201,12 @@ definitions:
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        description: Navision service code
+      name:
+        type: string
+        description: Service name
       title:
         $ref: '#/definitions/Translations'
       appearances:
