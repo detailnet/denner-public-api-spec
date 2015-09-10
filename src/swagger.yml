@@ -556,12 +556,14 @@ paths:
                       quantity: 6
                       sales: 59.4
                       instead: 68.4
-                content:
-                  size: 75
-                  unit: 170
+#                Removed because we cannot calculate a valid size, neither display a standardized unit
+#                content:
+#                  size: 75
+#                  unit: 170
                 base:
-                  size: 10
-                  unit: 170
+#                  Removed because we cannot calculate a valid size, neither display a standardized unit
+#                  size: 10
+#                  unit: 170
                   text:
                     -
                       locale: "de"
@@ -1056,12 +1058,14 @@ paths:
                       locale: "it"
                       value: "9.- risparmiati"
                   quantity: 6
-                  content:
-                    size: 75
-                    unit: 170
+#                  Removed because we cannot calculate a valid size, neither display a standardized unit
+#                  content:
+#                    size: 75
+#                    unit: 170
                   base:
-                    size: 10
-                    unit: 170
+#                    Removed because we cannot calculate a valid size, neither display a standardized unit
+#                    size: 10
+#                    unit: 170
                     text:
                       -
                         locale: "de"
@@ -1603,12 +1607,14 @@ paths:
                       locale: "it"
                       value: "9.- risparmiati"
                   quantity: 6
-                  content:
-                    size: 75
-                    unit: 170
+#                  Removed because we cannot calculate a valid size, neither display a standardized unit
+#                  content:
+#                    size: 75
+#                    unit: 170
                   base:
-                    size: 10
-                    unit: 170
+#                    Removed because we cannot calculate a valid size, neither display a standardized unit
+#                    size: 10
+#                    unit: 170
                     text:
                       -
                         locale: "de"
@@ -1949,17 +1955,19 @@ definitions:
     minimum: 0
     description: Quantity
 
-  ContentSize:
-    type: number
-    format: float
-    minimum: 0
-    description: Content size
+#  Removed because we cannot calculate a valid size, neither display a standardized unit
+#  ContentSize:
+#    type: number
+#    format: float
+#    minimum: 0
+#    description: Content size
 
-  ContentUnit:
-    # @todo Define an pattern or standard reference (e.g. ISO 80000-3)?
-    type: integer
-    format: int32
-    description: Content unit code from navision
+#  Removed because we cannot calculate a valid size, neither display a standardized unit
+#  ContentUnit:
+#    # @todo Define an pattern or standard reference (e.g. ISO 80000-3)?
+#    type: integer
+#    format: int32
+#    description: Content unit code from navision
 
   Cooling:
     type: number
@@ -2260,8 +2268,9 @@ definitions:
         $ref: '#/definitions/Translations'
       prices:
         $ref: '#/definitions/ArticlePrices'
-      content:
-        $ref: '#/definitions/Content'
+#      Removed because we cannot calculate a valid size, neither display a standardized unit
+#      content:
+#        $ref: '#/definitions/Content'
       base:
         $ref: '#/definitions/BaseContent'
       cooling:
@@ -2300,21 +2309,23 @@ definitions:
       instead:
         $ref: '#/definitions/Price'
 
-  Content:
-    type: object
-    properties:
-      size:
-        $ref: '#/definitions/ContentSize'
-      unit:
-        $ref: '#/definitions/ContentUnit'
+#  Removed because we cannot calculate a valid size, neither display a standardized unit
+#  Content:
+#    type: object
+#    properties:
+#      size:
+#        $ref: '#/definitions/ContentSize'
+#      unit:
+#        $ref: '#/definitions/ContentUnit'
 
   BaseContent:
     type: object
     properties:
-      size:
-        $ref: '#/definitions/ContentSize'
-      unit:
-        $ref: '#/definitions/ContentUnit'
+#      Removed because we cannot calculate a valid size, neither display a standardized unit
+#      size:
+#        $ref: '#/definitions/ContentSize'
+#      unit:
+#        $ref: '#/definitions/ContentUnit'
       text:
         $ref: '#/definitions/Translations'
 
@@ -2444,8 +2455,9 @@ definitions:
         $ref: '#/definitions/Translations'
       quantity:
         $ref: '#/definitions/Quantity'
-      content:
-        $ref: '#/definitions/Content'
+#      Removed because we cannot calculate a valid size, neither display a standardized unit
+#      content:
+#        $ref: '#/definitions/Content'
       base:
         $ref: '#/definitions/BaseContent'
       validity:
@@ -2506,8 +2518,9 @@ definitions:
         $ref: '#/definitions/Translations'
       quantity:
         $ref: '#/definitions/Quantity'
-      content:
-        $ref: '#/definitions/Content'
+#      Removed because we cannot calculate a valid size, neither display a standardized unit
+#      content:
+#        $ref: '#/definitions/Content'
       base:
         $ref: '#/definitions/BaseContent'
       validity:
