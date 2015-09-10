@@ -146,13 +146,7 @@
                         }
                     ],
                     "quantity": 6,
-                    "content": {
-                        "size": 75,
-                        "unit": 170
-                    },
                     "base": {
-                        "size": 10,
-                        "unit": 170,
                         "text": [
                             {
                                 "locale": "de",
