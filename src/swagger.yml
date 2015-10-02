@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   description: RESTful API for the Denner Portal
-  version: 0.10.0
+  version: 0.11.0
   title: Denner Portal 2.0
   contact:
     name: DETAIL NET
@@ -2283,6 +2283,8 @@ definitions:
         $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
         $ref: '#/definitions/AssignedArticleGroup'
+      packshot:
+        $ref: '#/definitions/Packshot'
       wine:
         $ref: '#/definitions/ArticleWine'
 
@@ -2332,6 +2334,12 @@ definitions:
 #        $ref: '#/definitions/ContentUnit'
       text:
         $ref: '#/definitions/Translations'
+
+  Packshot:
+    type: object
+    properties:
+      image_url:
+        $ref: '#/definitions/Url'
 
   ArticleWine:
     type: object
@@ -2493,6 +2501,8 @@ definitions:
         $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
         $ref: '#/definitions/AssignedArticleGroup'
+      packshot:
+        $ref: '#/definitions/Packshot'
       wine:
         $ref: '#/definitions/ArticleWine'
 
@@ -2548,6 +2558,8 @@ definitions:
         $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
         $ref: '#/definitions/AssignedArticleGroup'
+      packshot:
+        $ref: '#/definitions/Packshot'
       wine:
         $ref: '#/definitions/ArticleWine'
 
