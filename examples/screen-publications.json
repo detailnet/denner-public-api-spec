@@ -141,6 +141,10 @@
                                         {
                                             "type": "image/svg+xml",
                                             "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.svg"
+                                        },
+                                        {
+                                            "type": "image/png",
+                                            "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png"
                                         }
                                     ]
                                 },
@@ -150,6 +154,10 @@
                                         {
                                             "type": "image/svg+xml",
                                             "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.svg"
+                                        },
+                                        {
+                                            "type": "image/png",
+                                            "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png"
                                         }
                                     ]
                                 },
@@ -159,6 +167,10 @@
                                         {
                                             "type": "image/svg+xml",
                                             "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
+                                        },
+                                        {
+                                            "type": "image/png",
+                                            "url": "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png"
                                         }
                                     ]
                                 }
