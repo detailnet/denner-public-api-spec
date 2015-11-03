@@ -2496,10 +2496,10 @@ definitions:
 
   OutputImage:
     type: object
-    description: Images grouped by locale and then separeted by format
     properties:
       locale:
         type: string
+        description: Locale for the image formats
       formats:
         $ref: '#/definitions/OutputImageFormats'
 
@@ -2516,7 +2516,7 @@ definitions:
         description: Mime type for the output image
       url:
         type: string
-        description: Image url which can be used, for example, in an <img> tag
+        description: Image url which can be used, for example, in an 'img' tag
 
   ### Online publicated article
   OnlineArticle:
