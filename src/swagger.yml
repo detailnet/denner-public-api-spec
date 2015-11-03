@@ -1189,7 +1189,7 @@ paths:
                       name: "Weine"
                   packshot:
                     id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
-                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
+                    image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                   wine:
                     country:
                       id: "IT"
@@ -1766,7 +1766,7 @@ paths:
                       name: "Weine"
                   packshot:
                     id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
-                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
+                    image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                   wine:
                     country:
                       id: "IT"
@@ -2385,7 +2385,7 @@ definitions:
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
-      url:
+      image_url:
         $ref: '#/definitions/Url'
 
   ArticleWine:
@@ -2474,53 +2474,53 @@ definitions:
   Dots:
     type: array
     items:
-      $ref: '#/definitions/Dot'
+      $ref: '#/definitions/Output'
 
-  Dot:
+  Output:
     type: object
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
       type:
         type: object
-        description: Dot type
+        description: Output type
         properties:
           id:
             type: string
-            description: Dot type id
+            description: Output type id
       text:
         $ref: '#/definitions/Translations'
       images:
-        $ref: '#/definitions/LocalizedImages'
+        $ref: '#/definitions/OutputImages'
 
-  LocalizedImages:
+  OutputImages:
     type: array
     items:
-      $ref: '#/definitions/LocalizedImage'
+      $ref: '#/definitions/OutputImage'
 
-  LocalizedImage:
+  OutputImage:
     type: object
     properties:
       locale:
         type: string
-        description: Image locale
+        description: Output image locale
       formats:
-        $ref: '#/definitions/LocalizedImageFormats'
+        $ref: '#/definitions/OutputImageFormats'
 
-  LocalizedImageFormats:
+  OutputImageFormats:
     type: array
     items:
-      $ref: '#/definitions/LocalizedImageFormat'
+      $ref: '#/definitions/OutputImageFormat'
 
-  LocalizedImageFormat:
+  OutputImageFormat:
     type: object
     properties:
       type:
         type: string
-        description: Image type
+        description: Output image type
       url:
         type: string
-        description: Image url
+        description: Output image url
 
   ### Online publicated article
   OnlineArticle:
