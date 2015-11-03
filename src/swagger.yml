@@ -1188,7 +1188,6 @@ paths:
                       code: "60"
                       name: "Weine"
                   packshot:
-                    id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
                     image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                   wine:
                     country:
@@ -1765,7 +1764,6 @@ paths:
                       code: "60"
                       name: "Weine"
                   packshot:
-                    id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
                     image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                   wine:
                     country:
@@ -2383,8 +2381,6 @@ definitions:
   Packshot:
     type: object
     properties:
-      id:
-        $ref: '#/definitions/UUIDv4'
       image_url:
         $ref: '#/definitions/Url'
 
