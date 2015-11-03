@@ -179,15 +179,15 @@
                             "text": [
                                 {
                                     "locale": "de",
-                                    "text": "1/2 Preis\nWeinheit!"
+                                    "value": "1/2 Preis\nWeinheit!"
                                 },
                                 {
                                     "locale": "fr",
-                                    "text": "1/2 prix\nLe top du vin!"
+                                    "value": "1/2 prix\nLe top du vin!"
                                 },
                                 {
                                     "locale": "it",
-                                    "text": "1/2 prezzo\nSuperofferta vino!"
+                                    "value": "1/2 prezzo\nSuperofferta vino!"
                                 }
                             ],
                             "images": [
