@@ -617,8 +617,6 @@ paths:
                     id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
                     code: "60"
                     name: "Weine"
-                packshot:
-                  image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
                 wine:
                   country:
                     id: "IT"
@@ -1190,7 +1188,8 @@ paths:
                       code: "60"
                       name: "Weine"
                   packshot:
-                    image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
+                    id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
+                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                   wine:
                     country:
                       id: "IT"
@@ -1766,7 +1765,8 @@ paths:
                       code: "60"
                       name: "Weine"
                   packshot:
-                    image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
+                    id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
+                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                   wine:
                     country:
                       id: "IT"
@@ -2330,8 +2330,6 @@ definitions:
         $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
         $ref: '#/definitions/AssignedArticleGroup'
-      packshot:
-        $ref: '#/definitions/Packshot'
       wine:
         $ref: '#/definitions/ArticleWine'
 
@@ -2385,7 +2383,9 @@ definitions:
   Packshot:
     type: object
     properties:
-      image_url:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      url:
         $ref: '#/definitions/Url'
 
   ArticleWine:

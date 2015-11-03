@@ -374,8 +374,9 @@
                             "name": "Weine"
                         }
                     },
-                    "packshot": {
-                        "image_url": "https://s3-eu-west-1.amazonaws.com/denner-assets/assets/c4b58b4e-b222-4d5f-894e-6225662e5669/051273.png"
+                    "packshot" : {
+                        "id" : "2059e18a-9e93-452e-9eef-f9d7605a31ad",
+                        "url" : "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                     },
                     "wine": {
                         "country": {
