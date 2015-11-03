@@ -1035,19 +1035,40 @@ paths:
                     -
                       locale: "it"
                       value: "9.90 a bottiglia invece di 11.40"
-                  dot:
+                  dots:
                     -
-                      locale: "de"
-                      value: "1/2 Preis"
-                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png"
-                    -
-                      locale: "fr"
-                      value: "1/2 prix"
-                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png"
-                    -
-                      locale: "it"
-                      value: "1/2 prezzo"
-                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png"
+                      id: "d4bca729-10ad-482c-bdda-b1a1398173b5"
+                      type:
+                        id: "semi_price_winehit"
+                      text:
+                        -
+                          locale: "de"
+                          value: "1/2 Preis\nWeinheit!"
+                        -
+                          locale: "fr"
+                          value: "1/2 prix\nLe top du vin!"
+                        -
+                          locale: "it"
+                          value: "1/2 prezzo\nSuperofferta vino!"
+                      images:
+                        -
+                          locale: "de"
+                          formats:
+                            -
+                              type: "image/svg+xml"
+                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.svg"
+                        -
+                          locale: "fr"
+                          formats:
+                            -
+                              type: "image/svg+xml"
+                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.svg"
+                        -
+                          locale: "it"
+                          formats:
+                            -
+                              type: "image/svg+xml"
+                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
                   panel:
                     -
                       locale: "de"
@@ -1584,19 +1605,40 @@ paths:
                     -
                       locale: "it"
                       value: "9.90 a bottiglia invece di 11.40"
-                  dot:
+                  dots:
                     -
-                      locale: "de"
-                      value: "1/2 Preis"
-                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.png"
-                    -
-                      locale: "fr"
-                      value: "1/2 prix"
-                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.png"
-                    -
-                      locale: "it"
-                      value: "1/2 prezzo"
-                      image_url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.png"
+                      id: "d4bca729-10ad-482c-bdda-b1a1398173b5"
+                      type:
+                        id: "semi_price_winehit"
+                      text:
+                        -
+                          locale: "de"
+                          value: "1/2 Preis\nWeinheit!"
+                        -
+                          locale: "fr"
+                          value: "1/2 prix\nLe top du vin!"
+                        -
+                          locale: "it"
+                          value: "1/2 prezzo\nSuperofferta vino!"
+                      images:
+                        -
+                          locale: "de"
+                          formats:
+                            -
+                              type: "image/svg+xml"
+                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.svg"
+                        -
+                          locale: "fr"
+                          formats:
+                            -
+                              type: "image/svg+xml"
+                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.svg"
+                        -
+                          locale: "it"
+                          formats:
+                            -
+                              type: "image/svg+xml"
+                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
                   panel:
                     -
                       locale: "de"
@@ -2432,13 +2474,48 @@ definitions:
   Dot:
     type: object
     properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      type:
+        type: object
+        description: Dot type
+        properties:
+          id:
+            type: string
+            description: Dot type id
+      text:
+        $ref: '#/definitions/Translations'
+      images:
+        $ref: '#/definitions/LocalizedImages'
+
+  LocalizedImages:
+    type: array
+    items:
+      $ref: '#/definitions/LocalizedImage'
+
+  LocalizedImage:
+    type: object
+    properties:
       locale:
-        $ref: '#/definitions/Locale'
-      value:
         type: string
-        description: Translated text value
-      image_url:
-        $ref: '#/definitions/Url'
+        description: Image locale
+      formats:
+        $ref: '#/definitions/LocalizedImageFormats'
+
+  LocalizedImageFormats:
+    type: array
+    items:
+      $ref: '#/definitions/LocalizedImageFormat'
+
+  LocalizedImageFormat:
+    type: object
+    properties:
+      type:
+        type: string
+        description: Image type
+      url:
+        type: string
+        description: Image url
 
   ### Online publicated article
   OnlineArticle:
@@ -2461,7 +2538,7 @@ definitions:
         $ref: '#/definitions/Translations'
       unit_price_info:
         $ref: '#/definitions/Translations'
-      dot:
+      dots:
         $ref: '#/definitions/Dots'
       panel:
         $ref: '#/definitions/Translations'
@@ -2526,7 +2603,7 @@ definitions:
         $ref: '#/definitions/Translations'
       unit_price_info:
         $ref: '#/definitions/Translations'
-      dot:
+      dots:
         $ref: '#/definitions/Dots'
       panel:
         $ref: '#/definitions/Translations'
