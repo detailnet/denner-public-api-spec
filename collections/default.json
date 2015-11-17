@@ -802,13 +802,12 @@
             "tests": "",
             "currentHelper": "normal",
             "helperAttributes": {},
-            "time": 1447744946112,
+            "time": 1447775629161,
             "name": "/api/advertised-articles/{advertised_article_id}",
             "description": "Edit an advertised article (Artikel)",
             "collectionId": "9e74fb03-d8e1-fbbc-ce72-263d55021d61",
             "responses": [],
-            "folder": "48f56c57-6b74-01a6-36e4-ee6c09819d06",
-            "rawModeData": "{\n  \"promoted\": 1\n}"
+            "rawModeData": "{\n  \"promoted_override\": 1\n}"
         },
         {
             "folder": "1f0a514a-3256-3b51-b0a7-a21306c36661",
