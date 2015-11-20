@@ -14,6 +14,7 @@
                 "1250c675-494f-508b-b1e5-248eb9f5ef54",
                 "a0238478-e79e-de55-063e-dfcfc6a9d030",
                 "48da11e9-7c29-948b-f7e2-77f9e73097a1",
+                "7aa4ce80-dcbd-c005-1ce0-dd147e8911b0",
                 "4252010a-408b-be03-890b-1900e3b41638",
                 "eb5b26ad-2d16-6e18-eab7-02ebc38d9563",
                 "e810231a-7104-b160-9657-942e69201484",
@@ -128,7 +129,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "00a03265-4592-de99-8ee1-27eb90490059"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -148,7 +151,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "01404b58-7028-35ea-4567-0b1720fa8a79"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -168,7 +173,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "0146d70c-af81-ea97-472a-5096b808599b"
         },
         {
             "folder": "8da26dc6-760b-d8ed-244f-6fa0c0bd9deb",
@@ -188,7 +195,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "03ba7a75-9d4c-8058-6116-dec3247fa5db"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -208,7 +217,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "05a44a1d-c803-d7ad-315c-98de70f8849e"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -228,7 +239,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "07806833-b9fa-6216-5c9e-1ae0e5bbdfbe"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -248,7 +261,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "0c665c0c-d891-cda0-5654-48aaccccdba5"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -268,7 +283,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "120aa5c6-640a-e5e7-0ec7-02c23f6d0f98"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -288,7 +305,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "1250c675-494f-508b-b1e5-248eb9f5ef54"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -308,7 +327,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "153b5a01-f845-a468-58fd-97f1480993ab"
         },
         {
             "folder": "8da26dc6-760b-d8ed-244f-6fa0c0bd9deb",
@@ -328,7 +349,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "1ab5fde3-30e2-12f5-30b9-8ab5252d6d7f"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -348,7 +371,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "1bddabbf-0dbc-7e08-5b37-5e4ef29c00f9"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -368,7 +393,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "23137dce-6c2a-18a8-a5f2-80c419df3b3f"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -388,7 +415,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "3024b519-b3fc-701a-78b0-1a770a56fc3c"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -408,7 +437,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "34b7bc30-0b20-bb86-3aa3-f7a17d4fb612"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -428,7 +459,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "36167be3-5c6b-1a0f-65df-c6fdcabcbb86"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -448,7 +481,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "3b7b3b7d-ce13-ce87-e0b3-b7bb522b4306"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -468,7 +503,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "3dac8f60-ec37-b113-8926-830b76750853"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -488,7 +525,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "3ddd1730-27a5-2d47-e96a-5400583708be"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -508,7 +547,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "4027688b-ff60-1802-231e-517fc83b41c5"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -528,7 +569,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "40905e0e-4fc7-cb62-460e-25f833d6d466"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -548,7 +591,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "4252010a-408b-be03-890b-1900e3b41638"
         },
         {
             "headers": "Accept: {{header_accept}}\nApp-ID: {{advertising_header_application_id}}\nApp-Key: {{advertising_header_application_key}}\n",
@@ -567,7 +612,9 @@
             "descriptionFormat": "html",
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
             "id": "48da11e9-7c29-948b-f7e2-77f9e73097a1",
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "48da11e9-7c29-948b-f7e2-77f9e73097a1"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -587,7 +634,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "494b28da-3dd6-2131-ba11-a26f58e229cc"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -607,7 +656,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "4a3592dd-9d60-07a7-1f0e-2e1f53dd83a6"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -627,7 +678,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "4ef8e30c-ece1-8d24-bea3-a2dee3d696c2"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -647,7 +700,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "54c3c214-f3e9-b982-84f6-98bd73ca26d1"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -667,7 +722,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "56d757f0-8104-9fe9-8f9c-8906ac161b26"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -687,7 +744,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "57bc2ce0-a063-08e2-c93c-e23901daa5e9"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -707,7 +766,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "6641b838-9431-45bc-878d-dfc529f0e2b0"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -727,7 +788,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "67a48cec-31eb-dbbf-b3cd-8c8a50c32c74"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -747,7 +810,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "6f5aa843-bd6c-1ab2-5899-ef16d7d3b070"
         },
         {
             "folder": "8da26dc6-760b-d8ed-244f-6fa0c0bd9deb",
@@ -767,7 +832,32 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "7856620d-d0b1-2d07-7c6c-0acb4775b53e"
+        },
+        {
+            "id": "7aa4ce80-dcbd-c005-1ce0-dd147e8911b0",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{advertising_header_application_id}}\nApp-Key: {{advertising_header_application_key}}\nContent-Type: application/json\n",
+            "url": "{{advertising_url_base}}/api/online-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
+            "preRequestScript": "",
+            "pathVariables": {},
+            "method": "POST",
+            "data": [],
+            "dataMode": "raw",
+            "version": 2,
+            "tests": "",
+            "currentHelper": "normal",
+            "helperAttributes": "{}",
+            "time": 1447941811578,
+            "name": "/api/online-publications/{publication_id}/articles",
+            "description": "Add a new article to the online publication (Online-Werbemittel)",
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "descriptionFormat": "html",
+            "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
+            "isFromCollection": true,
+            "collectionRequestId": "7aa4ce80-dcbd-c005-1ce0-dd147e8911b0",
+            "rawModeData": "{\n  \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}"
         },
         {
             "folder": "8da26dc6-760b-d8ed-244f-6fa0c0bd9deb",
@@ -787,7 +877,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "826e5ffc-4a2a-7474-d63f-691bc68b6ea4"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -807,7 +899,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "872f02a2-92cd-22cf-b755-0e19172e8da5"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -827,7 +921,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "87ebbb12-7320-6b37-3b4e-ed03b99a1d60"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -847,7 +943,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "9329affb-6856-895e-d718-221afe59a99f"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -867,7 +965,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "99173052-595a-0df7-a2b7-f87906c1f14a"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -887,7 +987,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "9f10def8-ca52-9893-f8d3-c6a3307e80ca"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -907,7 +1009,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "a0238478-e79e-de55-063e-dfcfc6a9d030"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -927,7 +1031,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "a24b6ce4-4e9e-19d9-86df-f4ee775e41c6"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -947,7 +1053,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "a3f01138-e32a-1cc8-4c6f-399dc47dab8f"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -967,7 +1075,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "ab80e18a-d47a-e678-1204-1520d8b5a195"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -987,7 +1097,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "ad34c716-bf1a-6ff1-3421-8afa21c3fa06"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -1007,7 +1119,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "b63078ec-af87-7746-945e-95347d2926aa"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -1027,7 +1141,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "b73da6a3-5e73-3542-0858-b477176d107c"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -1047,7 +1163,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "c3bdc97a-2445-ab14-0492-11cdb55800b5"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -1067,7 +1185,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "cb47fbc8-17dc-adcd-c2a6-3724bf058151"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -1087,7 +1207,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "cc9fabb6-c47f-57cf-8b01-1896bab2eb3f"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -1107,7 +1229,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "cde93285-4bcc-678e-67de-71e191414f42"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -1127,7 +1251,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "d0cc9dc7-6ef3-49d2-42c2-cfab0fd7d184"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -1147,7 +1273,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "d61cb387-48e9-3b82-31eb-c5592ff9e949"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -1167,7 +1295,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "e810231a-7104-b160-9657-942e69201484"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -1187,7 +1317,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "e84cca84-5ca0-c477-0e9d-6b83084f4986"
         },
         {
             "folder": "eba72e23-a5df-4c83-dfec-d4743f72a96f",
@@ -1207,7 +1339,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "eb5b26ad-2d16-6e18-eab7-02ebc38d9563"
         },
         {
             "folder": "f2aad266-8e96-8256-ac2e-b39fd7b0ff0a",
@@ -1227,7 +1361,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "f3a9f34b-4f42-5d4b-ae08-111aa50d7e4a"
         },
         {
             "folder": "392620f1-1d47-0792-34ca-ece15d333f15",
@@ -1247,7 +1383,9 @@
             "currentHelper": "normal",
             "helperAttributes": "{}",
             "responses": [],
-            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c"
+            "collectionId": "601fcbfa-1bdd-9f14-da42-001fc35ea66c",
+            "isFromCollection": true,
+            "collectionRequestId": "fdaa7b3d-e7ff-8b79-43d1-702d93fe2a00"
         }
     ]
 }
