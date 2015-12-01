@@ -977,7 +977,8 @@ paths:
               sort_index: 0
               articles:
                 -
-                  id: "051273"
+                  id: "dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6"
+                  article_id: "051273"
                   name: "Mandorla Primitivo IGT Puglia"
                   title:
                     -
@@ -1547,7 +1548,8 @@ paths:
                     value: "tbd"
               articles:
                 -
-                  id: "051273"
+                  id: "b2d29de4-dcd5-4f3a-8e1a-811e42573f5f"
+                  article_id: "051273"
                   name: "Mandorla Primitivo IGT Puglia"
                   title:
                     -
@@ -2523,6 +2525,8 @@ definitions:
     type: object
     properties:
       id:
+        $ref: '#/definitions/UUIDv4'
+      article_id:
         type: string
         pattern: '/^\d{6}$/'
         description: Navision article code
@@ -2588,6 +2592,8 @@ definitions:
     type: object
     properties:
       id:
+        $ref: '#/definitions/UUIDv4'
+      article_id:
         type: string
         pattern: '/^\d{6}$/'
         description: Navision article code
