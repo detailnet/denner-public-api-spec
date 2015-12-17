@@ -1890,6 +1890,7 @@ parameters:
       Default: 1
     in: query
     type: integer
+    required: false
     format: int32
     minimum: 0
     default: 1
@@ -1900,6 +1901,7 @@ parameters:
       Default: -1 (no limit)
     in: query
     type: integer
+    required: false
     format: int32
     default: -1
   PublicationIdPathParam:
@@ -1907,11 +1909,13 @@ parameters:
     description: The unique identifier of an online publication
     in: path
     type: string
+    required: true
     pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
   FilterParam:
     name: filter
     in: query
     type: string
+    required: false
     description: |
       Filters: JSON array of Filter object, urlencoded.
 
