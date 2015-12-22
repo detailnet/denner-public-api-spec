@@ -617,6 +617,11 @@ paths:
                     id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
                     code: "60"
                     name: "Weine"
+                eco_labels:
+                  -
+                    id: "66d94617-bbd7-477e-ae66-183deb67ba5b"
+                    code: "bio"
+                    name: "Bio"
                 wine:
                   country:
                     id: "IT"
@@ -1188,6 +1193,11 @@ paths:
                       id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
                       code: "60"
                       name: "Weine"
+                  eco_labels:
+                    -
+                      id: "66d94617-bbd7-477e-ae66-183deb67ba5b"
+                      code: "bio"
+                      name: "Bio"
                   packshot:
                     image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                   wine:
@@ -2306,6 +2316,19 @@ definitions:
       parent:
         $ref: '#/definitions/AssignedArticleGroup'
 
+  ### Eco label
+  EcoLabel:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: string
+        description: Navision identification code
+      name:
+        type: string
+        description: German name for the eco label
+
   ### Article
   Article:
     type: object
@@ -2334,6 +2357,8 @@ definitions:
         $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
         $ref: '#/definitions/AssignedArticleGroup'
+      eco_labels:
+        $ref: '#/definitions/EcoLabels'
       wine:
         $ref: '#/definitions/ArticleWine'
 
@@ -2587,6 +2612,8 @@ definitions:
         $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
         $ref: '#/definitions/AssignedArticleGroup'
+      eco_labels:
+        $ref: '#/definitions/EcoLabels'
       packshot:
         $ref: '#/definitions/Packshot'
       wine:
@@ -2823,6 +2850,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/ArticleGroup'
+
+  EcoLabels:
+      type: array
+      items:
+        $ref: '#/definitions/EcoLabel'
 
   Articles:
     type: array
