@@ -35,6 +35,7 @@ The Denner Portal provides mostly advertising related data.
 
 ### Screen Advertising
 * `/screen-publications` (Screen-Werbemittel, [example](examples/screen-publications.json))
+* `/screen-stores` (Screen-Filialen, [example](examples/screen-stores.json))
 
 
 ## Building
