@@ -1,13 +1,13 @@
 swagger: '2.0'
 info:
   description: RESTful API for the Denner Portal
-  version: 0.12.0
+  version: 1.0.0
   title: Denner Portal 2.0
   contact:
     name: DETAIL NET
-    email: support+denner-api@detailnet.ch
-host: denner-portal.detailnet.ch
-basePath: /api
+    email: support+denner-portal-api@detailnet.ch
+host: denner-portal-api.detailnet.ch
+basePath: /v1
 schemes:
   - https
 consumes:
