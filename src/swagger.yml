@@ -283,6 +283,97 @@ paths:
                         -
                           from: "2013-01-01"
 
+  /screen-stores:
+    get:
+      summary: List all screen stores
+      description: >
+        Use this operation to get a list of all screen stores (Filialen für Werbescreens).
+      tags:
+        - Stores – Filialdaten
+      operationId: listScreenStores
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/ScreenStoresResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 1
+              total_items: 1
+              stores:
+                -
+                  id: "bcb8a388-8998-4d08-85a6-4864199704ee"
+                  code: 302
+                  calendar_opening_times:
+                    -
+                      day: "2015-06-22"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-06-23"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-06-24"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-06-27"
+                      open_from: "08:00:00"
+                      open_to: "12:00:00"
+                    -
+                      day: "2015-06-27"
+                      open_from: "14:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-06-28"
+                      open_from: "10:00:00"
+                      open_to: "16:00:00"
+                    -
+                      day: "2015-06-29"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-06-30"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-07-01"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-07-02"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-07-03"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-07-04"
+                      open_from: "08:00:00"
+                      open_to: "12:00:00"
+                    -
+                      day: "2015-07-04"
+                      open_from: "14:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-07-06"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+                    -
+                      day: "2015-07-07"
+                      open_from: "08:00:00"
+                      open_to: "20:00:00"
+
   /store-channels:
     get:
       summary: List all store channels
@@ -2198,6 +2289,21 @@ definitions:
           $ref: '#/definitions/AssignedStoreService'
         description: Services provided by the store
 
+  ScreenStore:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        format: int32
+        description: Navision store code
+      calendar_opening_times:
+        type: array
+        items:
+          $ref: '#/definitions/CalendarOpeningTime'
+        description: Calendar opening times
+
   PaymentType:
     type: string
     pattern: '/^(cash|euro|maestro|post")$/' # @todo Needed?
@@ -2836,6 +2942,11 @@ definitions:
     items:
       $ref: '#/definitions/Store'
 
+  ScreenStores:
+    type: array
+    items:
+      $ref: '#/definitions/ScreenStore'
+
   StoreChannels:
     type: array
     items:
@@ -2914,6 +3025,24 @@ definitions:
         format: int32
       stores:
         $ref: '#/definitions/Stores'
+
+  ScreenStoresResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      stores:
+        $ref: '#/definitions/ScreenStores'
 
   StoreChannelsResponse:
     type: object
