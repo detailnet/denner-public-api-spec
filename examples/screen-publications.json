@@ -5,6 +5,20 @@
             "name": "Parisienne KW 06/2016 für Werbescreens",
             "year": 2016,
             "week": 6,
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne"
+                }
+            ],
             "validity": {
                 "from": "2016-01-29",
                 "to": "2016-01-30",
