@@ -5,8 +5,8 @@ info:
   title: Denner Portal 2.0
   contact:
     name: DETAIL NET
-    email: support+denner-portal-api@detailnet.ch
-host: denner-portal-api.detailnet.ch
+    email: support+denner-api@detailnet.ch
+host: denner-api.detailnet.ch
 basePath: /v1
 schemes:
   - https
