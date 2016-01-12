@@ -229,15 +229,15 @@
                     "price_unit": [
                         {
                             "locale": "de",
-                            "value": "Pro Stange" // Pro Paket
+                            "value": "Pro Stange"
                         },
                         {
                             "locale": "fr",
-                            "value": "Par cartouche" // Par paquet
+                            "value": "Par cartouche"
                         },
                         {
                             "locale": "it",
-                            "value": "Per stecca" // Per pacchetto
+                            "value": "Per stecca"
                         }
                     ],
                     "quantity": 10,
