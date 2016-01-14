@@ -5,6 +5,20 @@
             "name": "Parisienne KW 06/2016 für Werbescreens",
             "year": 2016,
             "week": 6,
+            "title": [
+                {
+                    "locale": "de",
+                    "value": "Parisienne"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Parisienne"
+                },
+                {
+                    "locale": "it",
+                    "value": "Parisienne"
+                }
+            ],
             "validity": {
                 "from": "2016-01-29",
                 "to": "2016-01-30",
@@ -66,6 +80,25 @@
                 "code": 3,
                 "name": "Ostern"
             },
+            "template": {
+                "id": "6e0ef2f3-0114-4b1d-9274-e5acf0c8ffba",
+                "code": 1,
+                "name": "Wochenhit"
+            },
+            "footer": [
+                {
+                    "locale": "de",
+                    "value": "maximal 5 Stangen pro Person/Einkauf"
+                },
+                {
+                    "locale": "fr",
+                    "value": "au maximum 5 cartouches par personne/achat"
+                },
+                {
+                    "locale": "it",
+                    "value": "tbd"
+                }
+            ],
             "articles": [
                 {
                     "id": "4b2dbb18-d79b-4439-a2c6-68f187005917",
@@ -207,6 +240,20 @@
                             "value": "Confronto con la concorrenza"
                         }
                     ],
+                    "price_unit": [
+                        {
+                            "locale": "de",
+                            "value": "Pro Stange"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "Par cartouche"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "Per stecca"
+                        }
+                    ],
                     "quantity": 10,
                     "sort_index": 0,
                     "compared": true,
@@ -316,6 +363,20 @@
                         }
                     ],
                     "price_info": [],
+                    "price_unit": [
+                        {
+                            "locale": "de",
+                            "value": "Pro Stange"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "Par cartouche"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "Per stecca"
+                        }
+                    ],
                     "quantity": 10,
                     "sort_index": 1,
                     "compared": false,
@@ -413,6 +474,20 @@
                         }
                     ],
                     "price_info": [],
+                    "price_unit": [
+                        {
+                            "locale": "de",
+                            "value": "Pro Paket"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "Par paquet"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "Per pacchetto"
+                        }
+                    ],
                     "quantity": 1,
                     "sort_index": 2,
                     "compared": false,
@@ -489,6 +564,20 @@
                         }
                     ],
                     "price_info": [],
+                    "price_unit": [
+                        {
+                            "locale": "de",
+                            "value": "Pro Paket"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "Par paquet"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "Per pacchetto"
+                        }
+                    ],
                     "quantity": 1,
                     "sort_index": 3,
                     "compared": false,
