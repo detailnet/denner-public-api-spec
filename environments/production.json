@@ -53,7 +53,7 @@
 		},
 		{
 			"key": "advertising_url_base",
-			"value": "https://denner-advertising.detailnet.ch",
+			"value": "https://denner-adv-new.frb.io",
 			"type": "text",
 			"name": "advertising_url_base",
 			"enabled": true
@@ -74,7 +74,7 @@
 		},
 		{
 			"key": "stores_url_base",
-			"value": "https://denner-stores.detailnet.ch",
+			"value": "https://denner-sts-new.frb.io",
 			"type": "text",
 			"name": "stores_url_base",
 			"enabled": true
