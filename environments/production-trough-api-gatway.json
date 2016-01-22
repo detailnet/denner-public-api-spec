@@ -1,6 +1,6 @@
 {
-	"id": "a5dca1f4-c03d-4e14-8d71-5297e05403a9",
-	"name": "Denner production",
+	"id": "cfb896de-c089-5a5f-03ca-f5a9c5a821c5",
+	"name": "Denner production (API Gateway)",
 	"values": [
 		{
 			"key": "header_accept",
@@ -10,8 +10,15 @@
 			"enabled": true
 		},
 		{
+			"key": "api_version",
+			"value": "v1",
+			"type": "text",
+			"name": "api_version",
+			"enabled": true
+		},
+		{
 			"key": "articles_url_base",
-			"value": "https://denner-art-new.frb.io/api",
+			"value": "https://denner-api.detailnet.ch/{{api_version}}",
 			"type": "text",
 			"name": "articles_url_base",
 			"enabled": true
@@ -32,7 +39,7 @@
 		},
 		{
 			"key": "assets_url_base",
-			"value": "https://denner-assets.detailnet.ch/api",
+			"value": "https://denner-api.detailnet.ch/{{api_version}}",
 			"type": "text",
 			"name": "assets_url_base",
 			"enabled": true
@@ -53,7 +60,7 @@
 		},
 		{
 			"key": "advertising_url_base",
-			"value": "https://denner-adv-new.frb.io/api",
+			"value": "https://denner-api.detailnet.ch/{{api_version}}",
 			"type": "text",
 			"name": "advertising_url_base",
 			"enabled": true
@@ -74,7 +81,7 @@
 		},
 		{
 			"key": "stores_url_base",
-			"value": "https://denner-sts-new.frb.io/api",
+			"value": "https://denner-api.detailnet.ch/{{api_version}}",
 			"type": "text",
 			"name": "stores_url_base",
 			"enabled": true
@@ -94,7 +101,7 @@
 			"enabled": true
 		}
 	],
-	"timestamp": 1438256916320,
+	"timestamp": 1453466249124,
 	"synced": false,
 	"syncedFilename": ""
 }

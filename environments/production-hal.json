@@ -1,6 +1,6 @@
 {
 	"id": "75b55e00-d021-4a3d-bed6-544c01b6f6e7",
-	"name": "denner production [hal]",
+	"name": "Denner production [hal]",
 	"values": [
 		{
 			"key": "header_accept",
@@ -11,7 +11,7 @@
 		},
 		{
 			"key": "articles_url_base",
-			"value": "https://denner-articles.detailnet.ch",
+			"value": "https://denner-art-new.frb.io/api",
 			"type": "text",
 			"name": "articles_url_base",
 			"enabled": true
@@ -32,7 +32,7 @@
 		},
 		{
 			"key": "assets_url_base",
-			"value": "https://denner-assets.detailnet.ch",
+			"value": "https://denner-assets.detailnet.ch/api",
 			"type": "text",
 			"name": "assets_url_base",
 			"enabled": true
@@ -53,7 +53,7 @@
 		},
 		{
 			"key": "advertising_url_base",
-			"value": "https://denner-adv-new.frb.io",
+			"value": "https://denner-adv-new.frb.io/api",
 			"type": "text",
 			"name": "advertising_url_base",
 			"enabled": true
@@ -74,7 +74,7 @@
 		},
 		{
 			"key": "stores_url_base",
-			"value": "https://denner-sts-new.frb.io",
+			"value": "https://denner-sts-new.frb.io/api",
 			"type": "text",
 			"name": "stores_url_base",
 			"enabled": true
