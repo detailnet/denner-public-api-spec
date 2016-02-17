@@ -1,0 +1,25 @@
+{
+    "mobile_banners": [
+        {
+            "id": "73f91ae8-fa76-4f76-86d9-78f6bcd5d3ab",
+            "name": "20% auf Schaumweine",
+            "closable": true,
+            "active": false,
+            "display_from": "2016-01-22",
+            "display_to": "2016-01-23",
+            "languages": [
+                "de",
+                "fr",
+                "it"
+            ],
+            "types": [
+                "promotion",
+                "wine"
+            ],
+            "platforms": [
+                "iphone-ipad",
+                "android"
+            ]
+        }
+    ]
+}

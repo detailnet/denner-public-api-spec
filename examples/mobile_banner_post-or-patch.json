@@ -1,0 +1,121 @@
+{
+    "name": "20% auf Schaumweine",
+    "closable": true,
+    "active": false,
+    "position": "top",
+    "display_from": "2016-01-22",
+    "display_to": "2016-01-23",
+    "languages": [
+        "de",
+        "fr",
+        "it"
+    ],
+    "types": [
+        "promotion",
+        "wine"
+    ],
+    "platforms": [
+        "iphone-ipad",
+        "android"
+    ],
+    "title": [
+        {
+            "locale": "de",
+            "value": "20% auf Schaumweine"
+        },
+        {
+            "locale": "fr",
+            "value": "20% auf Schaumweine"
+        },
+        {
+            "locale": "it",
+            "value": "20% auf Schaumweine"
+        }
+    ],
+    "html": [
+        {
+            "locale": "de",
+            "value": "Freitag, 27. und Samstag, 28. November 2015<br>20% auf alle Lindt-Artikel*\u2013 auch auf bestehende Aktionspreise!<br>*nicht mit anderen Gutscheinen und Bons kumulierbar. Solange Vorrat."
+        },
+        {
+            "locale": "fr",
+            "value": "Freitag, 27. und Samstag, 28. November 2015<br>20% auf alle Lindt-Artikel*\u2013 auch auf bestehende Aktionspreise!<br>*nicht mit anderen Gutscheinen und Bons kumulierbar. Solange Vorrat."
+        },
+        {
+            "locale": "it",
+            "value": "Freitag, 27. und Samstag, 28. November 2015<br>20% auf alle Lindt-Artikel*\u2013 auch auf bestehende Aktionspreise!<br>*nicht mit anderen Gutscheinen und Bons kumulierbar. Solange Vorrat."
+        }
+    ],
+    "link": [
+        {
+            "locale": "de",
+            "value": "www.denner.ch"
+        },
+        {
+            "locale": "fr",
+            "value": "www.denner.ch"
+        },
+        {
+            "locale": "it",
+            "value": "www.denner.ch"
+        }
+    ],
+    "campaign": {
+        "source": [
+            {
+                "locale": "de",
+                "value": null
+            },
+            {
+                "locale": "fr",
+                "value": null
+            },
+            {
+                "locale": "it",
+                "value": null
+            }
+        ],
+        "medium": [
+            {
+                "locale": "de",
+                "value": null
+            },
+            {
+                "locale": "fr",
+                "value": null
+            },
+            {
+                "locale": "it",
+                "value": null
+            }
+        ],
+        "name": [
+            {
+                "locale": "de",
+                "value": null
+            },
+            {
+                "locale": "fr",
+                "value": null
+            },
+            {
+                "locale": "it",
+                "value": null
+            }
+        ]
+    },
+    "images": [
+        {
+            "locale": "de",
+            "asset_id": "8eebbf31-5217-4cef-b0c2-f91c2c6f68f4"
+        },
+        {
+            "locale": "fr",
+            "asset_id": "8eebbf31-5217-4cef-b0c2-f91c2c6f68f4"
+        },
+        {
+            "locale": "it",
+            "asset_id": "8eebbf31-5217-4cef-b0c2-f91c2c6f68f4"
+        }
+    ]
+}
