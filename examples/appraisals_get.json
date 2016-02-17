@@ -1,0 +1,21 @@
+{
+    "appraisals": [
+        {
+            "id": "a8c82c69-e975-4d3b-b0ba-aae6ed961cd7",
+            "created_on": "2015-10-20T14:37:56+0200",
+            "title": "Ein Primitivo passt immer.",
+            "rating": 4,
+            "language": "de",
+            "article": {
+                "id": "050202",
+                "name": "Plein Soleil Fendant du Valais AOC"
+            },
+            "marked": true,
+            "processed": false,
+            "approved": false,
+            "approved_selfie": false,
+            "appraisal_type": "wine_selfie"
+        }
+    ],
+    "total_appraisals": 1
+}
