@@ -14,7 +14,7 @@
             "processed": false,
             "approved": false,
             "approved_selfie": false,
-            "appraisal_type": "wine_selfie"
+            "type": "wine_selfie"
         }
     ],
     "total_appraisals": 1

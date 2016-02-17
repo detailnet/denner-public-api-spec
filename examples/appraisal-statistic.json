@@ -1,0 +1,33 @@
+{
+    "day": "2015-10-20",
+    "on_date": {
+        "total": 4,
+        "processed": 0,
+        "not_processed": 4,
+        "approved": 0,
+        "not_approved": 4,
+        "unique": 3,
+        "rating": {
+            "1": 0,
+            "2": 0,
+            "3": 2,
+            "4": 1,
+            "5": 1
+        }
+    },
+    "overall": {
+        "total": 38530,
+        "processed": 38530,
+        "not_processed": 0,
+        "approved": 31334,
+        "not_approved": 7196,
+        "unique": 11406,
+        "rating": {
+            "1": 464,
+            "2": 685,
+            "3": 3514,
+            "4": 14066,
+            "5": 12605
+        }
+    }
+}

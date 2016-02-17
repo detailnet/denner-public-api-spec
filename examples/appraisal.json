@@ -8,7 +8,7 @@
     "original_description": "preis leistung genuss-was will der kenner mehr...sensationell im dennerangebot.",
     "response": "Eine Antwort von Denner",
     "rating": 4,
-    "firstname": "Michel",
+    "firstname": "Michelle",
     "lastname": "Muster",
     "address": "Bahnhofstrasse 7",
     "zip_code": "8034",
@@ -27,7 +27,7 @@
     "approved_selfie": false,
     "source": "web",
     "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",
-    "appraisal_type": "wine_selfie",
+    "type": "wine_selfie",
     "edited_by": "Hans Muster",
     "edited_on": "2016-01-22T11:00:45"
 }
