@@ -15,6 +15,7 @@
     "marked": true,
     "processed": false,
     "approved": false,
-    "approved_selfie": false,
-    "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png"
+    "approved_image": false,
+    "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",
+    "edited_by": "Hans Muster"
 }
