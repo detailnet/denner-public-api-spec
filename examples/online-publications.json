@@ -321,6 +321,20 @@
                     "promoted": true,
                     "compared": true,
                     "cooling": 0,
+                    "promotion_info": [
+                        {
+                            "locale": "de",
+                            "value": "Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables que durant la semaine d’action"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
+                        }
+                    ],
                     "online_group": {
                         "id": "671988cc-ca5f-484e-8db8-23a65ea0044a",
                         "code": 4003,
