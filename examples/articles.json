@@ -126,6 +126,14 @@
                     "name": "Bio"
                 }
             ],
+            "packshots": [
+                {
+                    "id": "5983a33d-ac61-49a8-a836-43259e78e9d0",
+                    "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png",
+                    "quantity": 6,
+                    "created_on": "2016-01-07 15:42:19"
+                }
+            ],
             "wine": {
                 "country": {
                     "id": "IT",
