@@ -99,9 +99,51 @@
 			"type": "text",
 			"name": "stores_header_application_key",
 			"enabled": true
+		},
+		{
+			"key": "appraisals_url_base",
+			"value": "https://denner-api.detailnet.ch/{{api_version}}",
+			"type": "text",
+			"name": "appraisals_url_base",
+			"enabled": true
+		},
+		{
+			"key": "appraisals_header_application_id",
+			"value": "{{denner_appraisals_production_application_id}}",
+			"type": "text",
+			"name": "appraisals_header_application_id",
+			"enabled": true
+		},
+		{
+			"key": "appraisals_header_application_key",
+			"value": "{{denner_appraisals_production_application_key}}",
+			"type": "text",
+			"name": "appraisals_header_application_key",
+			"enabled": true
+		},
+		{
+			"key": "mobile_banners_url_base",
+			"value": "https://denner-api.detailnet.ch/{{api_version}}",
+			"type": "text",
+			"name": "mobile_banners_url_base",
+			"enabled": true
+		},
+		{
+			"key": "mobile_banners_header_application_id",
+			"value": "{{denner_mobile_banners_production_application_id}}",
+			"type": "text",
+			"name": "mobile_banners_header_application_id",
+			"enabled": true
+		},
+		{
+			"key": "mobile_banners_header_application_key",
+			"value": "{{denner_mobile_banners_production_application_key}}",
+			"type": "text",
+			"name": "mobile_banners_header_application_key",
+			"enabled": true
 		}
 	],
-	"timestamp": 1453466249124,
+	"timestamp": 1455702014062,
 	"synced": false,
 	"syncedFilename": ""
 }
