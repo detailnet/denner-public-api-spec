@@ -1,0 +1,100 @@
+{
+	"id": "6ab687e9-30ac-5415-8c69-4e44e8a765ae",
+	"name": "Denner test ",
+	"values": [
+		{
+			"key": "header_accept",
+			"value": "application/json",
+			"type": "text",
+			"name": "header_accept",
+			"enabled": true
+		},
+		{
+			"key": "articles_url_base",
+			"value": "https://denner-articles-test.detailnet.ch/api",
+			"type": "text",
+			"name": "articles_url_base",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_application_id",
+			"value": "{{denner_articles_production_application_id}}",
+			"type": "text",
+			"name": "articles_header_application_id",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_application_key",
+			"value": "{{denner_articles_production_application_key}}",
+			"type": "text",
+			"name": "articles_header_application_key",
+			"enabled": true
+		},
+		{
+			"key": "assets_url_base",
+			"value": "https://denner-assets-test.detailnet.ch/api",
+			"type": "text",
+			"name": "assets_url_base",
+			"enabled": true
+		},
+		{
+			"key": "assets_header_application_id",
+			"value": "{{denner_assets_production_application_id}}",
+			"type": "text",
+			"name": "assets_header_application_id",
+			"enabled": true
+		},
+		{
+			"key": "assets_header_application_key",
+			"value": "{{denner_assets_production_application_key}}",
+			"type": "text",
+			"name": "assets_header_application_key",
+			"enabled": true
+		},
+		{
+			"key": "advertising_url_base",
+			"value": "https://denner-advertising-test.detailnet.ch/api",
+			"type": "text",
+			"name": "advertising_url_base",
+			"enabled": true
+		},
+		{
+			"key": "advertising_header_application_id",
+			"value": "{{denner_advertising_production_application_id}}",
+			"type": "text",
+			"name": "advertising_header_application_id",
+			"enabled": true
+		},
+		{
+			"key": "advertising_header_application_key",
+			"value": "{{denner_advertising_production_application_key}}",
+			"type": "text",
+			"name": "advertising_header_application_key",
+			"enabled": true
+		},
+		{
+			"key": "stores_url_base",
+			"value": "https://denner-stores-test.detailnet.ch/api",
+			"type": "text",
+			"name": "stores_url_base",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_application_id",
+			"value": "{{denner_stores_production_application_id}}",
+			"type": "text",
+			"name": "stores_header_application_id",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_application_key",
+			"value": "{{denner_stores_production_application_key}}",
+			"type": "text",
+			"name": "stores_header_application_key",
+			"enabled": true
+		}
+	],
+	"timestamp": 1458145416134,
+	"synced": false,
+	"syncedFilename": ""
+}
