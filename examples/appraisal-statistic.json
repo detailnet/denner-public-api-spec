@@ -7,6 +7,8 @@
         "approved": 0,
         "not_approved": 4,
         "unique": 3,
+        "sweepstake_total": 0,
+        "sweepstake_unique": 0,
         "rating": {
             "1": 0,
             "2": 0,
@@ -22,6 +24,8 @@
         "approved": 31334,
         "not_approved": 7196,
         "unique": 11406,
+        "sweepstake_total": 0,
+        "sweepstake_unique": 0,
         "rating": {
             "1": 464,
             "2": 685,
