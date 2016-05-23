@@ -5,35 +5,9 @@
 	"order": [],
 	"folders": [
 		{
-			"id": "b602c4a7-d29e-1c75-2d84-38cb92c91490",
-			"name": "appraisals",
-			"description": "Wine appraisals\n",
-			"order": [
-				"8cf16529-fb18-0e64-ddbd-840e18d9f72d",
-				"41685be3-b388-d833-2b34-e3c944af5ec7",
-				"1cf2288d-c6ac-a339-e277-77b90486b19b",
-				"bc36d88d-77e8-b847-a779-fee6097532f8"
-			],
-			"owner": "44016",
-			"collectionId": "db58f07b-1332-21a0-9271-049ca81ad610"
-		},
-		{
-			"id": "eac97d76-ad88-067c-8656-490d2c508151",
-			"name": "banners",
-			"description": "Banners\n",
-			"order": [
-				"0a11ae23-8859-50e7-3756-970469b55245",
-				"c302c00a-bef0-755a-6d53-3e8c989f8881",
-				"ec58d08e-b1e5-d6d3-dbb8-9cea7d2fd8d1",
-				"1aded6bf-fae3-37e6-daaa-dee3db6599ac"
-			],
-			"owner": "44016",
-			"collectionId": "70fdd6ff-3aa7-18e8-33d3-fd8414f95ebd"
-		},
-		{
 			"id": "332a4cfc-d624-04d4-1154-3cb26dd0e166",
-			"name": "denner-advertising",
-			"description": "Advertising Service",
+			"name": "advertising",
+			"description": "Advertising",
 			"order": [
 				"dfc63e5c-779a-6dfb-5f2a-0cbc26eb0701",
 				"70c39584-c899-ffc1-9b55-b9f5646a8084",
@@ -67,17 +41,12 @@
 				"cfaf0093-903c-ebee-5338-53363cad0d5d"
 			],
 			"owner": "44016",
-			"lastUpdatedBy": {
-				"id": "47141",
-				"username": "kevin-jueni"
-			},
-			"lastRevision": 80967792,
 			"collectionId": "3538b17d-e05a-d917-4396-a6f66eb5ec19"
 		},
 		{
 			"id": "43d6188f-5b8a-54c7-5562-bacffd3f73b1",
-			"name": "denner-advertising/newsletters",
-			"description": "",
+			"name": "advertising/newsletters",
+			"description": "Advertising: Newsletters",
 			"order": [
 				"8171fb10-35ee-a747-c934-d7ea59457bc8",
 				"ac0cf619-4e56-406d-2eed-a328abc0292e",
@@ -98,12 +67,22 @@
 			"owner": "44016"
 		},
 		{
+			"id": "b602c4a7-d29e-1c75-2d84-38cb92c91490",
+			"name": "appraisals",
+			"description": "Wine appraisals",
+			"order": [
+				"8cf16529-fb18-0e64-ddbd-840e18d9f72d",
+				"41685be3-b388-d833-2b34-e3c944af5ec7",
+				"1cf2288d-c6ac-a339-e277-77b90486b19b",
+				"bc36d88d-77e8-b847-a779-fee6097532f8"
+			],
 			"owner": "44016",
-			"lastUpdatedBy": "46703",
-			"lastRevision": 80967794,
+			"collectionId": "db58f07b-1332-21a0-9271-049ca81ad610"
+		},
+		{
 			"id": "450fe5ae-78ad-ffa1-0193-cdb10e18173b",
-			"name": "denner-articles",
-			"description": "Articles Service",
+			"name": "articles",
+			"description": "Articles",
 			"order": [
 				"2a981bad-b497-e831-df93-a3260e991555",
 				"d90bc213-2171-7e70-ee94-2751fedff46a",
@@ -125,15 +104,13 @@
 				"a59e0766-6cad-ef22-5ce9-90b63a8e0a7b",
 				"8993c208-4665-6a49-8cc4-4aeed9c95f8c"
 			],
+			"owner": "44016",
 			"collectionId": "9c215c5e-8f58-c139-c3ed-32fe930b3ec1"
 		},
 		{
-			"owner": "44016",
-			"lastUpdatedBy": "46703",
-			"lastRevision": 80967795,
 			"id": "6fb71463-bea2-577c-d558-3aff757cc8c1",
-			"name": "denner-assets",
-			"description": "Assets Service",
+			"name": "assets",
+			"description": "Assets",
 			"order": [
 				"a3661f49-10ab-170a-3894-297f9a6ec5f3",
 				"1065f617-ea21-4111-d485-e61aa757e158",
@@ -159,21 +136,33 @@
 				"b06c9150-286f-7585-eca2-4a10edb2a9a1",
 				"f501cab5-43b0-eedc-836a-cdd4cfbb1767",
 				"3e2f3372-d554-205b-2739-bbcb4d4f50e6"
-			]
+			],
+			"owner": "44016"
 		},
 		{
+			"id": "eac97d76-ad88-067c-8656-490d2c508151",
+			"name": "banners",
+			"description": "Banners",
+			"order": [
+				"0a11ae23-8859-50e7-3756-970469b55245",
+				"c302c00a-bef0-755a-6d53-3e8c989f8881",
+				"ec58d08e-b1e5-d6d3-dbb8-9cea7d2fd8d1",
+				"1aded6bf-fae3-37e6-daaa-dee3db6599ac"
+			],
 			"owner": "44016",
-			"lastUpdatedBy": "46703",
-			"lastRevision": 80967796,
+			"collectionId": "70fdd6ff-3aa7-18e8-33d3-fd8414f95ebd"
+		},
+		{
 			"id": "c6319af1-d56b-6a47-5249-b8494a4eab0e",
-			"name": "denner-stores",
-			"description": "Stores Service",
+			"name": "stores",
+			"description": "Stores",
 			"order": [
 				"31f63fd4-177c-7deb-25de-7d115a56c8c3",
 				"55da7272-67fc-b58c-2ca4-459ca7ae413e",
 				"4d08cb17-15eb-92d2-36ee-ce2e7c3e11a7",
 				"0720644f-5310-d7d1-871d-38bed2994e02"
-			]
+			],
+			"owner": "44016"
 		}
 	],
 	"timestamp": 0,
