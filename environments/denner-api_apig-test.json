@@ -25,14 +25,14 @@
         },
         {
             "key": "articles_header_application_id",
-            "value": "{{denner_articles_production_application_id}}",
+            "value": "{{denner_articles_test_application_id}}",
             "type": "text",
             "name": "articles_header_application_id",
             "enabled": true
         },
         {
             "key": "articles_header_application_key",
-            "value": "{{denner_articles_production_application_key}}",
+            "value": "{{denner_articles_test_application_key}}",
             "type": "text",
             "name": "articles_header_application_key",
             "enabled": true
@@ -46,14 +46,14 @@
         },
         {
             "key": "assets_header_application_id",
-            "value": "{{denner_assets_production_application_id}}",
+            "value": "{{denner_assets_test_application_id}}",
             "type": "text",
             "name": "assets_header_application_id",
             "enabled": true
         },
         {
             "key": "assets_header_application_key",
-            "value": "{{denner_assets_production_application_key}}",
+            "value": "{{denner_assets_test_application_key}}",
             "type": "text",
             "name": "assets_header_application_key",
             "enabled": true
@@ -67,14 +67,14 @@
         },
         {
             "key": "advertising_header_application_id",
-            "value": "{{denner_advertising_production_application_id}}",
+            "value": "{{denner_advertising_test_application_id}}",
             "type": "text",
             "name": "advertising_header_application_id",
             "enabled": true
         },
         {
             "key": "advertising_header_application_key",
-            "value": "{{denner_advertising_production_application_key}}",
+            "value": "{{denner_advertising_test_application_key}}",
             "type": "text",
             "name": "advertising_header_application_key",
             "enabled": true
@@ -88,14 +88,14 @@
         },
         {
             "key": "stores_header_application_id",
-            "value": "{{denner_stores_production_application_id}}",
+            "value": "{{denner_stores_test_application_id}}",
             "type": "text",
             "name": "stores_header_application_id",
             "enabled": true
         },
         {
             "key": "stores_header_application_key",
-            "value": "{{denner_stores_production_application_key}}",
+            "value": "{{denner_stores_test_application_key}}",
             "type": "text",
             "name": "stores_header_application_key",
             "enabled": true
