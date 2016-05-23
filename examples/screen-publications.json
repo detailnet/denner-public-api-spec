@@ -268,7 +268,10 @@
                         }
                     },
                     "packshot": {
-                        "image_url" : "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png"
+                        "id": "5054223d-3830-4abb-a2aa-4de55250d6a4",
+                        "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png",
+                        "quantity": 1,
+                        "created_on": "2016-01-07 15:42:19"
                     },
                     "supplier": {
                         "code": 36323
@@ -391,7 +394,10 @@
                         }
                     },
                     "packshot": {
-                        "image_url" : "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png"
+                        "id": "bef741d6-e734-41b0-ac06-3d3fe3f4fc0e",
+                        "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",
+                        "quantity": 1,
+                        "created_on": "2016-01-07 15:42:19"
                     },
                     "supplier": {
                         "code": 36323
@@ -502,7 +508,10 @@
                         }
                     },
                     "packshot": {
-                        "image_url" : "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png"
+                        "id": "5054223d-3830-4abb-a2aa-4de55250d6a4",
+                        "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5054223d-3830-4abb-a2aa-4de55250d6a4/091121.png",
+                        "quantity": 1,
+                        "created_on": "2016-01-07 15:42:19"
                     },
                     "supplier": {
                         "code": 36323
@@ -592,7 +601,10 @@
                         }
                     },
                     "packshot": {
-                        "image_url" : "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png"
+                        "id": "bef741d6-e734-41b0-ac06-3d3fe3f4fc0e",
+                        "image_url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/bef741d6-e734-41b0-ac06-3d3fe3f4fc0e/090072.png",
+                        "quantity": 1,
+                        "created_on": "2016-01-07 15:42:19"
                     },
                     "supplier": {
                         "code": 36323
