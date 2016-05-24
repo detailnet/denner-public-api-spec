@@ -1,0 +1,137 @@
+{
+    "id": "cfb896de-c089-5a5f-03ca-f5a9c5a821c5",
+    "name": "denner-api apig-v1",
+    "values": [
+        {
+            "key": "header_accept",
+            "value": "application/json",
+            "type": "text",
+            "name": "header_accept",
+            "enabled": true
+        },
+        {
+            "key": "api_version",
+            "value": "v1",
+            "type": "text",
+            "name": "api_version",
+            "enabled": true
+        },
+        {
+            "key": "articles_url_base",
+            "value": "https://denner-api.detailnet.ch/{{api_version}}",
+            "type": "text",
+            "name": "articles_url_base",
+            "enabled": true
+        },
+        {
+            "key": "articles_header_app_id",
+            "value": "{{denner_articles_app_id}}",
+            "type": "text",
+            "name": "articles_header_app_id",
+            "enabled": true
+        },
+        {
+            "key": "articles_header_app_key",
+            "value": "{{denner_articles_app_key}}",
+            "type": "text",
+            "name": "articles_header_app_key",
+            "enabled": true
+        },
+        {
+            "key": "assets_url_base",
+            "value": "https://denner-api.detailnet.ch/{{api_version}}",
+            "type": "text",
+            "name": "assets_url_base",
+            "enabled": true
+        },
+        {
+            "key": "assets_header_app_id",
+            "value": "{{denner_assets_app_id}}",
+            "type": "text",
+            "name": "assets_header_app_id",
+            "enabled": true
+        },
+        {
+            "key": "assets_header_app_key",
+            "value": "{{denner_assets_app_key}}",
+            "type": "text",
+            "name": "assets_header_app_key",
+            "enabled": true
+        },
+        {
+            "key": "advertising_url_base",
+            "value": "https://denner-api.detailnet.ch/{{api_version}}",
+            "type": "text",
+            "name": "advertising_url_base",
+            "enabled": true
+        },
+        {
+            "key": "advertising_header_app_id",
+            "value": "{{denner_advertising_app_id}}",
+            "type": "text",
+            "name": "advertising_header_app_id",
+            "enabled": true
+        },
+        {
+            "key": "advertising_header_app_key",
+            "value": "{{denner_advertising_app_key}}",
+            "type": "text",
+            "name": "advertising_header_app_key",
+            "enabled": true
+        },
+        {
+            "key": "stores_url_base",
+            "value": "https://denner-api.detailnet.ch/{{api_version}}",
+            "type": "text",
+            "name": "stores_url_base",
+            "enabled": true
+        },
+        {
+            "key": "stores_header_app_id",
+            "value": "{{denner_stores_app_id}}",
+            "type": "text",
+            "name": "stores_header_app_id",
+            "enabled": true
+        },
+        {
+            "key": "stores_header_app_key",
+            "value": "{{denner_stores_app_key}}",
+            "type": "text",
+            "name": "stores_header_app_key",
+            "enabled": true
+        },
+        {
+            "key": "appraisals_url_base",
+            "value": "https://denner-api.detailnet.ch/{{api_version}}",
+            "type": "text",
+            "name": "appraisals_url_base",
+            "enabled": true
+        },
+        {
+            "key": "appraisals_header_app_key",
+            "value": "{{denner_appraisals_app_key}}",
+            "type": "text",
+            "name": "appraisals_header_app_key",
+            "enabled": true
+        },
+        {
+            "key": "banners_url_base",
+            "value": "https://denner-api.detailnet.ch/{{api_version}}",
+            "type": "text",
+            "name": "banners_url_base",
+            "enabled": true
+        },
+        {
+            "key": "banners_header_app_key",
+            "value": "{{denner_banners_app_key}}",
+            "type": "text",
+            "name": "banners_header_app_key",
+            "enabled": true
+        }
+    ],
+    "team": null,
+    "timestamp": 1463572060253,
+    "synced": false,
+    "syncedFilename": "",
+	"isDeleted": false
+}
