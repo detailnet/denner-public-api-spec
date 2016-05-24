@@ -7,13 +7,12 @@
             "rating": 4,
             "language": "de",
             "article": {
-                "id": "050202",
-                "name": "Plein Soleil Fendant du Valais AOC"
+                "id": "050202"
             },
             "marked": true,
             "processed": false,
             "approved": false,
-            "approved_selfie": false,
+            "approved_image": false,
             "type": "wine_selfie"
         }
     ],

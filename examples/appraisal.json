@@ -18,8 +18,7 @@
     "shop_user_id": 123456789,
     "language": "de",
     "article": {
-        "id": "050202",
-        "name": "Plein Soleil Fendant du Valais AOC"
+        "id": "050202"
     },
     "marked": true,
     "processed": false,
