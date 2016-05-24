@@ -1,5 +1,5 @@
-# denner-postman
-[Postman Collection](https://www.getpostman.com/) for Denner 2.0 Portal and Web Services.
+# Denner Portal 2.0 API for Postman
+[Postman](https://www.getpostman.com/) settings for Denner 2.0 Portal Web Services.
 
 ## How to use it
 Following guide applies for:
@@ -27,9 +27,8 @@ Following guide applies for:
 
 Choose the one that best fits the testing situation you need:
 
-- Main GitHub repository | https://raw.githubusercontent.com/detailnet/denner-postman/master/collections/default.json
-- Own GitHub fork | https://raw.githubusercontent.com/{own-git-user}/denner-postman/master/collections/default.json
-- Local checkout through Protobox | http://denner-postman.collections.web01.detailnet.me/default.json
+- GitHub repository | e.g. https://raw.githubusercontent.com/detailnet/denner-portal-api-spec/master/postman/collections/denner-api.json
+- Local checkout through Protobox | e.g. http://denner-portal-api-spec.web01.detailnet.me/postman/collections/denner-api.json
 
 > You can also access different branches on GitHub (replace `master` with the branch name).
 
@@ -41,7 +40,7 @@ Choose the one that best fits the testing situation you need:
 - Click on "Import" button, choose all files in the project environments directory (all at once).
 
 > There is no direct possibility to import from an URL, but you can use your OS as wrapper. 
-> To do so enter an URL instead of a file in the file selection window (e.g.: https://raw.githubusercontent.com/detailnet/denner-postman/master/environments/development.json).
+> To do so enter an URL instead of a file in the file selection window (e.g. https://raw.githubusercontent.com/detailnet/denner-portal-api-spec/master/postman/environments/denner-api_web01.json).
 
 #### Setup global variables
 
