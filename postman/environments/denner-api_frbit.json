@@ -32,7 +32,7 @@
         },
         {
             "key": "assets_url_base",
-            "value": "https://denner-assets.detailnet.ch/api",
+            "value": "https://denner-ats-new.frb.io/api",
             "type": "text",
             "name": "assets_url_base",
             "enabled": true
