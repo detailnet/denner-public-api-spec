@@ -6,8 +6,8 @@
     "folders": [
         {
             "id": "332a4cfc-d624-04d4-1154-3cb26dd0e166",
-            "name": "advertising",
-            "description": "Advertising",
+            "name": "advertising/online",
+            "description": "Advertising: Online publication",
             "order": [
                 "dfc63e5c-779a-6dfb-5f2a-0cbc26eb0701",
                 "70c39584-c899-ffc1-9b55-b9f5646a8084",
@@ -23,8 +23,19 @@
                 "d6fe4c25-0e0d-fa8a-de10-b0ed26cb9b7a",
                 "b30b2bfb-8b06-2679-1824-4f98e38a0032",
                 "dd5babc3-26df-d28f-7174-feb44b5bff14",
-                "9979b46c-ffc4-f7dd-84c9-68273b74cc00",
-                "8000bcc6-19c0-e965-b0ed-87af3a1125ec",
+                "d765e29d-4a82-224e-a29e-b756e0cab67c",
+                "8906f5b7-f6cd-a429-aeea-33bcf14f5c98",
+                "e57808a4-8f56-c6a0-a165-7bc89df5425e",
+                "cfaf0093-903c-ebee-5338-53363cad0d5d"
+            ],
+            "owner": "44016",
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
+        },
+        {
+            "id": "dcb689b6-7e04-4dbd-a415-585626ab9638",
+            "name": "advertising/screen",
+            "description": "Advertising: Screen publication",
+            "order": [
                 "9ebbc22f-c5e6-78c7-831f-fdf75dc0c6bb",
                 "e3bc33ee-6d8c-450f-ef17-54876cdf7975",
                 "a8465262-e8ac-e78b-e858-78d929d2e249",
@@ -35,13 +46,11 @@
                 "077e2e53-f2cd-b420-13f7-bb46c69af4d3",
                 "777449d4-6b56-ce61-efce-f331ce1b42ed",
                 "6a6c29f6-65af-0087-5f40-bdcc1e85b465",
-                "d765e29d-4a82-224e-a29e-b756e0cab67c",
-                "8906f5b7-f6cd-a429-aeea-33bcf14f5c98",
-                "e57808a4-8f56-c6a0-a165-7bc89df5425e",
-                "cfaf0093-903c-ebee-5338-53363cad0d5d"
+                "9979b46c-ffc4-f7dd-84c9-68273b74cc00",
+                "8000bcc6-19c0-e965-b0ed-87af3a1125ec"
             ],
             "owner": "44016",
-            "collectionId": "3538b17d-e05a-d917-4396-a6f66eb5ec19"
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
         },
         {
             "id": "43d6188f-5b8a-54c7-5562-bacffd3f73b1",
@@ -64,7 +73,8 @@
                 "2e027fed-d0f5-3ad8-2ea1-c82a01c5ecee",
                 "b3339a20-7d54-0721-b0c4-aa8707c43e00"
             ],
-            "owner": "44016"
+            "owner": "44016",
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
         },
         {
             "id": "b602c4a7-d29e-1c75-2d84-38cb92c91490",
@@ -78,7 +88,7 @@
                 "d295c34e-1557-af0d-23b2-616a44df63c1"
             ],
             "owner": "44016",
-            "collectionId": "db58f07b-1332-21a0-9271-049ca81ad610"
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
         },
         {
             "id": "450fe5ae-78ad-ffa1-0193-cdb10e18173b",
@@ -106,7 +116,7 @@
                 "8993c208-4665-6a49-8cc4-4aeed9c95f8c"
             ],
             "owner": "44016",
-            "collectionId": "9c215c5e-8f58-c139-c3ed-32fe930b3ec1"
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
         },
         {
             "id": "6fb71463-bea2-577c-d558-3aff757cc8c1",
@@ -138,7 +148,8 @@
                 "f501cab5-43b0-eedc-836a-cdd4cfbb1767",
                 "3e2f3372-d554-205b-2739-bbcb4d4f50e6"
             ],
-            "owner": "44016"
+            "owner": "44016",
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
         },
         {
             "id": "eac97d76-ad88-067c-8656-490d2c508151",
@@ -151,7 +162,7 @@
                 "1aded6bf-fae3-37e6-daaa-dee3db6599ac"
             ],
             "owner": "44016",
-            "collectionId": "70fdd6ff-3aa7-18e8-33d3-fd8414f95ebd"
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
         },
         {
             "id": "c6319af1-d56b-6a47-5249-b8494a4eab0e",
@@ -163,7 +174,8 @@
                 "4d08cb17-15eb-92d2-36ee-ce2e7c3e11a7",
                 "0720644f-5310-d7d1-871d-38bed2994e02"
             ],
-            "owner": "44016"
+            "owner": "44016",
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
         }
     ],
     "timestamp": 0,
@@ -268,10 +280,10 @@
             "time": 1458139185249,
             "name": "/screen-publications/{publication_id}/articles",
             "description": "Add a new article to the screen publication (Screen-Werbemittel)",
+            "rawModeData": "{\n  \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "responses": [],
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166",
-            "rawModeData": "{\n  \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}"
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "id": "0a11ae23-8859-50e7-3756-970469b55245",
@@ -758,7 +770,7 @@
             "description": "Delete screen publication (Screen-Werbemittel)\nNote: only for manual ones",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "responses": [],
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "folder": "c6319af1-d56b-6a47-5249-b8494a4eab0e",
@@ -807,7 +819,6 @@
             "pathVariables": {},
             "preRequestScript": "",
             "method": "GET",
-            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "data": [],
             "dataMode": "params",
             "name": "/screen-publications/{publication_id}/articles",
@@ -815,11 +826,12 @@
             "descriptionFormat": "html",
             "time": 1453119047882,
             "version": 2,
-            "responses": [],
             "tests": "",
             "currentHelper": "normal",
             "helperAttributes": {},
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
+            "responses": [],
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "folder": "6fb71463-bea2-577c-d558-3aff757cc8c1",
@@ -959,7 +971,7 @@
             "description": "Delete an screen publication article from a screen publication",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "responses": [],
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "id": "70c39584-c899-ffc1-9b55-b9f5646a8084",
@@ -1018,7 +1030,7 @@
             "description": "List a specific article for an screen publication (Screen-Werbemittel)",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "responses": [],
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166",
@@ -1101,7 +1113,7 @@
             "description": "List templates for screen publications",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "responses": [],
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "id": "8171fb10-35ee-a747-c934-d7ea59457bc8",
@@ -1271,7 +1283,6 @@
             "pathVariables": {},
             "preRequestScript": "",
             "method": "GET",
-            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "data": [],
             "dataMode": "params",
             "name": "/screen-designs",
@@ -1279,11 +1290,12 @@
             "descriptionFormat": "html",
             "time": 1453111837369,
             "version": 2,
-            "responses": [],
             "tests": "",
             "currentHelper": "normal",
             "helperAttributes": {},
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
+            "responses": [],
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "id": "9ebbc22f-c5e6-78c7-831f-fdf75dc0c6bb",
@@ -1303,7 +1315,7 @@
             "description": "List screen publications (Screen-Werbemittel)",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "responses": [],
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "id": "a2824f1e-dae2-1287-b248-831e76227117",
@@ -1404,7 +1416,8 @@
             "name": "/screen-publications/{year}-{week}",
             "description": "List screen publications depending on a specific combination of year and week",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
-            "responses": []
+            "responses": [],
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "id": "ac0cf619-4e56-406d-2eed-a328abc0292e",
@@ -1562,10 +1575,10 @@
             "time": 1459503141891,
             "name": "/screen-publications/{publication_id}",
             "description": "Update an screen publication",
+            "rawModeData": "{\n  \"name\": \"Wochenaktionen KW 52/2015 UPDATE\",\n  \"year\": 2016,\n  \"week\": 10,\n  \"design\": \"45508ed6-6771-4697-9c0d-87cd0ca6cb44\",\n  \"template\": \"99497dad-4242-4e36-a7a4-f1880465611e\",\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana UPDATE\"\n    }\n  ],\n  \"footer\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Fusszeile de UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Fusszeile fr UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Fusszeile it UPDATE\"\n    }\n  ],\n  \"valid_from\": \"2016-08-18\",\n  \"valid_to\": \"2016-08-19\",\n  \"sort_index\": 33,\n  \"banner\": {\n    \"images\": [\n      {\n        \"locale\": \"de\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https:/denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      },\n      {\n        \"locale\": \"fr\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      },\n      {\n        \"locale\": \"it\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      }\n    ]\n  }\n}",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "responses": [],
-            "rawModeData": "{\n  \"name\": \"Wochenaktionen KW 52/2015 UPDATE\",\n  \"year\": 2016,\n  \"week\": 10,\n  \"design\": \"45508ed6-6771-4697-9c0d-87cd0ca6cb44\",\n  \"template\": \"99497dad-4242-4e36-a7a4-f1880465611e\",\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana UPDATE\"\n    }\n  ],\n  \"footer\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Fusszeile de UPDATE\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Fusszeile fr UPDATE\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Fusszeile it UPDATE\"\n    }\n  ],\n  \"valid_from\": \"2016-08-18\",\n  \"valid_to\": \"2016-08-19\",\n  \"sort_index\": 33,\n  \"banner\": {\n    \"images\": [\n      {\n        \"locale\": \"de\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https:/denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      },\n      {\n        \"locale\": \"fr\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      },\n      {\n        \"locale\": \"it\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      }\n    ]\n  }\n}",
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "id": "bc36d88d-77e8-b847-a779-fee6097532f8",
@@ -2010,10 +2023,10 @@
             "time": 1459503111739,
             "name": "/screen-publications",
             "description": "Create a new screen publication (Screen-Werbemittel)",
+            "rawModeData": "{\n  \"name\": \"New Screen-Werbemittel KW 10/2016\",\n  \"year\": 2016,\n  \"week\": 10,\n  \"design\": \"007a0f50-3ab0-41e3-848d-5beae1c3ff6c\",\n  \"template\": \"6e0ef2f3-0114-4b1d-9274-e5acf0c8ffba\",\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana NEW\"\n    }\n  ],\n  \"footer\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Fusszeile de NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Fusszeile fr NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Fusszeile it NEW\"\n    }\n  ],\n  \"valid_from\": \"2015-10-15\",\n  \"valid_to\": \"2015-10-20\",\n  \"sort_index\": 1,\n  \"banner\": {\n    \"images\": [\n      {\n        \"locale\": \"de\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https:/denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      },\n      {\n        \"locale\": \"fr\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      },\n      {\n        \"locale\": \"it\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      }\n    ]\n  }\n}",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "responses": [],
-            "rawModeData": "{\n  \"name\": \"New Screen-Werbemittel KW 10/2016\",\n  \"year\": 2016,\n  \"week\": 10,\n  \"design\": \"007a0f50-3ab0-41e3-848d-5beae1c3ff6c\",\n  \"template\": \"6e0ef2f3-0114-4b1d-9274-e5acf0c8ffba\",\n  \"title\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Wochenaktionen NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Hits de la semaine NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Promozioni della settimana NEW\"\n    }\n  ],\n  \"footer\": [\n    {\n      \"locale\": \"de\",\n      \"value\": \"Fusszeile de NEW\"\n    },\n    {\n      \"locale\": \"fr\",\n      \"value\": \"Fusszeile fr NEW\"\n    },\n    {\n      \"locale\": \"it\",\n      \"value\": \"Fusszeile it NEW\"\n    }\n  ],\n  \"valid_from\": \"2015-10-15\",\n  \"valid_to\": \"2015-10-20\",\n  \"sort_index\": 1,\n  \"banner\": {\n    \"images\": [\n      {\n        \"locale\": \"de\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https:/denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      },\n      {\n        \"locale\": \"fr\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      },\n      {\n        \"locale\": \"it\",\n        \"formats\": [\n          {\n            \"type\": \"image/png\",\n            \"url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/publication-banners/011d855f-dc7f-480e-997f-341057f09d1b/Weinaktion.png\"\n          }\n        ]\n      }\n    ]\n  }\n}",
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "folder": "6fb71463-bea2-577c-d558-3aff757cc8c1",
@@ -2155,7 +2168,7 @@
             "description": "List single screen publication (Online-Werbemittel)",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
             "responses": [],
-            "folder": "332a4cfc-d624-04d4-1154-3cb26dd0e166"
+            "folder": "dcb689b6-7e04-4dbd-a415-585626ab9638"
         },
         {
             "folder": "6fb71463-bea2-577c-d558-3aff757cc8c1",
