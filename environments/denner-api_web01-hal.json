@@ -17,17 +17,17 @@
             "enabled": true
         },
         {
-            "key": "articles_header_application_id",
-            "value": "{{denner_articles_production_application_id}}",
+            "key": "articles_header_app_id",
+            "value": "{{denner_articles_app_id}}",
             "type": "text",
-            "name": "articles_header_application_id",
+            "name": "articles_header_app_id",
             "enabled": true
         },
         {
-            "key": "articles_header_application_key",
-            "value": "{{denner_articles_production_application_key}}",
+            "key": "articles_header_app_key",
+            "value": "{{denner_articles_app_key}}",
             "type": "text",
-            "name": "articles_header_application_key",
+            "name": "articles_header_app_key",
             "enabled": true
         },
         {
@@ -38,17 +38,17 @@
             "enabled": true
         },
         {
-            "key": "assets_header_application_id",
-            "value": "{{denner_assets_production_application_id}}",
+            "key": "assets_header_app_id",
+            "value": "{{denner_assets_app_id}}",
             "type": "text",
-            "name": "assets_header_application_id",
+            "name": "assets_header_app_id",
             "enabled": true
         },
         {
-            "key": "assets_header_application_key",
-            "value": "{{denner_assets_production_application_key}}",
+            "key": "assets_header_app_key",
+            "value": "{{denner_assets_app_key}}",
             "type": "text",
-            "name": "assets_header_application_key",
+            "name": "assets_header_app_key",
             "enabled": true
         },
         {
@@ -59,17 +59,17 @@
             "enabled": true
         },
         {
-            "key": "advertising_header_application_id",
-            "value": "{{denner_advertising_production_application_id}}",
+            "key": "advertising_header_app_id",
+            "value": "{{denner_advertising_app_id}}",
             "type": "text",
-            "name": "advertising_header_application_id",
+            "name": "advertising_header_app_id",
             "enabled": true
         },
         {
-            "key": "advertising_header_application_key",
-            "value": "{{denner_advertising_production_application_key}}",
+            "key": "advertising_header_app_key",
+            "value": "{{denner_advertising_app_key}}",
             "type": "text",
-            "name": "advertising_header_application_key",
+            "name": "advertising_header_app_key",
             "enabled": true
         },
         {
@@ -80,17 +80,17 @@
             "enabled": true
         },
         {
-            "key": "stores_header_application_id",
-            "value": "{{denner_stores_production_application_id}}",
+            "key": "stores_header_app_id",
+            "value": "{{denner_stores_app_id}}",
             "type": "text",
-            "name": "stores_header_application_id",
+            "name": "stores_header_app_id",
             "enabled": true
         },
         {
-            "key": "stores_header_application_key",
-            "value": "{{denner_stores_production_application_key}}",
+            "key": "stores_header_app_key",
+            "value": "{{denner_stores_app_key}}",
             "type": "text",
-            "name": "stores_header_application_key",
+            "name": "stores_header_app_key",
             "enabled": true
         }
     ],

@@ -9,14 +9,14 @@ Following guide applies for:
 
 ### Initial setup
  
-- Remove collection if already present _([see note below](#initial-setup-note))_.
+- Remove collection if already present ([see note below](#initial-setup-note)).
 - Import collection:
   - Select "Collections" tab (left menu), click on "Import into Postman" icon.
   - Choose tab "Download from link".
   - Enter collection link ([choose from section below](#collection-data)).
   - Click on "Import" button (once only).
 - [Setup/Import environments](#import-environments).
-- [Setup global variables](#setup-global-variables) _(For the moment needed only for production environments)_.
+- [Setup global variables](#setup-global-variables) (For the moment needed only for production environments).
 - Choose an environment.
 - Run requests.
 
@@ -36,7 +36,7 @@ Choose the one that best fits the testing situation you need:
 #### Import environments
 
 - Go to the environments manager window.
-  - Move the mouse pointer over the eye dropdown menu (top b.ar).
+  - Move the mouse pointer over the eye dropdown menu (top bar).
   - Click on "Manage environments"
 - Click on "Import" button, choose all files in the project environments directory (all at once).
 
@@ -49,10 +49,16 @@ We use global variables to store data that is your own, and must not be shared w
 
 Currently we support following global variables:
 
- - `denner_assets_production_application_id`: API application ID _(used for production environments)_
- - `denner_assets_production_application_key`: API application Key _(used for production environments)_
- 
-_(others to come)_
+- `denner_advertising_app_id`
+- `denner_advertising_app_key`
+- `denner_appraisals_app_key` (doesn't require an "id")
+- `denner_articles_app_id`
+- `denner_articles_app_key`
+- `denner_assets_app_id`
+- `denner_assets_app_key`
+- `denner_banners_app_key` (doesn't require an "id")
+- `denner_stores_app_id`
+- `denner_stores_app_key`
 
 Set up global variables:
 
@@ -62,13 +68,11 @@ Set up global variables:
 - Click on "Globals" button.
 - Add the variables.
 
-> API credentials for Denner 2.0 Portal and Web Services are stored at [3scale](https://detailnet-admin.3scale.net).
-
 ### Save tool changes back to project/repository
 
 - Move your mouse pointer over the collection name (left menu), click on "Share collection" icon.
 - Click on "Download" button.
-- Overwrite your local repository's `{projects_dir}/denner-postman/collections/default.json` file.
+- Overwrite your local repository's [collections/denner-api.json](collections/denner-api.json) file.
 - Review changes with your preferred editor:
   - Replace tabs with 4 whitespaces.
   - Reset owner to original.
