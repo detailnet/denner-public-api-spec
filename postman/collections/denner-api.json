@@ -74,7 +74,8 @@
                 "8cf16529-fb18-0e64-ddbd-840e18d9f72d",
                 "41685be3-b388-d833-2b34-e3c944af5ec7",
                 "1cf2288d-c6ac-a339-e277-77b90486b19b",
-                "bc36d88d-77e8-b847-a779-fee6097532f8"
+                "bc36d88d-77e8-b847-a779-fee6097532f8",
+                "d295c34e-1557-af0d-23b2-616a44df63c1"
             ],
             "owner": "44016",
             "collectionId": "db58f07b-1332-21a0-9271-049ca81ad610"
@@ -436,7 +437,7 @@
         },
         {
             "id": "1cf2288d-c6ac-a339-e277-77b90486b19b",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{appraisals_header_app_id}}\nApp-Key: {{appraisals_header_app_key}}\nContent-Type: application/json\n",
+            "headers": "Accept: application/json\nApp-Key: {{appraisals_header_app_key}}\nContent-Type: application/json\n",
             "url": "{{appraisals_url_base}}/appraisals/44444444-aaaa-4444-aaaa-444444444444",
             "preRequestScript": "",
             "pathVariables": {},
@@ -642,7 +643,7 @@
         },
         {
             "id": "41685be3-b388-d833-2b34-e3c944af5ec7",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{appraisals_header_app_id}}\nApp-Key: {{appraisals_header_app_key}}\n",
+            "headers": "Accept: application/json\nApp-Key: {{appraisals_header_app_key}}\n",
             "url": "{{appraisals_url_base}}/appraisals/44444444-aaaa-4444-aaaa-444444444444",
             "preRequestScript": "",
             "pathVariables": {},
@@ -1205,7 +1206,7 @@
         },
         {
             "id": "8cf16529-fb18-0e64-ddbd-840e18d9f72d",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{appraisals_header_app_id}}\nApp-Key: {{appraisals_header_app_key}}\n",
+            "headers": "Accept: application/json\nApp-Key: {{appraisals_header_app_key}}\n",
             "url": "{{appraisals_url_base}}/appraisals",
             "preRequestScript": "",
             "pathVariables": {},
@@ -1568,7 +1569,7 @@
         },
         {
             "id": "bc36d88d-77e8-b847-a779-fee6097532f8",
-            "headers": "Accept: {{header_accept}}\nApp-ID: {{appraisals_header_app_id}}\nApp-Key: {{appraisals_header_app_key}}\n",
+            "headers": "Accept: application/json\nApp-Key: {{appraisals_header_app_key}}\n",
             "url": "{{appraisals_url_base}}/appraisal-statistics/2015-02-17",
             "preRequestScript": "",
             "pathVariables": {},
@@ -2195,6 +2196,25 @@
             "helperAttributes": "{}",
             "responses": [],
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
+        },
+        {
+            "id": "d295c34e-1557-af0d-23b2-616a44df63c1",
+            "headers": "Accept: {{header_accept}}\nApp-Key: {{appraisals_header_app_key}}\n",
+            "url": "{{appraisals_url_base}}/sweepstake-participants",
+            "preRequestScript": "",
+            "pathVariables": {},
+            "method": "GET",
+            "data": [],
+            "dataMode": "params",
+            "version": 2,
+            "tests": "",
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "time": 1464099958109,
+            "name": "/sweepstake-participants",
+            "description": "List sweepstake participants",
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd",
+            "responses": []
         }
     ]
 }
