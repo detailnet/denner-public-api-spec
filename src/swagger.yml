@@ -2051,6 +2051,60 @@ paths:
                   type: "wine_selfie"
               total_appraisals: 1
 
+  /sweepstake-participants:
+    get:
+      summary: List sweepstake participants
+      description: >
+        Use this operation to get a list of all sweepstake participants (Bewerbunsteilnehmer) within a given time frame.
+      tags:
+        - Appraisals
+      operationId: listSweepstakeParticipants
+      security:
+        - appKey: []
+#        - appId: []
+      parameters:
+        - name: f.created_on
+          description: >
+            Filter by creation date, e.g. "f.created_on=2016-04-07T09:01:34Z" will return all sweepstake participants which have been created on 2016-04-07 at 09:01:34 UTC.
+          in: query
+          type: string
+        - name: f.created_from
+          description: >
+            Filter by creation date greater (and equal) than, e.g. "f.created_from=2016-04-07" will return all sweepstake participants which have been created later or on the 2016-04-07.
+          in: query
+          type: string
+        - name: f.created_to
+          description: >
+            Filter by creation date lower (and equal) than, e.g. "f.created_to=2016-04-07" will return all sweepstake participants which have been created before or on the 2016-04-07.
+          in: query
+          type: string
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/SortParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/SweepstakeParticipantsResponse'
+          examples:
+            application/json:
+
+              participants:
+                -
+                  id: "47a4891c-9e11-4c22-b1ea-e9c9801a1f24"
+                  created_on: "2016-04-07T09:01:34+00:00"
+                  display_name: "Ivan M."
+                  firstname: "Ivan"
+                  lastname: "Muster"
+                  address: "Bahnhofstrasse 7"
+                  zip_code: "8034"
+                  city: "Zurich"
+                  email: "email@gmx.ch"
+                  gender: "female"
+                  shop_user_id: 123456789
+                  language: "de"
+              total_participants: 1
+
 parameters:
   PageParam:
     name: page
@@ -3024,27 +3078,27 @@ definitions:
         type: string
         format: date-time
         description: Timestamp
-#      edited_on:
-#        type: string
-#        format: date-time
-#        description: Timestamp
-#      edited_by:
-#        type: string
-#        description: Editor's name
-#      wine_year:
-#        $ref: '#/definitions/Year'
+      edited_on:
+        type: string
+        format: date-time
+        description: Timestamp
+      edited_by:
+        type: string
+        description: Editor's name
+      wine_year:
+        $ref: '#/definitions/Year'
       title:
         type: string
         description: Title
-#      description:
-#        type: string
-#        description: Description
-#      original_title:
-#        type: string
-#        description: Title before edit
-#      original_description:
-#        type: string
-#        description: Description before edit
+      description:
+        type: string
+        description: Description
+      original_title:
+        type: string
+        description: Title before edit
+      original_description:
+        type: string
+        description: Description before edit
       rating:
         type: integer
         format: int32
@@ -3054,6 +3108,7 @@ definitions:
       display_name:
         type: string
         description: Person's (public) name
+      # @todo Could use all-of SweepstakeParticipant for person's fields
       firstname:
         type: string
         description: Person's firstname
@@ -3111,16 +3166,9 @@ definitions:
         description: Type of appraisal ("article" or "wine_selfie")
     required:
       - id
-      - created_on
       - title
       - rating
-      - language
       - article
-      - marked
-      - processed
-      - approved
-      - approved_image
-      - type
 
   AppraisalArticle:
     type: object
@@ -3134,6 +3182,59 @@ definitions:
         description: Article name
     required:
       - id
+
+  SweepstakeParticipant:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      created_on:
+        type: string
+        format: date-time
+        description: Timestamp
+      firstname:
+        type: string
+        description: Person's firstname
+      lastname:
+        type: string
+        description: Person's lastname
+      address:
+        type: string
+        description: Person's address
+      zip_code:
+        type: integer
+        format: int32
+        minimum: 1000
+        maximum: 9699
+        description: Person city's ZIP code
+      city:
+        type: string
+        description: Person's city
+      email:
+        type: string
+#        pattern: @todo Fixed pattern?
+        description: Person's (public) e-mail address
+      gender:
+        type: string
+#        pattern: '/^(male|female)$/'
+        description: Person's gender (male or female)
+      shop_user_id:
+        type: integer
+        format: int32
+        description: Person's shop ID
+      language:
+        type: string
+        description: Person's locale
+    required:
+      - id
+      - firstname
+      - lastname
+      - address
+      - zip_code
+      - city
+      - email
+      - gender
+      - language
 
   ### Collections
   Appearances:
@@ -3220,6 +3321,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/Appraisal'
+
+  SweepstakeParticipants:
+    type: array
+    items:
+      $ref: '#/definitions/SweepstakeParticipant'
 
   ### Responses
   StoresResponse:
@@ -3437,3 +3543,21 @@ definitions:
         format: int32
       appraisals:
         $ref: '#/definitions/Appraisals'
+
+  SweepstakeParticipantsResponse:
+    type: object
+    properties:
+#      page_count:
+#        description: The number of pages
+#        type: integer
+#        format: int32
+#      page_size:
+#        description: The page size
+#        type: integer
+#        format: int32
+      total_participants:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      participants:
+        $ref: '#/definitions/SweepstakeParticipants'

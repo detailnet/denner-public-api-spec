@@ -37,6 +37,9 @@ The Denner Portal provides mostly advertising related data.
 * `/screen-publications` (Screen-Werbemittel, [example](examples/screen-publications.json))
 * `/screen-stores` (Screen-Filialen, [example](examples/screen-stores.json))
 
+### Appraisals
+* `/appraisals` (Wein-Bewertungen, [example](examples/appraisals.json))
+* `/sweepstake-participants` (Verlosung Teilnehmer, [example](examples/sweepstake-participants.json))
 
 ## Building
 
