@@ -3395,28 +3395,26 @@ definitions:
 #        description:
       rating:
         type: object
-        description: Raiting count for each value group
+        description: Rating count for each value group
+        # @Ivan Should change the structure, because actual one can only be defined as follows in swagger (fix 'groups'),
+        #       Should change to an array objects containig 'group' & 'count';
+        #       e.g. json: [{"group":1,"count":0},{"group":2,"count":0},{"group":3,"count":5},{"group":4,"count":15},{"group":5,"count":5}]
         properties:
           1:
             type: integer
             format: int32
-#            description:
           2:
             type: integer
             format: int32
-#            description:
           3:
             type: integer
             format: int32
-#            description:
           4:
             type: integer
             format: int32
-#            description:
           5:
             type: integer
             format: int32
-#            description:
 
   SweepstakeParticipant:
     type: object
