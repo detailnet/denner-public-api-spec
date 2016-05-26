@@ -2161,12 +2161,12 @@ paths:
 
   /appraisal-statistic/{date}:
     get:
-      summary: Get appreisal statistics
+      summary: Get appraisal statistics
       description: >
         Use this operation to get day and overall appraisal statistics.
       tags:
         - Appraisals
-      operationId: getAppreisalStatistic
+      operationId: getAppraisalStatistic
       security:
         - appKey: []
 #        - appId: []
