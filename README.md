@@ -19,6 +19,7 @@ The Denner Portal provides mostly advertising related data.
 * `/stores` (Filialen, [example](examples/stores.json))
 * `/store-channels` (Filialkanäle, [example](examples/store-channels.json))
 * `/store-services` (Filialangebote, [example](examples/store-services.json))
+* `/screen-stores` (Screen-Filialen, [example](examples/screen-stores.json))
 
 ### Articles/Promotions
 
@@ -27,15 +28,12 @@ The Denner Portal provides mostly advertising related data.
 * `/advertised-articles` (beworbene Artikel)
 * `/promotion-types` (Aktionstypen, [example](examples/promotion-types.json))
 
-### Online Advertising
+### Advertising
 
 * `/online-publications` (Online-Werbemittel, [example](examples/online-publications.json))
 * `/online-filters` (Angebotsfilter, [example](examples/online-filters.json))
 * `/online-groups` (Internet-Sortimente, [example](examples/online-groups.json))
-
-### Screen Advertising
 * `/screen-publications` (Screen-Werbemittel, [example](examples/screen-publications.json))
-* `/screen-stores` (Screen-Filialen, [example](examples/screen-stores.json))
 
 ### Appraisals
 * `/appraisals` (Weinbewertungen, [example](examples/appraisals.json))

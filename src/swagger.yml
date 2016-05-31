@@ -33,7 +33,7 @@ paths:
       description: >
         Use this operation to get a list of all stores (Filialen).
       tags:
-        - Stores – Filialdaten
+        - stores
       operationId: listStores
       security:
         - appKey: []
@@ -289,7 +289,7 @@ paths:
       description: >
         Use this operation to get a list of all screen stores (Filialen für Werbescreens).
       tags:
-        - Stores – Filialdaten
+        - stores
       operationId: listScreenStores
       security:
         - appKey: []
@@ -381,7 +381,7 @@ paths:
         Use this operation to get a list of all store channels
         (Filialkanäle; e.g. "Denner" or "Denner Satellit").
       tags:
-        - Stores – Filialdaten
+        - stores
       operationId: listStoreChannels
       security:
         - appKey: []
@@ -437,7 +437,7 @@ paths:
         Use this operation to get a list of all store services
         (Filialangebote; e.g. "Humidor" or "Backstation").
       tags:
-        - Stores – Filialdaten
+        - stores
       operationId: listStoreServices
       security:
         - appKey: []
@@ -535,7 +535,7 @@ paths:
       description: >
         Use this operation to get a list of all article groups (Warengruppen).
       tags:
-        - Articles and Promotions – Artikel und Aktionen
+        - articles
       operationId: listArticleGroups
       security:
         - appKey: []
@@ -589,7 +589,7 @@ paths:
 
         To get only shop wines set 'filter' param to '[{"property":"in_shop","operator":"eq","type":"boolean","value":true}]'
       tags:
-        - Articles and Promotions – Artikel und Aktionen
+        - articles
       operationId: listArticles
       security:
         - appKey: []
@@ -842,7 +842,7 @@ paths:
       description: >
         Use this operation to get a list of all promotion types (Aktionstypen).
       tags:
-        - Articles and Promotions – Artikel und Aktionen
+        - articles
       operationId: listPromotionTypes
       security:
         - appKey: []
@@ -899,7 +899,7 @@ paths:
         Use this operation to get a list of all publications targeted at online channels,
         e.g. denner.ch or the Mobile App (Online-Werbemittel).
       tags:
-        - Online Advertising – Online-Bewerbung
+        - advertising
       operationId: listOnlinePublications
       security:
         - appKey: []
@@ -996,7 +996,7 @@ paths:
         e.g. denner.ch or the Mobile App (Online-Werbemittel).
         The response will include the articles assigned to this publication.
       tags:
-        - Online Advertising – Online-Bewerbung
+        - advertising
       operationId: getOnlinePublication
       security:
         - appKey: []
@@ -1434,7 +1434,7 @@ paths:
         Use this operation to get a list of all online filters
         (Angebotsfilter; e.g. "Aktionen aktuelle Woche" or "Aktionen der Folgewoche").
       tags:
-        - Online Advertising – Online-Bewerbung
+        - advertising
       operationId: listOnlineFilters
       security:
         - appKey: []
@@ -1489,7 +1489,7 @@ paths:
       description: >
         Use this operation to get a list of all online groups (Internet-Sortimente).
       tags:
-        - Online Advertising – Online-Bewerbung
+        - advertising
       operationId: listOnlineGroups
       security:
         - appKey: []
@@ -1571,7 +1571,7 @@ paths:
       description: >
         Use this operation to get a list of all publications targeted at advertising screens (Screen-Werbemittel).
       tags:
-        - Screen Advertising – Screen-Bewerbung
+        - advertising
       operationId: listScreenPublications
       parameters:
         - $ref: '#/parameters/PageParam'
@@ -1624,7 +1624,7 @@ paths:
         Use this operation to get a single publication targeted at advertising screens (Screen-Werbemittel).
         The response will include the articles assigned to this publication.
       tags:
-        - Screen Advertising – Screen-Bewerbung
+        - advertising
       operationId: getScreenPublication
       security:
         - appKey: []
@@ -2013,7 +2013,7 @@ paths:
       description: >
         Use this operation to get a list of all wine appraisals (Weinbewertungen).
       tags:
-        - Appraisals
+        - appraisals
       operationId: listAppraisals
       security:
         - appKey: []
@@ -2129,7 +2129,7 @@ paths:
 #      description: >
 #        Use this operation to create a new appraisal (Bewertung) for a specific wine.
 #      tags:
-#        - Appraisal
+#        - appraisals
 #      operationId: updateAppraisal
 #      parameters:
 #        - $ref: '#/parameters/AcceptHeader'
