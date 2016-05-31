@@ -38,10 +38,10 @@ The Denner Portal provides mostly advertising related data.
 * `/screen-stores` (Screen-Filialen, [example](examples/screen-stores.json))
 
 ### Appraisals
-* `/appraisals` (Wein-Bewertungen, [example](examples/appraisals.json))
-* `/appraisals/{appraisal_id}` (Wein-Bewertung, [example](examples/appraisal.json))
-* `/appraisal-statistic/{date}` (Wein-Bewertungen Statistik, [example](examples/appraisal-statistic.json))
-* `/sweepstake-participants` (Verlosung-Teilnehmer, [example](examples/sweepstake-participants.json))
+* `/appraisals` (Weinbewertungen, [example](examples/appraisals.json))
+* `/appraisals/{appraisal_id}` (Weinbewertung, [example](examples/appraisal.json))
+* `/appraisal-statistic/{date}` (Statistiken zu Weinbewertungen, [example](examples/appraisal-statistic.json))
+* `/sweepstake-participants` (Verlosungsteilnehmer, [example](examples/sweepstake-participants.json))
 
 ## Building
 
