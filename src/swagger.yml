@@ -2021,7 +2021,12 @@ paths:
       parameters:
         - name: f.email
           description: >
-            Filter by email, e.g. "f.email=__in_testuser1@denner.ch,testuser1@denner.ch" will return all appraisals which have been created by testuser1@denner.ch or testuser1@denner.ch.
+            Filter by email, e.g. "f.email=__in_john.doe@gmx.com,hans.muster@gmail.com" will return all appraisals which have been created by john.doe@gmx.com or hans.muster@gmail.com.
+          in: query
+          type: string
+        - name: f.created_on
+          description: >
+            Filter by creation date, e.g. "f.created_on=2016-04-07T09:01:34Z" will return all appraisals which have been created on 2016-04-07 at 09:01:34 UTC.
           in: query
           type: string
         - $ref: '#/parameters/PageParam'
@@ -2057,7 +2062,7 @@ paths:
       description: >
         Use this operation to get a single appraisal.
       tags:
-        - Appraisals
+        - appraisals
       operationId: getAppraisal
       security:
         - appKey: []
@@ -2165,7 +2170,7 @@ paths:
       description: >
         Use this operation to get day and overall appraisal statistics.
       tags:
-        - Appraisals
+        - appraisals
       operationId: getAppraisalStatistic
       security:
         - appKey: []
@@ -2181,7 +2186,7 @@ paths:
             application/json:
 
               day: "2015-10-20"
-              on_date:
+              on_day:
                 total: 4
                 processed: 0
                 not_processed: 4
@@ -2218,12 +2223,17 @@ paths:
       description: >
         Use this operation to get a list of all sweepstake participants (Bewerbunsteilnehmer) within a given time frame.
       tags:
-        - Appraisals
+        - appraisals
       operationId: listSweepstakeParticipants
       security:
         - appKey: []
 #        - appId: []
       parameters:
+        - name: f.email
+          description: >
+            Filter by email, e.g. "f.email=__in_john.doe@gmx.com,hans.muster@gmail.com" will return all sweepstake participants matching email addresses by john.doe@gmx.com or hans.muster@gmail.com.
+          in: query
+          type: string
         - name: f.created_on
           description: >
             Filter by creation date, e.g. "f.created_on=2016-04-07T09:01:34Z" will return all sweepstake participants which have been created on 2016-04-07 at 09:01:34 UTC.
@@ -3283,7 +3293,6 @@ definitions:
       display_name:
         type: string
         description: Person's (public) name
-      # @todo Could use all-of SweepstakeParticipant for person's fields
       firstname:
         type: string
         description: Person's firstname
@@ -3309,6 +3318,9 @@ definitions:
       gender:
         type: string
 #        pattern: '/^(male|female)$/'
+        enum:
+          - female
+          - male
         description: Person's gender (male or female)
       shop_user_id:
         type: integer
@@ -3330,11 +3342,11 @@ definitions:
         description: Is appraisal approved?
       approved_image:
         type: boolean
-        description: Is wine-selfie image approved?
+        description: Is image approved?
       source:
         type: string
 #        pattern: '/^(web|mobile)$/'
-        description: Where has been created ("web" or "mobile")
+        description: Where the appraisal originated from ("web" or "mobile")
       type:
         type: string
 #        pattern: '/^(article|wine_selfie)$/'
@@ -3782,7 +3794,7 @@ definitions:
     properties:
       day:
         $ref: '#/definitions/Date'
-      on_date:
+      on_day:
         $ref: '#/definitions/AppraisalStatistic'
       overall:
         $ref: '#/definitions/AppraisalStatistic'
