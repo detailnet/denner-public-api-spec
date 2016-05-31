@@ -73,3 +73,12 @@ You can also generate a static HTML page:
             -o ../denner-portal-api-spec/build/html
             
 The file will be located at `build/html/index.html`.
+
+#### JSON without examples
+Install json processor trough npm:
+        
+        sudo npm install -g json
+
+Then filter out examples trough following command:  
+
+        cat ../denner-portal-api-spec/build/swagger/swagger.json | json -e 'for (var pathIndex in this.paths) { for (var methodIndex in thi s.paths[pathIndex]) { for (var responseIndex in  this.paths[pathIndex][methodIndex].responses) { delete this.paths[pathIndex][methodIndex].responses[responseIndex].examples; } } }' >  ../denne r-portal-api-spec/build/swagger/swagger.no_examples.json
