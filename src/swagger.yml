@@ -2514,6 +2514,15 @@ definitions:
         long_text:
           $ref: '#/definitions/Translations'
 
+  AvailabilityLimitations:
+    type: object
+    description: Texts for information about limited availability
+    properties:
+      region:
+        $ref: '#/definitions/Translations'
+      store:
+        $ref: '#/definitions/Translations'
+
   Url:
     type: string
 #    pattern: @todo Fixed pattern?
@@ -2972,16 +2981,19 @@ definitions:
       id:
         $ref: '#/definitions/UUIDv4'
       type:
-        type: object
-        description: Output type
-        properties:
-          id:
-            type: string
-            description: Output type id
+        $ref: '#/definitions/OutputType'
       text:
         $ref: '#/definitions/Translations'
       images:
         $ref: '#/definitions/OutputImages'
+
+  OutputType:
+    type: object
+    description: Output type
+    properties:
+      id:
+        type: string
+        description: Output type id
 
   OutputImages:
     type: array
@@ -3051,13 +3063,7 @@ definitions:
       validity:
         $ref: '#/definitions/ArticleValidity'
       availability_limitations:
-        type: object
-        description: Texts for information about limited availability
-        properties:
-          region:
-            $ref: '#/definitions/Translations'
-          store:
-            $ref: '#/definitions/Translations'
+        $ref: '#/definitions/AvailabilityLimitations'
       sort_index:
         $ref: '#/definitions/SortIndex'
       featured_sort_index:
@@ -3120,13 +3126,7 @@ definitions:
       validity:
         $ref: '#/definitions/ArticleValidity'
       availability_limitations:
-        type: object
-        description: Texts for information about limited availability
-        properties:
-          region:
-            $ref: '#/definitions/Translations'
-          store:
-            $ref: '#/definitions/Translations'
+        $ref: '#/definitions/AvailabilityLimitations'
       sort_index:
         $ref: '#/definitions/SortIndex'
       compared:
