@@ -9,13 +9,28 @@
         "unique": 3,
         "sweepstake_total": 0,
         "sweepstake_unique": 0,
-        "rating": {
-            "1": 0,
-            "2": 0,
-            "3": 2,
-            "4": 1,
-            "5": 1
-        }
+        "rating": [
+            {
+                "value": 1,
+                "count": 0
+            },
+            {
+                "value": 2,
+                "count": 0
+            },
+            {
+                "value": 3,
+                "count": 2
+            },
+            {
+                "value": 4,
+                "count": 1
+            },
+            {
+                "value": 5,
+                "count": 1
+            }
+        ]
     },
     "overall": {
         "total": 38530,
@@ -26,12 +41,27 @@
         "unique": 11406,
         "sweepstake_total": 0,
         "sweepstake_unique": 0,
-        "rating": {
-            "1": 464,
-            "2": 685,
-            "3": 3514,
-            "4": 14066,
-            "5": 12605
-        }
+        "rating": [
+            {
+                "value": 1,
+                "count": 464
+            },
+            {
+                "value": 2,
+                "count": 685
+            },
+            {
+                "value": 3,
+                "count": 3514
+            },
+            {
+                "value": 4,
+                "count": 14066
+            },
+            {
+                "value": 5,
+                "count": 12605
+            }
+        ]
     }
 }
