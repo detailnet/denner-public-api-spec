@@ -3413,35 +3413,35 @@ definitions:
       total:
         type: integer
         format: int32
-        description: Total appraisals in the range
+        description: Total number of appraisals
       processed:
         type: integer
         format: int32
-        description: Appraisals in the range that have been processed
+        description: Total number of processed appraisals
       not_processed:
         type: integer
         format: int32
-        description: Appraisals in the range that have not been processed
+        description: Total number of unprocessed appraisals
       approved:
         type: integer
         format: int32
-        description: Appraisals in the range that have been approved
+        description: Total number of approved appraisals
       not_approved:
         type: integer
         format: int32
-        description: Appraisals in the range that have not been approved
+        description: Total number of appraisals that have not been approved
       unique:
         type: integer
         format: int32
-#        description:
+        description: Total number of individual persons that sent at least one appraisal (based on email addresses)
       sweepstake_total:
         type: integer
         format: int32
-#        description:
+        description: Total number of sweepstake participations
       sweepstake_unique:
         type: integer
         format: int32
-#        description:
+        description: Total number of individual persons that participated at least once in the sweepstake (based on email addresses)
       rating:
         $ref: '#/definitions/RatingsGrouped'
 
