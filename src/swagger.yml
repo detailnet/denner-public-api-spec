@@ -445,6 +445,7 @@ paths:
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/PageSizeParam'
       responses:
         200:
           description: Successful listing
@@ -2943,8 +2944,6 @@ definitions:
         $ref: '#/definitions/AssignedOnlineGroup'
       prices:
         $ref: '#/definitions/ArticlePrices'
-      discount:
-        $ref: '#/definitions/Translations'
       barcodes:
         $ref: '#/definitions/Barcodes'
       content:
@@ -3061,6 +3060,8 @@ definitions:
         $ref: '#/definitions/Rating'
       shop:
         $ref: '#/definitions/WineShop'
+      box:
+        $ref: '#/definitions/WineBox'
 
   WineShop:
     type: object
@@ -3073,10 +3074,10 @@ definitions:
         $ref: '#/definitions/Quantity'
       prices:
         $ref: '#/definitions/ArticlePrices'
+      discount:
+        $ref: '#/definitions/Translations'
       packshot:
         $ref: '#/definitions/Packshot'
-      box:
-        $ref: '#/definitions/WineBox'
 
   Region:
     type: object
