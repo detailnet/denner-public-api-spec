@@ -2505,11 +2505,6 @@ definitions:
     pattern: '/^(de|fr|it)$/'
     description: Locale
 
-  Translations:
-    type: array
-    items:
-      $ref: '#/definitions/Translation'
-
   Translation:
     type: object
     properties:
@@ -3131,11 +3126,6 @@ definitions:
       message:
         $ref: '#/definitions/Translations'
 
-  Barcodes:
-    type: array
-    items:
-      $ref: '#/definitions/Barcode'
-
   Barcode:
     type: object
     properties:
@@ -3165,11 +3155,6 @@ definitions:
         description: Batch size
 
   ### Publicated article (both online and screen)
-  Dots:
-    type: array
-    items:
-      $ref: '#/definitions/Output'
-
   Output:
     type: object
     properties:
@@ -3190,11 +3175,6 @@ definitions:
         type: string
         description: Output type id
 
-  OutputImages:
-    type: array
-    items:
-      $ref: '#/definitions/OutputImage'
-
   OutputImage:
     type: object
     properties:
@@ -3203,11 +3183,6 @@ definitions:
         description: Locale for the image formats
       formats:
         $ref: '#/definitions/OutputImageFormats'
-
-  OutputImageFormats:
-    type: array
-    items:
-      $ref: '#/definitions/OutputImageFormat'
 
   OutputImageFormat:
     type: object
@@ -3710,6 +3685,11 @@ definitions:
       - language
 
   ### Collections
+  Translations:
+    type: array
+    items:
+      $ref: '#/definitions/Translation'
+
   Appearances:
     type: array
     items:
@@ -3750,6 +3730,11 @@ definitions:
     items:
       $ref: '#/definitions/Packshot'
 
+  Barcodes:
+    type: array
+    items:
+      $ref: '#/definitions/Barcode'
+
   Articles:
     type: array
     items:
@@ -3759,6 +3744,21 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/PromotionType'
+
+  OutputImages:
+    type: array
+    items:
+      $ref: '#/definitions/OutputImage'
+
+  OutputImageFormats:
+    type: array
+    items:
+      $ref: '#/definitions/OutputImageFormat'
+
+  Dots:
+    type: array
+    items:
+      $ref: '#/definitions/Output'
 
   OnlineArticles:
     type: array
