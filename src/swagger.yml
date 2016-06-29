@@ -3640,6 +3640,9 @@ definitions:
         type: string
         format: date-time
         description: Timestamp
+      display_name:
+        type: string
+        description: Person's (public) name
       firstname:
         type: string
         description: Person's firstname
