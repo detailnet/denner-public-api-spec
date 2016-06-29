@@ -928,9 +928,9 @@ paths:
 
   /shop-wines:
     get:
-      summary: List all wines currently in shop
+      summary: List all wines currently targeted for the Wineshop
       description: |
-        Use this operation to get a list of all wines currently in shop.
+        Use this operation to get a list of all wines targeted for the Wineshop.
       tags:
         - articles
       operationId: listShopWines
@@ -2516,8 +2516,8 @@ definitions:
 
   Url:
     type: string
-#    pattern: @todo Fixed pattern?
     description: Web URL address
+#    pattern: @todo Fixed pattern?
 
   CountryFlag:
     type: object
