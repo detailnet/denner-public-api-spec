@@ -115,7 +115,8 @@
                 "4867bac2-e400-d244-0010-c5fa599dfc79",
                 "c1e71de4-6ae9-02f8-1a62-51387ccfb245",
                 "a59e0766-6cad-ef22-5ce9-90b63a8e0a7b",
-                "8993c208-4665-6a49-8cc4-4aeed9c95f8c"
+                "8993c208-4665-6a49-8cc4-4aeed9c95f8c",
+                "82da1f3e-4997-40a2-b4b9-505d64282fa0"
             ],
             "owner": "44016",
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
@@ -1889,6 +1890,26 @@
             "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
         },
         {
+            "folder": "450fe5ae-78ad-ffa1-0193-cdb10e18173b",
+            "id": "82da1f3e-4997-40a2-b4b9-505d64282fa0",
+            "name": "/boxes",
+            "dataMode": "params",
+            "data": [],
+            "rawModeData": null,
+            "descriptionFormat": null,
+            "description": "List all boxes",
+            "headers": "Accept: {{header_accept}}\nApp-ID: {{articles_header_app_id}}\nApp-Key: {{articles_header_app_key}}\n",
+            "method": "GET",
+            "pathVariables": {},
+            "url": "{{articles_url_base}}/boxes",
+            "preRequestScript": "",
+            "tests": "",
+            "currentHelper": "normal",
+            "helperAttributes": "{}",
+            "responses": [],
+            "collectionId": "208e3ab4-01d8-9d0c-1fdf-3124b445cefd"
+        },
+        {
             "id": "d65ff2a3-2d69-f1bb-edeb-2252df120028",
             "headers": "Accept: {{header_accept}}\nApp-ID: {{advertising_header_app_id}}\nApp-Key: {{advertising_header_app_key}}\nContent-Type: application/json\n",
             "url": "{{advertising_url_base}}/newsletters/44444444-aaaa-4444-aaaa-444444444444",
@@ -2143,7 +2164,6 @@
             "version": 2,
             "tests": "",
             "currentHelper": "normal",
-            "helperAttributes": {},
             "helperAttributes": {},
             "time": 1458037061191,
             "name": "/newsletters",
