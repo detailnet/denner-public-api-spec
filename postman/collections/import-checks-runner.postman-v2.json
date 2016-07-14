@@ -1,0 +1,103 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Denner import checks",
+		"_postman_id": "5ae702a4-8f2d-f49b-6589-12c272d9c8f8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Articles import",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "var jsonData = JSON.parse(responseBody);\n\ntests[\"All articles in sync\"] = jsonData.total_items === 0;\n\n"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": "function addMinutes(date, minutes) {\n    return new Date(date.getTime() + minutes*60000);\n}\nvar myDate = new Date((new Date()).getTime() - 90 * 60000),\n    dateStr = \n        myDate.getFullYear() + \"-\" + (myDate.getMonth() + 1) + \"-\" + myDate.getDate() + \" \" +\n        myDate.getHours() + \":\" + myDate.getMinutes() + \":\" + myDate.getSeconds();\n    \n\npostman.setEnvironmentVariable(\"now_minus_1_and_half_hour\", dateStr);"
+					}
+				}
+			],
+			"request": {
+				"url": "{{articles_url_base}}/articles?filter=[{\"property\":\"synced_on\",\"operator\":\"lt\",\"value\":\"{{now_minus_1_and_half_hour}}\",\"type\":\"string\"}]&page_size=1&page=1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{header_accept}}",
+						"description": ""
+					},
+					{
+						"key": "App-ID",
+						"value": "{{articles_header_app_id}}",
+						"description": ""
+					},
+					{
+						"key": "App-Key",
+						"value": "{{articles_header_app_key}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Check that \n- All articles have been synced in the last 1 1/2 hour"
+			},
+			"response": []
+		},
+		{
+			"name": "Prices import",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "var jsonData = JSON.parse(responseBody);\n\ntests[\"All prices in sync\"] = jsonData.total_items === 0;"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": "function addMinutes(date, minutes) {\n    return new Date(date.getTime() + minutes*60000);\n}\nvar myDate = new Date((new Date()).getTime() - 180 * 60000),\n    dateStr = \n        myDate.getFullYear() + \"-\" + (myDate.getMonth() + 1) + \"-\" + myDate.getDate() + \" \" +\n        myDate.getHours() + \":\" + myDate.getMinutes() + \":\" + myDate.getSeconds();\n    \n\npostman.setEnvironmentVariable(\"now_minus_3_hours\", dateStr);"
+					}
+				}
+			],
+			"request": {
+				"url": "{{articles_url_base}}/articles?filter=[{\"property\":\"prices_synced_on\",\"operator\":\"lt\",\"value\":\"{{now_minus_3_hours}}\",\"type\":\"string\"}]&page_size=1&page=1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "{{header_accept}}",
+						"description": ""
+					},
+					{
+						"key": "App-ID",
+						"value": "{{articles_header_app_id}}",
+						"description": ""
+					},
+					{
+						"key": "App-Key",
+						"value": "{{articles_header_app_key}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Check that \n- All prices have been synced in the last 3 hours"
+			},
+			"response": []
+		}
+	]
+}
