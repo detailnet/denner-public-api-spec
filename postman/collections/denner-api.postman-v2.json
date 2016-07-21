@@ -2469,7 +2469,7 @@
 				{
 					"name": "/assets",
 					"request": {
-						"url": "{{assets_url_base}}/assets?page=1&page_size=5&filter=[{\"property\":\"name\",\"operator\":\"like\",\"type\":\"string\",\"value\":\"%test%\"},{\"property\":\"articles\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"000000\",\"222222\"]}]&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]",
+						"url": "{{assets_url_base}}/assets?page=1&page_size=5&filter=[{\"property\":\"articles\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"000000\",\"222222\"]}]&sort=[{\"property\":\"created_on\",\"direction\":\"asc\"}]&query=test",
 						"method": "GET",
 						"header": [
 							{
@@ -2532,6 +2532,41 @@
 					"response": []
 				},
 				{
+					"name": "/assets/new/{tentative_asset_id}",
+					"request": {
+						"url": "{{assets_url_base}}/assets/new/c445acbd-67e6-44bf-8365-97905a387a69",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{assets_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{assets_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Delete tentative asset"
+					},
+					"response": []
+				},
+				{
 					"name": "/assets",
 					"request": {
 						"url": "{{assets_url_base}}/assets",
@@ -2560,7 +2595,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\":\"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\":\"test.jpg\",\n  \"url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/4442244-aaaa-4444-aaaa-444444444444/test.jpg\",\n  \"size\":1234,\n  \"mime_type\":\"image/jpeg\",\n  \"type\":3,\n  \"languages\":[\"de\",\"fr\",3],\n  \"tags\":[1],\n  \"reference\":\"Test reference id\",\n  \"description\":\"Decriptrion on\\nlines.\",\n  \"quantity\": 12,\n  \"articles\": [\n      {\n          \"code\": \"000000\"\n      },\n      {\n          \"code\": \"111111\"\n          \n      }\n  ]\n}"
+							"raw": "{\n  \"id\":\"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\":\"test.jpg\",\n  \"url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/4442244-aaaa-4444-aaaa-444444444444/test.jpg\",\n  \"size\":1234,\n  \"mime_type\":\"image/jpeg\",\n  \"type\":\"a7f3017a-de40-4636-bc3f-6d409bd41be6\",\n  \"languages\":[\"de\",\"fr\"],\n  \"tags\":[],\n  \"reference\":\"Test reference id\",\n  \"description\":\"Decriptrion on\\nlines.\",\n  \"quantity\": 12,\n  \"articles\": [\n      {\n          \"code\": \"000000\"\n      },\n      {\n          \"code\": \"111111\"\n          \n      }\n  ]\n}"
 						},
 						"description": "Create a new asset"
 					},
@@ -2625,7 +2660,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"tags\":[],\n  \"languages\":[],\n  \"type\":3,\n  \"reference\":\"New reference id\",\n  \"description\":\"Patched Decriptrion.\",\n  \"quantity\": 6,\n  \"articles\": [\n      { \"code\": \"000000\" },\n      { \"code\": \"222222\" },\n      { \"code\": \"333333\" },\n      { \"code\": \"444444\" },\n      { \"code\": \"555555\" },\n      { \"code\": \"666666\" }\n  ]\n}"
+							"raw": "{\n  \"tags\":[],\n  \"languages\":[],\n  \"type\":\"847877c4-fcf0-4efb-a418-2726efa79508\",\n  \"reference\":\"New reference id\",\n  \"description\":\"Patched Decriptrion.\",\n  \"quantity\": 6,\n  \"articles\": [\n      { \"code\": \"000000\" },\n      { \"code\": \"222222\" },\n      { \"code\": \"333333\" },\n      { \"code\": \"444444\" },\n      { \"code\": \"555555\" },\n      { \"code\": \"666666\" }\n  ]\n}"
 						},
 						"description": ""
 					},
@@ -2660,7 +2695,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\":\"1\",\n    \"languages\":[\"it\"],\n    \"reference\":\"new reference\",\n    \"description\":\"New description\\nSecond line\",\n    \"tags\":[\"2\"],\n    \"quantity\": 4,\n    \"articles\": [\n      { \"code\": \"000000\" },\n      { \"code\": \"222222\" },\n      { \"code\": \"888888\" },\n      { \"code\": \"999999\" }\n    ]\n}"
+							"raw": "{\n    \"type\":\"687c1916-ffdc-4254-a7b8-b0a632a150f8\",\n    \"languages\":[\"it\",\"fr\"],\n    \"reference\":\"new reference\",\n    \"description\":\"New description\\nSecond line\",\n    \"tags\":[\"0c2122cf-b818-4923-a211-1178c8fd973a\"],\n    \"quantity\": 4,\n    \"articles\": [\n      { \"code\": \"000000\" },\n      { \"code\": \"222222\" },\n      { \"code\": \"888888\" },\n      { \"code\": \"999999\" }\n    ]\n}"
 						},
 						"description": ""
 					},
@@ -2769,7 +2804,7 @@
 				{
 					"name": "/assets/{asset_id}/file-replacements",
 					"request": {
-						"url": "{{assets_url_base}}/assets/44444444-aaaa-4444-aaaa-444444444444/file-replacements?page_size=3&page=1&sort=[{\"property\":\"created_on\",\"direction\":\"desc\"}]",
+						"url": "{{assets_url_base}}/assets/44444444-aaaa-4444-aaaa-444444444444/file-replacements",
 						"method": "GET",
 						"header": [
 							{
@@ -2957,7 +2992,7 @@
 					"response": []
 				},
 				{
-					"name": "api/asset-collections/{asset_collection_id}",
+					"name": "/asset-collections/{asset_collection_id}",
 					"request": {
 						"url": "{{assets_url_base}}/asset-collections/44444444-aaaa-4444-aaaa-444444444444",
 						"method": "PATCH",
