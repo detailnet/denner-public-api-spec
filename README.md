@@ -30,10 +30,17 @@ The Denner Portal provides mostly advertising related data.
 
 ### Advertising
 
+#### Online
 * `/online-publications` (Online-Werbemittel, [example](examples/online-publications.json))
 * `/online-filters` (Angebotsfilter, [example](examples/online-filters.json))
 * `/online-groups` (Internet-Sortimente, [example](examples/online-groups.json))
+
+#### Screen
 * `/screen-publications` (Screen-Werbemittel, [example](examples/screen-publications.json))
+
+#### Print
+* `/print-publications` (Print-Werbemittel, [example](examples/print-publications.json))
+* `/print-publications/{publication_id]` (Print-Werbemittel, [example](examples/print-publication.json))
 
 ### Appraisals
 * `/appraisals` (Weinbewertungen, [example](examples/appraisals.json))
