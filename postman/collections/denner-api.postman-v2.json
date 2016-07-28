@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "denner-api",
-		"_postman_id": "c784244f-944f-8f46-9184-67c93fbcc399",
+		"_postman_id": "65b998b6-fe47-adc6-c83b-2adc2ef3f8cb",
 		"description": "Denner 2.0 API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -1087,6 +1087,336 @@
 							"formdata": []
 						},
 						"description": "Delete an online filter (Angebotsfilter)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "advertising/print",
+			"description": "Advertising: Print publication",
+			"item": [
+				{
+					"name": "/print-publications",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List print publications (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{year}-{week}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 \n// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js\n(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);\n\npostman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+							}
+						}
+					],
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{current_week}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List print publications (Print-Werbemittel) of specific week"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\": \"Test\",\n  \"year\": 2016,\n  \"week\": 30,\n  \"sort_index\": 1,\n  \"created_by\": \"Vorname Nachname\"\n}"
+						},
+						"description": "Create a new print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List single print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"year\": 2016,\n  \"week\": 31,\n  \"sort_index\": 2\n}"
+						},
+						"description": "Update a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Delete print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a print publication's articles (Artikel eines Print-Werbemittels)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}"
+						},
+						"description": "Add a new article (Artikel) to a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles/{article_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a single article (Artikel) for a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles/{article_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Delete an article (Artikel) from a print publication (Print-Werbemittel)"
 					},
 					"response": []
 				}
