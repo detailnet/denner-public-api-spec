@@ -5,19 +5,19 @@
             "name": "Dennerwoche KW 30/2016",
             "year": 2016,
             "week": 30,
-            "layout": {
-                "id": "positioning",
-                "name": "Durch freie Gestaltung"
-            },
+            "sort_index": 0,
+            "created_on": "2016-07-26T13:19:57+02:00",
+            "created_by": "Ivan Wolf",
+            "status": "new",
             "languages": [
                 "de",
                 "fr",
                 "it"
             ],
-            "sort_index": 0,
-            "status": "new",
-            "created_on": "2016-07-26T13:19:57+02:00",
-            "created_by": "Ivan Wolf"
+            "layout": {
+                "id": "positioning",
+                "name": "Durch freie Gestaltung"
+            }
         }
     ]
 }
