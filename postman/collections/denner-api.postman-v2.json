@@ -1194,7 +1194,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\": \"Test\",\n  \"year\": 2016,\n  \"week\": 30,\n  \"sort_index\": 1,\n  \"created_by\": \"Vorname Nachname\"\n}"
+							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\": \"Test\",\n  \"year\": 2016,\n  \"week\": 30,\n  \"sort_index\": 1,\n  \"created_by\": \"Vorname Nachname\",\n  \"languages\": [\n    \"de\",\n    \"fr\",\n    \"it\"\n  ],\n  \"layout\": \"positioning\"\n}"
 						},
 						"description": "Create a new print publication (Print-Werbemittel)"
 					},
@@ -1259,7 +1259,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"year\": 2016,\n  \"week\": 31,\n  \"sort_index\": 2\n}"
+							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"year\": 2016,\n  \"week\": 31,\n  \"sort_index\": 2,\n  \"status\": \"complete\"\n}"
 						},
 						"description": "Update a print publication (Print-Werbemittel)"
 					},
@@ -1417,6 +1417,36 @@
 							"formdata": []
 						},
 						"description": "Delete an article (Artikel) from a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-layouts",
+					"request": {
+						"url": "{{advertising_url_base}}/print-layouts",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List print layouts"
 					},
 					"response": []
 				}
