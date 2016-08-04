@@ -2222,6 +2222,66 @@
 					"response": []
 				},
 				{
+					"name": "/mobile-wines",
+					"request": {
+						"url": "{{articles_url_base}}/mobile-wines",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List all wines currently targeted for the Mobile App"
+					},
+					"response": []
+				},
+				{
+					"name": "/mobile-wines/{article_id}",
+					"request": {
+						"url": "{{articles_url_base}}/mobile-wines/050006",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Fetch wine targeted for the Mobile App"
+					},
+					"response": []
+				},
+				{
 					"name": "/advertised-articles",
 					"request": {
 						"url": "{{articles_url_base}}/advertised-articles",
