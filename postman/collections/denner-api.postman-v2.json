@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "denner-api",
-		"_postman_id": "93f4df8f-34bb-3d46-28ab-94480f80c719",
+		"_postman_id": "035e2be4-e7f2-24f6-1ae1-c20fa46144f0",
 		"description": "Denner 2.0 API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -3375,7 +3375,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\":\"New collection\",\n  \"assets\":[\"44444444-aaaa-4444-aaaa-444444444444\",10,13,15,16]\n}"
+							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\":\"New collection with auto deletion date\",\n  \"auto_deletion_date\":\"2016-08-10\",\n  \"assets\":[\"44444444-aaaa-4444-aaaa-444444444444\"]\n}"
 						},
 						"description": "Create a new asset collection"
 					},
@@ -3440,7 +3440,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"New collection name\",\n    \"assets\":[25, \"44444444-aaaa-4444-aaaa-444444444444\"]\n}"
+							"raw": "{\n    \"name\":\"New collection name\",\n    \"assets\":[\"44444444-aaaa-4444-aaaa-444444444444\"]\n}"
 						},
 						"description": "Edit an asset collection"
 					},
@@ -3538,6 +3538,136 @@
 							"raw": ""
 						},
 						"description": "Delete a single asset collection"
+					},
+					"response": []
+				},
+				{
+					"name": "/asset-collections/{asset_collection_id}/links/{link_id}",
+					"request": {
+						"url": "{{assets_url_base}}/asset-collections/44444444-aaaa-4444-aaaa-444444444444/links/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{assets_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{assets_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List single link of an asset collection"
+					},
+					"response": []
+				},
+				{
+					"name": "/asset-collections/{asset_collection_id}/links",
+					"request": {
+						"url": "{{assets_url_base}}/asset-collections/44444444-aaaa-4444-aaaa-444444444444/links",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{assets_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{assets_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"New Link\",\n  \"valid_to\": \"2016-07-26\"\n}"
+						},
+						"description": "Create a new link attached to an asset collection"
+					},
+					"response": []
+				},
+				{
+					"name": "/asset-collections/{asset_collection_id}/links/{link_id} ",
+					"request": {
+						"url": "{{assets_url_base}}/asset-collections/44444444-aaaa-4444-aaaa-444444444444/links/d7f27cf2-59f1-4bda-b1b5-4b07256c5740",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{assets_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{assets_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"Modified Link for Collection\",\n  \"valid_to\":\"2016-03-20\"\n}"
+						},
+						"description": "Edit a link attached to an asset collection"
+					},
+					"response": []
+				},
+				{
+					"name": "/asset-collections/{asset_collection_id}/links/{link_id}",
+					"request": {
+						"url": "{{assets_url_base}}/asset-collections/44444444-aaaa-4444-aaaa-444444444444/links/5897a1bb-9e87-447e-9ed5-222e64fe6c84",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{assets_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{assets_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "Delete a single link"
 					},
 					"response": []
 				},
@@ -3779,152 +3909,6 @@
 							"raw": "{\n    \"name\": \"20% auf alle Weine\",\n    \"closable\": true,\n    \"active\": true,\n    \"position\": \"top\",\n    \"display_from\": \"2016-01-01\",\n    \"display_to\": \"2016-12-31\",\n    \"locales\": [\n        \"de\",\n        \"fr\",\n        \"it\"\n    ],\n    \"types\": [\n        \"wine\"\n    ],\n    \"platforms\": [\n        \"iOS\",\n        \"Android\",\n        \"Windows\"\n    ],\n    \"title\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"20% auf alle Weine\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"20% sur tous les vins\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"20% su tutti i vini\"\n        }\n    ],\n    \"html\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"Nur am Sonntag, 20. Dezember 2015 auch auf bestehende Aktionspreise. Gültig in allen geöffneten Filialen (siehe www.denner.ch), unter www.denner-wineshop.ch und in der Denner App.**<br />*ausgenommen Schaumweine und Bordeaux Grands Crus 2013. Solange Vorrat. Nicht mit Gutscheinen, Bons und Rabatten bei Neueröffnungen und Weinmessen kumulierbar. **die Lieferung vor Weihnachten ist nicht garantiert.\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"Seulement le dimanche 20 décembre 2015, valable également sur les prix promotionnels. Valable dans toutes les succursales ouvertes (voir www.denner.ch), sur www.denner-wineshop.ch et dans l’appli Denner.**<br />*excepté les vins mousseux et Bordeaux Grands Crus 2013. Jusqu’à épuisement des stocks. Non cumulable avec des bons et des rabais accordés aux inaugurations et aux foires aux vins. **la livraison avant Noël n’est pas garantie.\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"Solo domenica 20 dicembre 2015 anche sugli attuali prezzi promozionali. Valida in tutte le filiali aperte (vedi www.denner.ch), su www.denner-wineshop.ch e nell’app di Denner.**<br />*sono esclusi spumanti, vini frizzanti e Bordeaux Grands Crus 2013. Fino a esaurimento. Non cumulabile con buoni e sconti a fiere del vino e inaugurazioni di nuovi punti vendita. **consegna prima di Natale non garantita.\"\n        }\n    ],\n    \"image\": [\n        {\n            \"locale\": \"de\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/6557432f-2aeb-4440-8405-799b9120727b/20Weine_de.png\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/b0a1bf0e-2b09-4fe8-ba2a-19030d23e67f/20Weine_fr.png\"\n        },\n        {\n            \"locale\": \"it\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/f31c80ee-ecbc-4af8-b972-00e7facabede/20Weine_it.png\"\n        }\n    ],\n    \"link\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"http://denner-wineshop.ch/de\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"http://denner-wineshop.ch/fr\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"http://denner-wineshop.ch/it\"\n        }\n    ]\n}\n"
 						},
 						"description": "Create a new banner"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "portal",
-			"description": "Portal",
-			"item": [
-				{
-					"name": "/users",
-					"request": {
-						"url": "{{portal_url_base}}/users",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							},
-							{
-								"key": "App-Id",
-								"value": "{{portal_header_app_id}}",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"description": "Users"
-					},
-					"response": []
-				},
-				{
-					"name": "/users/{user_id}",
-					"request": {
-						"url": "{{portal_url_base}}/users/44444444-aaaa-4444-aaaa-444444444444",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"description": "List single user"
-					},
-					"response": []
-				},
-				{
-					"name": "/users/{user_id}",
-					"request": {
-						"url": "{{portal_url_base}}/users/44444444-aaaa-4444-aaaa-444444444444",
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
-						},
-						"description": "Update a user"
-					},
-					"response": []
-				},
-				{
-					"name": "/users",
-					"request": {
-						"url": "{{portal_url_base}}/users",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
-						},
-						"description": "Create a new user"
-					},
-					"response": []
-				},
-				{
-					"name": "/roles",
-					"request": {
-						"url": "{{portal_url_base}}/roles",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "{{header_accept}}",
-								"description": ""
-							},
-							{
-								"key": "App-Key",
-								"value": "{{portal_header_app_key}}",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"description": "Roles"
 					},
 					"response": []
 				}
