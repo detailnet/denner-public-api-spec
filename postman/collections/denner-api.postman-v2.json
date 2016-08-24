@@ -3015,7 +3015,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\":\"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\":\"test.jpg\",\n  \"url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/4442244-aaaa-4444-aaaa-444444444444/test.jpg\",\n  \"size\":1234,\n  \"mime_type\":\"image/jpeg\",\n  \"type\":\"a7f3017a-de40-4636-bc3f-6d409bd41be6\",\n  \"languages\":[\"de\",\"fr\"],\n  \"tags\":[],\n  \"reference\":\"Test reference id\",\n  \"description\":\"Decriptrion on\\nlines.\",\n  \"quantity\": 12,\n  \"articles\": [\n      {\n          \"code\": \"000000\"\n      },\n      {\n          \"code\": \"111111\"\n          \n      }\n  ]\n}"
+							"raw": "{\n  \"id\":\"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\":\"test.jpg\",\n  \"purpose\": \"print\",\n  \"url\":\"https://curzio-della-santa.s3-eu-west-1.amazonaws.com/denner-assets/assets/4442244-aaaa-4444-aaaa-444444444444/test.jpg\",\n  \"size\":1234,\n  \"mime_type\":\"image/jpeg\",\n  \"type\":\"a7f3017a-de40-4636-bc3f-6d409bd41be6\",\n  \"languages\":[\"de\",\"fr\"],\n  \"tags\":[],\n  \"reference\":\"Test reference id\",\n  \"description\":\"Decriptrion on\\nlines.\",\n  \"quantity\": 12,\n  \"articles\": [\n      {\n          \"code\": \"000000\"\n      },\n      {\n          \"code\": \"111111\"\n          \n      }\n  ]\n}"
 						},
 						"description": "Create a new asset"
 					},
@@ -3573,6 +3573,96 @@
 							"raw": "{  \n  \"page\": 1,\n  \"page_size\": 5,\n  \"filter\": [  \n    {  \n      \"property\": \"products\",\n      \"operator\": \"in\",\n      \"value\": [  \n        \"3\"\n      ],\n      \"type\": \"array\"\n    }\n  ],\n  \"sort\": [  \n    {  \n      \"property\": \"created_on\",\n      \"direction\": \"asc\"\n    }\n  ]\n}\n"
 						},
 						"description": "Search assets (create a new asset search)"
+					},
+					"response": []
+				},
+				{
+					"name": "/dws-fileconversion fetch pending in requestb.in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var rendererResponses = JSON.parse(postman.getGlobalVariable(\"rendererResponses\") || '{}');\nconsole.log( rendererResponses);\n\nvar doc = new DOMParser().parseFromString(responseBody,'text/html');\nvar iterator = doc.evaluate('//div/@data-id', doc, null, XPathResult.ANY_TYPE, null);\n\ntry {\n  var thisNode = iterator.iterateNext();\n  \n  while (thisNode && thisNode.textContent) {\n    var id = thisNode.textContent,\n        contentResultNode=doc.evaluate('//div[@data-id=\"'+id+'\"]/pre/text()',  doc, null, XPathResult.ANY_TYPE, null),\n        content=JSON.parse(contentResultNode.iterateNext().nodeValue);\n    \n    if (!rendererResponses[id]) {\n        rendererResponses[id] = {\n            status: 'new',\n            content: content\n        };\n        \n        tests[\"Added new response id \"+ id] = true;\n    } else {\n        if(rendererResponses[id].status == 'new') {\n            tests[\"Response id \"+ id + \" already in environment, and ready for submission\"] = false;\n        } else {\n            tests[\"Response id \"+ id + \" already fetched and sent\"] = true;\n        }\n    }\n    \n    thisNode = iterator.iterateNext();\n  }\t\n}\ncatch (e) {\n \n}\n\n//console.log(rendererResponses);\n\npostman.setGlobalVariable(\"rendererResponses\", JSON.stringify(rendererResponses));\n"
+							}
+						}
+					],
+					"request": {
+						"url": "https://requestb.in/1bvbo9m1?inspect",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{assets_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{assets_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Fetch pending renderer requests on requestbin \n(update the id in the url to your own)"
+					},
+					"response": []
+				},
+				{
+					"name": "/dws-fileconversion submit one of requestb.in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// @todo would be better to update the rendererResponses here if response successful (no time for it now)"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": "var rendererResponses = JSON.parse(postman.getGlobalVariable(\"rendererResponses\") || '{}');\r\n\r\n\r\nfor (var reqId in rendererResponses) {\r\n    if(!rendererResponses.hasOwnProperty(reqId)) continue;\r\n     \r\n    if (rendererResponses[reqId].status == 'new') {\r\n        rendererResponses[reqId].status = 'processed';\r\n        postman.setEnvironmentVariable(\"responseToSubmit\", JSON.stringify(rendererResponses[reqId].content));\r\n        \r\n        break;\r\n        \r\n    }\r\n}\r\n\r\npostman.setGlobalVariable(\"rendererResponses\", JSON.stringify(rendererResponses));"
+							}
+						}
+					],
+					"request": {
+						"url": "http://denner-assets.public.web01.detailnet.me/dws-fileconversion/receive-completed-job",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{assets_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{assets_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{responseToSubmit}}"
+						},
+						"description": "Send one completion notifications as fetched from requestbin, execute many times (one per image)"
 					},
 					"response": []
 				}
