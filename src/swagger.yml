@@ -948,6 +948,28 @@ paths:
           schema:
             $ref: '#/definitions/ArticlesResponse'
 
+  /mobile-wines:
+    get:
+      summary: List all wines currently targeted for the Mobile App
+      description: |
+        Use this operation to get a list of all wines targeted for the Mobile App.
+      tags:
+        - articles
+      operationId: listMobileWines
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/FilterParam'
+#        - $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/ArticlesResponse'
+
   /promotion-types:
     get:
       summary: List all promotion types

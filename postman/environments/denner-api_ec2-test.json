@@ -1,102 +1,120 @@
 {
-    "id": "6ab687e9-30ac-5415-8c69-4e44e8a765ae",
-    "name": "denner-api ec2-test",
-    "values": [
-        {
-            "key": "header_accept",
-            "value": "application/json",
-            "type": "text",
-            "name": "header_accept",
-            "enabled": true
-        },
-        {
-            "key": "articles_url_base",
-            "value": "https://denner-articles-test.detailnet.ch/api",
-            "type": "text",
-            "name": "articles_url_base",
-            "enabled": true
-        },
-        {
-            "key": "articles_header_app_id",
-            "value": "{{denner_articles_app_id}}",
-            "type": "text",
-            "name": "articles_header_app_id",
-            "enabled": true
-        },
-        {
-            "key": "articles_header_app_key",
-            "value": "{{denner_articles_app_key}}",
-            "type": "text",
-            "name": "articles_header_app_key",
-            "enabled": true
-        },
-        {
-            "key": "assets_url_base",
-            "value": "https://denner-assets-test.detailnet.ch/api",
-            "type": "text",
-            "name": "assets_url_base",
-            "enabled": true
-        },
-        {
-            "key": "assets_header_app_id",
-            "value": "{{denner_assets_app_id}}",
-            "type": "text",
-            "name": "assets_header_app_id",
-            "enabled": true
-        },
-        {
-            "key": "assets_header_app_key",
-            "value": "{{denner_assets_app_key}}",
-            "type": "text",
-            "name": "assets_header_app_key",
-            "enabled": true
-        },
-        {
-            "key": "advertising_url_base",
-            "value": "https://denner-advertising-test.detailnet.ch/api",
-            "type": "text",
-            "name": "advertising_url_base",
-            "enabled": true
-        },
-        {
-            "key": "advertising_header_app_id",
-            "value": "{{denner_advertising_app_id}}",
-            "type": "text",
-            "name": "advertising_header_app_id",
-            "enabled": true
-        },
-        {
-            "key": "advertising_header_app_key",
-            "value": "{{denner_advertising_app_key}}",
-            "type": "text",
-            "name": "advertising_header_app_key",
-            "enabled": true
-        },
-        {
-            "key": "stores_url_base",
-            "value": "https://denner-stores-test.detailnet.ch/api",
-            "type": "text",
-            "name": "stores_url_base",
-            "enabled": true
-        },
-        {
-            "key": "stores_header_app_id",
-            "value": "{{denner_stores_app_id}}",
-            "type": "text",
-            "name": "stores_header_app_id",
-            "enabled": true
-        },
-        {
-            "key": "stores_header_app_key",
-            "value": "{{denner_stores_app_key}}",
-            "type": "text",
-            "name": "stores_header_app_key",
-            "enabled": true
-        }
-    ],
-    "team": null,
-    "timestamp": 1463572060253,
-    "synced": false,
-    "syncedFilename": "",
-    "isDeleted": false
+	"id": "31c6b55b-14a3-2a03-871e-bc0af407f1be",
+	"name": "denner-api ec2-test",
+	"values": [
+		{
+			"key": "header_accept",
+			"value": "application/json",
+			"type": "text",
+			"name": "header_accept",
+			"enabled": true
+		},
+		{
+			"key": "articles_url_base",
+			"value": "https://denner-articles-test.detailnet.ch/api",
+			"type": "text",
+			"name": "articles_url_base",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_app_id",
+			"value": "{{denner_articles_app_id}}",
+			"type": "text",
+			"name": "articles_header_app_id",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_app_key",
+			"value": "{{denner_articles_app_key}}",
+			"type": "text",
+			"name": "articles_header_app_key",
+			"enabled": true
+		},
+		{
+			"key": "assets_url_base",
+			"value": "https://denner-assets-test.detailnet.ch/api",
+			"type": "text",
+			"name": "assets_url_base",
+			"enabled": true
+		},
+		{
+			"key": "assets_header_app_id",
+			"value": "{{denner_assets_app_id}}",
+			"type": "text",
+			"name": "assets_header_app_id",
+			"enabled": true
+		},
+		{
+			"key": "assets_header_app_key",
+			"value": "{{denner_assets_app_key}}",
+			"type": "text",
+			"name": "assets_header_app_key",
+			"enabled": true
+		},
+		{
+			"key": "advertising_url_base",
+			"value": "https://denner-advertising-test.detailnet.ch/api",
+			"type": "text",
+			"name": "advertising_url_base",
+			"enabled": true
+		},
+		{
+			"key": "advertising_header_app_id",
+			"value": "{{denner_advertising_app_id}}",
+			"type": "text",
+			"name": "advertising_header_app_id",
+			"enabled": true
+		},
+		{
+			"key": "advertising_header_app_key",
+			"value": "{{denner_advertising_app_key}}",
+			"type": "text",
+			"name": "advertising_header_app_key",
+			"enabled": true
+		},
+		{
+			"key": "stores_url_base",
+			"value": "https://denner-stores-test.detailnet.ch/api",
+			"type": "text",
+			"name": "stores_url_base",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_app_id",
+			"value": "{{denner_stores_app_id}}",
+			"type": "text",
+			"name": "stores_header_app_id",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_app_key",
+			"value": "{{denner_stores_app_key}}",
+			"type": "text",
+			"name": "stores_header_app_key",
+			"enabled": true
+		},
+		{
+			"key": "portal_url_base",
+			"value": "https://denner-portal-test.detailnet.ch/api",
+			"type": "text",
+			"enabled": true
+		},
+		{
+			"key": "portal_header_app_id",
+			"value": "{{denner_portal_app_id}}",
+			"type": "text",
+			"enabled": true
+		},
+		{
+			"key": "portal_header_app_key",
+			"value": "{{denner_portal_app_key}}",
+			"type": "text",
+			"enabled": true
+		}
+	],
+	"timestamp": 1470902328416,
+	"synced": false,
+	"syncedFilename": "",
+	"team": null,
+	"isDeleted": false
 }

@@ -1,102 +1,126 @@
 {
-    "id": "7ee7090e-b8e6-45c4-827b-5fffc729c0dd",
-    "name": "denner-api web01",
-    "values": [
-        {
-            "key": "header_accept",
-            "value": "application/json",
-            "type": "text",
-            "name": "header_accept",
-            "enabled": true
-        },
-        {
-            "key": "articles_url_base",
-            "value": "http://denner-articles.public.web01.detailnet.me/api",
-            "type": "text",
-            "name": "articles_url_base",
-            "enabled": true
-        },
-        {
-            "key": "articles_header_app_id",
-            "value": "{{denner_articles_development_app_id}}",
-            "type": "text",
-            "name": "articles_header_app_id",
-            "enabled": true
-        },
-        {
-            "key": "articles_header_app_key",
-            "value": "{{denner_articles_development_app_key}}",
-            "type": "text",
-            "name": "articles_header_app_key",
-            "enabled": true
-        },
-        {
-            "key": "assets_url_base",
-            "value": "http://denner-assets.public.web01.detailnet.me/api",
-            "type": "text",
-            "name": "assets_url_base",
-            "enabled": true
-        },
-        {
-            "key": "assets_header_app_id",
-            "value": "{{denner_assets_development_app_id}}",
-            "type": "text",
-            "name": "assets_header_app_id",
-            "enabled": true
-        },
-        {
-            "key": "assets_header_app_key",
-            "value": "{{denner_assets_development_app_key}}",
-            "type": "text",
-            "name": "assets_header_app_key",
-            "enabled": true
-        },
-        {
-            "key": "advertising_url_base",
-            "value": "http://denner-advertising.public.web01.detailnet.me/api",
-            "type": "text",
-            "name": "advertising_url_base",
-            "enabled": true
-        },
-        {
-            "key": "advertising_header_app_id",
-            "value": "{{denner_advertising_development_app_id}}",
-            "type": "text",
-            "name": "advertising_header_app_id",
-            "enabled": true
-        },
-        {
-            "key": "advertising_header_app_key",
-            "value": "{{denner_advertising_development_app_key}}",
-            "type": "text",
-            "name": "advertising_header_app_key",
-            "enabled": true
-        },
-        {
-            "key": "stores_url_base",
-            "value": "http://denner-stores.public.web01.detailnet.me/api",
-            "type": "text",
-            "name": "stores_url_base",
-            "enabled": true
-        },
-        {
-            "key": "stores_header_app_id",
-            "value": "{{denner_stores_development_app_id}}",
-            "type": "text",
-            "name": "stores_header_app_id",
-            "enabled": true
-        },
-        {
-            "key": "stores_header_app_key",
-            "value": "{{denner_stores_development_app_key}}",
-            "type": "text",
-            "name": "stores_header_app_key",
-            "enabled": true
-        }
-    ],
-    "team": null,
-    "timestamp": 1463572060253,
-    "synced": false,
-    "syncedFilename": "",
-    "isDeleted": false
+	"id": "7837a379-1275-1beb-0dde-abc185bd57e7",
+	"name": "denner-api web01",
+	"values": [
+		{
+			"key": "header_accept",
+			"value": "application/json",
+			"type": "text",
+			"name": "header_accept",
+			"enabled": true
+		},
+		{
+			"key": "articles_url_base",
+			"value": "http://denner-articles.public.web01.detailnet.me/api",
+			"type": "text",
+			"name": "articles_url_base",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_app_id",
+			"value": "{{denner_articles_development_app_id}}",
+			"type": "text",
+			"name": "articles_header_app_id",
+			"enabled": true
+		},
+		{
+			"key": "articles_header_app_key",
+			"value": "{{denner_articles_development_app_key}}",
+			"type": "text",
+			"name": "articles_header_app_key",
+			"enabled": true
+		},
+		{
+			"key": "assets_url_base",
+			"value": "http://denner-assets.public.web01.detailnet.me/api",
+			"type": "text",
+			"name": "assets_url_base",
+			"enabled": true
+		},
+		{
+			"key": "assets_header_app_id",
+			"value": "{{denner_assets_development_app_id}}",
+			"type": "text",
+			"name": "assets_header_app_id",
+			"enabled": true
+		},
+		{
+			"key": "assets_header_app_key",
+			"value": "{{denner_assets_development_app_key}}",
+			"type": "text",
+			"name": "assets_header_app_key",
+			"enabled": true
+		},
+		{
+			"key": "advertising_url_base",
+			"value": "http://denner-advertising.public.web01.detailnet.me/api",
+			"type": "text",
+			"name": "advertising_url_base",
+			"enabled": true
+		},
+		{
+			"key": "advertising_header_app_id",
+			"value": "{{denner_advertising_development_app_id}}",
+			"type": "text",
+			"name": "advertising_header_app_id",
+			"enabled": true
+		},
+		{
+			"key": "advertising_header_app_key",
+			"value": "{{denner_advertising_development_app_key}}",
+			"type": "text",
+			"name": "advertising_header_app_key",
+			"enabled": true
+		},
+		{
+			"key": "stores_url_base",
+			"value": "http://denner-stores.public.web01.detailnet.me/api",
+			"type": "text",
+			"name": "stores_url_base",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_app_id",
+			"value": "{{denner_stores_development_app_id}}",
+			"type": "text",
+			"name": "stores_header_app_id",
+			"enabled": true
+		},
+		{
+			"key": "stores_header_app_key",
+			"value": "{{denner_stores_development_app_key}}",
+			"type": "text",
+			"name": "stores_header_app_key",
+			"enabled": true
+		},
+		{
+			"key": "current_week",
+			"type": "text",
+			"value": "2016-32",
+			"enabled": true
+		},
+		{
+			"key": "portal_url_base",
+			"value": "http://denner-portal.public.web01.detailnet.me/api",
+			"type": "text",
+			"enabled": true
+		},
+		{
+			"key": "portal_header_app_id",
+			"value": "{{denner_portal_development_app_id}}",
+			"type": "text",
+			"enabled": true
+		},
+		{
+			"key": "portal_header_app_key",
+			"value": "{{denner_portal_development_app_key}}",
+			"type": "text",
+			"enabled": true
+		}
+	],
+	"timestamp": 1470894775969,
+	"synced": false,
+	"syncedFilename": "",
+	"team": null,
+	"isDeleted": false
 }

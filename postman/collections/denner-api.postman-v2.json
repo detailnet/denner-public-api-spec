@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "denner-api",
-		"_postman_id": "c784244f-944f-8f46-9184-67c93fbcc399",
+		"_postman_id": "93f4df8f-34bb-3d46-28ab-94480f80c719",
 		"description": "Denner 2.0 API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -1093,6 +1093,366 @@
 			]
 		},
 		{
+			"name": "advertising/print",
+			"description": "Advertising: Print publication",
+			"item": [
+				{
+					"name": "/print-publications",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List print publications (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{year}-{week}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 \n// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js\n(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);\n\npostman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+							}
+						}
+					],
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{current_week}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List print publications (Print-Werbemittel) of specific week"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\": \"Test\",\n  \"year\": 2016,\n  \"week\": 30,\n  \"sort_index\": 1,\n  \"created_by\": \"Vorname Nachname\",\n  \"languages\": [\n    \"de\",\n    \"fr\",\n    \"it\"\n  ],\n  \"layout\": \"positioning\"\n}"
+						},
+						"description": "Create a new print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List single print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"year\": 2016,\n  \"week\": 31,\n  \"sort_index\": 2,\n  \"status\": \"complete\"\n}"
+						},
+						"description": "Update a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Delete print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a print publication's articles (Artikel eines Print-Werbemittels)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n}"
+						},
+						"description": "Add a new article (Artikel) to a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles/{article_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a single article (Artikel) for a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles/{article_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Delete an article (Artikel) from a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-layouts",
+					"request": {
+						"url": "{{advertising_url_base}}/print-layouts",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List print layouts"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "advertising/screen",
 			"description": "Advertising: Screen publication",
 			"item": [
@@ -1858,6 +2218,66 @@
 							"formdata": []
 						},
 						"description": "Fetch wine targeted for the Wineshop"
+					},
+					"response": []
+				},
+				{
+					"name": "/mobile-wines",
+					"request": {
+						"url": "{{articles_url_base}}/mobile-wines",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List all wines currently targeted for the Mobile App"
+					},
+					"response": []
+				},
+				{
+					"name": "/mobile-wines/{article_id}",
+					"request": {
+						"url": "{{articles_url_base}}/mobile-wines/050006",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Fetch wine targeted for the Mobile App"
 					},
 					"response": []
 				},
@@ -3359,6 +3779,152 @@
 							"raw": "{\n    \"name\": \"20% auf alle Weine\",\n    \"closable\": true,\n    \"active\": true,\n    \"position\": \"top\",\n    \"display_from\": \"2016-01-01\",\n    \"display_to\": \"2016-12-31\",\n    \"locales\": [\n        \"de\",\n        \"fr\",\n        \"it\"\n    ],\n    \"types\": [\n        \"wine\"\n    ],\n    \"platforms\": [\n        \"iOS\",\n        \"Android\",\n        \"Windows\"\n    ],\n    \"title\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"20% auf alle Weine\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"20% sur tous les vins\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"20% su tutti i vini\"\n        }\n    ],\n    \"html\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"Nur am Sonntag, 20. Dezember 2015 auch auf bestehende Aktionspreise. Gültig in allen geöffneten Filialen (siehe www.denner.ch), unter www.denner-wineshop.ch und in der Denner App.**<br />*ausgenommen Schaumweine und Bordeaux Grands Crus 2013. Solange Vorrat. Nicht mit Gutscheinen, Bons und Rabatten bei Neueröffnungen und Weinmessen kumulierbar. **die Lieferung vor Weihnachten ist nicht garantiert.\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"Seulement le dimanche 20 décembre 2015, valable également sur les prix promotionnels. Valable dans toutes les succursales ouvertes (voir www.denner.ch), sur www.denner-wineshop.ch et dans l’appli Denner.**<br />*excepté les vins mousseux et Bordeaux Grands Crus 2013. Jusqu’à épuisement des stocks. Non cumulable avec des bons et des rabais accordés aux inaugurations et aux foires aux vins. **la livraison avant Noël n’est pas garantie.\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"Solo domenica 20 dicembre 2015 anche sugli attuali prezzi promozionali. Valida in tutte le filiali aperte (vedi www.denner.ch), su www.denner-wineshop.ch e nell’app di Denner.**<br />*sono esclusi spumanti, vini frizzanti e Bordeaux Grands Crus 2013. Fino a esaurimento. Non cumulabile con buoni e sconti a fiere del vino e inaugurazioni di nuovi punti vendita. **consegna prima di Natale non garantita.\"\n        }\n    ],\n    \"image\": [\n        {\n            \"locale\": \"de\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/6557432f-2aeb-4440-8405-799b9120727b/20Weine_de.png\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/b0a1bf0e-2b09-4fe8-ba2a-19030d23e67f/20Weine_fr.png\"\n        },\n        {\n            \"locale\": \"it\",\n            \"image_url\": \"https://denner-assets.s3-eu-west-1.amazonaws.com/assets/f31c80ee-ecbc-4af8-b972-00e7facabede/20Weine_it.png\"\n        }\n    ],\n    \"link\": [\n        {\n            \"locale\": \"de\",\n            \"value\": \"http://denner-wineshop.ch/de\"\n        },\n        {\n            \"locale\": \"fr\",\n            \"value\": \"http://denner-wineshop.ch/fr\"\n        },\n        {\n            \"locale\": \"it\",\n            \"value\": \"http://denner-wineshop.ch/it\"\n        }\n    ]\n}\n"
 						},
 						"description": "Create a new banner"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "portal",
+			"description": "Portal",
+			"item": [
+				{
+					"name": "/users",
+					"request": {
+						"url": "{{portal_url_base}}/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "App-Id",
+								"value": "{{portal_header_app_id}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Users"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{user_id}",
+					"request": {
+						"url": "{{portal_url_base}}/users/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List single user"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{user_id}",
+					"request": {
+						"url": "{{portal_url_base}}/users/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
+						},
+						"description": "Update a user"
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"url": "{{portal_url_base}}/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
+						},
+						"description": "Create a new user"
+					},
+					"response": []
+				},
+				{
+					"name": "/roles",
+					"request": {
+						"url": "{{portal_url_base}}/roles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Roles"
 					},
 					"response": []
 				}
