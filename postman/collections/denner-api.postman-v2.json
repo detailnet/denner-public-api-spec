@@ -2767,6 +2767,36 @@
 			"description": "Assets",
 			"item": [
 				{
+					"name": "/purposes",
+					"request": {
+						"url": "{{assets_url_base}}/languages?page_size=-1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{assets_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{assets_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List purposes"
+					},
+					"response": []
+				},
+				{
 					"name": "/languages",
 					"request": {
 						"url": "{{assets_url_base}}/languages?page_size=-1",
