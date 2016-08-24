@@ -3915,6 +3915,152 @@
 			]
 		},
 		{
+			"name": "portal",
+			"description": "Portal",
+			"item": [
+				{
+					"name": "/users",
+					"request": {
+						"url": "{{portal_url_base}}/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "App-Id",
+								"value": "{{portal_header_app_id}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Users"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{user_id}",
+					"request": {
+						"url": "{{portal_url_base}}/users/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List single user"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{user_id}",
+					"request": {
+						"url": "{{portal_url_base}}/users/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
+						},
+						"description": "Update a user"
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"url": "{{portal_url_base}}/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"test@detailag.ch\",\n    \"username\" : \"hans\",\n    \"state\" : 1,\n    \"firstname\" : \"Hans\",\n    \"lastname\" : \"Test\",\n    \"display_name\" : \"Hans Test\",\n    \"roles\" : [ \n        \"ee5cbf52-91cf-4ef4-a5ef-ee7780ae81d5\"\n    ]\n}"
+						},
+						"description": "Create a new user"
+					},
+					"response": []
+				},
+				{
+					"name": "/roles",
+					"request": {
+						"url": "{{portal_url_base}}/roles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{portal_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Roles"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "stores",
 			"description": "Stores",
 			"item": [
