@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "denner-api",
-		"_postman_id": "035e2be4-e7f2-24f6-1ae1-c20fa46144f0",
+		"_postman_id": "89189644-37fe-c47a-027a-f972eb4c6b00",
 		"description": "Denner 2.0 API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -3405,7 +3405,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\":\"New collection with auto deletion date\",\n  \"auto_deletion_date\":\"2016-08-10\",\n  \"assets\":[\"44444444-aaaa-4444-aaaa-444444444444\"]\n}"
+							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\":\"New collection with auto deletion date\",\n  \"delete_on\":\"2016-08-10\",\n  \"assets\":[\"44444444-aaaa-4444-aaaa-444444444444\"]\n}"
 						},
 						"description": "Create a new asset collection"
 					},
