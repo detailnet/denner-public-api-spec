@@ -7,10 +7,7 @@
             "pages": [
                 {
                     "name": "Seite 1",
-                    "range": {
-                        "from": 1,
-                        "to": 1
-                    },
+                    "length": 1,
                     "template": {
                         "id": "dw-front",
                         "name": "DW-Frontseite",
@@ -25,10 +22,7 @@
                 },
                 {
                     "name": "Seiten 2-3",
-                    "range": {
-                        "from": 2,
-                        "to": 3
-                    },
+                    "length": 2,
                     "template": {
                         "id": "dw-double-article",
                         "name": "DW-Doppelseite (Artikel)",
@@ -43,10 +37,7 @@
                 },
                 {
                     "name": "Seite 4",
-                    "range": {
-                        "from": 1,
-                        "to": 1
-                    },
+                    "length": 1,
                     "template": {
                         "id": "dw-back-weekend",
                         "name": "DW-Rückseite (Wochenend-Knaller)",

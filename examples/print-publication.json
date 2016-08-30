@@ -20,10 +20,7 @@
         {
             "id": "76e6c305-556e-4178-83af-5617fc6f612a",
             "name": "Seiten 2-3",
-            "range": {
-                "from": 2,
-                "to": 3
-            },
+            "length": 2,
             "template": {
                 "id": "dw-double-article",
                 "name": "DW-Doppelseite (Artikel)",
