@@ -1,35 +1,35 @@
 {
     "print_formats": [
         {
-            "id": "dw-front",
-            "name": "DW-Frontseite",
-            "width": 210,
-            "height": 290,
-            "sort_index": 10,
-            "templates": [
-                {
-                    "id": "dw-front",
-                    "name": "DW-Frontseite",
-                    "short_name": "Standard"
-                }
-            ]
-        },
-        {
             "id": "dw-single",
             "name": "DW-Einzelseite",
             "width": 210,
             "height": 290,
-            "sort_index": 20,
+            "sort_index": 1000,
             "templates": [
+                {
+                    "id": "dw-front",
+                    "name": "DW-Frontseite",
+                    "short_name": "Frontseite",
+                    "sort_index": 1010
+                },
                 {
                     "id": "dw-single-article",
                     "name": "DW-Einzelseite (Artikel)",
-                    "short_name": "Artikelseite"
+                    "short_name": "Artikelseite",
+                    "sort_index": 1020
                 },
                 {
                     "id": "dw-single-wine",
                     "name": "DW-Einzelseite (Wein)",
-                    "short_name": "Weinseite"
+                    "short_name": "Weinseite",
+                    "sort_index": 1030
+                },
+                {
+                    "id": "dw-back-weekend",
+                    "name": "DW-Rückseite (Weekend-Knaller)",
+                    "short_name": "Rückseite (Weekend-Knaller)",
+                    "sort_index": 1040
                 }
             ]
         },
@@ -38,31 +38,19 @@
             "name": "DW-Doppelseite",
             "width": 420,
             "height": 290,
-            "sort_index": 30,
+            "sort_index": 1100,
             "templates": [
                 {
                     "id": "dw-double-article",
                     "name": "DW-Doppelseite (Artikel)",
-                    "short_name": "Artikelseite"
+                    "short_name": "Artikelseite",
+                    "sort_index": 1110
                 },
                 {
                     "id": "dw-single-wine",
                     "name": "DW-Doppelseite (Wein)",
-                    "short_name": "Weinseite"
-                }
-            ]
-        },
-        {
-            "id": "dw-back",
-            "name": "DW-Rückseite",
-            "width": 210,
-            "height": 290,
-            "sort_index": 40,
-            "templates": [
-                {
-                    "id": "dw-back-weekend",
-                    "name": "DW-Rückseite (Weekend-Knaller)",
-                    "short_name": "Weekend-Knaller"
+                    "short_name": "Weinseite",
+                    "sort_index": 1120
                 }
             ]
         },
@@ -71,22 +59,25 @@
             "name": "F10-Plakat",
             "width": 800,
             "height": 1100,
-            "sort_index": 50,
+            "sort_index": 2000,
             "templates": [
                 {
                     "id": "f10-article",
                     "name": "F10-Plakat (Artikel)",
-                    "short_name": "Artikel"
+                    "short_name": "Artikel",
+                    "sort_index": 2010
                 },
                 {
                     "id": "f10-wine",
                     "name": "F10-Plakat (Wein)",
-                    "short_name": "Wein"
+                    "short_name": "Wein",
+                    "sort_index": 2020
                 },
                 {
                     "id": "f10-weekend",
                     "name": "F10-Plakat (Wochenend-Knaller)",
-                    "short_name": "Wochenend-Knaller"
+                    "short_name": "Wochenend-Knaller",
+                    "sort_index": 2030
                 }
             ]
         }

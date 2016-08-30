@@ -11,10 +11,10 @@
                     "template": {
                         "id": "dw-front",
                         "name": "DW-Frontseite",
-                        "short_name": "Standard",
+                        "short_name": "Frontseite",
                         "format": {
-                            "id": "dw-front",
-                            "name": "DW-Frontseite",
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
                             "width": 210,
                             "height": 290
                         }
@@ -41,10 +41,10 @@
                     "template": {
                         "id": "dw-back-weekend",
                         "name": "DW-Rückseite (Wochenend-Knaller)",
-                        "short_name": "Wochenend-Knaller",
+                        "short_name": "Rückseite (Weekend-Knaller)",
                         "format": {
-                            "id": "dw-back",
-                            "name": "DW-Rückseite",
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
                             "width": 210,
                             "height": 290
                         }
