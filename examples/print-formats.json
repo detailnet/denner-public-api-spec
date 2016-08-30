@@ -1,6 +1,19 @@
 {
     "print_formats": [
         {
+            "id": "dw-front",
+            "name": "DW-Frontseite",
+            "width": 210,
+            "height": 290,
+            "templates": [
+                {
+                    "id": "dw-front",
+                    "name": "DW-Frontseite",
+                    "short_name": "Standard"
+                }
+            ]
+        },
+        {
             "id": "dw-single",
             "name": "DW-Einzelseite",
             "width": 210,
@@ -33,6 +46,19 @@
                     "id": "dw-single-wine",
                     "name": "DW-Doppelseite (Wein)",
                     "short_name": "Weinseite"
+                }
+            ]
+        },
+        {
+            "id": "dw-back",
+            "name": "DW-Rückseite",
+            "width": 210,
+            "height": 290,
+            "templates": [
+                {
+                    "id": "dw-back-weekend",
+                    "name": "DW-Rückseite (Weekend-Knaller)",
+                    "short_name": "Weekend-Knaller"
                 }
             ]
         },
