@@ -1,0 +1,63 @@
+{
+    "print_formats": [
+        {
+            "id": "dw-single",
+            "name": "DW-Einzelseite",
+            "width": 210,
+            "height": 290,
+            "templates": [
+                {
+                    "id": "dw-single-article",
+                    "name": "DW-Einzelseite (Artikel)",
+                    "short_name": "Artikelseite"
+                },
+                {
+                    "id": "dw-single-wine",
+                    "name": "DW-Einzelseite (Wein)",
+                    "short_name": "Weinseite"
+                }
+            ]
+        },
+        {
+            "id": "dw-double",
+            "name": "DW-Doppelseite",
+            "width": 420,
+            "height": 290,
+            "templates": [
+                {
+                    "id": "dw-double-article",
+                    "name": "DW-Doppelseite (Artikel)",
+                    "short_name": "Artikelseite"
+                },
+                {
+                    "id": "dw-single-wine",
+                    "name": "DW-Doppelseite (Wein)",
+                    "short_name": "Weinseite"
+                }
+            ]
+        },
+        {
+            "id": "f10",
+            "name": "F10-Plakat",
+            "width": 800,
+            "height": 1100,
+            "templates": [
+                {
+                    "id": "f10-article",
+                    "name": "F10-Plakat (Artikel)",
+                    "short_name": "Artikel"
+                },
+                {
+                    "id": "f10-wine",
+                    "name": "F10-Plakat (Wein)",
+                    "short_name": "Wein"
+                },
+                {
+                    "id": "f10-weekend",
+                    "name": "F10-Plakat (Wochenend-Knaller)",
+                    "short_name": "Wochenend-Knaller"
+                }
+            ]
+        }
+    ]
+}
