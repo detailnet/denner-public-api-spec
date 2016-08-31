@@ -10,25 +10,25 @@
                 {
                     "id": "dw-front",
                     "name": "DW-Frontseite",
-                    "short_name": "Frontseite",
+                    "label": "Frontseite",
                     "sort_index": 1010
                 },
                 {
                     "id": "dw-single-article",
                     "name": "DW-Einzelseite (Artikel)",
-                    "short_name": "Artikelseite",
+                    "label": "Artikelseite",
                     "sort_index": 1020
                 },
                 {
                     "id": "dw-single-wine",
                     "name": "DW-Einzelseite (Wein)",
-                    "short_name": "Weinseite",
+                    "label": "Weinseite",
                     "sort_index": 1030
                 },
                 {
                     "id": "dw-back-weekend",
                     "name": "DW-Rückseite (Weekend-Knaller)",
-                    "short_name": "Rückseite (Weekend-Knaller)",
+                    "label": "Rückseite (Weekend-Knaller)",
                     "sort_index": 1040
                 }
             ]
@@ -43,13 +43,13 @@
                 {
                     "id": "dw-double-article",
                     "name": "DW-Doppelseite (Artikel)",
-                    "short_name": "Artikelseite",
+                    "label": "Artikelseite",
                     "sort_index": 1110
                 },
                 {
                     "id": "dw-single-wine",
                     "name": "DW-Doppelseite (Wein)",
-                    "short_name": "Weinseite",
+                    "label": "Weinseite",
                     "sort_index": 1120
                 }
             ]
@@ -64,19 +64,19 @@
                 {
                     "id": "f10-article",
                     "name": "F10-Plakat (Artikel)",
-                    "short_name": "Artikel",
+                    "label": "Artikel",
                     "sort_index": 2010
                 },
                 {
                     "id": "f10-wine",
                     "name": "F10-Plakat (Wein)",
-                    "short_name": "Wein",
+                    "label": "Wein",
                     "sort_index": 2020
                 },
                 {
                     "id": "f10-weekend",
                     "name": "F10-Plakat (Wochenend-Knaller)",
-                    "short_name": "Wochenend-Knaller",
+                    "label": "Wochenend-Knaller",
                     "sort_index": 2030
                 }
             ]

@@ -11,7 +11,7 @@
                     "template": {
                         "id": "dw-front",
                         "name": "DW-Frontseite",
-                        "short_name": "Frontseite",
+                        "label": "Frontseite",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -26,7 +26,7 @@
                     "template": {
                         "id": "dw-double-article",
                         "name": "DW-Doppelseite (Artikel)",
-                        "short_name": "Artikelseite",
+                        "label": "Artikelseite",
                         "format": {
                             "id": "dw-double",
                             "name": "DW-Doppelseite",
@@ -41,7 +41,7 @@
                     "template": {
                         "id": "dw-back-weekend",
                         "name": "DW-Rückseite (Wochenend-Knaller)",
-                        "short_name": "Rückseite (Weekend-Knaller)",
+                        "label": "Rückseite (Weekend-Knaller)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
