@@ -24,8 +24,8 @@
                     "name": "Seiten 2-3",
                     "length": 2,
                     "template": {
-                        "id": "dw-double-article",
-                        "name": "DW-Doppelseite (Artikel)",
+                        "id": "dw-article-double",
+                        "name": "DW-Artikelseite (Doppelseite)",
                         "label": "Artikelseite",
                         "format": {
                             "id": "dw-double",
@@ -76,9 +76,9 @@
                     "name": "Seite 2",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-left-editorial",
-                        "name": "DW-Einzelseite Redaktion (Links)",
-                        "label": "Redaktion (Links)",
+                        "id": "dw-editorial-left",
+                        "name": "DW-Redaktionsseite (links)",
+                        "label": "Redaktionsseite (links)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -91,9 +91,9 @@
                     "name": "Seite 3",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-right",
-                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
-                        "label": "Artikelsiete (Rechts)",
+                        "id": "dw-article-right",
+                        "name": "DW-Artikelseite (rechts)",
+                        "label": "Artikelseite (rechts)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -106,9 +106,9 @@
                     "name": "Seite 4",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-left-advert",
-                        "name": "DW-Einzelseite Inserat (Links)",
-                        "label": "Inserat (Links)",
+                        "id": "dw-advert-left",
+                        "name": "DW-Inserat (links)",
+                        "label": "Inserat (links)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -121,9 +121,9 @@
                     "name": "Seite 5",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-right",
-                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
-                        "label": "Artikelsiete (Rechts)",
+                        "id": "dw-article-right",
+                        "name": "DW-Artikelseite (rechts)",
+                        "label": "Artikelseite (rechts)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -136,8 +136,8 @@
                     "name": "Seiten 6-7",
                     "length": 2,
                     "template": {
-                        "id": "dw-double-article",
-                        "name": "DW-Doppelseite (Artikel)",
+                        "id": "dw-article-double",
+                        "name": "DW-Artikelseite (Doppelseite)",
                         "label": "Artikelseite",
                         "format": {
                             "id": "dw-double",
@@ -151,9 +151,9 @@
                     "name": "Seit 8",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-left-advert",
-                        "name": "DW-Einzelseite Inserat (Links)",
-                        "label": "Inserat (Links)",
+                        "id": "dw-advert-left",
+                        "name": "DW-Inserat (links)",
+                        "label": "Inserat (links)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -166,9 +166,9 @@
                     "name": "Seite 9",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-right",
-                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
-                        "label": "Artikelsiete (Rechts)",
+                        "id": "dw-article-right",
+                        "name": "DW-Artikelseite (rechts)",
+                        "label": "Artikelseite (rechts)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -181,9 +181,9 @@
                     "name": "Seite 10",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-left-advert",
-                        "name": "DW-Einzelseite Inserat (Links)",
-                        "label": "Inserat (Links)",
+                        "id": "dw-advert-left",
+                        "name": "DW-Inserat (links)",
+                        "label": "Inserat (links)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -196,9 +196,9 @@
                     "name": "Seite 11",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-right",
-                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
-                        "label": "Artikelsiete (Rechts)",
+                        "id": "dw-article-right",
+                        "name": "DW-Artikelseite (rechts)",
+                        "label": "Artikelseite (rechts)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -211,9 +211,9 @@
                     "name": "Seite 12",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-left-advert",
-                        "name": "DW-Einzelseite Inserat (Links)",
-                        "label": "Inserat (Links)",
+                        "id": "dw-advert-left",
+                        "name": "DW-Inserat (links)",
+                        "label": "Inserat (links)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -226,9 +226,9 @@
                     "name": "Seite 13",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-right",
-                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
-                        "label": "Artikelsiete (Rechts)",
+                        "id": "dw-article-right",
+                        "name": "DW-Artikelseite (rechts)",
+                        "label": "Artikelseite (rechts)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -241,9 +241,9 @@
                     "name": "Seite 14",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-left-advert",
-                        "name": "DW-Einzelseite Inserat (Links)",
-                        "label": "Inserat (Links)",
+                        "id": "dw-advert-left",
+                        "name": "DW-Inserat (links)",
+                        "label": "Inserat (links)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -256,9 +256,9 @@
                     "name": "Seite 15",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-right",
-                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
-                        "label": "Artikelsiete (Rechts)",
+                        "id": "dw-article-right",
+                        "name": "DW-Artikelseite (rechts)",
+                        "label": "Artikelseite (rechts)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -271,8 +271,8 @@
                     "name": "Seiten 16-17",
                     "length": 2,
                     "template": {
-                        "id": "dw-double-article",
-                        "name": "DW-Doppelseite (Artikel)",
+                        "id": "dw-article-double",
+                        "name": "DW-Artikelseite (Doppelseite)",
                         "label": "Artikelseite",
                         "format": {
                             "id": "dw-double",
@@ -286,9 +286,9 @@
                     "name": "Seite 18",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-left-advert",
-                        "name": "DW-Einzelseite Inserat (Links)",
-                        "label": "Inserat (Links)",
+                        "id": "dw-advert-left",
+                        "name": "DW-Inserat (links)",
+                        "label": "Inserat (links)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
@@ -301,9 +301,9 @@
                     "name": "Seite 19",
                     "length": 1,
                     "template": {
-                        "id": "dw-single-right",
-                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
-                        "label": "Artikelsiete (Rechts)",
+                        "id": "dw-article-right",
+                        "name": "DW-Artikelseite (rechts)",
+                        "label": "Artikelseite (rechts)",
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
