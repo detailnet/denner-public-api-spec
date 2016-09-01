@@ -14,22 +14,28 @@
                     "sort_index": 1010
                 },
                 {
-                    "id": "dw-single-article",
-                    "name": "DW-Einzelseite (Artikel)",
-                    "label": "Artikelseite",
+                    "id": "dw-advert-left",
+                    "name": "DW-Inserat (links)",
+                    "label": "Inserat (links)",
                     "sort_index": 1020
                 },
                 {
-                    "id": "dw-single-wine",
-                    "name": "DW-Einzelseite (Wein)",
-                    "label": "Weinseite",
+                    "id": "dw-editorial-left",
+                    "name": "DW-Redaktionsseite (links)",
+                    "label": "Redaktionsseite (links)",
                     "sort_index": 1030
+                },
+                {
+                    "id": "dw-article-right",
+                    "name": "DW-Artikelseite (rechts)",
+                    "label": "Artikelseite (rechts)",
+                    "sort_index": 1040
                 },
                 {
                     "id": "dw-back-weekend",
                     "name": "DW-Rückseite (Weekend-Knaller)",
                     "label": "Rückseite (Weekend-Knaller)",
-                    "sort_index": 1040
+                    "sort_index": 1050
                 }
             ]
         },
@@ -41,16 +47,10 @@
             "sort_index": 1100,
             "templates": [
                 {
-                    "id": "dw-double-article",
-                    "name": "DW-Doppelseite (Artikel)",
+                    "id": "dw-article-double",
+                    "name": "DW-Artikelseite (Doppelseite)",
                     "label": "Artikelseite",
                     "sort_index": 1110
-                },
-                {
-                    "id": "dw-single-wine",
-                    "name": "DW-Doppelseite (Wein)",
-                    "label": "Weinseite",
-                    "sort_index": 1120
                 }
             ]
         },
