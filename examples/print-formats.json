@@ -14,22 +14,28 @@
                     "sort_index": 1010
                 },
                 {
-                    "id": "dw-single-article",
-                    "name": "DW-Einzelseite (Artikel)",
-                    "label": "Artikelseite",
+                    "id": "dw-single-left-advert",
+                    "name": "DW-Einzelseite Inserat (Links)",
+                    "label": "Inserat (Links)",
                     "sort_index": 1020
                 },
                 {
-                    "id": "dw-single-wine",
-                    "name": "DW-Einzelseite (Wein)",
-                    "label": "Weinseite",
+                    "id": "dw-single-left-editorial",
+                    "name": "DW-Einzelseite Redaktion (Links)",
+                    "label": "Redaktion (Links)",
                     "sort_index": 1030
+                },
+                {
+                    "id": "dw-single-right",
+                    "name": "DW-Einzelseite Artikelsiete (Rechts)",
+                    "label": "Artikelsiete (Rechts)",
+                    "sort_index": 1040
                 },
                 {
                     "id": "dw-back-weekend",
                     "name": "DW-Rückseite (Weekend-Knaller)",
                     "label": "Rückseite (Weekend-Knaller)",
-                    "sort_index": 1040
+                    "sort_index": 1050
                 }
             ]
         },
@@ -45,12 +51,6 @@
                     "name": "DW-Doppelseite (Artikel)",
                     "label": "Artikelseite",
                     "sort_index": 1110
-                },
-                {
-                    "id": "dw-single-wine",
-                    "name": "DW-Doppelseite (Wein)",
-                    "label": "Weinseite",
-                    "sort_index": 1120
                 }
             ]
         },

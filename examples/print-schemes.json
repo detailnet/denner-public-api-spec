@@ -51,6 +51,283 @@
                     }
                 }
             ]
+        },
+        {
+            "id": "dw-20",
+            "name": "Denner Woche (20 Seiten)",
+            "sort_index": 20,
+            "pages": [
+                {
+                    "name": "Seite 1",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-front",
+                        "name": "DW-Frontseite",
+                        "label": "Frontseite",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 2",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-left-editorial",
+                        "name": "DW-Einzelseite Redaktion (Links)",
+                        "label": "Redaktion (Links)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 3",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-right",
+                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
+                        "label": "Artikelsiete (Rechts)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 4",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-left-advert",
+                        "name": "DW-Einzelseite Inserat (Links)",
+                        "label": "Inserat (Links)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 5",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-right",
+                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
+                        "label": "Artikelsiete (Rechts)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seiten 6-7",
+                    "length": 2,
+                    "template": {
+                        "id": "dw-double-article",
+                        "name": "DW-Doppelseite (Artikel)",
+                        "label": "Artikelseite",
+                        "format": {
+                            "id": "dw-double",
+                            "name": "DW-Doppelseite",
+                            "width": 420,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seit 8",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-left-advert",
+                        "name": "DW-Einzelseite Inserat (Links)",
+                        "label": "Inserat (Links)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 9",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-right",
+                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
+                        "label": "Artikelsiete (Rechts)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 10",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-left-advert",
+                        "name": "DW-Einzelseite Inserat (Links)",
+                        "label": "Inserat (Links)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 11",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-right",
+                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
+                        "label": "Artikelsiete (Rechts)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 12",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-left-advert",
+                        "name": "DW-Einzelseite Inserat (Links)",
+                        "label": "Inserat (Links)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 13",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-right",
+                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
+                        "label": "Artikelsiete (Rechts)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 14",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-left-advert",
+                        "name": "DW-Einzelseite Inserat (Links)",
+                        "label": "Inserat (Links)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 15",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-right",
+                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
+                        "label": "Artikelsiete (Rechts)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seiten 16-71",
+                    "length": 2,
+                    "template": {
+                        "id": "dw-double-article",
+                        "name": "DW-Doppelseite (Artikel)",
+                        "label": "Artikelseite",
+                        "format": {
+                            "id": "dw-double",
+                            "name": "DW-Doppelseite",
+                            "width": 420,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 18",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-left-advert",
+                        "name": "DW-Einzelseite Inserat (Links)",
+                        "label": "Inserat (Links)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 19",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-single-right",
+                        "name": "DW-Einzelseite Artikelsiete (Rechts)",
+                        "label": "Artikelsiete (Rechts)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                },
+                {
+                    "name": "Seite 20",
+                    "length": 1,
+                    "template": {
+                        "id": "dw-back-weekend",
+                        "name": "DW-Rückseite (Wochenend-Knaller)",
+                        "label": "Rückseite (Weekend-Knaller)",
+                        "format": {
+                            "id": "dw-single",
+                            "name": "DW-Einzelseite",
+                            "width": 210,
+                            "height": 290
+                        }
+                    }
+                }
+            ]
         }
     ]
 }
