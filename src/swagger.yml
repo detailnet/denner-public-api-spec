@@ -767,8 +767,8 @@ paths:
                 packshots:
                   -
                     id: "5983a33d-ac61-49a8-a836-43259e78e9d0"
-                    image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
-                    cdn_image_url: "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                    cdn_url: "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
                     quantity: 6
                     created_on: "2016-01-07 15:42:19"
                 wine:
@@ -918,8 +918,8 @@ paths:
                         value: "13%"
                     packshot:
                       id: "5983a33d-ac61-49a8-a836-43259e78e9d0"
-                      image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
-                      cdn_image_url: "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                      url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
+                      cdn_url: "https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
                       quantity: 6
                       created_on: "2016-01-07 15:42:19"
                   box:
@@ -1441,7 +1441,8 @@ paths:
                       name: "Bio"
                   packshot:
                     id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
-                    image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
+                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
+                    cdn_url: "https://denner.imgix.net/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                     quantity: 6
                     created_on: "2016-03-01 16:22:00"
                   wine:
@@ -2021,7 +2022,8 @@ paths:
                       name: "Weine"
                   packshot:
                     id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
-                    image_url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
+                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
+                    cdn_url: "https://denner.imgix.net/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
                     quantity: 6
                     created_on: "2016-03-01 16:22:00"
                   wine:
@@ -3041,9 +3043,9 @@ definitions:
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
-      image_url:
+      url:
         $ref: '#/definitions/Url'
-      cdn_image_url:
+      cdn_url:
         $ref: '#/definitions/Url'
       quantity:
         $ref: '#/definitions/Quantity'
