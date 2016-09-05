@@ -34,7 +34,7 @@
             "sheets": [
                 {
                     "id": "5a284181-7977-494c-8de6-5befefa2b04d",
-                    "locales": [
+                    "languages": [
                         "de",
                         "fr"
                     ],
@@ -47,8 +47,21 @@
                             },
                             "id": "92816f46-5411-4a64-8c0d-588a5ac985bf",
                             "name": "Herbstweine",
-                            "description": "Herbstweine mind. 31% reduziert",
-                            "remarks": ""
+                            "description": [
+                                {
+                                    "locale": "de",
+                                    "value": "Herbstweine mind. 31% reduziert"
+                                },
+                                {
+                                    "locale": "fr",
+                                    "value": "Vins d'automne au moins 31% de réduction"
+                                },
+                                {
+                                    "locale": "it",
+                                    "value": "Vini d'autunno scontati almeno al 31%"
+                                }
+                            ],
+                            "remarks": "Bitte Verweis zu Seite hinzufügen und Prozentzahl gross darstellen."
                         },
                         {
                             "type": "advertised-article",
@@ -476,7 +489,7 @@
                 },
                 {
                     "id": "5d668999-1dba-4ba1-b54b-75b15080d98b",
-                    "locales": [
+                    "languages": [
                         "it"
                     ],
                     "items": []
