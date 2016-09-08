@@ -15,7 +15,8 @@
             ],
             "layout": {
                 "id": "positioning",
-                "name": "Positionierung"
+                "name": "Positionierung",
+                "sort_index": 10
             }
         }
     ]

@@ -12,11 +12,13 @@
                         "id": "dw-front",
                         "name": "DW-Frontseite",
                         "label": "Frontseite",
+                        "sort_index": 1010,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -27,11 +29,13 @@
                         "id": "dw-editorial-left",
                         "name": "DW-Redaktionsseite (links)",
                         "label": "Redaktionsseite (links)",
+                        "sort_index": 1030,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -42,11 +46,13 @@
                         "id": "dw-article-right",
                         "name": "DW-Artikelseite (rechts)",
                         "label": "Artikelseite (rechts)",
+                        "sort_index": 1040,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -57,11 +63,13 @@
                         "id": "dw-advert-left",
                         "name": "DW-Inserat (links)",
                         "label": "Inserat (links)",
+                        "sort_index": 1020,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -72,11 +80,13 @@
                         "id": "dw-article-right",
                         "name": "DW-Artikelseite (rechts)",
                         "label": "Artikelseite (rechts)",
+                        "sort_index": 1040,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -87,11 +97,13 @@
                         "id": "dw-article-double",
                         "name": "DW-Artikelseite (Doppelseite)",
                         "label": "Artikelseite",
+                        "sort_index": 1110,
                         "format": {
                             "id": "dw-double",
                             "name": "DW-Doppelseite",
                             "width": 420,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1100
                         }
                     }
                 },
@@ -102,11 +114,13 @@
                         "id": "dw-advert-left",
                         "name": "DW-Inserat (links)",
                         "label": "Inserat (links)",
+                        "sort_index": 1020,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -117,11 +131,13 @@
                         "id": "dw-article-right",
                         "name": "DW-Artikelseite (rechts)",
                         "label": "Artikelseite (rechts)",
+                        "sort_index": 1040,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -132,11 +148,13 @@
                         "id": "dw-advert-left",
                         "name": "DW-Inserat (links)",
                         "label": "Inserat (links)",
+                        "sort_index": 1020,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -147,11 +165,13 @@
                         "id": "dw-article-right",
                         "name": "DW-Artikelseite (rechts)",
                         "label": "Artikelseite (rechts)",
+                        "sort_index": 1040,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -162,11 +182,13 @@
                         "id": "dw-advert-left",
                         "name": "DW-Inserat (links)",
                         "label": "Inserat (links)",
+                        "sort_index": 1020,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -177,11 +199,13 @@
                         "id": "dw-article-right",
                         "name": "DW-Artikelseite (rechts)",
                         "label": "Artikelseite (rechts)",
+                        "sort_index": 1040,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -192,11 +216,13 @@
                         "id": "dw-advert-left",
                         "name": "DW-Inserat (links)",
                         "label": "Inserat (links)",
+                        "sort_index": 1020,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -207,11 +233,13 @@
                         "id": "dw-article-right",
                         "name": "DW-Artikelseite (rechts)",
                         "label": "Artikelseite (rechts)",
+                        "sort_index": 1040,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -222,11 +250,13 @@
                         "id": "dw-article-double",
                         "name": "DW-Artikelseite (Doppelseite)",
                         "label": "Artikelseite",
+                        "sort_index": 1110,
                         "format": {
                             "id": "dw-double",
                             "name": "DW-Doppelseite",
                             "width": 420,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1100
                         }
                     }
                 },
@@ -237,11 +267,13 @@
                         "id": "dw-advert-left",
                         "name": "DW-Inserat (links)",
                         "label": "Inserat (links)",
+                        "sort_index": 1020,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -252,11 +284,13 @@
                         "id": "dw-article-right",
                         "name": "DW-Artikelseite (rechts)",
                         "label": "Artikelseite (rechts)",
+                        "sort_index": 1040,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 },
@@ -266,12 +300,14 @@
                     "template": {
                         "id": "dw-back-weekend",
                         "name": "DW-Rückseite (Wochenend-Knaller)",
-                        "label": "Rückseite (Weekend-Knaller)",
+                        "label": "Rückseite (Wochenend-Knaller)",
+                        "sort_index": 1050,
                         "format": {
                             "id": "dw-single",
                             "name": "DW-Einzelseite",
                             "width": 210,
-                            "height": 290
+                            "height": 290,
+                            "sort_index": 1000
                         }
                     }
                 }

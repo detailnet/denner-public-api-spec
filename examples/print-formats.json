@@ -33,8 +33,8 @@
                 },
                 {
                     "id": "dw-back-weekend",
-                    "name": "DW-Rückseite (Weekend-Knaller)",
-                    "label": "Rückseite (Weekend-Knaller)",
+                    "name": "DW-Rückseite (Wochenend-Knaller)",
+                    "label": "Rückseite (Wochenend-Knaller)",
                     "sort_index": 1050
                 }
             ]
