@@ -1259,7 +1259,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"year\": 2016,\n  \"week\": 31,\n  \"sort_index\": 2,\n  \"status\": \"complete\"\n}"
+							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"year\": 2016,\n  \"week\": 31,\n  \"sort_index\": 2,\n  \"status\": \"complete\",\n  \"scheme\": \"dw-20\"\n}"
 						},
 						"description": "Update a print publication (Print-Werbemittel)"
 					},
@@ -1417,6 +1417,136 @@
 							"formdata": []
 						},
 						"description": "Delete an article (Artikel) from a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/pages",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a print publication's pages (Seiten eines Print-Werbemittels)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/pages",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Neue Seite\",\n\t\"template\": \"dw-article-right\"\n}\n"
+						},
+						"description": "Add a new page (Seite) to a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/pages/{page_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Neuer Name\",\n\t\"template\": \"dw-front\"\n}\n"
+						},
+						"description": "Update a print publication's page (Seite eines Print-Werbemittels)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/pages/{page_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "Delete a page (Seite) from a print publication (Print-Werbemittel)"
 					},
 					"response": []
 				},
