@@ -9,7 +9,7 @@ Following guide applies for:
 
 ### Initial setup
  
-- Remove collection if already present ([see note below](#initial-setup-note)).
+- Remove collection if already present.
 - Import collection:
   - Select "Collections" tab (left menu), click on "Import into Postman" icon.
   - Choose tab "Download from link".
@@ -19,9 +19,6 @@ Following guide applies for:
 - [Setup global variables](#setup-global-variables) (For the moment needed only for production environments).
 - Choose an environment.
 - Run requests.
-
-> <a name="initial-setup-note"></a>Important: If you already have the collection into your Postman application, you should first remove it before import.
-> If not, the latest collection (copy) you import will change all collection reference UUID's, making the future commit/merge unreadable.
 
 #### Collection data
 
@@ -71,6 +68,7 @@ Set up global variables:
 
 - Move your mouse pointer over the collection name (left menu), click on "Share collection" icon.
 - Click on "Download" button.
+- Export-collection menu appears, choose "Collection v2" and click on "Export".
 - Overwrite your local repository's [collections/denner-api.json](collections/denner-api.json) file.
 - Review changes with your preferred editor:
   - Replace tabs with 4 whitespaces.

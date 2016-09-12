@@ -10,6 +10,20 @@
 			"enabled": true
 		},
 		{
+			"key": "base_url_schema",
+			"value": "https://",
+			"type": "text",
+			"name": "base_url_schema",
+			"enabled": true
+		},
+		{
+			"key": "base_url_host",
+			"value": "denner-api.detailnet.ch",
+			"type": "text",
+			"name": "base_url_host",
+			"enabled": true
+		},
+		{
 			"key": "api_version",
 			"value": "test",
 			"type": "text",
@@ -18,7 +32,7 @@
 		},
 		{
 			"key": "articles_url_base",
-			"value": "https://denner-api.detailnet.ch/{{api_version}}",
+			"value": "{{base_url_schema}}{{base_url_host}}/{{api_version}}",
 			"type": "text",
 			"name": "articles_url_base",
 			"enabled": true
@@ -39,7 +53,7 @@
 		},
 		{
 			"key": "assets_url_base",
-			"value": "https://denner-api.detailnet.ch/{{api_version}}",
+			"value": "{{base_url_schema}}{{base_url_host}}/{{api_version}}",
 			"type": "text",
 			"name": "assets_url_base",
 			"enabled": true
@@ -60,7 +74,7 @@
 		},
 		{
 			"key": "advertising_url_base",
-			"value": "https://denner-api.detailnet.ch/{{api_version}}",
+			"value": "{{base_url_schema}}{{base_url_host}}/{{api_version}}",
 			"type": "text",
 			"name": "advertising_url_base",
 			"enabled": true
@@ -81,7 +95,7 @@
 		},
 		{
 			"key": "stores_url_base",
-			"value": "https://denner-api.detailnet.ch/{{api_version}}",
+			"value": "{{base_url_schema}}{{base_url_host}}/{{api_version}}",
 			"type": "text",
 			"name": "stores_url_base",
 			"enabled": true
@@ -102,7 +116,7 @@
 		},
 		{
 			"key": "appraisals_url_base",
-			"value": "https://denner-api.detailnet.ch/{{api_version}}",
+			"value": "{{base_url_schema}}{{base_url_host}}/{{api_version}}",
 			"type": "text",
 			"name": "appraisals_url_base",
 			"enabled": true
@@ -116,7 +130,7 @@
 		},
 		{
 			"key": "banners_url_base",
-			"value": "https://denner-api.detailnet.ch/{{api_version}}",
+			"value": "{{base_url_schema}}{{base_url_host}}/{{api_version}}",
 			"type": "text",
 			"name": "banners_url_base",
 			"enabled": true
@@ -130,7 +144,7 @@
 		},
 		{
 			"key": "portal_url_base",
-			"value": "https://denner-api.detailnet.ch/{{api_version}}",
+			"value": "{{base_url_schema}}{{base_url_host}}/{{api_version}}",
 			"type": "text",
 			"enabled": true
 		},
@@ -138,12 +152,14 @@
 			"key": "portal_header_app_id",
 			"value": "{{denner_portal_app_id}}",
 			"type": "text",
+			"name": "portal_header_app_id",
 			"enabled": true
 		},
 		{
 			"key": "portal_header_app_key",
 			"value": "{{denner_portal_app_key}}",
 			"type": "text",
+			"name": "portal_header_app_key",
 			"enabled": true
 		}
 	],
