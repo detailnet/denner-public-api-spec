@@ -43,6 +43,9 @@ The Denner Portal provides mostly advertising related data.
 #### Print
 * `/print-publications` (Print-Werbemittel, [example](examples/print-publications.json))
 * `/print-publications/{publication_id]` (Print-Werbemittel, [example](examples/print-publication.json))
+* `/print-layouts` (Print-Layoutarten, [example](examples/print-layouts.json))
+* `/print-formats` (Print-Formate und -Vorlagen, [example](examples/print-formats.json))
+* `/print-schemes` (Print-Werbemittelschemas, [example](examples/print-schemes.json))
 
 ### Appraisals
 * `/appraisals` (Weinbewertungen, [example](examples/appraisals.json))
