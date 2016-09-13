@@ -27,6 +27,7 @@ The Denner Portal provides mostly advertising related data.
 * `/articles` (Artikel, [example](examples/articles.json))
 * `/shop-wines` (Wineshop-Weine)
 * `/mobile-wines` (Mobile-App-Weine)
+* `/online-specials` (Online-Specials, [example](examples/online-specials.json))
 * `/advertised-articles` (beworbene Artikel)
 * `/promotion-types` (Aktionstypen, [example](examples/promotion-types.json))
 
