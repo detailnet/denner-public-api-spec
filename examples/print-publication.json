@@ -101,7 +101,7 @@
                             "remarks": "Bitte Verweis zu Seite hinzufügen und Prozentzahl gross darstellen."
                         },
                         {
-                            "type": "advertised-article",
+                            "type": "publication-article",
                             "position": {
                                 "top": 10,
                                 "left": 20
