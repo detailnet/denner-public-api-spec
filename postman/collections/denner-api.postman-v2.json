@@ -1479,7 +1479,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Neue Seite\",\n  \"template\": \"dw-article-right\"\n}\n"
+							"raw": "{\n\t\"name\": \"Neue Seite\",\n\t\"template\": \"dw-article-right\"\n}\n"
 						},
 						"description": "Add a new page (Seite) to a print publication (Print-Werbemittel)"
 					},
@@ -1544,7 +1544,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"template\": \"dw-front\"\n}\n"
+							"raw": "{\n\t\"name\": \"Neuer Name\",\n\t\"template\": \"dw-front\"\n}\n"
 						},
 						"description": "Update a print publication's page (Seite eines Print-Werbemittels)"
 					},
@@ -1609,9 +1609,44 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"language\": \"it\"\n}"
+							"raw": "{\n  \"language\": \"it\"\n}"
 						},
 						"description": "Add a new sheet (Arbeitsblatt) to a print publication's page (Seite eines Print-Werbemittels) by splitting of a language from an existing sheet"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/pages/{page_id}/sheets/{sheet_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-aaaa-4444-aaaa-444444444444/sheets/44444444-aaaa-4444-aaaa-444444444444",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"items\": [\n\t\t{\n\t\t\t\"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n\t\t\t\"type\": \"publication-article\",\n\t\t\t\"position\": {\n\t\t\t\t\"top\": 0,\n\t\t\t\t\"left\": 0\n\t\t\t},\n\t\t\t\"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n\t\t}\n\t]\n}\n"
+						},
+						"description": "Update sheet (Arbeitsblatt) of a print publication's page (Seite eines Print-Werbemittels)."
 					},
 					"response": []
 				},
@@ -2958,7 +2993,7 @@
 				{
 					"name": "/languages",
 					"request": {
-						"url": "{{articles_url_base}}/languages",
+						"url": "{{articles_url_base}}/languages?page_size=-1",
 						"method": "GET",
 						"header": [
 							{
@@ -3024,7 +3059,7 @@
 				{
 					"name": "/purposes",
 					"request": {
-						"url": "{{assets_url_base}}/purposes",
+						"url": "{{assets_url_base}}/languages?page_size=-1",
 						"method": "GET",
 						"header": [
 							{
@@ -3439,7 +3474,7 @@
 				{
 					"name": "/dws-fileconversion/receive-completed-job",
 					"request": {
-						"url": "{{base_url_schema}}{{assets_host}}/dws-fileconversion/receive-completed-job",
+						"url": "{{assets_url_base}}/dws-fileconversion/receive-completed-job",
 						"method": "POST",
 						"header": [
 							{
@@ -3465,7 +3500,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"source_url\": \"http://img01.detailnet.ch/previews/louiswidmer2/500/1082.jpg\",\n    \"source_meta\": {\n        \"width\": 284,\n        \"height\": 500\n    },\n    \"action_count\": 1,\n    \"actions\": [\n        {\n            \"name\": \"thumbnail\",\n            \"params\": {\n                \"size\": \"500x500>\"\n            },\n            \"save\": {\n                \"identifier\": \"500\",\n                \"params\": {\n                    \"bucket\": \"ivan-wolf\",\n                    \"key\": \"assets/4bc644f4-b473-4634-8ba7-8e6995fc9284/TU TKL 08_DL-500.jpg\"\n                },\n                \"type\": \"s3\"\n            }\n        }\n    ],\n    \"notification_count\": 1,\n    \"notifications\": [\n        {\n            \"params\": {\n                \"url\": \"{{base_url_schema}}{{assets_host}}/dws-fileconversion/receive-completed-job\"\n            },\n            \"type\": \"webhook\",\n            \"id\": \"54e762de9450ec66518b4569\",\n            \"calls\": [\n                {\n                    \"sent_on\": \"2015-02-20T17:38:02+0100\",\n                    \"success\": true\n                }\n            ]\n        }\n    ],\n    \"status\": \"complete\",\n    \"result_count\": 1,\n    \"results\": [\n        {\n            \"identifier\": \"500\",\n            \"url\": \"http://ivan-wolf.s3.amazonaws.com/assets/4bc644f4-b473-4634-8ba7-8e6995fc9284/TU TKL 08_DL-500.jpg\",\n            \"id\": \"54e762e29450ec5f518b456e\",\n            \"meta\": {\n                \"width\": 284,\n                \"height\": 500\n            }\n        }\n    ],\n    \"submitted_on\": \"2015-02-20T17:37:50+0100\",\n    \"processing_started_on\": \"2015-02-20T17:37:52+0100\",\n    \"processing_completed_on\": \"2015-02-20T17:37:54+0100\",\n    \"completed_on\": \"2015-02-20T17:38:02+0100\",\n    \"id\": \"54e762de9450ec66518b4568\"\n}"
+							"raw": "{\n    \"source_url\": \"http://img01.detailnet.ch/previews/louiswidmer2/500/1082.jpg\",\n    \"source_meta\": {\n        \"width\": 284,\n        \"height\": 500\n    },\n    \"action_count\": 1,\n    \"actions\": [\n        {\n            \"name\": \"thumbnail\",\n            \"params\": {\n                \"size\": \"500x500>\"\n            },\n            \"save\": {\n                \"identifier\": \"500\",\n                \"params\": {\n                    \"bucket\": \"ivan-wolf\",\n                    \"key\": \"assets/4bc644f4-b473-4634-8ba7-8e6995fc9284/TU TKL 08_DL-500.jpg\"\n                },\n                \"type\": \"s3\"\n            }\n        }\n    ],\n    \"notification_count\": 1,\n    \"notifications\": [\n        {\n            \"params\": {\n                \"url\": \"{{assets_url_base}}/dws-fileconversion/receive-completed-job\"\n            },\n            \"type\": \"webhook\",\n            \"id\": \"54e762de9450ec66518b4569\",\n            \"calls\": [\n                {\n                    \"sent_on\": \"2015-02-20T17:38:02+0100\",\n                    \"success\": true\n                }\n            ]\n        }\n    ],\n    \"status\": \"complete\",\n    \"result_count\": 1,\n    \"results\": [\n        {\n            \"identifier\": \"500\",\n            \"url\": \"http://ivan-wolf.s3.amazonaws.com/assets/4bc644f4-b473-4634-8ba7-8e6995fc9284/TU TKL 08_DL-500.jpg\",\n            \"id\": \"54e762e29450ec5f518b456e\",\n            \"meta\": {\n                \"width\": 284,\n                \"height\": 500\n            }\n        }\n    ],\n    \"submitted_on\": \"2015-02-20T17:37:50+0100\",\n    \"processing_started_on\": \"2015-02-20T17:37:52+0100\",\n    \"processing_completed_on\": \"2015-02-20T17:37:54+0100\",\n    \"completed_on\": \"2015-02-20T17:38:02+0100\",\n    \"id\": \"54e762de9450ec66518b4568\"\n}"
 						},
 						"description": "DWS-FileConversion notification"
 					},
@@ -4049,7 +4084,7 @@
 						}
 					],
 					"request": {
-						"url": "{{base_url_schema}}{{assets_host}}/dws-fileconversion/receive-completed-job",
+						"url": "http://denner-assets.public.web01.detailnet.me/dws-fileconversion/receive-completed-job",
 						"method": "POST",
 						"header": [
 							{
