@@ -27,6 +27,7 @@ The Denner Portal provides mostly advertising related data.
 * `/articles` (Artikel, [example](examples/articles.json))
 * `/shop-wines` (Wineshop-Weine)
 * `/mobile-wines` (Mobile-App-Weine)
+* `/online-groups` (Internet-Sortimente, [example](examples/online-groups.json))
 * `/online-specials` (Online-Specials, [example](examples/online-specials.json))
 * `/advertised-articles` (beworbene Artikel)
 * `/promotion-types` (Aktionstypen, [example](examples/promotion-types.json))
@@ -36,7 +37,6 @@ The Denner Portal provides mostly advertising related data.
 #### Online
 * `/online-publications` (Online-Werbemittel, [example](examples/online-publications.json))
 * `/online-filters` (Angebotsfilter, [example](examples/online-filters.json))
-* `/online-groups` (Internet-Sortimente, [example](examples/online-groups.json))
 
 #### Screen
 * `/screen-publications` (Screen-Werbemittel, [example](examples/screen-publications.json))
