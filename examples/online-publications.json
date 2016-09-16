@@ -455,6 +455,25 @@
                                 }
                             ]
                         },
+                        "online_specials": [
+                            {
+                                "id": "rarity",
+                                "title": [
+                                    {
+                                        "locale": "de",
+                                        "value": "Rärität"
+                                    },
+                                    {
+                                        "locale": "fr",
+                                        "value": "Rareté"
+                                    },
+                                    {
+                                        "locale": "it",
+                                        "value": "Rarità"
+                                    }
+                                ]
+                            }
+                        ],
                         "year": 2013,
                         "fits_with": [
                             {

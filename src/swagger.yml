@@ -445,7 +445,6 @@ paths:
       parameters:
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
-        - $ref: '#/parameters/PageSizeParam'
       responses:
         200:
           description: Successful listing
@@ -810,6 +809,16 @@ paths:
                       -
                         locale: "it"
                         value: "Vino rosso"
+                  online_specials:
+                    - id: wine
+                      sort_index: 10
+                      title:
+                        - locale: de
+                          value: Weine
+                        - locale: fr
+                          value: Vins
+                        - locale: it
+                          value: Vini
                   year: 2013
                   fits_with:
                     -
@@ -1024,6 +1033,144 @@ paths:
                   id: "37f205e5-0661-424f-bcd9-a68ce93016cb"
                   code: "WOCHENEND"
                   name: "Wochenend-Knaller"
+
+  /online-groups:
+      get:
+        summary: List all online groups
+        description: >
+          Use this operation to get a list of all online groups (Internet-Sortimente).
+        tags:
+          - advertising
+        operationId: listOnlineGroups
+        security:
+          - appKey: []
+          - appId: []
+        parameters:
+          - $ref: '#/parameters/PageParam'
+          - $ref: '#/parameters/PageSizeParam'
+        responses:
+          200:
+            description: Successful listing
+            schema:
+              $ref: '#/definitions/OnlineGroupsResponse'
+            examples:
+              application/json:
+
+                page_count: 1
+                page_size: 1
+                total_items: 1
+                online_groups:
+                  -
+                    id: "7627150d-36bd-4867-89b2-091800a03d24"
+                    code: 1001
+                    sort_index: 0
+                    allow_featuring: true
+                    allow_promotion: true
+                    allow_background: true
+                    title:
+                      -
+                        locale: "de"
+                        value: "Frischprodukte"
+                      -
+                        locale: "fr"
+                        value: "Produits frais"
+                      -
+                        locale: "it"
+                        value: "Prodotti freschi"
+                    children:
+                      -
+                        id: "58afec5c-ece9-4b66-bc55-00d6dc1b65b8"
+                        code: 1001
+                        sort_index: 0
+                        allow_featuring: true
+                        allow_promotion: true
+                        allow_background: true
+                        title:
+                          -
+                            locale: "de"
+                            value: "Milchprodukte"
+                          -
+                            locale: "fr"
+                            value: "Produits laitiers"
+                          -
+                            locale: "it"
+                            value: "Latticini"
+                        children: []
+                      -
+                        id: "e5216167-9da5-41d6-b7b3-96362b60de89"
+                        code: 1002
+                        sort_index: 1
+                        allow_featuring: true
+                        allow_promotion: true
+                        allow_background: true
+                        title:
+                          -
+                            locale: "de"
+                            value: "Eier"
+                          -
+                            locale: "fr"
+                            value: "Oeufs"
+                          -
+                            locale: "it"
+                            value: "Uova"
+                        children: []
+
+  /online-specials:
+    get:
+      summary: List all online specials
+      description: >
+        Use this operation to get a list of all online specials (Online-Specials).
+      tags:
+        - advertising
+      operationId: listOnlineSpecials
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlineSpecialsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: -1
+              total_items: 3
+              online_specials:
+                - id: wine
+                  name: Weine
+                  sort_index: 10
+                  title:
+                    - locale: de
+                      value: Weine
+                    - locale: fr
+                      value: Vins
+                    - locale: it
+                      value: Vini
+                - id: sparkling-wine
+                  name: Schaumweine
+                  sort_index: 20
+                  title:
+                    - locale: de
+                      value: Schaumweine
+                    - locale: fr
+                      value: Mousseux
+                    - locale: it
+                      value: Spumanti
+                - id: bordeaux
+                  name: Bordeaux Grand Cru
+                  sort_index: 30
+                  title:
+                    - locale: de
+                      value: Bordeaux Grand Cru
+                    - locale: fr
+                      value: Bordeaux Grand Cru
+                    - locale: it
+                      value: Bordeaux Grand Cru
 
   ### Online Advertising
   /online-publications:
@@ -1482,6 +1629,16 @@ paths:
                         -
                           locale: "it"
                           value: "Vino rosso"
+                    online_specials:
+                      - id: wine
+                        sort_index: 10
+                        title:
+                          - locale: de
+                            value: Weine
+                          - locale: fr
+                            value: Vins
+                          - locale: it
+                            value: Vini
                     year: 2013
                     fits_with:
                       -
@@ -1617,87 +1774,6 @@ paths:
                       locale: "it"
                       value: "Promozioni della settimana corrente"
                   sort_index: 1
-
-  /online-groups:
-    get:
-      summary: List all online groups
-      description: >
-        Use this operation to get a list of all online groups (Internet-Sortimente).
-      tags:
-        - advertising
-      operationId: listOnlineGroups
-      security:
-        - appKey: []
-        - appId: []
-      parameters:
-        - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
-      responses:
-        200:
-          description: Successful listing
-          schema:
-            $ref: '#/definitions/OnlineGroupsResponse'
-          examples:
-            application/json:
-
-              page_count: 1
-              page_size: 1
-              total_items: 1
-              online_groups:
-                -
-                  id: "7627150d-36bd-4867-89b2-091800a03d24"
-                  code: 1001
-                  sort_index: 0
-                  allow_featuring: true
-                  allow_promotion: true
-                  allow_background: true
-                  title:
-                    -
-                      locale: "de"
-                      value: "Frischprodukte"
-                    -
-                      locale: "fr"
-                      value: "Produits frais"
-                    -
-                      locale: "it"
-                      value: "Prodotti freschi"
-                  children:
-                    -
-                      id: "58afec5c-ece9-4b66-bc55-00d6dc1b65b8"
-                      code: 1001
-                      sort_index: 0
-                      allow_featuring: true
-                      allow_promotion: true
-                      allow_background: true
-                      title:
-                        -
-                          locale: "de"
-                          value: "Milchprodukte"
-                        -
-                          locale: "fr"
-                          value: "Produits laitiers"
-                        -
-                          locale: "it"
-                          value: "Latticini"
-                      children: []
-                    -
-                      id: "e5216167-9da5-41d6-b7b3-96362b60de89"
-                      code: 1002
-                      sort_index: 1
-                      allow_featuring: true
-                      allow_promotion: true
-                      allow_background: true
-                      title:
-                        -
-                          locale: "de"
-                          value: "Eier"
-                        -
-                          locale: "fr"
-                          value: "Oeufs"
-                        -
-                          locale: "it"
-                          value: "Uova"
-                      children: []
 
   ### Screen Advertising
   /screen-publications:
@@ -2063,6 +2139,16 @@ paths:
                         -
                           locale: "it"
                           value: "Vino rosso"
+                    online_specials:
+                      - id: wine
+                        sort_index: 10
+                        title:
+                          - locale: de
+                            value: Weine
+                          - locale: fr
+                            value: Vins
+                          - locale: it
+                            value: Vini
                     year: 2013
                     fits_with:
                       -
@@ -3061,6 +3147,8 @@ definitions:
         $ref: '#/definitions/Region'
       type:
         $ref: '#/definitions/WineType'
+      online_specials:
+        $ref: '#/definitions/OnlineSpecials'
       year:
         $ref: '#/definitions/Year'
       fits_with:
@@ -3460,6 +3548,18 @@ definitions:
       parent:
         $ref: '#/definitions/AssignedOnlineGroup'
 
+  ### Online special
+  OnlineSpecial:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique ID
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      title:
+        $ref: '#/definitions/Translations'
+
   ### Screen publication
   ScreenPublication:
     type: object
@@ -3812,6 +3912,11 @@ definitions:
     items:
       $ref: '#/definitions/OnlineGroup'
 
+  OnlineSpecials:
+    type: array
+    items:
+      $ref: '#/definitions/OnlineSpecial'
+
   ScreenPublications:
     type: array
     items:
@@ -3994,6 +4099,24 @@ definitions:
         format: int32
       online_groups:
         $ref: '#/definitions/OnlineGroups'
+
+  OnlineSpecialsResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      online_groups:
+        $ref: '#/definitions/OnlineSpecials'
 
   OnlinePublicationsResponse:
     type: object
