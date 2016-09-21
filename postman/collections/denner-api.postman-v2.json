@@ -2375,7 +2375,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"cooling\": 0\n}"
+							"raw": "{\n  \"cooling\": 0\n  \"box\": \"HB\"\n  \"online_specials\": [\n    \"wine\",\n    \"bordeaux\"\n  ]\n}"
 						},
 						"description": "Edit an article (Artikel)"
 					},
