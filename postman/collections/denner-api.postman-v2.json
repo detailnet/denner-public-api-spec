@@ -2375,7 +2375,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"cooling\": 0\n  \"box\": \"HB\"\n  \"online_specials\": [\n    \"wine\",\n    \"bordeaux\"\n  ]\n}"
+							"raw": "{\n  \"cooling\": 0\n}"
 						},
 						"description": "Edit an article (Artikel)"
 					},
@@ -2927,6 +2927,36 @@
 							"formdata": []
 						},
 						"description": "List online groups (Internet-Sortimente)"
+					},
+					"response": []
+				},
+				{
+					"name": "/online-specials",
+					"request": {
+						"url": "{{articles_url_base}}/online-specials?page_size=-1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{articles_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{articles_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List online specials (Online-Specials)"
 					},
 					"response": []
 				},
