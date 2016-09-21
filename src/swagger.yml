@@ -925,6 +925,16 @@ paths:
                       -
                         locale: "it"
                         value: "13%"
+                    title:
+                      -
+                        locale: "de"
+                        value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                      -
+                        locale: "fr"
+                        value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                      -
+                        locale: "it"
+                        value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
                     packshot:
                       id: "5983a33d-ac61-49a8-a836-43259e78e9d0"
                       url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
@@ -3062,7 +3072,7 @@ definitions:
       packshots:
         $ref: '#/definitions/Packshots'
       wine:
-        $ref: '#/definitions/ArticleWine'
+        $ref: '#/definitions/ArticleWineWithWineShopTitle'
 
   ArticlePrices:
     type: object
@@ -3170,6 +3180,38 @@ definitions:
       box:
         $ref: '#/definitions/WineBox'
 
+  ArticleWineWithWineShopTitle:
+    type: object
+    properties:
+      country:
+        $ref: '#/definitions/Country'
+      region:
+        $ref: '#/definitions/Region'
+      type:
+        $ref: '#/definitions/WineType'
+      online_specials:
+        $ref: '#/definitions/OnlineSpecials'
+      year:
+        $ref: '#/definitions/Year'
+      fits_with:
+        $ref: '#/definitions/Translations'
+      varietal:
+        $ref: '#/definitions/Translations'
+      character:
+        $ref: '#/definitions/Translations'
+      temperature:
+        $ref: '#/definitions/Translations'
+      awards:
+        $ref: '#/definitions/Translations'
+      storage:
+        $ref: '#/definitions/Translations'
+      rating:
+        $ref: '#/definitions/Rating'
+      shop:
+        $ref: '#/definitions/WineShopWithTitle'
+      box:
+        $ref: '#/definitions/WineBox'
+
   WineShop:
     type: object
     properties:
@@ -3182,6 +3224,29 @@ definitions:
       prices:
         $ref: '#/definitions/ArticlePrices'
       discount:
+        $ref: '#/definitions/Translations'
+      packshot:
+        $ref: '#/definitions/Packshot'
+
+  WineShopWithTitle:
+#    allOf:
+#      - $ref: '#/definitions/WineShop'
+#      - properties:
+#        title:
+#          $ref: '#/definitions/Translations'
+    type: object
+    properties:
+      url:
+        $ref: '#/definitions/Url'
+      stock:
+        $ref: '#/definitions/Stock'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      discount:
+        $ref: '#/definitions/Translations'
+      title:
         $ref: '#/definitions/Translations'
       packshot:
         $ref: '#/definitions/Packshot'
