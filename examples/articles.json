@@ -428,6 +428,20 @@
                             "value": "13%"
                         }
                     ],
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                        }
+                    ],
                     "packshot": {
                         "id": "5983a33d-ac61-49a8-a836-43259e78e9d0",
                         "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png",
@@ -846,6 +860,20 @@
                         ]
                     },
                     "discount": [],
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Robert Mondavi Woodbridge Cabernet Sauvignon 6 x 75 cl"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "Robert Mondavi Woodbridge Cabernet Sauvignon 6 x 75 cl"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "Robert Mondavi Woodbridge Cabernet Sauvignon 6 x 75 cl"
+                        }
+                    ],
                     "packshot": {
                         "id": "3a861e25-4d87-4e9d-b961-aba24cf81642",
                         "url": "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/3a861e25-4d87-4e9d-b961-aba24cf81642/050364_1.png",
@@ -1251,6 +1279,20 @@
                         {
                             "locale": "it",
                             "value": "20%"
+                        }
+                    ],
+                    "title": [
+                        {
+                            "locale": "de",
+                            "value": "Château Duhart Milon Rothschild 6 x 75 cl"
+                        },
+                        {
+                            "locale": "fr",
+                            "value": "Château Duhart Milon Rothschild 6 x 75 cl"
+                        },
+                        {
+                            "locale": "it",
+                            "value": "Château Duhart Milon Rothschild 6 x 75 cl"
                         }
                     ],
                     "packshot": {
