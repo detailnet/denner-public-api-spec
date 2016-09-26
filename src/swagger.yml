@@ -925,6 +925,16 @@ paths:
                       -
                         locale: "it"
                         value: "13%"
+                    title:
+                      -
+                        locale: "de"
+                        value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                      -
+                        locale: "fr"
+                        value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
+                      -
+                        locale: "it"
+                        value: "Mandorla Primitivo di Puglia IGT 6 x 75 cl"
                     packshot:
                       id: "5983a33d-ac61-49a8-a836-43259e78e9d0"
                       url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png"
@@ -3062,7 +3072,7 @@ definitions:
       packshots:
         $ref: '#/definitions/Packshots'
       wine:
-        $ref: '#/definitions/ArticleWine'
+        $ref: '#/definitions/ExtendedArticleWine'
 
   ArticlePrices:
     type: object
@@ -3138,7 +3148,9 @@ definitions:
       created_on:
         $ref: '#/definitions/Date'
 
-  ArticleWine:
+  BasicArticleWine:
+#  Has no definitions/WineBox
+#  Uses definitions/BasicShopInfo
     type: object
     properties:
       country:
@@ -3149,6 +3161,8 @@ definitions:
         $ref: '#/definitions/WineType'
       online_specials:
         $ref: '#/definitions/OnlineSpecials'
+      box:
+        $ref: '#/definitions/WineBox'
       year:
         $ref: '#/definitions/Year'
       fits_with:
@@ -3166,11 +3180,44 @@ definitions:
       rating:
         $ref: '#/definitions/Rating'
       shop:
-        $ref: '#/definitions/WineShop'
+        $ref: '#/definitions/BasicShopInfo'
+
+  ExtendedArticleWine:
+#  Has definitions/WineBox
+#  Uses definitions/ExtendedShopInfo
+    type: object
+    properties:
+      country:
+        $ref: '#/definitions/Country'
+      region:
+        $ref: '#/definitions/Region'
+      type:
+        $ref: '#/definitions/WineType'
+      online_specials:
+        $ref: '#/definitions/OnlineSpecials'
       box:
         $ref: '#/definitions/WineBox'
+      year:
+        $ref: '#/definitions/Year'
+      fits_with:
+        $ref: '#/definitions/Translations'
+      varietal:
+        $ref: '#/definitions/Translations'
+      character:
+        $ref: '#/definitions/Translations'
+      temperature:
+        $ref: '#/definitions/Translations'
+      awards:
+        $ref: '#/definitions/Translations'
+      storage:
+        $ref: '#/definitions/Translations'
+      rating:
+        $ref: '#/definitions/Rating'
+      shop:
+        $ref: '#/definitions/ExtendedShopInfo'
 
-  WineShop:
+  BasicShopInfo:
+#  Has no title (shop title)
     type: object
     properties:
       url:
@@ -3182,6 +3229,30 @@ definitions:
       prices:
         $ref: '#/definitions/ArticlePrices'
       discount:
+        $ref: '#/definitions/Translations'
+      packshot:
+        $ref: '#/definitions/Packshot'
+
+  ExtendedShopInfo:
+#  Has title (shop title)
+#    allOf:
+#      - $ref: '#/definitions/BasicShopInfo'
+#      - properties:
+#        title:
+#          $ref: '#/definitions/Translations'
+    type: object
+    properties:
+      url:
+        $ref: '#/definitions/Url'
+      stock:
+        $ref: '#/definitions/Stock'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      discount:
+        $ref: '#/definitions/Translations'
+      title:
         $ref: '#/definitions/Translations'
       packshot:
         $ref: '#/definitions/Packshot'
@@ -3370,7 +3441,7 @@ definitions:
       packshot:
         $ref: '#/definitions/Packshot'
       wine:
-        $ref: '#/definitions/ArticleWine'
+        $ref: '#/definitions/BasicArticleWine'
 
   ScreenArticle:
     type: object
@@ -3423,7 +3494,7 @@ definitions:
       packshot:
         $ref: '#/definitions/Packshot'
       wine:
-        $ref: '#/definitions/ArticleWine'
+        $ref: '#/definitions/BasicArticleWine'
 
   ### Online publication
   OnlinePublication:
