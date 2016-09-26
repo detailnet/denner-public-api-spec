@@ -1651,6 +1651,66 @@
 					"response": []
 				},
 				{
+					"name": "/print-publications/{publication_id}/pages/{page_id}/articles",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-bbbb-4444-bbbb-444444444444/articles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a print publication page's articles (Artikel einer Seite im Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/pages/{page_id}/articles/{article_id}",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-bbbb-4444-bbbb-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List a single article (Artikel) for a print publication's page (Seite im Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
 					"name": "/print-layouts",
 					"request": {
 						"url": "{{advertising_url_base}}/print-layouts",
