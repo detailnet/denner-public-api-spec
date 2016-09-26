@@ -3072,7 +3072,7 @@ definitions:
       packshots:
         $ref: '#/definitions/Packshots'
       wine:
-        $ref: '#/definitions/ArticleWineWithExtendedShopInfo'
+        $ref: '#/definitions/ExtendedArticleWine'
 
   ArticlePrices:
     type: object
@@ -3148,7 +3148,9 @@ definitions:
       created_on:
         $ref: '#/definitions/Date'
 
-  ArticleWineWithBasicShopInfo:
+  BasicArticleWine:
+#  Has no definitions/WineBox
+#  Uses definitions/BasicShopInfo
     type: object
     properties:
       country:
@@ -3159,6 +3161,8 @@ definitions:
         $ref: '#/definitions/WineType'
       online_specials:
         $ref: '#/definitions/OnlineSpecials'
+      box:
+        $ref: '#/definitions/WineBox'
       year:
         $ref: '#/definitions/Year'
       fits_with:
@@ -3177,10 +3181,10 @@ definitions:
         $ref: '#/definitions/Rating'
       shop:
         $ref: '#/definitions/BasicShopInfo'
-      box:
-        $ref: '#/definitions/WineBox'
 
-  ArticleWineWithExtendedShopInfo:
+  ExtendedArticleWine:
+#  Has definitions/WineBox
+#  Uses definitions/ExtendedShopInfo
     type: object
     properties:
       country:
@@ -3191,6 +3195,8 @@ definitions:
         $ref: '#/definitions/WineType'
       online_specials:
         $ref: '#/definitions/OnlineSpecials'
+      box:
+        $ref: '#/definitions/WineBox'
       year:
         $ref: '#/definitions/Year'
       fits_with:
@@ -3209,10 +3215,9 @@ definitions:
         $ref: '#/definitions/Rating'
       shop:
         $ref: '#/definitions/ExtendedShopInfo'
-      box:
-        $ref: '#/definitions/WineBox'
 
   BasicShopInfo:
+#  Has no title (shop title)
     type: object
     properties:
       url:
@@ -3229,6 +3234,7 @@ definitions:
         $ref: '#/definitions/Packshot'
 
   ExtendedShopInfo:
+#  Has title (shop title)
 #    allOf:
 #      - $ref: '#/definitions/BasicShopInfo'
 #      - properties:
@@ -3435,7 +3441,7 @@ definitions:
       packshot:
         $ref: '#/definitions/Packshot'
       wine:
-        $ref: '#/definitions/ArticleWineWithBasicShopInfo'
+        $ref: '#/definitions/BasicArticleWine'
 
   ScreenArticle:
     type: object
@@ -3488,7 +3494,7 @@ definitions:
       packshot:
         $ref: '#/definitions/Packshot'
       wine:
-        $ref: '#/definitions/ArticleWineWithBasicShopInfo'
+        $ref: '#/definitions/BasicArticleWine'
 
   ### Online publication
   OnlinePublication:
