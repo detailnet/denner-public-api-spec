@@ -3072,7 +3072,7 @@ definitions:
       packshots:
         $ref: '#/definitions/Packshots'
       wine:
-        $ref: '#/definitions/ArticleWineWithWineShopTitle'
+        $ref: '#/definitions/ArticleWineWithExtendedShopInfo'
 
   ArticlePrices:
     type: object
@@ -3148,7 +3148,7 @@ definitions:
       created_on:
         $ref: '#/definitions/Date'
 
-  ArticleWine:
+  ArticleWineWithBasicShopInfo:
     type: object
     properties:
       country:
@@ -3176,11 +3176,11 @@ definitions:
       rating:
         $ref: '#/definitions/Rating'
       shop:
-        $ref: '#/definitions/WineShop'
+        $ref: '#/definitions/BasicShopInfo'
       box:
         $ref: '#/definitions/WineBox'
 
-  ArticleWineWithWineShopTitle:
+  ArticleWineWithExtendedShopInfo:
     type: object
     properties:
       country:
@@ -3208,11 +3208,11 @@ definitions:
       rating:
         $ref: '#/definitions/Rating'
       shop:
-        $ref: '#/definitions/WineShopWithTitle'
+        $ref: '#/definitions/ExtendedShopInfo'
       box:
         $ref: '#/definitions/WineBox'
 
-  WineShop:
+  BasicShopInfo:
     type: object
     properties:
       url:
@@ -3228,9 +3228,9 @@ definitions:
       packshot:
         $ref: '#/definitions/Packshot'
 
-  WineShopWithTitle:
+  ExtendedShopInfo:
 #    allOf:
-#      - $ref: '#/definitions/WineShop'
+#      - $ref: '#/definitions/BasicShopInfo'
 #      - properties:
 #        title:
 #          $ref: '#/definitions/Translations'
@@ -3435,7 +3435,7 @@ definitions:
       packshot:
         $ref: '#/definitions/Packshot'
       wine:
-        $ref: '#/definitions/ArticleWine'
+        $ref: '#/definitions/ArticleWineWithBasicShopInfo'
 
   ScreenArticle:
     type: object
@@ -3488,7 +3488,7 @@ definitions:
       packshot:
         $ref: '#/definitions/Packshot'
       wine:
-        $ref: '#/definitions/ArticleWine'
+        $ref: '#/definitions/ArticleWineWithBasicShopInfo'
 
   ### Online publication
   OnlinePublication:
