@@ -3909,7 +3909,7 @@ definitions:
     required:
       - article_id
       - value
-      - total
+      - count
 
   RatingGrouped:
     type: object
