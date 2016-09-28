@@ -2545,6 +2545,75 @@ paths:
                   language: "de"
               total_participants: 1
 
+  /article-ratings:
+    get:
+      summary: List articles rating infos
+      description: >
+        Use this operation to get a list of all article rating average and caount, calculated from vaildated appraisals.
+      tags:
+        - appraisals
+      operationId: listArticleRatings
+      security:
+        - appKey: []
+#        - appId: []
+      parameters:
+        - name: f.count
+          description: >
+            Filter by count, e.g. "f.count=__gte_10" will return all article rating infos which have at least 10 valid appraisals.
+          in: query
+          type: string
+        - name: f.value
+          description: >
+            Filter by average value, e.g. "f.value=__gte_4" will return all article rating infos which value is at least 4.
+          in: query
+          type: string
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/SortParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/AppraisalArticleRatingsResponse'
+          examples:
+            application/json:
+
+              article_ratings:
+                -
+                  article_id: "050202"
+                  value: 4.2323
+                  count: 198
+                  calculated_on: "2016-01-22T11:00:45"
+              page_count: 1
+              page_size: 1
+              total_items: 1
+
+  /article-ratings/{article_id}:
+    get:
+      summary: Get single article rating infos
+      description: >
+        Use this operation to get a single article rating infos.
+      tags:
+        - appraisals
+      operationId: getArticleRating
+      security:
+        - appKey: []
+#        - appId: []
+      parameters:
+        - $ref: '#/parameters/ArticleIdPathParam'
+      responses:
+        200:
+          description: Successful object
+          schema:
+            $ref: '#/definitions/AppraisalArticleRating'
+          examples:
+            application/json:
+
+              article_id: "050202"
+              value: 4.2323
+              count: 198
+              calculated_on: "2016-01-22T11:00:45"
+
 parameters:
   PageParam:
     name: page
@@ -2574,6 +2643,13 @@ parameters:
     in: query
     type: string
     required: false
+  ArticleIdPathParam:
+     name: article_id
+     description: The unique identifier of an article
+     in: path
+     type: string
+     required: true
+     pattern: '/^[0-9]{6}$/'
   PublicationIdPathParam:
     name: publication_id
     description: The unique identifier of an online publication
@@ -3810,6 +3886,31 @@ definitions:
       rating:
         $ref: '#/definitions/RatingsGrouped'
 
+  AppraisalArticleRating:
+    type: object
+    properties:
+      article_id:
+        type: string
+        pattern: '/^\d{6}$/'
+        description: Navision article code
+      value:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 5
+        description: Rating value
+      count:
+        type: integer
+        format: int32
+        minimum: 0
+        description: Ratng count
+      calculated_on:
+        $ref: '#/definitions/Date'
+    required:
+      - article_id
+      - value
+      - total
+
   RatingGrouped:
     type: object
     description: Rating count for a given value
@@ -4002,6 +4103,11 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/SweepstakeParticipant'
+
+  AppraisalArticleRatings:
+    type: array
+    items:
+      $ref: '#/definitions/AppraisalArticleRating'
 
   RatingsGrouped:
     type: array
@@ -4270,3 +4376,21 @@ definitions:
         format: int32
       participants:
         $ref: '#/definitions/SweepstakeParticipants'
+
+  AppraisalArticleRatingsResponse:
+    type: object
+    properties:
+      page_count:
+        description: The number of pages
+        type: integer
+        format: int32
+      page_size:
+        description: The page size
+        type: integer
+        format: int32
+      total_items:
+        description: The number of items on all pages
+        type: integer
+        format: int32
+      article_ratings:
+        $ref: '#/definitions/AppraisalArticleRatings'
