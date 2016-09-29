@@ -49,9 +49,11 @@ The Denner Portal provides mostly advertising related data.
 * `/print-schemes` (Print-Werbemittelschemas, [example](examples/print-schemes.json))
 
 ### Appraisals
-* `/appraisals` (Weinbewertungen, [example](examples/appraisals.json))
-* `/appraisals/{appraisal_id}` (Weinbewertung, [example](examples/appraisal.json))
-* `/appraisal-statistic/{date}` (Statistiken zu Weinbewertungen, [example](examples/appraisal-statistic.json))
+* `/appraisals` (Weinbeurteilungen, [example](examples/appraisals.json))
+* `/appraisals/{appraisal_id}` (Weinbeurteilung, [example](examples/appraisal.json))
+* `/appraisal-statistic/{date}` (Statistiken zu Weinbewertungen und -beurteilungen, [example](examples/appraisal-statistic.json))
+* `/ratings` (Weinbewertungen, [example](examples/ratings.json))
+* `/ratings/{article_id}` (Weinbewertung, [example](examples/rating.json))
 * `/sweepstake-participants` (Verlosungsteilnehmer, [example](examples/sweepstake-participants.json))
 
 ## Building
