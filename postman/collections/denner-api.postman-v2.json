@@ -1479,7 +1479,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Neue Seite\",\n\t\"template\": \"dw-article-right\"\n}\n"
+							"raw": "{\n  \"name\": \"Neue Seite\",\n  \"template\": \"dw-article-right\"\n}\n"
 						},
 						"description": "Add a new page (Seite) to a print publication (Print-Werbemittel)"
 					},
@@ -1544,7 +1544,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Neuer Name\",\n\t\"template\": \"dw-front\"\n}\n"
+							"raw": "{\n  \"name\": \"Neuer Name\",\n  \"template\": \"dw-front\"\n}\n"
 						},
 						"description": "Update a print publication's page (Seite eines Print-Werbemittels)"
 					},
@@ -1644,7 +1644,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"items\": [\n\t\t{\n\t\t\t\"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n\t\t\t\"type\": \"publication-article\",\n\t\t\t\"position\": {\n\t\t\t\t\"top\": 0,\n\t\t\t\t\"left\": 0\n\t\t\t},\n\t\t\t\"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n\t\t}\n\t]\n}\n"
+							"raw": "{\n  \"items\": [\n    {\n      \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n    }\n  ]\n}\n"
 						},
 						"description": "Update sheet (Arbeitsblatt) of a print publication's page (Seite eines Print-Werbemittels)."
 					},
@@ -2334,6 +2334,56 @@
 						"description": "List sweepstake participants"
 					},
 					"response": []
+				},
+				{
+					"name": "/ratings",
+					"request": {
+						"url": "{{appraisals_url_base}}/ratings",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{appraisals_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List wine ratings"
+					},
+					"response": []
+				},
+				{
+					"name": "/ratings/{article_id}",
+					"request": {
+						"url": "{{appraisals_url_base}}/ratings/050202",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{appraisals_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List single rating"
+					},
+					"response": []
 				}
 			]
 		},
@@ -2372,7 +2422,7 @@
 					"response": []
 				},
 				{
-					"name": "/articles/{article_number}",
+					"name": "/articles/{article_id}",
 					"request": {
 						"url": "{{articles_url_base}}/articles/022617",
 						"method": "GET",
@@ -2402,7 +2452,7 @@
 					"response": []
 				},
 				{
-					"name": "/articles/{article_number}",
+					"name": "/articles/{article_id}",
 					"request": {
 						"url": "{{articles_url_base}}/articles/022617",
 						"method": "PATCH",
@@ -2442,7 +2492,7 @@
 					"response": []
 				},
 				{
-					"name": "/articles/{article_number}/text-blocks",
+					"name": "/articles/{article_id}/text-blocks",
 					"request": {
 						"url": "{{articles_url_base}}/articles/022617/text-blocks",
 						"method": "GET",
@@ -2472,7 +2522,7 @@
 					"response": []
 				},
 				{
-					"name": "/articles/{article_number}/text-blocks",
+					"name": "/articles/{article_id}/text-blocks",
 					"request": {
 						"url": "{{articles_url_base}}/articles/022617/text-blocks",
 						"method": "PATCH",
