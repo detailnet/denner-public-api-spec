@@ -1,7 +1,7 @@
 [
     {
         "name":"title",
-        "texts":[
+        "override_texts":[
             {
                 "locale":"de",
                 "value":"C\u00f4tes-du-Rh\u00f4ne AOC"

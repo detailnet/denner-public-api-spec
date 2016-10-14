@@ -2,8 +2,27 @@
     "blocks": [
         {
             "name": "title",
-            "override": true,
             "texts": [
+                {
+                    "locale": "de",
+                    "value": "Swisscom Mobile Voucher 10",
+                    "changed_on": "2015-09-25T18:33:55+0200",
+                    "changed_by": "Hans Muster"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Swisscom Mobile Voucher 10",
+                    "changed_on": "2015-09-25T18:33:55+0200",
+                    "changed_by": "Hans Muster"
+                },
+                {
+                    "locale": "it",
+                    "value": "Swisscom Mobile Voucher 10",
+                    "changed_on": "2015-09-25T18:33:55+0200",
+                    "changed_by": "Hans Muster"
+                }
+            ],
+            "override_texts": [
                 {
                     "locale": "de",
                     "value": "Swisscom Mobile Voucher 10",
@@ -40,8 +59,22 @@
         },
         {
             "name": "description",
-            "override": false,
-            "texts": [],
+            "texts": [
+                {
+                    "locale": "de",
+                    "value": "2013, Viñas Viejas D.O. Toro, Spanien, 75 cl"
+                },
+                {
+                    "locale": "fr",
+                    "value": "2013, Viñas Viejas D.O. Toro, Espagne, 75 cl"
+                },
+                {
+                    "locale": "it",
+                    "value": "2013, Viñas Viejas D.O. Toro, Spagna, 75 cl"
+                }
+            ],
+            "override_texts": [
+            ],
             "original_texts": [
                 {
                     "locale": "de",
@@ -59,8 +92,22 @@
         },
         {
             "name": "fits_with",
-            "override": false,
-            "texts": [],
+            "texts": [
+                {
+                    "locale": "de",
+                    "value": "Fleisch: rot (Rind, Lamm, Wild, Ente), Grilladen, Gemüse"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Viande: rouge (boeuf, agneau, gibier, canard), grillades, légumes"
+                },
+                {
+                    "locale": "it",
+                    "value": "Carne: rossa (manzo, agnello, selvaggina, anatra), grigliate, verdura"
+                }
+            ],
+            "override_texts": [
+            ],
             "original_texts": [
                 {
                     "locale": "de",
@@ -78,8 +125,22 @@
         },
         {
             "name": "varietal",
-            "override": false,
-            "texts": [],
+            "texts": [
+                {
+                    "locale": "de",
+                    "value": "Tinta de Toro (Tempranillo)"
+                },
+                {
+                    "locale": "fr",
+                    "value": "Tinta de toro (tempranillo)"
+                },
+                {
+                    "locale": "it",
+                    "value": "Tinta de Toro (Tempranillo)"
+                }
+            ],
+            "override_texts": [
+            ],
             "original_texts": [
                 {
                     "locale": "de",
@@ -97,8 +158,22 @@
         },
         {
             "name": "character",
-            "override": false,
-            "texts": [],
+            "texts": [
+                {
+                    "locale": "de",
+                    "value": "Dunkles Rubinrot. In der Nase reife rote Früchte und Beeren. Feine Röstnoten und etwas Vanille. Voll im Gaumen und lang im Abgang."
+                },
+                {
+                    "locale": "fr",
+                    "value": "Robe rubis foncé. Nez de fruits rouges et de baies mûrs, avec de délicates notes toastées et de vanille. Bouche pleine à la finale persistante."
+                },
+                {
+                    "locale": "it",
+                    "value": "Rosso rubino scuro. Al naso profumi di frutti rossi e bacche maturi accompagnati da delicate note tostate e da un pizzico di vaniglia. Palato pieno e retrogusto persistente."
+                }
+            ],
+            "override_texts": [
+            ],
             "original_texts": [
                 {
                     "locale": "de",
@@ -116,8 +191,22 @@
         },
         {
             "name": "temperature",
-            "override": false,
-            "texts": [],
+            "texts": [
+                {
+                    "locale": "de",
+                    "value": "16-18 °C"
+                },
+                {
+                    "locale": "fr",
+                    "value": "16-18 °C"
+                },
+                {
+                    "locale": "it",
+                    "value": "16-18 °C"
+                }
+            ],
+            "override_texts": [
+            ],
             "original_texts": [
                 {
                     "locale": "de",
@@ -135,27 +224,31 @@
         },
         {
             "name": "awards",
-            "override": false,
-            "texts": [],
+            "texts": [
+            ],
+            "override_texts": [
+            ],
             "original_texts": [
-                {
-                    "locale": "de",
-                    "value": ""
-                },
-                {
-                    "locale": "fr",
-                    "value": ""
-                },
-                {
-                    "locale": "it",
-                    "value": ""
-                }
             ]
         },
         {
             "name": "storage",
-            "override": false,
-            "texts": [],
+            "texts": [
+                {
+                    "locale": "de",
+                    "value": "3-6 Jahre"
+                },
+                {
+                    "locale": "fr",
+                    "value": "3-6 ans"
+                },
+                {
+                    "locale": "it",
+                    "value": "3-6 anni"
+                }
+            ],
+            "override_texts": [
+            ],
             "original_texts": [
                 {
                     "locale": "de",
