@@ -1,0 +1,19 @@
+[
+    {
+        "name":"title",
+        "texts":[
+            {
+                "locale":"de",
+                "value":"C\u00f4tes-du-Rh\u00f4ne AOC"
+            },
+            {
+                "locale":"fr",
+                "value":"C\u00f4tes-du-Rh\u00f4ne AOC fsd fsdf"
+            },
+            {
+                "locale":
+                "it","value":"C\u00f4tes-du-Rh\u00f4ne AOC"
+            }
+        ]
+    }
+]
