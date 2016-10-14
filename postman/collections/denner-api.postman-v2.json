@@ -1421,6 +1421,66 @@
 					"response": []
 				},
 				{
+					"name": "/print-publications/{publication_id}/articles/{article_id}/text-blocks",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444/text-blocks",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List Article's text blocks from a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/articles/{article_id}/text-blocks",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444/text-blocks",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"C\u00f4tes-du-Rh\u00f4ne AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"C\u00f4tes-du-Rh\u00f4ne AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"C\u00f4tes-du-Rh\u00f4ne AOC\"\n            }\n        ]\n    }\n]"
+						},
+						"description": "Update Article's override-texts from a print publication (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
 					"name": "/print-publications/{publication_id}/pages",
 					"request": {
 						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages",
