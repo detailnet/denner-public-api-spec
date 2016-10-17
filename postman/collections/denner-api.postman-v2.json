@@ -1098,6 +1098,15 @@
 			"item": [
 				{
 					"name": "/print-publications",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save first publication's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publications && jsonData.print_publications[0]) ? jsonData.print_publications[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_id\", id);\n\ntests[\"Setup first publication_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
 						"url": "{{advertising_url_base}}/print-publications",
 						"method": "GET",
@@ -1129,6 +1138,13 @@
 				{
 					"name": "/print-publications/{year}-{week}",
 					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save first publication's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publications && jsonData.print_publications[0]) ? jsonData.print_publications[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_id\", id);\n\ntests[\"Setup first publication_id in environment\"] = !!id;\n"
+							}
+						},
 						{
 							"listen": "prerequest",
 							"script": {
@@ -1167,6 +1183,22 @@
 				},
 				{
 					"name": "/print-publications",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save created publication's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_id\", id);\n\ntests[\"Setup new publication_id in environment\"] = !!id;\n"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": "postman.setEnvironmentVariable(\"new_uuid\",'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16);}));"
+							}
+						}
+					],
 					"request": {
 						"url": "{{advertising_url_base}}/print-publications",
 						"method": "POST",
@@ -1194,7 +1226,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n  \"name\": \"Test\",\n  \"year\": 2016,\n  \"week\": 30,\n  \"sort_index\": 1,\n  \"created_by\": \"Vorname Nachname\",\n  \"languages\": [\n    \"de\",\n    \"fr\",\n    \"it\"\n  ],\n  \"layout\": \"positioning\"\n}"
+							"raw": "{\n  \"id\": \"{{new_uuid}}\",\n  \"name\": \"Test\",\n  \"year\": 2016,\n  \"week\": 30,\n  \"sort_index\": 1,\n  \"created_by\": \"Vorname Nachname\",\n  \"languages\": [\n    \"de\",\n    \"fr\",\n    \"it\"\n  ],\n  \"layout\": \"positioning\"\n}"
 						},
 						"description": "Create a new print publication (Print-Werbemittel)"
 					},
@@ -1203,7 +1235,7 @@
 				{
 					"name": "/print-publications/{publication_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -1233,7 +1265,7 @@
 				{
 					"name": "/print-publications/{publication_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1268,7 +1300,7 @@
 				{
 					"name": "/print-publications/{publication_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}",
 						"method": "DELETE",
 						"header": [
 							{
@@ -1297,8 +1329,17 @@
 				},
 				{
 					"name": "/print-publications/{publication_id}/articles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save first publication articles's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_article_id\", id);\n\ntests[\"Setup first publication_article_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
 						"method": "GET",
 						"header": [
 							{
@@ -1327,8 +1368,17 @@
 				},
 				{
 					"name": "/print-publications/{publication_id}/articles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save created publication article's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_article_id\", id);\n\ntests[\"Setup new publication_article_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles",
 						"method": "POST",
 						"header": [
 							{
@@ -1363,7 +1413,7 @@
 				{
 					"name": "/print-publications/{publication_id}/articles/{article_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -1393,7 +1443,7 @@
 				{
 					"name": "/print-publications/{publication_id}/articles/{article_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}",
 						"method": "DELETE",
 						"header": [
 							{
@@ -1423,7 +1473,7 @@
 				{
 					"name": "/print-publications/{publication_id}/articles/{article_id}/text-blocks",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444/text-blocks",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
 						"method": "GET",
 						"header": [
 							{
@@ -1453,7 +1503,7 @@
 				{
 					"name": "/print-publications/{publication_id}/articles/{article_id}/text-blocks",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444/text-blocks",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/articles/{{publication_article_id}}/text-blocks",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1471,15 +1521,15 @@
 								"value": "{{advertising_header_app_key}}",
 								"description": ""
 							},
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "description": ""
-                            }
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"C\u00f4tes-du-Rh\u00f4ne AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"C\u00f4tes-du-Rh\u00f4ne AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"C\u00f4tes-du-Rh\u00f4ne AOC\"\n            }\n        ]\n    }\n]"
+							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
 						},
 						"description": "Update Article's override-texts from a print publication by listing (Print-Werbemittel)"
 					},
@@ -1487,8 +1537,17 @@
 				},
 				{
 					"name": "/print-publications/{publication_id}/pages",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save first publication page's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publication_pages && jsonData.print_publication_pages[0]) ? jsonData.print_publication_pages[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_page_id\", id);\n\ntests[\"Setup first publication_page_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages",
 						"method": "GET",
 						"header": [
 							{
@@ -1517,8 +1576,17 @@
 				},
 				{
 					"name": "/print-publications/{publication_id}/pages",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save created publication page's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_page_id\", id);\n\ntests[\"Setup new publication_page_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages",
 						"method": "POST",
 						"header": [
 							{
@@ -1552,8 +1620,17 @@
 				},
 				{
 					"name": "/print-publications/{publication_id}/pages/{page_id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save first publication page sheet's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.sheets && jsonData.sheets[0]) ? jsonData.sheets[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_page_sheet_id\", id);\n\ntests[\"Setup first publication_page_sheet_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-bbbb-4444-bbbb-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -1583,7 +1660,7 @@
 				{
 					"name": "/print-publications/{publication_id}/pages/{page_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1618,7 +1695,7 @@
 				{
 					"name": "/print-publications/{publication_id}/pages/{page_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}",
 						"method": "DELETE",
 						"header": [
 							{
@@ -1647,8 +1724,17 @@
 				},
 				{
 					"name": "/print-publications/{publication_id}/pages/{page_id}/sheets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save created publication page sheet's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"publication_page_sheet_id\", id);\n\ntests[\"Setup new publication_page_sheet_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-aaaa-4444-aaaa-444444444444/sheets",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/sheets",
 						"method": "POST",
 						"header": [
 							{
@@ -1683,7 +1769,7 @@
 				{
 					"name": "/print-publications/{publication_id}/pages/{page_id}/sheets/{sheet_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-aaaa-4444-aaaa-444444444444/sheets/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/sheets/{{publication_page_sheet_id}}",
 						"method": "PATCH",
 						"header": [
 							{
@@ -1709,7 +1795,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"items\": [\n    {\n      \"id\": \"44444444-aaaa-4444-aaaa-444444444444\",\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"44444444-aaaa-4444-aaaa-444444444444\"\n    }\n  ]\n}\n"
+							"raw": "{\n  \"items\": [\n    {\n      \"type\": \"publication-article\",\n      \"position\": {\n        \"top\": 0,\n        \"left\": 0\n      },\n      \"advertised_article\": \"{{advertised_article_id}}\"\n    }\n  ]\n}\n"
 						},
 						"description": "Update sheet (Arbeitsblatt) of a print publication's page (Seite eines Print-Werbemittels)."
 					},
@@ -1717,8 +1803,17 @@
 				},
 				{
 					"name": "/print-publications/{publication_id}/pages/{page_id}/articles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save first publication articles's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.print_publication_articles && jsonData.print_publication_articles[0]) ? jsonData.print_publication_articles[0].id : null;\n    \npostman.setEnvironmentVariable(\"publication_article_id\", id);\n\ntests[\"Setup first publication_article_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-bbbb-4444-bbbb-444444444444/articles",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/articles",
 						"method": "GET",
 						"header": [
 							{
@@ -1748,7 +1843,7 @@
 				{
 					"name": "/print-publications/{publication_id}/pages/{page_id}/articles/{article_id}",
 					"request": {
-						"url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-bbbb-4444-bbbb-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444",
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/articles/{{publication_article_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -1775,71 +1870,71 @@
 					},
 					"response": []
 				},
-                {
-                    "name": "/print-publications/{publication_id}/pages/{page_id}/articles/{article_id}/text-blocks",
-                    "request": {
-                        "url": "{{advertising_url_base}}/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-bbbb-4444-bbbb-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444/text-blocks",
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "{{header_accept}}",
-                                "description": ""
-                            },
-                            {
-                                "key": "App-ID",
-                                "value": "{{advertising_header_app_id}}",
-                                "description": ""
-                            },
-                            {
-                                "key": "App-Key",
-                                "value": "{{advertising_header_app_key}}",
-                                "description": ""
-                            }
-                        ],
-                        "body": {
-                            "mode": "formdata",
-                            "formdata": []
-                        },
-                        "description": "List Article's text blocks from a page of a print publication by positioning (Print-Werbemittel)"
-                    },
-                    "response": []
-                },
-                {
-                    "name": "/print-publications/{publication_id}/pages/{page_id}/articles/{article_id}/text-blocks",
-                    "request": {
-                        "url": "{{advertising_url_base}}/print-publications/print-publications/44444444-aaaa-4444-aaaa-444444444444/pages/44444444-bbbb-4444-bbbb-444444444444/articles/44444444-bbbb-4444-bbbb-444444444444/text-blocks",
-                        "method": "PATCH",
-                        "header": [
-                            {
-                                "key": "Accept",
-                                "value": "{{header_accept}}",
-                                "description": ""
-                            },
-                            {
-                                "key": "App-ID",
-                                "value": "{{advertising_header_app_id}}",
-                                "description": ""
-                            },
-                            {
-                                "key": "App-Key",
-                                "value": "{{advertising_header_app_key}}",
-                                "description": ""
-                            },
-                            {
-                                "key": "Content-Type",
-                                "value": "application/json",
-                                "description": ""
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"C\u00f4tes-du-Rh\u00f4ne AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"C\u00f4tes-du-Rh\u00f4ne AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"C\u00f4tes-du-Rh\u00f4ne AOC\"\n            }\n        ]\n    }\n]"
-                        },
-                        "description": "Update Article's override-texts from a page of a print publication by positioning (Print-Werbemittel)"
-                    },
-                    "response": []
-                },
+				{
+					"name": "/print-publications/{publication_id}/pages/{page_id}/articles/{article_id}/text-blocks",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/articles/{{publication_article_id}}/text-blocks",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"description": "List Article's text blocks from a page of a print publication by positioning (Print-Werbemittel)"
+					},
+					"response": []
+				},
+				{
+					"name": "/print-publications/{publication_id}/pages/{page_id}/articles/{article_id}/text-blocks",
+					"request": {
+						"url": "{{advertising_url_base}}/print-publications/{{publication_id}}/pages/{{publication_page_id}}/articles/{{publication_article_id}}/text-blocks",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "{{header_accept}}",
+								"description": ""
+							},
+							{
+								"key": "App-ID",
+								"value": "{{advertising_header_app_id}}",
+								"description": ""
+							},
+							{
+								"key": "App-Key",
+								"value": "{{advertising_header_app_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"title\",\n        \"override_text\": [\n            {\n                \"locale\": \"de\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            },\n            {\n                \"locale\": \"fr\",\n                \"value\": \"Côtes-du-Rhône AOC fsd fsdf\"\n            },\n            {\n                \"locale\": \"it\",\n                \"value\": \"Côtes-du-Rhône AOC\"\n            }\n        ]\n    }\n]"
+						},
+						"description": "Update Article's override-texts from a page of a print publication by positioning (Print-Werbemittel)"
+					},
+					"response": []
+				},
 				{
 					"name": "/print-layouts",
 					"request": {
@@ -2813,6 +2908,15 @@
 				},
 				{
 					"name": "/advertised-articles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save first advertised-article's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.advertised_articles && jsonData.advertised_articles[0]) ? jsonData.advertised_articles[0].id : null;\n    \npostman.setEnvironmentVariable(\"advertised_article_id\", id);\n\ntests[\"Setup first advertised_article_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
 						"url": "{{articles_url_base}}/advertised-articles",
 						"method": "GET",
@@ -2844,6 +2948,13 @@
 				{
 					"name": "/advertised-articles/{year}-{week}",
 					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save first advertised-article's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.advertised_articles_by_week && jsonData.advertised_articles_by_week[0]) ? jsonData.advertised_articles_by_week[0].id : null;\n    \npostman.setEnvironmentVariable(\"advertised_article_id\", id);\n\ntests[\"Setup first advertised_article_id in environment\"] = !!id;"
+							}
+						},
 						{
 							"listen": "prerequest",
 							"script": {
@@ -2883,7 +2994,7 @@
 				{
 					"name": "/advertised-articles/{advertised_article_id}",
 					"request": {
-						"url": "{{articles_url_base}}/advertised-articles/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -2913,7 +3024,7 @@
 				{
 					"name": "/advertised-articles/{advertised_article_id}",
 					"request": {
-						"url": "{{articles_url_base}}/advertised-articles/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}",
 						"method": "PATCH",
 						"header": [
 							{
@@ -2952,8 +3063,17 @@
 				},
 				{
 					"name": "/advertised-articles/{advertised_article_id}/dots",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save first advertised-article dot's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData && jsonData.advertised_article_dots && jsonData.advertised_article_dots[0]) ? jsonData.advertised_article_dots[0].id : null;\n    \npostman.setEnvironmentVariable(\"dot_id\", id);\n\ntests[\"Setup first dot_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
-						"url": "{{articles_url_base}}/advertised-articles/44444444-aaaa-4444-aaaa-444444444444/dots",
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots",
 						"method": "GET",
 						"header": [
 							{
@@ -2982,8 +3102,17 @@
 				},
 				{
 					"name": "/advertised-articles/{advertised_article_id}/dots",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "// Save created advertised article dots's id in environment\nvar jsonData = JSON.parse(responseBody),\n    id = (jsonData) ? jsonData.id : null;\n    \npostman.setEnvironmentVariable(\"dot_id\", id);\n\ntests[\"Setup new dot_id in environment\"] = !!id;\n"
+							}
+						}
+					],
 					"request": {
-						"url": "{{articles_url_base}}/advertised-articles/44444444-aaaa-4444-aaaa-444444444444/dots",
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots",
 						"method": "POST",
 						"header": [
 							{
@@ -3018,7 +3147,7 @@
 				{
 					"name": "/advertised-articles/{advertised_article_id}/dots/{dot_id}",
 					"request": {
-						"url": "{{articles_url_base}}/advertised-articles/44444444-aaaa-4444-aaaa-444444444444/dots/44444444-aaaa-4444-aaaa-444444444444?render=1",
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
 						"method": "GET",
 						"header": [
 							{
@@ -3048,7 +3177,7 @@
 				{
 					"name": "/advertised-articles/{advertised_article_id}/dots/{dot_id}",
 					"request": {
-						"url": "{{articles_url_base}}/advertised-articles/44444444-aaaa-4444-aaaa-444444444444/dots/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
 						"method": "PATCH",
 						"header": [
 							{
@@ -3083,7 +3212,7 @@
 				{
 					"name": "/advertised-articles/{advertised_article_id}/dots/{dot_id}",
 					"request": {
-						"url": "{{articles_url_base}}/advertised-articles/44444444-aaaa-4444-aaaa-444444444444/dots/44444444-aaaa-4444-aaaa-444444444444",
+						"url": "{{articles_url_base}}/advertised-articles/{{advertised_article_id}}/dots/{{dot_id}}",
 						"method": "DELETE",
 						"header": [
 							{
