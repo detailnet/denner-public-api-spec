@@ -1,0 +1,53 @@
+{
+	"id": "",
+	"name": "denner-public-api apig-test",
+	"values": [
+		{
+			"key": "header_accept",
+			"value": "application/json",
+			"type": "text",
+			"name": "header_accept",
+			"enabled": true
+		},
+		{
+			"key": "base_url_schema",
+			"value": "https://",
+			"type": "text",
+			"name": "base_url_schema",
+			"enabled": true
+		},
+		{
+			"key": "base_url_host",
+			"value": "denner-public-api.detailnet.ch",
+			"type": "text",
+			"name": "base_url_host",
+			"enabled": true
+		},
+		{
+			"key": "api_version",
+			"value": "test",
+			"type": "text",
+			"name": "api_version",
+			"enabled": true
+		},
+		{
+			"key": "public_url_base",
+			"value": "{{base_url_schema}}{{base_url_host}}/{{api_version}}",
+			"type": "text",
+			"name": "public_url_base",
+			"enabled": true
+		},
+		{
+			"key": "public_header_app_key",
+			"value": "{{denner_public_app_key}}",
+			"type": "text",
+			"name": "public_header_app_key",
+			"enabled": true
+		}
+	],
+	"timestamp": 1470902456945,
+	"synced": false,
+	"syncedFilename": "",
+	"team": null,
+	"isDeleted": false
+}

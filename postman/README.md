@@ -45,16 +45,7 @@ We use global variables to store data that is your own, and must not be shared w
 
 Currently we support following global variables:
 
-- `denner_advertising_app_id`
-- `denner_advertising_app_key`
-- `denner_appraisals_app_key` (doesn't require an "id")
-- `denner_articles_app_id`
-- `denner_articles_app_key`
-- `denner_assets_app_id`
-- `denner_assets_app_key`
-- `denner_banners_app_key` (doesn't require an "id")
-- `denner_stores_app_id`
-- `denner_stores_app_key`
+- `denner_public_app_key` (doesn't require an "id")
 
 Set up global variables:
 
