@@ -24,8 +24,8 @@ Following guide applies for:
 
 Choose the one that best fits the testing situation you need:
 
-- GitHub repository | e.g. https://raw.githubusercontent.com/detailnet/denner-portal-api-spec/master/postman/collections/denner-api.json
-- Local checkout through Protobox | e.g. http://denner-portal-api-spec.web01.detailnet.me/postman/collections/denner-api.json
+- GitHub repository | e.g. https://raw.githubusercontent.com/detailnet/denner-public-api-spec/master/postman/collections/denner-api.json
+- Local checkout through Protobox | e.g. http://denner-public-api-spec.web01.detailnet.me/postman/collections/denner-api.json
 
 > You can also access different branches on GitHub (replace `master` with the branch name).
 
@@ -37,7 +37,7 @@ Choose the one that best fits the testing situation you need:
 - Click on "Import" button, choose all files in the project environments directory (all at once).
 
 > There is no direct possibility to import from an URL, but you can use your OS as wrapper. 
-> To do so enter an URL instead of a file in the file selection window (e.g. https://raw.githubusercontent.com/detailnet/denner-portal-api-spec/master/postman/environments/denner-api_web01.json).
+> To do so enter an URL instead of a file in the file selection window (e.g. https://raw.githubusercontent.com/detailnet/denner-public-api-spec/master/postman/environments/denner-api_web01.json).
 
 #### Setup global variables
 
