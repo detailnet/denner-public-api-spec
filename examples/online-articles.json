@@ -62,20 +62,6 @@
                     "value": "Confronto con la concorrenza"
                 }
             ],
-            "promotion_info": [
-                {
-                    "locale": "de",
-                    "value": "Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig"
-                },
-                {
-                    "locale": "fr",
-                    "value": "Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables que durant la semaine d’action"
-                },
-                {
-                    "locale": "it",
-                    "value": "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
-                }
-            ],
             "quantity": 6,
             "validity": {
                 "from": "2015-06-23",
@@ -139,40 +125,39 @@
                     }
                 ]
             },
-            "promoted": true,
             "compared": true,
             "online_group": {
-                "id": "671988cc-ca5f-484e-8db8-23a65ea0044a",
-                "code": 4003,
+                "id": "a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee",
+                "code": "2-9",
                 "title": [
                     {
                         "locale": "de",
-                        "value": "Wein"
+                        "value": "Wein/Champagner"
                     },
                     {
                         "locale": "fr",
-                        "value": "Vins"
+                        "value": "Vins/champagnes"
                     },
                     {
                         "locale": "it",
-                        "value": "Vini"
+                        "value": "Vino/champagne"
                     }
                 ],
                 "parent": {
-                    "id": "5b79391b-b436-45f9-b3e4-93ec3ae1fae2",
-                    "code": 4001,
+                    "id": "8fd653c3-a86b-4529-bbb5-58d06919d484",
+                    "code": "2",
                     "title": [
                         {
                             "locale": "de",
-                            "value": "Tafelgetränke und Mineralwasser"
+                            "value": "Getränke"
                         },
                         {
                             "locale": "fr",
-                            "value": "Boissons table et eau minérale"
+                            "value": "Boissons"
                         },
                         {
                             "locale": "it",
-                            "value": "Bevande da tavola e acque minerali"
+                            "value": "Bevande"
                         }
                     ]
                 }

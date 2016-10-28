@@ -25,15 +25,15 @@ paths:
     get:
       summary: List all online articles
       description: |
-        Use this operation to get a list of all articles currently advertised.
+        Use this operation to get a list of all articles currently in promotion and advertised in the online channels.
       tags:
-        - online
-      operationId: listPublicOnlineArticles
+        - promotion
+      operationId: listOnlineArticles
       security:
         - appKey: []
-      parameters:
-        - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
+#      parameters:
+#        - $ref: '#/parameters/PageParam'
+#        - $ref: '#/parameters/PageSizeParam'
 #        - $ref: '#/parameters/FilterParam'
       responses:
         200:
@@ -43,9 +43,6 @@ paths:
           examples:
             application/json:
 
-              page_count: 1
-              page_size: 1
-              total_items: 1
               online_articles:
               - id: dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6
                 article_id: '051273'
@@ -81,15 +78,6 @@ paths:
                   value: Comparaison concurrentielle
                 - locale: it
                   value: Confronto con la concorrenza
-                promotion_info:
-                - locale: de
-                  value: Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig
-                - locale: fr
-                  value: Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables
-                    que durant la semaine d’action
-                - locale: it
-                  value: I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva
-                    settimana promozionale
                 quantity: 6
                 validity:
                   from: '2015-06-23'
@@ -123,28 +111,27 @@ paths:
                     value: Disponible(s) uniquement dans les succursales aves des produits frais
                   - locale: it
                     value: "..."
-                promoted: true
                 compared: true
                 online_group:
-                  id: 671988cc-ca5f-484e-8db8-23a65ea0044a
-                  code: 4003
+                  id: a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee
+                  code: 2-9
                   title:
                   - locale: de
-                    value: Wein
+                    value: Wein/Champagner
                   - locale: fr
-                    value: Vins
+                    value: Vins/champagnes
                   - locale: it
-                    value: Vini
+                    value: Vino/champagne
                   parent:
-                    id: 5b79391b-b436-45f9-b3e4-93ec3ae1fae2
-                    code: 4001
+                    id: 8fd653c3-a86b-4529-bbb5-58d06919d484
+                    code: 2
                     title:
                     - locale: de
-                      value: Tafelgetränke und Mineralwasser
+                      value: Getränke
                     - locale: fr
-                      value: Boissons table et eau minérale
+                      value: Boissons
                     - locale: it
-                      value: Bevande da tavola e acque minerali
+                      value: Bevande
                 packshot:
                   id: 5983a33d-ac61-49a8-a836-43259e78e9d0
                   cdn_url: https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png
@@ -304,28 +291,28 @@ paths:
 #                            value: "Uova"
 #                        children: []
 
-parameters:
-  PageParam:
-    name: page
-    description: >
-      The page number.
-      Default: 1
-    in: query
-    type: integer
-    required: false
-    format: int32
-    minimum: 0
-    default: 1
-  PageSizeParam:
-    name: page_size
-    description: >
-      The page size.
-      Default: -1 (no limit)
-    in: query
-    type: integer
-    required: false
-    format: int32
-    default: -1
+#parameters:
+#  PageParam:
+#    name: page
+#    description: >
+#      The page number.
+#      Default: 1
+#    in: query
+#    type: integer
+#    required: false
+#    format: int32
+#    minimum: 0
+#    default: 1
+#  PageSizeParam:
+#    name: page_size
+#    description: >
+#      The page size.
+#      Default: -1 (no limit)
+#    in: query
+#    type: integer
+#    required: false
+#    format: int32
+#    default: -1
 #  SortParam:
 #    name: sort
 #    description: >
@@ -524,7 +511,7 @@ definitions:
         type: integer
         format: int32
         minimum: 0
-        description: Navision wine type code
+        description: Denner wine type code
       title:
         $ref: '#/definitions/Translations'
 
@@ -536,7 +523,7 @@ definitions:
       article_id:
         type: string
         pattern: '/^\d{6}$/'
-        description: Navision article code
+        description: Denner article code
       title:
         $ref: '#/definitions/Translations'
       description:
@@ -545,17 +532,12 @@ definitions:
         $ref: '#/definitions/PublicArticlePrices'
       price_info:
         $ref: '#/definitions/Translations'
-      promotion_info:
-        $ref: '#/definitions/Translations'
       quantity:
         $ref: '#/definitions/Quantity'
       validity:
         $ref: '#/definitions/ArticleValidity'
       availability_limitations:
         $ref: '#/definitions/AvailabilityLimitations'
-      promoted:
-        type: boolean
-        description: Is it a promoted article (should be displayed with full information)?
       compared:
         type: boolean
         description: Is the article's price compared to an offer from an other company?
@@ -600,7 +582,7 @@ definitions:
       code:
         type: integer
         format: int32
-        description: Navision online group code
+        description: Denner online group code
       title:
         $ref: '#/definitions/Translations'
       parent:
@@ -626,19 +608,19 @@ definitions:
   PublicOnlineArticlesResponse:
     type: object
     properties:
-      page_count:
-        description: The number of pages
-        type: integer
-        format: int32
-      page_size:
-        description: The page size
-        type: integer
-        format: int32
-      total_items:
-        description: The number of items on all pages
-        type: integer
-        format: int32
-      articles:
+#      page_count:
+#        description: The number of pages
+#        type: integer
+#        format: int32
+#      page_size:
+#        description: The page size
+#        type: integer
+#        format: int32
+#      total_items:
+#        description: The number of items on all pages
+#        type: integer
+#        format: int32
+      online_articles:
         $ref: '#/definitions/PublicOnlineArticles'
 
 #  OnlineGroupsResponse:

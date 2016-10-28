@@ -13,7 +13,7 @@ Consider the following terms:
 ## Data and resources
 The Denner Public API provides open data around the promotion of it's articles.
 
-### Articles/Promotions
+### Promotion
 
 * `/online-articles` (Artikel, [example](examples/online-articles.json))
 
