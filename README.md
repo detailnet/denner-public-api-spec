@@ -5,14 +5,13 @@ Consider the following terms:
 
 | DE          | EN          |
 |-------------|-------------|
-| Filiale     | Store       |
 | Artikel     | Article     |
 | Werbemittel | Publication |
 | Aktion      | Promotion   |
 | bewerben    | advertise   |
 
 ## Data and resources
-The Denner Public API provides a listing of articles actually promoted (day based).
+The Denner Public API provides open data around the promotion of it's articles.
 
 ### Articles/Promotions
 
