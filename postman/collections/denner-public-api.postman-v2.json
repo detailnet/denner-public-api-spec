@@ -1,10 +1,36 @@
 {
-	"variables": [],
-	"info": {
-		"name": "denner-public-api",
-		"description": "Denner public API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-	},
-	"item": [
-	]
+    "variables": [],
+    "info": {
+        "name": "denner-public-api",
+        "_postman_id": "2e8bbf75-5ec5-dfef-90e7-beb1c1c42fdc",
+        "description": "",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "/online-articles",
+            "request": {
+                "url": "{{base_url}}/online-articles",
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "description": ""
+                    },
+                    {
+                        "key": "App-Key",
+                        "value": "{{app_key}}",
+                        "description": ""
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "description": "List online articles"
+            },
+            "response": []
+        }
+    ]
 }

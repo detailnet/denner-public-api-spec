@@ -1,8 +1,8 @@
-# Denner Portal 2.0 API for Postman
-[Postman](https://www.getpostman.com/) settings for Denner 2.0 Portal Web Services.
+# Denner Public API for Postman
+[Postman](https://www.getpostman.com/) settings for Denner Public Web Services.
 
 ## How to use it
-Following guide applies for:
+The following guide applies for:
 
 - [Postman REST client (Packaged App)](https://www.getpostman.com/)
 - [Postman REST client (Chrome extension)](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm)
@@ -24,8 +24,8 @@ Following guide applies for:
 
 Choose the one that best fits the testing situation you need:
 
-- GitHub repository | e.g. https://raw.githubusercontent.com/detailnet/denner-public-api-spec/master/postman/collections/denner-api.json
-- Local checkout through Protobox | e.g. http://denner-public-api-spec.web01.detailnet.me/postman/collections/denner-api.json
+- GitHub repository | e.g. https://raw.githubusercontent.com/detailnet/denner-public-api-spec/master/postman/collections/denner-public-api.postman-v2.json
+- Local checkout through Protobox | e.g. http://denner-public-api-spec.web01.detailnet.me/postman/collections/denner-public-api.postman-v2.json
 
 > You can also access different branches on GitHub (replace `master` with the branch name).
 
@@ -37,7 +37,7 @@ Choose the one that best fits the testing situation you need:
 - Click on "Import" button, choose all files in the project environments directory (all at once).
 
 > There is no direct possibility to import from an URL, but you can use your OS as wrapper. 
-> To do so enter an URL instead of a file in the file selection window (e.g. https://raw.githubusercontent.com/detailnet/denner-public-api-spec/master/postman/environments/denner-api_web01.json).
+> To do so enter an URL instead of a file in the file selection window (e.g. https://raw.githubusercontent.com/detailnet/denner-public-api-spec/master/postman/environments/denner-public-api_apig-test.json).
 
 #### Setup global variables
 
@@ -60,7 +60,7 @@ Set up global variables:
 - Move your mouse pointer over the collection name (left menu), click on "Share collection" icon.
 - Click on "Download" button.
 - Export-collection menu appears, choose "Collection v2" and click on "Export".
-- Overwrite your local repository's [collections/denner-api.json](collections/denner-api.json) file.
+- Overwrite your local repository's [collections/denner-public-api.postman-v2.json](collections/denner-public-api.postman-v2.json) file.
 - Review changes with your preferred editor:
   - Replace tabs with 4 whitespaces.
   - Reset owner to original.

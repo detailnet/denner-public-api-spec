@@ -1,6 +1,6 @@
 {
-	"id": "c8928b0f-c603-4848-bb1e-c9a338877ac6",
-	"name": "denner-public-api apig-v1",
+	"id": "4fa019e2-eb36-4b91-b593-3eae7a327158",
+	"name": "denner-public-api cf-v1",
 	"values": [
 		{
 			"key": "header_accept",
@@ -18,7 +18,7 @@
 		},
 		{
 			"key": "base_url",
-			"value": "https://denner-public-api.detailnet.ch/v1",
+			"value": "https://denner-public-api-v1.detailnet.ch",
 			"type": "text",
 			"name": "base_url",
 			"enabled": true,

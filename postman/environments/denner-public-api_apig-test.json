@@ -1,5 +1,5 @@
 {
-	"id": "",
+	"id": "f5e5daf8-9f88-49a2-ab3b-b679a1ecf5f1",
 	"name": "denner-public-api apig-test",
 	"values": [
 		{
@@ -10,39 +10,19 @@
 			"enabled": true
 		},
 		{
-			"key": "base_url_schema",
-			"value": "https://",
-			"type": "text",
-			"name": "base_url_schema",
-			"enabled": true
-		},
-		{
-			"key": "base_url_host",
-			"value": "denner-public-api.detailnet.ch",
-			"type": "text",
-			"name": "base_url_host",
-			"enabled": true
-		},
-		{
-			"key": "api_version",
-			"value": "test",
-			"type": "text",
-			"name": "api_version",
-			"enabled": true
-		},
-		{
-			"key": "public_url_base",
-			"value": "{{base_url_schema}}{{base_url_host}}/{{api_version}}",
-			"type": "text",
-			"name": "public_url_base",
-			"enabled": true
-		},
-		{
-			"key": "public_header_app_key",
+			"key": "header_app_key",
 			"value": "{{denner_public_app_key}}",
 			"type": "text",
-			"name": "public_header_app_key",
+			"name": "header_app_key",
 			"enabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "https://denner-public-api.detailnet.ch/test",
+			"type": "text",
+			"name": "base_url",
+			"enabled": true,
+			"hovered": false
 		}
 	],
 	"timestamp": 1470902456945,
