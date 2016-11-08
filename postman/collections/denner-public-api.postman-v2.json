@@ -20,7 +20,7 @@
                     },
                     {
                         "key": "App-Key",
-                        "value": "{{app_key}}",
+                        "value": "{{header_app_key}}",
                         "description": ""
                     }
                 ],
