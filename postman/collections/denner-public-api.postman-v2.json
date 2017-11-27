@@ -47,6 +47,11 @@
                         "key": "Accept-Language",
                         "value": "de",
                         "description": ""
+                    },
+                    {
+                        "key": "App-Key",
+                        "value": "{{header_app_key}}",
+                        "description": ""
                     }
                 ],
                 "body": {
