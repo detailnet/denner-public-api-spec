@@ -31,6 +31,31 @@
                 "description": "List online articles"
             },
             "response": []
+        },
+        {
+            "name": "/stores",
+            "request": {
+                "url": "{{base_url}}/stores",
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "description": ""
+                    },
+                    {
+                        "key": "Accept-Language",
+                        "value": "de",
+                        "description": ""
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "description": "List stores"
+            },
+            "response": []
         }
     ]
 }

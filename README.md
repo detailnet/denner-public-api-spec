@@ -9,6 +9,7 @@ Consider the following terms:
 | Werbemittel | Publication |
 | Aktion      | Promotion   |
 | bewerben    | advertise   |
+| Filiale     | store       |
 
 ## Data and resources
 The Denner Public API provides open data around the promotion of it's articles.
@@ -16,6 +17,10 @@ The Denner Public API provides open data around the promotion of it's articles.
 ### Promotion
 
 * `/online-articles` (Artikel, [example](examples/online-articles.json))
+
+### Stores
+
+* `GET /stores` (Filialen, [example](examples/stores.json))
 
 ## Building
 
