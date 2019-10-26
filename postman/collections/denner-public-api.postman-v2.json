@@ -1,66 +1,99 @@
 {
-    "variables": [],
-    "info": {
-        "name": "denner-public-api",
-        "_postman_id": "2e8bbf75-5ec5-dfef-90e7-beb1c1c42fdc",
-        "description": "",
-        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-    },
-    "item": [
-        {
-            "name": "/online-articles",
-            "request": {
-                "url": "{{base_url}}/online-articles",
-                "method": "GET",
-                "header": [
-                    {
-                        "key": "Accept",
-                        "value": "application/json",
-                        "description": ""
-                    },
-                    {
-                        "key": "App-Key",
-                        "value": "{{header_app_key}}",
-                        "description": ""
-                    }
-                ],
-                "body": {
-                    "mode": "formdata",
-                    "formdata": []
-                },
-                "description": "List online articles"
-            },
-            "response": []
-        },
-        {
-            "name": "/stores",
-            "request": {
-                "url": "{{base_url}}/stores",
-                "method": "GET",
-                "header": [
-                    {
-                        "key": "Accept",
-                        "value": "application/json",
-                        "description": ""
-                    },
-                    {
-                        "key": "Accept-Language",
-                        "value": "de",
-                        "description": ""
-                    },
-                    {
-                        "key": "App-Key",
-                        "value": "{{header_app_key}}",
-                        "description": ""
-                    }
-                ],
-                "body": {
-                    "mode": "formdata",
-                    "formdata": []
-                },
-                "description": "List stores"
-            },
-            "response": []
-        }
-    ]
+	"info": {
+		"_postman_id": "16dc7b29-7908-e0d1-dab0-7ff1caeced5a",
+		"name": "denner-public-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/online-articles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "App-Key",
+						"value": "{{header_app_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/online-articles",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"online-articles"
+					]
+				},
+				"description": "List online articles"
+			},
+			"response": []
+		},
+		{
+			"name": "/base-poster",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "App-Key",
+						"value": "{{header_app_key}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"article_id\": \"051203\",\n\t\"locale\": \"it\",\n\t\"quantity\": 6,\n\t\"wine-year\": 2018,\n\t\"valid_on\": \"2019-09-26\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/base-poster",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"base-poster"
+					]
+				},
+				"description": "Create a new base poster"
+			},
+			"response": []
+		},
+		{
+			"name": "/stores",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "de"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/stores",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stores"
+					]
+				},
+				"description": "List stores"
+			},
+			"response": []
+		}
+	]
 }
