@@ -469,6 +469,36 @@ paths:
                       id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
                       title: "Backstation"
 
+  ### Production
+  /base-poster:
+    post:
+      summary: Create base poster
+      description: >
+        Crate an A4 base poster (for pre-printed paper) from article.
+      tags:
+        - production
+      operationId: createBasePoster
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - appKey: []
+      parameters:
+        - $ref: '#/parameters/BasePosterInput'
+      responses:
+        201:
+          description: Successful creation
+          schema:
+            $ref: '#/definitions/PdfFile'
+          examples:
+            application/json:
+              url: "https://denner-assets-test.s3.eu-west-1.amazonaws.com/regio-publisher/e4654297-35f7-46bd-9525-11d9e5af7a22/Sunrise-Cabernet-Sauvignon-Concha-y-Toro.pdf"
+        400:
+          description: 400 Bad Request
+        500:
+          description: 500 Internal Server Error
+
 parameters:
   PageParam:
     name: page
@@ -517,6 +547,37 @@ parameters:
     default: de
     description: >
       Accepted locale (supported are "de", "fr", and "it")
+  BasePosterInput:
+    name: BasePosterInput
+    in: body
+    required: true
+    schema:
+      required:
+        - article_id
+      type: object
+      properties:
+        article_id:
+          type: string
+          description: The unique identifier of an article
+          pattern: '/^[0-9]{6}$/'
+        locale:
+          type: string
+          description: Locale/language (supported are "de", "fr" and "it")
+          default: de
+        quantity:
+          type: integer
+          description: Quantity for prices and texts
+          format: int32
+          minimum: 1
+          default: 1
+        wine-year:
+          type: integer
+          description: Wine year for texts
+          format: int32
+          minimum: 1900
+        valid_on:
+          type: string
+          description: Valid on (e.g. "2018-02-16") for prices
 
 definitions:
   ### Common
@@ -604,6 +665,14 @@ definitions:
         $ref: '#/definitions/Translations'
       store:
         $ref: '#/definitions/Translations'
+
+  PdfFile:
+    description: Source of the PDF document
+    type: object
+    properties:
+      url:
+        $ref: '#/definitions/Url'
+
 
 #  SortIndex:
 #    type: integer
