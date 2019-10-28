@@ -8,7 +8,7 @@ servers:
       basePath:
         default: "/v1"
 paths:
-  /base-poster:
+  /base-posters:
     post:
       requestBody:
         content:
@@ -259,7 +259,7 @@ components:
           description: "Quantity for prices and texts"
           format: "int32"
           default: 1
-        wine-year:
+        wine_year:
           minimum: 1900
           type: "integer"
           description: "Wine year for texts"

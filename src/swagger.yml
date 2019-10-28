@@ -7,6 +7,26 @@ info:
     name: DETAIL NET
     email: support+denner-public-api@detailnet.ch
 host: denner-public-api-v1.detailnet.ch
+x-detail-stage-variables:
+  prod:
+    - lambda_env: "prod"
+    - lambda_alias: "live"
+    - articles_url: "denner-art-new.frb.io/api"
+    - articles_app_id: "XXX"
+    - articles_app_key: "XXX"
+    - mobile_api: "denner-mobile-api"
+  test:
+    - lambda_env: "test"
+    - lambda_alias: "live"
+    - articles_url: "denner-articles-test.detailnet.ch/api"
+    - articles_app_id: "XXX"
+    - articles_app_key: "XXX"
+    - mobile_api: "denner-mobile-app"
+x-detail-api-gatway-permissions:
+  prod: >
+    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools-prod_createBasePoster:live" --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/POST/base-posters" --principal apigateway.amazonaws.com --statement-id 76276df8-024c-42bb-8eb6-c8d47e8c3b34
+  test: >
+    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools-test_createBasePoster:live" --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/POST/base-posters" --principal apigateway.amazonaws.com --statement-id 76276df8-024c-42bb-8eb6-c8d47e8c3b34
 schemes:
   - https
 consumes:
@@ -470,7 +490,7 @@ paths:
                       title: "Backstation"
 
   ### Production
-  /base-poster:
+  /base-posters:
     post:
       summary: Create base poster
       description: >
@@ -570,7 +590,7 @@ parameters:
           format: int32
           minimum: 1
           default: 1
-        wine-year:
+        wine_year:
           type: integer
           description: Wine year for texts
           format: int32

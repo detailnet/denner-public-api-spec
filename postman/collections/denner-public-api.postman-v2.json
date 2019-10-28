@@ -33,7 +33,7 @@
 			"response": []
 		},
 		{
-			"name": "/base-poster",
+			"name": "/base-posters",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -53,15 +53,15 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"article_id\": \"051203\",\n\t\"locale\": \"it\",\n\t\"quantity\": 6,\n\t\"wine-year\": 2018,\n\t\"valid_on\": \"2019-09-26\"\n}"
+					"raw": "{\n\t\"article_id\": \"051203\",\n\t\"locale\": \"it\",\n\t\"quantity\": 6,\n\t\"wine_year\": 2018,\n\t\"valid_on\": \"2019-09-26\"\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/base-poster",
+					"raw": "{{base_url}}/base-posters",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
-						"base-poster"
+						"base-posters"
 					]
 				},
 				"description": "Create a new base poster"
