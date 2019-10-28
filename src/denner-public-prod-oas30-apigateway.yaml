@@ -1,7 +1,7 @@
 openapi: "3.0.1"
 info:
   title: "denner-public"
-  version: "2019-10-26T19:28:41Z"
+  version: "2019-10-28T07:43:49Z"
 servers:
   - url: "https://denner-public-api.detailnet.ch/{basePath}"
     variables:
@@ -19,9 +19,17 @@ paths:
       responses:
         400:
           description: "400 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
           content: {}
         500:
           description: "500 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
           content: {}
         201:
           description: "201 response"
@@ -38,21 +46,25 @@ paths:
       x-amazon-apigateway-integration:
         uri: "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools-${stageVariables.lambda_env}_createBasePoster:${stageVariables.lambda_alias}/invocations"
         responses:
-          Article \d{6} does not exists:
-            statusCode: "400"
-            responseTemplates:
-              application/json: "{\n    \"error\": \"Invalid input\",\n    \"message\"\
-                : \"$input.path('$.errorMessage')\"\n}"
           default:
             statusCode: "201"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'*'"
+          (Invalid|Article).*:
+            statusCode: "400"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'http://denner-public-api-docs.detailnet.ch'"
+            responseTemplates:
+              application/json: "{\n    \"error\": \"Invalid input\",\n    \"message\"\
+                : \"$util.escapeJavaScript($input.path('$.errorMessage'))\"\n}"
           .*[Ee](rror|xception).*:
             statusCode: "500"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'http://denner-public-api-docs.detailnet.ch'"
             responseTemplates:
-              application/json: "{\n    \"error\": \"$input.path('$.errorType')\"\
-                ,\n    \"message\": \"$input.path('$.errorMessage')\"\n    ### NO\
-                \ $input.path('$.trace')\n}"
+              application/json: "{\n    \"error\": \"$util.escapeJavaScript($input.path('$.errorType'))\"\
+                ,\n    \"message\": \"$util.escapeJavaScript($input.path('$.errorMessage'))\"\
+                \n    ### NO $input.path('$.trace')\n}"
         passthroughBehavior: "when_no_match"
         httpMethod: "POST"
         contentHandling: "CONVERT_TO_TEXT"
