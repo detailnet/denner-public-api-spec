@@ -1,0 +1,11 @@
+name: denner-public-api-spec
+
+proxy:
+  appserver:
+    - denner-public-api-spec.detailnet.me
+
+services:
+  appserver:
+    type: apache
+    webroot: docs
+

@@ -22,70 +22,47 @@ The Denner Public API provides open data around the promotion of it's articles.
 
 * `GET /stores` (Filialen, [example](examples/stores.json))
 
-## Building
+## Documentation and Building
 
-### Protobox
+To see the documentation page [Swagger UI](https://swagger.io/tools/swagger-ui/) visit  http://denner-mobile-api-docs.detailnet.ch/ or 
+for development start the Docker instance that presents the static HTML pages in `/docs`  (`lando start` and then view http://denner-mobile-api-spec.detailnet.me/)
+
+### Building
 To build the specification we're using [swagger-codegen](https://github.com/swagger-api/swagger-codegen).
 
-Run the following commands in [Protobox](https://bitbucket.org/detailnet/protobox) to install it (and it's dependencies):
+#### Using Ubuntu on WSL2 
+Run the following commands to install swagger-codgen and it's dependencies in a separate directory:
 
-        sudo apt-get install maven
-        sudo apt-get install openjdk-7-jdk
+        cd ..
         git clone git@github.com:swagger-api/swagger-codegen.git
+        sudo apt-get install maven
+        sudo apt install openjdk-11-jdk
         cd swagger-codegen
-        mvn package
-        
-You should also install the JSON processor utility for further data manipulation:
-        
-        sudo npm install -g json
-  
+        git fetch origin 3.0.0:3.0.0
+        git checkout 3.0.0
+        #  export JDK_JAVA_OPTIONS=-Djdk.attach.allowAttachSelf=true .. not sure if really needed
+        mvn clean package
 
-#### JSON
-Once installed, `swagger.json` can be generated as follows:
+#### JSON (used to update docs page too)
+Once installed, `openapi.json` can be generated as follows:
 
         java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
             -i ../denner-public-api-spec/src/swagger.yml \
-            -l swagger \
-            -o ../denner-public-api-spec/build/swagger
+            -l openapi \
+            -o ../denner-public-api-spec/docs
         
-The file will be located at `build/swagger/swagger.json`.
+The file will be located at `docs/openapi.json`.
 
-To filter out examples and descriptions execute following (JSON processor needed):
- 
-        json -e '
-          function dropRecursive(obj, objName) {
-            if (objName != "properties") {
-              delete obj.examples;
-              delete obj.example;
-              delete obj.description;
-              delete obj.summary;
-            }
-            
-            for (var key in obj) {
-              if (obj[key] && typeof obj[key] === "object") { 
-                dropRecursive(obj[key], key);
-              }
-            }
-          }
-          
-          dropRecursive(this, 'this');
-        ' < ../denner-public-api-spec/build/swagger/swagger.json > ../denner-public-api-spec/build/swagger/swagger.no_texts.json
+**Important: after generation revert the servers section at beginning of `docs/openapi.json`**
 
-The file will be located at `build/swagger/swagger.no_texts.json`.
+You can then review the changes in the local browser (`lando start` and then view http://denner-public-api-spec.detailnet.me/) and commit them.
 
-To compress all your JSON data execute following (JSON processor needed):
+#### Compiling Stylesheets
 
-        for f in `ls ../denner-public-api-spec/build/swagger/*.json | grep -v "compressed"`
-        do 
-          json -o json-0 < $f > "${f%.json}.compressed.json"
-        done
+To compile the stylesheets for the swagger docs, globally install npm sass with `install -g sass` and run sass:
 
-#### HTML
-You can also generate a static HTML page:
+        sass docs/style/main.scss docs/swagger-ui.css --style=compressed
 
-        java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
-            -i ../denner-public-api-spec/src/swagger.yml \
-            -l html \
-            -o ../denner-public-api-spec/build/html
-            
-The file will be located at `build/html/index.html`.
+For continuous watch and build during development run:
+
+        sass docs/style/main.scss docs/swagger-ui.css --watch
