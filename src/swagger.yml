@@ -513,7 +513,95 @@ paths:
         500:
           description: 500 Internal Server Error
 
+  ### Display
+  /display-publications:
+    get:
+      summary: List all display-publications
+      description: >
+        Use this operation to get a list of all display-publications.
+      tags:
+        - display-publication
+      operationId: listDisplayPublications
+      security:
+        - appKey: []
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+#          schema: #todo
+#            $ref: '#/definitions/DisplayPublicationsResponse'
+  /display-publications/{layout}:
+    get:
+      summary: Fetch display-publication
+      description: >
+          Use this operation to fetch the first display-publication for a specific layout and language on current day.
+      tags:
+          - display-publication
+      operationId: fetchDisplayPublication
+      security:
+         - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - $ref: '#/parameters/AcceptLanguageHeader'
+        - name: layout
+          in: path
+          required: true
+          default: standard
+          type: string
+          description: Layout
+          enum:
+            - standard
+            - week-end
+            - discount
+            - parfum
+            - wine
+            - cigarettes
+      responses:
+        200:
+          description: Successful listing
+#          schema: #todo
+#            $ref: '#/definitions/DisplayPublication'
+        204:
+          description: No result
+
 parameters:
+  FilterParam:
+    name: filter
+    in: query
+    type: string
+    required: false
+    description: |
+      Filters: JSON array of Filter object, urlencoded.
+
+      Filter object:
+      - property: Property to filter on.
+      - operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).
+      - type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).
+      - value: Value. Must be of the defined type.
+
+      Examples:
+      - [{"property":"id","operator":"in","type":"array","value":["7627150d-36bd-4867-89b2-091800a03d24","58afec5c-ece9-4b66-bc55-00d6dc1b65b8"]}]
+      - [{"property":"in_shop","operator":"eq","type":"boolean","value":true}]
+  SortParam:
+    name: sort
+    in: query
+    type: string
+    required: false
+    description: |
+      Filters: JSON array of Sort object, urlencoded.
+
+      Sort object:
+      - property: Property to sort on.
+      - direction: (optional) Sort direction property. Enumeration ('asc', 'desc').
+
+      Examples:
+      - [{"property":"sort_index","direction":"asc"}]
+      - [{"property":"year"},{"property":"week","direction":"asc"}]
   PageParam:
     name: page
     description: >
