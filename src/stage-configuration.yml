@@ -21,6 +21,10 @@ x-detail-stage-variables:
     - mobile_api: "denner-mobile-app"
 x-detail-api-gatway-permissions:
   prod: >
-    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools-prod_createBasePoster:live" --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/POST/base-posters" --principal apigateway.amazonaws.com --statement-id 76276df8-024c-42bb-8eb6-c8d47e8c3b34
+    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools-prod_createBasePoster:live"         --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/POST/base-posters"    --principal apigateway.amazonaws.com --statement-id 76276df8-024c-42bb-8eb6-c8d47e8c3b34
+    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-mobile-api-prod_listOnlineArticlesForGroup:live" --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/GET/tobacco-articles" --principal apigateway.amazonaws.com --statement-id aeb71bfc-9ee7-497f-8907-bdaa82f0abd2
   test: >
-    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools-test_createBasePoster:live" --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/POST/base-posters" --principal apigateway.amazonaws.com --statement-id 76276df8-024c-42bb-8eb6-c8d47e8c3b34
+    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-lambda-tools-test_createBasePoster:live"         --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/POST/base-posters"    --principal apigateway.amazonaws.com --statement-id 76276df8-024c-42bb-8eb6-c8d47e8c3b34
+    aws lambda add-permission --action lambda:InvokeFunction --function-name "arn:aws:lambda:eu-west-1:802555642192:function:denner-mobile-app-test_listOnlineArticlesForGroup:live" --source-arn "arn:aws:execute-api:eu-west-1:802555642192:7xu6cbcuej/*/GET/tobacco-articles" --principal apigateway.amazonaws.com --statement-id aeb71bfc-9ee7-497f-8907-bdaa82f0abd2
+  warning_note: >
+    Denner Mobile Lambda function for test and prod are named differently: "denner-mobile-api-prod_..." vs. "denner-mobile-app-test_..."

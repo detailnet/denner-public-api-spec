@@ -225,6 +225,26 @@ paths:
                   - locale: it
                     value: 3 anni
 
+  /tobacco-articles:
+    get:
+      summary: List all online articles having tobacco article group (not listed otherwise)
+      description: |
+        Use this operation to get a list of all tobacco articles currently in promotion and advertised in the online channels.
+      tags:
+        - promotion
+      operationId: listOnlineTobaccoArticles
+      security:
+        - appKey: []
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+      #        - $ref: '#/parameters/PageParam'
+      #        - $ref: '#/parameters/PageSizeParam'
+      #        - $ref: '#/parameters/FilterParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/PublicOnlineArticlesResponse'
 #  /online-groups:
 #      get:
 #        summary: List all online groups

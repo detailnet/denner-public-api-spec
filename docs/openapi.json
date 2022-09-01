@@ -291,6 +291,41 @@
         } ]
       }
     },
+    "/tobacco-articles" : {
+      "get" : {
+        "tags" : [ "promotion" ],
+        "summary" : "List all online articles having tobacco article group (not listed otherwise)",
+        "description" : "Use this operation to get a list of all tobacco articles currently in promotion and advertised in the online channels.\n",
+        "operationId" : "listOnlineTobaccoArticles",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PublicOnlineArticlesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
     "/stores" : {
       "get" : {
         "tags" : [ "store" ],
