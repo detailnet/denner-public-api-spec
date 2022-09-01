@@ -1,8 +1,7 @@
 {
 	"info": {
-		"_postman_id": "16dc7b29-7908-e0d1-dab0-7ff1caeced5a",
 		"name": "denner-public-api",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 	},
 	"item": [
 		{
@@ -26,6 +25,94 @@
 					],
 					"path": [
 						"online-articles"
+					]
+				},
+				"description": "List online articles"
+			},
+			"response": []
+		},
+		{
+			"name": "/tobacco-articles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "App-Key",
+						"value": "{{header_app_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/tobacco-articles",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tobacco-articles"
+					]
+				},
+				"description": "List online articles"
+			},
+			"response": []
+		},
+		{
+			"name": "/display-publications",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "App-Key",
+						"value": "{{header_app_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/display-publications?filter=%5B%7B%22property%22%3A%22valid_on%22%2C%22value%22%3A%22today%22%7D%5D",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"display-publications"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "%5B%7B%22property%22%3A%22valid_on%22%2C%22value%22%3A%22today%22%7D%5D"
+						}
+					]
+				},
+				"description": "List online articles"
+			},
+			"response": []
+		},
+		{
+			"name": "/display-publications/{layout}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "App-Key",
+						"value": "{{header_app_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/display-publications/standard",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"display-publications",
+						"standard"
 					]
 				},
 				"description": "List online articles"
@@ -80,15 +167,32 @@
 					{
 						"key": "Accept-Language",
 						"value": "de"
+					},
+					{
+						"key": "App-Key",
+						"value": "{{header_app_key}}",
+						"type": "text"
+					},
+					{
+						"key": "page_size",
+						"value": "100",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/stores",
+					"raw": "{{base_url}}/stores?page_size=100",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"stores"
+					],
+					"query": [
+						{
+							"key": "page_size",
+							"value": "100"
+						}
 					]
 				},
 				"description": "List stores"

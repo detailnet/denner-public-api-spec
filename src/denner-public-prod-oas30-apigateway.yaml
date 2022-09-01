@@ -94,7 +94,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
@@ -168,7 +168,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
             contentHandling: "CONVERT_TO_TEXT"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
@@ -289,7 +289,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
             contentHandling: "CONVERT_TO_TEXT"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
@@ -391,7 +391,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
@@ -486,7 +486,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Accept-Language,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
