@@ -229,7 +229,7 @@ paths:
     get:
       summary: List all online articles having tobacco article group (not listed otherwise)
       description: |
-        Use this operation to get a list of all tobacco articles currently in promotion and advertised in the online channels.
+        Use this operation to get a list of all tobacco articles promoted today and advertised in the online channels.
       tags:
         - promotion
       operationId: listOnlineTobaccoArticles
