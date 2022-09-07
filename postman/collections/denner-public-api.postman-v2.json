@@ -103,16 +103,29 @@
 					{
 						"key": "App-Key",
 						"value": "{{header_app_key}}"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "de",
+						"description": "Locale, overridden by query param if set",
+						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/display-publications/standard",
+					"raw": "{{base_url}}/display-publications/standard?locale=fr",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"display-publications",
 						"standard"
+					],
+					"query": [
+						{
+							"key": "locale",
+							"value": "fr",
+							"description": "Locale, overrides Accept-Language header if set"
+						}
 					]
 				},
 				"description": "List online articles"

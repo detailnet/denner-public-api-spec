@@ -581,6 +581,15 @@ paths:
             - parfum
             - wine
             - cigarettes
+        - name: locale
+          in: query
+          required: false
+          type: string
+          description: Locale, overrides Accept-Language header if set
+          enum:
+            - de
+            - fr
+            - it
       responses:
         200:
           description: Successful listing
