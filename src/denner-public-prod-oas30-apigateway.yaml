@@ -406,10 +406,6 @@ paths:
         required: true
         schema:
           type: "string"
-      - name: "Accept-Language"
-        in: "header"
-        schema:
-          type: "string"
       - name: "locale"
         in: "query"
         schema:
@@ -450,7 +446,6 @@ paths:
         requestParameters:
           integration.request.header.App-Key: "stageVariables.advertising_app_key"
           integration.request.querystring.locale: "method.request.querystring.locale"
-          integration.request.header.Accept-Language: "method.request.header.Accept-Language"
           integration.request.querystring.filter: "'[{\"property\":\"valid_on\",\"\
             value\":\"today\"}]'"
           integration.request.querystring.view-as: "'jls'"
@@ -545,12 +540,12 @@ components:
         authorizerResultTtlInSeconds: 3600
         type: "token"
 x-amazon-apigateway-gateway-responses:
-  DEFAULT_5XX:
+  DEFAULT_4XX:
     responseParameters:
       gatewayresponse.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
       gatewayresponse.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
       gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
-  DEFAULT_4XX:
+  DEFAULT_5XX:
     responseParameters:
       gatewayresponse.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
       gatewayresponse.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"

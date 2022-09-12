@@ -618,17 +618,6 @@
             "default" : "application/json"
           }
         }, {
-          "name" : "Accept-Language",
-          "in" : "header",
-          "description" : "Accepted locale (supported are \"de\", \"fr\", and \"it\")\n",
-          "required" : false,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string",
-            "default" : "de"
-          }
-        }, {
           "name" : "layout",
           "in" : "path",
           "description" : "Layout",
@@ -638,7 +627,7 @@
           "schema" : {
             "type" : "string",
             "default" : "standard",
-            "enum" : [ "standard", "week-end", "discount", "parfum", "wine", "cigarettes" ]
+            "enum" : [ "standard", "week-end", "discount", "perfume", "wine", "cigarettes" ]
           }
         }, {
           "name" : "locale",

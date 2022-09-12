@@ -567,7 +567,6 @@ paths:
          - appKey: [ ]
       parameters:
         - $ref: '#/parameters/AcceptHeader'
-        - $ref: '#/parameters/AcceptLanguageHeader'
         - name: layout
           in: path
           required: true
@@ -578,7 +577,7 @@ paths:
             - standard
             - week-end
             - discount
-            - parfum
+            - perfume
             - wine
             - cigarettes
         - name: locale
