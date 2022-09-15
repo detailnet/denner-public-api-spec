@@ -59,6 +59,46 @@
 			"response": []
 		},
 		{
+			"name": "/newsletter-articles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "App-Key",
+						"value": "{{header_app_key}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/newsletter-articles?week={{current_week}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"newsletter-articles"
+					],
+					"query": [
+						{
+							"key": "week",
+							"value": "{{current_week}}",
+							"description": "Week, mandotry"
+						},
+						{
+							"key": "locale",
+							"value": "it",
+							"description": "Locale, optional",
+							"disabled": true
+						}
+					]
+				},
+				"description": "List online articles"
+			},
+			"response": []
+		},
+		{
 			"name": "/display-publications",
 			"request": {
 				"method": "GET",
@@ -211,6 +251,38 @@
 				"description": "List stores"
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 ",
+					"// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js",
+					"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",
+					"",
+					"postman.setEnvironmentVariable(\"current_week\", (new Date()).format('o-W'));"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

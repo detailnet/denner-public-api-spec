@@ -490,6 +490,101 @@ paths:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
         type: "mock"
+  /newsletter-articles:
+    get:
+      parameters:
+      - name: "locale"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "week"
+        in: "query"
+        schema:
+          type: "string"
+      responses:
+        "404":
+          description: "404 response"
+          content: {}
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+        "500":
+          description: "500 response"
+          content: {}
+        "403":
+          description: "403 response"
+          content: {}
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        httpMethod: "GET"
+        uri: "https://${stageVariables.advertising_url}/online-publication-articles"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+            responseTemplates:
+              application/json: "#set($root = $input.path('$'))\n#set($locale = $input.params('locale').toLowerCase())\n\
+                #set($articles = [])\n#foreach($article in $root.online_publication_articles)\n\
+                #set($path = '$.online_publication_articles[' + ($foreach.count -\
+                \ 1) + ']')\n#if($article.newsletter.contains($locale) || $locale\
+                \ == \"\")\n$util.quiet($articles.add($input.json($path)))\n#end\n\
+                #end\n{\n  \"articles\":  $articles,\n  \"total_items\": $articles.size()\n\
+                }\n"
+          "403":
+            statusCode: "403"
+          "404":
+            statusCode: "404"
+          "5\\d{2}":
+            statusCode: "500"
+        requestParameters:
+          integration.request.querystring.week: "method.request.querystring.week"
+          integration.request.querystring.usage: "'newsletter'"
+          integration.request.header.App-Key: "stageVariables.advertising_app_key"
+          integration.request.header.App-ID: "stageVariables.advertising_app_id"
+        passthroughBehavior: "when_no_match"
+        cacheNamespace: "rrsmpj"
+        cacheKeyParameters:
+        - "integration.request.querystring.usage"
+        type: "http"
+    options:
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+            Access-Control-Allow-Methods:
+              schema:
+                type: "string"
+            Access-Control-Allow-Headers:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
+              method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+        type: "mock"
 components:
   schemas:
     Empty:

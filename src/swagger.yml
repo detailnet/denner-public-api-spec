@@ -245,6 +245,32 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/PublicOnlineArticlesResponse'
+  /newsletter-articles:
+    get:
+      summary: List all online articles for newsletter
+      description: |
+        Use this operation to get a list of all online articles promoted in the given week in the newsletter channels.
+      tags:
+        - promotion
+      operationId: listNewsletterOnlineArticles
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - name: week
+          in: query
+          required: true
+          type: string
+          description: >
+             Year followed by the week number (ISO 8601, week date system)
+             PHP date format 'o-W' (ref: https://www.php.net/manual/en/datetime.format.php)
+          pattern: ^[0-9]{4}\-[0-9]{1,2}$
+        - $ref: '#/parameters/LocaleQueryParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/PublicOnlineArticlesResponse'
 #  /online-groups:
 #      get:
 #        summary: List all online groups
@@ -580,15 +606,7 @@ paths:
             - perfume
             - wine
             - cigarettes
-        - name: locale
-          in: query
-          required: false
-          type: string
-          description: Locale, overrides Accept-Language header if set
-          enum:
-            - de
-            - fr
-            - it
+        - $ref: '#/parameters/LocaleQueryParam'
       responses:
         200:
           description: Successful listing
@@ -677,6 +695,16 @@ parameters:
     default: de
     description: >
       Accepted locale (supported are "de", "fr", and "it")
+  LocaleQueryParam:
+    name: locale
+    in: query
+    required: false
+    type: string
+    description: Locale
+    enum:
+      - de
+      - fr
+      - it
   BasePosterInput:
     name: BasePosterInput
     in: body

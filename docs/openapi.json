@@ -326,6 +326,63 @@
         } ]
       }
     },
+    "/newsletter-articles" : {
+      "get" : {
+        "tags" : [ "promotion" ],
+        "summary" : "List all online articles for newsletter",
+        "description" : "Use this operation to get a list of all online articles promoted in the given week in the newsletter channels.\n",
+        "operationId" : "listNewsletterOnlineArticles",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        }, {
+          "name" : "week",
+          "in" : "query",
+          "description" : "Year followed by the week number (ISO 8601, week date system) PHP date format 'o-W' (ref: https://www.php.net/manual/en/datetime.format.php)\n",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "pattern" : "^[0-9]{4}\\-[0-9]{1,2}$",
+            "type" : "string"
+          }
+        }, {
+          "name" : "locale",
+          "in" : "query",
+          "description" : "Locale",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "de", "fr", "it" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PublicOnlineArticlesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
     "/stores" : {
       "get" : {
         "tags" : [ "store" ],
@@ -632,7 +689,7 @@
         }, {
           "name" : "locale",
           "in" : "query",
-          "description" : "Locale, overrides Accept-Language header if set",
+          "description" : "Locale",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -1315,6 +1372,18 @@
         "schema" : {
           "type" : "string",
           "default" : "de"
+        }
+      },
+      "LocaleQueryParam" : {
+        "name" : "locale",
+        "in" : "query",
+        "description" : "Locale",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "de", "fr", "it" ]
         }
       }
     },
