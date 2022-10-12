@@ -624,6 +624,8 @@ paths:
       tags:
         - advertising
       operationId: listScreenPublications
+      security:
+        - appKey: [ ]
       parameters:
         - $ref: '#/parameters/FilterParam'
         - $ref: '#/parameters/SortParam'
@@ -818,7 +820,6 @@ paths:
       operationId: getScreenPublication
       security:
         - appKey: []
-        - appId: []
       parameters:
         - $ref: '#/parameters/PublicationIdPathParam'
       responses:

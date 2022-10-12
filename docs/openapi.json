@@ -994,7 +994,10 @@
               }
             }
           }
-        }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
       }
     },
     "/screen-publications/{publication_id}" : {
@@ -2104,8 +2107,6 @@
         },
         "security" : [ {
           "appKey" : [ ]
-        }, {
-          "appId" : [ ]
         } ]
       }
     }
