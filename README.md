@@ -46,11 +46,11 @@ Run the following commands to install swagger-codgen and it's dependencies in a 
 #### JSON (used to update docs page too)
 Once installed, `openapi.json` can be generated as follows:
 
-        cd ../swagger-codegen
+        cd ../swagger-codegen  && \
         java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
             -i ../denner-public-api-spec/src/swagger.yml \
             -l openapi \
-            -o ../denner-public-api-spec/docs
+            -o ../denner-public-api-spec/docs && \
         cd -
 
 The file will be located at `docs/openapi.json`.
