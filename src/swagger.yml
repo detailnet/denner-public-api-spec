@@ -625,6 +625,8 @@ paths:
         - advertising
       operationId: listScreenPublications
       parameters:
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
       responses:
