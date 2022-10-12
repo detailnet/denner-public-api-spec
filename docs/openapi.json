@@ -3180,6 +3180,12 @@
           "$ref" : "#/components/schemas/ScreenScreen"
         }
       },
+      "ScreenArticles" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/ScreenArticle"
+        }
+      },
       "PublicOnlineArticlesResponse" : {
         "type" : "object",
         "properties" : {

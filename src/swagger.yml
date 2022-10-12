@@ -2777,6 +2777,11 @@ definitions:
     items:
       $ref: '#/definitions/ScreenScreen'
 
+  ScreenArticles:
+    type: array
+    items:
+      $ref: '#/definitions/ScreenArticle'
+
 #  OnlineGroups:
 #    type: array
 #    items:
