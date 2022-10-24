@@ -143,6 +143,8 @@ paths:
             statusCode: "200"
             responseParameters:
               method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+            responseTemplates:
+              application/json: "$input.json('$.display_publications[0]')"
           "204":
             statusCode: "204"
           "5\\d{2}":
@@ -151,12 +153,11 @@ paths:
           integration.request.header.App-Key: "stageVariables.advertising_app_key"
           integration.request.querystring.screen: "method.request.path.screen"
           integration.request.querystring.locale: "method.request.querystring.locale"
-          integration.request.querystring.filter: "'[{\\\"property\\\":\\\"valid_on\\\
-            \",\\\"value\\\":\\\"today\\\"}]'"
+          integration.request.querystring.filter: "'[{\"property\":\"valid_on\",\"\
+            value\":\"today\"}]'"
           integration.request.querystring.view-as: "'jls'"
           integration.request.querystring.layout: "method.request.path.layout"
-          integration.request.querystring.sort: "'[{\\\"property\\\":\\\"sort_index\\\
-            \"}]'"
+          integration.request.querystring.sort: "'[{\"property\":\"sort_index\"}]'"
           integration.request.header.App-ID: "stageVariables.advertising_app_id"
         passthroughBehavior: "when_no_match"
         type: "http"
