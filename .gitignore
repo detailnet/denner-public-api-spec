@@ -1,4 +1,4 @@
 build
-/src/copy-exorted-OpenApi3-with-ApiGatewayExtensions-to-local.txt
+/src/move-exported-OpenApi3-with-ApiGatewayExtensions-to-local.txt
 /src/stage-configuration-prod.txt
 /src/stage-configuration-test.txt
