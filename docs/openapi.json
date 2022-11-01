@@ -774,7 +774,7 @@
       "CdnUrl" : {
         "pattern" : "/^https://denner.imgix.net/.*$/",
         "type" : "string",
-        "description" : "Image provided through the [ImgIX](https://imgix.com) CDN, query parameters can be appended to apply rendering effects.\nFollow instructions in the [ImgIX rendering API](https://docs.imgix.com/apis/rendering) reference.\nEvery image (included query params) is cached for performance (main task of a CDN), if an image is changed the cache is purged.\n"
+        "description" : "Image provided through the [ImgIX](https://imgix.com) CDN, query parameters can be appended to apply rendering effects.\nFollow instructions in the [ImgIX rendering API](https://docs.imgix.com/apis/rendering) reference.\nEvery image (included query params) is cached for performance (main task of a CDN), if an image is changed its cache is purged.\n"
       },
       "Phone" : {
         "type" : "string",
@@ -820,7 +820,7 @@
       },
       "DayDate" : {
         "type" : "string",
-        "description" : "Date; Format full-date of [RFC3339](http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)",
+        "description" : "Date; Format full-date of [RFC3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6)",
         "format" : "date"
       },
       "Time" : {

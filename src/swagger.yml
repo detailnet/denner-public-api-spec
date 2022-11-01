@@ -804,7 +804,7 @@ definitions:
     description: |
       Image provided through the [ImgIX](https://imgix.com) CDN, query parameters can be appended to apply rendering effects.
       Follow instructions in the [ImgIX rendering API](https://docs.imgix.com/apis/rendering) reference.
-      Every image (included query params) is cached for performance (main task of a CDN), if an image is changed the cache is purged.
+      Every image (included query params) is cached for performance (main task of a CDN), if an image is changed its cache is purged.
 
   Phone:
     type: string
@@ -843,7 +843,7 @@ definitions:
   DayDate:
     type: string
     format: date
-    description: Date; Format full-date of [RFC3339](http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)
+    description: Date; Format full-date of [RFC3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6)
 
   Time:
     type: string
