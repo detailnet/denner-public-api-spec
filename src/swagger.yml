@@ -620,8 +620,8 @@ paths:
       responses:
         200:
           description: Successful listing
-#          schema: #todo
-#            $ref: '#/definitions/DisplayPublication'
+          schema:
+            $ref: '#/definitions/DisplayPublication'
         204:
           description: No result
 
@@ -768,6 +768,11 @@ definitions:
     pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
     description: Unique identifier
 
+  ArticleId:
+    type: string
+    pattern: '/^\d{6}$/'
+    description: Denner article code
+
   Locale:
     type: string
     pattern: '/^(de|fr|it)$/'
@@ -793,18 +798,29 @@ definitions:
     description: Web URL address
 #    pattern: @todo Fixed pattern?
 
+  CdnUrl:
+    type: string
+    pattern: '/^https://denner.imgix.net/.*$/'
+    description: |
+      Image provided through the [ImgIX](https://imgix.com) CDN, query parameters can be appended to apply rendering effects.
+      Follow instructions in the [ImgIX rendering API](https://docs.imgix.com/apis/rendering) reference.
+      Every image (included query params) is cached for performance (main task of a CDN), if an image is changed the cache is purged.
+
   Phone:
     type: string
 #    pattern: @todo Fixed pattern?
     description: Formatted phone number
 
+  CountryCode:
+    type: string
+    pattern: '/^[A-Z]{2}$/'
+    description: Country code definition from ISO 3166
+
   PublicCountry:
     type: object
     properties:
       id:
-        type: string
-        pattern: '/^[A-Z]{2}$/'
-        description: Country code definition from ISO 3166
+        $ref: '#/definitions/CountryCode'
       title:
         $ref: '#/definitions/Translations'
     description: Country
@@ -814,7 +830,7 @@ definitions:
     description: Country flag
     properties:
       image_url:
-        $ref: '#/definitions/Url'
+        $ref: '#/definitions/CdnUrl'
 
   Country:
     allOf:
@@ -824,10 +840,10 @@ definitions:
           flag:
             $ref: '#/definitions/CountryFlag'
 
-#  Date:
-#    type: string
-#    format: date
-#    description: 'Date; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
+  DayDate:
+    type: string
+    format: date
+    description: Date; Format full-date of [RFC3339](http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)
 
   Time:
     type: string
@@ -909,9 +925,9 @@ definitions:
     description: Generic validity based on dates (from/to) and a corresponding text
     properties:
       from:
-        $ref: '#/definitions/Date'
+        $ref: '#/definitions/DayDate'
       to:
-        $ref: '#/definitions/Date'
+        $ref: '#/definitions/DayDate'
       text:
         $ref: '#/definitions/Translations'
 
@@ -920,9 +936,9 @@ definitions:
       description: Article validity based on dates (from/to) and corresponding texts (short and long version)
       properties:
         from:
-          $ref: '#/definitions/Date'
+          $ref: '#/definitions/DayDate'
         to:
-          $ref: '#/definitions/Date'
+          $ref: '#/definitions/DayDate'
         short_text:
           $ref: '#/definitions/Translations'
         long_text:
@@ -977,7 +993,7 @@ definitions:
           locale:
             $ref: '#/definitions/Locale'
           cdn_url:
-            $ref: '#/definitions/Url'
+            $ref: '#/definitions/CdnUrl'
 
   PackshotView:
     type: object
@@ -1004,7 +1020,7 @@ definitions:
       preview_url:
         $ref: '#/definitions/Url'
       cdn_url:
-        $ref: '#/definitions/Url'
+        $ref: '#/definitions/CdnUrl'
       archived:
         $ref: '#/definitions/Quantity'
         type: boolean
@@ -1014,7 +1030,7 @@ definitions:
       view:
         $ref: '#/definitions/PackshotView'
       created_on:
-        $ref: '#/definitions/Date'
+        $ref: '#/definitions/DayDate'
     required:
       - id
       - url
@@ -1137,7 +1153,7 @@ definitions:
       id:
         $ref: '#/definitions/UUIDv4'
       cdn_url:
-        $ref: '#/definitions/Url'
+        $ref: '#/definitions/CdnUrl'
 
   PublicArticleWine:
     type: object
@@ -1195,16 +1211,19 @@ definitions:
         type: integer
         format: int32
         minimum: 0
-        description: Ratng count
+        description: Rating count
       valid:
         type: boolean
         description: Is a valid rating?
       stars:
-        type: number
-        format: float
-        minimum: 0
-        maximum: 5
-        description: Stars, rounded to the half integer
+        $ref: '#/definitions/RatingStars'
+
+  RatingStars:
+    type: number
+    format: float
+    minimum: 0
+    maximum: 5
+    description: Stars, rounded to the half integer
 
   PublicOnlineArticle:
     type: object
@@ -1212,9 +1231,7 @@ definitions:
       id:
         $ref: '#/definitions/UUIDv4'
       article_id:
-        type: string
-        pattern: '/^\d{6}$/'
-        description: Denner article code
+        $ref: '#/definitions/ArticleId'
       title:
         $ref: '#/definitions/Translations'
       description:
@@ -1279,6 +1296,145 @@ definitions:
       parent:
         $ref: '#/definitions/PublicAssignedOnlineGroup'
 
+### Display publication
+  DisplayPublication:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      screen:
+        type: string
+      layout:
+        type: string
+      locale:
+        $ref: '#/definitions/Locale'
+      name:
+        type: string
+      year:
+        $ref: '#/definitions/Year'
+      week:
+        $ref: '#/definitions/Week'
+      valid_from:
+        $ref: '#/definitions/DayDate'
+      valid_to:
+        $ref: '#/definitions/DayDate'
+      header_image_url:
+        $ref: '#/definitions/CdnUrl'
+      background_image_url:
+        $ref: '#/definitions/CdnUrl'
+      slogan_image_url:
+        $ref: '#/definitions/CdnUrl'
+      footer_text:
+        type: string
+      articles:
+        $ref: '#/definitions/DisplayPublicationArticles'
+
+  DisplayPublicationArticle:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      article_id:
+        $ref: '#/definitions/ArticleId'
+      advertised_article_id:
+        $ref: '#/definitions/UUIDv4'
+      composite_article:
+        type: boolean
+      name:
+        type: string
+      size:
+        type: string
+#        pattern: '/^(small|medium|..)$/'
+      title:
+        type: string
+      description:
+        type: string
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      packshot_image:
+        $ref: '#/definitions/CdnUrl'
+      carousel_images:
+        type: array
+        items:
+          $ref: '#/definitions/CdnUrl'
+      sales_price:
+        type: string
+      instead_price:
+        type: string
+      article_group:
+        type: string
+      labels:
+        type: array
+        items:
+          $ref: '#/definitions/DisplayPublicationArticleLabel'
+      stopper:
+        $ref: '#/definitions/DisplayPublicationArticleStopper'
+      wine:
+        $ref: '#/definitions/DisplayPublicationArticleWine'
+
+  DisplayPublicationArticleLabel:
+    type: object
+    properties:
+      ratio:
+        type: number
+        format: float
+      width:
+        type: string
+      height:
+        type: string
+      url:
+        $ref: '#/definitions/CdnUrl'
+
+  DisplayPublicationArticleStopper:
+    type: object
+    properties:
+      style:
+        type: string
+      text:
+        type: string
+      vertical_text:
+        type: string
+      validity:
+        type: string
+
+  DisplayPublicationArticleWine:
+    type: object
+    properties:
+      country:
+        $ref: '#/definitions/DisplayPublicationArticleWineCountry'
+      rating:
+        $ref: '#/definitions/DisplayPublicationArticleWineRating'
+      medals:
+        type: array
+        items:
+          $ref: '#/definitions/DisplayPublicationArticleWineMedal'
+
+  DisplayPublicationArticleWineCountry:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/CountryCode'
+      text:
+        type: string
+      flag:
+        $ref: '#/definitions/CdnUrl'
+
+  DisplayPublicationArticleWineRating:
+    type: object
+    properties:
+      text:
+        type: string
+      stars:
+        $ref: '#/definitions/RatingStars'
+
+  DisplayPublicationArticleWineMedal:
+    type: object
+    properties:
+      image:
+        $ref: '#/definitions/CdnUrl'
+      text:
+        type: string
+
 ### Store
   Store:
     type: object
@@ -1311,9 +1467,7 @@ definitions:
         type: string
         description: City
       country_code:
-        type: string
-        pattern: '/^[A-Z]{2}$/'
-        description: Country code definition from ISO 3166
+        $ref: '#/definitions/CountryCode'
       phone:
         $ref: '#/definitions/Phone'
       hotline:
@@ -1419,7 +1573,7 @@ definitions:
     type: object
     properties:
       day:
-        $ref: '#/definitions/Date'
+        $ref: '#/definitions/DayDate'
       open_from:
         $ref: '#/definitions/Time'
       open_to:
@@ -1435,7 +1589,7 @@ definitions:
     type: object
     properties:
       day:
-        $ref: '#/definitions/Date'
+        $ref: '#/definitions/DayDate'
       open_from:
         $ref: '#/definitions/Time'
       open_to:
@@ -1446,7 +1600,7 @@ definitions:
 #    type: object
 #    properties:
 #      day:
-#        $ref: '#/definitions/Date'
+#        $ref: '#/definitions/DayDate'
 #      weekday:
 #        $ref: '#/definitions/DayOfWeek'
 #      statements:
@@ -1552,6 +1706,16 @@ definitions:
 #    items:
 #      $ref: '#/definitions/OnlineGroup'
 
+  DisplayPublications:
+    type: array
+    items:
+      $ref: '#/definitions/DisplayPublication'
+
+  DisplayPublicationArticles:
+    type: array
+    items:
+      $ref: '#/definitions/DisplayPublicationArticle'
+
   ### Responses
   PublicOnlineArticlesResponse:
     type: object
@@ -1623,4 +1787,4 @@ definitions:
         type: integer
         format: int32
       display_publications:
-        $ref: '#/definitions/ScreenPublications'
+        $ref: '#/definitions/DisplayPublications'

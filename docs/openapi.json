@@ -713,7 +713,13 @@
         "responses" : {
           "200" : {
             "description" : "Successful listing",
-            "content" : { }
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DisplayPublication"
+                }
+              }
+            }
           },
           "204" : {
             "description" : "No result",
@@ -732,6 +738,11 @@
         "pattern" : "/^[a-f0-9]{8}\\-[a-f0-9]{4}\\-4[a-f0-9]{3}\\-(8|9|a|b)[a-f0-9]{3}\\-[a-f0-9]{12}$/",
         "type" : "string",
         "description" : "Unique identifier"
+      },
+      "ArticleId" : {
+        "pattern" : "/^\\d{6}$/",
+        "type" : "string",
+        "description" : "Denner article code"
       },
       "Locale" : {
         "pattern" : "/^(de|fr|it)$/",
@@ -760,17 +771,25 @@
         "type" : "string",
         "description" : "Web URL address"
       },
+      "CdnUrl" : {
+        "pattern" : "/^https://denner.imgix.net/.*$/",
+        "type" : "string",
+        "description" : "Image provided through the [ImgIX](https://imgix.com) CDN, query parameters can be appended to apply rendering effects.\nFollow instructions in the [ImgIX rendering API](https://docs.imgix.com/apis/rendering) reference.\nEvery image (included query params) is cached for performance (main task of a CDN), if an image is changed the cache is purged.\n"
+      },
       "Phone" : {
         "type" : "string",
         "description" : "Formatted phone number"
+      },
+      "CountryCode" : {
+        "pattern" : "/^[A-Z]{2}$/",
+        "type" : "string",
+        "description" : "Country code definition from ISO 3166"
       },
       "PublicCountry" : {
         "type" : "object",
         "properties" : {
           "id" : {
-            "pattern" : "/^[A-Z]{2}$/",
-            "type" : "string",
-            "description" : "Country code definition from ISO 3166"
+            "$ref" : "#/components/schemas/CountryCode"
           },
           "title" : {
             "$ref" : "#/components/schemas/Translations"
@@ -782,7 +801,7 @@
         "type" : "object",
         "properties" : {
           "image_url" : {
-            "$ref" : "#/components/schemas/Url"
+            "$ref" : "#/components/schemas/CdnUrl"
           }
         },
         "description" : "Country flag"
@@ -798,6 +817,11 @@
             }
           }
         } ]
+      },
+      "DayDate" : {
+        "type" : "string",
+        "description" : "Date; Format full-date of [RFC3339](http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)",
+        "format" : "date"
       },
       "Time" : {
         "pattern" : "/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/",
@@ -887,10 +911,10 @@
         "type" : "object",
         "properties" : {
           "from" : {
-            "$ref" : "#/components/schemas/Date"
+            "$ref" : "#/components/schemas/DayDate"
           },
           "to" : {
-            "$ref" : "#/components/schemas/Date"
+            "$ref" : "#/components/schemas/DayDate"
           },
           "text" : {
             "$ref" : "#/components/schemas/Translations"
@@ -902,10 +926,10 @@
         "type" : "object",
         "properties" : {
           "from" : {
-            "$ref" : "#/components/schemas/Date"
+            "$ref" : "#/components/schemas/DayDate"
           },
           "to" : {
-            "$ref" : "#/components/schemas/Date"
+            "$ref" : "#/components/schemas/DayDate"
           },
           "short_text" : {
             "$ref" : "#/components/schemas/Translations"
@@ -1006,7 +1030,7 @@
             "$ref" : "#/components/schemas/Url"
           },
           "cdn_url" : {
-            "$ref" : "#/components/schemas/Url"
+            "$ref" : "#/components/schemas/CdnUrl"
           },
           "archived" : {
             "$ref" : "#/components/schemas/Quantity"
@@ -1015,7 +1039,7 @@
             "$ref" : "#/components/schemas/PackshotView"
           },
           "created_on" : {
-            "$ref" : "#/components/schemas/Date"
+            "$ref" : "#/components/schemas/DayDate"
           }
         }
       },
@@ -1163,7 +1187,7 @@
             "$ref" : "#/components/schemas/UUIDv4"
           },
           "cdn_url" : {
-            "$ref" : "#/components/schemas/Url"
+            "$ref" : "#/components/schemas/CdnUrl"
           }
         }
       },
@@ -1240,7 +1264,7 @@
           "total" : {
             "minimum" : 0,
             "type" : "integer",
-            "description" : "Ratng count",
+            "description" : "Rating count",
             "format" : "int32"
           },
           "valid" : {
@@ -1248,13 +1272,16 @@
             "description" : "Is a valid rating?"
           },
           "stars" : {
-            "maximum" : 5,
-            "minimum" : 0,
-            "type" : "number",
-            "description" : "Stars, rounded to the half integer",
-            "format" : "float"
+            "$ref" : "#/components/schemas/RatingStars"
           }
         }
+      },
+      "RatingStars" : {
+        "maximum" : 5,
+        "minimum" : 0,
+        "type" : "number",
+        "description" : "Stars, rounded to the half integer",
+        "format" : "float"
       },
       "PublicOnlineArticle" : {
         "type" : "object",
@@ -1263,9 +1290,7 @@
             "$ref" : "#/components/schemas/UUIDv4"
           },
           "article_id" : {
-            "pattern" : "/^\\d{6}$/",
-            "type" : "string",
-            "description" : "Denner article code"
+            "$ref" : "#/components/schemas/ArticleId"
           },
           "title" : {
             "$ref" : "#/components/schemas/Translations"
@@ -1322,6 +1347,203 @@
           }
         }
       },
+      "DisplayPublication" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "screen" : {
+            "type" : "string"
+          },
+          "layout" : {
+            "type" : "string"
+          },
+          "locale" : {
+            "$ref" : "#/components/schemas/Locale"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "year" : {
+            "$ref" : "#/components/schemas/Year"
+          },
+          "week" : {
+            "$ref" : "#/components/schemas/Week"
+          },
+          "valid_from" : {
+            "$ref" : "#/components/schemas/DayDate"
+          },
+          "valid_to" : {
+            "$ref" : "#/components/schemas/DayDate"
+          },
+          "header_image_url" : {
+            "$ref" : "#/components/schemas/CdnUrl"
+          },
+          "background_image_url" : {
+            "$ref" : "#/components/schemas/CdnUrl"
+          },
+          "slogan_image_url" : {
+            "$ref" : "#/components/schemas/CdnUrl"
+          },
+          "footer_text" : {
+            "type" : "string"
+          },
+          "articles" : {
+            "$ref" : "#/components/schemas/DisplayPublicationArticles"
+          }
+        }
+      },
+      "DisplayPublicationArticle" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "article_id" : {
+            "$ref" : "#/components/schemas/ArticleId"
+          },
+          "advertised_article_id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "composite_article" : {
+            "type" : "boolean"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "size" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "sort_index" : {
+            "$ref" : "#/components/schemas/SortIndex"
+          },
+          "packshot_image" : {
+            "$ref" : "#/components/schemas/CdnUrl"
+          },
+          "carousel_images" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/CdnUrl"
+            }
+          },
+          "sales_price" : {
+            "type" : "string"
+          },
+          "instead_price" : {
+            "type" : "string"
+          },
+          "article_group" : {
+            "type" : "string"
+          },
+          "labels" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DisplayPublicationArticleLabel"
+            }
+          },
+          "stopper" : {
+            "$ref" : "#/components/schemas/DisplayPublicationArticleStopper"
+          },
+          "wine" : {
+            "$ref" : "#/components/schemas/DisplayPublicationArticleWine"
+          }
+        }
+      },
+      "DisplayPublicationArticleLabel" : {
+        "type" : "object",
+        "properties" : {
+          "ratio" : {
+            "type" : "number",
+            "format" : "float"
+          },
+          "width" : {
+            "type" : "string"
+          },
+          "height" : {
+            "type" : "string"
+          },
+          "url" : {
+            "$ref" : "#/components/schemas/CdnUrl"
+          }
+        }
+      },
+      "DisplayPublicationArticleStopper" : {
+        "type" : "object",
+        "properties" : {
+          "style" : {
+            "type" : "string"
+          },
+          "text" : {
+            "type" : "string"
+          },
+          "vertical_text" : {
+            "type" : "string"
+          },
+          "validity" : {
+            "type" : "string"
+          }
+        }
+      },
+      "DisplayPublicationArticleWine" : {
+        "type" : "object",
+        "properties" : {
+          "country" : {
+            "$ref" : "#/components/schemas/DisplayPublicationArticleWineCountry"
+          },
+          "rating" : {
+            "$ref" : "#/components/schemas/DisplayPublicationArticleWineRating"
+          },
+          "medals" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DisplayPublicationArticleWineMedal"
+            }
+          }
+        }
+      },
+      "DisplayPublicationArticleWineCountry" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/CountryCode"
+          },
+          "text" : {
+            "type" : "string"
+          },
+          "flag" : {
+            "$ref" : "#/components/schemas/CdnUrl"
+          }
+        }
+      },
+      "DisplayPublicationArticleWineRating" : {
+        "type" : "object",
+        "properties" : {
+          "text" : {
+            "type" : "string"
+          },
+          "stars" : {
+            "$ref" : "#/components/schemas/RatingStars"
+          }
+        }
+      },
+      "DisplayPublicationArticleWineMedal" : {
+        "type" : "object",
+        "properties" : {
+          "image" : {
+            "$ref" : "#/components/schemas/CdnUrl"
+          },
+          "text" : {
+            "type" : "string"
+          }
+        }
+      },
       "Store" : {
         "type" : "object",
         "properties" : {
@@ -1361,9 +1583,7 @@
             "description" : "City"
           },
           "country_code" : {
-            "pattern" : "/^[A-Z]{2}$/",
-            "type" : "string",
-            "description" : "Country code definition from ISO 3166"
+            "$ref" : "#/components/schemas/CountryCode"
           },
           "phone" : {
             "$ref" : "#/components/schemas/Phone"
@@ -1485,7 +1705,7 @@
         "type" : "object",
         "properties" : {
           "day" : {
-            "$ref" : "#/components/schemas/Date"
+            "$ref" : "#/components/schemas/DayDate"
           },
           "open_from" : {
             "$ref" : "#/components/schemas/Time"
@@ -1507,7 +1727,7 @@
         "type" : "object",
         "properties" : {
           "day" : {
-            "$ref" : "#/components/schemas/Date"
+            "$ref" : "#/components/schemas/DayDate"
           },
           "open_from" : {
             "$ref" : "#/components/schemas/Time"
@@ -1583,6 +1803,18 @@
           "$ref" : "#/components/schemas/PublicOnlineArticle"
         }
       },
+      "DisplayPublications" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/DisplayPublication"
+        }
+      },
+      "DisplayPublicationArticles" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/DisplayPublicationArticle"
+        }
+      },
       "PublicOnlineArticlesResponse" : {
         "type" : "object",
         "properties" : {
@@ -1623,7 +1855,7 @@
             "format" : "int32"
           },
           "display_publications" : {
-            "$ref" : "#/components/schemas/ScreenPublications"
+            "$ref" : "#/components/schemas/DisplayPublications"
           }
         }
       },
@@ -1667,7 +1899,7 @@
             "$ref" : "#/components/schemas/Locale"
           },
           "cdn_url" : {
-            "$ref" : "#/components/schemas/Url"
+            "$ref" : "#/components/schemas/CdnUrl"
           }
         }
       }
