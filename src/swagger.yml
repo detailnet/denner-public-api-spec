@@ -775,7 +775,10 @@ definitions:
 
   Locale:
     type: string
-    pattern: '/^(de|fr|it)$/'
+    enum:
+      - de
+      - fr
+      - it
     description: Locale
 
   SortIndex:
@@ -1304,8 +1307,19 @@ definitions:
         $ref: '#/definitions/UUIDv4'
       screen:
         type: string
+        enum:
+          - f10
+          - tobacco
+          - pos
       layout:
         type: string
+        enum:
+          - standard
+          - week-end
+          - discount
+          - perfume
+          - wine
+          - cigarettes
       locale:
         $ref: '#/definitions/Locale'
       name:
@@ -1318,6 +1332,8 @@ definitions:
         $ref: '#/definitions/DayDate'
       valid_to:
         $ref: '#/definitions/DayDate'
+      validity_text:
+        type: string
       header_image_url:
         $ref: '#/definitions/CdnUrl'
       background_image_url:
@@ -1344,10 +1360,17 @@ definitions:
         type: string
       size:
         type: string
-#        pattern: '/^(small|medium|..)$/'
+        enum:
+          - small
+          - medium
+          - large
+          - horizontal
+          - discount
       title:
         type: string
       description:
+        type: string
+      disclaimer:
         type: string
       sort_index:
         $ref: '#/definitions/SortIndex'
@@ -1390,6 +1413,10 @@ definitions:
     properties:
       style:
         type: string
+        enum:
+          - yellow
+          - white
+          - discount
       text:
         type: string
       vertical_text:
