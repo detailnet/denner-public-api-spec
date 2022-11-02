@@ -352,53 +352,6 @@ paths:
 #                            value: "Uova"
 #                        children: []
 
-#parameters:
-#  PageParam:
-#    name: page
-#    description: >
-#      The page number.
-#      Default: 1
-#    in: query
-#    type: integer
-#    required: false
-#    format: int32
-#    minimum: 0
-#    default: 1
-#  PageSizeParam:
-#    name: page_size
-#    description: >
-#      The page size.
-#      Default: -1 (no limit)
-#    in: query
-#    type: integer
-#    required: false
-#    format: int32
-#    default: -1
-#  SortParam:
-#    name: sort
-#    description: >
-#      Sort the results, e.g. "sort=name__desc" will sort by name (Z to A)
-#    in: query
-#    type: string
-#    required: false
-#  FilterParam:
-#    name: filter
-#    in: query
-#    type: string
-#    required: false
-#    description: |
-#      Filters: JSON array of Filter object, urlencoded.
-#
-#      Filter object:
-#      - property: Property to filter on.
-#      - operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).
-#      - type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).
-#      - value: Value. Must be of the defined type.
-#
-#      Examples:
-#      - [{"property":"id","operator":"in","type":"array","value":["7627150d-36bd-4867-89b2-091800a03d24","58afec5c-ece9-4b66-bc55-00d6dc1b65b8"]}]
-#      - [{"property":"in_shop","operator":"eq","type":"boolean","value":true}]
-
   ### Store
   /stores:
     get:
@@ -720,8 +673,6 @@ parameters:
     in: body
     required: true
     schema:
-      required:
-        - article_id
       type: object
       properties:
         article_id:
@@ -730,8 +681,12 @@ parameters:
           pattern: '/^[0-9]{6}$/'
         locale:
           type: string
-          description: Locale/language (supported are "de", "fr" and "it")
+          description: Locale/language
           default: de
+          enum:
+            - de
+            - fr
+            - it
         quantity:
           type: integer
           description: Quantity for prices and texts
@@ -740,12 +695,20 @@ parameters:
           default: 1
         wine_year:
           type: integer
-          description: Wine year for texts
           format: int32
-          minimum: 1900
+          description: Wine year for texts, when not defined the wine year sold in shop is used, -1 for wine year suppression in text
         valid_on:
           type: string
-          description: Valid on (e.g. "2018-02-16") for prices
+          description: Valid on (e.g. "2018-02-16") for prices, when not defined the current day is used
+      required:
+        - article_id
+      example:
+        {
+          "article_id": "051683",
+          "locale": "it",
+          "quantity": 6
+        }
+
   PublicationIdPathParam:
     name: publication_id
     description: The unique identifier of an online publication
@@ -825,7 +788,9 @@ definitions:
       id:
         $ref: '#/definitions/CountryCode'
       title:
-        $ref: '#/definitions/Translations'
+        type: array
+    items:
+      $ref: '#/definitions/Translation'
     description: Country
 
   CountryFlag:
@@ -901,9 +866,13 @@ definitions:
     type: object
     properties:
       title:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       description:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
 
   Supplier:
     type: object
@@ -932,7 +901,9 @@ definitions:
       to:
         $ref: '#/definitions/DayDate'
       text:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
 
   ArticleValidity:
       type: object
@@ -943,18 +914,26 @@ definitions:
         to:
           $ref: '#/definitions/DayDate'
         short_text:
-          $ref: '#/definitions/Translations'
+          type: array
+          items:
+            $ref: '#/definitions/Translation'
         long_text:
-          $ref: '#/definitions/Translations'
+          type: array
+          items:
+            $ref: '#/definitions/Translation'
 
   AvailabilityLimitations:
     type: object
     description: Texts for information about limited availability
     properties:
       region:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       store:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
 
   PdfFile:
     description: Source of the PDF document
@@ -963,15 +942,18 @@ definitions:
       url:
         $ref: '#/definitions/Url'
 
+  ArticleGroupCode:
+    type: string
+    pattern: '/^\d{2}(-\d{2,3})?$/'
+    description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
+
   AssignedArticleGroup:
     type: object
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
       code:
-        type: string
-        pattern: '/^\d{2}(-\d{2,3})?$/'
-        description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
+        $ref: '#/definitions/ArticleGroupCode'
       name:
         type: string
         description: Article group name
@@ -991,12 +973,17 @@ definitions:
         type: string
         description: German name for the eco label
       images:
-        type: object
-        properties:
-          locale:
-            $ref: '#/definitions/Locale'
-          cdn_url:
-            $ref: '#/definitions/CdnUrl'
+        type: array
+        items:
+          $ref: '#/definitions/EcoLabelImage'
+
+  EcoLabelImage:
+    type: object
+    properties:
+      locale:
+        $ref: '#/definitions/Locale'
+      cdn_url:
+        $ref: '#/definitions/CdnUrl'
 
   PackshotView:
     type: object
@@ -1058,9 +1045,13 @@ definitions:
       type:
         $ref: '#/definitions/OutputType'
       text:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       images:
-        $ref: '#/definitions/OutputImages'
+        type: array
+        items:
+          $ref: '#/definitions/OutputImage'
 
   Stopper:
     allOf:
@@ -1069,7 +1060,9 @@ definitions:
         properties:
           markup_text:
             allOf:
-              - $ref: '#/definitions/Translations'
+              - type: array
+                items:
+                   $ref: '#/definitions/Translation'
               - description: Markup text for visual effects
 
   OutputType:
@@ -1089,7 +1082,9 @@ definitions:
       design:
         $ref: '#/definitions/OutputImageDesign'
       formats:
-        $ref: '#/definitions/OutputImageFormats'
+        type: array
+        items:
+          $ref: '#/definitions/OutputImageFormat'
 
   OutputImageDesign:
     type: object
@@ -1170,17 +1165,29 @@ definitions:
       year:
         $ref: '#/definitions/Year'
       fits_with:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       varietal:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       character:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       temperature:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       awards:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       storage:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
 
   Region:
     type: object
@@ -1188,7 +1195,9 @@ definitions:
       id:
         $ref: '#/definitions/UUIDv4'
       title:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
 
   WineType:
     type: object
@@ -1199,7 +1208,9 @@ definitions:
         minimum: 0
         description: Denner wine type code
       title:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
 
   Rating:
     type: object
@@ -1236,13 +1247,19 @@ definitions:
       article_id:
         $ref: '#/definitions/ArticleId'
       title:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       description:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       prices:
         $ref: '#/definitions/PublicArticlePrices'
       price_info:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       quantity:
         $ref: '#/definitions/Quantity'
       validity:
@@ -1295,7 +1312,9 @@ definitions:
         format: int32
         description: Denner online group code
       title:
-        $ref: '#/definitions/Translations'
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       parent:
         $ref: '#/definitions/PublicAssignedOnlineGroup'
 
@@ -1343,7 +1362,9 @@ definitions:
       footer_text:
         type: string
       articles:
-        $ref: '#/definitions/DisplayPublicationArticles'
+        type: array
+        items:
+          $ref: '#/definitions/DisplayPublicationArticle'
 
   DisplayPublicationArticle:
     type: object
@@ -1385,7 +1406,7 @@ definitions:
       instead_price:
         type: string
       article_group:
-        type: string
+        $ref: '#/definitions/ArticleGroupCode'
       labels:
         type: array
         items:
@@ -1674,131 +1695,18 @@ definitions:
         type: string
         description: Service title
 
-#  ### Store Flyer V2
-#  StoreFlyer:
-#    type: object
-#    properties:
-#      id:
-#        $ref: '#/definitions/UUIDv4'
-#      expired:
-#        type: boolean
-#        description: Is the flyer expired?
-#      url:
-#        $ref: '#/definitions/Url'
-#      sort_index:
-#        type: integer
-#        format: int32
-#        minimum: 0
-#        description: Display order of store flyer
-
-
-  ### Collections
-  Stores:
-    type: array
-    items:
-      $ref: '#/definitions/Store'
-
-  Translations:
-    type: array
-    items:
-      $ref: '#/definitions/Translation'
-
-  EcoLabels:
-    type: array
-    items:
-      $ref: '#/definitions/EcoLabel'
-
-  OutputImages:
-    type: array
-    items:
-      $ref: '#/definitions/OutputImage'
-
-  OutputImageFormats:
-    type: array
-    items:
-      $ref: '#/definitions/OutputImageFormat'
-
-  Dots:
-    type: array
-    items:
-      $ref: '#/definitions/Output'
-
-  PublicOnlineArticles:
-    type: array
-    items:
-      $ref: '#/definitions/PublicOnlineArticle'
-
-#  OnlineGroups:
-#    type: array
-#    items:
-#      $ref: '#/definitions/OnlineGroup'
-
-  DisplayPublications:
-    type: array
-    items:
-      $ref: '#/definitions/DisplayPublication'
-
-  DisplayPublicationArticles:
-    type: array
-    items:
-      $ref: '#/definitions/DisplayPublicationArticle'
+  ### Bodies
 
   ### Responses
-  PublicOnlineArticlesResponse:
+  BaseResponse:
     type: object
     properties:
-#      page_count:
-#        description: The number of pages
-#        type: integer
-#        format: int32
-#      page_size:
-#        description: The page size
-#        type: integer
-#        format: int32
-#      total_items:
-#        description: The number of items on all pages
-#        type: integer
-#        format: int32
-      online_articles:
-        $ref: '#/definitions/PublicOnlineArticles'
-
-#  OnlineGroupsResponse:
-#    type: object
-#    properties:
-#      page_count:
-#        description: The number of pages
-#        type: integer
-#        format: int32
-#      page_size:
-#        description: The page size
-#        type: integer
-#        format: int32
-#      total_items:
-#        description: The number of items on all pages
-#        type: integer
-#        format: int32
-#      online_groups:
-#        $ref: '#/definitions/OnlineGroups'
-
-  StoresResponse:
-    type: object
-    properties:
-#      page_count:
-#        description: The number of pages
-#        type: integer
-#        format: int32
-#      page_size:
-#        description: The page size
-#        type: integer
-#        format: int32
-      total_stores:
+      total_items:
         description: The number of items on all pages
         type: integer
         format: int32
-      stores:
-        $ref: '#/definitions/Stores'
 
-  DisplayPublicationsResponse:
+  BasePagedResponse:
     type: object
     properties:
       page_count:
@@ -1813,5 +1721,32 @@ definitions:
         description: The number of items on all pages
         type: integer
         format: int32
-      display_publications:
-        $ref: '#/definitions/DisplayPublications'
+
+  PublicOnlineArticlesResponse:
+    type: object
+    properties:
+      online_articles:
+        type: array
+        items:
+          $ref: '#/definitions/PublicOnlineArticle'
+
+  StoresResponse:
+    allOf:
+      - type: object
+        properties:
+          stores:
+            type: array
+            items:
+              $ref: '#/definitions/Store'
+      - $ref: '#/definitions/BaseResponse'
+
+  DisplayPublicationsResponse:
+    allOf:
+      - type: object
+        properties:
+          display_publications:
+            type: array
+            items:
+              $ref: '#/definitions/DisplayPublication'
+      - $ref: '#/definitions/BasePagedResponse'
+

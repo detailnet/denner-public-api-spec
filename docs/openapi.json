@@ -745,9 +745,9 @@
         "description" : "Denner article code"
       },
       "Locale" : {
-        "pattern" : "/^(de|fr|it)$/",
         "type" : "string",
-        "description" : "Locale"
+        "description" : "Locale",
+        "enum" : [ "de", "fr", "it" ]
       },
       "SortIndex" : {
         "minimum" : 0,
@@ -792,7 +792,7 @@
             "$ref" : "#/components/schemas/CountryCode"
           },
           "title" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array"
           }
         },
         "description" : "Country"
@@ -876,10 +876,16 @@
         "type" : "object",
         "properties" : {
           "title" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "description" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           }
         }
       },
@@ -917,7 +923,10 @@
             "$ref" : "#/components/schemas/DayDate"
           },
           "text" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           }
         },
         "description" : "Generic validity based on dates (from/to) and a corresponding text"
@@ -932,10 +941,16 @@
             "$ref" : "#/components/schemas/DayDate"
           },
           "short_text" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "long_text" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           }
         },
         "description" : "Article validity based on dates (from/to) and corresponding texts (short and long version)"
@@ -944,10 +959,16 @@
         "type" : "object",
         "properties" : {
           "region" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "store" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           }
         },
         "description" : "Texts for information about limited availability"
@@ -961,6 +982,11 @@
         },
         "description" : "Source of the PDF document"
       },
+      "ArticleGroupCode" : {
+        "pattern" : "/^\\d{2}(-\\d{2,3})?$/",
+        "type" : "string",
+        "description" : "Navision article group code (e.g. '01', '20', '01-60', '38-998')"
+      },
       "AssignedArticleGroup" : {
         "type" : "object",
         "properties" : {
@@ -968,9 +994,7 @@
             "$ref" : "#/components/schemas/UUIDv4"
           },
           "code" : {
-            "pattern" : "/^\\d{2}(-\\d{2,3})?$/",
-            "type" : "string",
-            "description" : "Navision article group code (e.g. '01', '20', '01-60', '38-998')"
+            "$ref" : "#/components/schemas/ArticleGroupCode"
           },
           "name" : {
             "type" : "string",
@@ -996,7 +1020,21 @@
             "description" : "German name for the eco label"
           },
           "images" : {
-            "$ref" : "#/components/schemas/EcoLabel_images"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/EcoLabelImage"
+            }
+          }
+        }
+      },
+      "EcoLabelImage" : {
+        "type" : "object",
+        "properties" : {
+          "locale" : {
+            "$ref" : "#/components/schemas/Locale"
+          },
+          "cdn_url" : {
+            "$ref" : "#/components/schemas/CdnUrl"
           }
         }
       },
@@ -1066,10 +1104,16 @@
             "$ref" : "#/components/schemas/OutputType"
           },
           "text" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "images" : {
-            "$ref" : "#/components/schemas/OutputImages"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OutputImage"
+            }
           }
         }
       },
@@ -1082,7 +1126,10 @@
             "markup_text" : {
               "type" : "object",
               "allOf" : [ {
-                "$ref" : "#/components/schemas/Translations"
+                "type" : "array",
+                "items" : {
+                  "$ref" : "#/definitions/Translation"
+                }
               }, {
                 "type" : "object",
                 "description" : "Markup text for visual effects"
@@ -1112,7 +1159,10 @@
             "$ref" : "#/components/schemas/OutputImageDesign"
           },
           "formats" : {
-            "$ref" : "#/components/schemas/OutputImageFormats"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OutputImageFormat"
+            }
           }
         }
       },
@@ -1207,22 +1257,40 @@
             "$ref" : "#/components/schemas/Year"
           },
           "fits_with" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "varietal" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "character" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "temperature" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "awards" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "storage" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           }
         }
       },
@@ -1233,7 +1301,10 @@
             "$ref" : "#/components/schemas/UUIDv4"
           },
           "title" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           }
         }
       },
@@ -1247,7 +1318,10 @@
             "format" : "int32"
           },
           "title" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           }
         }
       },
@@ -1293,16 +1367,25 @@
             "$ref" : "#/components/schemas/ArticleId"
           },
           "title" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "description" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "prices" : {
             "$ref" : "#/components/schemas/PublicArticlePrices"
           },
           "price_info" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "quantity" : {
             "$ref" : "#/components/schemas/Quantity"
@@ -1340,7 +1423,10 @@
             "format" : "int32"
           },
           "title" : {
-            "$ref" : "#/components/schemas/Translations"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "parent" : {
             "$ref" : "#/components/schemas/PublicAssignedOnlineGroup"
@@ -1354,10 +1440,12 @@
             "$ref" : "#/components/schemas/UUIDv4"
           },
           "screen" : {
-            "type" : "string"
+            "type" : "string",
+            "enum" : [ "f10", "tobacco", "pos" ]
           },
           "layout" : {
-            "type" : "string"
+            "type" : "string",
+            "enum" : [ "standard", "week-end", "discount", "perfume", "wine", "cigarettes" ]
           },
           "locale" : {
             "$ref" : "#/components/schemas/Locale"
@@ -1377,6 +1465,9 @@
           "valid_to" : {
             "$ref" : "#/components/schemas/DayDate"
           },
+          "validity_text" : {
+            "type" : "string"
+          },
           "header_image_url" : {
             "$ref" : "#/components/schemas/CdnUrl"
           },
@@ -1390,7 +1481,10 @@
             "type" : "string"
           },
           "articles" : {
-            "$ref" : "#/components/schemas/DisplayPublicationArticles"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/DisplayPublicationArticle"
+            }
           }
         }
       },
@@ -1413,12 +1507,16 @@
             "type" : "string"
           },
           "size" : {
-            "type" : "string"
+            "type" : "string",
+            "enum" : [ "small", "medium", "large", "horizontal", "discount" ]
           },
           "title" : {
             "type" : "string"
           },
           "description" : {
+            "type" : "string"
+          },
+          "disclaimer" : {
             "type" : "string"
           },
           "sort_index" : {
@@ -1440,7 +1538,7 @@
             "type" : "string"
           },
           "article_group" : {
-            "type" : "string"
+            "$ref" : "#/components/schemas/ArticleGroupCode"
           },
           "labels" : {
             "type" : "array",
@@ -1478,7 +1576,8 @@
         "type" : "object",
         "properties" : {
           "style" : {
-            "type" : "string"
+            "type" : "string",
+            "enum" : [ "yellow", "white", "discount" ]
           },
           "text" : {
             "type" : "string"
@@ -1761,82 +1860,17 @@
           }
         }
       },
-      "Stores" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/Store"
-        }
-      },
-      "Translations" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/Translation"
-        }
-      },
-      "EcoLabels" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/EcoLabel"
-        }
-      },
-      "OutputImages" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/OutputImage"
-        }
-      },
-      "OutputImageFormats" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/OutputImageFormat"
-        }
-      },
-      "Dots" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/Output"
-        }
-      },
-      "PublicOnlineArticles" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/PublicOnlineArticle"
-        }
-      },
-      "DisplayPublications" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/DisplayPublication"
-        }
-      },
-      "DisplayPublicationArticles" : {
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/components/schemas/DisplayPublicationArticle"
-        }
-      },
-      "PublicOnlineArticlesResponse" : {
+      "BaseResponse" : {
         "type" : "object",
         "properties" : {
-          "online_articles" : {
-            "$ref" : "#/components/schemas/PublicOnlineArticles"
-          }
-        }
-      },
-      "StoresResponse" : {
-        "type" : "object",
-        "properties" : {
-          "total_stores" : {
+          "total_items" : {
             "type" : "integer",
             "description" : "The number of items on all pages",
             "format" : "int32"
-          },
-          "stores" : {
-            "$ref" : "#/components/schemas/Stores"
           }
         }
       },
-      "DisplayPublicationsResponse" : {
+      "BasePagedResponse" : {
         "type" : "object",
         "properties" : {
           "page_count" : {
@@ -1853,11 +1887,49 @@
             "type" : "integer",
             "description" : "The number of items on all pages",
             "format" : "int32"
-          },
-          "display_publications" : {
-            "$ref" : "#/components/schemas/DisplayPublications"
           }
         }
+      },
+      "PublicOnlineArticlesResponse" : {
+        "type" : "object",
+        "properties" : {
+          "online_articles" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PublicOnlineArticle"
+            }
+          }
+        }
+      },
+      "StoresResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "stores" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/Store"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BaseResponse"
+        } ]
+      },
+      "DisplayPublicationsResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "display_publications" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/DisplayPublication"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BasePagedResponse"
+        } ]
       },
       "baseposters_body" : {
         "required" : [ "article_id" ],
@@ -1870,8 +1942,9 @@
           },
           "locale" : {
             "type" : "string",
-            "description" : "Locale/language (supported are \"de\", \"fr\" and \"it\")",
-            "default" : "de"
+            "description" : "Locale/language",
+            "default" : "de",
+            "enum" : [ "de", "fr", "it" ]
           },
           "quantity" : {
             "minimum" : 1,
@@ -1881,26 +1954,19 @@
             "default" : 1
           },
           "wine_year" : {
-            "minimum" : 1900,
             "type" : "integer",
-            "description" : "Wine year for texts",
+            "description" : "Wine year for texts, when not defined the wine year sold in shop is used, -1 for wine year suppression in text",
             "format" : "int32"
           },
           "valid_on" : {
             "type" : "string",
-            "description" : "Valid on (e.g. \"2018-02-16\") for prices"
+            "description" : "Valid on (e.g. \"2018-02-16\") for prices, when not defined the current day is used"
           }
-        }
-      },
-      "EcoLabel_images" : {
-        "type" : "object",
-        "properties" : {
-          "locale" : {
-            "$ref" : "#/components/schemas/Locale"
-          },
-          "cdn_url" : {
-            "$ref" : "#/components/schemas/CdnUrl"
-          }
+        },
+        "example" : {
+          "article_id" : "051683",
+          "locale" : "it",
+          "quantity" : 6
         }
       }
     },
@@ -2030,8 +2096,9 @@
                 },
                 "locale" : {
                   "type" : "string",
-                  "description" : "Locale/language (supported are \"de\", \"fr\" and \"it\")",
-                  "default" : "de"
+                  "description" : "Locale/language",
+                  "default" : "de",
+                  "enum" : [ "de", "fr", "it" ]
                 },
                 "quantity" : {
                   "minimum" : 1,
@@ -2041,15 +2108,19 @@
                   "default" : 1
                 },
                 "wine_year" : {
-                  "minimum" : 1900,
                   "type" : "integer",
-                  "description" : "Wine year for texts",
+                  "description" : "Wine year for texts, when not defined the wine year sold in shop is used, -1 for wine year suppression in text",
                   "format" : "int32"
                 },
                 "valid_on" : {
                   "type" : "string",
-                  "description" : "Valid on (e.g. \"2018-02-16\") for prices"
+                  "description" : "Valid on (e.g. \"2018-02-16\") for prices, when not defined the current day is used"
                 }
+              },
+              "example" : {
+                "article_id" : "051683",
+                "locale" : "it",
+                "quantity" : 6
               }
             }
           }
