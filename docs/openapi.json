@@ -649,7 +649,266 @@
         "responses" : {
           "200" : {
             "description" : "Successful listing",
-            "content" : { }
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DisplayPublicationsResponse"
+                },
+                "example" : {
+                  "display_publications" : [ {
+                    "id" : "2433ae87-5238-4272-9c86-373b67472c9e",
+                    "screen" : "f10",
+                    "layout" : "week-end",
+                    "locale" : "de",
+                    "name" : "F10_Plakate - F10_Wochenendknaller (DE)",
+                    "year" : 2022,
+                    "week" : 44,
+                    "valid_from" : "2022-11-04",
+                    "valid_to" : "2022-11-05",
+                    "validity_text" : "Gültig am Freitag, 4. und Samstag, 5.11.2022",
+                    "articles" : [ {
+                      "id" : "11266f43-0acf-4615-a21d-1a0c5edaaee8",
+                      "article_id" : "901317",
+                      "advertised_article_id" : "8c6b1e07-11a5-45ba-ad6e-a6ac2c9b34d1",
+                      "composite_article" : false,
+                      "name" : "Lammnierstück Nature ca. 400",
+                      "size" : "medium",
+                      "title" : "Denner Lammnierstück",
+                      "description" : "nature, Australien/Neuseeland, 2 Stück, ca. 400 g, per 100 g",
+                      "sort_index" : 602,
+                      "packshot_image" : "https://denner.imgix.net/assets/332e7f98-6c92-4c99-a551-e0ba54e15e59/web/912859_1_c_K.png",
+                      "sales_price" : "3.25",
+                      "instead_price" : "statt 4.95",
+                      "article_group" : "09-130",
+                      "labels" : [ ],
+                      "stopper" : {
+                        "style" : "yellow",
+                        "text" : "34%"
+                      }
+                    }, {
+                      "id" : "8626e2b8-ec45-41d5-a50e-315a240d9b1c",
+                      "article_id" : "050052",
+                      "advertised_article_id" : "abe37069-0006-47a2-b94e-9e263d7f0d34",
+                      "composite_article" : true,
+                      "name" : "Fetzer Zinfandel 75",
+                      "size" : "medium",
+                      "title" : "Fetzer",
+                      "description" : "Kalifornien, USA, 6 x 75 cl \n- Zinfandel, 2020\n- Cabernet Sauvignon, 2020\n- Chardonnay, 2021",
+                      "sort_index" : 605,
+                      "packshot_image" : "https://denner.imgix.net/assets/39b4ffe3-fba0-469c-a87e-01e5a43e29ad/web/050052_6.png",
+                      "carousel_images" : [ "https://denner.imgix.net/assets/39b4ffe3-fba0-469c-a87e-01e5a43e29ad/web/050052_6.png", "https://denner.imgix.net/assets/b017bc4d-54a4-4128-a839-00e6e8a3d47f/web/050055_6.png", "https://denner.imgix.net/assets/3d26ea0f-ed5f-4c8a-8f6b-4582627aa665/web/050054_6.png" ],
+                      "sales_price" : "41.85",
+                      "instead_price" : "statt 83.70",
+                      "article_group" : "60-64",
+                      "labels" : [ ],
+                      "stopper" : {
+                        "style" : "yellow",
+                        "text" : "50%"
+                      },
+                      "wine" : {
+                        "country" : {
+                          "id" : "US",
+                          "text" : "USA",
+                          "flag" : "https://denner.imgix.net/flags/US.png"
+                        },
+                        "rating" : {
+                          "text" : "Kunden-Rating:",
+                          "stars" : 4
+                        }
+                      }
+                    }, {
+                      "id" : "c0ebacf6-0280-4040-a1f8-d92673fe5b05",
+                      "article_id" : "ad93e72b-79f8-4a84-a9f9-86f203c2d929",
+                      "composite_article" : false,
+                      "name" : "KW44_Schaumweine/Champagner",
+                      "size" : "horizontal",
+                      "title" : "Alle Champagner und Schaumweine",
+                      "description" : "Auch auf bestehende Aktionspreise!",
+                      "disclaimer" : "Ausgenommen Online Specials und Einzelflaschen mit gelbem Rabattkleber. Nicht mit anderen Gutscheinen und Bons kumulierbar.",
+                      "sort_index" : 202,
+                      "packshot_image" : "https://denner.imgix.net/assets/a41dc747-c2a9-4df6-b142-2a1e3c357082/web/KW44_Sortimentaktion_Range_Schaumwein_2000x2000_di.png",
+                      "sales_price" : "Sortimentsaktion",
+                      "article_group" : "59-20",
+                      "labels" : [ ],
+                      "stopper" : {
+                        "style" : "discount",
+                        "text" : "20%",
+                        "validity" : "Gültig ab 19.10.2022"
+                      }
+                    } ],
+                    "sort_index" : 100,
+                    "created_on" : "2022-11-01T08:31:37+0100"
+                  }, {
+                    "id" : "d9413bb2-1ef4-461e-a994-0f9caee9038b",
+                    "screen" : "f10",
+                    "layout" : "week-end",
+                    "locale" : "fr",
+                    "name" : "F10_Plakate - F10_Wochenendknaller (FR)",
+                    "year" : 2022,
+                    "week" : 44,
+                    "valid_from" : "2022-11-04",
+                    "valid_to" : "2022-11-05",
+                    "validity_text" : "Valables le vendredi 4 et le samedi 5.11.2022",
+                    "articles" : [ {
+                      "id" : "8cebbe34-5c27-45e9-9136-e141fe4278e3",
+                      "article_id" : "901317",
+                      "advertised_article_id" : "8c6b1e07-11a5-45ba-ad6e-a6ac2c9b34d1",
+                      "composite_article" : false,
+                      "name" : "Lammnierstück Nature ca. 400",
+                      "size" : "medium",
+                      "title" : "Filet d'agneau Denner",
+                      "description" : "nature, Australie/Nouvelle-Zélande, 2 pièces, env. 400 g, les 100 g",
+                      "sort_index" : 602,
+                      "packshot_image" : "https://denner.imgix.net/assets/332e7f98-6c92-4c99-a551-e0ba54e15e59/web/912859_1_c_K.png",
+                      "sales_price" : "3.25",
+                      "instead_price" : "au lieu de 4.95",
+                      "article_group" : "09-130",
+                      "labels" : [ ],
+                      "stopper" : {
+                        "style" : "yellow",
+                        "text" : "34%"
+                      }
+                    }, {
+                      "id" : "fc2d83ba-8c64-49eb-9f57-a0fb38fb927b",
+                      "article_id" : "050052",
+                      "advertised_article_id" : "abe37069-0006-47a2-b94e-9e263d7f0d34",
+                      "composite_article" : true,
+                      "name" : "Fetzer Zinfandel 75",
+                      "size" : "medium",
+                      "title" : "Fetzer",
+                      "description" : "2020, Californie, États-Unis, 6 x 75 cl \n- Zinfandel\n- Cabernet Sauvignon",
+                      "sort_index" : 605,
+                      "packshot_image" : "https://denner.imgix.net/assets/39b4ffe3-fba0-469c-a87e-01e5a43e29ad/web/050052_6.png",
+                      "carousel_images" : [ "https://denner.imgix.net/assets/39b4ffe3-fba0-469c-a87e-01e5a43e29ad/web/050052_6.png", "https://denner.imgix.net/assets/b017bc4d-54a4-4128-a839-00e6e8a3d47f/web/050055_6.png", "https://denner.imgix.net/assets/3d26ea0f-ed5f-4c8a-8f6b-4582627aa665/web/050054_6.png" ],
+                      "sales_price" : "41.85",
+                      "instead_price" : "au lieu de 83.70",
+                      "article_group" : "60-64",
+                      "labels" : [ ],
+                      "stopper" : {
+                        "style" : "yellow",
+                        "text" : "50%"
+                      },
+                      "wine" : {
+                        "country" : {
+                          "id" : "US",
+                          "text" : "USA",
+                          "flag" : "https://denner.imgix.net/flags/US.png"
+                        },
+                        "rating" : {
+                          "text" : "Évaluation client:",
+                          "stars" : 4
+                        }
+                      }
+                    }, {
+                      "id" : "6f112c21-7bae-4247-9a27-43f6da81fda0",
+                      "article_id" : "ad93e72b-79f8-4a84-a9f9-86f203c2d929",
+                      "composite_article" : false,
+                      "name" : "KW44_Schaumweine/Champagner",
+                      "size" : "medium",
+                      "title" : "Tous les champagnes\net vins mousseux",
+                      "description" : "Également sur les prix promotionnels!",
+                      "disclaimer" : "Excepté les offres spéciales en ligne et les bouteilles munies d’un autocollant de rabais jaune. Non cumulable avec d’autres bons.",
+                      "sort_index" : 202,
+                      "packshot_image" : "https://denner.imgix.net/assets/b586e370-f08a-4e80-a948-3bfa008fcf44/web/KW44_Sortimentaktion_Range_Schaumwein_2000x2000_fr.png",
+                      "sales_price" : "Promotion sur l’assortiment",
+                      "article_group" : "59-20",
+                      "labels" : [ ],
+                      "stopper" : {
+                        "style" : "yellow",
+                        "text" : "20%"
+                      }
+                    } ],
+                    "sort_index" : 101,
+                    "created_on" : "2022-11-01T08:31:37+0100"
+                  }, {
+                    "id" : "84beee35-9453-49d2-bc64-5f81d4805a14",
+                    "screen" : "f10",
+                    "layout" : "week-end",
+                    "locale" : "it",
+                    "name" : "F10_Plakate - F10_Wochenendknaller (IT)",
+                    "year" : 2022,
+                    "week" : 44,
+                    "valid_from" : "2022-11-04",
+                    "valid_to" : "2022-11-05",
+                    "validity_text" : "Valide venerdì 4 e sabato 5.11.2022",
+                    "articles" : [ {
+                      "id" : "183714d5-2d4d-458c-9bd8-4a13491eb57a",
+                      "article_id" : "901317",
+                      "advertised_article_id" : "8c6b1e07-11a5-45ba-ad6e-a6ac2c9b34d1",
+                      "composite_article" : false,
+                      "name" : "Lammnierstück Nature ca. 400",
+                      "size" : "medium",
+                      "title" : "Filetto d'agnello Denner",
+                      "description" : "al naturale, Australia/Nuova Zelanda, 2 pezzi, ca. 400 g, per 100 g",
+                      "sort_index" : 602,
+                      "packshot_image" : "https://denner.imgix.net/assets/332e7f98-6c92-4c99-a551-e0ba54e15e59/web/912859_1_c_K.png",
+                      "sales_price" : "3.25",
+                      "instead_price" : "invece di 4.95",
+                      "article_group" : "09-130",
+                      "labels" : [ ],
+                      "stopper" : {
+                        "style" : "yellow",
+                        "text" : "34%"
+                      }
+                    }, {
+                      "id" : "50d1a30a-2670-49c5-986a-e3ebba5cc2d9",
+                      "article_id" : "050052",
+                      "advertised_article_id" : "abe37069-0006-47a2-b94e-9e263d7f0d34",
+                      "composite_article" : true,
+                      "name" : "Fetzer Zinfandel 75",
+                      "size" : "medium",
+                      "title" : "Fetzer",
+                      "description" : "2020, California, Stati Uniti, 6 x 75 cl \n- Zinfandel\n- Cabernet Sauvignon",
+                      "sort_index" : 605,
+                      "packshot_image" : "https://denner.imgix.net/assets/39b4ffe3-fba0-469c-a87e-01e5a43e29ad/web/050052_6.png",
+                      "carousel_images" : [ "https://denner.imgix.net/assets/39b4ffe3-fba0-469c-a87e-01e5a43e29ad/web/050052_6.png", "https://denner.imgix.net/assets/b017bc4d-54a4-4128-a839-00e6e8a3d47f/web/050055_6.png", "https://denner.imgix.net/assets/3d26ea0f-ed5f-4c8a-8f6b-4582627aa665/web/050054_6.png" ],
+                      "sales_price" : "41.85",
+                      "instead_price" : "invece di 83.70",
+                      "article_group" : "60-64",
+                      "labels" : [ ],
+                      "stopper" : {
+                        "style" : "yellow",
+                        "text" : "50%"
+                      },
+                      "wine" : {
+                        "country" : {
+                          "id" : "US",
+                          "text" : "USA",
+                          "flag" : "https://denner.imgix.net/flags/US.png"
+                        },
+                        "rating" : {
+                          "text" : "Rating della clientela:",
+                          "stars" : 4
+                        }
+                      }
+                    }, {
+                      "id" : "a091ab15-90b5-44e4-ae3e-fe3d4f83ddd7",
+                      "article_id" : "ad93e72b-79f8-4a84-a9f9-86f203c2d929",
+                      "composite_article" : false,
+                      "name" : "KW44_Schaumweine/Champagner",
+                      "size" : "medium",
+                      "title" : "Tutti gli champagne\ne gli spumanti",
+                      "description" : "Anche sugli attuali prez zi promozionali!",
+                      "disclaimer" : "Sono esclusi online specials e singole bottiglie con adesivo giallo di sconto.\nNon cumulabile con altri buoni.",
+                      "sort_index" : 202,
+                      "packshot_image" : "https://denner.imgix.net/assets/a41dc747-c2a9-4df6-b142-2a1e3c357082/web/KW44_Sortimentaktion_Range_Schaumwein_2000x2000_di.png",
+                      "sales_price" : "Promozione assortimento",
+                      "article_group" : "59-20",
+                      "labels" : [ ],
+                      "stopper" : {
+                        "style" : "yellow",
+                        "text" : "20%"
+                      }
+                    } ],
+                    "sort_index" : 102,
+                    "created_on" : "2022-11-01T08:31:37+0100"
+                  } ],
+                  "page_count" : 1,
+                  "page_size" : 10,
+                  "total_items" : 3
+                }
+              }
+            }
           }
         },
         "security" : [ {
@@ -661,7 +920,7 @@
       "get" : {
         "tags" : [ "advertising" ],
         "summary" : "Fetch display-publication",
-        "description" : "Use this operation to fetch the first display-publication for a specific screen, layout and language on current day.\n",
+        "description" : "Use this operation to fetch the first display-publication for a specific screen, layout and language to display on current day.\n",
         "operationId" : "fetchDisplayPublication",
         "parameters" : [ {
           "name" : "Accept",
@@ -717,6 +976,90 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/DisplayPublication"
+                },
+                "example" : {
+                  "id" : "2433ae87-5238-4272-9c86-373b67472c9e",
+                  "screen" : "f10",
+                  "layout" : "week-end",
+                  "locale" : "de",
+                  "name" : "F10_Plakate - F10_Wochenendknaller (DE)",
+                  "year" : 2022,
+                  "week" : 44,
+                  "valid_from" : "2022-11-04",
+                  "valid_to" : "2022-11-05",
+                  "validity_text" : "Gültig am Freitag, 4. und Samstag, 5.11.2022",
+                  "articles" : [ {
+                    "id" : "11266f43-0acf-4615-a21d-1a0c5edaaee8",
+                    "article_id" : "901317",
+                    "advertised_article_id" : "8c6b1e07-11a5-45ba-ad6e-a6ac2c9b34d1",
+                    "composite_article" : false,
+                    "name" : "Lammnierstück Nature ca. 400",
+                    "size" : "medium",
+                    "title" : "Denner Lammnierstück",
+                    "description" : "nature, Australien/Neuseeland, 2 Stück, ca. 400 g, per 100 g",
+                    "sort_index" : 602,
+                    "packshot_image" : "https://denner.imgix.net/assets/332e7f98-6c92-4c99-a551-e0ba54e15e59/web/912859_1_c_K.png",
+                    "sales_price" : "3.25",
+                    "instead_price" : "statt 4.95",
+                    "article_group" : "09-130",
+                    "labels" : [ ],
+                    "stopper" : {
+                      "style" : "yellow",
+                      "text" : "34%"
+                    }
+                  }, {
+                    "id" : "8626e2b8-ec45-41d5-a50e-315a240d9b1c",
+                    "article_id" : "050052",
+                    "advertised_article_id" : "abe37069-0006-47a2-b94e-9e263d7f0d34",
+                    "composite_article" : true,
+                    "name" : "Fetzer Zinfandel 75",
+                    "size" : "medium",
+                    "title" : "Fetzer",
+                    "description" : "Kalifornien, USA, 6 x 75 cl \n- Zinfandel, 2020\n- Cabernet Sauvignon, 2020\n- Chardonnay, 2021",
+                    "sort_index" : 605,
+                    "packshot_image" : "https://denner.imgix.net/assets/39b4ffe3-fba0-469c-a87e-01e5a43e29ad/web/050052_6.png",
+                    "carousel_images" : [ "https://denner.imgix.net/assets/39b4ffe3-fba0-469c-a87e-01e5a43e29ad/web/050052_6.png", "https://denner.imgix.net/assets/b017bc4d-54a4-4128-a839-00e6e8a3d47f/web/050055_6.png", "https://denner.imgix.net/assets/3d26ea0f-ed5f-4c8a-8f6b-4582627aa665/web/050054_6.png" ],
+                    "sales_price" : "41.85",
+                    "instead_price" : "statt 83.70",
+                    "article_group" : "60-64",
+                    "labels" : [ ],
+                    "stopper" : {
+                      "style" : "yellow",
+                      "text" : "50%"
+                    },
+                    "wine" : {
+                      "country" : {
+                        "id" : "US",
+                        "text" : "USA",
+                        "flag" : "https://denner.imgix.net/flags/US.png"
+                      },
+                      "rating" : {
+                        "text" : "Kunden-Rating:",
+                        "stars" : 4
+                      }
+                    }
+                  }, {
+                    "id" : "c0ebacf6-0280-4040-a1f8-d92673fe5b05",
+                    "article_id" : "ad93e72b-79f8-4a84-a9f9-86f203c2d929",
+                    "composite_article" : false,
+                    "name" : "KW44_Schaumweine/Champagner",
+                    "size" : "horizontal",
+                    "title" : "Alle Champagner und Schaumweine",
+                    "description" : "Auch auf bestehende Aktionspreise!",
+                    "disclaimer" : "Ausgenommen Online Specials und Einzelflaschen mit gelbem Rabattkleber. Nicht mit anderen Gutscheinen und Bons kumulierbar.",
+                    "sort_index" : 202,
+                    "packshot_image" : "https://denner.imgix.net/assets/a41dc747-c2a9-4df6-b142-2a1e3c357082/web/KW44_Sortimentaktion_Range_Schaumwein_2000x2000_di.png",
+                    "sales_price" : "Sortimentsaktion",
+                    "article_group" : "59-20",
+                    "labels" : [ ],
+                    "stopper" : {
+                      "style" : "discount",
+                      "text" : "20%",
+                      "validity" : "Gültig ab 19.10.2022"
+                    }
+                  } ],
+                  "sort_index" : 100,
+                  "created_on" : "2022-11-01T08:31:37+0100"
                 }
               }
             }
@@ -1458,6 +1801,9 @@
           },
           "week" : {
             "$ref" : "#/components/schemas/Week"
+          },
+          "display_from" : {
+            "$ref" : "#/components/schemas/DayDate"
           },
           "valid_from" : {
             "$ref" : "#/components/schemas/DayDate"
