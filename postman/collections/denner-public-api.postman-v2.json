@@ -132,7 +132,7 @@
 			"response": []
 		},
 		{
-			"name": "/display-publications/{layout}",
+			"name": "/display-publications/{screen}/{layout}",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -143,12 +143,6 @@
 					{
 						"key": "App-Key",
 						"value": "{{header_app_key}}"
-					},
-					{
-						"key": "Accept-Language",
-						"value": "de",
-						"description": "Locale, overridden by query param if set",
-						"type": "text"
 					}
 				],
 				"url": {
@@ -164,7 +158,13 @@
 						{
 							"key": "locale",
 							"value": "fr",
-							"description": "Locale, overrides Accept-Language header if set"
+							"description": "Filter on locale property (overrides filter if set)"
+						},
+						{
+							"key": "display-on",
+							"value": "tomorrow",
+							"description": "Filter on display_on property (overrides filter if set)",
+							"disabled": true
 						}
 					]
 				},
@@ -249,14 +249,6 @@
 					]
 				},
 				"description": "List stores"
-			},
-			"response": []
-		},
-		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
 			},
 			"response": []
 		}

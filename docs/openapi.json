@@ -682,7 +682,6 @@
                       "article_group" : "09-130",
                       "labels" : [ ],
                       "stopper" : {
-                        "style" : "yellow",
                         "text" : "34%"
                       }
                     }, {
@@ -702,7 +701,6 @@
                       "article_group" : "60-64",
                       "labels" : [ ],
                       "stopper" : {
-                        "style" : "yellow",
                         "text" : "50%"
                       },
                       "wine" : {
@@ -731,7 +729,6 @@
                       "article_group" : "59-20",
                       "labels" : [ ],
                       "stopper" : {
-                        "style" : "discount",
                         "text" : "20%",
                         "validity" : "Gültig ab 19.10.2022"
                       }
@@ -765,7 +762,6 @@
                       "article_group" : "09-130",
                       "labels" : [ ],
                       "stopper" : {
-                        "style" : "yellow",
                         "text" : "34%"
                       }
                     }, {
@@ -785,7 +781,6 @@
                       "article_group" : "60-64",
                       "labels" : [ ],
                       "stopper" : {
-                        "style" : "yellow",
                         "text" : "50%"
                       },
                       "wine" : {
@@ -814,7 +809,6 @@
                       "article_group" : "59-20",
                       "labels" : [ ],
                       "stopper" : {
-                        "style" : "yellow",
                         "text" : "20%"
                       }
                     } ],
@@ -847,7 +841,6 @@
                       "article_group" : "09-130",
                       "labels" : [ ],
                       "stopper" : {
-                        "style" : "yellow",
                         "text" : "34%"
                       }
                     }, {
@@ -867,7 +860,6 @@
                       "article_group" : "60-64",
                       "labels" : [ ],
                       "stopper" : {
-                        "style" : "yellow",
                         "text" : "50%"
                       },
                       "wine" : {
@@ -896,7 +888,6 @@
                       "article_group" : "59-20",
                       "labels" : [ ],
                       "stopper" : {
-                        "style" : "yellow",
                         "text" : "20%"
                       }
                     } ],
@@ -958,6 +949,16 @@
             "enum" : [ "standard", "week-end", "discount", "perfume", "wine", "cigarettes" ]
           }
         }, {
+          "name" : "display-on",
+          "in" : "query",
+          "description" : "Any valid date string that can be parsed by [php strtotime](https://www.php.net/manual/en/function.strtotime.php).\nExamples:\n - 2023-01-10\n - today\n - tomorrow\n - next Thursday\n - last Monday\n\nDefault when not set 'today'.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
           "name" : "locale",
           "in" : "query",
           "description" : "Locale",
@@ -1004,7 +1005,6 @@
                     "article_group" : "09-130",
                     "labels" : [ ],
                     "stopper" : {
-                      "style" : "yellow",
                       "text" : "34%"
                     }
                   }, {
@@ -1024,7 +1024,6 @@
                     "article_group" : "60-64",
                     "labels" : [ ],
                     "stopper" : {
-                      "style" : "yellow",
                       "text" : "50%"
                     },
                     "wine" : {
@@ -1053,7 +1052,6 @@
                     "article_group" : "59-20",
                     "labels" : [ ],
                     "stopper" : {
-                      "style" : "discount",
                       "text" : "20%",
                       "validity" : "Gültig ab 19.10.2022"
                     }
@@ -1854,7 +1852,7 @@
           },
           "size" : {
             "type" : "string",
-            "enum" : [ "small", "medium", "large", "horizontal", "discount" ]
+            "enum" : [ "small", "medium", "large", "horizontal" ]
           },
           "title" : {
             "type" : "string"
@@ -1921,10 +1919,6 @@
       "DisplayPublicationArticleStopper" : {
         "type" : "object",
         "properties" : {
-          "style" : {
-            "type" : "string",
-            "enum" : [ "yellow", "white", "discount" ]
-          },
           "text" : {
             "type" : "string"
           },

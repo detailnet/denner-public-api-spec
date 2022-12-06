@@ -102,6 +102,14 @@ paths:
   /display-publications/{screen}/{layout}:
     get:
       parameters:
+      - name: "locale"
+        in: "query"
+        schema:
+          type: "string"
+      - name: "display-on"
+        in: "query"
+        schema:
+          type: "string"
       - name: "screen"
         in: "path"
         required: true
@@ -110,10 +118,6 @@ paths:
       - name: "layout"
         in: "path"
         required: true
-        schema:
-          type: "string"
-      - name: "locale"
-        in: "query"
         schema:
           type: "string"
       responses:
@@ -157,6 +161,7 @@ paths:
           integration.request.querystring.filter: "'[{\"property\":\"display_on\"\
             ,\"value\":\"today\"}]'"
           integration.request.querystring.view-as: "'jls'"
+          integration.request.querystring.display-on: "method.request.querystring.display-on"
           integration.request.querystring.layout: "method.request.path.layout"
           integration.request.querystring.sort: "'[{\"property\":\"sort_index\"}]'"
           integration.request.header.App-ID: "stageVariables.advertising_app_id"

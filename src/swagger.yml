@@ -844,6 +844,21 @@ paths:
             - perfume
             - wine
             - cigarettes
+        - name: display-on
+          in: query
+          required: false
+          type: string
+          description: >
+            Any valid date string that can be parsed by [php strtotime](https://www.php.net/manual/en/function.strtotime.php).
+            
+            Examples:
+             - 2023-01-10
+             - today
+             - tomorrow
+             - next Thursday
+             - last Monday
+            
+            Default when not set 'today'.
         - $ref: '#/parameters/LocaleQueryParam'
       responses:
         200:
