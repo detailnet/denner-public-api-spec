@@ -1,7 +1,9 @@
 {
 	"info": {
+		"_postman_id": "7b825b3f-7a4d-4454-8d9a-a80da15b845f",
 		"name": "denner-public-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44016"
 	},
 	"item": [
 		{
@@ -146,12 +148,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}/display-publications/standard?locale=fr",
+					"raw": "{{base_url}}/display-publications/f10/standard?locale=fr",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"display-publications",
+						"f10",
 						"standard"
 					],
 					"query": [
@@ -251,6 +254,60 @@
 				"description": "List stores"
 			},
 			"response": []
+		},
+		{
+			"name": "/online-publications",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "App-Key",
+						"value": "{{header_app_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/online-publications?filter=[{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12}]",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"online-publications"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "[{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12}]",
+							"description": "Filter by online publications for banner "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/banner-publications/{publication_id}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "App-Key",
+						"value": "{{header_app_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/banner-publications/44444444-aaaa-4444-aaaa-444444444444",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"banner-publications",
+						"44444444-aaaa-4444-aaaa-444444444444"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -259,6 +316,20 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
+					"// For API-gateway filter and sorting",
+					"if (pm.request.url.query) {",
+					"    // Ref: https://community.postman.com/t/is-there-a-way-to-automatically-encode-urls/874/4",
+					"    //console.log(\"----- Encode query string\");",
+					"    //console.log(\"Input: \" + pm.request.url.query.toString());",
+					"    var querycount = pm.request.url.query.count();",
+					"    for(let i = 0; i < querycount; i++) {",
+					"        //console.log(i + \"/\" + pm.request.url.query.idx(i).key + \": \" + encodeURIComponent(pm.request.url.query.idx(i).value));",
+					"        pm.request.url.query.idx(i).value = encodeURIComponent(pm.request.url.query.idx(i).value);",
+					"    }",
+					"    //console.log(\"Output: \" + pm.request.url.query.toString());",
+					"}",
+					"",
+					"",
 					"// Waiting for https://github.com/postmanlabs/postman-app-support/issues/1180 ",
 					"// For the moment using a sub of https://raw.githubusercontent.com/jacwright/date.format/master/date.format.min.js",
 					"(function(){var t={W:function(){var t=new Date(this.valueOf()),e=(this.getDay()+6)%7;t.setDate(t.getDate()-e+3);var n=t.valueOf();return t.setMonth(0,1),4!==t.getDay()&&t.setMonth(0,1+(4-t.getDay()+7)%7),1+Math.ceil((n-t)/6048e5)},o:function(){var t=new Date(this.valueOf());return t.setDate(t.getDate()-(this.getDay()+6)%7+3),t.getFullYear()}};Date.prototype.format=function(e){var n=this;return e.replace(/(\\\\?)(.)/g,function(e,i,r){return\"\"===i&&t[r]?t[r].call(n):r})}}).call(this);",

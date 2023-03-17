@@ -35,11 +35,35 @@ securityDefinitions:
     in: header
 paths:
   ### Articles/Promotions
+  /online-publications:
+    get:
+      summary: List all online publications
+      description: |
+        Use this operation to get a list of all online publications (usually filtered by a specific channel and timeframe).
+      tags:
+        - promotion
+      operationId: listOnlinePublications
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlinePublicationsResponse'
+
   /online-articles:
     get:
       summary: List all online articles
       description: |
-        Use this operation to get a list of all articles currently in promotion and advertised in the online channels.
+        Use this operation to get a list of all articles (excluded tobacco) promoted today and advertised in the online-mobile channels.
+        
+        Warning: result is approximately 1MB in size, this webpage javascript will suffer high performance degradation on response beautification.
       tags:
         - promotion
       operationId: listOnlineArticles
@@ -229,7 +253,7 @@ paths:
     get:
       summary: List all online articles having tobacco article group (not listed otherwise)
       description: |
-        Use this operation to get a list of all tobacco articles promoted today and advertised in the online channels.
+        Use this operation to get a list of all tobacco articles promoted today and advertised in the online-mobile channels.
       tags:
         - promotion
       operationId: listOnlineTobaccoArticles
@@ -271,86 +295,25 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/PublicOnlineArticlesResponse'
-#  /online-groups:
-#      get:
-#        summary: List all online groups
-#        description: >
-#          Use this operation to get a list of all online groups (Internet-Sortimente).
-#        tags:
-#          - online
-#        operationId: listOnlineGroups
-#        security:
-#          - appKey: []
-#          - appId: []
-#        parameters:
-#          - $ref: '#/parameters/PageParam'
-#          - $ref: '#/parameters/PageSizeParam'
-#        responses:
-#          200:
-#            description: Successful listing
-#            schema:
-#              $ref: '#/definitions/OnlineGroupsResponse'
-#            examples:
-#              application/json:
-#
-#                page_count: 1
-#                page_size: 1
-#                total_items: 1
-#                online_groups:
-#                  -
-#                    id: "7627150d-36bd-4867-89b2-091800a03d24"
-#                    code: 1001
-#                    sort_index: 0
-#                    allow_featuring: true
-#                    allow_promotion: true
-#                    allow_background: true
-#                    title:
-#                      -
-#                        locale: "de"
-#                        value: "Frischprodukte"
-#                      -
-#                        locale: "fr"
-#                        value: "Produits frais"
-#                      -
-#                        locale: "it"
-#                        value: "Prodotti freschi"
-#                    children:
-#                      -
-#                        id: "58afec5c-ece9-4b66-bc55-00d6dc1b65b8"
-#                        code: 1001
-#                        sort_index: 0
-#                        allow_featuring: true
-#                        allow_promotion: true
-#                        allow_background: true
-#                        title:
-#                          -
-#                            locale: "de"
-#                            value: "Milchprodukte"
-#                          -
-#                            locale: "fr"
-#                            value: "Produits laitiers"
-#                          -
-#                            locale: "it"
-#                            value: "Latticini"
-#                        children: []
-#                      -
-#                        id: "e5216167-9da5-41d6-b7b3-96362b60de89"
-#                        code: 1002
-#                        sort_index: 1
-#                        allow_featuring: true
-#                        allow_promotion: true
-#                        allow_background: true
-#                        title:
-#                          -
-#                            locale: "de"
-#                            value: "Eier"
-#                          -
-#                            locale: "fr"
-#                            value: "Oeufs"
-#                          -
-#                            locale: "it"
-#                            value: "Uova"
-#                        children: []
+
+  /banner-publications/{publication_id}:
+    get:
+      summary: Fetch online publication with articles for banner
+      description: |
+        Use this operation fetch an online publication with articles to be displayed in banner.
+      tags:
+        - promotion
+      operationId: listOnlinePublicationsWithArticlesForBanner
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - $ref: '#/parameters/PublicationIdPathParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlinePublication'
 
   ### Store
   /stores:
@@ -844,6 +807,7 @@ paths:
             - perfume
             - wine
             - cigarettes
+            - week-end-cigarettes
         - name: display-on
           in: query
           required: false
@@ -977,6 +941,7 @@ parameters:
       Examples:
       - [{"property":"id","operator":"in","type":"array","value":["7627150d-36bd-4867-89b2-091800a03d24","58afec5c-ece9-4b66-bc55-00d6dc1b65b8"]}]
       - [{"property":"in_shop","operator":"eq","type":"boolean","value":true}]
+      - [{"property":"channels","value":"vf-banner"},{"property":"week","value":12},{"property":"year","value":2023}]
   SortParam:
     name: sort
     in: query
@@ -1096,14 +1061,14 @@ parameters:
     in: path
     type: string
     required: true
-    pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+    pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$'
   PublicationArticleIdPathParam:
     name: article_id
     description: The unique identifier of an online publication article
     in: path
     type: string
     required: true
-    pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+    pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$'
 
 definitions:
   ### Common
@@ -1620,6 +1585,13 @@ definitions:
     maximum: 5
     description: Stars, rounded to the half integer
 
+  OnlinePublication:
+    type: object
+    description: Todo - Document all properties
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+
   PublicOnlineArticle:
     type: object
     properties:
@@ -2115,6 +2087,16 @@ definitions:
             items:
               $ref: '#/definitions/Store'
       - $ref: '#/definitions/BaseResponse'
+
+  OnlinePublicationsResponse:
+    allOf:
+      - type: object
+        properties:
+          online_publications:
+            type: array
+            items:
+              $ref: '#/definitions/OnlinePublication'
+      - $ref: '#/definitions/BasePagedResponse'
 
   DisplayPublicationsResponse:
     allOf:

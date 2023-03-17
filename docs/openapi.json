@@ -24,11 +24,91 @@
     "description": "CloudFront distribution for v1 (cache 1h)"
   } ],
   "paths" : {
+    "/online-publications" : {
+      "get" : {
+        "tags" : [ "promotion" ],
+        "summary" : "List all online publications",
+        "description" : "Use this operation to get a list of all online publications (usually filtered by a specific channel and timeframe).\n",
+        "operationId" : "listOnlinePublications",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 10
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OnlinePublicationsResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
     "/online-articles" : {
       "get" : {
         "tags" : [ "promotion" ],
         "summary" : "List all online articles",
-        "description" : "Use this operation to get a list of all articles currently in promotion and advertised in the online channels.\n",
+        "description" : "Use this operation to get a list of all articles (excluded tobacco) promoted today and advertised in the online-mobile channels.\n\nWarning: result is approximately 1MB in size, this webpage javascript will suffer high performance degradation on response beautification.\n",
         "operationId" : "listOnlineArticles",
         "parameters" : [ {
           "name" : "Accept",
@@ -295,7 +375,7 @@
       "get" : {
         "tags" : [ "promotion" ],
         "summary" : "List all online articles having tobacco article group (not listed otherwise)",
-        "description" : "Use this operation to get a list of all tobacco articles promoted today and advertised in the online channels.\n",
+        "description" : "Use this operation to get a list of all tobacco articles promoted today and advertised in the online-mobile channels.\n",
         "operationId" : "listOnlineTobaccoArticles",
         "parameters" : [ {
           "name" : "Accept",
@@ -373,6 +453,52 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/PublicOnlineArticlesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
+    "/banner-publications/{publication_id}" : {
+      "get" : {
+        "tags" : [ "promotion" ],
+        "summary" : "Fetch online publication with articles for banner",
+        "description" : "Use this operation fetch an online publication with articles to be displayed in banner.\n",
+        "operationId" : "listOnlinePublicationsWithArticlesForBanner",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        }, {
+          "name" : "publication_id",
+          "in" : "path",
+          "description" : "The unique identifier of an online publication",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "pattern" : "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-4[a-f0-9]{3}\\-(8|9|a|b)[a-f0-9]{3}\\-[a-f0-9]{12}$",
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OnlinePublication"
                 }
               }
             }
@@ -603,7 +729,7 @@
         }, {
           "name" : "filter",
           "in" : "query",
-          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n",
+          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
@@ -946,7 +1072,7 @@
           "schema" : {
             "type" : "string",
             "default" : "standard",
-            "enum" : [ "standard", "week-end", "discount", "perfume", "wine", "cigarettes" ]
+            "enum" : [ "standard", "week-end", "discount", "perfume", "wine", "cigarettes", "week-end-cigarettes" ]
           }
         }, {
           "name" : "display-on",
@@ -1698,6 +1824,15 @@
         "description" : "Stars, rounded to the half integer",
         "format" : "float"
       },
+      "OnlinePublication" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          }
+        },
+        "description" : "Todo - Document all properties"
+      },
       "PublicOnlineArticle" : {
         "type" : "object",
         "properties" : {
@@ -2256,6 +2391,21 @@
           "$ref" : "#/components/schemas/BaseResponse"
         } ]
       },
+      "OnlinePublicationsResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "online_publications" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/OnlinePublication"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BasePagedResponse"
+        } ]
+      },
       "DisplayPublicationsResponse" : {
         "allOf" : [ {
           "type" : "object",
@@ -2314,7 +2464,7 @@
       "FilterParam" : {
         "name" : "filter",
         "in" : "query",
-        "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n",
+        "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
         "required" : false,
         "style" : "form",
         "explode" : true,
@@ -2404,7 +2554,7 @@
         "style" : "simple",
         "explode" : false,
         "schema" : {
-          "pattern" : "/^[a-f0-9]{8}\\-[a-f0-9]{4}\\-4[a-f0-9]{3}\\-(8|9|a|b)[a-f0-9]{3}\\-[a-f0-9]{12}$/",
+          "pattern" : "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-4[a-f0-9]{3}\\-(8|9|a|b)[a-f0-9]{3}\\-[a-f0-9]{12}$",
           "type" : "string"
         }
       },
@@ -2416,7 +2566,7 @@
         "style" : "simple",
         "explode" : false,
         "schema" : {
-          "pattern" : "/^[a-f0-9]{8}\\-[a-f0-9]{4}\\-4[a-f0-9]{3}\\-(8|9|a|b)[a-f0-9]{3}\\-[a-f0-9]{12}$/",
+          "pattern" : "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-4[a-f0-9]{3}\\-(8|9|a|b)[a-f0-9]{3}\\-[a-f0-9]{12}$",
           "type" : "string"
         }
       }
