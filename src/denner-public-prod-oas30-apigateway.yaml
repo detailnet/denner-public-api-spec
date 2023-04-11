@@ -6,7 +6,7 @@ servers:
 - url: "https://denner-public-api.detailnet.ch/{basePath}"
   variables:
     basePath:
-      default: "/v1"
+      default: "v1"
 paths:
   /banner-publications/{publication_id}:
     get:
@@ -49,7 +49,7 @@ paths:
           default:
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
           "403":
             statusCode: "403"
           "404":
@@ -99,7 +99,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
@@ -146,7 +146,7 @@ paths:
           default:
             statusCode: "201"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
           (Invalid|Article).*:
             statusCode: "400"
             responseParameters:
@@ -190,7 +190,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
@@ -242,7 +242,7 @@ paths:
           default:
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
             responseTemplates:
               application/json: "$input.json('$.display_publications[0]')"
           "204":
@@ -338,7 +338,7 @@ paths:
           default:
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
             {\r\n  \"locale\": \"$input.params().header.get('Accept-Language')\",\r\
@@ -372,7 +372,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
             contentHandling: "CONVERT_TO_TEXT"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
@@ -400,7 +400,7 @@ paths:
           default:
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
             contentHandling: "CONVERT_TO_TEXT"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
@@ -435,7 +435,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
@@ -462,7 +462,7 @@ paths:
           default:
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "#set($queryParams = $input.params().querystring)\r\n\
             {\r\n  \"query\": \"#foreach($paramName in $queryParams.keySet())$paramName=$util.escapeJavaScript($queryParams.get($paramName))#if($foreach.hasNext)&#end#end\"\
@@ -495,8 +495,102 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
             contentHandling: "CONVERT_TO_TEXT"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_match"
+  /advertised-articles/{year_week}:
+    get:
+      parameters:
+      - name: "year_week"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "404":
+          description: "404 response"
+          content: {}
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+        "500":
+          description: "500 response"
+          content: {}
+        "403":
+          description: "403 response"
+          content: {}
+      security:
+      - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        type: "http"
+        httpMethod: "GET"
+        uri: "https://${stageVariables.articles_url}/advertised-articles/{year_week}"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
+            responseTemplates:
+              application/json: "#set($root = $input.path('$'))\n{\n    \"advertised_articles\"\
+                : $root.advertised_articles_by_week,\n    \"total_items\": $root.total_items\n\
+                }"
+          "403":
+            statusCode: "403"
+          "404":
+            statusCode: "404"
+          "5\\d2":
+            statusCode: "500"
+        requestParameters:
+          integration.request.header.App-Key: "stageVariables.articles_app_key"
+          integration.request.querystring.view-as: "'advertised_articles'"
+          integration.request.header.App-ID: "stageVariables.articles_app_id"
+          integration.request.path.year_week: "method.request.path.year_week"
+        passthroughBehavior: "when_no_match"
+        cacheNamespace: "rtd4lf"
+        cacheKeyParameters:
+        - "method.request.path.year_week"
+    options:
+      parameters:
+      - name: "year_week"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: "string"
+            Access-Control-Allow-Methods:
+              schema:
+                type: "string"
+            Access-Control-Allow-Headers:
+              schema:
+                type: "string"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+      x-amazon-apigateway-integration:
+        type: "mock"
+        responses:
+          default:
+            statusCode: "200"
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
+              method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
@@ -549,7 +643,7 @@ paths:
           default:
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
           "403":
             statusCode: "403"
           "5\\d{2}":
@@ -597,7 +691,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
@@ -650,7 +744,7 @@ paths:
           default:
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
           "403":
             statusCode: "403"
           "5\\d[2]":
@@ -691,7 +785,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
@@ -736,7 +830,7 @@ paths:
           default:
             statusCode: "200"
             responseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
             responseTemplates:
               application/json: "#set($root = $input.path('$'))\n#set($locale = $input.params('locale').toLowerCase())\n\
                 #set($articles = [])\n#foreach($article in $root.online_publication_articles)\n\
@@ -786,7 +880,7 @@ paths:
             responseParameters:
               method.response.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
               method.response.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-              method.response.header.Access-Control-Allow-Origin: "'https://denner-public-api-docs.detailnet.ch'"
+              method.response.header.Access-Control-Allow-Origin: "'https://denner-api-docs.detailnet.ch'"
         requestTemplates:
           application/json: "{\"statusCode\": 200}"
         passthroughBehavior: "when_no_match"
@@ -840,12 +934,12 @@ components:
         authorizerCredentials: "arn:aws:iam::802555642192:role/aws-apigateway-role.denner-public-api"
         authorizerResultTtlInSeconds: 3600
 x-amazon-apigateway-gateway-responses:
-  DEFAULT_5XX:
+  DEFAULT_4XX:
     responseParameters:
       gatewayresponse.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
       gatewayresponse.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
       gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
-  DEFAULT_4XX:
+  DEFAULT_5XX:
     responseParameters:
       gatewayresponse.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
       gatewayresponse.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"

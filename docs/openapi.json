@@ -1,11 +1,11 @@
 {
   "openapi" : "3.0.1",
   "info" : {
-    "title" : "Denner Public Web Service",
-    "description" : "RESTful API for Denner's open data",
+    "title" : "Denner Web Service",
+    "description" : "RESTful API for Denner's commercial consumers",
     "contact" : {
       "name" : "DETAIL NET",
-      "email" : "support+denner-public-api@detailnet.ch"
+      "email" : "support+denner-api@detailnet.ch"
     },
     "version" : "1.0.0"
   },
@@ -26,7 +26,7 @@
   "paths" : {
     "/online-publications" : {
       "get" : {
-        "tags" : [ "promotion" ],
+        "tags" : [ "online advertising" ],
         "summary" : "List all online publications",
         "description" : "Use this operation to get a list of all online publications (usually filtered by a specific channel and timeframe).\n",
         "operationId" : "listOnlinePublications",
@@ -106,7 +106,7 @@
     },
     "/online-articles" : {
       "get" : {
-        "tags" : [ "promotion" ],
+        "tags" : [ "online advertising" ],
         "summary" : "List all online articles",
         "description" : "Use this operation to get a list of all articles (excluded tobacco) promoted today and advertised in the online-mobile channels.\n\nWarning: result is approximately 1MB in size, this webpage javascript will suffer high performance degradation on response beautification.\n",
         "operationId" : "listOnlineArticles",
@@ -373,7 +373,7 @@
     },
     "/tobacco-articles" : {
       "get" : {
-        "tags" : [ "promotion" ],
+        "tags" : [ "online advertising" ],
         "summary" : "List all online articles having tobacco article group (not listed otherwise)",
         "description" : "Use this operation to get a list of all tobacco articles promoted today and advertised in the online-mobile channels.\n",
         "operationId" : "listOnlineTobaccoArticles",
@@ -408,7 +408,7 @@
     },
     "/newsletter-articles" : {
       "get" : {
-        "tags" : [ "promotion" ],
+        "tags" : [ "online advertising" ],
         "summary" : "List all online articles for newsletter",
         "description" : "Use this operation to get a list of all online articles promoted in the given week in the newsletter channels.\n",
         "operationId" : "listNewsletterOnlineArticles",
@@ -465,7 +465,7 @@
     },
     "/banner-publications/{publication_id}" : {
       "get" : {
-        "tags" : [ "promotion" ],
+        "tags" : [ "online advertising" ],
         "summary" : "Fetch online publication with articles for banner",
         "description" : "Use this operation fetch an online publication with articles to be displayed in banner.\n",
         "operationId" : "listOnlinePublicationsWithArticlesForBanner",
@@ -498,7 +498,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/OnlinePublication"
+                  "$ref" : "#/components/schemas/OnlinePublicationWitArticlesResponse"
                 }
               }
             }
@@ -511,7 +511,7 @@
     },
     "/stores" : {
       "get" : {
-        "tags" : [ "store" ],
+        "tags" : [ "online advertising" ],
         "summary" : "List all stores",
         "description" : "Use this operation to get a list of all stores (Filialen).\n",
         "operationId" : "listStores",
@@ -664,54 +664,9 @@
         } ]
       }
     },
-    "/base-posters" : {
-      "post" : {
-        "tags" : [ "production" ],
-        "summary" : "Create base poster",
-        "description" : "Crate an A4 base poster (for pre-printed paper) from article.\n",
-        "operationId" : "createBasePoster",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/baseposters_body"
-              }
-            }
-          },
-          "required" : true
-        },
-        "responses" : {
-          "201" : {
-            "description" : "Successful creation",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PdfFile"
-                },
-                "example" : {
-                  "url" : "https://denner-assets-test.s3.eu-west-1.amazonaws.com/regio-publisher/e4654297-35f7-46bd-9525-11d9e5af7a22/Sunrise-Cabernet-Sauvignon-Concha-y-Toro.pdf"
-                }
-              }
-            }
-          },
-          "400" : {
-            "description" : "400 Bad Request",
-            "content" : { }
-          },
-          "500" : {
-            "description" : "500 Internal Server Error",
-            "content" : { }
-          }
-        },
-        "security" : [ {
-          "appKey" : [ ]
-        } ],
-        "x-codegen-request-body-name" : "BasePosterInput"
-      }
-    },
     "/display-publications" : {
       "get" : {
-        "tags" : [ "advertising" ],
+        "tags" : [ "display advertising" ],
         "summary" : "List all display-publications",
         "description" : "Use this operation to get a list of all display-publications.\n",
         "operationId" : "listDisplayPublications",
@@ -1035,7 +990,7 @@
     },
     "/display-publications/{screen}/{layout}" : {
       "get" : {
-        "tags" : [ "advertising" ],
+        "tags" : [ "display advertising" ],
         "summary" : "Fetch display-publication",
         "description" : "Use this operation to fetch the first display-publication for a specific screen, layout and language to display on current day.\n",
         "operationId" : "fetchDisplayPublication",
@@ -1196,6 +1151,97 @@
         "security" : [ {
           "appKey" : [ ]
         } ]
+      }
+    },
+    "/advertised-articles/{year_week}" : {
+      "get" : {
+        "tags" : [ "planing" ],
+        "summary" : "List advertised articles by week",
+        "description" : "Use this operation to get a list of all advertised-articles of a specific week.\n",
+        "operationId" : "listAdvertisedArticlesByWeek",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        }, {
+          "name" : "year_week",
+          "in" : "path",
+          "description" : "Year followed by the week number (ISO 8601, week date system) PHP date format 'o-W' (ref: https://www.php.net/manual/en/datetime.format.php)\n",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "pattern" : "^[0-9]{4}\\-[0-9]{1,2}$",
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AdvertisedArticlesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
+    "/base-posters" : {
+      "post" : {
+        "tags" : [ "production" ],
+        "summary" : "Create base poster",
+        "description" : "Crate an A4 base poster (for pre-printed paper) from article.\n",
+        "operationId" : "createBasePoster",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/baseposters_body"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Successful creation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PdfFile"
+                },
+                "example" : {
+                  "url" : "https://denner-assets-test.s3.eu-west-1.amazonaws.com/regio-publisher/e4654297-35f7-46bd-9525-11d9e5af7a22/Sunrise-Cabernet-Sauvignon-Concha-y-Toro.pdf"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "400 Bad Request",
+            "content" : { }
+          },
+          "500" : {
+            "description" : "500 Internal Server Error",
+            "content" : { }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ],
+        "x-codegen-request-body-name" : "BasePosterInput"
       }
     }
   },
@@ -1824,7 +1870,25 @@
         "description" : "Stars, rounded to the half integer",
         "format" : "float"
       },
+      "AdvertisedArticle" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          }
+        },
+        "description" : "Todo - Document all properties"
+      },
       "OnlinePublication" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          }
+        },
+        "description" : "Todo - Document all properties"
+      },
+      "OnlinePublicationArticle" : {
         "type" : "object",
         "properties" : {
           "id" : {
@@ -2391,6 +2455,21 @@
           "$ref" : "#/components/schemas/BaseResponse"
         } ]
       },
+      "AdvertisedArticlesResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "advertised_articles_by_week" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/AdvertisedArticle"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BasePagedResponse"
+        } ]
+      },
       "OnlinePublicationsResponse" : {
         "allOf" : [ {
           "type" : "object",
@@ -2404,6 +2483,21 @@
           }
         }, {
           "$ref" : "#/components/schemas/BasePagedResponse"
+        } ]
+      },
+      "OnlinePublicationWitArticlesResponse" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/OnlinePublication"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "articles" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/OnlinePublicationArticle"
+              }
+            }
+          }
         } ]
       },
       "DisplayPublicationsResponse" : {

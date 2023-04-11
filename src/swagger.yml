@@ -1,11 +1,11 @@
 swagger: '2.0'
 info:
-  description: RESTful API for Denner's open data
+  description: RESTful API for Denner's commercial consumers
   version: 1.0.0
-  title: Denner Public Web Service
+  title: Denner Web Service
   contact:
     name: DETAIL NET
-    email: support+denner-public-api@detailnet.ch
+    email: support+denner-api@detailnet.ch
 # In Swagger definition is not possible to define multiple servers/hosts/basepth (ref https://swagger.io/docs/specification/2-0/api-host-and-base-path/)
 #on migration to OpenApi standard, define servers:
 #servers:
@@ -41,7 +41,7 @@ paths:
       description: |
         Use this operation to get a list of all online publications (usually filtered by a specific channel and timeframe).
       tags:
-        - promotion
+        - online advertising
       operationId: listOnlinePublications
       security:
         - appKey: [ ]
@@ -65,7 +65,7 @@ paths:
         
         Warning: result is approximately 1MB in size, this webpage javascript will suffer high performance degradation on response beautification.
       tags:
-        - promotion
+        - online advertising
       operationId: listOnlineArticles
       security:
         - appKey: []
@@ -255,7 +255,7 @@ paths:
       description: |
         Use this operation to get a list of all tobacco articles promoted today and advertised in the online-mobile channels.
       tags:
-        - promotion
+        - online advertising
       operationId: listOnlineTobaccoArticles
       security:
         - appKey: []
@@ -269,13 +269,14 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/PublicOnlineArticlesResponse'
+
   /newsletter-articles:
     get:
       summary: List all online articles for newsletter
       description: |
         Use this operation to get a list of all online articles promoted in the given week in the newsletter channels.
       tags:
-        - promotion
+        - online advertising
       operationId: listNewsletterOnlineArticles
       security:
         - appKey: [ ]
@@ -302,7 +303,7 @@ paths:
       description: |
         Use this operation fetch an online publication with articles to be displayed in banner.
       tags:
-        - promotion
+        - online advertising
       operationId: listOnlinePublicationsWithArticlesForBanner
       security:
         - appKey: [ ]
@@ -322,7 +323,7 @@ paths:
       description: >
         Use this operation to get a list of all stores (Filialen).
       tags:
-        - store
+        - online advertising
       operationId: listStores
       security:
         - appKey: []
@@ -445,36 +446,6 @@ paths:
                       id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
                       title: "Backstation"
 
-  ### Production
-  /base-posters:
-    post:
-      summary: Create base poster
-      description: >
-        Crate an A4 base poster (for pre-printed paper) from article.
-      tags:
-        - production
-      operationId: createBasePoster
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      security:
-        - appKey: []
-      parameters:
-        - $ref: '#/parameters/BasePosterInput'
-      responses:
-        201:
-          description: Successful creation
-          schema:
-            $ref: '#/definitions/PdfFile'
-          examples:
-            application/json:
-              url: "https://denner-assets-test.s3.eu-west-1.amazonaws.com/regio-publisher/e4654297-35f7-46bd-9525-11d9e5af7a22/Sunrise-Cabernet-Sauvignon-Concha-y-Toro.pdf"
-        400:
-          description: 400 Bad Request
-        500:
-          description: 500 Internal Server Error
-
   ### Display Advertising
   /display-publications:
     get:
@@ -482,7 +453,7 @@ paths:
       description: >
         Use this operation to get a list of all display-publications.
       tags:
-        - advertising
+        - display advertising
       operationId: listDisplayPublications
       security:
         - appKey: []
@@ -778,7 +749,7 @@ paths:
       description: >
           Use this operation to fetch the first display-publication for a specific screen, layout and language to display on current day.
       tags:
-          - advertising
+          - display advertising
       operationId: fetchDisplayPublication
       security:
          - appKey: [ ]
@@ -922,6 +893,63 @@ paths:
               }
         204:
           description: No result
+
+  ### Planing
+  /advertised-articles/{year_week}:
+    get:
+      summary: List advertised articles by week
+      description: |
+        Use this operation to get a list of all advertised-articles of a specific week.
+      tags:
+        - planing
+      operationId: listAdvertisedArticlesByWeek
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - name: year_week
+          in: path
+          required: true
+          type: string
+          description: >
+            Year followed by the week number (ISO 8601, week date system)
+            PHP date format 'o-W' (ref: https://www.php.net/manual/en/datetime.format.php)
+          pattern: ^[0-9]{4}\-[0-9]{1,2}$
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/AdvertisedArticlesResponse'
+
+  ### Production
+  /base-posters:
+    post:
+      summary: Create base poster
+      description: >
+        Crate an A4 base poster (for pre-printed paper) from article.
+      tags:
+        - production
+      operationId: createBasePoster
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - appKey: []
+      parameters:
+        - $ref: '#/parameters/BasePosterInput'
+      responses:
+        201:
+          description: Successful creation
+          schema:
+            $ref: '#/definitions/PdfFile'
+          examples:
+            application/json:
+              url: "https://denner-assets-test.s3.eu-west-1.amazonaws.com/regio-publisher/e4654297-35f7-46bd-9525-11d9e5af7a22/Sunrise-Cabernet-Sauvignon-Concha-y-Toro.pdf"
+        400:
+          description: 400 Bad Request
+        500:
+          description: 500 Internal Server Error
 
 parameters:
   FilterParam:
@@ -1585,6 +1613,13 @@ definitions:
     maximum: 5
     description: Stars, rounded to the half integer
 
+  AdvertisedArticle:
+    type: object
+    description: Todo - Document all properties
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+
   OnlinePublication:
     type: object
     description: Todo - Document all properties
@@ -2094,6 +2129,16 @@ definitions:
             items:
               $ref: '#/definitions/Store'
       - $ref: '#/definitions/BaseResponse'
+
+  AdvertisedArticlesResponse:
+    allOf:
+      - type: object
+        properties:
+          advertised_articles_by_week:
+            type: array
+            items:
+              $ref: '#/definitions/AdvertisedArticle'
+      - $ref: '#/definitions/BasePagedResponse'
 
   OnlinePublicationsResponse:
     allOf:
