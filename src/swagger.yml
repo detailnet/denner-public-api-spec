@@ -1163,8 +1163,8 @@ definitions:
         $ref: '#/definitions/CountryCode'
       title:
         type: array
-    items:
-      $ref: '#/definitions/Translation'
+        items:
+          $ref: '#/definitions/Translation'
     description: Country
 
   CountryFlag:

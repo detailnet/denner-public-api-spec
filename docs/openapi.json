@@ -1305,7 +1305,10 @@
             "$ref" : "#/components/schemas/CountryCode"
           },
           "title" : {
-            "type" : "array"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           }
         },
         "description" : "Country"
