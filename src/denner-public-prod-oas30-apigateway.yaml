@@ -508,6 +508,10 @@ paths:
         required: true
         schema:
           type: "string"
+      - name: "view-as-override"
+        in: "query"
+        schema:
+          type: "string"
       responses:
         "404":
           description: "404 response"
@@ -550,7 +554,8 @@ paths:
             statusCode: "500"
         requestParameters:
           integration.request.header.App-Key: "stageVariables.articles_app_key"
-          integration.request.querystring.view-as: "'advertised_articles'"
+          integration.request.querystring.view-as: "'export-xpt'"
+          integration.request.querystring.view-as-override: "method.request.querystring.view-as-override"
           integration.request.header.App-ID: "stageVariables.articles_app_id"
           integration.request.path.year_week: "method.request.path.year_week"
         passthroughBehavior: "when_no_match"
