@@ -9,3 +9,10 @@ services:
     type: apache
     webroot: docs
 
+tools:
+  export-api:
+    service: _host_ # A proposed feature ... but still not implemented in Lando (will probably never be)
+    # @todo Install in appserver the aws-cli and setup AWS credentials
+    cmd:
+      - aws apigateway get-export --parameters extensions='apigateway' --export-type oas30 --accept application/yaml --rest-api-id 7xu6cbcuej --stage-name test src/denner-public-test-oas30-apigateway.yaml
+      - aws apigateway get-export --parameters extensions='apigateway' --export-type oas30 --accept application/yaml --rest-api-id 7xu6cbcuej --stage-name prod src/denner-public-prod-oas30-apigateway.yaml

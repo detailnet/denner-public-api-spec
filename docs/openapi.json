@@ -396,7 +396,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/StoresResponse"
+                  "$ref" : "#/components/schemas/CurrentStoresResponse"
                 },
                 "example" : {
                   "total_stores" : 794,
@@ -664,6 +664,631 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/OnlinePublicationWitArticlesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
+    "/online-stores" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "List all stores",
+        "description" : "Use this operation to get a list of all stores (Filialen).\n",
+        "operationId" : "listStores",
+        "parameters" : [ {
+          "name" : "filter",
+          "in" : "query",
+          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 10
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/StoresResponse"
+                },
+                "example" : {
+                  "page_count" : 1,
+                  "page_size" : 1,
+                  "total_items" : 1,
+                  "stores" : [ {
+                    "id" : "bcb8a388-8998-4d08-85a6-4864199704ee",
+                    "code" : 302,
+                    "address" : "Werdstrasse",
+                    "number" : "36",
+                    "zip_code" : 8004,
+                    "canton_code" : "ZH",
+                    "city" : "Zürich",
+                    "country_code" : "CH",
+                    "phone" : "044 240 22 83",
+                    "hotline" : "0848 99 66 33",
+                    "payment_types" : [ "cash", "euro", "maestro", "post" ],
+                    "credit_card" : true,
+                    "open_from" : "1998-08-01",
+                    "renovation_from" : "2015-06-25",
+                    "renovation_to" : "2015-06-26",
+                    "latitude" : 47.3728447,
+                    "longitude" : 8.5295153,
+                    "language" : "de",
+                    "email" : "info@denner.ch",
+                    "homepage" : "http://www.denner.ch",
+                    "parking_count" : 0,
+                    "channel" : {
+                      "id" : "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
+                      "code" : 1,
+                      "name" : "Denner",
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Denner"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Denner"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Denner"
+                      } ]
+                    },
+                    "opening_times" : [ {
+                      "weekday" : 1,
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "weekday" : 2,
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "weekday" : 3,
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "weekday" : 4,
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "weekday" : 5,
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "weekday" : 6,
+                      "open_from" : "08:00",
+                      "open_to" : "12:00"
+                    }, {
+                      "weekday" : 6,
+                      "open_from" : "14:00",
+                      "open_to" : "20:00"
+                    } ],
+                    "special_opening_times" : [ {
+                      "day" : "2015-06-25",
+                      "reason" : [ {
+                        "locale" : "de",
+                        "value" : "Umbau"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "tbd"
+                      }, {
+                        "locale" : "it",
+                        "value" : "tbd"
+                      } ],
+                      "closed" : true
+                    }, {
+                      "day" : "2015-06-26",
+                      "reason" : [ {
+                        "locale" : "de",
+                        "value" : "Umbau"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "tbd"
+                      }, {
+                        "locale" : "it",
+                        "value" : "tbd"
+                      } ],
+                      "closed" : true
+                    }, {
+                      "day" : "2015-06-28",
+                      "open_from" : "10:00",
+                      "open_to" : "16:00",
+                      "reason" : [ {
+                        "locale" : "de",
+                        "value" : "Sonntagsverkauf"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "tbd"
+                      }, {
+                        "locale" : "it",
+                        "value" : "tbd"
+                      } ],
+                      "closed" : false
+                    } ],
+                    "calendar_opening_times" : [ {
+                      "day" : "2015-06-22",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-06-23",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-06-24",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-06-27",
+                      "open_from" : "08:00",
+                      "open_to" : "12:00"
+                    }, {
+                      "day" : "2015-06-27",
+                      "open_from" : "14:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-06-28",
+                      "open_from" : "10:00",
+                      "open_to" : "16:00"
+                    }, {
+                      "day" : "2015-06-29",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-06-30",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-07-01",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-07-02",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-07-03",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-07-04",
+                      "open_from" : "08:00",
+                      "open_to" : "12:00"
+                    }, {
+                      "day" : "2015-07-04",
+                      "open_from" : "14:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-07-06",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    }, {
+                      "day" : "2015-07-07",
+                      "open_from" : "08:00",
+                      "open_to" : "20:00"
+                    } ],
+                    "weekly_opening_days" : [ {
+                      "day" : "2015-06-22",
+                      "weekday" : 1,
+                      "statements" : [ {
+                        "open_from" : "08:00",
+                        "open_to" : "20:00",
+                        "superseded" : false
+                      } ]
+                    }, {
+                      "day" : "2015-06-23",
+                      "weekday" : 2,
+                      "statements" : [ {
+                        "open_from" : "08:00",
+                        "open_to" : "20:00",
+                        "superseded" : false
+                      } ]
+                    }, {
+                      "day" : "2015-06-24",
+                      "weekday" : 3,
+                      "statements" : [ {
+                        "open_from" : "08:00",
+                        "open_to" : "20:00",
+                        "superseded" : false
+                      } ]
+                    }, {
+                      "day" : "2015-06-25",
+                      "weekday" : 4,
+                      "statements" : [ {
+                        "open_from" : "08:00",
+                        "open_to" : "20:00",
+                        "superseded" : true,
+                        "change_info" : [ {
+                          "locale" : "de",
+                          "value" : "Umbau"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "tbd"
+                        }, {
+                          "locale" : "it",
+                          "value" : "tbd"
+                        } ]
+                      } ]
+                    }, {
+                      "day" : "2015-06-26",
+                      "weekday" : 5,
+                      "statements" : [ {
+                        "open_from" : "08:00",
+                        "open_to" : "20:00",
+                        "superseded" : true,
+                        "change_info" : [ {
+                          "locale" : "de",
+                          "value" : "Umbau"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "tbd"
+                        }, {
+                          "locale" : "it",
+                          "value" : "tbd"
+                        } ]
+                      } ]
+                    }, {
+                      "day" : "2015-06-27",
+                      "weekday" : 6,
+                      "statements" : [ {
+                        "open_from" : "08:00",
+                        "open_to" : "12:00",
+                        "superseded" : false
+                      }, {
+                        "open_from" : "14:00",
+                        "open_to" : "20:00",
+                        "superseded" : false
+                      } ]
+                    }, {
+                      "day" : "2015-06-28",
+                      "weekday" : 7,
+                      "statements" : [ {
+                        "text_override" : [ {
+                          "locale" : "de",
+                          "value" : "geschlossen"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "fermée"
+                        }, {
+                          "locale" : "it",
+                          "value" : "chiusa"
+                        } ],
+                        "superseded" : true,
+                        "change_info" : [ {
+                          "locale" : "de",
+                          "value" : "Sonntagsverkauf"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "tbd"
+                        }, {
+                          "locale" : "it",
+                          "value" : "tbd"
+                        } ]
+                      }, {
+                        "open_from" : "10:00",
+                        "open_to" : "16:00",
+                        "superseded" : false
+                      } ]
+                    } ],
+                    "services" : [ {
+                      "id" : "acb911fb-b7e3-480f-ab91-1109e750892a",
+                      "code" : 1,
+                      "name" : "Humidor",
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Humidor"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Humidor"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Humidor"
+                      } ],
+                      "appearances" : [ {
+                        "from" : "2015-06-01",
+                        "to" : "2015-06-30"
+                      }, {
+                        "from" : "2016-06-01",
+                        "to" : "2016-06-30"
+                      } ]
+                    }, {
+                      "id" : "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
+                      "code" : 3,
+                      "name" : "Früchte und Gemüse",
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Früchte und Gemüse"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Fruits et Légumes"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Frutta e verdura"
+                      } ],
+                      "appearances" : [ {
+                        "from" : "2013-01-01"
+                      } ]
+                    }, {
+                      "id" : "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
+                      "code" : 5,
+                      "name" : "Backstation",
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Backstation"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Four à pain"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Punto cottura"
+                      } ],
+                      "appearances" : [ {
+                        "from" : "2013-01-01"
+                      } ]
+                    } ]
+                  } ]
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
+    "/store-channels" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "List all store channels",
+        "description" : "Use this operation to get a list of all store channels (Filialkanäle; e.g. \"Denner\" or \"Denner Satellit\").\n",
+        "operationId" : "listStoreChannels",
+        "parameters" : [ {
+          "name" : "filter",
+          "in" : "query",
+          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 10
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/StoreChannelsResponse"
+                },
+                "example" : {
+                  "page_count" : 1,
+                  "page_size" : 2,
+                  "total_items" : 2,
+                  "store_channels" : [ {
+                    "id" : "5d1c3dd5-35a9-4c66-ab20-3409ea640334",
+                    "code" : 1,
+                    "name" : "Denner",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Denner"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Denner"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Denner"
+                    } ]
+                  }, {
+                    "id" : "18549f95-6471-4e21-968f-8a0bf2e0f79b",
+                    "code" : 2,
+                    "name" : "Denner Satellit und Denner Express",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Denner Satellit und Denner Express"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Satellite Denner et Denner Express"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Satelliti Denner e Denner Express"
+                    } ]
+                  } ]
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
+    "/store-services" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "List all store services",
+        "description" : "Use this operation to get a list of all store services (Filialangebote; e.g. \"Humidor\" or \"Backstation\").\n",
+        "operationId" : "listStoreServices",
+        "parameters" : [ {
+          "name" : "filter",
+          "in" : "query",
+          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 10
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/StoreServicesResponse"
+                },
+                "example" : {
+                  "page_count" : 1,
+                  "page_size" : 5,
+                  "total_items" : 5,
+                  "store_services" : [ {
+                    "id" : "acb911fb-b7e3-480f-ab91-1109e750892a",
+                    "code" : 1,
+                    "name" : "",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Humidor"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Humidor"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Humidor"
+                    } ]
+                  }, {
+                    "id" : "85aa57ad-2bf3-48e5-a1a0-813889cbae26",
+                    "code" : 2,
+                    "name" : "Bordeaux Grands Crus",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Bordeaux Grands Crus"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Bordeaux Grands Crus"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Bordeaux Grands Crus"
+                    } ]
+                  }, {
+                    "id" : "d7b4925e-79f8-415f-9436-0adb4a9cc4de",
+                    "code" : 3,
+                    "name" : "Früchte und Gemüse",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Früchte und Gemüse"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Fruits et Légumes"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Frutta e verdura"
+                    } ]
+                  }, {
+                    "id" : "47191064-ad2e-482a-a5cf-2aa32d0b8116",
+                    "code" : 4,
+                    "name" : "Früchte und Gemüse im Offenverkauf",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Früchte und Gemüse im Offenverkauf"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Fruits et légumes en vrac"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Frutta e verdura in vendita sfusa"
+                    } ]
+                  }, {
+                    "id" : "57d0301a-fd5d-4dce-ab0d-75dee1d16631",
+                    "code" : 5,
+                    "name" : "Backstation",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Backstation"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Four à pain"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Punto cottura"
+                    } ]
+                  } ]
                 }
               }
             }
@@ -1346,19 +1971,19 @@
       },
       "DayDate" : {
         "type" : "string",
-        "description" : "Date; Format full-date of [RFC3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6)",
+        "description" : "DayDate; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)",
         "format" : "date"
       },
       "Time" : {
         "pattern" : "/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/",
         "type" : "string",
-        "description" : "Time; Format HH:MM:SS"
+        "description" : "Time; Format HH:MM"
       },
       "DayOfWeek" : {
-        "maximum" : 6,
-        "minimum" : 0,
+        "maximum" : 7,
+        "minimum" : 1,
         "type" : "integer",
-        "description" : "Day of week; 0 = Sunday",
+        "description" : "Day of week; 7 = Sunday",
         "format" : "int32"
       },
       "Year" : {
@@ -1373,6 +1998,18 @@
         "type" : "integer",
         "description" : "Week number (ISO 8601, week date system)",
         "format" : "int32"
+      },
+      "FullWeek" : {
+        "required" : [ "number", "year" ],
+        "type" : "object",
+        "properties" : {
+          "year" : {
+            "$ref" : "#/components/schemas/Year"
+          },
+          "number" : {
+            "$ref" : "#/components/schemas/Week"
+          }
+        }
       },
       "Price" : {
         "minimum" : 0,
@@ -1480,6 +2117,17 @@
           }
         },
         "description" : "Article validity based on dates (from/to) and corresponding texts (short and long version)"
+      },
+      "Appearance" : {
+        "type" : "object",
+        "properties" : {
+          "from" : {
+            "$ref" : "#/components/schemas/DayDate"
+          },
+          "to" : {
+            "$ref" : "#/components/schemas/DayDate"
+          }
+        }
       },
       "AvailabilityLimitations" : {
         "type" : "object",
@@ -2195,6 +2843,12 @@
           }
         }
       },
+      "StoreCode" : {
+        "minimum" : 1,
+        "type" : "integer",
+        "description" : "Navision store code",
+        "format" : "int32"
+      },
       "Store" : {
         "type" : "object",
         "properties" : {
@@ -2202,9 +2856,7 @@
             "$ref" : "#/components/schemas/UUIDv4"
           },
           "code" : {
-            "type" : "integer",
-            "description" : "Navision store code",
-            "format" : "int32"
+            "$ref" : "#/components/schemas/StoreCode"
           },
           "name" : {
             "type" : "string",
@@ -2225,16 +2877,18 @@
             "description" : "Zip code",
             "format" : "int32"
           },
-          "canton_code" : {
-            "type" : "string",
-            "description" : "Canton (state) code"
-          },
           "city" : {
             "type" : "string",
             "description" : "City"
           },
-          "country_code" : {
-            "$ref" : "#/components/schemas/CountryCode"
+          "canton_code" : {
+            "type" : "string",
+            "description" : "Canton (state) code"
+          },
+          "country" : {
+            "pattern" : "/^[A-Z]{2}$/",
+            "type" : "string",
+            "description" : "Country code definition from ISO 3166"
           },
           "phone" : {
             "$ref" : "#/components/schemas/Phone"
@@ -2289,7 +2943,7 @@
           },
           "email" : {
             "type" : "string",
-            "description" : "Email address"
+            "description" : "E-mail address"
           },
           "homepage" : {
             "$ref" : "#/components/schemas/Url"
@@ -2328,10 +2982,34 @@
             "type" : "array",
             "description" : "Services provided by the store",
             "items" : {
-              "$ref" : "#/components/schemas/StoreService"
+              "$ref" : "#/components/schemas/AssignedStoreService"
             }
           }
         }
+      },
+      "StoreWithOpeningDaysAndFlyers" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Store"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "flyers" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/StoreFlyer"
+              }
+            },
+            "weekly_opening_days" : {
+              "maxItems" : 7,
+              "minItems" : 7,
+              "type" : "array",
+              "description" : "Weekly opening days, exact opening plan for the week. Items are sorted for correct display.",
+              "items" : {
+                "$ref" : "#/components/schemas/WeeklyOpeningDay"
+              }
+            }
+          }
+        } ]
       },
       "PaymentType" : {
         "pattern" : "/^(cash|euro|maestro|post\")$/",
@@ -2365,8 +3043,10 @@
             "$ref" : "#/components/schemas/Time"
           },
           "reason" : {
-            "type" : "string",
-            "description" : "Reason for the special opening as displayed to users (localized)"
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           },
           "closed" : {
             "type" : "boolean",
@@ -2388,15 +3068,72 @@
           }
         }
       },
+      "WeeklyOpeningDay" : {
+        "type" : "object",
+        "properties" : {
+          "day" : {
+            "$ref" : "#/components/schemas/DayDate"
+          },
+          "weekday" : {
+            "$ref" : "#/components/schemas/DayOfWeek"
+          },
+          "statements" : {
+            "minItems" : 1,
+            "type" : "array",
+            "description" : "Statements for the current day. Items are sorted for correct display.",
+            "items" : {
+              "$ref" : "#/components/schemas/DayOpeningStatement"
+            }
+          }
+        }
+      },
+      "DayOpeningStatement" : {
+        "type" : "object",
+        "properties" : {
+          "open_from" : {
+            "$ref" : "#/components/schemas/Time"
+          },
+          "open_to" : {
+            "$ref" : "#/components/schemas/Time"
+          },
+          "text_override" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "superseded" : {
+            "type" : "boolean",
+            "description" : "Is the statement striked out?"
+          },
+          "change_info" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          }
+        }
+      },
       "StoreChannel" : {
         "type" : "object",
         "properties" : {
           "id" : {
             "$ref" : "#/components/schemas/UUIDv4"
           },
-          "title" : {
+          "code" : {
+            "type" : "integer",
+            "description" : "Navision channel code",
+            "format" : "int32"
+          },
+          "name" : {
             "type" : "string",
-            "description" : "Channel title"
+            "description" : "Channel name"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
           }
         }
       },
@@ -2406,9 +3143,65 @@
           "id" : {
             "$ref" : "#/components/schemas/UUIDv4"
           },
-          "title" : {
+          "code" : {
+            "type" : "integer",
+            "description" : "Navision service code"
+          },
+          "name" : {
             "type" : "string",
-            "description" : "Service title"
+            "description" : "Service name"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          }
+        }
+      },
+      "AssignedStoreService" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "code" : {
+            "type" : "integer",
+            "description" : "Navision service code"
+          },
+          "name" : {
+            "type" : "string",
+            "description" : "Service name"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "appearances" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Appearance"
+            }
+          }
+        }
+      },
+      "StoreFlyer" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "expired" : {
+            "type" : "boolean",
+            "description" : "Is the flyer expired?"
+          },
+          "url" : {
+            "$ref" : "#/components/schemas/Url"
+          },
+          "sort_index" : {
+            "$ref" : "#/components/schemas/SortIndex"
           }
         }
       },
@@ -2453,7 +3246,7 @@
           }
         }
       },
-      "StoresResponse" : {
+      "CurrentStoresResponse" : {
         "allOf" : [ {
           "type" : "object",
           "properties" : {
@@ -2461,6 +3254,51 @@
               "type" : "array",
               "items" : {
                 "$ref" : "#/components/schemas/Store"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BaseResponse"
+        } ]
+      },
+      "StoresResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "stores" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/StoreWithOpeningDaysAndFlyers"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BaseResponse"
+        } ]
+      },
+      "StoreChannelsResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "store_channels" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/StoreChannel"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BaseResponse"
+        } ]
+      },
+      "StoreServicesResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "store_services" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/StoreService"
               }
             }
           }
@@ -2615,6 +3453,19 @@
           "type" : "integer",
           "format" : "int32",
           "default" : 10
+        }
+      },
+      "PageSizeUnlimitableParam" : {
+        "name" : "page_size",
+        "in" : "query",
+        "description" : "The page size that might be unlimited. Default: -1 (no limit)\n",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "integer",
+          "format" : "int32",
+          "default" : -1
         }
       },
       "AcceptHeader" : {

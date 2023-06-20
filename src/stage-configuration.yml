@@ -8,6 +8,9 @@ x-detail-stage-variables:
     - advertising_url: "denner-adv-new.frb.io/api"
     - advertising_app_id: "XXX"
     - advertising_app_key: "XXX"
+    - stores_url: "denner-sts-new.frb.io/api"
+    - stores_app_id: "XXX"
+    - stores_app_key: "XXX"
     - mobile_api: "denner-mobile-api"
   test:
     - lambda_env: "test"
@@ -18,6 +21,9 @@ x-detail-stage-variables:
     - advertising_url: "denner-advertising-test.detailnet.ch/api"
     - advertising_app_id: "XXX"
     - advertising_app_key: "XXX"
+    - stores_url: "denner-stores-test.detailnet.ch/api"
+    - stores_app_id: "XXX"
+    - stores_app_key: "XXX"
     - mobile_api: "denner-mobile-app"
 x-detail-api-gatway-permissions:
   prod: >

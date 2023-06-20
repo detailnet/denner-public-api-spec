@@ -270,29 +270,13 @@ paths:
       parameters:
         - $ref: '#/parameters/AcceptHeader'
         - $ref: '#/parameters/AcceptLanguageHeader'
-        #        - name: f.open
-        #          description: >
-        #            Filter by opening, e.g. "f.open=__in_now,20:00" will return all stores which are open right now or today at 8:00 pm.
-        #          in: query
-        #          type: string
-        #        - name: f.services
-        #          description: >
-        #            Filter by services, e.g. "f.services=__in_d4d34d84-b32b-46fb-b45f-2bde4b72be81" will return all stores which have at least one of the given services.
-        #          in: query
-        #          type: string
-        #        - name: f.channel
-        #          description: >
-        #            Filter by channels, e.g. "f.channel=__in_18549f95-6471-4e21-968f-8a0bf2e0f79b" will return all stores which have one of the given channels.
-        #          in: query
-        #          type: string
-        #        - $ref: '#/parameters/SortParam'
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
       responses:
         200:
           description: Successful listing
           schema:
-            $ref: '#/definitions/StoresResponse'
+            $ref: '#/definitions/CurrentStoresResponse'
           examples:
             application/json:
 
@@ -440,6 +424,412 @@ paths:
           description: Successful listing
           schema:
             $ref: '#/definitions/OnlinePublicationWitArticlesResponse'
+
+  /online-stores:
+    get:
+      summary: List all stores
+      description: >
+        Use this operation to get a list of all stores (Filialen).
+      tags:
+        - Online advertising
+      operationId: listStores
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/StoresResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 1
+              total_items: 1
+              stores:
+                - id: bcb8a388-8998-4d08-85a6-4864199704ee
+                  code: 302
+                  address: Werdstrasse
+                  number: '36'
+                  zip_code: 8004
+                  canton_code: ZH
+                  city: Zürich
+                  country_code: CH
+                  phone: 044 240 22 83
+                  hotline: '0848 99 66 33'
+                  payment_types:
+                    - cash
+                    - euro
+                    - maestro
+                    - post
+                  credit_card: true
+                  open_from: '1998-08-01'
+                  open_to:
+                  renovation_from: '2015-06-25'
+                  renovation_to: '2015-06-26'
+                  latitude: 47.3728447
+                  longitude: 8.5295153
+                  language: de
+                  email: info@denner.ch
+                  homepage: http://www.denner.ch
+                  parking_count: 0
+                  channel:
+                    id: 5d1c3dd5-35a9-4c66-ab20-3409ea640334
+                    code: 1
+                    name: Denner
+                    title:
+                      - locale: de
+                        value: Denner
+                      - locale: fr
+                        value: Denner
+                      - locale: it
+                        value: Denner
+                  opening_times:
+                    - weekday: 1
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - weekday: 2
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - weekday: 3
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - weekday: 4
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - weekday: 5
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - weekday: 6
+                      open_from: '08:00'
+                      open_to: '12:00'
+                    - weekday: 6
+                      open_from: '14:00'
+                      open_to: '20:00'
+                  special_opening_times:
+                    - day: '2015-06-25'
+                      reason:
+                        - locale: de
+                          value: Umbau
+                        - locale: fr
+                          value: tbd
+                        - locale: it
+                          value: tbd
+                      closed: true
+                    - day: '2015-06-26'
+                      reason:
+                        - locale: de
+                          value: Umbau
+                        - locale: fr
+                          value: tbd
+                        - locale: it
+                          value: tbd
+                      closed: true
+                    - day: '2015-06-28'
+                      open_from: '10:00'
+                      open_to: '16:00'
+                      reason:
+                        - locale: de
+                          value: Sonntagsverkauf
+                        - locale: fr
+                          value: tbd
+                        - locale: it
+                          value: tbd
+                      closed: false
+                  calendar_opening_times:
+                    - day: '2015-06-22'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - day: '2015-06-23'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - day: '2015-06-24'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - day: '2015-06-27'
+                      open_from: '08:00'
+                      open_to: '12:00'
+                    - day: '2015-06-27'
+                      open_from: '14:00'
+                      open_to: '20:00'
+                    - day: '2015-06-28'
+                      open_from: '10:00'
+                      open_to: '16:00'
+                    - day: '2015-06-29'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - day: '2015-06-30'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - day: '2015-07-01'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - day: '2015-07-02'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - day: '2015-07-03'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - day: '2015-07-04'
+                      open_from: '08:00'
+                      open_to: '12:00'
+                    - day: '2015-07-04'
+                      open_from: '14:00'
+                      open_to: '20:00'
+                    - day: '2015-07-06'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                    - day: '2015-07-07'
+                      open_from: '08:00'
+                      open_to: '20:00'
+                  weekly_opening_days:
+                    - day: '2015-06-22'
+                      weekday: 1
+                      statements:
+                        - open_from: '08:00'
+                          open_to: '20:00'
+                          superseded: false
+                    - day: '2015-06-23'
+                      weekday: 2
+                      statements:
+                        - open_from: '08:00'
+                          open_to: '20:00'
+                          superseded: false
+                    - day: '2015-06-24'
+                      weekday: 3
+                      statements:
+                        - open_from: '08:00'
+                          open_to: '20:00'
+                          superseded: false
+                    - day: '2015-06-25'
+                      weekday: 4
+                      statements:
+                        - open_from: '08:00'
+                          open_to: '20:00'
+                          superseded: true
+                          change_info:
+                            - locale: de
+                              value: Umbau
+                            - locale: fr
+                              value: tbd
+                            - locale: it
+                              value: tbd
+                    - day: '2015-06-26'
+                      weekday: 5
+                      statements:
+                        - open_from: '08:00'
+                          open_to: '20:00'
+                          superseded: true
+                          change_info:
+                            - locale: de
+                              value: Umbau
+                            - locale: fr
+                              value: tbd
+                            - locale: it
+                              value: tbd
+                    - day: '2015-06-27'
+                      weekday: 6
+                      statements:
+                        - open_from: '08:00'
+                          open_to: '12:00'
+                          superseded: false
+                        - open_from: '14:00'
+                          open_to: '20:00'
+                          superseded: false
+                    - day: '2015-06-28'
+                      weekday: 7
+                      statements:
+                        - text_override:
+                            - locale: de
+                              value: geschlossen
+                            - locale: fr
+                              value: fermée
+                            - locale: it
+                              value: chiusa
+                          superseded: true
+                          change_info:
+                            - locale: de
+                              value: Sonntagsverkauf
+                            - locale: fr
+                              value: tbd
+                            - locale: it
+                              value: tbd
+                        - open_from: '10:00'
+                          open_to: '16:00'
+                          superseded: false
+                  services:
+                    - id: acb911fb-b7e3-480f-ab91-1109e750892a
+                      code: 1
+                      name: Humidor
+                      title:
+                        - locale: de
+                          value: Humidor
+                        - locale: fr
+                          value: Humidor
+                        - locale: it
+                          value: Humidor
+                      appearances:
+                        - from: '2015-06-01'
+                          to: '2015-06-30'
+                        - from: '2016-06-01'
+                          to: '2016-06-30'
+                    - id: d7b4925e-79f8-415f-9436-0adb4a9cc4de
+                      code: 3
+                      name: Früchte und Gemüse
+                      title:
+                        - locale: de
+                          value: Früchte und Gemüse
+                        - locale: fr
+                          value: Fruits et Légumes
+                        - locale: it
+                          value: Frutta e verdura
+                      appearances:
+                        - from: '2013-01-01'
+                    - id: 57d0301a-fd5d-4dce-ab0d-75dee1d16631
+                      code: 5
+                      name: Backstation
+                      title:
+                        - locale: de
+                          value: Backstation
+                        - locale: fr
+                          value: Four à pain
+                        - locale: it
+                          value: Punto cottura
+                      appearances:
+                        - from: '2013-01-01'
+
+  /store-channels:
+    get:
+      summary: List all store channels
+      description: >
+        Use this operation to get a list of all store channels
+        (Filialkanäle; e.g. "Denner" or "Denner Satellit").
+      tags:
+        - Online advertising
+      operationId: listStoreChannels
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/StoreChannelsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 2
+              total_items: 2
+              store_channels:
+                - id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
+                  code: 1
+                  name: "Denner"
+                  title:
+                    - locale: "de"
+                      value: "Denner"
+                    - locale: "fr"
+                      value: "Denner"
+                    - locale: "it"
+                      value: "Denner"
+                - id: "18549f95-6471-4e21-968f-8a0bf2e0f79b"
+                  code: 2
+                  name: "Denner Satellit und Denner Express"
+                  title:
+                    - locale: "de"
+                      value: "Denner Satellit und Denner Express"
+                    - locale: "fr"
+                      value: "Satellite Denner et Denner Express"
+                    - locale: "it"
+                      value: "Satelliti Denner e Denner Express"
+
+  /store-services:
+    get:
+      summary: List all store services
+      description: >
+        Use this operation to get a list of all store services
+        (Filialangebote; e.g. "Humidor" or "Backstation").
+      tags:
+        - Online advertising
+      operationId: listStoreServices
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/StoreServicesResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 5
+              total_items: 5
+              store_services:
+                - id: "acb911fb-b7e3-480f-ab91-1109e750892a"
+                  code: 1
+                  name: ""
+                  title:
+                    - locale: "de"
+                      value: "Humidor"
+                    - locale: "fr"
+                      value: "Humidor"
+                    - locale: "it"
+                      value: "Humidor"
+                - id: "85aa57ad-2bf3-48e5-a1a0-813889cbae26"
+                  code: 2
+                  name: "Bordeaux Grands Crus"
+                  title:
+                    - locale: "de"
+                      value: "Bordeaux Grands Crus"
+                    - locale: "fr"
+                      value: "Bordeaux Grands Crus"
+                    - locale: "it"
+                      value: "Bordeaux Grands Crus"
+                - id: "d7b4925e-79f8-415f-9436-0adb4a9cc4de"
+                  code: 3
+                  name: "Früchte und Gemüse"
+                  title:
+                    - locale: "de"
+                      value: "Früchte und Gemüse"
+                    - locale: "fr"
+                      value: "Fruits et Légumes"
+                    - locale: "it"
+                      value: "Frutta e verdura"
+                - id: "47191064-ad2e-482a-a5cf-2aa32d0b8116"
+                  code: 4
+                  name: "Früchte und Gemüse im Offenverkauf"
+                  title:
+                    - locale: "de"
+                      value: "Früchte und Gemüse im Offenverkauf"
+                    - locale: "fr"
+                      value: "Fruits et légumes en vrac"
+                    - locale: "it"
+                      value: "Frutta e verdura in vendita sfusa"
+                - id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
+                  code: 5
+                  name: "Backstation"
+                  title:
+                    - locale: "de"
+                      value: "Backstation"
+                    - locale: "fr"
+                      value: "Four à pain"
+                    - locale: "it"
+                      value: "Punto cottura"
 
   ### Display Advertising
   /display-publications:
@@ -1003,6 +1393,16 @@ parameters:
     required: false
     format: int32
     default: 10
+  PageSizeUnlimitableParam:
+    name: page_size
+    description: >
+      The page size that might be unlimited.
+      Default: -1 (no limit)
+    in: query
+    type: integer
+    required: false
+    format: int32
+    default: -1
 #  SortParam:
 #    name: sort
 #    description: >
@@ -1180,19 +1580,19 @@ definitions:
   DayDate:
     type: string
     format: date
-    description: Date; Format full-date of [RFC3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6)
+    description: 'DayDate; Format full-date of RFC3339 (http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14)'
 
   Time:
     type: string
     pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
-    description: 'Time; Format HH:MM:SS'
+    description: 'Time; Format HH:MM'
 
   DayOfWeek:
     type: integer
     format: int32
-    minimum: 0 # According to swagger definition should use minLength for integer type, but does not works correctly
-    maximum: 6 # According to swagger definition should use maxLength for integer type, but does not works correctly
-    description: Day of week; 0 = Sunday
+    minimum: 1 # According to swagger definition should use minLength for integer type, but does not works correctly
+    maximum: 7 # According to swagger definition should use maxLength for integer type, but does not works correctly
+    description: Day of week; 7 = Sunday
 
   Year:
     type: integer
@@ -1206,6 +1606,17 @@ definitions:
     minimum: 1
     maximum: 53
     description: Week number (ISO 8601, week date system)
+
+  FullWeek:
+    type: object
+    properties:
+      year:
+        $ref: '#/definitions/Year'
+      number:
+        $ref: '#/definitions/Week'
+    required:
+      - year
+      - number
 
   Price:
     type: number
@@ -1290,6 +1701,14 @@ definitions:
           type: array
           items:
             $ref: '#/definitions/Translation'
+
+  Appearance:
+    type: object
+    properties:
+      from:
+        $ref: '#/definitions/DayDate'
+      to:
+        $ref: '#/definitions/DayDate'
 
   AvailabilityLimitations:
     type: object
@@ -1868,16 +2287,20 @@ definitions:
       text:
         type: string
 
-### Store
+  ### Store
+  StoreCode:
+    type: integer
+    format: int32
+    description: Navision store code
+    minimum: 1
+
   Store:
     type: object
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
       code:
-        type: integer
-        format: int32
-        description: Navision store code
+        $ref: '#/definitions/StoreCode'
       name:
         type: string
         description: Name
@@ -1893,14 +2316,16 @@ definitions:
         minimum: 1000
         maximum: 9699
         description: Zip code
-      canton_code:
-        type: string
-        description: Canton (state) code
       city:
         type: string
         description: City
-      country_code:
-        $ref: '#/definitions/CountryCode'
+      canton_code:
+        type: string
+        description: Canton (state) code
+      country:
+        type: string
+        pattern: '/^[A-Z]{2}$/'
+        description: Country code definition from ISO 3166
       phone:
         $ref: '#/definitions/Phone'
       hotline:
@@ -1929,11 +2354,6 @@ definitions:
         type: string
         format: date
         description: Renovation ending on
-## V2
-#      flyers:
-#        type: array
-#        items:
-#          $ref: '#/definitions/StoreFlyer'
       longitude:
         type: number
         format: float
@@ -1947,8 +2367,8 @@ definitions:
         description: Language spoken in the store
       email:
         type: string
-#        pattern: @todo Fixed pattern?
-        description: Email address
+        #        pattern: @todo Fixed pattern?
+        description: E-mail address
       homepage:
         $ref: '#/definitions/Url'
       parking_count:
@@ -1973,19 +2393,28 @@ definitions:
         items:
           $ref: '#/definitions/CalendarOpeningTime'
         description: Calendar opening times
-## V2
-#      weekly_opening_days:
-#        type: array
-#        minItems: 7
-#        maxItems: 7
-#        items:
-#          $ref: '#/definitions/WeeklyOpeningDay'
-#        description: Weekly opening days, exact opening plan for the week. Items are sorted for correct display.
       services:
         type: array
         items:
-          $ref: '#/definitions/StoreService'
+          $ref: '#/definitions/AssignedStoreService'
         description: Services provided by the store
+
+  StoreWithOpeningDaysAndFlyers:
+    allOf:
+      - $ref: '#/definitions/Store'
+      - type: object
+        properties:
+          flyers:
+            type: array
+            items:
+              $ref: '#/definitions/StoreFlyer'
+          weekly_opening_days:
+            type: array
+            minItems: 7
+            maxItems: 7
+            items:
+              $ref: '#/definitions/WeeklyOpeningDay'
+            description: Weekly opening days, exact opening plan for the week. Items are sorted for correct display.
 
   PaymentType:
     type: string
@@ -2012,8 +2441,9 @@ definitions:
       open_to:
         $ref: '#/definitions/Time'
       reason:
-        type: string
-        description: Reason for the special opening as displayed to users (localized)
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
       closed:
         type: boolean
         description: Is the store closed on this day?
@@ -2028,37 +2458,38 @@ definitions:
       open_to:
         $ref: '#/definitions/Time'
 
-## V2
-#  WeeklyOpeningDay:
-#    type: object
-#    properties:
-#      day:
-#        $ref: '#/definitions/DayDate'
-#      weekday:
-#        $ref: '#/definitions/DayOfWeek'
-#      statements:
-#        type: array
-#        minItems: 1
-#        items:
-#          $ref: '#/definitions/DayOpeningStatement'
-#        description: Statements for the current day. Items are sorted for correct display.
-#
-#  DayOpeningStatement:
-#    type: object
-#    properties:
-#      open_from:
-#        $ref: '#/definitions/Time'
-#      open_to:
-#        $ref: '#/definitions/Time'
-#      text_override:
-#        type: string
-#        description: Closure text, instead of open form/to (localized)
-#      superseded:
-#        type: boolean
-#        description: Is the statement striked out?
-#      change_info:
-#        type: string
-#        description: Tooltip info, the reason for the change (localized)
+  WeeklyOpeningDay:
+    type: object
+    properties:
+      day:
+        $ref: '#/definitions/DayDate'
+      weekday:
+        $ref: '#/definitions/DayOfWeek'
+      statements:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/definitions/DayOpeningStatement'
+        description: Statements for the current day. Items are sorted for correct display.
+
+  DayOpeningStatement:
+    type: object
+    properties:
+      open_from:
+        $ref: '#/definitions/Time'
+      open_to:
+        $ref: '#/definitions/Time'
+      text_override:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      superseded:
+        type: boolean
+        description: Is the statement striked out?
+      change_info:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
 
   ### Store Channel
   StoreChannel:
@@ -2066,19 +2497,68 @@ definitions:
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
-      title:
+      code:
+        type: integer
+        format: int32
+        description: Navision channel code
+      name:
         type: string
-        description: Channel title
+        description: Channel name
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
 
-  ### Store service
+  ### Store Service
   StoreService:
     type: object
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
-      title:
+      code:
+        type: integer
+        description: Navision service code
+      name:
         type: string
-        description: Service title
+        description: Service name
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+
+  AssignedStoreService:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        description: Navision service code
+      name:
+        type: string
+        description: Service name
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      appearances:
+        type: array
+        items:
+          $ref: '#/definitions/Appearance'
+
+  ### Store Flyer
+  StoreFlyer:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      expired:
+        type: boolean
+        description: Is the flyer expired?
+      url:
+        $ref: '#/definitions/Url'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
 
   ### Bodies
 
@@ -2115,7 +2595,7 @@ definitions:
         items:
           $ref: '#/definitions/PublicOnlineArticle'
 
-  StoresResponse:
+  CurrentStoresResponse:
     allOf:
       - type: object
         properties:
@@ -2123,6 +2603,36 @@ definitions:
             type: array
             items:
               $ref: '#/definitions/Store'
+      - $ref: '#/definitions/BaseResponse'
+
+  StoresResponse:
+    allOf:
+      - type: object
+        properties:
+          stores:
+            type: array
+            items:
+              $ref: '#/definitions/StoreWithOpeningDaysAndFlyers'
+      - $ref: '#/definitions/BaseResponse'
+
+  StoreChannelsResponse:
+    allOf:
+      - type: object
+        properties:
+          store_channels:
+            type: array
+            items:
+              $ref: '#/definitions/StoreChannel'
+      - $ref: '#/definitions/BaseResponse'
+
+  StoreServicesResponse:
+    allOf:
+      - type: object
+        properties:
+          store_services:
+            type: array
+            items:
+              $ref: '#/definitions/StoreService'
       - $ref: '#/definitions/BaseResponse'
 
   AdvertisedArticlesResponse:
