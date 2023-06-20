@@ -1844,7 +1844,7 @@
           "content" : {
             "application/json" : {
               "schema" : {
-                "$ref" : "#/components/schemas/baseposters_body"
+                "$ref" : "#/components/schemas/body"
               }
             }
           },
@@ -1987,7 +1987,7 @@
         "format" : "int32"
       },
       "Year" : {
-        "minimum" : 1800,
+        "minimum" : 1800.0,
         "type" : "integer",
         "description" : "Year",
         "format" : "int32"
@@ -2872,7 +2872,7 @@
           },
           "zip_code" : {
             "maximum" : 9699,
-            "minimum" : 1000,
+            "minimum" : 1000.0,
             "type" : "integer",
             "description" : "Zip code",
             "format" : "int32"
@@ -3366,7 +3366,7 @@
           "$ref" : "#/components/schemas/BasePagedResponse"
         } ]
       },
-      "baseposters_body" : {
+      "body" : {
         "required" : [ "article_id" ],
         "type" : "object",
         "properties" : {

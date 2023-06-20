@@ -1212,12 +1212,12 @@ components:
         authorizerResultTtlInSeconds: 3600
         type: "token"
 x-amazon-apigateway-gateway-responses:
-  DEFAULT_4XX:
+  DEFAULT_5XX:
     responseParameters:
       gatewayresponse.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
       gatewayresponse.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
       gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
-  DEFAULT_5XX:
+  DEFAULT_4XX:
     responseParameters:
       gatewayresponse.header.Access-Control-Allow-Methods: "'GET,OPTIONS'"
       gatewayresponse.header.Access-Control-Allow-Headers: "'App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
