@@ -9,8 +9,17 @@ info:
 # In Swagger definition is not possible to define multiple servers/hosts/basepth (ref https://swagger.io/docs/specification/2-0/api-host-and-base-path/)
 #on migration to OpenApi standard, define servers:
 #servers:
+#  - url: https://denner-online-api.detailnet.ch/{apiGatewayPath}
+#    description: ApiGateway (Regional optimized - eu-west-1)
+#    variables:
+#      apiGatewayPath
+#        enum:
+#          - test
+#          - v1
+#        default: test,
+#        description: ApiGateway path
 #  - url: https://denner-public-api.detailnet.ch/{apiGatewayPath}
-#    description: ApiGateway
+#    description: ApiGateway (Edge optimized)
 #    variables:
 #      apiGatewayPath
 #        enum:
@@ -34,29 +43,7 @@ securityDefinitions:
     name: App-Key
     in: header
 paths:
-  ### Articles/Promotions
-  /online-publications:
-    get:
-      summary: List all online publications
-      description: |
-        Use this operation to get a list of all online publications (usually filtered by a specific channel and timeframe).
-      tags:
-        - online advertising
-      operationId: listOnlinePublications
-      security:
-        - appKey: [ ]
-      parameters:
-        - $ref: '#/parameters/AcceptHeader'
-        - $ref: '#/parameters/FilterParam'
-        - $ref: '#/parameters/SortParam'
-        - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
-      responses:
-        200:
-          description: Successful listing
-          schema:
-            $ref: '#/definitions/OnlinePublicationsResponse'
-
+  ### Currently online
   /online-articles:
     get:
       summary: List all online articles
@@ -65,15 +52,15 @@ paths:
         
         Warning: result is approximately 1MB in size, this webpage javascript will suffer high performance degradation on response beautification.
       tags:
-        - online advertising
-      operationId: listOnlineArticles
+        - Currently online
+      operationId: listCurrentOnlineArticles
       security:
         - appKey: []
       parameters:
         - $ref: '#/parameters/AcceptHeader'
-#        - $ref: '#/parameters/PageParam'
-#        - $ref: '#/parameters/PageSizeParam'
-#        - $ref: '#/parameters/FilterParam'
+      #        - $ref: '#/parameters/PageParam'
+      #        - $ref: '#/parameters/PageSizeParam'
+      #        - $ref: '#/parameters/FilterParam'
       responses:
         200:
           description: Successful listing
@@ -83,171 +70,171 @@ paths:
             application/json:
 
               online_articles:
-              - id: dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6
-                article_id: '051273'
-                title:
-                - locale: de
-                  value: Mandorla Primitivo di Puglia IGT
-                - locale: fr
-                  value: Mandorla Primitivo di Puglia IGT
-                - locale: it
-                  value: Mandorla Primitivo di Puglia IGT
-                description:
-                - locale: de
-                  value: 2013, Apulien, Italien, 6 x 75 cl
-                - locale: fr
-                  value: 2013, les Pouilles, Italie, 6 x 75 cl
-                - locale: it
-                  value: 2013, Puglia, Italia, 6 x 75 cl
-                prices:
-                  sales: 59.4
-                  instead: 68.4
-                  base: 1.32
-                  by_quantity:
-                  - quantity: 1
-                    sales: 9.9
-                    instead: 11.4
-                  - quantity: 6
+                - id: dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6
+                  article_id: '051273'
+                  title:
+                    - locale: de
+                      value: Mandorla Primitivo di Puglia IGT
+                    - locale: fr
+                      value: Mandorla Primitivo di Puglia IGT
+                    - locale: it
+                      value: Mandorla Primitivo di Puglia IGT
+                  description:
+                    - locale: de
+                      value: 2013, Apulien, Italien, 6 x 75 cl
+                    - locale: fr
+                      value: 2013, les Pouilles, Italie, 6 x 75 cl
+                    - locale: it
+                      value: 2013, Puglia, Italia, 6 x 75 cl
+                  prices:
                     sales: 59.4
                     instead: 68.4
-                price_info:
-                - locale: de
-                  value: Konkurrenzvergleich
-                - locale: fr
-                  value: Comparaison concurrentielle
-                - locale: it
-                  value: Confronto con la concorrenza
-                quantity: 6
-                validity:
-                  from: '2015-06-23'
-                  to: '2015-06-29'
-                  short_text:
-                  - locale: de
-                    value: Gültig von 23.06.–29.06.
-                  - locale: fr
-                    value: "..."
-                  - locale: it
-                    value: "..."
-                  long_text:
-                  - locale: de
-                    value: Angebot gültig von 23.06.2015 bis 29.06.2015
-                  - locale: fr
-                    value: "..."
-                  - locale: it
-                    value: "..."
-                availability_limitations:
-                  region:
-                  - locale: de
-                    value: Nur in der deutschen und französischen Schweiz erhältlich
-                  - locale: fr
-                    value: "..."
-                  - locale: it
-                    value: "..."
-                  store:
-                  - locale: de
-                    value: Nur in Filialen mit Frischprodukten erhältlich
-                  - locale: fr
-                    value: Disponible(s) uniquement dans les succursales aves des produits frais
-                  - locale: it
-                    value: "..."
-                compared: true
-                online_group:
-                  id: a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee
-                  code: 2-9
-                  title:
-                  - locale: de
-                    value: Wein/Champagner
-                  - locale: fr
-                    value: Vins/champagnes
-                  - locale: it
-                    value: Vino/champagne
-                  parent:
-                    id: 8fd653c3-a86b-4529-bbb5-58d06919d484
-                    code: 2
-                    title:
+                    base: 1.32
+                    by_quantity:
+                      - quantity: 1
+                        sales: 9.9
+                        instead: 11.4
+                      - quantity: 6
+                        sales: 59.4
+                        instead: 68.4
+                  price_info:
                     - locale: de
-                      value: Getränke
+                      value: Konkurrenzvergleich
                     - locale: fr
-                      value: Boissons
+                      value: Comparaison concurrentielle
                     - locale: it
-                      value: Bevande
-                packshot:
-                  id: 5983a33d-ac61-49a8-a836-43259e78e9d0
-                  cdn_url: https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png
-                wine:
-                  country:
-                    id: IT
+                      value: Confronto con la concorrenza
+                  quantity: 6
+                  validity:
+                    from: '2015-06-23'
+                    to: '2015-06-29'
+                    short_text:
+                      - locale: de
+                        value: Gültig von 23.06.–29.06.
+                      - locale: fr
+                        value: "..."
+                      - locale: it
+                        value: "..."
+                    long_text:
+                      - locale: de
+                        value: Angebot gültig von 23.06.2015 bis 29.06.2015
+                      - locale: fr
+                        value: "..."
+                      - locale: it
+                        value: "..."
+                  availability_limitations:
+                    region:
+                      - locale: de
+                        value: Nur in der deutschen und französischen Schweiz erhältlich
+                      - locale: fr
+                        value: "..."
+                      - locale: it
+                        value: "..."
+                    store:
+                      - locale: de
+                        value: Nur in Filialen mit Frischprodukten erhältlich
+                      - locale: fr
+                        value: Disponible(s) uniquement dans les succursales aves des produits frais
+                      - locale: it
+                        value: "..."
+                  compared: true
+                  online_group:
+                    id: a2664d3a-93b4-4277-9e6e-c95ad8b6c6ee
+                    code: 2-9
                     title:
-                    - locale: de
-                      value: Italien
-                    - locale: fr
-                      value: Italie
-                    - locale: it
-                      value: Italia
-                  region:
-                    id: b19c42bf-ed78-46ff-ad6f-fc688a059e6a
-                    title:
-                    - locale: de
-                      value: Apulien
-                    - locale: fr
-                      value: Les Pouilles
-                    - locale: it
-                      value: Puglia
-                  type:
-                    id: 2
-                    title:
-                    - locale: de
-                      value: Rotwein
-                    - locale: fr
-                      value: Vin rouge
-                    - locale: it
-                      value: Vino rosso
-                  year: 2013
-                  fits_with:
-                  - locale: de
-                    value: Pasta, Fleisch mit würzigen Saucen
-                  - locale: fr
-                    value: Pâtes, viande aux sauces relevées
-                  - locale: it
-                    value: Pasta, carni accompagnate da salse aromatiche
-                  varietal:
-                  - locale: de
-                    value: Primitivo
-                  - locale: fr
-                    value: Primitivo
-                  - locale: it
-                    value: Primitivo
-                  character:
-                  - locale: de
-                    value: Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen
-                      und Brombeeren. Geschmeidig im Gaumen.
-                  - locale: fr
-                    value: Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres.
-                      Bouche moelleuse.
-                  - locale: it
-                    value: Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more.
-                      Morbido al palato.
-                  temperature:
-                  - locale: de
-                    value: 16-18 °C
-                  - locale: fr
-                    value: 16-18 °C
-                  - locale: it
-                    value: 16-18 °C
-                  awards:
-                  - locale: de
-                    value: ''
-                  - locale: fr
-                    value: ''
-                  - locale: it
-                    value: ''
-                  storage:
-                  - locale: de
-                    value: 3 Jahre
-                  - locale: fr
-                    value: 3 ans
-                  - locale: it
-                    value: 3 anni
+                      - locale: de
+                        value: Wein/Champagner
+                      - locale: fr
+                        value: Vins/champagnes
+                      - locale: it
+                        value: Vino/champagne
+                    parent:
+                      id: 8fd653c3-a86b-4529-bbb5-58d06919d484
+                      code: 2
+                      title:
+                        - locale: de
+                          value: Getränke
+                        - locale: fr
+                          value: Boissons
+                        - locale: it
+                          value: Bevande
+                  packshot:
+                    id: 5983a33d-ac61-49a8-a836-43259e78e9d0
+                    cdn_url: https://denner.imgix.net/assets/5983a33d-ac61-49a8-a836-43259e78e9d0/051273_6.png
+                  wine:
+                    country:
+                      id: IT
+                      title:
+                        - locale: de
+                          value: Italien
+                        - locale: fr
+                          value: Italie
+                        - locale: it
+                          value: Italia
+                    region:
+                      id: b19c42bf-ed78-46ff-ad6f-fc688a059e6a
+                      title:
+                        - locale: de
+                          value: Apulien
+                        - locale: fr
+                          value: Les Pouilles
+                        - locale: it
+                          value: Puglia
+                    type:
+                      id: 2
+                      title:
+                        - locale: de
+                          value: Rotwein
+                        - locale: fr
+                          value: Vin rouge
+                        - locale: it
+                          value: Vino rosso
+                    year: 2013
+                    fits_with:
+                      - locale: de
+                        value: Pasta, Fleisch mit würzigen Saucen
+                      - locale: fr
+                        value: Pâtes, viande aux sauces relevées
+                      - locale: it
+                        value: Pasta, carni accompagnate da salse aromatiche
+                    varietal:
+                      - locale: de
+                        value: Primitivo
+                      - locale: fr
+                        value: Primitivo
+                      - locale: it
+                        value: Primitivo
+                    character:
+                      - locale: de
+                        value: Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen
+                          und Brombeeren. Geschmeidig im Gaumen.
+                      - locale: fr
+                        value: Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres.
+                          Bouche moelleuse.
+                      - locale: it
+                        value: Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more.
+                          Morbido al palato.
+                    temperature:
+                      - locale: de
+                        value: 16-18 °C
+                      - locale: fr
+                        value: 16-18 °C
+                      - locale: it
+                        value: 16-18 °C
+                    awards:
+                      - locale: de
+                        value: ''
+                      - locale: fr
+                        value: ''
+                      - locale: it
+                        value: ''
+                    storage:
+                      - locale: de
+                        value: 3 Jahre
+                      - locale: fr
+                        value: 3 ans
+                      - locale: it
+                        value: 3 anni
 
   /tobacco-articles:
     get:
@@ -255,8 +242,8 @@ paths:
       description: |
         Use this operation to get a list of all tobacco articles promoted today and advertised in the online-mobile channels.
       tags:
-        - online advertising
-      operationId: listOnlineTobaccoArticles
+        - Currently online
+      operationId: listCurrentOnlineTobaccoArticles
       security:
         - appKey: []
       parameters:
@@ -270,82 +257,35 @@ paths:
           schema:
             $ref: '#/definitions/PublicOnlineArticlesResponse'
 
-  /newsletter-articles:
-    get:
-      summary: List all online articles for newsletter
-      description: |
-        Use this operation to get a list of all online articles promoted in the given week in the newsletter channels.
-      tags:
-        - online advertising
-      operationId: listNewsletterOnlineArticles
-      security:
-        - appKey: [ ]
-      parameters:
-        - $ref: '#/parameters/AcceptHeader'
-        - name: week
-          in: query
-          required: true
-          type: string
-          description: >
-             Year followed by the week number (ISO 8601, week date system)
-             PHP date format 'o-W' (ref: https://www.php.net/manual/en/datetime.format.php)
-          pattern: ^[0-9]{4}\-[0-9]{1,2}$
-        - $ref: '#/parameters/LocaleQueryParam'
-      responses:
-        200:
-          description: Successful listing
-          schema:
-            $ref: '#/definitions/PublicOnlineArticlesResponse'
-
-  /banner-publications/{publication_id}:
-    get:
-      summary: Fetch online publication with articles for banner
-      description: |
-        Use this operation fetch an online publication with articles to be displayed in banner.
-      tags:
-        - online advertising
-      operationId: listOnlinePublicationsWithArticlesForBanner
-      security:
-        - appKey: [ ]
-      parameters:
-        - $ref: '#/parameters/AcceptHeader'
-        - $ref: '#/parameters/PublicationIdPathParam'
-      responses:
-        200:
-          description: Successful listing
-          schema:
-            $ref: '#/definitions/OnlinePublicationWitArticlesResponse'
-
-  ### Store
   /stores:
     get:
-      summary: List all stores
+      summary: List all current stores
       description: >
-        Use this operation to get a list of all stores (Filialen).
+        Use this operation to get a list of all stores (Filialen) open today.
       tags:
-        - online advertising
-      operationId: listStores
+        - Currently online
+      operationId: listCurrentStores
       security:
-        - appKey: []
+        - appKey: [ ]
       parameters:
         - $ref: '#/parameters/AcceptHeader'
         - $ref: '#/parameters/AcceptLanguageHeader'
-#        - name: f.open
-#          description: >
-#            Filter by opening, e.g. "f.open=__in_now,20:00" will return all stores which are open right now or today at 8:00 pm.
-#          in: query
-#          type: string
-#        - name: f.services
-#          description: >
-#            Filter by services, e.g. "f.services=__in_d4d34d84-b32b-46fb-b45f-2bde4b72be81" will return all stores which have at least one of the given services.
-#          in: query
-#          type: string
-#        - name: f.channel
-#          description: >
-#            Filter by channels, e.g. "f.channel=__in_18549f95-6471-4e21-968f-8a0bf2e0f79b" will return all stores which have one of the given channels.
-#          in: query
-#          type: string
-#        - $ref: '#/parameters/SortParam'
+        #        - name: f.open
+        #          description: >
+        #            Filter by opening, e.g. "f.open=__in_now,20:00" will return all stores which are open right now or today at 8:00 pm.
+        #          in: query
+        #          type: string
+        #        - name: f.services
+        #          description: >
+        #            Filter by services, e.g. "f.services=__in_d4d34d84-b32b-46fb-b45f-2bde4b72be81" will return all stores which have at least one of the given services.
+        #          in: query
+        #          type: string
+        #        - name: f.channel
+        #          description: >
+        #            Filter by channels, e.g. "f.channel=__in_18549f95-6471-4e21-968f-8a0bf2e0f79b" will return all stores which have one of the given channels.
+        #          in: query
+        #          type: string
+        #        - $ref: '#/parameters/SortParam'
         - $ref: '#/parameters/PageParam'
         - $ref: '#/parameters/PageSizeParam'
       responses:
@@ -356,12 +296,11 @@ paths:
           examples:
             application/json:
 
-#              page_count: 1
-#              page_size: 1
+              #              page_count: 1
+              #              page_size: 1
               total_stores: 794
               stores:
-                -
-                  id: "bcb8a388-8998-4d08-85a6-4864199704ee"
+                - id: "bcb8a388-8998-4d08-85a6-4864199704ee"
                   code: 302
                   name: null
                   address: "Werdstrasse"
@@ -392,59 +331,115 @@ paths:
                     id: "5d1c3dd5-35a9-4c66-ab20-3409ea640334"
                     title: "Denner"
                   opening_times:
-                    -
-                      weekday: 1
+                    - weekday: 1
                       open_from: "08:00"
                       open_to: "20:00"
-                    -
-                      weekday: 2
+                    - weekday: 2
                       open_from: "08:00"
                       open_to: "20:00"
-                    -
-                      weekday: 3
+                    - weekday: 3
                       open_from: "08:00"
                       open_to: "20:00"
-                    -
-                      weekday: 4
+                    - weekday: 4
                       open_from: "08:00"
                       open_to: "20:00"
-                    -
-                      weekday: 5
+                    - weekday: 5
                       open_from: "08:00"
                       open_to: "20:00"
-                    -
-                      weekday: 6
+                    - weekday: 6
                       open_from: "08:00"
                       open_to: "12:00"
-                    -
-                      weekday: 6
+                    - weekday: 6
                       open_from: "14:00"
                       open_to: "20:00"
                   special_opening_times:
-                    -
-                      day: "2015-06-25"
+                    - day: "2015-06-25"
                       reason: "Umbau"
                       closed: true
-                    -
-                      day: "2015-06-26"
+                    - day: "2015-06-26"
                       reason: "Umbau"
                       closed: true
-                    -
-                      day: "2015-06-28"
+                    - day: "2015-06-28"
                       open_from: "10:00"
                       open_to: "16:00"
                       reason: "Sonntagsverkauf"
                       closed: false
                   services:
-                    -
-                      id: "acb911fb-b7e3-480f-ab91-1109e750892a"
+                    - id: "acb911fb-b7e3-480f-ab91-1109e750892a"
                       title: "Humidor"
-                    -
-                      id: "d7b4925e-79f8-415f-9436-0adb4a9cc4de"
+                    - id: "d7b4925e-79f8-415f-9436-0adb4a9cc4de"
                       title: "Früchte und Gemüse"
-                    -
-                      id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
+                    - id: "57d0301a-fd5d-4dce-ab0d-75dee1d16631"
                       title: "Backstation"
+
+  ### Online advertising
+  /online-publications:
+    get:
+      summary: List all online publications
+      description: |
+        Use this operation to get a list of all online publications (usually filtered by a specific channel and timeframe).
+      tags:
+        - Online advertising
+      operationId: listOnlinePublications
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlinePublicationsResponse'
+
+  /newsletter-articles:
+    get:
+      summary: List all online articles for newsletter
+      description: |
+        Use this operation to get a list of all online articles promoted in the given week in the newsletter channels.
+      tags:
+        - Online advertising
+      operationId: listNewsletterOnlineArticles
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - name: week
+          in: query
+          required: true
+          type: string
+          description: >
+             Year followed by the week number (ISO 8601, week date system)
+             PHP date format 'o-W' (ref: https://www.php.net/manual/en/datetime.format.php)
+          pattern: ^[0-9]{4}\-[0-9]{1,2}$
+        - $ref: '#/parameters/LocaleQueryParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/PublicOnlineArticlesResponse'
+
+  /banner-publications/{publication_id}:
+    get:
+      summary: Fetch online publication with articles for banner
+      description: |
+        Use this operation fetch an online publication with articles to be displayed in banner.
+      tags:
+        - Online advertising
+      operationId: listOnlinePublicationsWithArticlesForBanner
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - $ref: '#/parameters/PublicationIdPathParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlinePublicationWitArticlesResponse'
 
   ### Display Advertising
   /display-publications:
@@ -453,7 +448,7 @@ paths:
       description: >
         Use this operation to get a list of all display-publications.
       tags:
-        - display advertising
+        - Display advertising
       operationId: listDisplayPublications
       security:
         - appKey: []
@@ -749,7 +744,7 @@ paths:
       description: >
           Use this operation to fetch the first display-publication for a specific screen, layout and language to display on current day.
       tags:
-          - display advertising
+          - Display advertising
       operationId: fetchDisplayPublication
       security:
          - appKey: [ ]
@@ -894,14 +889,14 @@ paths:
         204:
           description: No result
 
-  ### Planing
+  ### Promotion planing
   /advertised-articles/{year_week}:
     get:
       summary: List advertised articles by week
       description: |
         Use this operation to get a list of all advertised-articles of a specific week.
       tags:
-        - planing
+        - Promotion planing
       operationId: listAdvertisedArticlesByWeek
       security:
         - appKey: [ ]
@@ -921,14 +916,14 @@ paths:
           schema:
             $ref: '#/definitions/AdvertisedArticlesResponse'
 
-  ### Production
+  ### Print production
   /base-posters:
     post:
       summary: Create base poster
       description: >
         Crate an A4 base poster (for pre-printed paper) from article.
       tags:
-        - production
+        - Print production
       operationId: createBasePoster
       consumes:
         - application/json

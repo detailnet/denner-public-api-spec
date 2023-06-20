@@ -31,6 +31,10 @@ for development start the Docker instance that presents the static HTML pages in
 To build the specification we're using [swagger-codegen](https://github.com/swagger-api/swagger-codegen).
 
 #### Using Ubuntu on WSL2 
+
+@todo This procedure has to be fixed, the swagger-codgen should run in a dedicated Docker container, 
+      and the update of docs should be done with a simple `lando build` call on CLI. 
+
 Run the following commands to install swagger-codgen and it's dependencies in a separate directory:
 
         cd ..

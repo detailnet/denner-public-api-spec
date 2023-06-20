@@ -10,6 +10,16 @@
     "version" : "1.0.0"
   },
   "servers" : [ {
+    "url" : "https://denner-online-api.detailnet.ch/{apiGatewayPath}",
+    "variables": {
+      "apiGatewayPath": {
+        "enum": ["test", "v1"],
+        "default": "test",
+        "description": "ApiGateway path"
+      }
+    },
+    "description": "ApiGateway (Regional optimized - eu-west-1)"
+  }, {
     "url" : "https://denner-public-api.detailnet.ch/{apiGatewayPath}",
     "variables": {
       "apiGatewayPath": {
@@ -18,98 +28,18 @@
         "description": "ApiGateway path"
       }
     },
-    "description": "ApiGateway"
+    "description": "ApiGateway (Edge optimized)"
   }, {
     "url" : "https://denner-public-api-v1.detailnet.ch",
     "description": "CloudFront distribution for v1 (cache 1h)"
   } ],
   "paths" : {
-    "/online-publications" : {
-      "get" : {
-        "tags" : [ "online advertising" ],
-        "summary" : "List all online publications",
-        "description" : "Use this operation to get a list of all online publications (usually filtered by a specific channel and timeframe).\n",
-        "operationId" : "listOnlinePublications",
-        "parameters" : [ {
-          "name" : "Accept",
-          "in" : "header",
-          "description" : "Accepted content type (supported is \"application/json\")\n",
-          "required" : false,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string",
-            "default" : "application/json"
-          }
-        }, {
-          "name" : "filter",
-          "in" : "query",
-          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "name" : "sort",
-          "in" : "query",
-          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "name" : "page",
-          "in" : "query",
-          "description" : "The page number. Default: 1\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "minimum" : 0,
-            "type" : "integer",
-            "format" : "int32",
-            "default" : 1
-          }
-        }, {
-          "name" : "page_size",
-          "in" : "query",
-          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "integer",
-            "format" : "int32",
-            "default" : 10
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful listing",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/OnlinePublicationsResponse"
-                }
-              }
-            }
-          }
-        },
-        "security" : [ {
-          "appKey" : [ ]
-        } ]
-      }
-    },
     "/online-articles" : {
       "get" : {
-        "tags" : [ "online advertising" ],
+        "tags" : [ "Currently online" ],
         "summary" : "List all online articles",
         "description" : "Use this operation to get a list of all articles (excluded tobacco) promoted today and advertised in the online-mobile channels.\n\nWarning: result is approximately 1MB in size, this webpage javascript will suffer high performance degradation on response beautification.\n",
-        "operationId" : "listOnlineArticles",
+        "operationId" : "listCurrentOnlineArticles",
         "parameters" : [ {
           "name" : "Accept",
           "in" : "header",
@@ -373,10 +303,10 @@
     },
     "/tobacco-articles" : {
       "get" : {
-        "tags" : [ "online advertising" ],
+        "tags" : [ "Currently online" ],
         "summary" : "List all online articles having tobacco article group (not listed otherwise)",
         "description" : "Use this operation to get a list of all tobacco articles promoted today and advertised in the online-mobile channels.\n",
-        "operationId" : "listOnlineTobaccoArticles",
+        "operationId" : "listCurrentOnlineTobaccoArticles",
         "parameters" : [ {
           "name" : "Accept",
           "in" : "header",
@@ -396,109 +326,6 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/PublicOnlineArticlesResponse"
-                }
-              }
-            }
-          }
-        },
-        "security" : [ {
-          "appKey" : [ ]
-        } ]
-      }
-    },
-    "/newsletter-articles" : {
-      "get" : {
-        "tags" : [ "online advertising" ],
-        "summary" : "List all online articles for newsletter",
-        "description" : "Use this operation to get a list of all online articles promoted in the given week in the newsletter channels.\n",
-        "operationId" : "listNewsletterOnlineArticles",
-        "parameters" : [ {
-          "name" : "Accept",
-          "in" : "header",
-          "description" : "Accepted content type (supported is \"application/json\")\n",
-          "required" : false,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string",
-            "default" : "application/json"
-          }
-        }, {
-          "name" : "week",
-          "in" : "query",
-          "description" : "Year followed by the week number (ISO 8601, week date system) PHP date format 'o-W' (ref: https://www.php.net/manual/en/datetime.format.php)\n",
-          "required" : true,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "pattern" : "^[0-9]{4}\\-[0-9]{1,2}$",
-            "type" : "string"
-          }
-        }, {
-          "name" : "locale",
-          "in" : "query",
-          "description" : "Locale",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "string",
-            "enum" : [ "de", "fr", "it" ]
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful listing",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/PublicOnlineArticlesResponse"
-                }
-              }
-            }
-          }
-        },
-        "security" : [ {
-          "appKey" : [ ]
-        } ]
-      }
-    },
-    "/banner-publications/{publication_id}" : {
-      "get" : {
-        "tags" : [ "online advertising" ],
-        "summary" : "Fetch online publication with articles for banner",
-        "description" : "Use this operation fetch an online publication with articles to be displayed in banner.\n",
-        "operationId" : "listOnlinePublicationsWithArticlesForBanner",
-        "parameters" : [ {
-          "name" : "Accept",
-          "in" : "header",
-          "description" : "Accepted content type (supported is \"application/json\")\n",
-          "required" : false,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "type" : "string",
-            "default" : "application/json"
-          }
-        }, {
-          "name" : "publication_id",
-          "in" : "path",
-          "description" : "The unique identifier of an online publication",
-          "required" : true,
-          "style" : "simple",
-          "explode" : false,
-          "schema" : {
-            "pattern" : "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-4[a-f0-9]{3}\\-(8|9|a|b)[a-f0-9]{3}\\-[a-f0-9]{12}$",
-            "type" : "string"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Successful listing",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/OnlinePublicationWitArticlesResponse"
                 }
               }
             }
@@ -511,10 +338,10 @@
     },
     "/stores" : {
       "get" : {
-        "tags" : [ "online advertising" ],
-        "summary" : "List all stores",
-        "description" : "Use this operation to get a list of all stores (Filialen).\n",
-        "operationId" : "listStores",
+        "tags" : [ "Currently online" ],
+        "summary" : "List all current stores",
+        "description" : "Use this operation to get a list of all stores (Filialen) open today.\n",
+        "operationId" : "listCurrentStores",
         "parameters" : [ {
           "name" : "Accept",
           "in" : "header",
@@ -664,9 +491,192 @@
         } ]
       }
     },
+    "/online-publications" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "List all online publications",
+        "description" : "Use this operation to get a list of all online publications (usually filtered by a specific channel and timeframe).\n",
+        "operationId" : "listOnlinePublications",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 10
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OnlinePublicationsResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
+    "/newsletter-articles" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "List all online articles for newsletter",
+        "description" : "Use this operation to get a list of all online articles promoted in the given week in the newsletter channels.\n",
+        "operationId" : "listNewsletterOnlineArticles",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        }, {
+          "name" : "week",
+          "in" : "query",
+          "description" : "Year followed by the week number (ISO 8601, week date system) PHP date format 'o-W' (ref: https://www.php.net/manual/en/datetime.format.php)\n",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "pattern" : "^[0-9]{4}\\-[0-9]{1,2}$",
+            "type" : "string"
+          }
+        }, {
+          "name" : "locale",
+          "in" : "query",
+          "description" : "Locale",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "de", "fr", "it" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PublicOnlineArticlesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
+    "/banner-publications/{publication_id}" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "Fetch online publication with articles for banner",
+        "description" : "Use this operation fetch an online publication with articles to be displayed in banner.\n",
+        "operationId" : "listOnlinePublicationsWithArticlesForBanner",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        }, {
+          "name" : "publication_id",
+          "in" : "path",
+          "description" : "The unique identifier of an online publication",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "pattern" : "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-4[a-f0-9]{3}\\-(8|9|a|b)[a-f0-9]{3}\\-[a-f0-9]{12}$",
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OnlinePublicationWitArticlesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
     "/display-publications" : {
       "get" : {
-        "tags" : [ "display advertising" ],
+        "tags" : [ "Display advertising" ],
         "summary" : "List all display-publications",
         "description" : "Use this operation to get a list of all display-publications.\n",
         "operationId" : "listDisplayPublications",
@@ -990,7 +1000,7 @@
     },
     "/display-publications/{screen}/{layout}" : {
       "get" : {
-        "tags" : [ "display advertising" ],
+        "tags" : [ "Display advertising" ],
         "summary" : "Fetch display-publication",
         "description" : "Use this operation to fetch the first display-publication for a specific screen, layout and language to display on current day.\n",
         "operationId" : "fetchDisplayPublication",
@@ -1155,7 +1165,7 @@
     },
     "/advertised-articles/{year_week}" : {
       "get" : {
-        "tags" : [ "planing" ],
+        "tags" : [ "Promotion planing" ],
         "summary" : "List advertised articles by week",
         "description" : "Use this operation to get a list of all advertised-articles of a specific week.\n",
         "operationId" : "listAdvertisedArticlesByWeek",
@@ -1201,7 +1211,7 @@
     },
     "/base-posters" : {
       "post" : {
-        "tags" : [ "production" ],
+        "tags" : [ "Print production" ],
         "summary" : "Create base poster",
         "description" : "Crate an A4 base poster (for pre-printed paper) from article.\n",
         "operationId" : "createBasePoster",
