@@ -2103,25 +2103,25 @@ parameters:
     in: path
     type: string
     required: true
-    pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$'
+    pattern: ^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$
   PublicationArticleIdPathParam:
     name: article_id
     description: The unique identifier of an online publication article
     in: path
     type: string
     required: true
-    pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$'
+    pattern: ^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$
 
 definitions:
   ### Common
   UUIDv4:
     type: string
-    pattern: '/^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$/'
+    pattern: ^[a-f0-9]{8}\-[a-f0-9]{4}\-4[a-f0-9]{3}\-(8|9|a|b)[a-f0-9]{3}\-[a-f0-9]{12}$
     description: Unique identifier
 
   ArticleId:
     type: string
-    pattern: '/^\d{6}$/'
+    pattern: ^\d{6}$
     description: Denner article code
 
   Locale:
@@ -2154,7 +2154,7 @@ definitions:
 
   CdnUrl:
     type: string
-    pattern: '/^https://denner.imgix.net/.*$/'
+    pattern: ^https://denner.imgix.net/.*$
     description: |
       Image provided through the [ImgIX](https://imgix.com) CDN, query parameters can be appended to apply rendering effects.
       Follow instructions in the [ImgIX rendering API](https://docs.imgix.com/apis/rendering) reference.
@@ -2172,7 +2172,7 @@ definitions:
 
   CountryCode:
     type: string
-    pattern: '/^[A-Z]{2}$/'
+    pattern: ^[A-Z]{2}$
     description: Country code definition from ISO 3166
 
   PublicCountry:
@@ -2208,7 +2208,7 @@ definitions:
 
   Time:
     type: string
-    pattern: '/^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$/'
+    pattern: ^([0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$
     description: 'Time; Format HH:MM'
 
   DayOfWeek:
@@ -2368,7 +2368,7 @@ definitions:
 
   ArticleGroupCode:
     type: string
-    pattern: '/^\d{2}(-\d{2,3})?$/'
+    pattern: ^\d{2}(-\d{2,3})?$
     description: Navision article group code (e.g. '01', '20', '01-60', '38-998')
 
   AssignedArticleGroup:
@@ -2414,7 +2414,7 @@ definitions:
     properties:
       id:
         type: string
-        #        pattern: '/^(front|back)$/'
+        # pattern: ^(front|back|package|package\+item)$
         enum:
           - front
           - back
@@ -2538,7 +2538,7 @@ definitions:
   ### Article
   PurchasingDepartment:
     type: string
-    pattern: '/^[A-Z]{1,2}$/'
+    pattern: ^[A-Z]{1,2}$
     description: Denner purchasing depatment code (e.g. 'BC', 'DD', 'F', 'FG', 'FR', 'G', 'NF', 'TW', 'W')
 
   Article:
@@ -2546,7 +2546,7 @@ definitions:
     properties:
       id:
         type: string
-        pattern: '/^\d{6}$/'
+        pattern: ^\d{6}$
         description: Navision article code
       name:
         type: string
@@ -2843,7 +2843,7 @@ definitions:
     properties:
       code:
         type: string
-        pattern: '/^[A-Z]{2}$/'
+        pattern: ^[A-Z]{2}$
         description: Denner box type code (e.g. 'KA', 'HA', 'HB')
       batch_size:
         type: integer
@@ -3022,7 +3022,7 @@ definitions:
         $ref: '#/definitions/UUIDv4'
       article_id:
         type: string
-        pattern: '/^\d{6}$/'
+        pattern: ^\d{6}$
         description: Navision article code
       name:
         type: string
@@ -3546,7 +3546,7 @@ definitions:
         description: Canton (state) code
       country:
         type: string
-        pattern: '/^[A-Z]{2}$/'
+        pattern: ^[A-Z]{2}$
         description: Country code definition from ISO 3166
       phone:
         $ref: '#/definitions/Phone'
@@ -3589,7 +3589,7 @@ definitions:
         description: Language spoken in the store
       email:
         type: string
-        #        pattern: @todo Fixed pattern?
+        # pattern: @todo Fixed pattern?
         description: E-mail address
       homepage:
         $ref: '#/definitions/Url'
@@ -3640,7 +3640,7 @@ definitions:
 
   PaymentType:
     type: string
-    pattern: '/^(cash|euro|maestro|post")$/' # @todo Needed?
+    pattern: ^(cash|euro|maestro|post")$ # @todo Needed?
     description: Payment type
 
   OpeningTime:
