@@ -9,11 +9,11 @@ env_file:
 
 services:
   appserver:
-    type: apache
+    type: apache # Could use 'tomcat' that has java within, but then we should configure it too
     webroot: docs
     build_as_root:
       - ./docker/install-utilities.sh
-      - ./docker/install-java-environment.sh # Could use a separated service for JRE (would be faster)
+      - ./docker/install-java-environment.sh # Could use a separated service for JRE
       - ./docker/install-aws-cli.sh
     run:
       - . ./docker/download-swagger-codegen.sh

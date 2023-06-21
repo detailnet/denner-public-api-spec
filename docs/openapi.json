@@ -571,6 +571,497 @@
         } ]
       }
     },
+    "/online-publications/{publication_id}" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "Get single online publication (includes all advertised articles)",
+        "description" : "Use this operation to get a single publication targeted at online channels, e.g. denner.ch or the Mobile App (Online-Werbemittel). The response will include the articles assigned to this publication.\n",
+        "operationId" : "getOnlinePublication",
+        "parameters" : [ {
+          "name" : "publication_id",
+          "in" : "path",
+          "description" : "The unique identifier of an online publication",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "pattern" : "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-4[a-f0-9]{3}\\-(8|9|a|b)[a-f0-9]{3}\\-[a-f0-9]{12}$",
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful object",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OnlinePublicationWithArticles"
+                },
+                "example" : {
+                  "id" : "2c8616be-07c8-4fba-83a2-ee780449ff32",
+                  "name" : "Wochenaktionen KW 26/2015",
+                  "year" : 2015,
+                  "week" : 26,
+                  "title" : [ {
+                    "locale" : "de",
+                    "value" : "Wochenaktionen"
+                  }, {
+                    "locale" : "fr",
+                    "value" : "Hits de la semaine"
+                  }, {
+                    "locale" : "it",
+                    "value" : "Promozioni della settimana"
+                  } ],
+                  "list_title" : [ {
+                    "locale" : "de",
+                    "value" : "Weitere Wochenaktionen"
+                  }, {
+                    "locale" : "fr",
+                    "value" : "Autre hits de la semaine"
+                  }, {
+                    "locale" : "it",
+                    "value" : "Altre promozioni della settimana"
+                  } ],
+                  "show_details_text" : [ {
+                    "locale" : "de",
+                    "value" : "Alle Wochenaktionen zeigen"
+                  }, {
+                    "locale" : "fr",
+                    "value" : "..."
+                  }, {
+                    "locale" : "it",
+                    "value" : "..."
+                  } ],
+                  "validity" : {
+                    "from" : "2015-06-23",
+                    "to" : "2015-06-29",
+                    "text" : [ {
+                      "locale" : "de",
+                      "value" : "23.06.2015 bis 29.06.2015, solange Vorrat"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "tbd"
+                    }, {
+                      "locale" : "it",
+                      "value" : "tbd"
+                    } ]
+                  },
+                  "filters" : [ {
+                    "id" : "3734ef1f-4c1a-428c-af24-7d85af7c5041",
+                    "name" : "Aktionen der Folgewoche",
+                    "appearances" : [ {
+                      "from" : "2015-06-19",
+                      "to" : "2015-06-22"
+                    } ]
+                  }, {
+                    "id" : "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c",
+                    "name" : "Aktionen aktuelle Woche",
+                    "appearances" : [ {
+                      "from" : "2015-06-23",
+                      "to" : "2015-06-29"
+                    } ]
+                  } ],
+                  "promotion_type" : {
+                    "id" : "089f8537-981a-42ba-9b0a-b3cba4a1c7d5",
+                    "code" : "FLUGBLATT",
+                    "name" : "Dennerwoche"
+                  },
+                  "sort_index" : 0,
+                  "articles" : [ {
+                    "id" : "dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6",
+                    "article_id" : "051273",
+                    "name" : "Mandorla Primitivo IGT Puglia",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Mandorla Primitivo di Puglia IGT"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Mandorla Primitivo di Puglia IGT"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Mandorla Primitivo di Puglia IGT"
+                    } ],
+                    "description" : [ {
+                      "locale" : "de",
+                      "value" : "2013, Apulien, Italien, 6 x 75 cl"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "2013, les Pouilles, Italie, 6 x 75 cl"
+                    }, {
+                      "locale" : "it",
+                      "value" : "2013, Puglia, Italia, 6 x 75 cl"
+                    } ],
+                    "prices" : {
+                      "sales" : 59.4,
+                      "instead" : 68.4,
+                      "base" : 1.32,
+                      "by_quantity" : [ {
+                        "quantity" : 1,
+                        "sales" : 9.9,
+                        "instead" : 11.4
+                      }, {
+                        "quantity" : 6,
+                        "sales" : 59.4,
+                        "instead" : 68.4
+                      } ]
+                    },
+                    "price_info" : [ {
+                      "locale" : "de",
+                      "value" : "Konkurrenzvergleich"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Comparaison concurrentielle"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Confronto con la concorrenza"
+                    } ],
+                    "unit_price_info" : [ {
+                      "locale" : "de",
+                      "value" : "Einzelflasche: 9.90 statt 11.40"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "9.90 la bouteille au lieu de 11.40"
+                    }, {
+                      "locale" : "it",
+                      "value" : "9.90 a bottiglia invece di 11.40"
+                    } ],
+                    "promotion_info" : [ {
+                      "locale" : "de",
+                      "value" : "Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables que durant la semaine d’action"
+                    }, {
+                      "locale" : "it",
+                      "value" : "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
+                    } ],
+                    "dots" : [ {
+                      "id" : "d4bca729-10ad-482c-bdda-b1a1398173b5",
+                      "type" : {
+                        "id" : "semi_price_winehit"
+                      },
+                      "text" : [ {
+                        "locale" : "de",
+                        "value" : "1/2 Preis\nWeinheit!"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "1/2 prix\nLe top du vin!"
+                      }, {
+                        "locale" : "it",
+                        "value" : "1/2 prezzo\nSuperofferta vino!"
+                      } ],
+                      "images" : [ {
+                        "locale" : "de",
+                        "formats" : [ {
+                          "type" : "image/svg+xml",
+                          "url" : "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.svg"
+                        } ]
+                      }, {
+                        "locale" : "fr",
+                        "formats" : [ {
+                          "type" : "image/svg+xml",
+                          "url" : "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.svg"
+                        } ]
+                      }, {
+                        "locale" : "it",
+                        "formats" : [ {
+                          "type" : "image/svg+xml",
+                          "url" : "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
+                        } ]
+                      } ]
+                    } ],
+                    "quantity" : 6,
+                    "base" : {
+                      "text" : [ {
+                        "locale" : "de",
+                        "value" : "10 cl"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "10 cl"
+                      }, {
+                        "locale" : "it",
+                        "value" : "10 cl"
+                      } ]
+                    },
+                    "validity" : {
+                      "from" : "2015-06-23",
+                      "to" : "2015-06-29",
+                      "short_text" : [ {
+                        "locale" : "de",
+                        "value" : "Gültig von 23.06.–29.06."
+                      }, {
+                        "locale" : "fr",
+                        "value" : "..."
+                      }, {
+                        "locale" : "it",
+                        "value" : "..."
+                      } ],
+                      "long_text" : [ {
+                        "locale" : "de",
+                        "value" : "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "..."
+                      }, {
+                        "locale" : "it",
+                        "value" : "..."
+                      } ]
+                    },
+                    "availability_limitations" : {
+                      "region" : [ {
+                        "locale" : "de",
+                        "value" : "Nur in der deutschen und französischen Schweiz erhältlich"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Disponible uniquement en Suisse alémanique et romande"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Disponibile solo nella Svizzera tedesca e romanda"
+                      } ],
+                      "store" : [ {
+                        "locale" : "de",
+                        "value" : "Nur in Filialen mit Frischprodukten erhältlich, ohne Denner Satelliten / Denner Express"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Disponible uniquement dans les succursales avec des produits frais, satellites Denner et Denner Express exclus"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Disponibile solo nelle filiali con prodotti freschi, exclusi i satelliti Denner e i Denner Express"
+                      } ],
+                      "store_filters" : [ {
+                        "id" : "services",
+                        "value" : [ "7fefad45-81d2-4228-a0a1-ed618184b96e", "47191064-ad2e-482a-a5cf-2aa32d0b8116" ]
+                      }, {
+                        "id" : "channels",
+                        "value" : [ "d247ecc8-ee06-47e7-b25c-1d267059cf18", "8afb451c-614b-412a-bd7b-03d3ab0e61ef", "a411c290-4b9c-42dd-b753-039918d66b51" ]
+                      } ]
+                    },
+                    "sort_index" : 0,
+                    "featured_sort_index" : 10,
+                    "featured" : true,
+                    "promoted" : true,
+                    "compared" : true,
+                    "cooling" : 0,
+                    "online_group" : {
+                      "id" : "671988cc-ca5f-484e-8db8-23a65ea0044a",
+                      "code" : 4003,
+                      "disabled" : false,
+                      "allow_featuring" : true,
+                      "allow_promotion" : true,
+                      "allow_background" : true,
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Wein"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Vins"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Vini"
+                      } ],
+                      "parent" : {
+                        "id" : "5b79391b-b436-45f9-b3e4-93ec3ae1fae2",
+                        "code" : 4001,
+                        "disabled" : false,
+                        "allow_featuring" : true,
+                        "allow_promotion" : true,
+                        "allow_background" : true,
+                        "title" : [ {
+                          "locale" : "de",
+                          "value" : "Tafelgetränke und Mineralwasser"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "Boissons table et eau minérale"
+                        }, {
+                          "locale" : "it",
+                          "value" : "Bevande da tavola e acque minerali"
+                        } ]
+                      }
+                    },
+                    "article_group" : {
+                      "id" : "0c309757-5432-4652-8201-ec35f31c5260",
+                      "code" : "60-56",
+                      "name" : "Italien Rot 70 cl",
+                      "parent" : {
+                        "id" : "3f3df00f-6a7e-49a9-8eca-a36727ca4977",
+                        "code" : "60",
+                        "name" : "Weine"
+                      }
+                    },
+                    "eco_labels" : [ {
+                      "id" : "66d94617-bbd7-477e-ae66-183deb67ba5b",
+                      "code" : "bio",
+                      "name" : "Bio"
+                    } ],
+                    "packshot" : {
+                      "id" : "2059e18a-9e93-452e-9eef-f9d7605a31ad",
+                      "url" : "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png",
+                      "cdn_url" : "https://denner.imgix.net/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png",
+                      "quantity" : 6,
+                      "created_on" : "2016-03-01T16:22:00+02:00"
+                    },
+                    "wine" : {
+                      "country" : {
+                        "id" : "IT",
+                        "title" : [ {
+                          "locale" : "de",
+                          "value" : "Italien"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "Italie"
+                        }, {
+                          "locale" : "it",
+                          "value" : "Italia"
+                        } ]
+                      },
+                      "region" : {
+                        "id" : "b19c42bf-ed78-46ff-ad6f-fc688a059e6a",
+                        "title" : [ {
+                          "locale" : "de",
+                          "value" : "Apulien"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "Les Pouilles"
+                        }, {
+                          "locale" : "it",
+                          "value" : "Puglia"
+                        } ]
+                      },
+                      "type" : {
+                        "id" : 2,
+                        "title" : [ {
+                          "locale" : "de",
+                          "value" : "Rotwein"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "Vin rouge"
+                        }, {
+                          "locale" : "it",
+                          "value" : "Vino rosso"
+                        } ]
+                      },
+                      "online_specials" : [ {
+                        "id" : "wine",
+                        "sort_index" : 10,
+                        "title" : [ {
+                          "locale" : "de",
+                          "value" : "Weine"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "Vins"
+                        }, {
+                          "locale" : "it",
+                          "value" : "Vini"
+                        } ]
+                      } ],
+                      "year" : 2013,
+                      "fits_with" : [ {
+                        "locale" : "de",
+                        "value" : "Pasta, Fleisch mit würzigen Saucen"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Pâtes, viande aux sauces relevées"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Pasta, carni accompagnate da salse aromatiche"
+                      } ],
+                      "varietal" : [ {
+                        "locale" : "de",
+                        "value" : "Primitivo"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Primitivo"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Primitivo"
+                      } ],
+                      "character" : [ {
+                        "locale" : "de",
+                        "value" : "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                      }, {
+                        "locale" : "it",
+                        "value" : "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                      } ],
+                      "temperature" : [ {
+                        "locale" : "de",
+                        "value" : "16-18 °C"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "16-18 °C"
+                      }, {
+                        "locale" : "it",
+                        "value" : "16-18 °C"
+                      } ],
+                      "awards" : [ {
+                        "locale" : "de",
+                        "value" : ""
+                      }, {
+                        "locale" : "fr",
+                        "value" : ""
+                      }, {
+                        "locale" : "it",
+                        "value" : ""
+                      } ],
+                      "storage" : [ {
+                        "locale" : "de",
+                        "value" : "3 Jahre"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "3 ans"
+                      }, {
+                        "locale" : "it",
+                        "value" : "3 anni"
+                      } ],
+                      "rating" : {
+                        "value" : 4.45,
+                        "total" : 11,
+                        "valid" : true
+                      },
+                      "stock" : {
+                        "value" : -15,
+                        "code" : 2,
+                        "message" : [ {
+                          "locale" : "de",
+                          "value" : "Derzeit nicht bestellbar"
+                        }, {
+                          "locale" : "fr",
+                          "value" : "Actuellement pas disponible"
+                        }, {
+                          "locale" : "it",
+                          "value" : "Attualmente non disponibile"
+                        } ]
+                      }
+                    }
+                  } ],
+                  "links" : [ {
+                    "locale" : "de",
+                    "url" : "https://www.denner.ch/de/shop/wein/weine.html"
+                  }, {
+                    "locale" : "fr",
+                    "url" : "https://www.denner.ch/fr/shop/vin/vins.html"
+                  }, {
+                    "locale" : "it",
+                    "url" : "https://www.denner.ch/it/shop/vino/vini.html"
+                  } ]
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "HTTP 404 Not Found",
+            "content" : { }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        }, {
+          "appId" : [ ]
+        } ]
+      }
+    },
     "/newsletter-articles" : {
       "get" : {
         "tags" : [ "Online advertising" ],
@@ -674,33 +1165,13 @@
         } ]
       }
     },
-    "/online-stores" : {
+    "/online-groups" : {
       "get" : {
         "tags" : [ "Online advertising" ],
-        "summary" : "List all stores",
-        "description" : "Use this operation to get a list of all stores (Filialen).\n",
-        "operationId" : "listStores",
+        "summary" : "List all online groups",
+        "description" : "Use this operation to get a list of all online groups (Internet-Sortimente).\n",
+        "operationId" : "listOnlineGroups",
         "parameters" : [ {
-          "name" : "filter",
-          "in" : "query",
-          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "name" : "sort",
-          "in" : "query",
-          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
           "name" : "page",
           "in" : "query",
           "description" : "The page number. Default: 1\n",
@@ -716,14 +1187,206 @@
         }, {
           "name" : "page_size",
           "in" : "query",
-          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "description" : "The page size that might be unlimited. Default: -1 (no limit)\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
           "schema" : {
             "type" : "integer",
             "format" : "int32",
-            "default" : 10
+            "default" : -1
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OnlineGroupsResponse"
+                },
+                "example" : {
+                  "page_count" : 1,
+                  "page_size" : 1,
+                  "total_items" : 1,
+                  "online_groups" : [ {
+                    "id" : "7627150d-36bd-4867-89b2-091800a03d24",
+                    "code" : 1001,
+                    "sort_index" : 0,
+                    "allow_featuring" : true,
+                    "allow_promotion" : true,
+                    "allow_background" : true,
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Frischprodukte"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Produits frais"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Prodotti freschi"
+                    } ],
+                    "children" : [ {
+                      "id" : "58afec5c-ece9-4b66-bc55-00d6dc1b65b8",
+                      "code" : 1001,
+                      "sort_index" : 0,
+                      "allow_featuring" : true,
+                      "allow_promotion" : true,
+                      "allow_background" : true,
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Milchprodukte"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Produits laitiers"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Latticini"
+                      } ],
+                      "children" : [ ]
+                    }, {
+                      "id" : "e5216167-9da5-41d6-b7b3-96362b60de89",
+                      "code" : 1002,
+                      "sort_index" : 1,
+                      "allow_featuring" : true,
+                      "allow_promotion" : true,
+                      "allow_background" : true,
+                      "title" : [ {
+                        "locale" : "de",
+                        "value" : "Eier"
+                      }, {
+                        "locale" : "fr",
+                        "value" : "Oeufs"
+                      }, {
+                        "locale" : "it",
+                        "value" : "Uova"
+                      } ],
+                      "children" : [ ]
+                    } ]
+                  } ]
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
+    "/online-filters" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "List all online filters",
+        "description" : "Use this operation to get a list of all online filters (Angebotsfilter; e.g. \"Aktionen aktuelle Woche\" or \"Aktionen der Folgewoche\").\n",
+        "operationId" : "listOnlineFilters",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size that might be unlimited. Default: -1 (no limit)\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : -1
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OnlineFiltersResponse"
+                },
+                "example" : {
+                  "page_count" : 1,
+                  "page_size" : 2,
+                  "total_items" : 2,
+                  "online_filters" : [ {
+                    "id" : "3734ef1f-4c1a-428c-af24-7d85af7c5041",
+                    "name" : "Aktionen der Folgewoche",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Aktionen der Folgewoche"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Hits de la semaine suivante"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Promozioni della settimana seguente"
+                    } ],
+                    "sort_index" : 0
+                  }, {
+                    "id" : "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c",
+                    "name" : "Aktionen aktuelle Woche",
+                    "title" : [ {
+                      "locale" : "de",
+                      "value" : "Aktionen aktuelle Woche"
+                    }, {
+                      "locale" : "fr",
+                      "value" : "Hits de la semaine en cours"
+                    }, {
+                      "locale" : "it",
+                      "value" : "Promozioni della settimana corrente"
+                    } ],
+                    "sort_index" : 1
+                  } ]
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
+    "/online-stores" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "List all stores",
+        "description" : "Use this operation to get a list of all stores (Filialen).\n",
+        "operationId" : "listStores",
+        "parameters" : [ {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size that might be unlimited. Default: -1 (no limit)\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : -1
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
           }
         } ],
         "responses" : {
@@ -1077,6 +1740,55 @@
         } ]
       }
     },
+    "/online-specials" : {
+      "get" : {
+        "tags" : [ "Online advertising" ],
+        "summary" : "List all online specials",
+        "description" : "Use this operation to get a list of all online specials (Raritäten).\n",
+        "operationId" : "listOnlineSpecials",
+        "parameters" : [ {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size that might be unlimited. Default: -1 (no limit)\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : -1
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OnlineSpecialsResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
     "/store-channels" : {
       "get" : {
         "tags" : [ "Online advertising" ],
@@ -1084,36 +1796,29 @@
         "description" : "Use this operation to get a list of all store channels (Filialkanäle; e.g. \"Denner\" or \"Denner Satellit\").\n",
         "operationId" : "listStoreChannels",
         "parameters" : [ {
-          "name" : "filter",
-          "in" : "query",
-          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "name" : "sort",
-          "in" : "query",
-          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
           "name" : "page_size",
           "in" : "query",
-          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "description" : "The page size that might be unlimited. Default: -1 (no limit)\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
           "schema" : {
             "type" : "integer",
             "format" : "int32",
-            "default" : 10
+            "default" : -1
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
           }
         } ],
         "responses" : {
@@ -1174,36 +1879,29 @@
         "description" : "Use this operation to get a list of all store services (Filialangebote; e.g. \"Humidor\" or \"Backstation\").\n",
         "operationId" : "listStoreServices",
         "parameters" : [ {
-          "name" : "filter",
-          "in" : "query",
-          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "name" : "sort",
-          "in" : "query",
-          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
-          "required" : false,
-          "style" : "form",
-          "explode" : true,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
           "name" : "page_size",
           "in" : "query",
-          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "description" : "The page size that might be unlimited. Default: -1 (no limit)\n",
           "required" : false,
           "style" : "form",
           "explode" : true,
           "schema" : {
             "type" : "integer",
             "format" : "int32",
-            "default" : 10
+            "default" : -1
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
           }
         } ],
         "responses" : {
@@ -1924,6 +2622,11 @@
         "type" : "string",
         "description" : "Image provided through the [ImgIX](https://imgix.com) CDN, query parameters can be appended to apply rendering effects.\nFollow instructions in the [ImgIX rendering API](https://docs.imgix.com/apis/rendering) reference.\nEvery image (included query params) is cached for performance (main task of a CDN), if an image is changed its cache is purged.\n"
       },
+      "Email" : {
+        "type" : "string",
+        "description" : "E-mail address",
+        "format" : "email"
+      },
       "Phone" : {
         "type" : "string",
         "description" : "Formatted phone number"
@@ -2035,6 +2738,29 @@
         "description" : "Advertised quantity (for images)",
         "format" : "int32"
       },
+      "ContentSize" : {
+        "minimum" : 0,
+        "type" : "number",
+        "description" : "Content size",
+        "format" : "float"
+      },
+      "Cooling" : {
+        "minimum" : 0,
+        "type" : "number",
+        "description" : "Cooling type (0 = no cooling, 1 = refrigerated, 2 = frozen)",
+        "format" : "int32"
+      },
+      "Appearance" : {
+        "type" : "object",
+        "properties" : {
+          "from" : {
+            "$ref" : "#/components/schemas/DayDate"
+          },
+          "to" : {
+            "$ref" : "#/components/schemas/DayDate"
+          }
+        }
+      },
       "CompositeInfo" : {
         "type" : "object",
         "properties" : {
@@ -2117,17 +2843,6 @@
           }
         },
         "description" : "Article validity based on dates (from/to) and corresponding texts (short and long version)"
-      },
-      "Appearance" : {
-        "type" : "object",
-        "properties" : {
-          "from" : {
-            "$ref" : "#/components/schemas/DayDate"
-          },
-          "to" : {
-            "$ref" : "#/components/schemas/DayDate"
-          }
-        }
       },
       "AvailabilityLimitations" : {
         "type" : "object",
@@ -2291,6 +3006,11 @@
           }
         }
       },
+      "Dot" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/Output"
+        } ]
+      },
       "Stopper" : {
         "allOf" : [ {
           "$ref" : "#/components/schemas/Output"
@@ -2345,7 +3065,7 @@
         "properties" : {
           "id" : {
             "type" : "string",
-            "description" : "Designe of output image (e.g. 'red','white', ...)"
+            "description" : "Design of output image (e.g. 'red','white', ...)"
           },
           "priority" : {
             "minimum" : 0,
@@ -2364,6 +3084,428 @@
           "url" : {
             "type" : "string",
             "description" : "Image url which can be used, for example, in an 'img' tag"
+          }
+        }
+      },
+      "PurchasingDepartment" : {
+        "pattern" : "/^[A-Z]{1,2}$/",
+        "type" : "string",
+        "description" : "Denner purchasing depatment code (e.g. 'BC', 'DD', 'F', 'FG', 'FR', 'G', 'NF', 'TW', 'W')"
+      },
+      "Article" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "pattern" : "/^\\d{6}$/",
+            "type" : "string",
+            "description" : "Navision article code"
+          },
+          "name" : {
+            "type" : "string",
+            "description" : "Article name"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "description" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "composite_description" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "article_group" : {
+            "$ref" : "#/components/schemas/AssignedArticleGroup"
+          },
+          "purchasing_department" : {
+            "$ref" : "#/components/schemas/PurchasingDepartment"
+          },
+          "online_group" : {
+            "$ref" : "#/components/schemas/AssignedOnlineGroup"
+          },
+          "prices" : {
+            "$ref" : "#/components/schemas/ArticlePrices"
+          },
+          "barcodes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Barcode"
+            }
+          },
+          "content" : {
+            "$ref" : "#/components/schemas/Content"
+          },
+          "base" : {
+            "$ref" : "#/components/schemas/BaseContent"
+          },
+          "cooling" : {
+            "$ref" : "#/components/schemas/Cooling"
+          },
+          "eco_labels" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/EcoLabel"
+            }
+          },
+          "packshots" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Packshot"
+            }
+          },
+          "wine" : {
+            "$ref" : "#/components/schemas/ExtendedArticleWine"
+          }
+        }
+      },
+      "ArticlePrices" : {
+        "type" : "object",
+        "properties" : {
+          "sales" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "list" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "instead" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "base" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "final" : {
+            "type" : "boolean",
+            "description" : "Is the price final?"
+          },
+          "by_quantity" : {
+            "$ref" : "#/components/schemas/QuantityPrices"
+          }
+        }
+      },
+      "QuantityPrices" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/QuantityPrice"
+        }
+      },
+      "QuantityPrice" : {
+        "type" : "object",
+        "properties" : {
+          "quantity" : {
+            "$ref" : "#/components/schemas/Quantity"
+          },
+          "sales" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "list" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "instead" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "final" : {
+            "type" : "boolean",
+            "description" : "Is the price final?"
+          }
+        }
+      },
+      "Content" : {
+        "type" : "object",
+        "properties" : {
+          "size" : {
+            "$ref" : "#/components/schemas/ContentSize"
+          },
+          "label" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "text" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          }
+        }
+      },
+      "BaseContent" : {
+        "type" : "object",
+        "properties" : {
+          "text" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          }
+        }
+      },
+      "BasicArticleWine" : {
+        "type" : "object",
+        "properties" : {
+          "country" : {
+            "$ref" : "#/components/schemas/Country"
+          },
+          "region" : {
+            "$ref" : "#/components/schemas/Region"
+          },
+          "type" : {
+            "$ref" : "#/components/schemas/WineType"
+          },
+          "online_specials" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OnlineSpecial"
+            }
+          },
+          "year" : {
+            "$ref" : "#/components/schemas/Year"
+          },
+          "fits_with" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "varietal" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "character" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "temperature" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "awards" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "storage" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "rating" : {
+            "$ref" : "#/components/schemas/Rating"
+          },
+          "shop" : {
+            "$ref" : "#/components/schemas/BasicShopInfo"
+          }
+        }
+      },
+      "ExtendedArticleWine" : {
+        "type" : "object",
+        "properties" : {
+          "country" : {
+            "$ref" : "#/components/schemas/Country"
+          },
+          "region" : {
+            "$ref" : "#/components/schemas/Region"
+          },
+          "type" : {
+            "$ref" : "#/components/schemas/WineType"
+          },
+          "online_specials" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OnlineSpecial"
+            }
+          },
+          "canister" : {
+            "$ref" : "#/components/schemas/WineCanister"
+          },
+          "box" : {
+            "$ref" : "#/components/schemas/WineBox"
+          },
+          "year" : {
+            "$ref" : "#/components/schemas/Year"
+          },
+          "fits_with" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "varietal" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "character" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "temperature" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "awards" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "storage" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "rating" : {
+            "$ref" : "#/components/schemas/Rating"
+          },
+          "shop" : {
+            "$ref" : "#/components/schemas/ExtendedShopInfo"
+          }
+        }
+      },
+      "BasicShopInfo" : {
+        "type" : "object",
+        "properties" : {
+          "url" : {
+            "$ref" : "#/components/schemas/Url"
+          },
+          "stock" : {
+            "$ref" : "#/components/schemas/Stock"
+          },
+          "quantity" : {
+            "$ref" : "#/components/schemas/Quantity"
+          },
+          "prices" : {
+            "$ref" : "#/components/schemas/ArticlePrices"
+          },
+          "discount" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "packshot" : {
+            "$ref" : "#/components/schemas/Packshot"
+          }
+        }
+      },
+      "ExtendedShopInfo" : {
+        "type" : "object",
+        "properties" : {
+          "url" : {
+            "$ref" : "#/components/schemas/Url"
+          },
+          "stock" : {
+            "$ref" : "#/components/schemas/Stock"
+          },
+          "quantity" : {
+            "$ref" : "#/components/schemas/Quantity"
+          },
+          "prices" : {
+            "$ref" : "#/components/schemas/ArticlePrices"
+          },
+          "discount" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "packshot" : {
+            "$ref" : "#/components/schemas/Packshot"
+          }
+        }
+      },
+      "Stock" : {
+        "type" : "object",
+        "properties" : {
+          "value" : {
+            "type" : "integer",
+            "description" : "Navision stock count, might be negative",
+            "format" : "int32"
+          },
+          "code" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "description" : "Navision stock code",
+            "format" : "int32"
+          },
+          "message" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          }
+        }
+      },
+      "Barcode" : {
+        "type" : "object",
+        "properties" : {
+          "value" : {
+            "type" : "string",
+            "description" : "Barcode text value (pattern according to type)"
+          },
+          "type" : {
+            "type" : "string",
+            "description" : "Barcode type code (e.g. 'EAN13', 'UPC12', 'ITF14', 'EAN8', 'PLU')"
+          },
+          "quantity" : {
+            "$ref" : "#/components/schemas/Quantity"
+          },
+          "master" : {
+            "type" : "boolean",
+            "description" : "Is master barcode?"
+          }
+        }
+      },
+      "WineCanister" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "description" : "Denner canister type code (e.g. 'bottle', 'can', 'bag-in-box')"
+          }
+        }
+      },
+      "WineBox" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "pattern" : "/^[A-Z]{2}$/",
+            "type" : "string",
+            "description" : "Denner box type code (e.g. 'KA', 'HA', 'HB')"
+          },
+          "batch_size" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "description" : "Batch size",
+            "format" : "int32"
           }
         }
       },
@@ -2499,6 +3641,27 @@
           }
         }
       },
+      "OnlineSpecial" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string",
+            "description" : "Online special name (Raritäten)"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "sort_index" : {
+            "$ref" : "#/components/schemas/SortIndex"
+          }
+        }
+      },
       "Rating" : {
         "type" : "object",
         "properties" : {
@@ -2540,14 +3703,361 @@
         },
         "description" : "Todo - Document all properties"
       },
+      "OnlinePublicationDisplay" : {
+        "type" : "object",
+        "properties" : {
+          "from" : {
+            "$ref" : "#/components/schemas/DayDate"
+          },
+          "to" : {
+            "$ref" : "#/components/schemas/DayDate"
+          }
+        },
+        "description" : "Period of display (from/to), calculated value based on online filters"
+      },
+      "OnlineArticle" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "article_id" : {
+            "pattern" : "/^\\d{6}$/",
+            "type" : "string",
+            "description" : "Navision article code"
+          },
+          "name" : {
+            "type" : "string",
+            "description" : "Article name"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "description" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "prices" : {
+            "$ref" : "#/components/schemas/ArticlePrices"
+          },
+          "price_info" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "unit_price_info" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "dots" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Dot"
+            }
+          },
+          "barcodes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Barcode"
+            }
+          },
+          "quantity" : {
+            "$ref" : "#/components/schemas/Quantity"
+          },
+          "base" : {
+            "$ref" : "#/components/schemas/BaseContent"
+          },
+          "validity" : {
+            "$ref" : "#/components/schemas/ArticleValidity"
+          },
+          "availability_limitations" : {
+            "$ref" : "#/components/schemas/AvailabilityLimitations"
+          },
+          "sort_index" : {
+            "$ref" : "#/components/schemas/SortIndex"
+          },
+          "featured_sort_index" : {
+            "$ref" : "#/components/schemas/SortIndex"
+          },
+          "featured" : {
+            "type" : "boolean",
+            "description" : "Is it a featured article (should be displayed on the front/main/home page)?"
+          },
+          "promoted" : {
+            "type" : "boolean",
+            "description" : "Is it a promoted article (should be displayed with full information)?"
+          },
+          "compared" : {
+            "type" : "boolean",
+            "description" : "Is the article's price compared to an offer from an other company?"
+          },
+          "cooling" : {
+            "$ref" : "#/components/schemas/Cooling"
+          },
+          "online_group" : {
+            "$ref" : "#/components/schemas/AssignedOnlineGroup"
+          },
+          "article_group" : {
+            "$ref" : "#/components/schemas/AssignedArticleGroup"
+          },
+          "eco_labels" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/EcoLabel"
+            }
+          },
+          "packshot" : {
+            "$ref" : "#/components/schemas/Packshot"
+          },
+          "wine" : {
+            "$ref" : "#/components/schemas/BasicArticleWine"
+          }
+        }
+      },
       "OnlinePublication" : {
         "type" : "object",
         "properties" : {
           "id" : {
             "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "year" : {
+            "$ref" : "#/components/schemas/Year"
+          },
+          "week" : {
+            "$ref" : "#/components/schemas/Week"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "list_title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "show_details_text" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "validity" : {
+            "$ref" : "#/components/schemas/Validity"
+          },
+          "display" : {
+            "$ref" : "#/components/schemas/OnlinePublicationDisplay"
+          },
+          "filters" : {
+            "type" : "array",
+            "description" : "Online filter with appearances (and no localised title)",
+            "items" : {
+              "$ref" : "#/components/schemas/AssignedOnlineFilter"
+            }
+          },
+          "promotion_type" : {
+            "$ref" : "#/components/schemas/PromotionType"
+          },
+          "channels" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OnlineChannel"
+            }
+          },
+          "design" : {
+            "$ref" : "#/components/schemas/OnlineDesign"
+          },
+          "sort_index" : {
+            "$ref" : "#/components/schemas/SortIndex"
+          },
+          "links" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OnlinePublicationLink"
+            }
           }
-        },
-        "description" : "Todo - Document all properties"
+        }
+      },
+      "OnlinePublicationWithArticles" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/OnlinePublication"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "articles" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/OnlineArticle"
+              }
+            }
+          }
+        } ]
+      },
+      "OnlinePublicationLink" : {
+        "type" : "object",
+        "properties" : {
+          "locale" : {
+            "$ref" : "#/components/schemas/Locale"
+          },
+          "url" : {
+            "$ref" : "#/components/schemas/Url"
+          }
+        }
+      },
+      "OnlineChannel" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "description" : "Unique ID"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "sort_index" : {
+            "$ref" : "#/components/schemas/SortIndex"
+          }
+        }
+      },
+      "OnlineDesign" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "description" : "Unique ID"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "OnlineFilter" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "sort_index" : {
+            "$ref" : "#/components/schemas/SortIndex"
+          }
+        }
+      },
+      "AssignedOnlineFilter" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "appearances" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Appearance"
+            }
+          }
+        }
+      },
+      "OnlineGroup" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "code" : {
+            "type" : "integer",
+            "description" : "Navision online group code",
+            "format" : "int32"
+          },
+          "sort_index" : {
+            "$ref" : "#/components/schemas/SortIndex"
+          },
+          "allow_featuring" : {
+            "type" : "boolean",
+            "description" : "Does the group allow the assigned articles to be featured (i.e. displayed on front/main/home page)?"
+          },
+          "allow_promotion" : {
+            "type" : "boolean",
+            "description" : "Does the group allow the assigned articles to be promoted (i.e. displayed on a promotional page)?"
+          },
+          "allow_background" : {
+            "type" : "boolean",
+            "description" : "Does the group allow the assigned articles to be displayed with a background (i.e. displayed on a page with a deceptive/trivializing background)?"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "children" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OnlineGroup"
+            }
+          }
+        }
+      },
+      "AssignedOnlineGroup" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "$ref" : "#/components/schemas/UUIDv4"
+          },
+          "code" : {
+            "type" : "integer",
+            "description" : "Navision online group code",
+            "format" : "int32"
+          },
+          "disabled" : {
+            "type" : "boolean",
+            "description" : "Is the group disabled?"
+          },
+          "allow_featuring" : {
+            "type" : "boolean",
+            "description" : "Does the group allow the assigned articles to be featured (i.e. displayed on front/main/home page)?"
+          },
+          "allow_promotion" : {
+            "type" : "boolean",
+            "description" : "Does the group allow the assigned articles to be promoted (i.e. displayed on a promotional page)?"
+          },
+          "allow_background" : {
+            "type" : "boolean",
+            "description" : "Does the group allow the assigned articles to be displayed with a background (i.e. displayed on a page with a deceptive/trivializing background)?"
+          },
+          "title" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Translation"
+            }
+          },
+          "parent" : {
+            "$ref" : "#/components/schemas/AssignedOnlineGroup"
+          }
+        }
       },
       "OnlinePublicationArticle" : {
         "type" : "object",
@@ -3246,6 +4756,21 @@
           }
         }
       },
+      "OnlineSpecialsResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "online_specials" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/OnlineSpecial"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BaseResponse"
+        } ]
+      },
       "CurrentStoresResponse" : {
         "allOf" : [ {
           "type" : "object",
@@ -3258,7 +4783,7 @@
             }
           }
         }, {
-          "$ref" : "#/components/schemas/BaseResponse"
+          "$ref" : "#/components/schemas/BasePagedResponse"
         } ]
       },
       "StoresResponse" : {
@@ -3319,6 +4844,36 @@
           }
         }, {
           "$ref" : "#/components/schemas/BasePagedResponse"
+        } ]
+      },
+      "OnlineGroupsResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "online_groups" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/OnlineGroup"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BaseResponse"
+        } ]
+      },
+      "OnlineFiltersResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "online_filters" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/OnlineFilter"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BaseResponse"
         } ]
       },
       "OnlinePublicationsResponse" : {

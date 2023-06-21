@@ -379,6 +379,474 @@ paths:
           schema:
             $ref: '#/definitions/OnlinePublicationsResponse'
 
+  /online-publications/{publication_id}:
+    get:
+      summary: Get single online publication (includes all advertised articles)
+      description: >
+        Use this operation to get a single publication targeted at online channels,
+        e.g. denner.ch or the Mobile App (Online-Werbemittel).
+        The response will include the articles assigned to this publication.
+      tags:
+        - Online advertising
+      operationId: getOnlinePublication
+      security:
+        - appKey: []
+        - appId: []
+      parameters:
+        - $ref: '#/parameters/PublicationIdPathParam'
+#        - name: view-as-override
+#          in: query
+#          type: string
+#          required: false
+      responses:
+        200:
+          description: Successful object
+          schema:
+            $ref: '#/definitions/OnlinePublicationWithArticles'
+          examples:
+            application/json:
+              id: "2c8616be-07c8-4fba-83a2-ee780449ff32"
+              name: "Wochenaktionen KW 26/2015"
+              year: 2015
+              week: 26
+              title:
+                -
+                  locale: "de"
+                  value: "Wochenaktionen"
+                -
+                  locale: "fr"
+                  value: "Hits de la semaine"
+                -
+                  locale: "it"
+                  value: "Promozioni della settimana"
+              list_title:
+                -
+                  locale: "de"
+                  value: "Weitere Wochenaktionen"
+                -
+                  locale: "fr"
+                  value: "Autre hits de la semaine"
+                -
+                  locale: "it"
+                  value: "Altre promozioni della settimana"
+              show_details_text:
+                -
+                  locale: "de"
+                  value: "Alle Wochenaktionen zeigen"
+                -
+                  locale: "fr"
+                  value: "..."
+                -
+                  locale: "it"
+                  value: "..."
+              validity:
+                from: "2015-06-23"
+                to: "2015-06-29"
+                text:
+                  -
+                    locale: "de"
+                    value: "23.06.2015 bis 29.06.2015, solange Vorrat"
+                  -
+                    locale: "fr"
+                    value: "tbd"
+                  -
+                    locale: "it"
+                    value: "tbd"
+              filters:
+                -
+                  id: "3734ef1f-4c1a-428c-af24-7d85af7c5041"
+                  name: "Aktionen der Folgewoche"
+                  appearances:
+                    -
+                      from: "2015-06-19"
+                      to: "2015-06-22"
+                -
+                  id: "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c"
+                  name: "Aktionen aktuelle Woche"
+                  appearances:
+                    -
+                      from: "2015-06-23"
+                      to: "2015-06-29"
+              promotion_type:
+                id: "089f8537-981a-42ba-9b0a-b3cba4a1c7d5"
+                code: "FLUGBLATT"
+                name: "Dennerwoche"
+              sort_index: 0
+              articles:
+                -
+                  id: "dfbc2b0d-0f47-4ac2-86e5-3bd4f9936ef6"
+                  article_id: "051273"
+                  name: "Mandorla Primitivo IGT Puglia"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                    -
+                      locale: "fr"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                    -
+                      locale: "it"
+                      value: "Mandorla Primitivo di Puglia IGT"
+                  description:
+                    -
+                      locale: "de"
+                      value: "2013, Apulien, Italien, 6 x 75 cl"
+                    -
+                      locale: "fr"
+                      value: "2013, les Pouilles, Italie, 6 x 75 cl"
+                    -
+                      locale: "it"
+                      value: "2013, Puglia, Italia, 6 x 75 cl"
+                  prices:
+                    sales: 59.4
+                    instead: 68.4
+                    base: 1.32
+                    by_quantity:
+                      -
+                        quantity: 1
+                        sales: 9.9
+                        instead: 11.4
+                      -
+                        quantity: 6
+                        sales: 59.4
+                        instead: 68.4
+                  price_info:
+                    -
+                      locale: "de"
+                      value: "Konkurrenzvergleich"
+                    -
+                      locale: "fr"
+                      value: "Comparaison concurrentielle"
+                    -
+                      locale: "it"
+                      value: "Confronto con la concorrenza"
+                  unit_price_info:
+                    -
+                      locale: "de"
+                      value: "Einzelflasche: 9.90 statt 11.40"
+                    -
+                      locale: "fr"
+                      value: "9.90 la bouteille au lieu de 11.40"
+                    -
+                      locale: "it"
+                      value: "9.90 a bottiglia invece di 11.40"
+                  promotion_info:
+                    -
+                      locale: "de"
+                      value: "Aktionspreise für Einzelflaschen nur in der jeweiligen Aktionswoche gültig"
+                    -
+                      locale: "fr"
+                      value: "Les prix promotionnels sur les bouteilles vendues à la pièce ne sont valables que durant la semaine d’action"
+                    -
+                      locale: "it"
+                      value: "I prezzi promozionali delle singole bottiglie sono validi solo nella rispettiva settimana promozionale"
+                  dots:
+                    -
+                      id: "d4bca729-10ad-482c-bdda-b1a1398173b5"
+                      type:
+                        id: "semi_price_winehit"
+                      text:
+                        -
+                          locale: "de"
+                          value: "1/2 Preis\nWeinheit!"
+                        -
+                          locale: "fr"
+                          value: "1/2 prix\nLe top du vin!"
+                        -
+                          locale: "it"
+                          value: "1/2 prezzo\nSuperofferta vino!"
+                      images:
+                        -
+                          locale: "de"
+                          formats:
+                            -
+                              type: "image/svg+xml"
+                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-de.svg"
+                        -
+                          locale: "fr"
+                          formats:
+                            -
+                              type: "image/svg+xml"
+                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-fr.svg"
+                        -
+                          locale: "it"
+                          formats:
+                            -
+                              type: "image/svg+xml"
+                              url: "https://s3-eu-west-1.amazonaws.com/denner-assets/dots/d4bca729-10ad-482c-bdda-b1a1398173b5/051273-it.svg"
+                  quantity: 6
+                  #                  Removed because we cannot calculate a valid size, neither display a standardized unit
+                  #                  content:
+                  #                    size: 75
+                  #                    unit: 170
+                  base:
+                    #                    Removed because we cannot calculate a valid size, neither display a standardized unit
+                    #                    size: 10
+                    #                    unit: 170
+                    text:
+                      -
+                        locale: "de"
+                        value: "10 cl"
+                      -
+                        locale: "fr"
+                        value: "10 cl"
+                      -
+                        locale: "it"
+                        value: "10 cl"
+                  validity:
+                    from: "2015-06-23"
+                    to: "2015-06-29"
+                    short_text:
+                      -
+                        locale: "de"
+                        value: "Gültig von 23.06.–29.06."
+                      -
+                        locale: "fr"
+                        value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                    long_text:
+                      -
+                        locale: "de"
+                        value: "Angebot gültig von 23.06.2015 bis 29.06.2015"
+                      -
+                        locale: "fr"
+                        value: "..."
+                      -
+                        locale: "it"
+                        value: "..."
+                  availability_limitations:
+                    region:
+                      -
+                        locale: "de"
+                        value: "Nur in der deutschen und französischen Schweiz erhältlich"
+                      -
+                        locale: "fr"
+                        value: "Disponible uniquement en Suisse alémanique et romande"
+                      -
+                        locale: "it"
+                        value: "Disponibile solo nella Svizzera tedesca e romanda"
+                    store:
+                      -
+                        locale: "de"
+                        value: "Nur in Filialen mit Frischprodukten erhältlich, ohne Denner Satelliten / Denner Express"
+                      -
+                        locale: "fr"
+                        value: "Disponible uniquement dans les succursales avec des produits frais, satellites Denner et Denner Express exclus"
+                      -
+                        locale: "it"
+                        value: "Disponibile solo nelle filiali con prodotti freschi, exclusi i satelliti Denner e i Denner Express"
+                    store_filters:
+                      -
+                        id: "services"
+                        value:
+                          - "7fefad45-81d2-4228-a0a1-ed618184b96e"
+                          - "47191064-ad2e-482a-a5cf-2aa32d0b8116"
+                      -
+                        id: "channels"
+                        value:
+                          - "d247ecc8-ee06-47e7-b25c-1d267059cf18"
+                          - "8afb451c-614b-412a-bd7b-03d3ab0e61ef"
+                          - "a411c290-4b9c-42dd-b753-039918d66b51"
+                  sort_index: 0
+                  featured_sort_index: 10
+                  featured: true
+                  promoted: true
+                  compared: true
+                  cooling: 0
+                  online_group:
+                    id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
+                    code: 4003
+                    disabled: false
+                    allow_featuring: true
+                    allow_promotion: true
+                    allow_background: true
+                    title:
+                      -
+                        locale: "de"
+                        value: "Wein"
+                      -
+                        locale: "fr"
+                        value: "Vins"
+                      -
+                        locale: "it"
+                        value: "Vini"
+                    parent:
+                      id: "5b79391b-b436-45f9-b3e4-93ec3ae1fae2"
+                      code: 4001
+                      disabled: false
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
+                      title:
+                        -
+                          locale: "de"
+                          value: "Tafelgetränke und Mineralwasser"
+                        -
+                          locale: "fr"
+                          value: "Boissons table et eau minérale"
+                        -
+                          locale: "it"
+                          value: "Bevande da tavola e acque minerali"
+                  article_group:
+                    id: "0c309757-5432-4652-8201-ec35f31c5260"
+                    code: "60-56"
+                    name: "Italien Rot 70 cl"
+                    parent:
+                      id: "3f3df00f-6a7e-49a9-8eca-a36727ca4977"
+                      code: "60"
+                      name: "Weine"
+                  eco_labels:
+                    -
+                      id: "66d94617-bbd7-477e-ae66-183deb67ba5b"
+                      code: "bio"
+                      name: "Bio"
+                  packshot:
+                    id: "2059e18a-9e93-452e-9eef-f9d7605a31ad"
+                    url: "https://denner-assets.s3-eu-west-1.amazonaws.com/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
+                    cdn_url: "https://denner.imgix.net/assets/2059e18a-9e93-452e-9eef-f9d7605a31ad/022617.png"
+                    quantity: 6
+                    created_on: "2016-03-01T16:22:00+02:00"
+                  wine:
+                    country:
+                      id: "IT"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Italien"
+                        -
+                          locale: "fr"
+                          value: "Italie"
+                        -
+                          locale: "it"
+                          value: "Italia"
+                    region:
+                      id: "b19c42bf-ed78-46ff-ad6f-fc688a059e6a"
+                      title:
+                        -
+                          locale: "de"
+                          value: "Apulien"
+                        -
+                          locale: "fr"
+                          value: "Les Pouilles"
+                        -
+                          locale: "it"
+                          value: "Puglia"
+                    type:
+                      id: 2
+                      title:
+                        -
+                          locale: "de"
+                          value: "Rotwein"
+                        -
+                          locale: "fr"
+                          value: "Vin rouge"
+                        -
+                          locale: "it"
+                          value: "Vino rosso"
+                    online_specials:
+                      - id: wine
+                        sort_index: 10
+                        title:
+                          - locale: de
+                            value: Weine
+                          - locale: fr
+                            value: Vins
+                          - locale: it
+                            value: Vini
+                    year: 2013
+                    fits_with:
+                      -
+                        locale: "de"
+                        value: "Pasta, Fleisch mit würzigen Saucen"
+                      -
+                        locale: "fr"
+                        value: "Pâtes, viande aux sauces relevées"
+                      -
+                        locale: "it"
+                        value: "Pasta, carni accompagnate da salse aromatiche"
+                    varietal:
+                      -
+                        locale: "de"
+                        value: "Primitivo"
+                      -
+                        locale: "fr"
+                        value: "Primitivo"
+                      -
+                        locale: "it"
+                        value: "Primitivo"
+                    character:
+                      -
+                        locale: "de"
+                        value: "Dunkles Rubinrot. In der Nase Aromen von roten Beeren, reifen Kirschen und Brombeeren. Geschmeidig im Gaumen."
+                      -
+                        locale: "fr"
+                        value: "Robe rubis foncé. Nez de baies rouges, de cerises matures et de mûres. Bouche moelleuse."
+                      -
+                        locale: "it"
+                        value: "Rosso rubino scuro. Al naso aromi di bacche rosse, ciliege mature e more. Morbido al palato."
+                    temperature:
+                      -
+                        locale: "de"
+                        value: "16-18 °C"
+                      -
+                        locale: "fr"
+                        value: "16-18 °C"
+                      -
+                        locale: "it"
+                        value: "16-18 °C"
+                    awards:
+                      -
+                        locale: "de"
+                        value: ""
+                      -
+                        locale: "fr"
+                        value: ""
+                      -
+                        locale: "it"
+                        value: ""
+                    storage:
+                      -
+                        locale: "de"
+                        value: "3 Jahre"
+                      -
+                        locale: "fr"
+                        value: "3 ans"
+                      -
+                        locale: "it"
+                        value: "3 anni"
+                    rating:
+                      value: 4.45
+                      total: 11
+                      valid: true
+                    stock:
+                      value: -15
+                      code: 2
+                      message:
+                        -
+                          locale: "de"
+                          value: "Derzeit nicht bestellbar"
+                        -
+                          locale: "fr"
+                          value: "Actuellement pas disponible"
+                        -
+                          locale: "it"
+                          value: "Attualmente non disponibile"
+                    shop_url: null
+              links:
+                -
+                  locale: "de"
+                  url: "https://www.denner.ch/de/shop/wein/weine.html"
+                -
+                  locale: "fr"
+                  url: "https://www.denner.ch/fr/shop/vin/vins.html"
+                -
+                  locale: "it"
+                  url: "https://www.denner.ch/it/shop/vino/vini.html"
+        404:
+          description: HTTP 404 Not Found
+
   /newsletter-articles:
     get:
       summary: List all online articles for newsletter
@@ -425,6 +893,141 @@ paths:
           schema:
             $ref: '#/definitions/OnlinePublicationWitArticlesResponse'
 
+  /online-groups:
+    get:
+      summary: List all online groups
+      description: >
+        Use this operation to get a list of all online groups (Internet-Sortimente).
+      tags:
+        - Online advertising
+      operationId: listOnlineGroups
+      security:
+        - appKey: []
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlineGroupsResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 1
+              total_items: 1
+              online_groups:
+                -
+                  id: "7627150d-36bd-4867-89b2-091800a03d24"
+                  code: 1001
+                  sort_index: 0
+                  allow_featuring: true
+                  allow_promotion: true
+                  allow_background: true
+                  title:
+                    -
+                      locale: "de"
+                      value: "Frischprodukte"
+                    -
+                      locale: "fr"
+                      value: "Produits frais"
+                    -
+                      locale: "it"
+                      value: "Prodotti freschi"
+                  children:
+                    -
+                      id: "58afec5c-ece9-4b66-bc55-00d6dc1b65b8"
+                      code: 1001
+                      sort_index: 0
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
+                      title:
+                        -
+                          locale: "de"
+                          value: "Milchprodukte"
+                        -
+                          locale: "fr"
+                          value: "Produits laitiers"
+                        -
+                          locale: "it"
+                          value: "Latticini"
+                      children: []
+                    -
+                      id: "e5216167-9da5-41d6-b7b3-96362b60de89"
+                      code: 1002
+                      sort_index: 1
+                      allow_featuring: true
+                      allow_promotion: true
+                      allow_background: true
+                      title:
+                        -
+                          locale: "de"
+                          value: "Eier"
+                        -
+                          locale: "fr"
+                          value: "Oeufs"
+                        -
+                          locale: "it"
+                          value: "Uova"
+                      children: []
+
+  /online-filters:
+    get:
+      summary: List all online filters
+      description: >
+        Use this operation to get a list of all online filters
+        (Angebotsfilter; e.g. "Aktionen aktuelle Woche" or "Aktionen der Folgewoche").
+      tags:
+        - Online advertising
+      operationId: listOnlineFilters
+      security:
+        - appKey: []
+      parameters:
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlineFiltersResponse'
+          examples:
+            application/json:
+
+              page_count: 1
+              page_size: 2
+              total_items: 2
+              online_filters:
+                -
+                  id: "3734ef1f-4c1a-428c-af24-7d85af7c5041"
+                  name: "Aktionen der Folgewoche"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Aktionen der Folgewoche"
+                    -
+                      locale: "fr"
+                      value: "Hits de la semaine suivante"
+                    -
+                      locale: "it"
+                      value: "Promozioni della settimana seguente"
+                  sort_index: 0
+                -
+                  id: "f5064fb7-c5d5-467e-9bdb-e5c4ed4dea6c"
+                  name: "Aktionen aktuelle Woche"
+                  title:
+                    -
+                      locale: "de"
+                      value: "Aktionen aktuelle Woche"
+                    -
+                      locale: "fr"
+                      value: "Hits de la semaine en cours"
+                    -
+                      locale: "it"
+                      value: "Promozioni della settimana corrente"
+                  sort_index: 1
+
   /online-stores:
     get:
       summary: List all stores
@@ -436,10 +1039,11 @@ paths:
       security:
         - appKey: [ ]
       parameters:
-        - $ref: '#/parameters/FilterParam'
-        - $ref: '#/parameters/SortParam'
+        #- $ref: '#/parameters/FilterParam'
+        #- $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
         - $ref: '#/parameters/PageParam'
-        - $ref: '#/parameters/PageSizeParam'
+
       responses:
         200:
           description: Successful listing
@@ -703,6 +1307,25 @@ paths:
                       appearances:
                         - from: '2013-01-01'
 
+  /online-specials:
+    get:
+      summary: List all online specials
+      description: >
+        Use this operation to get a list of all online specials (Raritäten).
+      tags:
+        - Online advertising
+      operationId: listOnlineSpecials
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/PageSizeUnlimitableParam'
+        - $ref: '#/parameters/PageParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/OnlineSpecialsResponse'
+
   /store-channels:
     get:
       summary: List all store channels
@@ -715,10 +1338,8 @@ paths:
       security:
         - appKey: [ ]
       parameters:
-        - $ref: '#/parameters/FilterParam'
-        - $ref: '#/parameters/SortParam'
         - $ref: '#/parameters/PageSizeUnlimitableParam'
-        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/PageParam'
       responses:
         200:
           description: Successful listing
@@ -764,10 +1385,8 @@ paths:
       security:
         - appKey: [ ]
       parameters:
-        - $ref: '#/parameters/FilterParam'
-        - $ref: '#/parameters/SortParam'
         - $ref: '#/parameters/PageSizeUnlimitableParam'
-        - $ref: '#/parameters/PageSizeParam'
+        - $ref: '#/parameters/PageParam'
       responses:
         200:
           description: Successful listing
@@ -1541,6 +2160,11 @@ definitions:
       Follow instructions in the [ImgIX rendering API](https://docs.imgix.com/apis/rendering) reference.
       Every image (included query params) is cached for performance (main task of a CDN), if an image is changed its cache is purged.
 
+  Email:
+    type: string
+    format: email # Best effort Ref.: https://swagger.io/specification/#data-types
+    description: E-mail address
+
   Phone:
     type: string
 #    pattern: @todo Fixed pattern?
@@ -1642,6 +2266,26 @@ definitions:
     minimum: 0
     description: Advertised quantity (for images)
 
+  ContentSize:
+    type: number
+    format: float
+    minimum: 0
+    description: Content size
+
+  Cooling:
+    type: number
+    format: int32
+    minimum: 0
+    description: Cooling type (0 = no cooling, 1 = refrigerated, 2 = frozen)
+
+  Appearance:
+    type: object
+    properties:
+      from:
+        $ref: '#/definitions/DayDate'
+      to:
+        $ref: '#/definitions/DayDate'
+
   CompositeInfo:
     type: object
     properties:
@@ -1701,14 +2345,6 @@ definitions:
           type: array
           items:
             $ref: '#/definitions/Translation'
-
-  Appearance:
-    type: object
-    properties:
-      from:
-        $ref: '#/definitions/DayDate'
-      to:
-        $ref: '#/definitions/DayDate'
 
   AvailabilityLimitations:
     type: object
@@ -1841,6 +2477,10 @@ definitions:
         items:
           $ref: '#/definitions/OutputImage'
 
+  Dot:
+    allOf:
+      - $ref: '#/definitions/Output'
+
   Stopper:
     allOf:
       - $ref: '#/definitions/Output'
@@ -1879,7 +2519,7 @@ definitions:
     properties:
       id:
         type: string
-        description: Designe of output image (e.g. 'red','white', ...)
+        description: Design of output image (e.g. 'red','white', ...)
       priority:
         type: integer
         format: int32
@@ -1896,6 +2536,321 @@ definitions:
         description: Image url which can be used, for example, in an 'img' tag
 
   ### Article
+  PurchasingDepartment:
+    type: string
+    pattern: '/^[A-Z]{1,2}$/'
+    description: Denner purchasing depatment code (e.g. 'BC', 'DD', 'F', 'FG', 'FR', 'G', 'NF', 'TW', 'W')
+
+  Article:
+    type: object
+    properties:
+      id:
+        type: string
+        pattern: '/^\d{6}$/'
+        description: Navision article code
+      name:
+        type: string
+        description: Article name
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      description:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      composite_description:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      article_group:
+        $ref: '#/definitions/AssignedArticleGroup'
+      purchasing_department:
+        $ref: '#/definitions/PurchasingDepartment'
+      online_group:
+        $ref: '#/definitions/AssignedOnlineGroup'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      barcodes:
+        type: array
+        items:
+          $ref: '#/definitions/Barcode'
+      content:
+        $ref: '#/definitions/Content'
+      base:
+        $ref: '#/definitions/BaseContent'
+      cooling:
+        $ref: '#/definitions/Cooling'
+      eco_labels:
+        type: array
+        items:
+          $ref: '#/definitions/EcoLabel'
+      packshots:
+        type: array
+        items:
+          $ref: '#/definitions/Packshot'
+      wine:
+        $ref: '#/definitions/ExtendedArticleWine'
+
+  ArticlePrices:
+    type: object
+    properties:
+      sales:
+        $ref: '#/definitions/Price'
+      list:
+        $ref: '#/definitions/Price'
+      instead:
+        $ref: '#/definitions/Price'
+      base:
+        $ref: '#/definitions/Price'
+      final:
+        type: boolean
+        description: Is the price final?
+      by_quantity:
+        $ref: '#/definitions/QuantityPrices'
+
+  QuantityPrices:
+    type: array
+    items:
+      $ref: '#/definitions/QuantityPrice'
+
+  QuantityPrice:
+    type: object
+    properties:
+      quantity:
+        $ref: '#/definitions/Quantity'
+      sales:
+        $ref: '#/definitions/Price'
+      list:
+        $ref: '#/definitions/Price'
+      instead:
+        $ref: '#/definitions/Price'
+      final:
+        type: boolean
+        description: Is the price final?
+
+  Content:
+    type: object
+    properties:
+      size:
+        $ref: '#/definitions/ContentSize'
+      #      unit:
+      #        $ref: '#/definitions/ContentUnit'
+      label:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      text:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+
+  BaseContent:
+    type: object
+    properties:
+      #      Removed because we cannot calculate a valid size, neither display a standardized unit
+      #      size:
+      #        $ref: '#/definitions/ContentSize'
+      #      unit:
+      #        $ref: '#/definitions/ContentUnit'
+      text:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+
+  BasicArticleWine:
+    #  Has no definitions/WineBox and definitions/WineCanister
+    #  Uses definitions/BasicShopInfo
+    type: object
+    properties:
+      country:
+        $ref: '#/definitions/Country'
+      region:
+        $ref: '#/definitions/Region'
+      type:
+        $ref: '#/definitions/WineType'
+      online_specials:
+        type: array
+        items:
+          $ref: '#/definitions/OnlineSpecial'
+      year:
+        $ref: '#/definitions/Year'
+      fits_with:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      varietal:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      character:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      temperature:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      awards:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      storage:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      rating:
+        $ref: '#/definitions/Rating'
+      shop:
+        $ref: '#/definitions/BasicShopInfo'
+
+  ExtendedArticleWine:
+    #  Has definitions/WineBox
+    #  Uses definitions/ExtendedShopInfo
+    type: object
+    properties:
+      country:
+        $ref: '#/definitions/Country'
+      region:
+        $ref: '#/definitions/Region'
+      type:
+        $ref: '#/definitions/WineType'
+      online_specials:
+        type: array
+        items:
+          $ref: '#/definitions/OnlineSpecial'
+      canister:
+        $ref: '#/definitions/WineCanister'
+      box:
+        $ref: '#/definitions/WineBox'
+      year:
+        $ref: '#/definitions/Year'
+      fits_with:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      varietal:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      character:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      temperature:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      awards:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      storage:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      rating:
+        $ref: '#/definitions/Rating'
+      shop:
+        $ref: '#/definitions/ExtendedShopInfo'
+
+  BasicShopInfo:
+    #  Has no title (shop title)
+    type: object
+    properties:
+      url:
+        $ref: '#/definitions/Url'
+      stock:
+        $ref: '#/definitions/Stock'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      discount:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      packshot:
+        $ref: '#/definitions/Packshot'
+
+  ExtendedShopInfo:
+    #  Has title (shop title)
+    #    allOf:
+    #      - $ref: '#/definitions/BasicShopInfo'
+    #      - properties:
+    #        title:
+    #          $ref: '#/definitions/Translations'
+    type: object
+    properties:
+      url:
+        $ref: '#/definitions/Url'
+      stock:
+        $ref: '#/definitions/Stock'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      discount:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      packshot:
+        $ref: '#/definitions/Packshot'
+
+  Stock:
+    type: object
+    properties:
+      value:
+        type: integer
+        format: int32
+        description: Navision stock count, might be negative
+      code:
+        type: integer
+        format: int32
+        minimum: 0
+        description: Navision stock code
+      message:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+  Barcode:
+    type: object
+    properties:
+      value:
+        type: string
+        description: Barcode text value (pattern according to type)
+      type:
+        type: string
+        description: Barcode type code (e.g. 'EAN13', 'UPC12', 'ITF14', 'EAN8', 'PLU')
+      quantity:
+        $ref: '#/definitions/Quantity'
+      master:
+        type: boolean
+        description: Is master barcode?
+  WineCanister:
+    type: object
+    properties:
+      code:
+        type: string
+        description: Denner canister type code (e.g. 'bottle', 'can', 'bag-in-box')
+
+  WineBox:
+    type: object
+    properties:
+      code:
+        type: string
+        pattern: '/^[A-Z]{2}$/'
+        description: Denner box type code (e.g. 'KA', 'HA', 'HB')
+      batch_size:
+        type: integer
+        format: int32
+        minimum: 0
+        description: Batch size
+
   PublicArticlePrices:
     type: object
     properties:
@@ -2000,6 +2955,21 @@ definitions:
         items:
           $ref: '#/definitions/Translation'
 
+  OnlineSpecial:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+        description: Online special name (Raritäten)
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+
   Rating:
     type: object
     properties:
@@ -2034,12 +3004,264 @@ definitions:
       id:
         $ref: '#/definitions/UUIDv4'
 
-  OnlinePublication:
+  ### Online publications
+  OnlinePublicationDisplay:
     type: object
-    description: Todo - Document all properties
+    description: Period of display (from/to), calculated value based on online filters
+    properties:
+      from:
+        $ref: '#/definitions/DayDate'
+      to:
+        $ref: '#/definitions/DayDate'
+
+  ### Online publication article
+  OnlineArticle:
+    type: object
     properties:
       id:
         $ref: '#/definitions/UUIDv4'
+      article_id:
+        type: string
+        pattern: '/^\d{6}$/'
+        description: Navision article code
+      name:
+        type: string
+        description: Article name
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      description:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      prices:
+        $ref: '#/definitions/ArticlePrices'
+      price_info:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      unit_price_info:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      dots:
+        type: array
+        items:
+          $ref: '#/definitions/Dot'
+      barcodes: # Only for mobile-app
+        type: array
+        items:
+          $ref: '#/definitions/Barcode'
+      quantity:
+        $ref: '#/definitions/Quantity'
+      #      Removed because we cannot calculate a valid size, neither display a standardized unit
+      #      content:
+      #        $ref: '#/definitions/Content'
+      base:
+        $ref: '#/definitions/BaseContent'
+      validity:
+        $ref: '#/definitions/ArticleValidity'
+      availability_limitations:
+        $ref: '#/definitions/AvailabilityLimitations'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      featured_sort_index:
+        $ref: '#/definitions/SortIndex'
+      featured:
+        type: boolean
+        description: Is it a featured article (should be displayed on the front/main/home page)?
+      promoted:
+        type: boolean
+        description: Is it a promoted article (should be displayed with full information)?
+      compared:
+        type: boolean
+        description: Is the article's price compared to an offer from an other company?
+      cooling:
+        $ref: '#/definitions/Cooling'
+      online_group:
+        $ref: '#/definitions/AssignedOnlineGroup'
+      article_group:
+        $ref: '#/definitions/AssignedArticleGroup'
+      eco_labels:
+        type: array
+        items:
+          $ref: '#/definitions/EcoLabel'
+      packshot:
+        $ref: '#/definitions/Packshot'
+      wine:
+        $ref: '#/definitions/BasicArticleWine'
+
+  ### Online publication
+  OnlinePublication:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      name:
+        type: string
+      year:
+        $ref: '#/definitions/Year'
+      week:
+        $ref: '#/definitions/Week'
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      list_title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      show_details_text:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      validity:
+        $ref: '#/definitions/Validity'
+      display:
+        $ref: '#/definitions/OnlinePublicationDisplay'
+      filters:
+        type: array
+        items:
+          $ref: '#/definitions/AssignedOnlineFilter'
+        description: Online filter with appearances (and no localised title)
+      promotion_type:
+        $ref: '#/definitions/PromotionType'
+      channels:
+        type: array
+        items:
+          $ref: '#/definitions/OnlineChannel'
+      design:
+        $ref: '#/definitions/OnlineDesign'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      links:
+        type: array
+        items:
+          $ref: '#/definitions/OnlinePublicationLink'
+
+
+  OnlinePublicationWithArticles:
+    allOf:
+      - $ref: '#/definitions/OnlinePublication'
+      - properties:
+          articles:
+            type: array
+            items:
+              $ref: '#/definitions/OnlineArticle'
+
+  OnlinePublicationLink:
+    type: object
+    properties:
+      locale:
+        $ref: '#/definitions/Locale'
+      url:
+        $ref: '#/definitions/Url'
+
+  OnlineChannel:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique ID
+      name:
+        type: string
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+
+  OnlineDesign:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Unique ID
+      name:
+        type: string
+
+  ### Online filter
+  OnlineFilter:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      name:
+        type: string
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+
+  AssignedOnlineFilter:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      name:
+        type: string
+      appearances:
+        type: array
+        items:
+          $ref: '#/definitions/Appearance'
+
+  ### Online group
+  OnlineGroup:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        format: int32
+        description: Navision online group code
+      sort_index:
+        $ref: '#/definitions/SortIndex'
+      allow_featuring:
+        type: boolean
+        description: Does the group allow the assigned articles to be featured (i.e. displayed on front/main/home page)?
+      allow_promotion:
+        type: boolean
+        description: Does the group allow the assigned articles to be promoted (i.e. displayed on a promotional page)?
+      allow_background:
+        type: boolean
+        description: Does the group allow the assigned articles to be displayed with a background (i.e. displayed on a page with a deceptive/trivializing background)?
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      children:
+        type: array
+        items:
+          $ref: '#/definitions/OnlineGroup'
+
+  AssignedOnlineGroup:
+    type: object
+    properties:
+      id:
+        $ref: '#/definitions/UUIDv4'
+      code:
+        type: integer
+        format: int32
+        description: Navision online group code
+      disabled:
+        type: boolean
+        description: Is the group disabled?
+      allow_featuring:
+        type: boolean
+        description: Does the group allow the assigned articles to be featured (i.e. displayed on front/main/home page)?
+      allow_promotion:
+        type: boolean
+        description: Does the group allow the assigned articles to be promoted (i.e. displayed on a promotional page)?
+      allow_background:
+        type: boolean
+        description: Does the group allow the assigned articles to be displayed with a background (i.e. displayed on a page with a deceptive/trivializing background)?
+      title:
+        type: array
+        items:
+          $ref: '#/definitions/Translation'
+      parent:
+        $ref: '#/definitions/AssignedOnlineGroup'
 
   OnlinePublicationArticle:
     type: object
@@ -2595,6 +3817,16 @@ definitions:
         items:
           $ref: '#/definitions/PublicOnlineArticle'
 
+  OnlineSpecialsResponse:
+    allOf:
+      - type: object
+        properties:
+          online_specials:
+            type: array
+            items:
+              $ref: '#/definitions/OnlineSpecial'
+      - $ref: '#/definitions/BaseResponse'
+
   CurrentStoresResponse:
     allOf:
       - type: object
@@ -2603,7 +3835,7 @@ definitions:
             type: array
             items:
               $ref: '#/definitions/Store'
-      - $ref: '#/definitions/BaseResponse'
+      - $ref: '#/definitions/BasePagedResponse'
 
   StoresResponse:
     allOf:
@@ -2645,6 +3877,27 @@ definitions:
               $ref: '#/definitions/AdvertisedArticle'
       - $ref: '#/definitions/BasePagedResponse'
 
+
+  OnlineGroupsResponse:
+    allOf:
+      - type: object
+        properties:
+          online_groups:
+            type: array
+            items:
+              $ref: '#/definitions/OnlineGroup'
+      - $ref: '#/definitions/BaseResponse'
+
+  OnlineFiltersResponse:
+    allOf:
+      - type: object
+        properties:
+          online_filters:
+            type: array
+            items:
+              $ref: '#/definitions/OnlineFilter'
+      - $ref: '#/definitions/BaseResponse'
+
   OnlinePublicationsResponse:
     allOf:
       - type: object
@@ -2674,4 +3927,3 @@ definitions:
             items:
               $ref: '#/definitions/DisplayPublication'
       - $ref: '#/definitions/BasePagedResponse'
-
