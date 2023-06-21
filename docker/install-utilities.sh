@@ -26,6 +26,9 @@ printf 'Installing WGET                            ... ' && apt-get install -y  
 # For aws command
 printf 'Installing LESS                            ... ' && apt-get install -y  less > /dev/null 2>&1      && exit_status $?
 #printf 'Installing GIT                             ... ' && apt-get install -y git > /dev/null 2>&1        && exit_status $?
+# From https://github.com/mikefarah/yq/#install
+YQ_URL=https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+printf 'Installing YQ                              ... ' && wget $YQ_URL -O /usr/bin/yq > /dev/null 2>&1 && chmod +x /usr/bin/yq > /dev/null 2>&1  && exit_status $?
 
 printf '%s%s%s\n' $(tput setaf 6) 'Additional utilities installed.' $(tput sgr0)
 
