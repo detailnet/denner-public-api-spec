@@ -200,6 +200,8 @@ paths:
         httpMethod: GET
         passthroughBehavior: when_no_match
         requestParameters:
+          integration.request.header.App-ID: stageVariables.articles_app_id
+          integration.request.header.App-Key: stageVariables.articles_app_key
           integration.request.querystring.filter: method.request.querystring.filter
           integration.request.querystring.page: method.request.querystring.page
           integration.request.querystring.page_size: method.request.querystring.page_size
