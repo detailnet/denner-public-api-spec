@@ -154,6 +154,99 @@ paths:
               method.response.header.Access-Control-Allow-Origin: '''https://denner-api-docs.detailnet.ch'''
             statusCode: "200"
         type: mock
+  /articles:
+    get:
+      parameters:
+        - in: query
+          name: view-as-override
+          schema:
+            type: string
+        - in: query
+          name: sort
+          schema:
+            type: string
+        - in: query
+          name: page
+          schema:
+            type: string
+        - in: query
+          name: page_size
+          schema:
+            type: string
+        - in: query
+          name: filter
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+        "403":
+          content: {}
+          description: 403 response
+        "500":
+          content: {}
+          description: 500 response
+      security:
+        - AppKeyHeader: []
+      x-amazon-apigateway-integration:
+        httpMethod: GET
+        passthroughBehavior: when_no_match
+        requestParameters:
+          integration.request.querystring.filter: method.request.querystring.filter
+          integration.request.querystring.page: method.request.querystring.page
+          integration.request.querystring.page_size: method.request.querystring.page_size
+          integration.request.querystring.sort: method.request.querystring.sort
+          integration.request.querystring.view-as: '''export-xpt'''
+          integration.request.querystring.view-as-override: method.request.querystring.view-as-override
+        responses:
+          "403":
+            statusCode: "403"
+          5\d{2}:
+            statusCode: "500"
+          default:
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: '''https://denner-api-docs.detailnet.ch'''
+            statusCode: "200"
+        type: http
+        uri: https://${stageVariables.articles_url}/articles
+    options:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+          headers:
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+      x-amazon-apigateway-integration:
+        passthroughBehavior: when_no_match
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        responses:
+          default:
+            responseParameters:
+              method.response.header.Access-Control-Allow-Headers: '''App-Key,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
+              method.response.header.Access-Control-Allow-Methods: '''GET,OPTIONS'''
+              method.response.header.Access-Control-Allow-Origin: '''https://denner-api-docs.detailnet.ch'''
+            statusCode: "200"
+        type: mock
   /banner-publications/{publication_id}:
     get:
       parameters:

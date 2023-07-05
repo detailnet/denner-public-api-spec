@@ -1898,15 +1898,37 @@ paths:
         204:
           description: No result
 
-  ### Promotion planing
+  ### Promotion planing (XPT)
+  /articles:
+    get:
+      summary: List articles for XPT
+      description: |
+        Use this operation to get a list of all articles serialized for XPT.
+      tags:
+        - Promotion planing (XPT)
+      operationId: listXptArticles
+      security:
+        - appKey: [ ]
+      parameters:
+        - $ref: '#/parameters/AcceptHeader'
+        - $ref: '#/parameters/FilterParam'
+        - $ref: '#/parameters/SortParam'
+        - $ref: '#/parameters/PageParam'
+        - $ref: '#/parameters/PageSizeParam'
+      responses:
+        200:
+          description: Successful listing
+          schema:
+            $ref: '#/definitions/ArticlesResponse'
+
   /advertised-articles/{year_week}:
     get:
-      summary: List advertised articles by week
+      summary: List advertised articles by week for XPT
       description: |
-        Use this operation to get a list of all advertised-articles of a specific week.
+        Use this operation to get a list of all advertised-articles of a specific week serialized for XPT.
       tags:
-        - Promotion planing
-      operationId: listAdvertisedArticlesByWeek
+        - Promotion planing (XPT)
+      operationId: listXptAdvertisedArticlesByWeek
       security:
         - appKey: [ ]
       parameters:
@@ -3867,6 +3889,17 @@ definitions:
               $ref: '#/definitions/StoreService'
       - $ref: '#/definitions/BaseResponse'
 
+  ArticlesResponse:
+    allOf:
+      - type: object
+        properties:
+          articles:
+            type: array
+            items:
+              type: object
+              description: Articles data serialized for XPT.  (Not described in here)
+      - $ref: '#/definitions/BasePagedResponse'
+
   AdvertisedArticlesResponse:
     allOf:
       - type: object
@@ -3874,9 +3907,9 @@ definitions:
           advertised_articles_by_week:
             type: array
             items:
-              $ref: '#/definitions/AdvertisedArticle'
+              type: object
+              description: Advertised article data serialized for XPT.  (Not described in here)
       - $ref: '#/definitions/BasePagedResponse'
-
 
   OnlineGroupsResponse:
     allOf:

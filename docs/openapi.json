@@ -2486,12 +2486,92 @@
         } ]
       }
     },
+    "/articles" : {
+      "get" : {
+        "tags" : [ "Promotion planing (XPT)" ],
+        "summary" : "List articles for XPT",
+        "description" : "Use this operation to get a list of all articles serialized for XPT.\n",
+        "operationId" : "listXptArticles",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 10
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ArticlesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
     "/advertised-articles/{year_week}" : {
       "get" : {
-        "tags" : [ "Promotion planing" ],
-        "summary" : "List advertised articles by week",
-        "description" : "Use this operation to get a list of all advertised-articles of a specific week.\n",
-        "operationId" : "listAdvertisedArticlesByWeek",
+        "tags" : [ "Promotion planing (XPT)" ],
+        "summary" : "List advertised articles by week for XPT",
+        "description" : "Use this operation to get a list of all advertised-articles of a specific week serialized for XPT.\n",
+        "operationId" : "listXptAdvertisedArticlesByWeek",
         "parameters" : [ {
           "name" : "Accept",
           "in" : "header",
@@ -4831,6 +4911,23 @@
           "$ref" : "#/components/schemas/BaseResponse"
         } ]
       },
+      "ArticlesResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "articles" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : { },
+                "description" : "Articles data serialized for XPT.  (Not described in here)"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BasePagedResponse"
+        } ]
+      },
       "AdvertisedArticlesResponse" : {
         "allOf" : [ {
           "type" : "object",
@@ -4838,7 +4935,9 @@
             "advertised_articles_by_week" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/components/schemas/AdvertisedArticle"
+                "type" : "object",
+                "properties" : { },
+                "description" : "Advertised article data serialized for XPT.  (Not described in here)"
               }
             }
           }
