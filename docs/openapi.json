@@ -842,6 +842,7 @@
                     "promoted" : true,
                     "compared" : true,
                     "cooling" : 0,
+                    "legal_warning" : "none",
                     "online_group" : {
                       "id" : "671988cc-ca5f-484e-8db8-23a65ea0044a",
                       "code" : 4003,
@@ -2830,6 +2831,18 @@
         "description" : "Cooling type (0 = no cooling, 1 = refrigerated, 2 = frozen)",
         "format" : "int32"
       },
+      "LegalWarning" : {
+        "type" : "string",
+        "description" : "Indicates which legal warning info **must** be displayed.",
+        "enum" : [ "none", "deadly-smoking", "tobacco-cancerous", "dangerous-tobacco-and-addictive", "dangerous-and-addictive", "dangerous-smoking", "driving-compromised", "unhealthy-and-addictive", "unhealthy" ]
+      },
+      "LegalTexts" : {
+        "type" : "array",
+        "description" : "Mandatory text to display with article. \n**Must occupy at least 10% of article advertising area.**\nTexts are chained with the legal warning.\n",
+        "items" : {
+          "$ref" : "#/components/schemas/Translation"
+        }
+      },
       "Appearance" : {
         "type" : "object",
         "properties" : {
@@ -3098,16 +3111,11 @@
           "type" : "object",
           "properties" : {
             "markup_text" : {
-              "type" : "object",
-              "allOf" : [ {
-                "type" : "array",
-                "items" : {
-                  "$ref" : "#/definitions/Translation"
-                }
-              }, {
-                "type" : "object",
-                "description" : "Markup text for visual effects"
-              } ]
+              "type" : "array",
+              "description" : "Markup text for visual effects",
+              "items" : {
+                "$ref" : "#/components/schemas/Translation"
+              }
             }
           }
         } ]
@@ -3228,6 +3236,12 @@
           },
           "cooling" : {
             "$ref" : "#/components/schemas/Cooling"
+          },
+          "legal_warning" : {
+            "$ref" : "#/components/schemas/LegalWarning"
+          },
+          "legal_texts" : {
+            "$ref" : "#/components/schemas/LegalTexts"
           },
           "eco_labels" : {
             "type" : "array",
@@ -3882,6 +3896,12 @@
           "cooling" : {
             "$ref" : "#/components/schemas/Cooling"
           },
+          "legal_warning" : {
+            "$ref" : "#/components/schemas/LegalWarning"
+          },
+          "legal_texts" : {
+            "$ref" : "#/components/schemas/LegalTexts"
+          },
           "online_group" : {
             "$ref" : "#/components/schemas/AssignedOnlineGroup"
           },
@@ -4194,6 +4214,12 @@
           "online_group" : {
             "$ref" : "#/components/schemas/PublicAssignedOnlineGroup"
           },
+          "legal_warning" : {
+            "$ref" : "#/components/schemas/LegalWarning"
+          },
+          "legal_texts" : {
+            "$ref" : "#/components/schemas/LegalTexts"
+          },
           "packshot" : {
             "$ref" : "#/components/schemas/PublicPackshot"
           },
@@ -4312,6 +4338,12 @@
           },
           "disclaimer" : {
             "type" : "string"
+          },
+          "legal_warning" : {
+            "$ref" : "#/components/schemas/LegalWarning"
+          },
+          "legal_texts" : {
+            "$ref" : "#/components/schemas/LegalTexts"
           },
           "sort_index" : {
             "$ref" : "#/components/schemas/SortIndex"

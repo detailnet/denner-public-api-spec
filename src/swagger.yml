@@ -655,6 +655,7 @@ paths:
                   promoted: true
                   compared: true
                   cooling: 0
+                  legal_warning: 'none'
                   online_group:
                     id: "671988cc-ca5f-484e-8db8-23a65ea0044a"
                     code: 4003
@@ -2300,6 +2301,29 @@ definitions:
     minimum: 0
     description: Cooling type (0 = no cooling, 1 = refrigerated, 2 = frozen)
 
+  LegalWarning:
+    type: string
+    enum:
+      - none
+      - deadly-smoking
+      - tobacco-cancerous
+      - dangerous-tobacco-and-addictive
+      - dangerous-and-addictive
+      - dangerous-smoking
+      - driving-compromised
+      - unhealthy-and-addictive
+      - unhealthy
+    description: Indicates which legal warning info **must** be displayed.
+
+  LegalTexts:
+    type: array
+    items:
+      $ref: '#/definitions/Translation'
+    description: |
+      Mandatory text to display with article. 
+      **Must occupy at least 10% of article advertising area.**
+      Texts are chained with the legal warning.
+
   Appearance:
     type: object
     properties:
@@ -2509,11 +2533,10 @@ definitions:
       - type: object
         properties:
           markup_text:
-            allOf:
-              - type: array
-                items:
-                   $ref: '#/definitions/Translation'
-              - description: Markup text for visual effects
+            type: array
+            items:
+              $ref: '#/definitions/Translation'
+            description: Markup text for visual effects
 
   OutputType:
     type: object
@@ -2603,6 +2626,10 @@ definitions:
         $ref: '#/definitions/BaseContent'
       cooling:
         $ref: '#/definitions/Cooling'
+      legal_warning:
+        $ref: '#/definitions/LegalWarning'
+      legal_texts:
+        $ref: '#/definitions/LegalTexts'
       eco_labels:
         type: array
         items:
@@ -3101,6 +3128,10 @@ definitions:
         description: Is the article's price compared to an offer from an other company?
       cooling:
         $ref: '#/definitions/Cooling'
+      legal_warning:
+        $ref: '#/definitions/LegalWarning'
+      legal_texts:
+        $ref: '#/definitions/LegalTexts'
       online_group:
         $ref: '#/definitions/AssignedOnlineGroup'
       article_group:
@@ -3324,6 +3355,10 @@ definitions:
         description: Is the article's price compared to an offer from an other company?
       online_group:
         $ref: '#/definitions/PublicAssignedOnlineGroup'
+      legal_warning:
+        $ref: '#/definitions/LegalWarning'
+      legal_texts:
+        $ref: '#/definitions/LegalTexts'
       packshot:
         $ref: '#/definitions/PublicPackshot'
       wine:
@@ -3447,6 +3482,10 @@ definitions:
         type: string
       disclaimer:
         type: string
+      legal_warning:
+        $ref: '#/definitions/LegalWarning'
+      legal_texts:
+        $ref: '#/definitions/LegalTexts'
       sort_index:
         $ref: '#/definitions/SortIndex'
       packshot_image:
