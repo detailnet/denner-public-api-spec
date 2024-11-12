@@ -2487,6 +2487,86 @@
         } ]
       }
     },
+    "/eco-labels" : {
+      "get" : {
+        "tags" : [ "Promotion planing (XPT)" ],
+        "summary" : "List eco-labels",
+        "description" : "Use this operation to get a list of all eco labels used by Denner marketing.\n",
+        "operationId" : "listEcoLabels",
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accepted content type (supported is \"application/json\")\n",
+          "required" : false,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "default" : "application/json"
+          }
+        }, {
+          "name" : "filter",
+          "in" : "query",
+          "description" : "Filters: JSON array of Filter object, urlencoded.\n\nFilter object:\n- property: Property to filter on.\n- operator: Operation property. Enumeration ('eq', 'like', 'lt', 'gt', 'in', ...). Dependent from property (not all might be allowed).\n- type: Type of value. Enumeration ('string', 'integer', 'boolean', 'array') Dependent from property and operator (not all might be allowed).\n- value: Value. Must be of the defined type.\n\nExamples:\n- [{\"property\":\"id\",\"operator\":\"in\",\"type\":\"array\",\"value\":[\"7627150d-36bd-4867-89b2-091800a03d24\",\"58afec5c-ece9-4b66-bc55-00d6dc1b65b8\"]}]\n- [{\"property\":\"in_shop\",\"operator\":\"eq\",\"type\":\"boolean\",\"value\":true}]\n- [{\"property\":\"channels\",\"value\":\"vf-banner\"},{\"property\":\"week\",\"value\":12},{\"property\":\"year\",\"value\":2023}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "description" : "Filters: JSON array of Sort object, urlencoded.\n\nSort object:\n- property: Property to sort on.\n- direction: (optional) Sort direction property. Enumeration ('asc', 'desc').\n\nExamples:\n- [{\"property\":\"sort_index\",\"direction\":\"asc\"}]\n- [{\"property\":\"year\"},{\"property\":\"week\",\"direction\":\"asc\"}]\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The page number. Default: 1\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "minimum" : 0,
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 1
+          }
+        }, {
+          "name" : "page_size",
+          "in" : "query",
+          "description" : "The page size. Default: 10\nTo disable pagination (when supported) send \"-1\".\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32",
+            "default" : 10
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful listing",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/EcoLabelsResponse"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "appKey" : [ ]
+        } ]
+      }
+    },
     "/articles" : {
       "get" : {
         "tags" : [ "Promotion planing (XPT)" ],
@@ -3019,6 +3099,30 @@
             "$ref" : "#/components/schemas/CdnUrl"
           }
         }
+      },
+      "DetailedEcoLabel" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/EcoLabel"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "navision_codes" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string",
+                "description" : "Denner ecolabel Navision code"
+              }
+            },
+            "sap_ids" : {
+              "type" : "array",
+              "items" : {
+                "type" : "integer",
+                "description" : "Denner ecolabel SAP ID",
+                "format" : "int32"
+              }
+            }
+          }
+        } ]
       },
       "PackshotView" : {
         "type" : "object",
@@ -4941,6 +5045,21 @@
           }
         }, {
           "$ref" : "#/components/schemas/BaseResponse"
+        } ]
+      },
+      "EcoLabelsResponse" : {
+        "allOf" : [ {
+          "type" : "object",
+          "properties" : {
+            "eco_labels" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/DetailedEcoLabel"
+              }
+            }
+          }
+        }, {
+          "$ref" : "#/components/schemas/BasePagedResponse"
         } ]
       },
       "ArticlesResponse" : {
