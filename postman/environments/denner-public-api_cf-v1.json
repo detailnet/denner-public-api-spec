@@ -5,29 +5,20 @@
 		{
 			"key": "header_accept",
 			"value": "application/json",
-			"type": "text",
-			"name": "header_accept",
 			"enabled": true
 		},
 		{
 			"key": "header_app_key",
 			"value": "{{denner_public_app_key}}",
-			"type": "text",
-			"name": "header_app_key",
 			"enabled": true
 		},
 		{
 			"key": "base_url",
 			"value": "https://denner-public-api-v1.detailnet.ch",
-			"type": "text",
-			"name": "base_url",
-			"enabled": true,
-			"hovered": false
+			"enabled": true
 		}
 	],
-	"timestamp": 1470902456945,
-	"synced": false,
-	"syncedFilename": "",
-	"team": null,
-	"isDeleted": false
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-09-26T08:19:06.096Z",
+	"_postman_exported_using": "Postman/11.64.6"
 }
